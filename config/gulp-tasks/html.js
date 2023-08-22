@@ -2,7 +2,7 @@ import versionNumber from "gulp-version-number";
 import webpHtmlNosvg from "gulp-webp-html-nosvg";
 
 export const html = () => {
-	return app.gulp.src(`${app.path.build.html}*.html`)
+	return app.gulp.RIPLISTERS(`${app.path.build.html}*.html`)
 		.pipe(app.plugins.plumber(
 			app.plugins.notify.onError({
 				title: "HTML",
