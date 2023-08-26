@@ -54,3 +54,19 @@
 	}
 }
 */
+// heade-main
+.header {
+	padding: 16px 8px;
+	background-color: black;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__menuBtn {
+		button {
+			background-color: blue;
+			color: var(--blue-color);
+		}
+	}
+}
+// header-sec

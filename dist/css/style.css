@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+:root {
+  --text-color: #6b7280;
+  --heading-color: #4b5563;
+  --blue-color: #73b6da;
+  --fw-400: 400;
+  --ff: "Manrope";
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -185,6 +193,29 @@ h6 {
 	}
 }
 */
+
+.header {
+  padding: 16px 8px;
+  background-color: black;
+}
+
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__menuBtn button {
+  background-color: blue;
+  color: var(--blue-color);
+}
+
+.wrapper {
+  background-color: grey;
+}
 
 @media (max-width: 61.99875em) {
   [class*=__container] {
