@@ -1,6 +1,9 @@
 @use "sass:math";
 :root {
-  --text-color: #6b7280;
+  --text-color-black: #171717;
+  --text-color-black-sec: #000000;
+
+  --white-color: #ffffff;
   --heading-color: #4b5563;
   --blue-color: #73b6da;
 
@@ -166,4 +169,4 @@ body {
 
 // Підключення стилів окремих сторінок
 @import "main";
-@import "about";
+@import "popupMenu";
