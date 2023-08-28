@@ -1,3 +1,101 @@
-//====================================================================================================
-
-//====================================================================================================
+.footer {
+    background-color: var(--white-color);
+    color: var(--text-color-black);
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+.footer__logoContainer {
+    margin-top: 3.4375rem;
+}
+.footer__aboutUs {        
+    margin-top: 1.35rem;
+    width: 21.5625rem;
+    p {
+        color: var(--text-color-black);
+        text-align: center;
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal; 
+    }
+}
+.footer__contactUs {
+    margin-top: 2.8125rem;
+}
+.footer__contactButton {
+    width: 11.875rem;
+    height: 3.4375rem;
+    border-radius: 1.25rem;
+    border: 0.0625rem solid var(--transparent-orange-color);
+    color: var(--text-color-black);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;    
+}
+.footer__referralProgram {
+    color: var(--orange-color);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.125rem;    
+    text-transform: uppercase;
+    margin-top: 2.8125rem;
+}
+.footer__referralProgram:hover {
+    text-decoration-line: underline;
+}
+.footer__confedentialPolitics {
+    color: var(--text-color-black);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 2.8125rem;  
+}
+.footer__confedentialPolitics:hover {
+    text-decoration-line: underline;
+}
+.footer__publicOffer {
+    color: var(--text-color-black);
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 1.0625rem;
+}
+.footer__publicOffer:hover {
+    text-decoration-line: underline;
+}
+.footer__socialsContainer {
+    width: 10.3125rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+    
+}
+.footer__copyright {
+    color: var(--text-color-black);
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.075rem;
+    text-align: center;
+    margin: 2.3125rem 0 2.5625rem 0;
+    span {
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.075rem;
+        color: var(--text-color-black);
+    }    
+}
