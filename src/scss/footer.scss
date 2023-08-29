@@ -30,7 +30,7 @@
     width: 11.875rem;
     height: 3.4375rem;
     border-radius: 1.25rem;
-    border: 0.0625rem solid var(--transparent-orange-color);
+    border: 0.0625rem solid var(--orange-border-transparent);
     color: var(--text-color-black);
     font-size: 1rem;
     font-style: normal;
@@ -89,7 +89,8 @@
     line-height: normal;
     letter-spacing: 0.075rem;
     text-align: center;
-    margin: 2.3125rem 0 2.5625rem 0;
+    margin-top: 2.3125rem;
+    padding-bottom: 2.5625rem;
     span {
         font-size: 0.75rem;
         font-style: normal;

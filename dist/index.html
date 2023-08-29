@@ -40,13 +40,18 @@
 						У серці кожного з нас є місце для особливої людини, якої вже немає у
 						цьому світі. Ми згадуємо про нього щодня або лише у особливі хвилини
 						свого життя. У будь-якому випадку важливим є те, що пам'ять про нього
-						жива.</p><br>
-					<p>RIP Lister – сайт памяти. Мы хотим помочь сохранить воспоминания
-						об усопших для семьи и друзей, близких родственников и знакомых, для
-						потомков, детей и внуков, которым будет важна история их семьи.</p>
+						жива.
+					</p>
+					<br />
+					<p>
+						RIP Lister – сайт памяти. Мы хотим помочь сохранить воспоминания об
+						усопших для семьи и друзей, близких родственников и знакомых, для
+						потомков, детей и внуков, которым будет важна история их семьи.
+					</p>
 				</div>
 				<div class="footer__contactUs">
-					<button class="footer__contactButton"><img src="img/letter-icon.svg" alt="letter icon">
+					<button class="footer__contactButton">
+						<img src="img/letter-icon.svg" alt="letter icon" />
 						Напишіть нам
 					</button>
 				</div>
@@ -61,13 +66,13 @@
 				</div>
 				<div class="footer__socialsContainer">
 					<a href="#" class="instagram-icon">
-						<img src="img/instagram-icon.svg" alt="Instagram icon">
+						<img src="img/instagram-icon.svg" alt="Instagram icon" />
 					</a>
 					<a href="#" class="facebook-icon">
-						<img src="img/facebook-icon.svg" alt="facebook icon">
+						<img src="img/facebook-icon.svg" alt="facebook icon" />
 					</a>
 					<a href="#" class="twitter-icon">
-						<img src="img/twitter-icon.svg" alt="twitter icon">
+						<img src="img/twitter-icon.svg" alt="twitter icon" />
 					</a>
 				</div>
 				<div class="footer__copyright">
@@ -76,19 +81,6 @@
 				</div>
 			</div>
 		</footer>
-
-		<!-- <header class="headerMain">
-	<div class="headerMain__container">
-		<div class="headerMAin__logo">
-			<a href="#" class="header__logo">
-				<img src="img/logo.svg" alt="">
-			</a>
-		</div>
-		<div class="headerMain__menuBtn">
-			<button class="scroll-lock"><img src="img/burger.svg" alt=""> Menu</button>
-		</div>
-	</div>
-</header> -->
 
 		<!-- <div id="popup" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
@@ -115,6 +107,33 @@
 			</nav>
 		</div>
 		<!-- </div> -->
+
+		<div class="contactModal">
+			<span>Напишіть нам</span>
+			<p>Співробітник нашої служби підтримки відповість якомога швидше.</p>
+			<div class="contactModal__formContainer">
+				<form action="URL" id="contactForm">
+					<input type="text" name="usrname" placeholder="Ваше Ім'я" />
+					<input type="text" name="email" placeholder="email" />
+				</form>
+				<br />
+				<span>Тема звернення:</span>
+				<select name="topicSelect">
+					<!--Supplement an id here instead of using 'name'-->
+					<option value="value1" selected>
+						<span>Питання з партнерства</span>
+					</option>
+					<option value="value2"><span>Питання з партнерства</span></option>
+					<option value="value3"><span>Питання з партнерства</span></option>
+				</select>
+				<br />
+				<textarea rows="4" cols="50" name="comment" form="usrform">
+    Текст повідомлення</textarea>
+				<button type="submit">Відправити</button>
+			</div>
+
+			<button class="contactModal__close">CLOSE</button>
+		</div>
 
 	</div>
 	<script src="js/app.min.js"></script>

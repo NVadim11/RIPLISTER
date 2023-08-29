@@ -6,9 +6,10 @@
   --white-color: #ffffff;
   --heading-color: #4b5563;
   --blue-color: #73b6da;
-
+  --modal-background-color: #FFF3ED;
   --orange-color: #E55738;
-  --transparent-orange-color: rgba(235, 128, 105, 0.5);
+  --orange-border-solid: #EC6041;
+  --orange-border-transparent: rgba(235, 128, 105, 0.5);
 
   // Fonts
 
@@ -173,3 +174,4 @@ body {
 // Підключення стилів окремих сторінок
 @import "main";
 @import "popupMenu";
+@import "contactUs";

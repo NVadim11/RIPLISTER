@@ -67,6 +67,8 @@
     }), 0);
     const menuBtn = document.querySelector(".headerMain__menuBtn");
     const script_menuClose = document.querySelector(".menu__close");
+    const contactBtn = document.querySelector(".footer__contactButton");
+    const contactModalClose = document.querySelector(".contactModal__close");
     if (menuBtn) {
         const menu = document.querySelector(".menu");
         menuBtn.addEventListener("click", (function(e) {
@@ -77,6 +79,18 @@
         const menu = document.querySelector(".menu");
         script_menuClose.addEventListener("click", (function(e) {
             menu.classList.remove("_active");
+        }));
+    }
+    if (contactBtn) {
+        const contactForm = document.querySelector(".contactModal");
+        contactBtn.addEventListener("click", (function(e) {
+            contactForm.classList.add("_active");
+        }));
+    }
+    if (contactModalClose) {
+        const contactForm = document.querySelector(".contactModal");
+        contactModalClose.addEventListener("click", (function(e) {
+            contactForm.classList.remove("_active");
         }));
     }
     window["FLS"] = true;
