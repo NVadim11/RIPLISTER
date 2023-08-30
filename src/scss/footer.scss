@@ -54,6 +54,8 @@
     }
     &__links {
         margin-top: 2.75rem;
+        flex-direction: column;
+        display: flex;
         a {
             margin-bottom: 1.0625rem;
             color: var(--text-color-black);
