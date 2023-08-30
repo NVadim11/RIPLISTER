@@ -325,7 +325,7 @@ h6 {
   margin-top: 2.75rem;
 }
 
-.footer__links li {
+.footer__links a {
   margin-bottom: 1.0625rem;
   color: var(--text-color-black);
   font-size: 0.875rem;
@@ -334,11 +334,11 @@ h6 {
   line-height: normal;
 }
 
-.footer__links li:hover {
+.footer__links a:hover {
   text-decoration: underline;
 }
 
-.footer__links li:last-child {
+.footer__links a:last-child {
   margin-bottom: 0;
 }
 
