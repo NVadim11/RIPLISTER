@@ -7,96 +7,94 @@
         align-items: center;
         text-align: center;
     }
-}
-.footer__logoContainer {
-    margin-top: 3.4375rem;
-}
-.footer__aboutUs {        
-    margin-top: 1.35rem;
-    width: 21.5625rem;
-    p {
-        color: var(--text-color-black);
-        text-align: center;
-        font-size: 0.75rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal; 
+    &__logoContainer {
+        margin-top: 3.4375rem;
     }
-}
-.footer__contactUs {
-    margin-top: 2.8125rem;
-}
-.footer__contactButton {
-    width: 11.875rem;
-    height: 3.4375rem;
-    border-radius: 1.25rem;
-    border: 0.0625rem solid var(--orange-border-transparent);
-    color: var(--text-color-black);
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;    
-}
-.footer__referralProgram {
-    color: var(--orange-color);
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: 0.125rem;    
-    text-transform: uppercase;
-    margin-top: 2.8125rem;
-}
-.footer__referralProgram:hover {
-    text-decoration-line: underline;
-}
-.footer__confedentialPolitics {
-    color: var(--text-color-black);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 2.8125rem;  
-}
-.footer__confedentialPolitics:hover {
-    text-decoration-line: underline;
-}
-.footer__publicOffer {
-    color: var(--text-color-black);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 1.0625rem;
-}
-.footer__publicOffer:hover {
-    text-decoration-line: underline;
-}
-.footer__socialsContainer {
-    width: 10.3125rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 2.5rem;
-    
-}
-.footer__copyright {
-    color: var(--text-color-black);
-    font-size: 0.75rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.075rem;
-    text-align: center;
-    margin-top: 2.3125rem;
-    padding-bottom: 2.5625rem;
-    span {
-        font-size: 0.75rem;
+    &__aboutUs {
+        margin-top: 1.35rem;
+        p {
+            color: var(--text-color-black);
+            text-align: center;
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal; 
+        }
+    }
+    &__contactBtn {
+        margin-top: 2.8125rem;
+        img {
+            margin-right: 0.5625rem;
+        }
+        button {
+            padding: 1.0625rem 0.9375rem;
+            border-radius: 1.25rem;
+            border: 0.0625rem solid var(--orange-border-transparent);
+            color: var(--text-color-black);
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;    
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__referralProgram {
+        color: var(--orange-color);
+        font-size: 1.25rem;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
-        letter-spacing: 0.075rem;
+        letter-spacing: 0.125rem;    
+        text-transform: uppercase;
+        margin-top: 2.8125rem;
+    }
+    &__referralProgram:hover {
+        text-decoration: underline;
+    }
+    &__links {
+        margin-top: 2.75rem;
+        li {
+            margin-bottom: 1.0625rem;
+            color: var(--text-color-black);
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        li:hover {
+            text-decoration: underline;
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__socialsContainer {
+        display: flex;
+        gap: 2.1875rem;
+        justify-content: center;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        margin-top: 2.5rem;
+    }
+    &__copyright {
         color: var(--text-color-black);
-    }    
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.075rem;
+        text-align: center;
+        margin-top: 2.3125rem;
+        padding-bottom: 2.5625rem;
+        span {
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: 0.075rem;
+            color: var(--text-color-black);
+        }
+    }
 }

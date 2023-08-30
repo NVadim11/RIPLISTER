@@ -16,7 +16,7 @@
 	<div class="wrapper">
 		<header class="headerMain">
 			<div class="headerMain__container">
-				<div class="headerMAin__logo">
+				<div class="headerMain__logo">
 					<a href="#" class="header__logo">
 						<img src="img/logo.svg" alt="">
 					</a>
@@ -61,8 +61,8 @@
 						потомков, детей и внуков, которым будет важна история их семьи.
 					</p>
 				</div>
-				<div class="footer__contactUs">
-					<button class="footer__contactButton">
+				<div class="footer__contactBtn">
+					<button class="scroll-lock">
 						<img src="img/letter-icon.svg" alt="letter icon" />
 						Напишіть нам
 					</button>
@@ -70,29 +70,35 @@
 				<div class="footer__referralProgram">
 					<a href="#">РЕФЕРАЛЬНА ПРОГРАМА</a>
 				</div>
-				<div class="footer__confedentialPolitics">
-					<a href="#">Політика конфіденційності</a>
-				</div>
-				<div class="footer__publicOffer">
-					<a href="#">Публічна оферта</a>
-				</div>
-				<div class="footer__socialsContainer">
-					<a href="#" class="instagram-icon">
-						<img src="img/instagram-icon.svg" alt="Instagram icon" />
-					</a>
-					<a href="#" class="facebook-icon">
-						<img src="img/facebook-icon.svg" alt="facebook icon" />
-					</a>
-					<a href="#" class="twitter-icon">
-						<img src="img/twitter-icon.svg" alt="twitter icon" />
-					</a>
-				</div>
-				<div class="footer__copyright">
-					<p>© 2023 <span>RIPLISTER</span>.</p>
-					<p>Всі права захищенні</p>
-				</div>
+				<ul class="footer__links">
+					<li>
+						<a href="#">Політика конфіденційності</a>
+					</li>
+					<li>
+						<a href="#">Публічна оферта</a>
+					</li>
 			</div>
-		</footer>
+			<div class="footer__confedentialPolitics">
+			</div>
+			<div class="footer__publicOffer">
+			</div>
+			<div class="footer__socialsContainer">
+				<a href="#" class="instagram-icon">
+					<img src="img/instagram-icon.svg" alt="Instagram icon" />
+				</a>
+				<a href="#" class="facebook-icon">
+					<img src="img/facebook-icon.svg" alt="facebook icon" />
+				</a>
+				<a href="#" class="twitter-icon">
+					<img src="img/twitter-icon.svg" alt="twitter icon" />
+				</a>
+			</div>
+			<div class="footer__copyright">
+				<p>© 2023 <span>RIPLISTER</span>.</p>
+				<p>Всі права захищенні</p>
+			</div>
+	</div>
+	</footer>
 
 	</div>
 	<!-- <div id="popup" aria-hidden="true" class="popup">
@@ -111,13 +117,15 @@
 		<span></span>
 	</button> -->
 	<div class="menu">
-		<nav class="menu__body">
-			<ul class="menu__list">
-				<li class="menu__item">
-					<a href="#" class="menu__close">CLOSE</a>
-				</li>
-			</ul>
-		</nav>
+		<div class="menu__header">
+			<div class="menu__left">
+
+			</div>
+			<div class="menu__right">
+				<button class="menu__entryBtn"><img src="img/entryBtn.svg" alt="">Войти на сайт</button>
+				<button class="menu__closeBtn"><img src="img/closeBtn.svg" alt=""></button>
+			</div>
+		</div>
 	</div>
 	<!-- </div> -->
 
@@ -145,7 +153,7 @@
 			<button type="submit">Відправити</button>
 		</div>
 
-		<button class="contactModal__close">CLOSE</button>
+		<button class="contactModal__closeBtn">CLOSE</button>
 	</div>
 
 	<script src="js/app.min.js"></script>

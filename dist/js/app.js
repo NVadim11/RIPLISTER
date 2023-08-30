@@ -66,9 +66,9 @@
         }
     }), 0);
     const menuBtn = document.querySelector(".headerMain__menuBtn");
-    const script_menuClose = document.querySelector(".menu__close");
-    const contactBtn = document.querySelector(".footer__contactButton");
-    const contactModalClose = document.querySelector(".contactModal__close");
+    const script_menuClose = document.querySelector(".menu__closeBtn");
+    const contactBtn = document.querySelector(".footer__contactBtn");
+    const contactModalClose = document.querySelector(".contactModal__closeBtn");
     if (menuBtn) {
         const menu = document.querySelector(".menu");
         menuBtn.addEventListener("click", (function(e) {

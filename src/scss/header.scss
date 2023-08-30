@@ -52,11 +52,17 @@
 */
 // header-main
 .headerMain {
-	padding: 16px 8px;
+	padding: 0 0.5rem;
 	background-color: transparent;
+	height: 5rem;
 	&__container {
 		display: flex;
 		justify-content: space-between;
+		height: 100%;
+		align-items: center;
+	}
+	&__logo {
+
 	}
 	&__menuBtn {
 		button {

@@ -6,9 +6,9 @@ import { flsModules } from "./modules.js";
 // Constants
 
 const menuBtn = document.querySelector('.headerMain__menuBtn');
-const menuClose = document.querySelector('.menu__close');
-const contactBtn = document.querySelector(".footer__contactButton");
-const contactModalClose = document.querySelector(".contactModal__close");
+const menuClose = document.querySelector('.menu__closeBtn');
+const contactBtn = document.querySelector(".footer__contactBtn");
+const contactModalClose = document.querySelector(".contactModal__closeBtn");
 
 // Burger menu
 if (menuBtn) {

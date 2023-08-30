@@ -201,8 +201,9 @@ h6 {
 */
 
 .headerMain {
-  padding: 16px 8px;
+  padding: 0 0.5rem;
   background-color: transparent;
+  height: 5rem;
 }
 
 .headerMain__container {
@@ -212,6 +213,10 @@ h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .headerMain__menuBtn button {
@@ -227,18 +232,6 @@ h6 {
 
 .headerMain__menuBtn img {
   margin: 0 0.5rem 0 0;
-}
-
-.wrapper {
-  background-color: grey;
-  min-height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .footer {
@@ -266,7 +259,6 @@ h6 {
 
 .footer__aboutUs {
   margin-top: 1.35rem;
-  width: 21.5625rem;
 }
 
 .footer__aboutUs p {
@@ -278,13 +270,16 @@ h6 {
   line-height: normal;
 }
 
-.footer__contactUs {
+.footer__contactBtn {
   margin-top: 2.8125rem;
 }
 
-.footer__contactButton {
-  width: 11.875rem;
-  height: 3.4375rem;
+.footer__contactBtn img {
+  margin-right: 0.5625rem;
+}
+
+.footer__contactBtn button {
+  padding: 1.0625rem 0.9375rem;
   border-radius: 1.25rem;
   border: 0.0625rem solid var(--orange-border-transparent);
   color: var(--text-color-black);
@@ -292,6 +287,12 @@ h6 {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .footer__referralProgram {
@@ -306,47 +307,43 @@ h6 {
 }
 
 .footer__referralProgram:hover {
-  text-decoration-line: underline;
+  text-decoration: underline;
 }
 
-.footer__confedentialPolitics {
+.footer__links {
+  margin-top: 2.75rem;
+}
+
+.footer__links li {
+  margin-bottom: 1.0625rem;
   color: var(--text-color-black);
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 2.8125rem;
 }
 
-.footer__confedentialPolitics:hover {
-  text-decoration-line: underline;
+.footer__links li:hover {
+  text-decoration: underline;
 }
 
-.footer__publicOffer {
-  color: var(--text-color-black);
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-top: 1.0625rem;
-}
-
-.footer__publicOffer:hover {
-  text-decoration-line: underline;
+.footer__links li:last-child {
+  margin-bottom: 0;
 }
 
 .footer__socialsContainer {
-  width: 10.3125rem;
-  height: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
+  display: flex;
+  gap: 2.1875rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 2rem;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   margin-top: 2.5rem;
 }
 
@@ -420,23 +417,82 @@ h6 {
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 }
 
+.wrapper {
+  background-color: grey;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .menu {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 100px 30px 30px 30px;
-  -webkit-transition: left 0.3s ease 0s;
-  transition: left 0.3s ease 0s;
+  background: -webkit-gradient(linear, left bottom, left top, from(#FFF), to(#FFF)), rgba(18, 4, 1, 0.4);
+  background: linear-gradient(0deg, #FFF 0%, #FFF 100%), rgba(18, 4, 1, 0.4);
+  -webkit-transition: left 0.25s ease 0s;
+  transition: left 0.25s ease 0s;
   -webkit-transform: translate(-100%, 0px);
       -ms-transform: translate(-100%, 0px);
           transform: translate(-100%, 0px);
 }
 
-.menu__close {
-  color: white;
+.menu__header {
+  height: 5rem;
+  padding: 0 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__entryBtn {
+  border-radius: 1.125rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
+  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+  color: var(--white-color);
+  padding: 0.75rem 0.8125rem;
+  color: #FFF;
+  font-family: Segaon;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__entryBtn img {
+  margin-right: 0.4375rem;
+}
+
+.menu__closeBtn {
+  padding: 1.375rem;
 }
 
 .menu._active {
@@ -497,7 +553,7 @@ h6 {
   border-radius: 2.5rem;
 }
 
-.contactModal__close {
+.contactModal__closeBtn {
   padding: 0.9375rem;
   background-color: white;
   border: 1px solid;
