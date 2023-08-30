@@ -169,9 +169,10 @@ body {
 
 // Підключення стилів окремих блоків
 @import "header";
+@import "main";
 @import "footer";
 
 // Підключення стилів окремих сторінок
-@import "main";
+@import "mainCover";
 @import "popupMenu";
 @import "contactUs";
