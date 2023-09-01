@@ -27,18 +27,36 @@
 			</div>
 		</header>
 		<main class="main">
-			<div class="main__container">
-				<section class="main__cover">
-					<div class="main__titleSection">
-						<h2>Створи сторінку пам'яті
-							для того хто тобі дуже дорогий</h2>
-						<p>Людина жива, поки її пам'ятаютью,
-							а ми можимо зробити зараз дещо на вічну память</p>
-						<button class="titleBtn">Створити сторінку пам'яті</button>
-					</div>
-				</section>
+			<section class="mainCover">
+				<div class="mainCover__Title">
+					<h2>Створи сторінку пам'яті
+						для того хто тобі дуже дорогий</h2>
+					<p>Людина жива, поки її пам'ятаютью,
+						а ми можимо зробити зараз дещо на вічну память</p>
+					<button class="titleBtn">Створити сторінку пам'яті</button>
+				</div>
+				<div class="mainCover__searchSection">
+					<form action="">
+						<div class="mainCover__searchType">
+							<label for="searchType">
+								<p>Пошук:</p>
+							</label>
+							<span>Людина</span>
+							<input type="radio" checked="true" name="search_type">
+							<span>Кладовище</span>
+							<input type="radio" name="search_type">
+						</div>
+						<div class="mainCover__searchForm">
+							<input type="text" name="secondName" id="secondName" placeholder="Прізвище">
+							<input type="text" name="firstName" id="firstName" placeholder="Ім'я">
+							<input type="date" name="birthDate" id="birthDate" placeholder="Дата народження" />
+							<input type="date" name="deathDate" id="deathDate" placeholder="Дата смерті" />
+							<input type="text" name="burialPlace" id="burialPlace" placeholder="Місце поховання">
+						</div>
+					</form>
+				</div>
+			</section>
 
-			</div>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -93,21 +111,6 @@
 		</footer>
 
 	</div>
-	<!-- <div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
-			</div>
-		</div>
-	</div>
-</div> -->
-
-	<!-- <div class="header__menu menu"> -->
-	<!-- <button type="button" class="menu__icon icon-menu">
-		<span></span>
-	</button> -->
 	<div class="menu">
 		<div class="menu__header">
 			<div class="menu__left">
@@ -119,8 +122,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- </div> -->
-
 	<div class="contactModal">
 		<span>Напишіть нам</span>
 		<p>Співробітник нашої служби підтримки відповість якомога швидше.</p>

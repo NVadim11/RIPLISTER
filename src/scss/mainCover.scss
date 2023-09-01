@@ -1,30 +1,30 @@
-.main__cover {  
+.mainCover {  
     display: flex;  
     flex: 1 1 auto;
     color: var(--white-color);
     align-items: center;
     text-align: center;
     flex-direction: column;
-}
-.main__titleSection {
-    h2 {
-        color: var(--white-color);
-        text-align: center;
-        font-size: 2.25rem;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 110%;
-        padding: 7.5rem 0.625rem 0;
-    }
-    p {
-        text-align: center;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 400;
+    &__Title {
+        h2 {
+            color: var(--white-color);
+            text-align: center;
+            font-size: 2.25rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 110%;
+            padding: 7.5rem 0.625rem 0;
+        }
+        p {
+            text-align: center;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
         line-height: normal;
         padding: 0.75rem 0.625rem 0;
     }
     button {
+        margin-top: 2.8125rem;
         padding: 1rem 2.125rem;
         color: var(--white-color);
         font-size: 1.125rem;
@@ -33,6 +33,45 @@
         line-height: normal;
         border-radius: 1.25rem;
         background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+        }    
     }
-    
+    &__searchSection {
+        padding: 5.9375rem 0.625rem 0;
+        form {
+            border-radius: 20px;
+            background: #FFF3ED;
+        }  
+    }
+    &__searchType {
+        display: flex;
+        padding: 1.875rem 2.5rem 0;
+        p {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            color: var(--text-color-black);
+        } 
+        span {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: var(--text-color-black);
+        }         
+    }
+    &__searchForm {
+        margin-top: 1.5625rem;
+        display: flex;  
+        flex: 1 1 auto;
+        width: 100%;
+        align-items:center;
+        text-align: center;
+        flex-direction: column;     
+        input {
+            border-radius: 1.25rem;
+            border: 1px solid var(--orange-border-solid);
+            background: var(--white-color);
+        }   
+    }
 }

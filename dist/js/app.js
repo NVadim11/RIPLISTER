@@ -56,6 +56,12 @@
             if (bodyLockStatus && e.target.closest(".scroll-lock")) bodyLockToggle();
         }));
     }
+    function menuOpen() {
+        bodyLock();
+    }
+    function functions_menuClose() {
+        bodyUnlock();
+    }
     let addWindowScrollEvent = false;
     setTimeout((() => {
         if (addWindowScrollEvent) {
@@ -66,31 +72,35 @@
         }
     }), 0);
     const menuBtn = document.querySelector(".headerMain__menuBtn");
-    const script_menuClose = document.querySelector(".menu__closeBtn");
+    const menuCloseBtn = document.querySelector(".menu__closeBtn");
     const contactBtn = document.querySelector(".footer__contactBtn");
     const contactModalClose = document.querySelector(".contactModal__closeBtn");
     if (menuBtn) {
         const menu = document.querySelector(".menu");
         menuBtn.addEventListener("click", (function(e) {
             menu.classList.add("_active");
+            menuOpen();
         }));
     }
-    if (script_menuClose) {
+    if (menuCloseBtn) {
         const menu = document.querySelector(".menu");
-        script_menuClose.addEventListener("click", (function(e) {
+        menuCloseBtn.addEventListener("click", (function(e) {
             menu.classList.remove("_active");
+            functions_menuClose();
         }));
     }
     if (contactBtn) {
         const contactForm = document.querySelector(".contactModal");
         contactBtn.addEventListener("click", (function(e) {
             contactForm.classList.add("_active");
+            menuOpen();
         }));
     }
     if (contactModalClose) {
         const contactForm = document.querySelector(".contactModal");
         contactModalClose.addEventListener("click", (function(e) {
             contactForm.classList.remove("_active");
+            functions_menuClose();
         }));
     }
     window["FLS"] = true;
