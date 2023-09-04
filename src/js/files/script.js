@@ -1,7 +1,6 @@
 // Підключення функціоналу "Чертоги Фрілансера"
-import { menuOpen, menuClose } from "./functions.js";
+import { menuClose, menuOpen } from "./functions.js"
 // Підключення списку активних модулів
-import { flsModules } from "./modules.js";
 
 // Constants
 
