@@ -51,6 +51,7 @@
             font-weight: 600;
             line-height: normal;
             color: var(--text-color-black);
+            margin-right: 0.5rem;
         } 
         span {
             font-size: 16px;
@@ -58,7 +59,39 @@
             font-weight: 400;
             line-height: normal;
             color: var(--text-color-black);
-        }         
+            margin-left: 0.3125rem;
+            margin-right: 0.75rem;
+        } 
+        input[type='radio']:after {
+            appearance: none;
+            width: 0.9375rem;
+            height: 0.9375rem;
+            border-radius: 0.9375rem;
+            top: 0.125rem;
+            left: -0.0625rem;
+            position: relative;
+            background-color: var(--white-color);
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 0.0625rem solid var(--text-color-black);
+}
+        input[type='radio']:checked:after {
+            appearance: none;
+            width: 0.9375rem;
+            height: 0.9375rem;
+            border-radius: 0.9375rem;
+            top: 0.125rem;
+            left: -0.0625rem;
+            position: relative;
+            background-color: var(--orange-standart);
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 0.1875rem solid var(--white-color);
+            outline: 1px solid var(--orange-standart);
+
+        }     
     }
     &__searchForm {
         margin-top: 0.9375rem;
@@ -76,12 +109,17 @@
                 padding: 1.5625rem 1rem 1.0625rem 1.0625rem;                
             }
             input {
+                min-width: 19.625rem;
                 margin-top: 0.625rem;
                 padding: 1.0625rem 0 1.0625rem 3.375rem;
                 border-radius: 1.25rem;
                 border: 1px solid var(--orange-border-solid);
                 background: var(--white-color);                
-            }   
+            }
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                position: absolute;
+                left: 5%;
+            }
         }        
     }
     &__searchBtn {
@@ -90,7 +128,7 @@
             background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
             margin: 0.9375rem 1.25rem 1.875rem;
             min-width: 19.625rem;
-            padding: 0 1.25rem 0;
+            padding: 0 6.25rem 0;
             display: flex;
             align-items: center;
             font-size: 1.125rem;
@@ -98,6 +136,9 @@
             font-weight: 700;
             line-height: normal;
             color: var(--white-color);
+            span {
+                
+            }
         }
         img {
             padding: 1rem 0.625rem 1rem;

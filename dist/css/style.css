@@ -9,6 +9,7 @@
   --modal-background-color: #FFF3ED;
   --orange-color: #E55738;
   --orange-border-solid: #EC6041;
+  --orange-standart: #DB4A2A;
   --orange-border-transparent: rgba(235, 128, 105, 0.5);
   --fw-400: 400;
   --ff: "Manrope";
@@ -459,6 +460,7 @@ h6 {
   font-weight: 600;
   line-height: normal;
   color: var(--text-color-black);
+  margin-right: 0.5rem;
 }
 
 .mainCover__searchType span {
@@ -467,6 +469,43 @@ h6 {
   font-weight: 400;
   line-height: normal;
   color: var(--text-color-black);
+  margin-left: 0.3125rem;
+  margin-right: 0.75rem;
+}
+
+.mainCover__searchType input[type=radio]:after {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 0.9375rem;
+  top: 0.125rem;
+  left: -0.0625rem;
+  position: relative;
+  background-color: var(--white-color);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 0.0625rem solid var(--text-color-black);
+}
+
+.mainCover__searchType input[type=radio]:checked:after {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 0.9375rem;
+  top: 0.125rem;
+  left: -0.0625rem;
+  position: relative;
+  background-color: var(--orange-standart);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 0.1875rem solid var(--white-color);
+  outline: 1px solid var(--orange-standart);
 }
 
 .mainCover__searchForm {
@@ -501,11 +540,17 @@ h6 {
 }
 
 .mainCover__searchForm__inputBox input {
+  min-width: 19.625rem;
   margin-top: 0.625rem;
   padding: 1.0625rem 0 1.0625rem 3.375rem;
   border-radius: 1.25rem;
   border: 1px solid var(--orange-border-solid);
   background: var(--white-color);
+}
+
+.mainCover__searchForm__inputBox input[type=date]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 5%;
 }
 
 .mainCover__searchBtn button {
@@ -514,7 +559,7 @@ h6 {
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
   margin: 0.9375rem 1.25rem 1.875rem;
   min-width: 19.625rem;
-  padding: 0 1.25rem 0;
+  padding: 0 6.25rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -611,12 +656,12 @@ h6 {
   width: 100%;
   height: 100%;
   background-color: var(--modal-background-color);
-  padding: 100px 30px 30px 30px;
+  padding: 6.25rem 1.875rem 1.875rem 1.875rem;
   -webkit-transition: left 0.3s ease 0s;
   transition: left 0.3s ease 0s;
-  -webkit-transform: translate(-100%, 0px);
-      -ms-transform: translate(-100%, 0px);
-          transform: translate(-100%, 0px);
+  -webkit-transform: translate(-120%, 0px);
+      -ms-transform: translate(-120%, 0px);
+          transform: translate(-120%, 0px);
 }
 
 .contactModal__close {
@@ -641,9 +686,9 @@ h6 {
 }
 
 .contactModal._active {
-  -webkit-transform: translate(0px, 0px);
-      -ms-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
+  -webkit-transform: translate(0rem, 0rem);
+      -ms-transform: translate(0rem, 0rem);
+          transform: translate(0rem, 0rem);
 }
 
 .contactModal__formContainer {
@@ -652,14 +697,14 @@ h6 {
 
 .contactModal__formContainer input {
   border: 0.0625rem solid var(--orange-border-solid);
-  background: #FFF;
+  background: var(--white-color);
   border-radius: 2.5rem;
 }
 
 .contactModal__closeBtn {
   padding: 0.9375rem;
-  background-color: white;
-  border: 1px solid;
+  background-color: var(--white-color);
+  border: 0.0625rem solid;
   margin: 1.25rem;
 }
 
