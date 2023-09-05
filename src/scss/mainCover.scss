@@ -105,6 +105,7 @@
             position: relative;
             align-items: center;
             img {
+                // display: none;
                 position: absolute;
                 padding: 1.5625rem 1rem 1.0625rem 1.0625rem;                
             }
@@ -116,11 +117,17 @@
                 border: 1px solid var(--orange-border-solid);
                 background: var(--white-color);                
             }
-            input[type="date"]::-webkit-calendar-picker-indicator {
+            input[class="datePicker"]::-webkit-calendar-picker-indicator {
                 position: absolute;
-                left: 5%;
+                background-image: url("img/input-icon2.svg");
+                background-size: 150%;
+                background-position-x: center;
+                background-position-y: center;
+                opacity: 0.1;
+                left: 1.1563rem;
+                top: 1.6563rem;
             }
-        }        
+        }
     }
     &__searchBtn {
         button {
@@ -136,13 +143,9 @@
             font-weight: 700;
             line-height: normal;
             color: var(--white-color);
-            span {
-                
-            }
         }
         img {
             padding: 1rem 0.625rem 1rem;
-
         }      
     }
 }

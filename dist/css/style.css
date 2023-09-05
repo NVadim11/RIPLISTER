@@ -548,9 +548,15 @@ h6 {
   background: var(--white-color);
 }
 
-.mainCover__searchForm__inputBox input[type=date]::-webkit-calendar-picker-indicator {
+.mainCover__searchForm__inputBox input[class=datePicker]::-webkit-calendar-picker-indicator {
   position: absolute;
-  left: 5%;
+  background-image: url("img/input-icon2.svg");
+  background-size: 150%;
+  background-position-x: center;
+  background-position-y: center;
+  opacity: 0.1;
+  left: 1.1563rem;
+  top: 1.6563rem;
 }
 
 .mainCover__searchBtn button {

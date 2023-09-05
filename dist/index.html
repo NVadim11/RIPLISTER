@@ -49,23 +49,23 @@
 						<div class="mainCover__searchForm">
 							<div class="mainCover__searchForm__inputBox">
 								<img src="img/input-icon1.svg" alt="">
-								<input type="text" name="secondName" id="secondName" placeholder="Прізвище">
+								<input type="text" name="secondName" id="secondName" placeholder="Прізвище" required>
 							</div>
 							<div class="mainCover__searchForm__inputBox">
 								<img src="img/input-icon1.svg" alt="">
-								<input type="text" name="firstName" id="firstName" placeholder="Ім'я">
+								<input type="text" name="firstName" id="firstName" placeholder="Ім'я" required>
 							</div>
 							<div class="mainCover__searchForm__inputBox">
 								<img src="img/input-icon2.svg" alt="">
-								<input type="date" name="birthDate" id="birthDate" placeholder="Дата народження" />
+								<input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="birthDate" id="birthDate" placeholder="Дата народження" required />
 							</div>
 							<div class="mainCover__searchForm__inputBox">
 								<img src="img/input-icon2.svg" alt="">
-								<input type="date" name="deathDate" id="deathDate" placeholder="Дата смерті" />
+								<input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="deathDate" id="deathDate" placeholder="Дата смерті" required />
 							</div>
 							<div class="mainCover__searchForm__inputBox">
 								<img src="img/input-icon3.svg" alt="">
-								<input type="text" name="burialPlace" id="burialPlace" placeholder="Місце поховання">
+								<input type="text" name="burialPlace" id="burialPlace" placeholder="Місце поховання" required>
 							</div>
 							<div class="mainCover__searchBtn">
 								<button>
