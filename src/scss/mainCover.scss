@@ -35,7 +35,7 @@
         background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
         }    
     }
-    &__searchSection {
+    &__form {
         padding: 5.9375rem 0.625rem 0;
         form {
             border-radius: 20px;
@@ -100,8 +100,9 @@
         width: 100%;
         align-items:center;
         text-align: center;
-        flex-direction: column;     
-        &__inputBox {
+        flex-direction: column;
+    }
+    &__searchInput {
             position: relative;
             align-items: center;
             img {
@@ -128,7 +129,6 @@
                 top: 1.6563rem;
             }
         }
-    }
     &__searchBtn {
         button {
             border-radius: 1.25rem;

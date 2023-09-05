@@ -438,11 +438,11 @@ h6 {
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 }
 
-.mainCover__searchSection {
+.mainCover__form {
   padding: 5.9375rem 0.625rem 0;
 }
 
-.mainCover__searchSection form {
+.mainCover__form form {
   border-radius: 20px;
   background: #FFF3ED;
 }
@@ -527,19 +527,19 @@ h6 {
           flex-direction: column;
 }
 
-.mainCover__searchForm__inputBox {
+.mainCover__searchInput {
   position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.mainCover__searchForm__inputBox img {
+.mainCover__searchInput img {
   position: absolute;
   padding: 1.5625rem 1rem 1.0625rem 1.0625rem;
 }
 
-.mainCover__searchForm__inputBox input {
+.mainCover__searchInput input {
   min-width: 19.625rem;
   margin-top: 0.625rem;
   padding: 1.0625rem 0 1.0625rem 3.375rem;
@@ -548,7 +548,7 @@ h6 {
   background: var(--white-color);
 }
 
-.mainCover__searchForm__inputBox input[class=datePicker]::-webkit-calendar-picker-indicator {
+.mainCover__searchInput input[class=datePicker]::-webkit-calendar-picker-indicator {
   position: absolute;
   background-image: url("img/input-icon2.svg");
   background-size: 150%;

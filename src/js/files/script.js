@@ -3,7 +3,6 @@ import { menuClose, menuOpen } from "./functions.js"
 // Підключення списку активних модулів
 
 // Constants
-
 const menuBtn = document.querySelector('.headerMain__menuBtn');
 const menuCloseBtn = document.querySelector('.menu__closeBtn');
 const contactBtn = document.querySelector(".footer__contactBtn");
@@ -13,7 +12,7 @@ const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
 const radioBtnHumanText = document.querySelector(".searchType_human")
 const radioBtnCemeteryText = document.querySelector(".searchType_cemetery")
 
-// Burger menu
+// Burger menu modal open
 if (menuBtn) {
     const menu = document.querySelector('.menu');
     menuBtn.addEventListener("click", function(e) {
@@ -29,7 +28,7 @@ if (menuCloseBtn) {
     });
 }
 
-// Contact us 
+// Contact us modal open
 if (contactBtn) {
     const contactForm = document.querySelector(".contactModal");
     contactBtn.addEventListener("click", function(e) {
