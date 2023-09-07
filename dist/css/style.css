@@ -3,13 +3,13 @@
 :root {
   --text-color-black: #171717;
   --text-color-black-sec: #000000;
+  --text-color-underline: rgba(0, 0, 0, 0.3);
   --white-color: #ffffff;
   --heading-color: #4b5563;
   --blue-color: #73b6da;
   --modal-background-color: #FFF3ED;
   --orange-color: #E55738;
-  --orange-border-solid: #EC6041;
-  --orange-standart: #DB4A2A;
+  --orange-color-underline: rgba(229, 87, 56, 0.3);
   --orange-border-transparent: rgba(235, 128, 105, 0.5);
   --fw-400: 400;
 }
@@ -300,7 +300,10 @@ h6 {
   padding: 0 0.5rem;
   background-color: transparent;
   height: 4.75rem;
+<<<<<<< HEAD
   z-index: 100;
+=======
+>>>>>>> e3b257d0f9b6bcd8eef4908a6a0681bf7edff9ed
 }
 
 .headerMain__container {
@@ -350,15 +353,15 @@ h6 {
   text-align: center;
 }
 
-.footer__logoContainer {
+.footer__logo {
   margin-top: 3.4375rem;
 }
 
-.footer__aboutUs {
+.footer__about {
   margin-top: 1.35rem;
 }
 
-.footer__aboutUs p {
+.footer__about p {
   color: var(--text-color-black);
   text-align: center;
   font-size: 0.75rem;
@@ -367,15 +370,15 @@ h6 {
   line-height: normal;
 }
 
-.footer__contactBtn {
+.footer__contact {
   margin-top: 2.8125rem;
 }
 
-.footer__contactBtn img {
+.footer__contact img {
   margin-right: 0.5625rem;
 }
 
-.footer__contactBtn button {
+.footer__contact button {
   padding: 1.0625rem 0.9375rem;
   border-radius: 1.25rem;
   border: 0.0625rem solid var(--orange-border-transparent);
@@ -392,7 +395,7 @@ h6 {
           align-items: center;
 }
 
-.footer__referralProgram {
+.footer__ref {
   color: var(--orange-color);
   font-size: 1.25rem;
   font-style: normal;
@@ -400,42 +403,51 @@ h6 {
   line-height: normal;
   letter-spacing: 0.125rem;
   text-transform: uppercase;
-  margin-top: 2.8125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1.1875rem 0 0 0;
 }
 
-.footer__referralProgram:hover {
+.footer__ref a {
+  padding: 1.625rem 0;
+}
+
+.footer__ref:hover {
   text-decoration: underline;
 }
 
 .footer__links {
-  margin-top: 2.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.75rem 0 0 0;
 }
 
 .footer__links a {
-  margin-bottom: 1.0625rem;
   color: var(--text-color-black);
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  padding: 0.5625rem 0;
 }
 
 .footer__links a:hover {
   text-decoration: underline;
 }
 
-.footer__links a:last-child {
-  margin-bottom: 0;
-}
-
-.footer__socialsContainer {
+.footer__socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -729,7 +741,7 @@ h6 {
 }
 
 .menu__header {
-  height: 5rem;
+  height: 4.75rem;
   padding: 0 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -740,6 +752,22 @@ h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.menu__langBtn {
+  border-radius: 1.125rem;
+  border: 1px solid #AAA;
+  padding: 0.8125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__langBtn span {
+  padding: 0 0.3125rem;
 }
 
 .menu__right {
@@ -779,10 +807,141 @@ h6 {
   padding: 1.375rem;
 }
 
+.menu__nav {
+  margin: 1.5rem 0 0 0;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__list-item {
+  color: var(--text-color-black-sec);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.1rem;
+  text-decoration: underline;
+  text-transform: uppercase;
+  text-decoration-color: var(--text-color-underline);
+}
+
+.menu__list-item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 0;
+}
+
+.menu__ref {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.6px;
+  text-decoration: underline;
+  text-decoration-color: var(--orange-color-underline);
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: var(--orange-color);
+}
+
+.menu__ref a {
+  padding: 1.625rem 0;
+}
+
+.menu__contact {
+  color: var(--text-color-black-sec);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0.875rem 0 0 0;
+}
+
+.menu__contact img {
+  margin-right: 0.5625rem;
+}
+
+.menu__contact button {
+  border: 0.0625rem solid;
+  border-color: var(--orange-border-transparent);
+  border-radius: 1.25rem;
+  padding: 1.0625rem 0.9375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__links {
+  margin: 0.75rem 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: underline;
+  text-decoration-color: var(--text-color-underline);
+}
+
+.menu__links a {
+  padding: 0.5625rem 0;
+}
+
+.menu__socials {
+  margin: 2.4375rem 0 2.3125rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2.1875rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 2rem;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .menu._active {
   -webkit-transform: translate(0px, 0px);
       -ms-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
+  overflow-x: auto;
 }
 
 .contactModal {
