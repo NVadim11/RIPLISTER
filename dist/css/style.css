@@ -293,65 +293,14 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: grey;
+  background-color: var(--white-color);
 }
-
-/*
-.icon-menu {
-	display: none;
-	@media (max-width: $mobile) {
-		display: block;
-		position: relative;
-		width: toRem(30);
-		height: toRem(18);
-		z-index: 5;
-		@media (any-hover: none) {
-			cursor: default;
-		}
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: toRem(2);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - toRem(1));
-		}
-		.menu-open & {
-			span {
-				width: 0;
-			}
-			&::before,
-			&::after {
-			}
-			&::before {
-				top: calc(50% - toRem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - toRem(1));
-				transform: rotate(45deg);
-			}
-		}
-	}
-}
-*/
 
 .headerMain {
   padding: 0 0.5rem;
   background-color: transparent;
-  height: 5rem;
+  height: 4.75rem;
+  z-index: 100;
 }
 
 .headerMain__container {
@@ -541,6 +490,10 @@ h6 {
           flex-direction: column;
 }
 
+.mainCover__Title {
+  z-index: 100;
+}
+
 .mainCover__Title h2 {
   color: var(--white-color);
   text-align: center;
@@ -573,7 +526,29 @@ h6 {
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 }
 
+.mainCover__backgroundImg {
+  position: relative;
+  top: -4.75rem;
+}
+
+.mainCover__backgroundImg img {
+  size: cover;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+}
+
 .mainCover__form {
+  z-index: 100;
   padding: 5.9375rem 0.625rem 0;
 }
 
@@ -716,6 +691,26 @@ h6 {
 
 .mainCover__searchBtn img {
   padding: 1rem 0.625rem 1rem;
+}
+
+.mainCover__benefits h2 {
+  color: var(--text-color-black);
+  text-align: center;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  margin-top: 2.8125rem;
+}
+
+.mainCover__benefits p {
+  color: var(--text-color-black);
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 1.5625rem;
 }
 
 .menu {
