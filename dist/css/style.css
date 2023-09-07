@@ -300,10 +300,7 @@ h6 {
   padding: 0 0.5rem;
   background-color: transparent;
   height: 4.75rem;
-<<<<<<< HEAD
-  z-index: 100;
-=======
->>>>>>> e3b257d0f9b6bcd8eef4908a6a0681bf7edff9ed
+  z-index: 5;
 }
 
 .headerMain__container {
@@ -359,6 +356,7 @@ h6 {
 
 .footer__about {
   margin-top: 1.35rem;
+  padding: 0 0.9375rem;
 }
 
 .footer__about p {
@@ -413,7 +411,7 @@ h6 {
 }
 
 .footer__ref a {
-  padding: 1.625rem 0;
+  padding: 1.625rem;
 }
 
 .footer__ref:hover {
@@ -440,7 +438,7 @@ h6 {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 0.5625rem 0;
+  padding: 0.5625rem;
 }
 
 .footer__links a:hover {
@@ -503,7 +501,7 @@ h6 {
 }
 
 .mainCover__Title {
-  z-index: 100;
+  z-index: 5;
 }
 
 .mainCover__Title h2 {
@@ -560,7 +558,7 @@ h6 {
 }
 
 .mainCover__form {
-  z-index: 100;
+  z-index: 5;
   padding: 5.9375rem 0.625rem 0;
 }
 
@@ -705,6 +703,10 @@ h6 {
   padding: 1rem 0.625rem 1rem;
 }
 
+.mainCover__benefits {
+  padding: 0 0.625rem;
+}
+
 .mainCover__benefits h2 {
   color: var(--text-color-black);
   text-align: center;
@@ -726,6 +728,7 @@ h6 {
 }
 
 .menu {
+  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
@@ -831,7 +834,6 @@ h6 {
   font-weight: 600;
   line-height: normal;
   letter-spacing: 0.1rem;
-  text-decoration: underline;
   text-transform: uppercase;
   text-decoration-color: var(--text-color-underline);
 }
@@ -840,7 +842,11 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 1rem 0;
+  padding: 1rem;
+}
+
+.menu__list-item a:hover {
+  text-decoration: underline;
 }
 
 .menu__ref {
@@ -849,7 +855,6 @@ h6 {
   font-weight: 600;
   line-height: normal;
   letter-spacing: 1.6px;
-  text-decoration: underline;
   text-decoration-color: var(--orange-color-underline);
   text-transform: uppercase;
   display: -webkit-box;
@@ -862,7 +867,11 @@ h6 {
 }
 
 .menu__ref a {
-  padding: 1.625rem 0;
+  padding: 1.625rem;
+}
+
+.menu__ref a:hover {
+  text-decoration: underline;
 }
 
 .menu__contact {
@@ -913,12 +922,15 @@ h6 {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  text-decoration: underline;
   text-decoration-color: var(--text-color-underline);
 }
 
 .menu__links a {
-  padding: 0.5625rem 0;
+  padding: 0.5625rem;
+}
+
+.menu__links a:hover {
+  text-decoration: underline;
 }
 
 .menu__socials {

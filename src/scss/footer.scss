@@ -12,6 +12,7 @@
     }
     &__about {
         margin-top: 1.35rem;
+        padding: 0 0.9375rem;
         p {
             color: var(--text-color-black);
             text-align: center;
@@ -51,7 +52,7 @@
         justify-content: center;
         margin: 1.1875rem 0 0 0;
         a {
-            padding: 1.625rem 0;
+            padding: 1.625rem;
         }
     }
     &__ref:hover {
@@ -68,7 +69,7 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
-            padding: 0.5625rem 0;
+            padding: 0.5625rem;
         }
         a:hover {
             text-decoration: underline;

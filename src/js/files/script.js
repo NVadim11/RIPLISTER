@@ -5,7 +5,7 @@ import { menuClose, menuOpen } from "./functions.js"
 // Constants
 const menuBtn = document.querySelector('.headerMain__menuBtn');
 const menuCloseBtn = document.querySelector('.menu__closeBtn');
-const contactBtn = document.querySelector(".footer__contactBtn");
+const contactBtn = document.querySelector(".footer__contact");
 const contactModalClose = document.querySelector(".contactModal__closeBtn");
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
