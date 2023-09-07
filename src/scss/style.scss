@@ -2,17 +2,19 @@
 :root {
   --text-color-black: #171717;
   --text-color-black-sec: #000000;
+  --text-color-underline: rgba(0, 0, 0, 0.3);
 
   --white-color: #ffffff;
   --heading-color: #4b5563;
   --blue-color: #73b6da;
   --modal-background-color: #FFF3ED;
+
   --orange-color: #E55738;
-  --orange-border-solid: #EC6041;
-	--orange-standart: #DB4A2A;
+  --orange-color-underline: rgba(229, 87, 56, 0.3);
+
   --orange-border-transparent: rgba(235, 128, 105, 0.5);
 
-  // Fonts
+  // Font-weight
 
   --fw-400: 400;
 }

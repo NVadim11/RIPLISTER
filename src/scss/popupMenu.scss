@@ -17,6 +17,16 @@
     &__left {
 
     }
+    &__langBtn {
+        border-radius: 1.125rem;
+        border: 1px solid #AAA;
+        padding: 0.8125rem;
+        display: flex;
+        align-items: center;
+        span {
+            padding: 0 0.3125rem;
+        }
+    }
     &__right {
         display: flex;
         align-items: center;
@@ -50,24 +60,83 @@
         align-items: center;
     }
     &__list-item {
-        text-transform: uppercase;
         color: var(--text-color-black-sec);
         font-size: 1rem;
-        display: flex;
-        align-items: center;
-        padding: 1rem 0;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.1rem;
+        text-decoration: underline;
+        text-transform: uppercase;
+        text-decoration-color: var(--text-color-underline);
+        a {
+            display: flex;
+            padding: 1rem 0;
+        }
     }
     &__ref {
-
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 1.6px;
+        text-decoration: underline;
+        text-decoration-color: var(--orange-color-underline);
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        color: var(--orange-color);
+        a {
+            padding: 1.625rem 0;
+        }
     }
     &__contact {
-
+        color: var(--text-color-black-sec);
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        display: flex;
+        justify-content: center;
+        margin: 0.875rem 0 0 0;
+        img {
+            margin-right: 0.5625rem;
+        }
+        button {
+            border: 0.0625rem solid;
+            border-color: var( --orange-border-transparent);
+            border-radius: 1.25rem;
+            padding: 1.0625rem 0.9375rem;
+            display: flex;
+            align-items: center;
+        }
     }
     &__links {
-
+        margin: 0.75rem 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: underline;
+        text-decoration-color: var(--text-color-underline);
+        a {
+            padding: 0.5625rem 0;
+        }
+    }
+    &__socials {
+        margin: 2.4375rem 0 2.3125rem 0;
+        display: flex;
+        gap: 2.1875rem;
+        justify-content: center;
+        height: 2rem;
+        display: flex;
+        align-items: center;
     }
 }
 .menu._active {
     transform: translate(0px,0px);
-    
+    overflow-x: auto;
 }
