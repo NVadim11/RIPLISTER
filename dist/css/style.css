@@ -727,6 +727,66 @@ h6 {
   margin-top: 1.5625rem;
 }
 
+.mainCover__slider {
+  margin-top: 4.0625rem;
+  height: 9.375rem;
+  width: 18.75rem;
+  border-radius: 20px;
+  background: #FFF3ED;
+  -webkit-box-shadow: 0px 19px 29px 4px rgba(78, 54, 48, 0.3);
+          box-shadow: 0px 19px 29px 4px rgba(78, 54, 48, 0.3);
+}
+
+.mainCover__volunteer {
+  padding: 0 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainCover__volunteer img {
+  margin-top: 2.9375rem;
+}
+
+.mainCover__volunteer p {
+  margin-top: 1.25rem;
+  color: var(--text-color-black);
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.mainCover__volunteer span {
+  margin-top: 0.9375rem;
+  color: var(--text-color-black);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.mainCover__volunteer button {
+  margin-top: 1.75rem;
+  padding: 1rem 2.125rem;
+  color: var(--white-color);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 1.25rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
+  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+}
+
 .menu {
   z-index: 10;
   position: fixed;
