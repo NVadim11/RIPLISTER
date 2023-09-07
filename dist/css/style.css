@@ -351,7 +351,7 @@ h6 {
 .headerMain {
   padding: 0 0.5rem;
   background-color: transparent;
-  height: 5rem;
+  height: 4.75rem;
 }
 
 .headerMain__container {
@@ -401,15 +401,15 @@ h6 {
   text-align: center;
 }
 
-.footer__logoContainer {
+.footer__logo {
   margin-top: 3.4375rem;
 }
 
-.footer__aboutUs {
+.footer__about {
   margin-top: 1.35rem;
 }
 
-.footer__aboutUs p {
+.footer__about p {
   color: var(--text-color-black);
   text-align: center;
   font-size: 0.75rem;
@@ -418,15 +418,15 @@ h6 {
   line-height: normal;
 }
 
-.footer__contactBtn {
+.footer__contact {
   margin-top: 2.8125rem;
 }
 
-.footer__contactBtn img {
+.footer__contact img {
   margin-right: 0.5625rem;
 }
 
-.footer__contactBtn button {
+.footer__contact button {
   padding: 1.0625rem 0.9375rem;
   border-radius: 1.25rem;
   border: 0.0625rem solid var(--orange-border-transparent);
@@ -443,7 +443,7 @@ h6 {
           align-items: center;
 }
 
-.footer__referralProgram {
+.footer__ref {
   color: var(--orange-color);
   font-size: 1.25rem;
   font-style: normal;
@@ -454,7 +454,7 @@ h6 {
   margin-top: 2.8125rem;
 }
 
-.footer__referralProgram:hover {
+.footer__ref:hover {
   text-decoration: underline;
 }
 
@@ -486,7 +486,7 @@ h6 {
   margin-bottom: 0;
 }
 
-.footer__socialsContainer {
+.footer__socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -734,7 +734,7 @@ h6 {
 }
 
 .menu__header {
-  height: 5rem;
+  height: 4.75rem;
   padding: 0 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -782,6 +782,36 @@ h6 {
 
 .menu__closeBtn {
   padding: 1.375rem;
+}
+
+.menu__nav {
+  margin: 1.5rem 0 0 0;
+}
+
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__list-item {
+  text-transform: uppercase;
+  color: var(--text-color-black-sec);
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0;
 }
 
 .menu._active {

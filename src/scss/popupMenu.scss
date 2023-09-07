@@ -8,7 +8,7 @@
     transition: left 0.25s ease 0s;
     transform: translate(-100%, 0px);
     &__header {
-       height: 5rem;
+       height: 4.75rem;
        padding: 0 0.5rem;
        display: flex;
         align-items: center;
@@ -40,6 +40,31 @@
     }
     &__closeBtn {
         padding: 1.375rem;
+    }
+    &__nav {
+        margin: 1.5rem 0 0 0;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__list-item {
+        text-transform: uppercase;
+        color: var(--text-color-black-sec);
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+    }
+    &__ref {
+
+    }
+    &__contact {
+
+    }
+    &__links {
+
     }
 }
 .menu._active {
