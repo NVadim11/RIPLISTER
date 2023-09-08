@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css">
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="headerMain">
+			<div class="headerMain__container">
+				<div class="headerMain__logo">
+					<a href="#" class="header__logo">
+						<img src="img/logo.svg" alt="">
+					</a>
+				</div>
+				<div class="headerMain__menuBtn">
+					<button class="scroll-lock"><img src="img/burger.svg" alt=""> Menu</button>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<section class="mainCover">
+				<div class="mainCover__Title">
+					<h2>Створи сторінку пам'яті
+						для того хто тобі дуже дорогий</h2>
+					<p>Людина жива, поки її пам'ятаютью,
+						а ми можимо зробити зараз дещо на вічну память</p>
+					<button class="titleBtn">Створити сторінку пам'яті</button>
+				</div>
+				<div class="mainCover__backgroundImg">
+					<picture><source srcset="img/375-title-background.webp" type="image/webp"><img src="img/375-title-background.png" alt="Background picture"></picture>
+				</div>
+				<div class="mainCover__form">
+					<form action="">
+						<div class="mainCover__searchType">
+							<label for="searchType">
+								<p>Пошук:</p>
+							</label>
+							<input class="searchTypeBtn_human" type="radio" name="search_type">
+							<span class="searchType_human">Людина</span>
+							<input class="searchTypeBtn_cemetery" type="radio" name="search_type">
+							<span class="searchType_cemetery">Кладовище</span>
+						</div>
+						<div class="mainCover__searchForm">
+							<div class="mainCover__searchInput">
+								<img src="img/input-icon1.svg" alt="">
+								<input type="text" name="secondName" id="secondName" placeholder="Прізвище" required>
+							</div>
+							<div class="mainCover__searchInput">
+								<img src="img/input-icon1.svg" alt="">
+								<input type="text" name="firstName" id="firstName" placeholder="Ім'я" required>
+							</div>
+							<div class="mainCover__searchInput">
+								<img src="img/input-icon2.svg" alt="">
+								<input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="birthDate" id="birthDate" placeholder="Дата народження" required />
+							</div>
+							<div class="mainCover__searchInput">
+								<img src="img/input-icon2.svg" alt="">
+								<input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="deathDate" id="deathDate" placeholder="Дата смерті" required />
+							</div>
+							<div class="mainCover__searchInput">
+								<img src="img/input-icon3.svg" alt="">
+								<input type="text" name="burialPlace" id="burialPlace" placeholder="Місце поховання" required>
+							</div>
+							<div class="mainCover__searchBtn">
+								<button>
+									<img src="img/search-item.svg" alt=""><span>Пошук</span>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="mainCover__benefits">
+					<h2>Чем полезен
+						наш проект</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+				</div>
+				<div class="mainCover__slider">
+					<div class="placeholder">
+					</div>
+				</div>
+				<div class="mainCover__volunteer">
+					<img src="img/ticks.svg" alt="quote ticks">
+					<p>Безцінні ті люди,
+						з якими навіть мовчання
+						здається душевною розмовою.</p>
+					<span>© Боб Марлі</span>
+					<button class="volunteerBtn">Стати волонтером</button>
+				</div>
+				<div class="mainCover__howTo">
+					<h2>Как создать страницу памяти?</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+					<div>
+						<img src="img/blue-questionmark-icon.svg" alt="Questionmark icon">
+						<a href="#">
+							Як це зробити?
+						</a>
+					</div>
+				</div>
+				<div class="mainCover__howToItems">
+					<div class="faq_regPayment">
+						<button>1</button>
+						<h3>Регистрация и оплата баланса</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore
+							magna aliqua.</p>
+					</div>
+					<div class="faq_createPage">
+						<button>2</button>
+						<h3>Создание страницы анкеты</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore
+							magna aliqua.</p>
+					</div>
+					<div class="faq_blog">
+						<button>3</button>
+						<h3>Публикация</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore
+							magna aliqua.</p>
+					</div>
+				</div>
+				<div class="mainCover__howToCreate">
+					<h3>Посмотрите как создавать страницу памяти</h3>
+					<div>
+						<img src="img/blue-questionmark-icon.svg" alt="Questionmark icon">
+						<a href="#">
+							Допомога
+						</a>
+					</div>
+					<button class="titleBtn">Створити сторінку пам'яті</button>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__logo">
+					<a href="#">
+						<img src="img/footerLogo.svg" alt="RiPLister logo" />
+					</a>
+				</div>
+				<div class="footer__about">
+					<p>
+						У серці кожного з нас є місце для особливої людини, якої вже немає у
+						цьому світі. Ми згадуємо про нього щодня або лише у особливі хвилини
+						свого життя. У будь-якому випадку важливим є те, що пам'ять про нього
+						жива.
+					</p>
+					<br />
+					<p>
+						RIP Lister – сайт памяти. Мы хотим помочь сохранить воспоминания об
+						усопших для семьи и друзей, близких родственников и знакомых, для
+						потомков, детей и внуков, которым будет важна история их семьи.
+					</p>
+				</div>
+				<div class="footer__contact">
+					<button class="scroll-lock">
+						<img src="img/letter-icon.svg" alt="letter icon" />
+						Напишіть нам
+					</button>
+				</div>
+				<div class="footer__ref">
+					<a href="#">РЕФЕРАЛЬНА ПРОГРАМА</a>
+				</div>
+				<div class="footer__links">
+					<a href="#">Політика конфіденційності</a>
+					<a href="#">Публічна оферта</a>
+				</div>
+				<div class="footer__socials">
+					<a href="#" class="instagram-icon">
+						<img src="img/instagram-icon.svg" alt="Instagram icon" />
+					</a>
+					<a href="#" class="facebook-icon">
+						<img src="img/facebook-icon.svg" alt="facebook icon" />
+					</a>
+					<a href="#" class="twitter-icon">
+						<img src="img/twitter-icon.svg" alt="twitter icon" />
+					</a>
+				</div>
+				<div class="footer__copyright">
+					<p>© 2023 <span>RIPLISTER</span>.</p>
+					<p>Всі права захищенні</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div class="menu">
+		<div class="menu__header">
+			<div class="menu__left">
+				<button class="menu__langBtn">
+					<img src="img/flag_ua.svg" alt="">
+					<span>УКР</span>
+					<img src="img/arrow-down.svg" alt="">
+				</button>
+			</div>
+			<div class="menu__right">
+				<button class="menu__entryBtn"><img src="img/entryBtn.svg" alt="">Войти на сайт</button>
+				<button class="menu__closeBtn"><img src="img/closeBtn.svg" alt=""></button>
+			</div>
+		</div>
+		<nav class="menu__nav">
+			<ul class="menu__list">
+				<li class="menu__list-item">
+					<a href="#">о нас</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">
+						услуги
+					</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">
+						контакты
+					</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">инструкции</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">
+						вопрос - ответ
+					</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">новости</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">
+						блог
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="menu__ref">
+			<a href="#">РЕФЕРАЛЬНА ПРОГРАМА</a>
+		</div>
+		<div class="menu__contact">
+			<button class="scroll-lock">
+				<img src="img/letter-icon.svg" alt="letter icon" />
+				Напишіть нам
+			</button>
+		</div>
+		<div class="menu__links">
+			<a href="#">Політика конфіденційності</a>
+			<a href="#">Публічна оферта</a>
+		</div>
+		<div class="menu__socials">
+			<a href="#" class="instagram-icon">
+				<img src="img/instagram-icon.svg" alt="Instagram icon" />
+			</a>
+			<a href="#" class="facebook-icon">
+				<img src="img/facebook-icon.svg" alt="facebook icon" />
+			</a>
+			<a href="#" class="twitter-icon">
+				<img src="img/twitter-icon.svg" alt="twitter icon" />
+			</a>
+		</div>
+	</div>
+	<div class="contactModal">
+		<span>Напишіть нам</span>
+		<p>Співробітник нашої служби підтримки відповість якомога швидше.</p>
+		<div class="contactModal__formContainer">
+			<form action="URL" id="contactForm">
+				<input type="text" name="usrname" placeholder="Ваше Ім'я" />
+				<input type="text" name="email" placeholder="email" />
+			</form>
+			<br />
+			<span>Тема звернення:</span>
+			<select name="topicSelect">
+				<!--Supplement an id here instead of using 'name'-->
+				<option value="value1" selected>
+					<span>Питання з партнерства</span>
+				</option>
+				<option value="value2"><span>Питання з партнерства</span></option>
+				<option value="value3"><span>Питання з партнерства</span></option>
+			</select>
+			<br />
+			<textarea rows="4" cols="50" name="comment" form="usrform">
+    Текст повідомлення</textarea>
+			<button type="submit">Відправити</button>
+		</div>
+
+		<button class="contactModal__closeBtn">CLOSE</button>
+	</div>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>
