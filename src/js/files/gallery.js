@@ -6,12 +6,11 @@
 */
 
 // Підключення функціоналу "Чертоги Фрілансера"
-import { isMobile, FLS } from "./functions.js";
 // Підключення списку активних модулів
-import { flsModules } from "./modules.js";
+import { flsModules } from "./modules.js"
 
 // Підключення базового набору функціоналу
-import lightGallery from 'lightgallery';
+import lightGallery from 'lightgallery'
 
 // Плагіни
 // lgZoom, lgAutoplay, lgComment, lgFullscreen, lgHash, lgPager, lgRotate, lgShare, lgThumbnail, lgVideo, lgMediumZoom
@@ -19,7 +18,7 @@ import lightGallery from 'lightgallery';
 //import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.min.js'
 
 // Базові стилі
-import '@scss/libs/gallery/lightgallery.scss';
+import '@scss/libs/gallery/lightgallery.scss'
 // Стилі доповнень
 // import '@scss/libs/gallery/lg-thumbnail.scss';
 // import '@scss/libs/gallery/lg-video.scss';

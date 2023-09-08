@@ -109,11 +109,11 @@
     }
     if (radioBtnHuman) radioBtnHuman.addEventListener("click", (function(e) {
         radioBtnCemeteryText.style.color = "var(--text-color-black)";
-        radioBtnHumanText.style.color = "var(--orange-standart)";
+        radioBtnHumanText.style.color = "var(--orange-color)";
     }));
     if (radioBtnCemetery) radioBtnCemetery.addEventListener("click", (function(e) {
         radioBtnHumanText.style.color = "var(--text-color-black)";
-        radioBtnCemeteryText.style.color = "var(--orange-standart)";
+        radioBtnCemeteryText.style.color = "var(--orange-color)";
     }));
     window["FLS"] = true;
     isWebp();
