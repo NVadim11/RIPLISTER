@@ -2,12 +2,13 @@
 
 :root {
   --text-color-black: #171717;
-  --text-color-black-sec: #000000;
+  --text-color-blue: #3C88F9;
   --text-color-underline: rgba(0, 0, 0, 0.3);
   --white-color: #ffffff;
   --heading-color: #4b5563;
   --blue-color: #73b6da;
   --modal-background-color: #FFF3ED;
+  --cream-color: #FFF8F6;
   --orange-color: #E55738;
   --orange-color-underline: rgba(229, 87, 56, 0.3);
   --orange-border-transparent: rgba(235, 128, 105, 0.5);
@@ -489,7 +490,6 @@ h6 {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  color: var(--white-color);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -515,6 +515,7 @@ h6 {
 }
 
 .mainCover__Title p {
+  color: var(--white-color);
   text-align: center;
   font-size: 1rem;
   font-style: normal;
@@ -579,7 +580,6 @@ h6 {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  color: var(--text-color-black);
   margin-right: 0.5rem;
 }
 
@@ -588,7 +588,6 @@ h6 {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  color: var(--text-color-black);
   margin-left: 0.3125rem;
   margin-right: 0.75rem;
 }
@@ -708,7 +707,6 @@ h6 {
 }
 
 .mainCover__benefits h2 {
-  color: var(--text-color-black);
   text-align: center;
   font-size: 2rem;
   font-style: normal;
@@ -718,7 +716,6 @@ h6 {
 }
 
 .mainCover__benefits p {
-  color: var(--text-color-black);
   text-align: center;
   font-size: 1rem;
   font-style: normal;
@@ -757,7 +754,6 @@ h6 {
 
 .mainCover__volunteer p {
   margin-top: 1.25rem;
-  color: var(--text-color-black);
   text-align: center;
   font-size: 1.5rem;
   font-style: normal;
@@ -767,7 +763,6 @@ h6 {
 
 .mainCover__volunteer span {
   margin-top: 0.9375rem;
-  color: var(--text-color-black);
   font-size: 1rem;
   font-style: normal;
   font-weight: 300;
@@ -776,6 +771,182 @@ h6 {
 
 .mainCover__volunteer button {
   margin-top: 1.75rem;
+  padding: 1rem 2.125rem;
+  color: var(--white-color);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 1.25rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
+  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+}
+
+.mainCover__howTo {
+  margin-top: 3.125rem;
+}
+
+.mainCover__howTo h2 {
+  padding: 0 2.9375rem;
+  text-align: center;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  margin-top: 2.8125rem;
+}
+
+.mainCover__howTo p {
+  padding: 0 0.625rem;
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 1.5625rem;
+}
+
+.mainCover__howTo div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 1.5625rem auto 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.mainCover__howTo div img {
+  margin-right: 0.5rem;
+}
+
+.mainCover__howTo div a {
+  color: var(--text-color-blue);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0.3125rem;
+}
+
+.mainCover__howTo div a:hover {
+  text-decoration: underline;
+}
+
+.mainCover__howToItems {
+  margin-top: 1.5rem;
+}
+
+.mainCover__howToItems div {
+  padding: 1.5rem 1.125rem 2rem 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 20px;
+  background: var(--cream-color);
+  margin: 0.75rem 0.625rem 0;
+}
+
+.mainCover__howToItems div button {
+  width: 3.375rem;
+  height: 3.375rem;
+  color: var(--orange-color);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 1.25rem;
+  border: 0.0625rem solid var(--orange-border-transparent);
+}
+
+.mainCover__howToItems div h3 {
+  margin-top: 0.75rem;
+  color: var(--text-color-black);
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.mainCover__howToItems div p {
+  margin-top: 0.75rem;
+  color: var(--text-color-black);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.no-webp .mainCover__howToCreate{
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 246, 244, 0.9)), to(rgba(253, 246, 244, 0.9))), url("img/candles-background.png"), lightgray 50%/cover no-repeat; }
+
+.no-webp .mainCover__howToCreate{
+  background: linear-gradient(0deg, rgba(253, 246, 244, 0.9) 0%, rgba(253, 246, 244, 0.9) 100%), url("img/candles-background.png"), lightgray 50%/cover no-repeat; }
+
+.mainCover__howToCreate {
+  margin: 3rem 0.625rem 0;
+  border-radius: 1.875rem;
+  background-position: center;
+  background-size: 185%;
+}
+
+.mainCover__howToCreate h3 {
+  margin: 3.875rem 1.625rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: var(--text-color-black);
+}
+
+.mainCover__howToCreate div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 1.75rem auto 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.mainCover__howToCreate div img {
+  margin-right: 0.5rem;
+}
+
+.mainCover__howToCreate div a {
+  color: var(--text-color-blue);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0.3125rem;
+}
+
+.mainCover__howToCreate div a:hover {
+  text-decoration: underline;
+}
+
+.mainCover__howToCreate button {
+  margin: 2.5rem 0 2.625rem;
   padding: 1rem 2.125rem;
   color: var(--white-color);
   font-size: 1.125rem;
@@ -888,7 +1059,7 @@ h6 {
 }
 
 .menu__list-item {
-  color: var(--text-color-black-sec);
+  color: var(--text-color-black);
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
@@ -935,7 +1106,7 @@ h6 {
 }
 
 .menu__contact {
-  color: var(--text-color-black-sec);
+  color: var(--text-color-black);
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
@@ -1092,3 +1263,7 @@ h6 {
     max-width: 60.625rem;
   }
 }
+
+.webp .mainCover__howToCreate{ background: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 246, 244, 0.9)), to(rgba(253, 246, 244, 0.9))), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
+
+.webp .mainCover__howToCreate{ background: linear-gradient(0deg, rgba(253, 246, 244, 0.9) 0%, rgba(253, 246, 244, 0.9) 100%), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }

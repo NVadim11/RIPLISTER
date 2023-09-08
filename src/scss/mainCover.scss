@@ -1,7 +1,6 @@
 .mainCover {  
     display: flex;  
     flex: 1 1 auto;
-    color: var(--white-color);
     align-items: center;
     text-align: center;
     flex-direction: column;
@@ -17,6 +16,7 @@
             padding: 7.5rem 0.625rem 0;
         }
         p {
+            color: var(--white-color);
             text-align: center;
             font-size: 1rem;
             font-style: normal;
@@ -64,7 +64,6 @@
             font-style: normal;
             font-weight: 600;
             line-height: normal;
-            color: var(--text-color-black);
             margin-right: 0.5rem;
         } 
         span {
@@ -72,7 +71,6 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
-            color: var(--text-color-black);
             margin-left: 0.3125rem;
             margin-right: 0.75rem;
         } 
@@ -107,7 +105,7 @@
 
         }     
     }
-    &__searchForm {
+    &__searchForm {        
         margin-top: 0.9375rem;
         display: flex;  
         flex: 1 1 auto;
@@ -164,7 +162,6 @@
     &__benefits {   
         padding: 0 0.625rem;     
         h2 {
-            color: var(--text-color-black);
             text-align: center;
             font-size: 2rem;
             font-style: normal;
@@ -173,7 +170,6 @@
             margin-top: 2.8125rem;
         }
         p {
-            color: var(--text-color-black);
             text-align: center;
             font-size: 1rem;
             font-style: normal;
@@ -200,7 +196,6 @@
         }
         p {
             margin-top: 1.25rem;
-            color: var(--text-color-black);
             text-align: center;
             font-size: 1.5rem;
             font-style: normal;
@@ -209,7 +204,6 @@
         }
         span {
             margin-top: 0.9375rem;
-            color: var(--text-color-black);
             font-size: 1rem;
             font-style: normal;
             font-weight: 300;
@@ -226,5 +220,135 @@
             border-radius: 1.25rem;
             background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
         }
-    }    
+    }
+    &__howTo {
+        margin-top: 3.125rem;
+        h2 {
+            padding: 0 2.9375rem;
+            text-align: center;
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 110%;
+            margin-top: 2.8125rem;
+        }
+        p {
+            padding: 0 0.625rem;
+            text-align: center;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 1.5625rem;            
+        }
+        div {  
+            display: flex;
+            align-items: center;
+            align-content: center;
+            margin: 1.5625rem auto 0;
+            width: fit-content;
+            img {
+                margin-right: 0.5rem;
+            }
+            a {          
+                color: var(--text-color-blue);
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;   
+                padding: 0.3125rem;         
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__howToItems {
+        margin-top: 1.5rem;
+        div {
+            padding: 1.5rem 1.125rem 2rem 1.5rem;
+            display: flex;
+            text-align: left;
+            flex-direction: column;
+            border-radius: 20px;
+            background: var(--cream-color);
+            margin: 0.75rem 0.625rem 0;
+            button {
+                width: 3.375rem;
+                height: 3.375rem;
+                color: var(--orange-color);
+                align-items: center;
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                border-radius: 1.25rem;
+                border: 0.0625rem solid var(--orange-border-transparent);
+            }
+            h3 {
+                margin-top: 0.75rem;
+                color: var(--text-color-black);
+                font-size: 1.375rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+            p {
+                margin-top: 0.75rem;
+                color: var(--text-color-black);
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }     
+    }
+    &__howToCreate {
+        margin: 3rem 0.625rem 0;
+        border-radius: 1.875rem;
+        background: linear-gradient(0deg, rgba(253, 246, 244, 0.90) 0%, rgba(253, 246, 244, 0.90) 100%), url("img/candles-background.png"), lightgray 50% / cover no-repeat;
+        background-position: center;
+        background-size: 185%;
+        h3 {
+            margin: 3.875rem 1.625rem 0;
+            text-align: center;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: var(--text-color-black);
+        }
+        div {  
+            display: flex;
+            align-items: center;
+            align-content: center;
+            margin: 1.75rem auto 0;
+            width: fit-content;
+            img {
+                margin-right: 0.5rem;
+            }
+            a {          
+                color: var(--text-color-blue);
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;   
+                padding: 0.3125rem;         
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+        button {
+            margin: 2.5rem 0 2.625rem;
+            padding: 1rem 2.125rem;
+            color: var(--white-color);
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            border-radius: 1.25rem;
+            background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+            } 
+    }
 }
