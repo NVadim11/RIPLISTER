@@ -26,7 +26,7 @@
 		</header>
 		<main class="main">
 			<section class="mainCover">
-				<div class="main__container">
+				<div class="mainCover__container">
 					<h2>Створи сторінку пам'яті
 						для того хто тобі дуже дорогий</h2>
 					<p>Людина жива, поки її пам'ятаютью,
@@ -41,48 +41,47 @@
 			</section>
 
 			<form class="mainForm">
-				<div class="main__container">
-					<!-- <div class="mainForm__searchType">
-            <label for="searchType">
-                <p>Пошук:</p>
-            </label>
-            <input class="searchTypeBtn_human" type="radio" name="search_type">
-            <span class="searchType_human">Людина</span>
-            <input class="searchTypeBtn_cemetery" type="radio" name="search_type">
-            <span class="searchType_cemetery">Кладовище</span>
-        </div> -->
-					<div class="mainForm__form">
-						<div class="mainForm__input">
-							<img src="img/input-icon1.svg" alt="">
-							<input type="text" name="secondName" id="secondName" placeholder="Прізвище" required>
-						</div>
-						<div class="mainForm__input">
-							<img src="img/input-icon1.svg" alt="">
-							<input type="text" name="firstName" id="firstName" placeholder="Ім'я" required>
-						</div>
-						<div class="mainForm__input">
-							<img src="img/input-icon2.svg" alt="">
-							<input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="birthDate" id="birthDate" placeholder="Дата народження" required />
-						</div>
-						<div class="mainForm__input">
-							<img src="img/input-icon2.svg" alt="">
-							<input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="deathDate" id="deathDate" placeholder="Дата смерті" required />
-						</div>
-						<div class="mainForm__input">
-							<img src="img/input-icon3.svg" alt="">
-							<input type="text" name="burialPlace" id="burialPlace" placeholder="Місце поховання" required>
-						</div>
-						<div class="mainForm__btn">
-							<button>
-								<img src="img/search-item.svg" alt=""><span>Пошук</span>
-							</button>
-						</div>
+				<div class="mainForm__container">
+					<div class="mainForm__searchType">
+						<label for="searchType">
+							<p>Пошук:</p>
+						</label>
+						<input class="searchTypeBtn_human" type="radio" name="search_type">
+						<span class="searchType_human">Людина</span>
+						<input class="searchTypeBtn_cemetery" type="radio" name="search_type">
+						<span class="searchType_cemetery">Кладовище</span>
+					</div>
+					<div class="mainForm__input">
+						<img src="img/input-icon1.svg" alt="">
+						<input type="text" name="secondName" id="secondName" placeholder="Прізвище" required>
+					</div>
+					<div class="mainForm__input">
+						<img src="img/input-icon1.svg" alt="">
+						<input type="text" name="firstName" id="firstName" placeholder="Ім'я" required>
+					</div>
+					<div class="mainForm__input">
+						<img src="img/input-icon2.svg" alt="">
+						<input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="birthDate" id="birthDate" placeholder="Дата народження" required />
+					</div>
+					<div class="mainForm__input">
+						<img src="img/input-icon2.svg" alt="">
+						<input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="deathDate" id="deathDate" placeholder="Дата смерті" required />
+					</div>
+					<div class="mainForm__input">
+						<img src="img/input-icon3.svg" alt="">
+						<input type="text" name="burialPlace" id="burialPlace" placeholder="Місце поховання" required>
+					</div>
+					<div class="mainForm__btn">
+						<button>
+							<img src="img/search-item.svg" alt=""><span>Пошук</span>
+						</button>
 					</div>
 				</div>
+
 			</form>
 
 			<section class="mainBenefits">
-				<div class="main__container">
+				<div class="mainBenefits__container">
 					<h2>Чем полезен
 						наш проект</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -95,60 +94,71 @@
 					</div>
 				</div>
 			</section>
-			<section class="mainVolunteer">
 
-				<img src="img/ticks.svg" alt="quote ticks">
-				<p>Безцінні ті люди,
-					з якими навіть мовчання
-					здається душевною розмовою.</p>
-				<span>© Боб Марлі</span>
-				<button class="volunteerBtn">Стати волонтером</button>
+			<section class="mainVolunteer">
+				<div class="mainVolunteer__container">
+					<img src="img/ticks.svg" alt="quote ticks">
+					<p>Безцінні ті люди,
+						з якими навіть мовчання
+						здається душевною розмовою.</p>
+					<span>© Боб Марлі</span>
+					<button class="volunteerBtn">Стати волонтером</button>
+				</div>
 			</section>
-			<div class="mainCover__howTo">
-				<h2>Как создать страницу памяти?</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-					magna aliqua.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
-				<div>
-					<img src="img/blue-questionmark-icon.svg" alt="Questionmark icon">
-					<a href="#">
-						Як це зробити?
-					</a>
+
+			<section class="mainInfo">
+				<div class="mainInfo__container">
+					<div class="mainInfo__title">
+						<h2>Как создать страницу памяти?</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore
+							magna aliqua.
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+						<div>
+							<img src="img/blue-questionmark-icon.svg" alt="Questionmark icon">
+							<a href="#">
+								Як це зробити?
+							</a>
+						</div>
+					</div>
+					<div class="mainInfo__howTo">
+						<div class="howTo__regPayment">
+							<button>1</button>
+							<h3>Регистрация и оплата баланса</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+								et
+								dolore
+								magna aliqua.</p>
+						</div>
+						<div class="howTo__createPage">
+							<button>2</button>
+							<h3>Создание страницы анкеты</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+								et
+								dolore
+								magna aliqua.</p>
+						</div>
+						<div class="howTo__blog">
+							<button>3</button>
+							<h3>Публикация</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+								et
+								dolore
+								magna aliqua.</p>
+						</div>
+					</div>
+					<div class="mainInfo__howToCreate">
+						<h3>Посмотрите как создавать страницу памяти</h3>
+						<div>
+							<img src="img/blue-questionmark-icon.svg" alt="Questionmark icon">
+							<a href="#">
+								Допомога
+							</a>
+						</div>
+						<button class="titleBtn">Створити сторінку пам'яті</button>
+					</div>
 				</div>
-			</div>
-			<div class="mainCover__howToItems">
-				<div class="faq_regPayment">
-					<button>1</button>
-					<h3>Регистрация и оплата баланса</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-						dolore
-						magna aliqua.</p>
-				</div>
-				<div class="faq_createPage">
-					<button>2</button>
-					<h3>Создание страницы анкеты</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-						dolore
-						magna aliqua.</p>
-				</div>
-				<div class="faq_blog">
-					<button>3</button>
-					<h3>Публикация</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-						dolore
-						magna aliqua.</p>
-				</div>
-			</div>
-			<div class="mainCover__howToCreate">
-				<h3>Посмотрите как создавать страницу памяти</h3>
-				<div>
-					<img src="img/blue-questionmark-icon.svg" alt="Questionmark icon">
-					<a href="#">
-						Допомога
-					</a>
-				</div>
-				<button class="titleBtn">Створити сторінку пам'яті</button>
-			</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">

@@ -265,6 +265,7 @@ h6 {
 
 [class*=__container] {
   margin: 0 auto;
+  max-width: 23.4375rem;
 }
 
 [class*=-ibg] {
@@ -354,7 +355,7 @@ h6 {
 
 .footer__about {
   margin-top: 1.35rem;
-  padding: 0 0.9375rem;
+  padding: 0 0.3125rem;
 }
 
 .footer__about p {
@@ -504,10 +505,6 @@ h6 {
 }
 
 .main .mainCover {
-  z-index: 5;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -519,9 +516,16 @@ h6 {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.main .mainCover h2 {
+.main .mainCover__container {
+  z-index: 5;
+}
+
+.main .mainCover__container h2 {
   color: var(--white-color);
   text-align: center;
   font-size: 2.25rem;
@@ -532,7 +536,7 @@ h6 {
   z-index: 5;
 }
 
-.main .mainCover p {
+.main .mainCover__container p {
   color: var(--white-color);
   text-align: center;
   font-size: 1rem;
@@ -575,15 +579,17 @@ h6 {
 .main .mainCover__bg img {
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
 }
 
 .main .mainForm {
   z-index: 5;
-  padding: 5.9375rem 0 0 0;
+  padding: 95px 0.625rem 0 0.625rem;
 }
 
-.main .mainForm__form {
-  padding-top: 1.875rem;
+.main .mainForm__container {
+  padding: 1.875rem 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -601,6 +607,65 @@ h6 {
           flex-direction: column;
   border-radius: 20px;
   background: #FFF3ED;
+}
+
+.main .mainForm__searchType {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.main .mainForm__searchType p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-right: 0.5rem;
+}
+
+.main .mainForm__searchType span {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 0.3125rem;
+  margin-right: 0.75rem;
+}
+
+.main .mainForm__searchType input[type=radio]:after {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 0.9375rem;
+  top: 0.125rem;
+  left: -0.0625rem;
+  position: relative;
+  background-color: var(--white-color);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 0.0625rem solid var(--text-color-black);
+}
+
+.main .mainForm__searchType input[type=radio]:checked:after {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 0.9375rem;
+  top: 0.125rem;
+  left: -0.0625rem;
+  position: relative;
+  background-color: var(--orange-color);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 0.1875rem solid var(--white-color);
+  outline: 1px solid var(--orange-color);
 }
 
 .main .mainForm__input {
@@ -659,69 +724,6 @@ h6 {
   padding: 1rem 0.625rem 1rem;
 }
 
-.main .mainForm__searchType {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 1.875rem 2.5rem 0;
-}
-
-.main .mainForm__searchType p {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  margin-right: 0.5rem;
-}
-
-.main .mainForm__searchType span {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-left: 0.3125rem;
-  margin-right: 0.75rem;
-}
-
-.main .mainForm__searchType input[type=radio]:after {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 0.9375rem;
-  height: 0.9375rem;
-  border-radius: 0.9375rem;
-  top: 0.125rem;
-  left: -0.0625rem;
-  position: relative;
-  background-color: var(--white-color);
-  content: "";
-  display: inline-block;
-  visibility: visible;
-  border: 0.0625rem solid var(--text-color-black);
-}
-
-.main .mainForm__searchType input[type=radio]:checked:after {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 0.9375rem;
-  height: 0.9375rem;
-  border-radius: 0.9375rem;
-  top: 0.125rem;
-  left: -0.0625rem;
-  position: relative;
-  background-color: var(--orange-color);
-  content: "";
-  display: inline-block;
-  visibility: visible;
-  border: 0.1875rem solid var(--white-color);
-  outline: 1px solid var(--orange-color);
-}
-
-.main .mainBenefits {
-  padding: 0 0.625rem;
-}
-
 .main .mainBenefits h2 {
   text-align: center;
   font-size: 2rem;
@@ -750,8 +752,7 @@ h6 {
           box-shadow: 0px 19px 29px 4px rgba(78, 54, 48, 0.3);
 }
 
-.main .mainVolunteer {
-  padding: 0 0.625rem;
+.main .mainVolunteer__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -798,11 +799,11 @@ h6 {
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 }
 
-.main__howTo {
+.main .mainInfo {
   margin-top: 3.125rem;
 }
 
-.main__howTo h2 {
+.main .mainInfo__title h2 {
   padding: 0 2.9375rem;
   text-align: center;
   font-size: 2rem;
@@ -812,7 +813,7 @@ h6 {
   margin-top: 2.8125rem;
 }
 
-.main__howTo p {
+.main .mainInfo__title p {
   padding: 0 0.625rem;
   text-align: center;
   font-size: 1rem;
@@ -822,7 +823,7 @@ h6 {
   margin-top: 1.5625rem;
 }
 
-.main__howTo div {
+.main .mainInfo__title div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -837,11 +838,11 @@ h6 {
   width: fit-content;
 }
 
-.main__howTo div img {
+.main .mainInfo__title div img {
   margin-right: 0.5rem;
 }
 
-.main__howTo div a {
+.main .mainInfo__title div a {
   color: var(--text-color-blue);
   font-size: 1.25rem;
   font-style: normal;
@@ -850,15 +851,15 @@ h6 {
   padding: 0.3125rem;
 }
 
-.main__howTo div a:hover {
+.main .mainInfo__title div a:hover {
   text-decoration: underline;
 }
 
-.main__howToItems {
+.main .mainInfo__howTo {
   margin-top: 1.5rem;
 }
 
-.main__howToItems div {
+.main .mainInfo__howTo div {
   padding: 1.5rem 1.125rem 2rem 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -870,10 +871,10 @@ h6 {
           flex-direction: column;
   border-radius: 20px;
   background: var(--cream-color);
-  margin: 0.75rem 0.625rem 0;
+  margin-top: 0.75rem;
 }
 
-.main__howToItems div button {
+.main .mainInfo__howTo div button {
   width: 3.375rem;
   height: 3.375rem;
   color: var(--orange-color);
@@ -888,7 +889,7 @@ h6 {
   border: 0.0625rem solid var(--orange-border-transparent);
 }
 
-.main__howToItems div h3 {
+.main .mainInfo__howTo div h3 {
   margin-top: 0.75rem;
   color: var(--text-color-black);
   font-size: 1.375rem;
@@ -897,7 +898,7 @@ h6 {
   line-height: normal;
 }
 
-.main__howToItems div p {
+.main .mainInfo__howTo div p {
   margin-top: 0.75rem;
   color: var(--text-color-black);
   font-size: 1rem;
@@ -906,20 +907,32 @@ h6 {
   line-height: normal;
 }
 
-.no-webp .main__howToCreate{
+.no-webp .main .mainInfo__howToCreate{
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 246, 244, 0.9)), to(rgba(253, 246, 244, 0.9))), url("img/candles-background.png"), lightgray 50%/cover no-repeat; }
 
-.no-webp .main__howToCreate{
+.no-webp .main .mainInfo__howToCreate{
   background: linear-gradient(0deg, rgba(253, 246, 244, 0.9) 0%, rgba(253, 246, 244, 0.9) 100%), url("img/candles-background.png"), lightgray 50%/cover no-repeat; }
 
-.main__howToCreate {
-  margin: 3rem 0.625rem 0;
+.main .mainInfo__howToCreate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-top: 3rem;
   border-radius: 1.875rem;
   background-position: center;
   background-size: 185%;
 }
 
-.main__howToCreate h3 {
+.main .mainInfo__howToCreate h3 {
   margin: 3.875rem 1.625rem 0;
   text-align: center;
   font-size: 1.5rem;
@@ -929,7 +942,7 @@ h6 {
   color: var(--text-color-black);
 }
 
-.main__howToCreate div {
+.main .mainInfo__howToCreate div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -944,11 +957,11 @@ h6 {
   width: fit-content;
 }
 
-.main__howToCreate div img {
+.main .mainInfo__howToCreate div img {
   margin-right: 0.5rem;
 }
 
-.main__howToCreate div a {
+.main .mainInfo__howToCreate div a {
   color: var(--text-color-blue);
   font-size: 1.25rem;
   font-style: normal;
@@ -957,11 +970,11 @@ h6 {
   padding: 0.3125rem;
 }
 
-.main__howToCreate div a:hover {
+.main .mainInfo__howToCreate div a:hover {
   text-decoration: underline;
 }
 
-.main__howToCreate button {
+.main .mainInfo__howToCreate button {
   margin: 2.5rem 0 2.625rem;
   padding: 1rem 2.125rem;
   color: var(--white-color);
@@ -1271,15 +1284,16 @@ h6 {
 @media (max-width: 47.99875em) {
   [class*=__container] {
     max-width: 23.4375rem;
+    padding: 0 0.625rem;
   }
 }
 
-@media (max-width: 0em) {
+@media (max-width: 23.4375em) {
   [class*=__container] {
     max-width: 60.625rem;
   }
 }
 
-.webp .main__howToCreate{ background: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 246, 244, 0.9)), to(rgba(253, 246, 244, 0.9))), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
+.webp .main .mainInfo__howToCreate{ background: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 246, 244, 0.9)), to(rgba(253, 246, 244, 0.9))), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
 
-.webp .main__howToCreate{ background: linear-gradient(0deg, rgba(253, 246, 244, 0.9) 0%, rgba(253, 246, 244, 0.9) 100%), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
+.webp .main .mainInfo__howToCreate{ background: linear-gradient(0deg, rgba(253, 246, 244, 0.9) 0%, rgba(253, 246, 244, 0.9) 100%), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
