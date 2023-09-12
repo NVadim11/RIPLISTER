@@ -102,6 +102,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	position: relative;
 	@supports (overflow: clip) {
 		overflow: clip;
 	}
@@ -155,8 +156,8 @@ body {
 			max-width: toRem(750);
 		}
 		@media (max-width: $mobile) {
-			max-width: none;
-			@if ($containerPadding>0 and $maxWidthContainer>0) {
+			max-width: 23.4375rem;
+			@if ($containerPadding>1.25rem and $maxWidthContainer>22.1875rem) {
 				padding: 0 toRem(math.div($containerPadding, 2));
 			}
 		}
@@ -173,7 +174,7 @@ body {
 // Підключення стилів окремих блоків
 @import "header";
 @import "footer";
-@import "mainCover";
+@import "main";
 
 // Підключення стилів окремих сторінок
 

@@ -1,60 +1,124 @@
-.mainCover {  
+.main {  
     display: flex;  
     flex: 1 1 auto;
-    align-items: center;
-    text-align: center;
     flex-direction: column;
-    &__Title {
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+.mainCover {
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    h2 {
+        color: var(--white-color);
+        text-align: center;
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%;
+        padding: 7.5rem 0 0 0;
         z-index: 5;
-        h2 {
-            color: var(--white-color);
-            text-align: center;
-            font-size: 2.25rem;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 110%;
-            padding: 7.5rem 0.625rem 0;
-        }
-        p {
-            color: var(--white-color);
-            text-align: center;
-            font-size: 1rem;
-            font-style: normal;
-            font-weight: 400;
+    }
+    p {
+        color: var(--white-color);
+        text-align: center;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
         line-height: normal;
         padding: 0.75rem 0.625rem 0;
-    }
-    button {
+        z-index: 5;
+        }
+    &__btn {
         margin-top: 2.8125rem;
-        padding: 1rem 2.125rem;
-        color: var(--white-color);
-        font-size: 1.125rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        border-radius: 1.25rem;
-        background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-        }    
-    }
-    &__backgroundImg {        
-        position: relative;
-        top: -4.75rem;           
-        img { 
-            size: cover;
-            transform:translate(-50%,-50%);
-            width:fit-content;
-            height:fit-content;
-            object-fit:cover;
-            position: absolute;
+        display: flex;
+        justify-content: center;
+        z-index: 2;
+        button {
+            padding: 1rem 2.125rem;
+            color: var(--white-color);
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            border-radius: 1.25rem;
+            background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
         }
     }
+    &__bg {        
+        position: absolute;
+        top: -4.75rem;  
+        z-index: 1;   
+        img { 
+            // position: absolute;
+            // top: -4.75rem;
+            // transform:translate(-50%,-50%);
+            object-fit:cover;
+        }
+    }
+}
+.mainForm {
+    z-index: 5;
+    padding: 5.9375rem 0 0 0;
     &__form {
-        z-index: 5;
-        padding: 5.9375rem 0.625rem 0;
-        form {
-            border-radius: 20px;
-            background: #FFF3ED;
-        }  
+        padding-top: 1.875rem;
+        display: flex;  
+        flex: 1 1 auto;
+        width: 100%;
+        align-items:center;
+        text-align: center;
+        flex-direction: column;
+        border-radius: 20px;
+        background: #FFF3ED;
+    }
+    &__input {
+        position: relative;
+        align-items: center;
+        img {
+            position: absolute;
+            padding: 1.5625rem 1rem 1.0625rem 1.0625rem;                
+        }
+        input {
+            min-width: 19.625rem;
+            margin-top: 0.625rem;
+            padding: 1.0625rem 0 1.0625rem 3.375rem;
+            border-radius: 1.25rem;
+            border: 1px solid var(--orange-border-solid);
+            background: var(--white-color);                
+        }
+        input[class="datePicker"]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            background-image: url("img/input-icon2.svg");
+            background-size: 150%;
+            background-position-x: center;
+            background-position-y: center;
+            opacity: 0.1;
+            left: 1.1563rem;
+            top: 1.6563rem;
+        }
+    }
+    &__btn {
+        button {
+            border-radius: 1.25rem;
+            background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+            margin: 0.9375rem 1.25rem 1.875rem;
+            min-width: 19.625rem;
+            padding: 0 6.25rem 0;
+            display: flex;
+            align-items: center;
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            color: var(--white-color);
+        }
+        img {
+            padding: 1rem 0.625rem 1rem;
+        }      
     }
     &__searchType {
         display: flex;
@@ -105,78 +169,24 @@
 
         }     
     }
-    &__searchForm {        
-        margin-top: 0.9375rem;
-        display: flex;  
-        flex: 1 1 auto;
-        width: 100%;
-        align-items:center;
+}
+.mainBenefits {
+    padding: 0 0.625rem;   
+    h2 {
         text-align: center;
-        flex-direction: column;
-    }
-    &__searchInput {
-            position: relative;
-            align-items: center;
-            img {
-                position: absolute;
-                padding: 1.5625rem 1rem 1.0625rem 1.0625rem;                
-            }
-            input {
-                min-width: 19.625rem;
-                margin-top: 0.625rem;
-                padding: 1.0625rem 0 1.0625rem 3.375rem;
-                border-radius: 1.25rem;
-                border: 1px solid var(--orange-border-solid);
-                background: var(--white-color);                
-            }
-            input[class="datePicker"]::-webkit-calendar-picker-indicator {
-                position: absolute;
-                background-image: url("img/input-icon2.svg");
-                background-size: 150%;
-                background-position-x: center;
-                background-position-y: center;
-                opacity: 0.1;
-                left: 1.1563rem;
-                top: 1.6563rem;
-            }
-        }
-    &__searchBtn {
-        button {
-            border-radius: 1.25rem;
-            background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-            margin: 0.9375rem 1.25rem 1.875rem;
-            min-width: 19.625rem;
-            padding: 0 6.25rem 0;
-            display: flex;
-            align-items: center;
-            font-size: 1.125rem;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-            color: var(--white-color);
-        }
-        img {
-            padding: 1rem 0.625rem 1rem;
-        }      
-    }
-    &__benefits {   
-        padding: 0 0.625rem;     
-        h2 {
-            text-align: center;
-            font-size: 2rem;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 110%;
-            margin-top: 2.8125rem;
-        }
-        p {
-            text-align: center;
-            font-size: 1rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            margin-top: 1.5625rem;            
-        }
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%;
+        margin-top: 2.8125rem;
+    } 
+    p {
+        text-align: center;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 1.5625rem;            
     }
     &__slider {
         margin-top: 4.0625rem;
@@ -186,41 +196,43 @@
         background: #FFF3ED;       
         box-shadow: 0px 19px 29px 4px rgba(78, 54, 48, 0.30);
     }
-    &__volunteer {
-        padding: 0 0.625rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        img {
-            margin-top: 2.9375rem;
-        }
-        p {
-            margin-top: 1.25rem;
-            text-align: center;
-            font-size: 1.5rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-        }
-        span {
-            margin-top: 0.9375rem;
-            font-size: 1rem;
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
-        }
-        button {
-            margin-top: 1.75rem;
-            padding: 1rem 2.125rem;
-            color: var(--white-color);
-            font-size: 1.125rem;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
-            border-radius: 1.25rem;
-            background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-        }
+}
+.mainVolunteer {
+    padding: 0 0.625rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        margin-top: 2.9375rem;
     }
+    p {
+        margin-top: 1.25rem;
+        text-align: center;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    span {
+        margin-top: 0.9375rem;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    button {
+        margin-top: 1.75rem;
+        padding: 1rem 2.125rem;
+        color: var(--white-color);
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 1.25rem;
+        background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+    }
+}
+
     &__howTo {
         margin-top: 3.125rem;
         h2 {

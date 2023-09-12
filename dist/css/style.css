@@ -237,6 +237,7 @@ h6 {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
+  position: relative;
 }
 
 @supports (overflow: clip) {
@@ -301,17 +302,13 @@ h6 {
   padding: 0 0.5rem;
   background-color: transparent;
   height: 4.75rem;
-  z-index: 5;
-}
-
-.headerMain__container {
+  z-index: 9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -483,38 +480,59 @@ h6 {
   color: var(--text-color-black);
 }
 
-.mainCover {
+.main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
 }
 
-.mainCover__Title {
-  z-index: 5;
+.main__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.mainCover__Title h2 {
+.main .mainCover {
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.main .mainCover h2 {
   color: var(--white-color);
   text-align: center;
   font-size: 2.25rem;
   font-style: normal;
   font-weight: 600;
   line-height: 110%;
-  padding: 7.5rem 0.625rem 0;
+  padding: 7.5rem 0 0 0;
+  z-index: 5;
 }
 
-.mainCover__Title p {
+.main .mainCover p {
   color: var(--white-color);
   text-align: center;
   font-size: 1rem;
@@ -522,10 +540,21 @@ h6 {
   font-weight: 400;
   line-height: normal;
   padding: 0.75rem 0.625rem 0;
+  z-index: 5;
 }
 
-.mainCover__Title button {
+.main .mainCover__btn {
   margin-top: 2.8125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 2;
+}
+
+.main .mainCover__btn button {
   padding: 1rem 2.125rem;
   color: var(--white-color);
   font-size: 1.125rem;
@@ -537,98 +566,24 @@ h6 {
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 }
 
-.mainCover__backgroundImg {
-  position: relative;
+.main .mainCover__bg {
+  position: absolute;
   top: -4.75rem;
+  z-index: 1;
 }
 
-.mainCover__backgroundImg img {
-  size: cover;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.main .mainCover__bg img {
   -o-object-fit: cover;
      object-fit: cover;
-  position: absolute;
 }
 
-.mainCover__form {
+.main .mainForm {
   z-index: 5;
-  padding: 5.9375rem 0.625rem 0;
+  padding: 5.9375rem 0 0 0;
 }
 
-.mainCover__form form {
-  border-radius: 20px;
-  background: #FFF3ED;
-}
-
-.mainCover__searchType {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 1.875rem 2.5rem 0;
-}
-
-.mainCover__searchType p {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  margin-right: 0.5rem;
-}
-
-.mainCover__searchType span {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-left: 0.3125rem;
-  margin-right: 0.75rem;
-}
-
-.mainCover__searchType input[type=radio]:after {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 0.9375rem;
-  height: 0.9375rem;
-  border-radius: 0.9375rem;
-  top: 0.125rem;
-  left: -0.0625rem;
-  position: relative;
-  background-color: var(--white-color);
-  content: "";
-  display: inline-block;
-  visibility: visible;
-  border: 0.0625rem solid var(--text-color-black);
-}
-
-.mainCover__searchType input[type=radio]:checked:after {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 0.9375rem;
-  height: 0.9375rem;
-  border-radius: 0.9375rem;
-  top: 0.125rem;
-  left: -0.0625rem;
-  position: relative;
-  background-color: var(--orange-color);
-  content: "";
-  display: inline-block;
-  visibility: visible;
-  border: 0.1875rem solid var(--white-color);
-  outline: 1px solid var(--orange-color);
-}
-
-.mainCover__searchForm {
-  margin-top: 0.9375rem;
+.main .mainForm__form {
+  padding-top: 1.875rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -644,21 +599,23 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border-radius: 20px;
+  background: #FFF3ED;
 }
 
-.mainCover__searchInput {
+.main .mainForm__input {
   position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.mainCover__searchInput img {
+.main .mainForm__input img {
   position: absolute;
   padding: 1.5625rem 1rem 1.0625rem 1.0625rem;
 }
 
-.mainCover__searchInput input {
+.main .mainForm__input input {
   min-width: 19.625rem;
   margin-top: 0.625rem;
   padding: 1.0625rem 0 1.0625rem 3.375rem;
@@ -667,7 +624,7 @@ h6 {
   background: var(--white-color);
 }
 
-.mainCover__searchInput input[class=datePicker]::-webkit-calendar-picker-indicator {
+.main .mainForm__input input[class=datePicker]::-webkit-calendar-picker-indicator {
   position: absolute;
   background-image: url("img/input-icon2.svg");
   background-size: 150%;
@@ -678,7 +635,7 @@ h6 {
   top: 1.6563rem;
 }
 
-.mainCover__searchBtn button {
+.main .mainForm__btn button {
   border-radius: 1.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
@@ -698,15 +655,74 @@ h6 {
   color: var(--white-color);
 }
 
-.mainCover__searchBtn img {
+.main .mainForm__btn img {
   padding: 1rem 0.625rem 1rem;
 }
 
-.mainCover__benefits {
+.main .mainForm__searchType {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1.875rem 2.5rem 0;
+}
+
+.main .mainForm__searchType p {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-right: 0.5rem;
+}
+
+.main .mainForm__searchType span {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 0.3125rem;
+  margin-right: 0.75rem;
+}
+
+.main .mainForm__searchType input[type=radio]:after {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 0.9375rem;
+  top: 0.125rem;
+  left: -0.0625rem;
+  position: relative;
+  background-color: var(--white-color);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 0.0625rem solid var(--text-color-black);
+}
+
+.main .mainForm__searchType input[type=radio]:checked:after {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 0.9375rem;
+  top: 0.125rem;
+  left: -0.0625rem;
+  position: relative;
+  background-color: var(--orange-color);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 0.1875rem solid var(--white-color);
+  outline: 1px solid var(--orange-color);
+}
+
+.main .mainBenefits {
   padding: 0 0.625rem;
 }
 
-.mainCover__benefits h2 {
+.main .mainBenefits h2 {
   text-align: center;
   font-size: 2rem;
   font-style: normal;
@@ -715,7 +731,7 @@ h6 {
   margin-top: 2.8125rem;
 }
 
-.mainCover__benefits p {
+.main .mainBenefits p {
   text-align: center;
   font-size: 1rem;
   font-style: normal;
@@ -724,7 +740,7 @@ h6 {
   margin-top: 1.5625rem;
 }
 
-.mainCover__slider {
+.main .mainBenefits__slider {
   margin-top: 4.0625rem;
   height: 9.375rem;
   width: 18.75rem;
@@ -734,7 +750,7 @@ h6 {
           box-shadow: 0px 19px 29px 4px rgba(78, 54, 48, 0.3);
 }
 
-.mainCover__volunteer {
+.main .mainVolunteer {
   padding: 0 0.625rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -748,11 +764,11 @@ h6 {
           align-items: center;
 }
 
-.mainCover__volunteer img {
+.main .mainVolunteer img {
   margin-top: 2.9375rem;
 }
 
-.mainCover__volunteer p {
+.main .mainVolunteer p {
   margin-top: 1.25rem;
   text-align: center;
   font-size: 1.5rem;
@@ -761,7 +777,7 @@ h6 {
   line-height: normal;
 }
 
-.mainCover__volunteer span {
+.main .mainVolunteer span {
   margin-top: 0.9375rem;
   font-size: 1rem;
   font-style: normal;
@@ -769,7 +785,7 @@ h6 {
   line-height: normal;
 }
 
-.mainCover__volunteer button {
+.main .mainVolunteer button {
   margin-top: 1.75rem;
   padding: 1rem 2.125rem;
   color: var(--white-color);
@@ -782,11 +798,11 @@ h6 {
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 }
 
-.mainCover__howTo {
+.main__howTo {
   margin-top: 3.125rem;
 }
 
-.mainCover__howTo h2 {
+.main__howTo h2 {
   padding: 0 2.9375rem;
   text-align: center;
   font-size: 2rem;
@@ -796,7 +812,7 @@ h6 {
   margin-top: 2.8125rem;
 }
 
-.mainCover__howTo p {
+.main__howTo p {
   padding: 0 0.625rem;
   text-align: center;
   font-size: 1rem;
@@ -806,7 +822,7 @@ h6 {
   margin-top: 1.5625rem;
 }
 
-.mainCover__howTo div {
+.main__howTo div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -821,11 +837,11 @@ h6 {
   width: fit-content;
 }
 
-.mainCover__howTo div img {
+.main__howTo div img {
   margin-right: 0.5rem;
 }
 
-.mainCover__howTo div a {
+.main__howTo div a {
   color: var(--text-color-blue);
   font-size: 1.25rem;
   font-style: normal;
@@ -834,15 +850,15 @@ h6 {
   padding: 0.3125rem;
 }
 
-.mainCover__howTo div a:hover {
+.main__howTo div a:hover {
   text-decoration: underline;
 }
 
-.mainCover__howToItems {
+.main__howToItems {
   margin-top: 1.5rem;
 }
 
-.mainCover__howToItems div {
+.main__howToItems div {
   padding: 1.5rem 1.125rem 2rem 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -857,7 +873,7 @@ h6 {
   margin: 0.75rem 0.625rem 0;
 }
 
-.mainCover__howToItems div button {
+.main__howToItems div button {
   width: 3.375rem;
   height: 3.375rem;
   color: var(--orange-color);
@@ -872,7 +888,7 @@ h6 {
   border: 0.0625rem solid var(--orange-border-transparent);
 }
 
-.mainCover__howToItems div h3 {
+.main__howToItems div h3 {
   margin-top: 0.75rem;
   color: var(--text-color-black);
   font-size: 1.375rem;
@@ -881,7 +897,7 @@ h6 {
   line-height: normal;
 }
 
-.mainCover__howToItems div p {
+.main__howToItems div p {
   margin-top: 0.75rem;
   color: var(--text-color-black);
   font-size: 1rem;
@@ -890,20 +906,20 @@ h6 {
   line-height: normal;
 }
 
-.no-webp .mainCover__howToCreate{
+.no-webp .main__howToCreate{
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 246, 244, 0.9)), to(rgba(253, 246, 244, 0.9))), url("img/candles-background.png"), lightgray 50%/cover no-repeat; }
 
-.no-webp .mainCover__howToCreate{
+.no-webp .main__howToCreate{
   background: linear-gradient(0deg, rgba(253, 246, 244, 0.9) 0%, rgba(253, 246, 244, 0.9) 100%), url("img/candles-background.png"), lightgray 50%/cover no-repeat; }
 
-.mainCover__howToCreate {
+.main__howToCreate {
   margin: 3rem 0.625rem 0;
   border-radius: 1.875rem;
   background-position: center;
   background-size: 185%;
 }
 
-.mainCover__howToCreate h3 {
+.main__howToCreate h3 {
   margin: 3.875rem 1.625rem 0;
   text-align: center;
   font-size: 1.5rem;
@@ -913,7 +929,7 @@ h6 {
   color: var(--text-color-black);
 }
 
-.mainCover__howToCreate div {
+.main__howToCreate div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -928,11 +944,11 @@ h6 {
   width: fit-content;
 }
 
-.mainCover__howToCreate div img {
+.main__howToCreate div img {
   margin-right: 0.5rem;
 }
 
-.mainCover__howToCreate div a {
+.main__howToCreate div a {
   color: var(--text-color-blue);
   font-size: 1.25rem;
   font-style: normal;
@@ -941,11 +957,11 @@ h6 {
   padding: 0.3125rem;
 }
 
-.mainCover__howToCreate div a:hover {
+.main__howToCreate div a:hover {
   text-decoration: underline;
 }
 
-.mainCover__howToCreate button {
+.main__howToCreate button {
   margin: 2.5rem 0 2.625rem;
   padding: 1rem 2.125rem;
   color: var(--white-color);
@@ -1254,7 +1270,7 @@ h6 {
 
 @media (max-width: 47.99875em) {
   [class*=__container] {
-    max-width: none;
+    max-width: 23.4375rem;
   }
 }
 
@@ -1264,6 +1280,6 @@ h6 {
   }
 }
 
-.webp .mainCover__howToCreate{ background: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 246, 244, 0.9)), to(rgba(253, 246, 244, 0.9))), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
+.webp .main__howToCreate{ background: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 246, 244, 0.9)), to(rgba(253, 246, 244, 0.9))), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
 
-.webp .mainCover__howToCreate{ background: linear-gradient(0deg, rgba(253, 246, 244, 0.9) 0%, rgba(253, 246, 244, 0.9) 100%), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
+.webp .main__howToCreate{ background: linear-gradient(0deg, rgba(253, 246, 244, 0.9) 0%, rgba(253, 246, 244, 0.9) 100%), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
