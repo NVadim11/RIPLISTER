@@ -999,6 +999,165 @@ h6 {
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 }
 
+.mainRecents {
+  margin-top: 2.5rem;
+  background-color: var(--cream-color);
+}
+
+.mainRecents__title h2 {
+  padding: 3.75rem 0 0 0;
+  text-align: center;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.mainRecents__title p {
+  padding: 1.5625rem 0 0;
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.mainRecents__title div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 1.875rem auto 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.mainRecents__title div img {
+  margin-right: 0.5rem;
+}
+
+.mainRecents__title div a {
+  color: var(--text-color-blue);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0.3125rem;
+}
+
+.mainRecents__title div a:hover {
+  text-decoration: underline;
+}
+
+.mainRecents__slider {
+  margin: 3.75rem 0.9375rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.mainRecents__slider .sliderItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.mainRecents__slider .sliderItem__photo {
+  height: 190px;
+  width: 140px;
+  border-radius: 0.875rem;
+  background-color: gray;
+}
+
+.mainRecents__slider .sliderItem__text {
+  margin-top: 1.875rem;
+}
+
+.mainRecents__slider .sliderItem__text h4 {
+  text-align: center;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  /* 19.8px */
+}
+
+.mainRecents__slider .sliderItem__text h4:hover {
+  text-decoration-line: underline;
+}
+
+.mainRecents__slider .sliderItem__text p {
+  margin-top: 0.625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-size: 0.75rem;
+}
+
+.mainRecents__register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3.75rem;
+}
+
+.mainRecents__register h4 {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+.mainRecents__register span {
+  color: var(--text-color-blue);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.mainRecents__register span:hover {
+  text-decoration-line: underline;
+}
+
+.mainRecents__register button {
+  margin: 2.5rem 0 2.8125rem;
+  padding: 1rem 2.125rem;
+  color: var(--white-color);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 1.25rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
+  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+}
+
 .menu {
   z-index: 10;
   position: fixed;
