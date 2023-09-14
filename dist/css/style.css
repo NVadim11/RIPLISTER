@@ -585,7 +585,7 @@ h6 {
 
 .mainForm {
   z-index: 5;
-  padding: 95px 0.625rem 0 0.625rem;
+  padding: 5.9375rem 0.625rem 0 0.625rem;
 }
 
 .mainForm__container {
@@ -605,7 +605,7 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background: #FFF3ED;
 }
 
@@ -613,11 +613,11 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 .mainForm__searchType p {
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -625,7 +625,7 @@ h6 {
 }
 
 .mainForm__searchType span {
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -647,7 +647,7 @@ h6 {
   content: "";
   display: inline-block;
   visibility: visible;
-  border: 0.0625rem solid var(--text-color-black);
+  border: 0.0625rem solid var(--orange-color);
 }
 
 .mainForm__searchType input[type=radio]:checked:after {
@@ -665,7 +665,7 @@ h6 {
   display: inline-block;
   visibility: visible;
   border: 0.1875rem solid var(--white-color);
-  outline: 1px solid var(--orange-color);
+  outline: 0.0625rem solid var(--orange-color);
 }
 
 .mainForm__input {
@@ -685,7 +685,7 @@ h6 {
   margin-top: 0.625rem;
   padding: 1.0625rem 0 1.0625rem 3.375rem;
   border-radius: 1.25rem;
-  border: 1px solid var(--orange-border-solid);
+  border: 0.0625rem solid var(--orange-color);
   background: var(--white-color);
 }
 
@@ -785,11 +785,11 @@ h6 {
   height: 12.5rem;
   -webkit-filter: brightness(50%);
           filter: brightness(50%);
-  -webkit-box-shadow: 0px 19px 29px 4px rgba(78, 54, 48, 0.3);
-          box-shadow: 0px 19px 29px 4px rgba(78, 54, 48, 0.3);
+  -webkit-box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
+          box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  border-radius: 20px;
+  border-radius: 1.25rem;
 }
 
 .mainVolunteer {
@@ -913,7 +913,7 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background: var(--cream-color);
   margin-top: 0.75rem;
 }
@@ -1080,8 +1080,8 @@ h6 {
 }
 
 .mainRecents__slider .sliderItem__photo {
-  height: 190px;
-  width: 140px;
+  height: 11.875rem;
+  width: 8.75rem;
   border-radius: 0.875rem;
   background-color: gray;
 }
@@ -1096,7 +1096,7 @@ h6 {
   font-style: normal;
   font-weight: 600;
   line-height: 110%;
-  /* 19.8px */
+  /* 1.2375rem */
 }
 
 .mainRecents__slider .sliderItem__text h4:hover {
@@ -1156,6 +1156,65 @@ h6 {
   border-radius: 1.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+}
+
+.mainFunerals__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainFunerals__title h2 {
+  padding: 3.75rem 0 0 0;
+  text-align: center;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+}
+
+.mainFunerals__title p {
+  padding: 1.5625rem 0 0;
+  text-align: center;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.mainFunerals__input {
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mainFunerals__input img:first-of-type {
+  position: absolute;
+  padding: 2.8125rem 1.0625rem 1.0625rem 1.0625rem;
+}
+
+.mainFunerals__input img:last-of-type {
+  position: absolute;
+  padding: 2.8125rem 1.0625rem 1.0625rem 1.0625rem;
+  margin-left: 19.3125rem;
+}
+
+.mainFunerals__input input {
+  min-width: 22.1875rem;
+  margin-top: 1.875rem;
+  padding: 1.0625rem 0 1.0625rem 3.375rem;
+  border-radius: 1.25rem;
+  border: 0.0625rem solid var(--orange-color);
+  background: var(--white-color);
 }
 
 .menu {

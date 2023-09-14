@@ -64,7 +64,7 @@
 }   
 .mainForm {
     z-index: 5;
-    padding: 95px 0.625rem 0 0.625rem;    
+    padding: 5.9375rem 0.625rem 0 0.625rem;    
     &__container {
         padding: 1.875rem 0 0 0;
         display: flex;  
@@ -73,21 +73,21 @@
         align-items:center;
         text-align: center;
         flex-direction: column;
-        border-radius: 20px;
+        border-radius: 1.25rem;
         background: #FFF3ED;
     }
     &__searchType {
         display: flex;
-        margin-bottom: 15px;
+        margin-bottom: 0.9375rem;
         p {
-            font-size: 16px;
+            font-size: 1rem;
             font-style: normal;
             font-weight: 600;
             line-height: normal;
             margin-right: 0.5rem;
         } 
         span {
-            font-size: 16px;
+            font-size: 1rem;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
@@ -106,7 +106,7 @@
             content: '';
             display: inline-block;
             visibility: visible;
-            border: 0.0625rem solid var(--text-color-black);
+            border: 0.0625rem solid var(--orange-color);
             }
         input[type='radio']:checked:after {
             appearance: none;
@@ -121,7 +121,7 @@
             display: inline-block;
             visibility: visible;
             border: 0.1875rem solid var(--white-color);
-            outline: 1px solid var(--orange-color);
+            outline: 0.0625rem solid var(--orange-color);
 
         }     
     }
@@ -137,7 +137,7 @@
             margin-top: 0.625rem;
             padding: 1.0625rem 0 1.0625rem 3.375rem;
             border-radius: 1.25rem;
-            border: 1px solid var(--orange-border-solid);
+            border: 0.0625rem solid var(--orange-color);
             background: var(--white-color);                
         }
         input[class="datePicker"]::-webkit-calendar-picker-indicator {
@@ -222,10 +222,10 @@
         img {
             height: 12.5rem;
             filter: brightness(50%);
-            box-shadow: 0px 19px 29px 4px rgba(78, 54, 48, 0.30);
+            box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.30);
             // height: 12.5rem;
             flex-shrink: 0;
-            border-radius: 20px;
+            border-radius: 1.25rem;
         }
     }
 }
@@ -319,7 +319,7 @@
         display: flex;
         text-align: left;
         flex-direction: column;
-        border-radius: 20px;
+        border-radius: 1.25rem;
         background: var(--cream-color);
         margin-top: 0.75rem;
             button {
@@ -438,8 +438,8 @@
             align-items: center;
             text-align: center;
             &__photo {
-                height: 190px;
-                width: 140px;
+                height: 11.875rem;
+                width: 8.75rem;
                 border-radius: 0.875rem;
                 background-color: gray;
             }
@@ -450,7 +450,7 @@
                 font-size: 1.125rem;
                 font-style: normal;
                 font-weight: 600;
-                line-height: 110%; /* 19.8px */                
+                line-height: 110%; /* 1.2375rem */                
             }
             h4:hover {
                 text-decoration-line: underline;
@@ -500,4 +500,51 @@
             background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
         } 
     }   
+}
+.mainFunerals {
+    &__container {
+        display: flex;  
+        align-items:center;
+        text-align: center;
+        flex-direction: column;
+    }
+    &__title {
+        h2 {   
+            padding: 3.75rem 0 0 0;         
+            text-align: center;
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 110%;
+        }
+        p {
+            padding: 1.5625rem 0 0;
+            text-align: center;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;       
+        }        
+    }
+    &__input {  
+        position: relative;
+        align-items: center;
+        img:first-of-type {
+            position: absolute;
+            padding: 2.8125rem 1.0625rem 1.0625rem 1.0625rem;
+        }
+        img:last-of-type {
+            position: absolute;
+            padding: 2.8125rem 1.0625rem 1.0625rem 1.0625rem;
+            margin-left: 19.3125rem;
+          }
+        input {
+            min-width: 22.1875rem;
+            margin-top: 1.875rem;
+            padding: 1.0625rem 0 1.0625rem 3.375rem;
+            border-radius: 1.25rem;
+            border: 0.0625rem solid var(--orange-color);
+            background: var(--white-color);                
+        }
+    }
 }
