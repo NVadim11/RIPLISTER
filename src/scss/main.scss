@@ -384,7 +384,7 @@
         } 
     }
 }
-.mainRecents {
+.mainRecent {
     margin-top: 2.5rem;
     background-color: var(--cream-color);      
     &__container { 
@@ -553,7 +553,7 @@
         grid-template-columns: auto auto;
         grid-template-rows: auto auto;
         row-gap: 2.5rem;
-        column-gap: 10px;
+        column-gap: 0.625rem;
     }
     .funeralCompany {        
         &__imageBox {
@@ -597,6 +597,71 @@
             font-style: normal;
             font-weight: 400;
             line-height: 110%;
+        }
+    }
+}
+.mainPartners {
+    margin-top: 3.75rem;
+    &__container {
+        hr {            
+            height: 0.125rem;
+            background: var(--orange-border-transparent);
+        }
+    }
+    &__title {
+        h2 {   
+            padding: 3.5625rem 0 0 0;         
+            text-align: center;
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 110%;
+        }
+        p {
+            padding: 1.75rem 0 0;
+            text-align: center;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;       
+        }
+    }
+    &__partners {
+        margin-top: 2.8125rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 2.5rem;
+        column-gap: 0.625rem;
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &__partner {
+        margin-top: 2.8125rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h4 {
+            color: var(--text-color-black);
+            text-align: center;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        button {
+            padding: 1rem 2rem;
+            margin-top: 1.375rem;
+            color: var(--white-color);
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            border-radius: 1.25rem;
+            background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);
         }
     }
 }

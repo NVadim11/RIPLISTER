@@ -7,7 +7,7 @@
     height: 100%;
     background: linear-gradient(0deg, #FFF 0%, #FFF 100%), rgba(18, 4, 1, 0.40);
     transition: left 0.25s ease 0s;
-    transform: translate(-100%, 0px);
+    transform: translate(-100%, 0rem);
     &__header {
        height: 4.75rem;
        padding: 0 0.5rem;
@@ -20,7 +20,7 @@
     }
     &__langBtn {
         border-radius: 1.125rem;
-        border: 1px solid #AAA;
+        border: 0.0625rem solid #AAA;
         padding: 0.8125rem;
         display: flex;
         align-items: center;
@@ -37,8 +37,7 @@
         background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
         color: var(--white-color);
         padding: 0.75rem 0.8125rem;
-        color: #FFF;
-        font-family: Segaon;
+        color: var(--white-color);
         font-size: 0.875rem;
         font-style: normal;
         font-weight: 600;
@@ -82,7 +81,7 @@
         font-style: normal;
         font-weight: 600;
         line-height: normal;
-        letter-spacing: 1.6px;
+        letter-spacing: 0.1rem;
         text-decoration-color: var(--orange-color-underline);
         text-transform: uppercase;
         display: flex;
@@ -144,6 +143,6 @@
     }
 }
 .menu._active {
-    transform: translate(0px,0px);
+    transform: translate(0rem,0rem);
     overflow-x: auto;
 }
