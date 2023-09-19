@@ -317,23 +317,26 @@
     &__item {
         padding: 1.5rem 1.125rem 2rem 1.5rem;
         display: flex;
-        text-align: left;
         flex-direction: column;
         border-radius: 1.25rem;
         background: var(--cream-color);
         margin-top: 0.75rem;
-            button {
-                width: 3.375rem;
-                height: 3.375rem;
-                color: var(--orange-color);
+            div {
+                display: flex;
                 align-items: center;
-                font-size: 1.25rem;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
+                width: 3.375rem;
+                height: 3.375rem;                
                 border-radius: 1.25rem;
                 border: 0.0625rem solid var(--orange-border-transparent);
-            }
+                span {
+                    padding: 0.875rem 1.25rem 0.875rem;
+                    font-size: 1.25rem;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    color: var(--orange-color);
+                }
+            }           
             h3 {
                 margin-top: 0.75rem;
                 color: var(--text-color-black);
@@ -350,6 +353,25 @@
                 font-weight: 400;
                 line-height: normal;
             }
+    }
+    &__item:hover {
+        div {
+            display: flex;
+            align-items: center;
+            width: 3.375rem;
+            height: 3.375rem;
+            background-color: var(--orange-color);                
+            border-radius: 1.25rem;
+            border: 0.0625rem solid var(--orange-border-transparent);
+            span {
+                padding: 0.875rem 1.25rem 0.875rem;
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                color: var(--white-color);
+            }
+        }           
     }
     &__create {
         display: flex;

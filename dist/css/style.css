@@ -908,7 +908,6 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: left;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -918,19 +917,26 @@ h6 {
   margin-top: 0.75rem;
 }
 
-.mainInfo__item button {
-  width: 3.375rem;
-  height: 3.375rem;
-  color: var(--orange-color);
+.mainInfo__item div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 3.375rem;
+  height: 3.375rem;
+  border-radius: 1.25rem;
+  border: 0.0625rem solid var(--orange-border-transparent);
+}
+
+.mainInfo__item div span {
+  padding: 0.875rem 1.25rem 0.875rem;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  border-radius: 1.25rem;
-  border: 0.0625rem solid var(--orange-border-transparent);
+  color: var(--orange-color);
 }
 
 .mainInfo__item h3 {
@@ -949,6 +955,29 @@ h6 {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.mainInfo__item:hover div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3.375rem;
+  height: 3.375rem;
+  background-color: var(--orange-color);
+  border-radius: 1.25rem;
+  border: 0.0625rem solid var(--orange-border-transparent);
+}
+
+.mainInfo__item:hover div span {
+  padding: 0.875rem 1.25rem 0.875rem;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--white-color);
 }
 
 .no-webp .mainInfo__create{
