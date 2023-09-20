@@ -105,6 +105,8 @@ function initSliders() {
 			}
 		});
 	}
+
+	// Main benefits slider
 	if (document.querySelector('.mainBenefits__slider')) { 
 		new Swiper ('.mainBenefits__slider', {
 			modules: [Pagination],
@@ -117,6 +119,24 @@ function initSliders() {
 
 			pagination: {
 				el: '.mainBenefits__pagination',
+				clickable: true,
+			},
+		});
+	}
+
+	// Main recent slider
+	if (document.querySelector('.mainRecent__slider')) { 
+		new Swiper ('.mainRecent__slider', {
+			modules: [Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 2.2,
+			spaceBetween: 1,
+			autoHeight: true,
+			speed: 800,
+
+			pagination: {
+				el: '.mainRecent__pagination',
 				clickable: true,
 			},
 		});

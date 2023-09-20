@@ -1084,7 +1084,7 @@ h6 {
 }
 
 .mainRecent__slider {
-  margin: 3.75rem 0.9375rem 0;
+  margin-top: 3.75rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1094,7 +1094,7 @@ h6 {
           flex-direction: row;
 }
 
-.mainRecent__slider .sliderItem {
+.mainRecent__slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1108,18 +1108,21 @@ h6 {
   text-align: center;
 }
 
-.mainRecent__slider .sliderItem__photo {
+.mainRecent__slide_photo {
   height: 11.875rem;
   width: 8.75rem;
+}
+
+.mainRecent__slide_photo img {
   border-radius: 0.875rem;
-  background-color: gray;
+  width: 100%;
 }
 
-.mainRecent__slider .sliderItem__text {
-  margin-top: 1.875rem;
+.mainRecent__slide_text {
+  margin-top: 1.25rem;
 }
 
-.mainRecent__slider .sliderItem__text h4 {
+.mainRecent__slide_text h4 {
   text-align: center;
   font-size: 1.125rem;
   font-style: normal;
@@ -1128,11 +1131,11 @@ h6 {
   /* 1.2375rem */
 }
 
-.mainRecent__slider .sliderItem__text h4:hover {
+.mainRecent__slide_text h4:hover {
   text-decoration-line: underline;
 }
 
-.mainRecent__slider .sliderItem__text p {
+.mainRecent__slide_text p {
   margin-top: 0.625rem;
   font-style: normal;
   font-weight: 400;

@@ -3300,6 +3300,19 @@
                 clickable: true
             }
         });
+        if (document.querySelector(".mainRecent__slider")) new swiper_core_Swiper(".mainRecent__slider", {
+            modules: [ Pagination ],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 2.2,
+            spaceBetween: 1,
+            autoHeight: true,
+            speed: 800,
+            pagination: {
+                el: ".mainRecent__pagination",
+                clickable: true
+            }
+        });
     }
     window.addEventListener("load", (function(e) {
         initSliders();
