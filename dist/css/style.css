@@ -1085,13 +1085,6 @@ h6 {
 
 .mainRecent__slider {
   margin-top: 3.75rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 .mainRecent__slide {
@@ -1141,6 +1134,21 @@ h6 {
   font-weight: 400;
   line-height: normal;
   font-size: 0.75rem;
+}
+
+.mainRecent__scrollbar {
+  height: 0.375rem;
+  width: 100%;
+  border-radius: 1.875rem;
+  background: #F3ECEC;
+  margin: 3.125rem 0 0 0;
+}
+
+.mainRecent__scrollbar .swiper-scrollbar-drag {
+  height: 0.375rem;
+  border-radius: 1.875rem;
+  cursor: pointer;
+  background-color: var(--orange-color);
 }
 
 .mainRecent__register {
