@@ -59,19 +59,21 @@ $minWidth: 375;
 // Ширина полотна (макету)
 $maxWidth: 1920;
 // Ширина обмежуючого контейнера (0 = немає обмеження)
-$maxWidthContainer: 355;
+$minWidthContainer: 355;
 // Загальний відступ у контейнера
 // (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
-$containerPadding: 20;
+$containerPadding: 0;
 
 // Ширина спрацьовування першого брейкпоінту
-$containerWidth: $maxWidthContainer + $containerPadding;
+$containerWidth: $minWidthContainer + $containerPadding;
 
 // Брейк-поїнти
-$pc: em($containerWidth); // ПК, ноутбуки, деякі планшети у горизонтальному положенні
-$tablet: em(991.98); // Планшети, деякі телефони в горизонтальному положенні
+$full: em(1919.98); // large size screens
+$pc: em(1439.98); // pc
+$tablet: em(1279.98); // Планшети, деякі телефони в горизонтальному положенні, netbooks
 $mobile: em(767.98); // Телефони L
-$mobileSmall: em(479.98); // Телефони S
+$mini: em($containerWidth); // small phones
+
 
 // Тип адаптива:
 // 1 = чуйність (у контейнера немає брейкпоінтів),
@@ -125,12 +127,12 @@ body {
 @if ($responsiveType==1) {
 	// Чуйна
 	[class*="__container"] {
-		@if ($maxWidthContainer>0) {
+		@if ($minWidthContainer>0) {
 			max-width: toRem($containerWidth);
 			margin: 0 auto;
 		}
 		@if ($containerPadding>0) {
-			@if ($maxWidthContainer>0) {
+			@if ($minWidthContainer>0) {
 				padding: 0 toRem(math.div($containerPadding, 2));
 			} @else {
 				@include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
@@ -142,24 +144,27 @@ body {
 	// Брейк-поїнтами
 	[class*="__container"] {
 		margin: 0 auto;
-		@if ($maxWidthContainer>0) {
+		@if ($minWidthContainer>0) {
 			max-width: toRem($containerWidth);
 		} @else {
 			@if ($containerPadding>0) {
 				padding: 0 toRem(math.div($containerPadding, 2));
 			}
 		}
-		@media (max-width: $pc) {
-			max-width: toRem(970);
-		}
-		@media (max-width: $tablet) {
-			max-width: toRem(767);
-		}
-		@media (max-width: $mobile) {
-			max-width: toRem(375);
+		@media (min-width: $mobile) {
+			max-width: toRem(700);
 			@if ($containerPadding>0 and $maxWidthContainer>0) {
 				padding: 0 toRem(math.div($containerPadding, 2));
 			}
+		}
+		@media (min-width: $tablet) {
+			max-width: toRem(1120);
+		}
+		@media (min-width: $pc) {
+			max-width: toRem(1390);
+		}
+		@media (min-width: $full) {
+			max-width: toRem(1660);
 		}
 	}
 }

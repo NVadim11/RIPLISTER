@@ -265,7 +265,7 @@ h6 {
 
 [class*=__container] {
   margin: 0 auto;
-  max-width: 23.4375rem;
+  max-width: 22.1875rem;
 }
 
 [class*=-ibg] {
@@ -744,7 +744,6 @@ h6 {
 
 .mainBenefits__slider {
   margin-top: 4.0625rem;
-  padding-left: 0.625rem;
 }
 
 .mainBenefits__pagination {
@@ -1749,22 +1748,27 @@ h6 {
   display: none !important;
 }
 
-@media (max-width: 61.99875em) {
+@media (min-width: 47.99875em) {
   [class*=__container] {
-    max-width: 47.9375rem;
+    max-width: 43.75rem;
   }
 }
 
-@media (max-width: 47.99875em) {
+@media (min-width: 79.99875em) {
   [class*=__container] {
-    max-width: 23.4375rem;
-    padding: 0 0.625rem;
+    max-width: 70rem;
   }
 }
 
-@media (max-width: 23.4375em) {
+@media (min-width: 89.99875em) {
   [class*=__container] {
-    max-width: 60.625rem;
+    max-width: 86.875rem;
+  }
+}
+
+@media (min-width: 119.99875em) {
+  [class*=__container] {
+    max-width: 103.75rem;
   }
 }
 
