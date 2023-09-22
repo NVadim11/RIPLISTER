@@ -1,0 +1,25 @@
+<div id="popup" aria-hidden="true" class="popup">
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <h4 class="popup__title">Напишіть нам</h4>
+      <p class="popup__description">Співробітник нашої служби підтримки відповість якомога швидше.</p>
+      <div class="popup__form">
+        <form action="URL" id="contactForm">
+          <input class="popup__input" type="text" name="usrname" placeholder="Ваше Ім'я" />
+          <input class="popup__input" type="text" name="email" placeholder="email" />
+        </form>
+        <br />
+        <span>Тема звернення:</span>
+        <select name="popup__select">
+          <option value="value1" selected>
+            <span>Питання з партнерства</span>
+          </option>
+        </select>
+        <br />
+        <textarea class="popup__textarea" rows="4" cols="50" name="comment" form="usrform">Текст повідомлення</textarea>
+        <button class="popup__submitBtn" type="submit">Відправити</button>
+      </div>
+      <button data-close type="button" class="popup__close">Закрити</button>
+    </div>
+  </div>
+</div>
