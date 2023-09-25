@@ -408,7 +408,7 @@ body::after {
 .headerMain {
   padding: 0 0.5rem;
   background-color: transparent;
-  height: 4.75rem;
+  height: 76px;
   z-index: 9;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -419,6 +419,76 @@ body::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.headerMain__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.headerMain__menu {
+  display: none;
+}
+
+.headerMain__menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.9375rem;
+}
+
+.headerMain__menu a {
+  color: #FFF;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.headerMain__btnBox {
+  display: none;
+}
+
+.headerMain__entryBtn {
+  border-radius: 1.125rem;
+  background: var(--white-color);
+  color: var(--text-color-black);
+  padding: 0.8125rem 1.125rem;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headerMain__entryBtn img {
+  margin-right: 0.4375rem;
+}
+
+.headerMain__langBtn {
+  border-radius: 1.125rem;
+  border: 0.0625rem solid #AAA;
+  padding: 0.8125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  color: var(--white-color);
+}
+
+.headerMain__langBtn span {
+  padding: 0 0.3125rem;
 }
 
 .headerMain__menuBtn button {
@@ -680,6 +750,7 @@ body::after {
   position: absolute;
   top: -4.75rem;
   z-index: 1;
+  width: 100%;
 }
 
 .mainCover__bg img {
@@ -687,6 +758,20 @@ body::after {
      object-fit: cover;
   -webkit-filter: brightness(50%);
           filter: brightness(50%);
+  width: 80rem;
+}
+
+.mainCover__bg-desktop {
+  display: none;
+  position: absolute;
+  top: -4.75rem;
+  z-index: 1;
+}
+
+.mainCover__bg-desktop img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 120rem;
 }
 
 .mainForm {
@@ -1805,9 +1890,77 @@ body::after {
   }
 }
 
+@media screen and (min-width: 47.99875em) {
+  .headerMain {
+    padding: 0 2.125rem;
+  }
+
+  .headerMain__logo img {
+    width: 10.3999rem;
+    height: 2.0001rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+
+  .mainCover__container h2 {
+    padding: 11.875rem 0 0 0;
+  }
+
+  .mainCover__btn button {
+    font-size: 1.5rem;
+    padding: 1.5625rem 4.375rem;
+  }
+}
+
 @media (min-width: 79.99875em) {
   [class*=__container] {
     max-width: 70rem;
+  }
+}
+
+@media screen and (min-width: 79.99875em) {
+  .headerMain__logo img {
+    width: 12.6748rem;
+    height: 2.4375rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+
+  .headerMain__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .headerMain__btnBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0.625rem;
+  }
+
+  .headerMain__menuBtn {
+    display: none;
+  }
+
+  .mainCover__container h2 {
+    font-size: 2.75rem;
+  }
+
+  .mainCover__container p {
+    font-size: 1.25rem;
+  }
+
+  .mainCover__btn button {
+    padding: 2rem 4.375rem;
+  }
+
+  .mainCover__bg {
+    display: none;
+  }
+
+  .mainCover__bg-desktop {
+    display: block;
   }
 }
 
