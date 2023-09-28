@@ -839,6 +839,11 @@ label {
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 }
 
+.mainCover__btn button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+}
+
 .mainCover__bg {
   position: absolute;
   top: -4.75rem;
@@ -1004,6 +1009,11 @@ label {
   color: var(--white-color);
 }
 
+.mainForm__btn button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+}
+
 .mainForm__btn img {
   padding: 1rem 0.625rem 1rem;
 }
@@ -1126,6 +1136,11 @@ label {
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 }
 
+.mainVolunteer button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+}
+
 .mainInfo {
   margin-top: 3.125rem;
 }
@@ -1176,10 +1191,6 @@ label {
   font-weight: 700;
   line-height: normal;
   padding: 0.3125rem;
-}
-
-.mainInfo__link a:hover {
-  text-decoration: underline;
 }
 
 .mainInfo__row {
@@ -1315,6 +1326,11 @@ label {
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 }
 
+.mainInfo__create button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+}
+
 .mainRecent {
   margin-top: 2.5rem;
   background-color: var(--cream-color);
@@ -1366,10 +1382,6 @@ label {
   padding: 0.3125rem;
 }
 
-.mainRecent__title div a:hover {
-  text-decoration: underline;
-}
-
 .mainRecent__slider {
   margin-top: 3.75rem;
 }
@@ -1409,10 +1421,6 @@ label {
   font-weight: 600;
   line-height: 110%;
   /* 1.2375rem */
-}
-
-.mainRecent__slide_text h4:hover {
-  text-decoration-line: underline;
 }
 
 .mainRecent__slide_text p {
@@ -1468,10 +1476,6 @@ label {
   line-height: normal;
 }
 
-.mainRecent__register span:hover {
-  text-decoration-line: underline;
-}
-
 .mainRecent__register button {
   margin: 2.5rem 0 2.8125rem;
   padding: 1rem 2.125rem;
@@ -1483,6 +1487,11 @@ label {
   border-radius: 1.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+}
+
+.mainRecent__register button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
 }
 
 .mainFunerals__container {
@@ -1573,6 +1582,14 @@ label {
   height: 8.4375rem;
   border: 0.0625rem solid rgba(0, 0, 0, 0.1);
   border-radius: 0.875rem;
+}
+
+.mainFunerals .funeralCompany__imageBox img {
+  -o-object-fit: fit;
+     object-fit: fit;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
 }
 
 .mainFunerals .funeralCompany__fullDay {
@@ -2060,6 +2077,47 @@ label {
 @media (min-width: 89.99875em) {
   [class*=__container] {
     max-width: 86.875rem;
+  }
+}
+
+@media screen and (min-width: 89.99875em) {
+  .mainFunerals__companies {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: (auto)[1];
+    grid-template-rows: repeat(1, auto);
+    -webkit-column-gap: 5rem;
+       -moz-column-gap: 5rem;
+            column-gap: 5rem;
+  }
+
+  .mainFunerals .funeralCompany__imageBox {
+    width: 19.375rem;
+    height: 15rem;
+    border-radius: 1.875rem;
+    border: 0.0625rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  .mainFunerals .funeralCompany__imageBox img {
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+  }
+
+  .mainFunerals .funeralCompany__fullDay {
+    top: 14px;
+    right: 14px;
+    border-radius: 2.5rem;
+    color: var(--white-color);
+    padding: 0.3125rem 0.75rem;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
   }
 }
 

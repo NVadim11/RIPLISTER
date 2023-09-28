@@ -67,6 +67,9 @@
                 padding: 2rem 4.375rem;
             }
             }
+            button:hover {
+                background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+            }
         }
     &__bg {        
     position: absolute;
@@ -200,6 +203,9 @@
             line-height: normal;
             color: var(--white-color);
         }
+        button:hover {
+            background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+        }
         img {
             padding: 1rem 0.625rem 1rem;
         }      
@@ -298,6 +304,9 @@
         border-radius: 1.25rem;
         background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
     }
+    button:hover {
+        background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+    }
 }
 .mainInfo {
     margin-top: 3.125rem;
@@ -339,9 +348,6 @@
             font-weight: 700;
             line-height: normal;   
             padding: 0.3125rem;         
-        }
-        a:hover {
-            text-decoration: underline;
         }
     }
     &__row {
@@ -437,6 +443,9 @@
             line-height: normal;
             border-radius: 1.25rem;
             background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+        }
+        button:hover {
+            background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
         } 
     }
 }
@@ -479,9 +488,6 @@
                 line-height: normal;   
                 padding: 0.3125rem;         
             }
-            a:hover {
-                text-decoration: underline;
-            }
         }
     }
     &__slider {
@@ -508,9 +514,6 @@
             font-style: normal;
             font-weight: 600;
             line-height: 110%; /* 1.2375rem */                
-        }
-        h4:hover {
-            text-decoration-line: underline;
         }
         p {
             margin-top: 0.625rem;
@@ -553,9 +556,6 @@
             font-weight: 600;
             line-height: normal;            
         }
-        span:hover {
-            text-decoration-line: underline;
-        }
         button {
             margin: 2.5rem 0 2.8125rem;
             padding: 1rem 2.125rem;
@@ -566,7 +566,10 @@
             line-height: normal;
             border-radius: 1.25rem;
             background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-        } 
+        }
+                    button:hover {
+                background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+            } 
     }   
 }
 .mainFunerals {
@@ -622,6 +625,12 @@
         grid-template-rows: auto auto;
         row-gap: 2.5rem;
         column-gap: 0.625rem;
+        @media screen and (min-width:$pc) {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(1, auto);
+            column-gap: 5rem;
+        }
     }
     .funeralCompany {        
         &__imageBox {
@@ -632,7 +641,25 @@
             width: 10.625rem;
             height: 8.4375rem;
             border: 0.0625rem solid rgba(0, 0, 0, 0.10);
-            border-radius: 0.875rem;            
+            border-radius: 0.875rem;
+            img {
+                object-fit: fit;
+                width:100%;
+                height:auto;
+                max-height:100%;
+            }
+            @media screen and (min-width:$pc) {
+                width: 19.375rem;
+                height: 15rem;
+                border-radius: 1.875rem;
+                border: 0.0625rem solid rgba(0, 0, 0, 0.10);
+                img {
+                    object-fit: contain;
+                    width:100%;
+                    height:auto;
+                    max-height:100%;
+                }
+            }            
         }
         &__fullDay { 
             position: absolute;
@@ -648,7 +675,18 @@
             font-size: 0.5rem;
             font-style: normal;
             font-weight: 400;
-            line-height: normal;            
+            line-height: normal;
+            @media screen and (min-width:$pc) {
+                top: 14px;
+                right: 14px;
+                border-radius: 2.5rem;
+                color: var(--white-color);
+                padding: 0.3125rem 0.75rem;
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }            
         }
         h4 {  
             padding-top: 0.8125rem;          
