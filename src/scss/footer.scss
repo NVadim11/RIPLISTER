@@ -39,6 +39,11 @@
             display: flex;
             align-items: center;
         }
+        button:hover {
+            color: var(--white-color);
+            border-radius: 2.5rem;
+            background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+        }
     }
     &__ref {
         color: var(--orange-color);
@@ -47,7 +52,7 @@
         font-weight: 600;
         line-height: normal;
         letter-spacing: 0.125rem;    
-        text-transform: uppercase;
+        text-transform: uppercase;        
         display: flex;
         justify-content: center;
         margin: 1.1875rem 0 0 0;
@@ -70,9 +75,10 @@
             font-weight: 400;
             line-height: normal;
             padding: 0.5625rem;
+            text-decoration: underline
         }
         a:hover {
-            text-decoration: underline;
+            text-decoration: none;
         }
     }
     &__socials {

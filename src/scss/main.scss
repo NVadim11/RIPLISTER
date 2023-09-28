@@ -503,7 +503,10 @@
             width: 8.75rem;            
             img {
                 border-radius: 0.875rem;  
-                width: 100%;
+                width: 100%;                
+            }
+            img:hover {
+                box-shadow: 0 0.625rem 0.625rem -0.3125rem rgb(0 0 0 / 0.4);
             }
         }
         &_text {
@@ -554,7 +557,11 @@
             font-size: 1.5rem;
             font-style: normal;
             font-weight: 600;
-            line-height: normal;            
+            line-height: normal;   
+            text-decoration: underline;         
+        }
+        span:hover {
+            text-decoration: none; 
         }
         button {
             margin: 2.5rem 0 2.8125rem;
@@ -641,7 +648,7 @@
             width: 10.625rem;
             height: 8.4375rem;
             border: 0.0625rem solid rgba(0, 0, 0, 0.10);
-            border-radius: 0.875rem;
+            border-radius: 0.875rem;            
             img {
                 object-fit: fit;
                 width:100%;
@@ -660,6 +667,10 @@
                     max-height:100%;
                 }
             }            
+        }
+        &__imageBox:hover {
+            border: none;
+            box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.30);
         }
         &__fullDay { 
             position: absolute;
@@ -767,7 +778,10 @@
             font-weight: 700;
             line-height: normal;
             border-radius: 1.25rem;
-            background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);
+            background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);     
+        }
+        button:hover {
+            background: linear-gradient(0deg, #64A2FF 0%, #2A86DB 100%);
         }
     }
 }

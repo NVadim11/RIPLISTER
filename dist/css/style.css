@@ -661,6 +661,13 @@ label {
           align-items: center;
 }
 
+.footer__contact button:hover {
+  color: var(--white-color);
+  border-radius: 2.5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+}
+
 .footer__ref {
   color: var(--orange-color);
   font-size: 1.25rem;
@@ -707,10 +714,11 @@ label {
   font-weight: 400;
   line-height: normal;
   padding: 0.5625rem;
+  text-decoration: underline;
 }
 
 .footer__links a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .footer__socials {
@@ -1410,6 +1418,11 @@ label {
   width: 100%;
 }
 
+.mainRecent__slide_photo img:hover {
+  -webkit-box-shadow: 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.4);
+}
+
 .mainRecent__slide_text {
   margin-top: 1.25rem;
 }
@@ -1474,6 +1487,11 @@ label {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  text-decoration: underline;
+}
+
+.mainRecent__register span:hover {
+  text-decoration: none;
 }
 
 .mainRecent__register button {
@@ -1590,6 +1608,12 @@ label {
   width: 100%;
   height: auto;
   max-height: 100%;
+}
+
+.mainFunerals .funeralCompany__imageBox:hover {
+  border: none;
+  -webkit-box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
+          box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
 }
 
 .mainFunerals .funeralCompany__fullDay {
@@ -1718,6 +1742,11 @@ label {
   background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);
 }
 
+.mainPartners__partner button:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(#64A2FF), to(#2A86DB));
+  background: linear-gradient(0deg, #64A2FF 0%, #2A86DB 100%);
+}
+
 .menu {
   z-index: 10;
   position: fixed;
@@ -1833,10 +1862,11 @@ label {
   display: -ms-flexbox;
   display: flex;
   padding: 1rem;
+  text-decoration: underline;
 }
 
 .menu__list-item a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .menu__ref {
@@ -1858,10 +1888,11 @@ label {
 
 .menu__ref a {
   padding: 1.625rem;
+  text-decoration: underline;
 }
 
 .menu__ref a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .menu__contact {
@@ -1894,6 +1925,13 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.menu__contact button:hover {
+  color: var(--white-color);
+  border-radius: 2.5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
 }
 
 .menu__links {
