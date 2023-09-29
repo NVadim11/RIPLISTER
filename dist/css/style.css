@@ -1386,8 +1386,9 @@ label {
   width: fit-content;
 }
 
-.mainRecent__title div img {
+.mainRecent__title div svg {
   margin-right: 0.5rem;
+  border-radius: 3.125rem;
 }
 
 .mainRecent__title div a {
@@ -1397,6 +1398,14 @@ label {
   font-weight: 700;
   line-height: normal;
   padding: 0.3125rem;
+}
+
+.mainRecent__title div:hover svg {
+  background-color: var(--text-color-blue);
+}
+
+.mainRecent__title div:hover path {
+  fill: var(--white-color);
 }
 
 .mainRecent__slider {
