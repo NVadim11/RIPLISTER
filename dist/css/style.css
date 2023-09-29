@@ -1188,7 +1188,8 @@ label {
   width: fit-content;
 }
 
-.mainInfo__link img {
+.mainInfo__link svg {
+  border-radius: 3.125rem;
   margin-right: 0.5rem;
 }
 
@@ -1199,6 +1200,14 @@ label {
   font-weight: 700;
   line-height: normal;
   padding: 0.3125rem;
+}
+
+.mainInfo__link:hover svg {
+  background-color: var(--text-color-blue);
+}
+
+.mainInfo__link:hover svg path {
+  fill: var(--white-color);
 }
 
 .mainInfo__row {

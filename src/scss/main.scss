@@ -338,7 +338,8 @@
         align-content: center;
         margin: 1.5625rem auto 0;
         width: fit-content;
-        img {
+        svg {
+            border-radius: 3.125rem;            
             margin-right: 0.5rem;
         }
         a {          
@@ -349,6 +350,14 @@
             line-height: normal;   
             padding: 0.3125rem;         
         }
+    }
+    &__link:hover {
+        svg { 
+            background-color: var(--text-color-blue);
+            path {
+                fill: var(--white-color); 
+            }
+        }        
     }
     &__row {
         margin-top: 1.5rem;
