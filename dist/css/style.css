@@ -498,6 +498,107 @@ label {
   background-color: var(--white-color);
 }
 
+.headerAlt {
+  padding: 0 0.5rem;
+  background-color: transparent;
+  height: 76px;
+  z-index: 9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headerAlt__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.headerAlt__menu {
+  display: none;
+}
+
+.headerAlt__menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.9375rem;
+}
+
+.headerAlt__menu a {
+  color: var(--white-color);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.headerAlt__btnBox {
+  display: none;
+}
+
+.headerAlt__entryBtn {
+  border-radius: 1.125rem;
+  background: var(--white-color);
+  color: var(--text-color-black);
+  padding: 0.8125rem 1.125rem;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.headerAlt__entryBtn svg {
+  margin-right: 0.4375rem;
+}
+
+.headerAlt__langBtn {
+  border-radius: 1.125rem;
+  border: 0.0625rem solid #AAA;
+  padding: 0.8125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  color: var(--white-color);
+}
+
+.headerAlt__langBtn span {
+  padding: 0 0.3125rem;
+}
+
+.headerAlt__menuBtn button {
+  background-color: var(--white-color);
+  color: var(--text-color-black);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.875rem 1.125rem;
+  border-radius: 1.125rem;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.headerAlt__menuBtn svg {
+  margin: 0 0.5rem 0 0;
+}
+
 .headerMain {
   padding: 0 0.5rem;
   background-color: transparent;
@@ -528,11 +629,11 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 0.9375rem;
+  gap: 1.5625rem;
 }
 
 .headerMain__menu a {
-  color: #FFF;
+  color: var(--text-color-black);
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
@@ -541,14 +642,39 @@ label {
   text-transform: uppercase;
 }
 
+.headerMain__search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.headerMain__search svg {
+  position: absolute;
+  margin-left: 1.25rem;
+}
+
+.headerMain__search input {
+  padding: 1rem 1.125rem;
+  border-radius: 1.875rem;
+  border: 0.0625rem solid #AAA;
+  overflow: hidden;
+  padding: 0.9375rem 0.625rem 0.9375rem 3.125rem;
+}
+
 .headerMain__btnBox {
   display: none;
 }
 
 .headerMain__entryBtn {
-  border-radius: 1.125rem;
-  background: var(--white-color);
-  color: var(--text-color-black);
+  border-radius: 2.5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
+  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+  color: var(--white-color);
   padding: 0.8125rem 1.125rem;
   font-size: 1rem;
   font-style: normal;
@@ -562,7 +688,7 @@ label {
           align-items: center;
 }
 
-.headerMain__entryBtn img {
+.headerMain__entryBtn svg {
   margin-right: 0.4375rem;
 }
 
@@ -577,7 +703,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1rem;
-  color: var(--white-color);
+  color: var(--text-color-black);
 }
 
 .headerMain__langBtn span {
@@ -595,7 +721,7 @@ label {
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.headerMain__menuBtn img {
+.headerMain__menuBtn svg {
   margin: 0 0.5rem 0 0;
 }
 
@@ -1766,7 +1892,7 @@ label {
 }
 
 .menu {
-  z-index: 10;
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
@@ -2057,6 +2183,17 @@ label {
 }
 
 @media screen and (min-width: 47.99875em) {
+  .headerAlt {
+    padding: 0 2.125rem;
+  }
+
+  .headerAlt__logo img {
+    width: 10.3999rem;
+    height: 2.0001rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+
   .headerMain {
     padding: 0 2.125rem;
   }
@@ -2085,6 +2222,30 @@ label {
 }
 
 @media screen and (min-width: 79.99875em) {
+  .headerAlt__logo img {
+    width: 12.6748rem;
+    height: 2.4375rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+
+  .headerAlt__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .headerAlt__btnBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0.625rem;
+  }
+
+  .headerAlt__menuBtn {
+    display: none;
+  }
+
   .headerMain__logo img {
     width: 12.6748rem;
     height: 2.4375rem;

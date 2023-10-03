@@ -178,7 +178,8 @@ body {
 @import "common";
 
 // Підключення стилів окремих блоків
-@import "header";
+@import "headerAlt";
+@import "headerMain";
 @import "footer";
 @import "main";
 
@@ -186,3 +187,4 @@ body {
 
 // Підключення стилів окремих попапів
 @import "popupMenu";
+@import "instructions";

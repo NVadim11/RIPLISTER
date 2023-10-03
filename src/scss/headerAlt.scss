@@ -1,0 +1,101 @@
+.headerAlt {
+	padding: 0 0.5rem;
+	background-color: transparent;
+	height: 76px;
+	z-index: 9;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@media screen and (min-width:$mobile) {
+		padding: 0 2.125rem;
+	}
+	&__logo {
+		display: flex;
+		img {
+			@media screen and (min-width:$mobile) {
+				width: 10.3999rem;
+				height: 2.0001rem;
+				flex-shrink: 0;
+			}
+			@media screen and (min-width:$tablet) {
+				width: 12.6748rem;
+				height: 2.4375rem;
+				flex-shrink: 0;
+			}
+		}
+	}
+	&__menu {
+		display: none;
+		@media screen and (min-width:$tablet) {
+			display: flex;
+		}
+		ul {
+			display: flex;
+			gap: 0.9375rem;
+		}
+		li {
+
+		}
+		a {
+			color: var(--white-color);
+			font-size: 0.875rem;
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+			letter-spacing: 1.4px;
+			text-transform: uppercase;
+		}
+	}
+	&__btnBox {
+		display: none;
+		@media screen and (min-width:$tablet) {
+			display: flex;
+			gap: 0.625rem;
+		}
+	}
+	&__entryBtn {
+		border-radius: 1.125rem;
+        background: var(--white-color);
+        color: var(--text-color-black);
+        padding: 0.8125rem 1.125rem;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        svg {
+            margin-right: 0.4375rem;
+        }
+	}
+	&__langBtn {
+		border-radius: 1.125rem;
+        border: 0.0625rem solid #AAA;
+        padding: 0.8125rem;
+        display: flex;
+        align-items: center;
+		font-size: 1rem;
+		color: var(--white-color);
+        span {
+            padding: 0 0.3125rem;
+        }
+	}
+	&__menuBtn {
+		button {
+			background-color: var(--white-color);
+			color: var(--text-color-black);
+			font-weight: 700;
+			font-size: 1rem;
+			padding: 0.875rem 1.125rem;
+			border-radius: 1.125rem;
+			box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+		}
+		svg {
+			margin: 0 0.5rem 0 0;
+		}
+		@media screen and (min-width:$tablet) {
+			display: none;
+		}
+	}
+}
