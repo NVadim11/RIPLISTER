@@ -9,7 +9,7 @@
   --blue-color: #73b6da;
   --modal-background-color: #FFF3ED;
   --cream-color: #FFF8F6;
-  --alt-creat-color: #FCFAFA;
+  --alt-cream-color: #FCFAFA;
   --orange-color: #E55738;
   --orange-color-underline: rgba(229, 87, 56, 0.3);
   --orange-border-transparent: rgba(235, 128, 105, 0.5);
@@ -1395,7 +1395,7 @@ label {
 }
 
 .mainInfo__item:hover {
-  background-color: var(--alt-creat-color);
+  background-color: var(--alt-cream-color);
 }
 
 .mainInfo__item:hover div {
@@ -1799,6 +1799,7 @@ label {
 
 .mainPartners {
   margin-top: 3.75rem;
+  background-color: var(--alt-cream-color);
 }
 
 .mainPartners__container hr {
@@ -1875,7 +1876,7 @@ label {
 
 .mainPartners__partner button {
   padding: 1rem 2rem;
-  margin-top: 1.375rem;
+  margin: 1.375rem 0 2.5rem 0;
   color: var(--white-color);
   font-size: 1.125rem;
   font-style: normal;
@@ -2298,6 +2299,10 @@ label {
 }
 
 @media screen and (min-width: 89.99875em) {
+  .mainCover__container h2 {
+    font-size: 4rem;
+  }
+
   .mainFunerals__companies {
     display: -ms-grid;
     display: grid;
@@ -2334,6 +2339,37 @@ label {
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
+    line-height: normal;
+  }
+
+  .mainPartners__partner {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .mainPartners__partner h4 {
+    max-width: 43.75rem;
+    margin: 6.25rem 0 7.5rem 0;
+    color: var(--text-color-black);
+    font-size: 2.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .mainPartners__partner button {
+    padding: 1.875rem 4.6875rem;
+    margin: 6.25rem 0 7.5rem 0;
+    color: var(--white-color);
+    border-radius: 2.5rem;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
     line-height: normal;
   }
 }

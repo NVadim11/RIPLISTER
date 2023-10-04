@@ -30,6 +30,9 @@
             @media screen and (min-width:$tablet) {
                 font-size: 2.75rem;
             }
+            @media screen and (min-width:$pc) {               
+                font-size: 4rem;                
+            }
         }
         p {
             color: var(--white-color);
@@ -403,7 +406,7 @@
             }
     }
     &__item:hover {
-        background-color: var(--alt-creat-color);
+        background-color: var(--alt-cream-color);
         div {
             display: flex;
             align-items: center;
@@ -737,7 +740,8 @@
 }
 .mainPartners {
     margin-top: 3.75rem;
-    &__container {
+    background-color: var(--alt-cream-color);
+    &__container {        
         hr {            
             height: 0.125rem;
             background: var(--orange-border-transparent);
@@ -779,6 +783,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media screen and (min-width:$pc) { 
+            flex-direction: row;
+            justify-content: space-between;            
+        }
         h4 {
             color: var(--text-color-black);
             text-align: center;
@@ -786,17 +794,36 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            @media screen and (min-width:$pc) {
+                max-width: 43.75rem;
+                margin: 6.25rem 0 7.5rem 0;
+                color: var(--text-color-black);
+                font-size: 2.75rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
         }
         button {
             padding: 1rem 2rem;
-            margin-top: 1.375rem;
+            margin: 1.375rem 0 2.5rem 0;            
             color: var(--white-color);
             font-size: 1.125rem;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
             border-radius: 1.25rem;
-            background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);     
+            background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);
+            @media screen and (min-width:$pc) {
+                padding: 1.875rem 4.6875rem;
+                margin: 6.25rem 0 7.5rem 0; 
+                color: var(--white-color);   
+                border-radius: 2.5rem;             
+                font-size: 2rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }     
         }
         button:hover {
             background: linear-gradient(0deg, #64A2FF 0%, #2A86DB 100%);

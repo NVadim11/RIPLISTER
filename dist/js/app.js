@@ -3832,15 +3832,23 @@
     window.addEventListener("load", (function(e) {
         initSliders();
     }));
-    const menuBtn = document.querySelector(".headerMain__menuBtn");
+    const mainMenuBtn = document.querySelector(".headerMain__menuBtn");
+    const altMenuBtn = document.querySelector(".headerAlt__menuBtn");
     const menuCloseBtn = document.querySelector(".menu__closeBtn");
-    const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
-    const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
-    const radioBtnHumanText = document.querySelector(".searchType_human");
-    const radioBtnCemeteryText = document.querySelector(".searchType_cemetery");
-    if (menuBtn) {
+    document.querySelector(".searchTypeBtn_human");
+    document.querySelector(".searchTypeBtn_cemetery");
+    document.querySelector(".searchType_human");
+    document.querySelector(".searchType_cemetery");
+    if (mainMenuBtn) {
         const menu = document.querySelector(".menu");
-        menuBtn.addEventListener("click", (function(e) {
+        mainMenuBtn.addEventListener("click", (function(e) {
+            menu.classList.add("_active");
+            menuOpen();
+        }));
+    }
+    if (altMenuBtn) {
+        const menu = document.querySelector(".menu");
+        altMenuBtn.addEventListener("click", (function(e) {
             menu.classList.add("_active");
             menuOpen();
         }));
@@ -3852,14 +3860,6 @@
             menuClose();
         }));
     }
-    if (radioBtnHuman) radioBtnHuman.addEventListener("click", (function(e) {
-        radioBtnCemeteryText.style.color = "var(--text-color-black)";
-        radioBtnHumanText.style.color = "var(--orange-color)";
-    }));
-    if (radioBtnCemetery) radioBtnCemetery.addEventListener("click", (function(e) {
-        radioBtnHumanText.style.color = "var(--text-color-black)";
-        radioBtnCemeteryText.style.color = "var(--orange-color)";
-    }));
     window["FLS"] = true;
     isWebp();
     menuInit();
