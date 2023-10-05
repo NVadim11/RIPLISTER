@@ -3,9 +3,12 @@
     color: var(--text-color-black);
     &__container {
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
         align-items: center;
         text-align: center;
+        @media screen and (min-width:$pc) {
+            
+        }
     }
     &__logo {
         margin-top: 3.4375rem;
@@ -24,7 +27,7 @@
     }
     &__contact {
         margin-top: 2.8125rem;
-        img {
+        svg {
             margin-right: 0.5625rem;
         }
         button {
@@ -39,7 +42,16 @@
             display: flex;
             align-items: center;
         }
-        button:hover {
+        button:hover {   
+            svg {
+                background-color: var(--orange-color)
+            }
+            rect {
+                fill: var(--white-color);
+            }
+            path {
+                fill:var(--orange-color)
+            }         
             color: var(--white-color);
             border-radius: 2.5rem;
             background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);

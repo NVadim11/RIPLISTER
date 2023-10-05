@@ -734,10 +734,6 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -766,7 +762,7 @@ label {
   margin-top: 2.8125rem;
 }
 
-.footer__contact img {
+.footer__contact svg {
   margin-right: 0.5625rem;
 }
 
@@ -792,6 +788,18 @@ label {
   border-radius: 2.5rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+}
+
+.footer__contact button:hover svg {
+  background-color: var(--orange-color);
+}
+
+.footer__contact button:hover rect {
+  fill: var(--white-color);
+}
+
+.footer__contact button:hover path {
+  fill: var(--orange-color);
 }
 
 .footer__ref {
@@ -1396,6 +1404,7 @@ label {
 
 .mainInfo__item:hover {
   background-color: var(--alt-cream-color);
+  cursor: pointer;
 }
 
 .mainInfo__item:hover div {
@@ -1563,6 +1572,7 @@ label {
 }
 
 .mainRecent__slide_photo img:hover {
+  cursor: pointer;
   -webkit-box-shadow: 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.4);
           box-shadow: 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.4);
 }
@@ -1756,6 +1766,7 @@ label {
 
 .mainFunerals .funeralCompany__imageBox:hover {
   border: none;
+  cursor: pointer;
   -webkit-box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
           box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
 }
@@ -2055,7 +2066,7 @@ label {
   margin: 0.875rem 0 0 0;
 }
 
-.menu__contact img {
+.menu__contact svg {
   margin-right: 0.5625rem;
 }
 
@@ -2077,6 +2088,18 @@ label {
   border-radius: 2.5rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+}
+
+.menu__contact button:hover svg {
+  background-color: var(--orange-color);
+}
+
+.menu__contact button:hover rect {
+  fill: var(--white-color);
+}
+
+.menu__contact button:hover path {
+  fill: var(--orange-color);
 }
 
 .menu__links {

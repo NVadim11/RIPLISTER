@@ -407,6 +407,7 @@
     }
     &__item:hover {
         background-color: var(--alt-cream-color);
+        cursor: pointer;
         div {
             display: flex;
             align-items: center;
@@ -527,6 +528,7 @@
                 width: 100%;                
             }
             img:hover {
+                cursor: pointer;
                 box-shadow: 0 0.625rem 0.625rem -0.3125rem rgb(0 0 0 / 0.4);
             }
         }
@@ -691,6 +693,7 @@
         }
         &__imageBox:hover {
             border: none;
+            cursor: pointer;
             box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.30);
         }
         &__fullDay { 
