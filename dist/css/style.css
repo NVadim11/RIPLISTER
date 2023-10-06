@@ -731,6 +731,12 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .footer__container {
@@ -762,6 +768,22 @@ label {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.footer__menu {
+  display: none;
+}
+
+.footer__list-item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.625rem;
+  text-decoration: underline;
+}
+
+.footer__list-item a:hover {
+  text-decoration: none;
 }
 
 .footer__contact {
@@ -834,6 +856,12 @@ label {
 }
 
 .footer__links {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__policy {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -847,7 +875,7 @@ label {
   margin: 0.75rem 0 0 0;
 }
 
-.footer__links a {
+.footer__policy a {
   color: var(--text-color-black);
   font-size: 0.875rem;
   font-style: normal;
@@ -857,7 +885,7 @@ label {
   text-decoration: underline;
 }
 
-.footer__links a:hover {
+.footer__policy a:hover {
   text-decoration: none;
 }
 
@@ -2327,9 +2355,14 @@ label {
   }
 }
 
-@media screen and (min-width: 89.99875em) {
+@media (min-width: 119.99875em) {
+  [class*=__container] {
+    max-width: 103.75rem;
+  }
+}
+
+@media screen and (min-width: 119.99875em) {
   .footer__container {
-    margin: 0.9375rem 5rem 3.125rem 5rem;
     width: 100%;
     display: block;
   }
@@ -2349,13 +2382,52 @@ label {
     text-align: left;
   }
 
+  .footer__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+  }
+
+  .footer__list {
+    margin: -11.6875rem 6.25rem 0 39.375rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: column;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 0.625rem;
+    -webkit-column-gap: 7.5rem;
+       -moz-column-gap: 7.5rem;
+            column-gap: 7.5rem;
+  }
+
+  .footer__list-item {
+    color: var(--text-color-black);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    text-decoration-color: var(--text-color-underline);
+  }
+
   .footer__contact {
     margin-top: 5rem;
   }
 
   .footer__contact button {
     font-size: 1.5rem;
-    padding: 20px 30px;
+    padding: 1.25rem 1.875rem;
     border-radius: 1.875rem;
   }
 
@@ -2363,19 +2435,60 @@ label {
     font-size: 1.5rem;
     letter-spacing: 0.15rem;
     position: relative;
-    margin: -77px 0px 0px 665px;
+    margin-top: -4.8125rem;
+    margin-right: 2.0625rem;
   }
 
   .footer__links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 4.375rem 0rem 3.125rem 0rem;
+  }
+
+  .footer__policy {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    padding: 0;
     margin: 0;
   }
 
+  .footer__policy a {
+    font-size: 1rem;
+  }
+
   .footer__socials {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    padding: 0;
     margin: 0;
   }
 
   .footer__copyright {
+    font-size: 1rem;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    padding: 0;
     margin: 0;
+  }
+
+  .footer__copyright span {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
   }
 
   .mainCover__container h2 {
@@ -2450,12 +2563,6 @@ label {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-  }
-}
-
-@media (min-width: 119.99875em) {
-  [class*=__container] {
-    max-width: 103.75rem;
   }
 }
 

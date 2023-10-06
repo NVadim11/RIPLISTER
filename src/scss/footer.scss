@@ -2,26 +2,27 @@
     background-color: var(--white-color);
     color: var(--text-color-black);
     display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;        
-        @media screen and (min-width:$pc) {
-            margin: 0.9375rem 5rem 3.125rem 5rem;
+        @media screen and (min-width:$full) {
             width: 100%;
             display: block;
         }
     }
     &__logo {
         margin-top: 3.4375rem;
-        @media screen and (min-width:$pc) {
+        @media screen and (min-width:$full) {
         position: relative;
         }
     }
     &__about {
         margin-top: 1.35rem;
         padding: 0 0.3125rem;
-        @media screen and (min-width:$pc) {
+        @media screen and (min-width:$full) {
             position: relative;
             padding: 0;
             max-width: 33.4375rem;
@@ -33,15 +34,56 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
-            @media screen and (min-width:$pc) {                
+            @media screen and (min-width:$full) {                
                 font-size: 1rem;
                 text-align: left;
             }
         }
     }
+    &__menu {
+        display: none;
+        @media screen and (min-width:$full) {
+            display: flex;
+            position: relative;   
+        }             
+    }
+    &__list {
+        @media screen and (min-width:$full) {
+            margin: -11.6875rem 6.25rem 0 39.375rem;
+            align-items: center;
+            max-width: fit-content;
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            row-gap: 0.625rem;
+            column-gap: 7.5rem;   
+        }        
+    }
+    &__list-item {
+        @media screen and (min-width:$full) {
+            color: var(--text-color-black);
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;        
+            text-decoration-color: var(--text-color-underline);
+        }
+        
+        a {
+            display: flex;            
+            padding: 0.625rem;
+            text-decoration: underline;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    }
     &__contact {
         margin-top: 2.8125rem;
-        @media screen and (min-width:$pc) {
+        @media screen and (min-width:$full) {
             margin-top: 5rem;  
         }
         svg {
@@ -58,9 +100,9 @@
             line-height: normal;    
             display: flex;
             align-items: center;
-            @media screen and (min-width:$pc) {
+            @media screen and (min-width:$full) {
                 font-size: 1.5rem;
-                padding: 20px 30px;
+                padding: 1.25rem 1.875rem;
                 border-radius: 1.875rem;
             }
         }
@@ -90,11 +132,12 @@
         display: flex;
         justify-content: center;
         margin: 1.1875rem 0 0 0;
-        @media screen and (min-width:$pc) {
+        @media screen and (min-width:$full) {
             font-size: 1.5rem;
             letter-spacing: 0.15rem;
             position: relative;
-            margin: -77px 0px 0px 665px;
+            margin-top: -4.8125rem;
+            margin-right: 2.0625rem;
         }
         a {
             padding: 1.625rem;
@@ -104,11 +147,23 @@
         text-decoration: underline;
     }
     &__links {
+        align-items: center;
+        @media screen and (min-width:$full) {
+            display: flex;           
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 4.375rem 0rem 3.125rem 0rem;
+        }
+    }
+    &__policy {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0.75rem 0 0 0;
-        @media screen and (min-width:$pc) {
+        @media screen and (min-width:$full) {            
+            flex-direction: row;            
+            order: 3;
+            padding: 0;
             margin: 0;
         }
         a {
@@ -118,7 +173,10 @@
             font-weight: 400;
             line-height: normal;
             padding: 0.5625rem;
-            text-decoration: underline
+            text-decoration: underline;
+            @media screen and (min-width:$full) {
+                font-size: 1rem;
+            }
         }
         a:hover {
             text-decoration: none;
@@ -132,7 +190,9 @@
         display: flex;
         align-items: center;
         margin-top: 2.5rem;
-        @media screen and (min-width:$pc) {
+        @media screen and (min-width:$full) {
+            order: 2;
+            padding: 0;
             margin: 0;
         }
     }
@@ -146,7 +206,10 @@
         text-align: center;
         margin-top: 2.3125rem;
         padding-bottom: 2.5625rem;
-        @media screen and (min-width:$pc) {
+        @media screen and (min-width:$full) {  
+            font-size: 1rem;          
+            order: 1;
+            padding: 0;
             margin: 0;
         }
         span {
@@ -156,6 +219,10 @@
             line-height: normal;
             letter-spacing: 0.075rem;
             color: var(--text-color-black);
+            @media screen and (min-width:$full) {
+                font-size: 1rem;
+                letter-spacing: 0.1rem;
+            }
         }
     }
 }
