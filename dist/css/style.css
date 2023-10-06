@@ -728,16 +728,22 @@ label {
 .footer {
   background-color: var(--white-color);
   color: var(--text-color-black);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .footer__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
 }
 
 .footer__logo {
@@ -2322,6 +2328,56 @@ label {
 }
 
 @media screen and (min-width: 89.99875em) {
+  .footer__container {
+    margin: 0.9375rem 5rem 3.125rem 5rem;
+    width: 100%;
+    display: block;
+  }
+
+  .footer__logo {
+    position: relative;
+  }
+
+  .footer__about {
+    position: relative;
+    padding: 0;
+    max-width: 33.4375rem;
+  }
+
+  .footer__about p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .footer__contact {
+    margin-top: 5rem;
+  }
+
+  .footer__contact button {
+    font-size: 1.5rem;
+    padding: 20px 30px;
+    border-radius: 1.875rem;
+  }
+
+  .footer__ref {
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+    position: relative;
+    margin: -77px 0px 0px 665px;
+  }
+
+  .footer__links {
+    margin: 0;
+  }
+
+  .footer__socials {
+    margin: 0;
+  }
+
+  .footer__copyright {
+    margin: 0;
+  }
+
   .mainCover__container h2 {
     font-size: 4rem;
   }

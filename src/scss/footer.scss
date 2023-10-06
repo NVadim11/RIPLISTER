@@ -1,32 +1,49 @@
 .footer {
     background-color: var(--white-color);
     color: var(--text-color-black);
+    display: flex;
     &__container {
         display: flex;
-        // flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: column;
+        align-items: center;        
         @media screen and (min-width:$pc) {
-            
+            margin: 0.9375rem 5rem 3.125rem 5rem;
+            width: 100%;
+            display: block;
         }
     }
     &__logo {
         margin-top: 3.4375rem;
+        @media screen and (min-width:$pc) {
+        position: relative;
+        }
     }
     &__about {
         margin-top: 1.35rem;
         padding: 0 0.3125rem;
+        @media screen and (min-width:$pc) {
+            position: relative;
+            padding: 0;
+            max-width: 33.4375rem;
+        }
         p {
             color: var(--text-color-black);
             text-align: center;
             font-size: 0.75rem;
             font-style: normal;
             font-weight: 400;
-            line-height: normal; 
+            line-height: normal;
+            @media screen and (min-width:$pc) {                
+                font-size: 1rem;
+                text-align: left;
+            }
         }
     }
     &__contact {
         margin-top: 2.8125rem;
+        @media screen and (min-width:$pc) {
+            margin-top: 5rem;  
+        }
         svg {
             margin-right: 0.5625rem;
         }
@@ -41,6 +58,11 @@
             line-height: normal;    
             display: flex;
             align-items: center;
+            @media screen and (min-width:$pc) {
+                font-size: 1.5rem;
+                padding: 20px 30px;
+                border-radius: 1.875rem;
+            }
         }
         button:hover {   
             svg {
@@ -68,6 +90,12 @@
         display: flex;
         justify-content: center;
         margin: 1.1875rem 0 0 0;
+        @media screen and (min-width:$pc) {
+            font-size: 1.5rem;
+            letter-spacing: 0.15rem;
+            position: relative;
+            margin: -77px 0px 0px 665px;
+        }
         a {
             padding: 1.625rem;
         }
@@ -80,6 +108,9 @@
         flex-direction: column;
         align-items: center;
         margin: 0.75rem 0 0 0;
+        @media screen and (min-width:$pc) {
+            margin: 0;
+        }
         a {
             color: var(--text-color-black);
             font-size: 0.875rem;
@@ -101,6 +132,9 @@
         display: flex;
         align-items: center;
         margin-top: 2.5rem;
+        @media screen and (min-width:$pc) {
+            margin: 0;
+        }
     }
     &__copyright {
         color: var(--text-color-black);
@@ -112,6 +146,9 @@
         text-align: center;
         margin-top: 2.3125rem;
         padding-bottom: 2.5625rem;
+        @media screen and (min-width:$pc) {
+            margin: 0;
+        }
         span {
             font-size: 0.75rem;
             font-style: normal;
