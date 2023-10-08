@@ -12,11 +12,16 @@
 	&__logo {
 		display: flex;
 		img {
-			@media screen and (min-width:$mobile) {
+			@media screen and (min-width:$mini) {
 				width: 10.3999rem;
 				height: 2.0001rem;
 				flex-shrink: 0;
 			}
+			// @media screen and (min-width:$mobile) {
+			// 	width: 10.3999rem;
+			// 	height: 2.0001rem;
+			// 	flex-shrink: 0;
+			// }
 			@media screen and (min-width:$tablet) {
 				width: 12.6748rem;
 				height: 2.4375rem;
@@ -47,8 +52,7 @@
 		}
 	}
 	&__search {
-			display: flex; 
-			position: relative;
+			display: flex;
 			align-items:center;
     	text-align: center; 
 		svg {
@@ -60,7 +64,7 @@
 			border-radius: 1.875rem;
 			border: 0.0625rem solid #AAA;
 			overflow: hidden;
-			padding: 0.9375rem 0.625rem 0.9375rem 3.125rem;
+			padding: 0.9375rem 0.625rem 0.9375rem 50px;
 		};
 	}
 	&__btnBox {
@@ -85,6 +89,10 @@
           margin-right: 0.4375rem;
       }
 	}
+	&__entryBtn:hover {
+		background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+		transition: 0.25s;
+}
 	&__langBtn {
 		border-radius: 1.125rem;
         border: 0.0625rem solid #AAA;

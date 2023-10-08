@@ -72,9 +72,10 @@
             }
             button:hover {
                 background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+                transition: 0.25s;
             }
         }
-    &__bg {        
+    &__bg {  
     position: absolute;
     top: -4.75rem;  
     z-index: 1;   
@@ -90,7 +91,7 @@
     }
     &__bg-desktop {
         display: none;
-        position: absolute;
+        position: absolute;      
         top: -4.75rem;  
         z-index: 1;   
         @media screen and (min-width:$tablet) {
@@ -208,6 +209,7 @@
         }
         button:hover {
             background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+            transition: 0.25s;
         }
         img {
             padding: 1rem 0.625rem 1rem;
@@ -309,6 +311,7 @@
     }
     button:hover {
         background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+        transition: 0.25s;
     }
 }
 .mainInfo {
@@ -459,6 +462,7 @@
         }
         button:hover {
             background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+            transition: 0.25s;
         } 
     }
 }
@@ -599,6 +603,7 @@
         }
                     button:hover {
                 background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+                transition: 0.25s;
             } 
     }   
 }
@@ -830,6 +835,7 @@
         }
         button:hover {
             background: linear-gradient(0deg, #64A2FF 0%, #2A86DB 100%);
+            transition: 0.25s;
         }
     }
 }

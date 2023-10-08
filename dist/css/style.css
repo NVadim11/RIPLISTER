@@ -646,7 +646,6 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -663,7 +662,7 @@ label {
   border-radius: 1.875rem;
   border: 0.0625rem solid #AAA;
   overflow: hidden;
-  padding: 0.9375rem 0.625rem 0.9375rem 3.125rem;
+  padding: 0.9375rem 0.625rem 0.9375rem 50px;
 }
 
 .headerMain__btnBox {
@@ -690,6 +689,13 @@ label {
 
 .headerMain__entryBtn svg {
   margin-right: 0.4375rem;
+}
+
+.headerMain__entryBtn:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .headerMain__langBtn {
@@ -816,6 +822,8 @@ label {
   border-radius: 2.5rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .footer__contact button:hover svg {
@@ -1018,6 +1026,8 @@ label {
 .mainCover__btn button:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .mainCover__bg {
@@ -1188,6 +1198,8 @@ label {
 .mainForm__btn button:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .mainForm__btn img {
@@ -1315,6 +1327,8 @@ label {
 .mainVolunteer button:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .mainInfo {
@@ -1515,6 +1529,8 @@ label {
 .mainInfo__create button:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .mainRecent {
@@ -1698,6 +1714,8 @@ label {
 .mainRecent__register button:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .mainFunerals__container {
@@ -1935,6 +1953,8 @@ label {
 .mainPartners__partner button:hover {
   background: -webkit-gradient(linear, left bottom, left top, from(#64A2FF), to(#2A86DB));
   background: linear-gradient(0deg, #64A2FF 0%, #2A86DB 100%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .menu {
@@ -2122,6 +2142,8 @@ label {
   border-radius: 2.5rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .menu__contact button:hover svg {
@@ -2186,6 +2208,88 @@ label {
   overflow-x: auto;
 }
 
+.instructions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.instructions__container {
+  margin-top: 15.625rem;
+}
+
+.instructions__title {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: var(--text-color-black);
+}
+
+.instructions__description {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 2.8125rem;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  /* 42px */
+  color: var(--text-color-black);
+}
+
+.instructions__infoList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.instructions__infoItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 1.875rem;
+  background-color: var(--cream-color);
+}
+
+.instructions .infoItem__title {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--text-color-black);
+}
+
+.instructions .infoItem__description {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  /* 33.6px */
+  color: var(--text-color-black);
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -2234,6 +2338,15 @@ label {
   display: none !important;
 }
 
+@media screen and (min-width: 22.1875em) {
+  .headerMain__logo img {
+    width: 10.3999rem;
+    height: 2.0001rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+}
+
 @media (min-width: 47.99875em) {
   [class*=__container] {
     max-width: 43.75rem;
@@ -2254,13 +2367,6 @@ label {
 
   .headerMain {
     padding: 0 2.125rem;
-  }
-
-  .headerMain__logo img {
-    width: 10.3999rem;
-    height: 2.0001rem;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
   }
 
   .mainCover__container h2 {
