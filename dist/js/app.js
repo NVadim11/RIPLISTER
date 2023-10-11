@@ -4055,6 +4055,7 @@
     const mainMenuBtn = document.querySelector(".headerMain__menuBtn");
     const altMenuBtn = document.querySelector(".headerAlt__menuBtn");
     const menuCloseBtn = document.querySelector(".menu__closeBtn");
+    const spollerCloseBtn = document.querySelector(".spollerClose");
     document.querySelector(".searchTypeBtn_human");
     document.querySelector(".searchTypeBtn_cemetery");
     document.querySelector(".searchType_human");
@@ -4078,6 +4079,12 @@
         menuCloseBtn.addEventListener("click", (function(e) {
             menu.classList.remove("_active");
             menuClose();
+        }));
+    }
+    if (spollerCloseBtn) {
+        const spoller = document.querySelector(".spollers__summary");
+        spollerCloseBtn.addEventListener("click", (function(e) {
+            spoller.classList.remove("_spollers-active");
         }));
     }
     window["FLS"] = true;

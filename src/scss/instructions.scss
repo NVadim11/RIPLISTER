@@ -1,9 +1,6 @@
 .instructions {
-		display: flex;  
-    flex: 1 1 auto;
-    flex-direction: column;
 	&__container {
-		margin-top: 15.625rem;
+		margin: 15.625rem 0 0 13.75rem;
 	}
 	&__title {
 		width: fit-content;
@@ -14,46 +11,27 @@
 		color: var(--text-color-black);
 	}
 	&__description {
-		width: fit-content;
+		max-width: 66.75rem;
 		margin-top: 2.8125rem;
 		font-size: 1.875rem;
 		font-style: normal;
 		font-weight: 400;
 		line-height: 140%; /* 42px */
 		color: var(--text-color-black);
-	}
-	&__infoList {
-		display: flex;  
-		flex-direction: column;
-	}
-	&__infoItem {
-		display: flex; 
-		border-radius: 1.875rem;
-		background-color: var(--cream-color);
 	}	
-}
-.spollers {
-
-&__item {
-	}		
-&__summary {
-
-}
-&__body {
-	font-size: 1.5rem;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 140%; /* 33.6px */
-	color: var(--text-color-black);
-	background-color: var(--cream-color);
-}
 }
 .spollers {
 	display: flex;  
 	flex-direction: column;
+	gap: 1.875rem;
+	margin: 6.5625rem 6.875rem 11.875rem 9.375rem;
 	&__item {
 	}
 	&__summary {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
 		list-style: none;
 		font-size: 2.25rem;
 		font-style: normal;
@@ -63,24 +41,134 @@
 		background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);		
 		border-radius: 2.5rem;
 		padding: 3.125rem 0 3.125rem 4.6875rem;
+		svg {
+			margin-right: 3.4375rem;
+		}
+	}
+	&__summary:hover {
+		background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+		transition: 0.25s;
 	}
 	&__body {
-		padding: 65px 85px 60px 75px;
+		margin-top: 1.5625rem;
+		padding: 4.0625rem 3.125rem 3.75rem 4.6875rem;
 		border-radius: 1.875rem;
-		background: var(--cream-color);
-	}
-	&__title {
-		font-size: 3rem;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-		
-	}
-	&__descr {
 		font-size: 1.5rem;
 		font-style: normal;
 		font-weight: 400;
 		line-height: 140%; /* 33.6px */
 		color: var(--text-color-black);
+		background-color: var(--cream-color);
+	}
+	&__title {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 3rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		svg {
+			margin-right: 0.6875rem;
+		}		
+	}
+	&__descr {
+		max-width: 47.1875rem;
+		margin-top: 4.0625rem;
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%; /* 33.6px */
+		color: var(--text-color-black);
+	}
+	&__videoSection {
+		display: flex;
+		flex-direction: row;
+		margin-top: 70px;
+		vertical-align: middle;
+	}
+	&__videoplayer {
+		max-width: 48.4375rem;
+		max-height: 24.375rem;		
+		flex-shrink: 0;
+		border-radius: 1.875rem;	
+		overflow: hidden;	
+		box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.30);
+		img {						
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}		
+	}
+	&__videoDescr {
+		padding: 3.125rem 0rem 4.375rem 4.375rem;		
+	}
+	&__howTo {
+		margin-top: 7.8125rem;
+	}
+	&__title {
+		font-size: 3.25rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		color: var(--text-color-black);
+	}
+	&__steps {
+		padding-right: 2.8125rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		&_item {			
+			margin-top: 4.375rem;
+			max-width: 25rem;
+			display: flex;
+			flex-direction: column;			
+		}
+		&_image {
+			max-width: 25rem;
+			height: 17.5rem;
+			flex-shrink: 0;
+			overflow: hidden;	
+			border-radius: 1.875rem;
+			img {		
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		&_title {			
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			vertical-align: middle;
+			margin-top: 2.5rem;
+			div {
+				padding: 1.875rem 2.5rem 1.875rem 2.5rem;
+				font-size: 2rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				color: var(--white-color);
+				border-radius: 2.5rem;
+				background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+			}
+			h2 {
+				padding: 1.25rem 0 1.25rem 1.25rem;
+				font-size: 1.5rem;
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				color: var(--text-color-black);
+			}
+		}
+		&_descr {
+			margin-top: 1.875rem;
+			font-size: 1.25rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 130%; /* 26px */
+			color: var(--text-color-black);
+		}
 	}
 }
