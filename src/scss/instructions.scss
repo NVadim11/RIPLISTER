@@ -45,6 +45,7 @@
 			margin-right: 3.4375rem;
 		}
 	}
+	
 	&__summary:hover {
 		background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
 		transition: 0.25s;
@@ -71,6 +72,7 @@
 		line-height: normal;
 		svg {
 			margin-right: 0.6875rem;
+			cursor: pointer;
 		}		
 	}
 	&__descr {

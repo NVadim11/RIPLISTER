@@ -6,7 +6,6 @@ import { menuClose, menuOpen } from "./functions.js"
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
 const altMenuBtn = document.querySelector('.headerAlt__menuBtn');
 const menuCloseBtn = document.querySelector('.menu__closeBtn');
-const spollerCloseBtn = document.querySelector('.spollerClose')
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
 const radioBtnHumanText = document.querySelector(".searchType_human")
@@ -33,13 +32,6 @@ if (menuCloseBtn) {
     menuCloseBtn.addEventListener("click", function(e) {
         menu.classList.remove('_active');
         menuClose()       
-    });
-}
-// Instructions spoiler close
-if (spollerCloseBtn) {
-    const spoller = document.querySelector('.spollers__summary');
-    spollerCloseBtn.addEventListener("click", function(e) {
-    spoller.classList.remove("_spollers-active")
     });
 }
 
