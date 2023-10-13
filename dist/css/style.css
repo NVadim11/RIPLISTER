@@ -2466,6 +2466,51 @@ label {
   color: var(--text-color-black);
 }
 
+.error404__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.error404__title {
+  margin-top: 15.625rem;
+  font-size: 8rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: var(--text-color-black);
+}
+
+.error404__description {
+  margin-top: 0.625rem;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  /* 42px */
+  color: var(--text-color-black);
+}
+
+.error404__redirect {
+  margin-top: 3.125rem;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
+  color: var(--text-color-blue);
+  margin-bottom: 16.875rem;
+}
+
+.error404__redirect:hover {
+  text-decoration-line: none;
+  cursor: pointer;
+}
+
 .swiper {
   overflow: hidden;
 }
