@@ -1,7 +1,18 @@
 .error404 {
 	&__container {
 		display: flex;
-		flex-direction: column;
+		justify-content: space-between;
+		position : relative;
+	}
+	&__info {
+		max-width: 67.5rem;
+	}
+	&__grave {
+		position : absolute;
+		bottom : 0;
+		right: 0;
+		height: fit-content;
+		width: fit-content;
 	}
 	&__title {		
 		margin-top: 15.625rem;

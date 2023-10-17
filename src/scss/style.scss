@@ -181,12 +181,12 @@ body {
 @import "headerAlt";
 @import "headerMain";
 @import "footer";
+@import "footerAlt";
 @import "main";
 
 // Підключення стилів окремих сторінок
-
-// Підключення стилів окремих попапів
-@import "popupMenu";
 @import "instructions";
 @import "error404";
 @import "contacts";
+// Підключення стилів окремих попапів
+@import "popupMenu";
