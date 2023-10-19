@@ -1258,7 +1258,9 @@ label {
 .mainCover__bg-desktop img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 120rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .mainForm {
@@ -2470,6 +2472,133 @@ label {
 .error404__redirect:hover {
   text-decoration-line: none;
   cursor: pointer;
+}
+
+.contacts {
+  font-style: normal;
+  line-height: normal;
+  color: var(--text-color-black);
+}
+
+.contacts__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contacts__contact-title {
+  margin-top: 15.625rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.contacts__contact-descr {
+  max-width: 64rem;
+  margin-top: 2.8125rem;
+  font-size: 1.875rem;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.contacts__contact-number {
+  margin-top: 4.6875rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 184%;
+}
+
+.contacts__contact-number span {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 184%;
+}
+
+.contacts__contact-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1.5625rem;
+  margin-top: 1.25rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.contacts__contact-icons .svg-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 4.375rem;
+  width: 4.375rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 1.875rem;
+}
+
+.contacts__contact-icons .whatsApp {
+  background: #28A706;
+}
+
+.contacts__contact-icons .telegram {
+  background: #0D8FD8;
+}
+
+.contacts__contact-icons .viber {
+  background: #8B12C5;
+}
+
+.contacts__contact-mail {
+  margin-bottom: 8.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2.8125rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 0.9375rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 130%;
+  /* 31.2px */
+  text-decoration-line: underline;
+}
+
+.contacts__contact-mail:hover {
+  text-decoration-line: none;
 }
 
 .menu {
