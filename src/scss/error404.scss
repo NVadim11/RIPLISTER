@@ -1,47 +1,89 @@
 .error404 {
 	&__container {
 		display: flex;
-		justify-content: space-between;
-		position : relative;
+		position : relative;		
+		@media screen and (min-width:$mini) {
+			flex-direction: column;
+			align-items: center;			
+		}
+		@media screen and (min-width:$full) {
+			align-items: normal;
+			justify-content: space-between;
+		}
 	}
 	&__info {
-		max-width: 67.5rem;
+		@media screen and (min-width:$full) {
+			max-width: 67.5rem;
+		}		
 	}
-	&__grave {
-		position : absolute;
+	&__grave {	
 		bottom : 0;
-		right: 0;
 		height: fit-content;
 		width: fit-content;
+		@media screen and (min-width:$mini) {			
+			margin-top: 5rem;
+			img {
+				max-width: 14.6875rem;
+			}
+		}		
+		@media screen and (min-width:$full) {
+			position : absolute;		
+			right: 0;
+			img {
+				max-width: 100%;
+			}
+		}
 	}
-	&__title {		
-		margin-top: 15.625rem;
-		font-size: 8rem;
+	&__title {
+		color: var(--text-color-black);
+		text-align: center;
+		font-size: 3.125rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-		color: var(--text-color-black);
+		margin-top: 4.6875rem;
+		@media screen and (min-width:$full) {
+			text-align: start;
+			font-size: 8rem;		
+			margin-top: 15.625rem;
+		}	
 	}
 	&__description {
-		margin-top: 0.625rem;
-		font-size: 1.875rem;
+		text-align: center;
+		font-size: 1rem;
 		font-style: normal;
 		font-weight: 400;
-		line-height: 140%; /* 42px */
+		line-height: 140%; /* 22.4px */
 		color: var(--text-color-black);
+		margin-top: 1.5625rem;
+		@media screen and (min-width:$full) {
+			text-align: start;
+			margin-top: 0.625rem;
+			font-size: 1.875rem;			
+		}
 	}
 	&__redirect {
-		margin-top: 3.125rem;
-		font-size: 2rem;
+		color: var(--text-color-blue);
+		text-align: center;
+		font-size: 1rem;
 		font-style: normal;
-		font-weight: 700;
+		font-weight: 600;
 		line-height: normal;
 		text-decoration-line: underline;
-		color: var(--text-color-blue);
-		margin-bottom: 16.875rem;
+		margin-top: 1.875rem;
+		@media screen and (min-width:$full) {
+			text-align: start;
+			margin-top: 3.125rem;
+			font-size: 2rem;
+			font-weight: 700;			
+			margin-bottom: 16.875rem;
+		}		
 	}
 	&__redirect:hover {
 		text-decoration-line: none;
 		cursor: pointer;
 	}
 }
+
+// @media screen and (min-width:$full)
+// @media screen and (min-width:$mini) 

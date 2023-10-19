@@ -2422,20 +2422,11 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   position: relative;
 }
 
-.error404__info {
-  max-width: 67.5rem;
-}
-
 .error404__grave {
-  position: absolute;
   bottom: 0;
-  right: 0;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -2445,33 +2436,35 @@ label {
 }
 
 .error404__title {
-  margin-top: 15.625rem;
-  font-size: 8rem;
+  color: var(--text-color-black);
+  text-align: center;
+  font-size: 3.125rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  color: var(--text-color-black);
+  margin-top: 4.6875rem;
 }
 
 .error404__description {
-  margin-top: 0.625rem;
-  font-size: 1.875rem;
+  text-align: center;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
-  /* 42px */
+  /* 22.4px */
   color: var(--text-color-black);
+  margin-top: 1.5625rem;
 }
 
 .error404__redirect {
-  margin-top: 3.125rem;
-  font-size: 2rem;
+  color: var(--text-color-blue);
+  text-align: center;
+  font-size: 1rem;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
   text-decoration-line: underline;
-  color: var(--text-color-blue);
-  margin-bottom: 16.875rem;
+  margin-top: 1.875rem;
 }
 
 .error404__redirect:hover {
@@ -2784,6 +2777,24 @@ label {
     height: 2.0001rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
+  }
+
+  .error404__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .error404__grave {
+    margin-top: 5rem;
+  }
+
+  .error404__grave img {
+    max-width: 14.6875rem;
   }
 }
 
@@ -3238,6 +3249,48 @@ label {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+  }
+
+  .error404__container {
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .error404__info {
+    max-width: 67.5rem;
+  }
+
+  .error404__grave {
+    position: absolute;
+    right: 0;
+  }
+
+  .error404__grave img {
+    max-width: 100%;
+  }
+
+  .error404__title {
+    text-align: start;
+    font-size: 8rem;
+    margin-top: 15.625rem;
+  }
+
+  .error404__description {
+    text-align: start;
+    margin-top: 0.625rem;
+    font-size: 1.875rem;
+  }
+
+  .error404__redirect {
+    text-align: start;
+    margin-top: 3.125rem;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16.875rem;
   }
 }
 
