@@ -134,9 +134,11 @@
         justify-content: center;
         margin: 1.1875rem 0 0 0;
         @media screen and (min-width:$full) {
+            max-width: max-content;
             font-size: 1.5rem;
             letter-spacing: 0.15rem;
             position: relative;
+            margin-left: 610px;
             margin-top: -4.8125rem;
             margin-right: 2.0625rem;
         }

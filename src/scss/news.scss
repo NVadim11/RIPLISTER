@@ -1,4 +1,4 @@
-.blog {
+.news {
 	&__container {
 		display: flex;
 		flex-direction: column;
@@ -57,6 +57,14 @@
 		img {
 			width: 100%;
 		}
+	}
+	&__itemDate {
+		margin-top: 1.5625rem;
+		font-size: 1.25rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		color: var(--text-color-black);
 	}
 	&__itemDescr {
 		margin-top: 1.875rem;		
