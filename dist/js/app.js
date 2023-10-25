@@ -4065,6 +4065,7 @@
     document.querySelector(".searchTypeBtn_cemetery");
     document.querySelector(".searchType_human");
     document.querySelector(".searchType_cemetery");
+    const newsYearBtn = document.getElementById("year");
     if (mainMenuBtn) {
         const menu = document.querySelector(".menu");
         mainMenuBtn.addEventListener("click", (function(e) {
@@ -4085,6 +4086,10 @@
             menu.classList.remove("_active");
             menuClose();
         }));
+    }
+    for (let year = (new Date).getFullYear(); year <= 2023; year++) {
+        let options = document.createElement("OPTION");
+        newsYearBtn.appendChild(options).innerHTML = year;
     }
     window["FLS"] = true;
     isWebp();

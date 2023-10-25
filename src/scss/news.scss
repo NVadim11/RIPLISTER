@@ -5,24 +5,58 @@
 		align-items: start;
 		margin-bottom: 13.75rem;
 	}
+	&__year {
+		display: flex;
+		align-items: center;
+		margin-right: -0.875rem;
+		select {
+			z-index: 1;
+			overflow: hidden;
+			background-color: transparent;
+			border: 0.0625rem solid #EB8069;		
+			border-radius: 1.875rem;
+			padding: 1.25rem 6.25rem 1.25rem 2.8125rem;
+  		-webkit-appearance: none;
+  		-moz-appearance: none;
+			font-size: 1.5rem;
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+			color: var(--text-color-black);
+			option {				
+				background-color: var(--white-color);
+			}
+		}
+		svg {
+			position: relative;
+			left: -2.75rem;
+		}
+	}
 	&__header {				
 	}
 	&__title {
 		margin-top: 15.625rem;
-		font-size: 4rem;
-		font-style: normal;
-		font-weight: 600;
-		line-height: normal;
-		color: var(--text-color-black);
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		h2 {
+			font-size: 4rem;
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+			color: var(--text-color-black);
+		}		
 	}
 	&__descr {
-		max-width: 66.75rem;
 		margin-top: 2.8125rem;
 		font-size: 1.875rem;
 		font-style: normal;
 		font-weight: 400;
-		line-height: 140%; /* 42px */
+		line-height: 140%; /* 2.625rem */
 		color: var(--text-color-black);
+		p {			
+			margin-right: 37.5rem;
+		}
 	}
 	&__tags {
 		margin-top: 4.375rem;
@@ -47,12 +81,14 @@
 		gap: 5rem 8.75rem;
 	}
 	&__contentItem {
+		display: flex;
+		flex-direction: column;
 	}	
 	&__itemBox {
 		border-radius: 1.875rem;
 		overflow: hidden;
-		max-width: 25rem;
-		max-height: 17.5rem;
+		max-width: fit-content;
+		max-height: fit-content;
 		flex-shrink: 0;
 		img {
 			width: 100%;

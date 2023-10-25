@@ -8,8 +8,9 @@ const altMenuBtn = document.querySelector('.headerAlt__menuBtn');
 const menuCloseBtn = document.querySelector('.menu__closeBtn');
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
-const radioBtnHumanText = document.querySelector(".searchType_human")
-const radioBtnCemeteryText = document.querySelector(".searchType_cemetery")
+const radioBtnHumanText = document.querySelector(".searchType_human");
+const radioBtnCemeteryText = document.querySelector(".searchType_cemetery");
+const newsYearBtn = document.getElementById("year");
 
 // Main header burger menu
 if (mainMenuBtn) {
@@ -34,6 +35,11 @@ if (menuCloseBtn) {
         menuClose()       
     });
 }
+
+for (let year = new Date().getFullYear() ; year <= 2023; year++) {
+    let options = document.createElement("OPTION");  
+    newsYearBtn.appendChild(options).innerHTML = year;
+  }
 
 // Contact us modal open
 // if (contactBtn) {
