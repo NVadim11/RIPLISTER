@@ -90,6 +90,7 @@
       }
 	}
 	&__entryBtn:hover {
+		cursor: pointer;
 		background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
 		transition: 0.25s;
 }

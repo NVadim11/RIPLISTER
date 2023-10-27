@@ -78,6 +78,7 @@
 					text-decoration: underline;
 			}
 			a:hover {
+				cursor: pointer;
 					text-decoration: none;
 			}
 	}
@@ -107,6 +108,7 @@
 					}
 			}
 			button:hover {   
+				cursor: pointer;
 					svg {
 							background-color: var(--orange-color)
 					}
@@ -147,7 +149,8 @@
 			}
 	}
 	&__ref:hover {
-			text-decoration: underline;
+		cursor: pointer;
+		text-decoration: underline;
 	}
 	&__links {
 			align-items: center;
@@ -182,7 +185,8 @@
 					}
 			}
 			a:hover {
-					text-decoration: none;
+				cursor: pointer;
+				text-decoration: none;
 			}
 	}
 	&__socials {

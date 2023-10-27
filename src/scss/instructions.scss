@@ -47,6 +47,7 @@
 	}
 	
 	&__summary:hover {
+		cursor: pointer;
 		background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
 		transition: 0.25s;
 	}
@@ -62,6 +63,7 @@
 		background-color: var(--cream-color);
 	}
 	&__title {
+		max-width: fit-content;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -69,11 +71,17 @@
 		font-size: 3rem;
 		font-style: normal;
 		font-weight: 700;
-		line-height: normal;
-		svg {
-			margin-right: 0.6875rem;
-			cursor: pointer;
-		}		
+		line-height: normal;		
+	}
+	.spollerClose {
+		position: relative;
+		top: -50px;
+		float: right;
+		max-width: fit-content;
+		cursor: pointer;
+		svg {			
+			margin: 0.625rem 0.625rem 0rem;			
+		}
 	}
 	&__descr {
 		max-width: 47.1875rem;

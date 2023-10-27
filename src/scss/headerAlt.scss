@@ -66,8 +66,11 @@
         align-items: center;
         svg {
             margin-right: 0.4375rem;
-        }
+      }
 	}
+	&__entryBtn:hover {
+		cursor: pointer;	
+}
 	&__langBtn {
 		border-radius: 1.125rem;
         border: 0.0625rem solid #AAA;

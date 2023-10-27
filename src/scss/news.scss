@@ -70,6 +70,7 @@
 		border: 0.0625rem solid #EC6041;
 	}
 	.tagBtn:hover {
+		cursor: pointer;
 		color: var(--white-color);
 	  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 	}
@@ -112,6 +113,7 @@
 		text-decoration-line: underline;
 	}	
 	&__itemDescr:hover {
+		cursor: pointer;
 		text-decoration-line: none;
 	}
 }
