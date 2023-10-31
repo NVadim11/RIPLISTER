@@ -501,7 +501,7 @@ label {
 .headerAlt {
   padding: 0 0.5rem;
   background-color: transparent;
-  height: 76px;
+  height: 4.75rem;
   z-index: 9;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -518,6 +518,12 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.headerAlt__logo img {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  max-width: 6.5rem;
 }
 
 .headerAlt__menu {
@@ -623,6 +629,12 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.headerMain__logo img {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  max-width: 6.5rem;
 }
 
 .headerMain__menu {
@@ -1200,7 +1212,7 @@ label {
   font-size: 2.25rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 110%;
+  line-height: 2.475rem;
   padding: 7.5rem 0 0 0;
   z-index: 5;
 }
@@ -1208,10 +1220,10 @@ label {
 .mainCover__container p {
   color: var(--white-color);
   text-align: center;
-  font-size: 1rem;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 1.8313rem;
   padding: 0.75rem 0.625rem 0;
   z-index: 5;
 }
@@ -1424,22 +1436,36 @@ label {
   padding: 1rem 0.625rem 1rem;
 }
 
-.mainBenefits h2 {
+.mainBenefits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mainBenefits__title {
   text-align: center;
   font-size: 2rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 110%;
+  line-height: 2.2rem;
   margin-top: 2.8125rem;
 }
 
-.mainBenefits p {
+.mainBenefits__descr {
   text-align: center;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 1.2212rem;
   margin-top: 1.5625rem;
+}
+
+.mainBenefits__descr p {
+  margin-top: 1.25rem;
 }
 
 .mainBenefits__slider {
@@ -1506,10 +1532,23 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: var(--alt-cream-color);
+  border-radius: 1.25rem;
+  margin-top: 3.4375rem;
+  padding: 3.125rem 1.5625rem;
 }
 
-.mainVolunteer img {
-  margin-top: 2.9375rem;
+.mainVolunteer__quote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mainVolunteer p {
@@ -1518,7 +1557,7 @@ label {
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 1.8313rem;
 }
 
 .mainVolunteer span {
@@ -1526,17 +1565,17 @@ label {
   font-size: 1rem;
   font-style: normal;
   font-weight: 300;
-  line-height: normal;
+  line-height: 1.2212rem;
 }
 
 .mainVolunteer button {
   margin-top: 1.75rem;
-  padding: 1rem 2.125rem;
+  padding: 1rem 3rem;
   color: var(--white-color);
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 1.3738rem;
   border-radius: 1.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
@@ -1549,27 +1588,22 @@ label {
   transition: 0.25s;
 }
 
-.mainInfo {
-  margin-top: 3.125rem;
-}
-
-.mainInfo__title h2 {
+.mainInfo__descr h1 {
   padding: 0 2.9375rem;
   text-align: center;
   font-size: 2rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 110%;
-  margin-top: 2.8125rem;
+  line-height: 2.2rem;
 }
 
-.mainInfo__title p {
+.mainInfo__descr p {
   padding: 0 0.625rem;
   text-align: center;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 1.2212rem;
   margin-top: 1.5625rem;
 }
 
@@ -1589,6 +1623,8 @@ label {
 }
 
 .mainInfo__link svg {
+  width: 2.125rem;
+  height: 2.125rem;
   border-radius: 3.125rem;
   margin-right: 0.5rem;
 }
@@ -1635,28 +1671,29 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 3.375rem;
-  height: 3.375rem;
-  border-radius: 1.25rem;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  border-radius: 20px;
   border: 0.0625rem solid var(--orange-border-transparent);
 }
 
 .mainInfo__item div span {
-  padding: 0.875rem 1.25rem 0.875rem;
+  padding: 0.875rem 1.25rem;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 1.5263rem;
   color: var(--orange-color);
 }
 
-.mainInfo__item h3 {
+.mainInfo__item h4 {
   margin-top: 0.75rem;
   color: var(--text-color-black);
   font-size: 1.375rem;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 1.6787rem;
 }
 
 .mainInfo__item p {
@@ -1665,7 +1702,7 @@ label {
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 1.2212rem;
 }
 
 .mainInfo__item:hover {
@@ -1680,19 +1717,17 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 3.375rem;
-  height: 3.375rem;
   background-color: var(--orange-color);
   border-radius: 1.25rem;
   border: 0.0625rem solid var(--orange-border-transparent);
 }
 
 .mainInfo__item:hover div span {
-  padding: 0.875rem 1.25rem 0.875rem;
+  padding: 0.875rem 1.25rem;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 1.5263rem;
   color: var(--white-color);
 }
 
@@ -1727,8 +1762,15 @@ label {
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 1.8313rem;
   color: var(--text-color-black);
+}
+
+.mainInfo__create a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: left;
 }
 
 .mainInfo__create button {
@@ -3198,13 +3240,6 @@ label {
 }
 
 @media screen and (min-width: 22.1875em) {
-  .headerMain__logo img {
-    width: 10.3999rem;
-    height: 2.0001rem;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
-  }
-
   .error404__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -3236,14 +3271,15 @@ label {
   }
 
   .headerAlt__logo img {
-    width: 10.3999rem;
-    height: 2.0001rem;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
+    max-width: 10.3999rem;
   }
 
   .headerMain {
     padding: 0 2.125rem;
+  }
+
+  .headerMain__logo img {
+    max-width: 10.3999rem;
   }
 
   .mainCover__container h2 {
@@ -3264,10 +3300,7 @@ label {
 
 @media screen and (min-width: 79.99875em) {
   .headerAlt__logo img {
-    width: 12.6748rem;
-    height: 2.4375rem;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
+    max-width: 12.6748rem;
   }
 
   .headerAlt__menu {
@@ -3288,10 +3321,7 @@ label {
   }
 
   .headerMain__logo img {
-    width: 12.6748rem;
-    height: 2.4375rem;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
+    max-width: 12.6748rem;
   }
 
   .headerMain__menu {
@@ -3313,6 +3343,7 @@ label {
 
   .mainCover__container h2 {
     font-size: 2.75rem;
+    line-height: 3.3025rem;
   }
 
   .mainCover__container p {
@@ -3345,6 +3376,14 @@ label {
 }
 
 @media screen and (min-width: 119.99875em) {
+  .headerAlt__logo img {
+    max-width: 17.5rem;
+  }
+
+  .headerMain__logo img {
+    max-width: 17.5rem;
+  }
+
   .footer__container {
     width: 100%;
     display: block;
@@ -3613,6 +3652,160 @@ label {
 
   .mainCover__container h2 {
     font-size: 4rem;
+    line-height: 4.8838rem;
+  }
+
+  .mainBenefits__title {
+    font-size: 3.25rem;
+    line-height: 3.9681rem;
+  }
+
+  .mainBenefits__descr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 3.125rem;
+    font-size: 1.5rem;
+    line-height: 1.8313rem;
+  }
+
+  .mainVolunteer__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    border-radius: 1.875rem;
+    padding: 5.625rem 6.25rem;
+  }
+
+  .mainVolunteer__quote {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+
+  .mainVolunteer p {
+    font-size: 3rem;
+    line-height: 3.6631rem;
+    text-align: start;
+  }
+
+  .mainVolunteer span {
+    font-size: 1.25rem;
+    line-height: 1.5263rem;
+  }
+
+  .mainVolunteer button {
+    margin-left: 18.75rem;
+    font-size: 2rem;
+    line-height: 2.4419rem;
+    white-space: nowrap;
+    border-radius: 2.5rem;
+    padding: 1.875rem 7.1875rem;
+  }
+
+  .mainInfo__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 6.875rem 8.75rem 4.6875rem 6.25rem;
+  }
+
+  .mainInfo__descr h1 {
+    padding: 0;
+    text-align: start;
+    font-size: 3.25rem;
+    line-height: 3.9681rem;
+  }
+
+  .mainInfo__descr p {
+    text-align: start;
+    font-size: 1.5rem;
+    line-height: 1.8313rem;
+    margin-top: 2.8125rem;
+  }
+
+  .mainInfo__link {
+    margin: 0 0 0 18.75rem;
+    padding-bottom: 7.8125rem;
+  }
+
+  .mainInfo__link svg {
+    width: 3.125rem;
+    height: 3.125rem;
+  }
+
+  .mainInfo__link a {
+    white-space: nowrap;
+    font-size: 2rem;
+    line-height: 2.4419rem;
+  }
+
+  .mainInfo__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 3.75rem;
+    margin: 0 3.125rem;
+  }
+
+  .mainInfo__item {
+    padding: 3.75rem 3.125rem 5.9375rem 3.125rem;
+  }
+
+  .mainInfo__item div {
+    border-radius: 2.5rem;
+  }
+
+  .mainInfo__item div span {
+    font-size: 2rem;
+    padding: 1.875rem 2.5rem;
+  }
+
+  .mainInfo__item h4 {
+    font-size: 2rem;
+    line-height: 2.4419rem;
+  }
+
+  .mainInfo__item p {
+    font-size: 1.5rem;
+    line-height: 1.8313rem;
+    margin-top: 1.875rem;
+  }
+
+  .mainInfo__item:hover {
+    padding: 3.75rem 3.125rem 5.9375rem 3.125rem;
+  }
+
+  .mainInfo__item:hover div {
+    border-radius: 2.5rem;
+  }
+
+  .mainInfo__item:hover div span {
+    font-size: 2rem;
+    padding: 1.875rem 2.5rem;
   }
 
   .mainFunerals__companies {

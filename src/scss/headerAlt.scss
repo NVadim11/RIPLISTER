@@ -1,7 +1,7 @@
 .headerAlt {
 	padding: 0 0.5rem;
 	background-color: transparent;
-	height: 76px;
+	height: 4.75rem;
 	z-index: 9;
 	display: flex;
 	justify-content: space-between;
@@ -12,15 +12,16 @@
 	&__logo {
 		display: flex;
 		img {
+			flex-shrink: 0;
+			max-width: 6.5rem;
 			@media screen and (min-width:$mobile) {
-				width: 10.3999rem;
-				height: 2.0001rem;
-				flex-shrink: 0;
+				max-width: 10.3999rem;
 			}
 			@media screen and (min-width:$tablet) {
-				width: 12.6748rem;
-				height: 2.4375rem;
-				flex-shrink: 0;
+				max-width: 12.6748rem;
+			}
+			@media screen and (min-width:$full) {
+				max-width: 17.5rem;
 			}
 		}
 	}

@@ -275,10 +275,12 @@ export function spollers() {
 					}
 					// Close spoller btn
 					if (spollerTitle.classList.contains('_spoller-active')) {	
-						const spollerCloseBtn = document.querySelector('.spollerClose')
-						spollerCloseBtn.addEventListener("click", function(e) {
-							hideSpollersBody(spollersBlock)
-						});
+						document.querySelectorAll('.spollerClose').forEach(spollerCloseBtn => {
+							spollerCloseBtn.addEventListener("click", function(e) {
+								e.preventDefault();
+								hideSpollersBody(spollersBlock);
+							});
+						})
 					}
 				}				
 			}
