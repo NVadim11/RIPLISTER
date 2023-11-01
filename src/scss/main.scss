@@ -21,7 +21,7 @@
             font-size: 2.25rem;
             font-style: normal;
             font-weight: 600;
-            line-height: 2.475rem;
+            line-height: normal;
             padding: 7.5rem 0 0 0;
             z-index: 5;
             @media screen and (min-width:$mobile) {
@@ -29,11 +29,11 @@
             }
             @media screen and (min-width:$tablet) {
                 font-size: 2.75rem;
-                line-height: 3.3025rem;
+                line-height: normal;
             }
             @media screen and (min-width:$full) {               
                 font-size: 4rem;    
-                line-height: 4.8838rem;            
+                line-height: normal;            
             }
         }
         p {
@@ -42,7 +42,7 @@
             font-size: 24px;
             font-style: normal;
             font-weight: 400;
-            line-height: 1.8313rem;
+            line-height: normal;
             padding: 0.75rem 0.625rem 0;
             z-index: 5;
             @media screen and (min-width:$tablet)  {
@@ -225,11 +225,11 @@
         font-size: 2rem;
         font-style: normal;
         font-weight: 700;
-        line-height: 2.2rem;
+        line-height: normal;
         margin-top: 2.8125rem;
         @media screen and (min-width:$full) {
             font-size: 3.25rem;
-            line-height: 3.9681rem;
+            line-height: normal;
         }
     }    
     &__descr {
@@ -237,14 +237,14 @@
         font-size: 1rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 1.2212rem;
+        line-height: normal;
         margin-top: 1.5625rem;
         @media screen and (min-width:$full) {
             display: flex;
             flex-direction: row;
             gap: 3.125rem;
             font-size: 1.5rem;
-            line-height: 1.8313rem;            
+            line-height: normal;            
         }  
         p {
             margin-top: 1.25rem;
@@ -262,7 +262,7 @@
             width: 0.625rem;
             height: 0.625rem;
             background-color: var(--heading-color);
-            line-height: 1.25rem;
+            line-height: normal;
             font-size: 1.25rem;
             border-radius: 50%;
         }
@@ -270,7 +270,7 @@
             width: 0.625rem;
             height: 0.625rem;
             background-color: var(--orange-color);
-            line-height: 1.25rem;
+            line-height: normal;
             font-size: 1.25rem;
             border-radius: 50%;
         }
@@ -323,10 +323,10 @@
         font-size: 1.5rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 1.8313rem;
+        line-height: normal;
         @media screen and (min-width:$full) { 
             font-size: 3rem;
-            line-height: 3.6631rem;
+            line-height: normal;
             text-align: start;
         }
     }
@@ -335,10 +335,10 @@
         font-size: 1rem;
         font-style: normal;
         font-weight: 300;
-        line-height: 1.2212rem;
+        line-height: normal;
         @media screen and (min-width: $full) {
             font-size: 1.25rem;
-            line-height: 1.5263rem;
+            line-height: normal;
         }
     }
     button {
@@ -348,13 +348,13 @@
         font-size: 1.125rem;
         font-style: normal;
         font-weight: 700;
-        line-height: 1.3738rem;
+        line-height: normal;
         border-radius: 1.25rem;
         background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
         @media screen and (min-width: $full) {
             margin-left: 18.75rem;
             font-size: 2rem;
-            line-height: 2.4419rem;
+            line-height: normal;
             white-space: nowrap;
             border-radius: 2.5rem;
             padding: 1.875rem 7.1875rem;
@@ -384,12 +384,12 @@
             font-size: 2rem;
             font-style: normal;
             font-weight: 700;
-            line-height: 2.2rem;
+            line-height: normal;
             @media screen and (min-width: $full) {
                 padding: 0;
                 text-align: start;
                 font-size: 3.25rem;
-                line-height: 3.9681rem;
+                line-height: normal;
             }
         }
         p {
@@ -398,12 +398,12 @@
             font-size: 1rem;
             font-style: normal;
             font-weight: 400;
-            line-height: 1.2212rem;
+            line-height: normal;
             margin-top: 1.5625rem;  
             @media screen and (min-width: $full) {
                 text-align: start;
                 font-size: 1.5rem;
-                line-height: 1.8313rem;
+                line-height: normal;
                 margin-top: 2.8125rem;  
             }          
         }
@@ -439,7 +439,7 @@
             @media screen and (min-width: $full) {
                 white-space: nowrap;
                 font-size: 2rem;
-                line-height: 2.4419rem;
+                line-height: normal;
             }        
         }
     }
@@ -484,7 +484,7 @@
                     font-size: 1.25rem;
                     font-style: normal;
                     font-weight: 700;
-                    line-height: 1.5263rem;
+                    line-height: normal;
                     color: var(--orange-color);
                     @media screen and (min-width: $full) {
                         font-size: 2rem;
@@ -498,10 +498,10 @@
                 font-size: 1.375rem;
                 font-style: normal;
                 font-weight: 700;
-                line-height: 1.6787rem;
+                line-height: normal;
                 @media screen and (min-width: $full) {
                     font-size: 2rem;
-                    line-height: 2.4419rem;
+                    line-height: normal;
                 }
             }
             p {
@@ -510,10 +510,10 @@
                 font-size: 1rem;
                 font-style: normal;
                 font-weight: 400;
-                line-height: 1.2212rem;
+                line-height: normal;
                 @media screen and (min-width: $full) {
                     font-size: 1.5rem;
-                    line-height: 1.8313rem;
+                    line-height: normal;
                     margin-top: 1.875rem;
                 }
             }
@@ -538,7 +538,7 @@
                 font-size: 1.25rem;
                 font-style: normal;
                 font-weight: 700;
-                line-height: 1.5263rem;
+                line-height: normal;
                 color: var(--white-color);
                 @media screen and (min-width: $full) {
                     font-size: 2rem;
@@ -566,17 +566,20 @@
             font-size: 1.5rem;
             font-style: normal;
             font-weight: 400;
-            line-height: 1.8313rem;
+            line-height: normal;
             color: var(--text-color-black);
             @media screen and (min-width: $full) {
 
             }
         }
         a {
-        font-size: 1.25rem;
-        font-weight: 700;
-        line-height: 1.5rem;
-        text-align: left;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: normal;
+            text-align: left;
+            @media screen and (min-width: $full) {
+
+            }
         }
         button {
             margin: 2.5rem 0 2.625rem;
@@ -613,7 +616,7 @@
             font-size: 2rem;
             font-style: normal;
             font-weight: 700;
-            line-height: 110%;
+            line-height: normal;
         }
         p {
             padding: 1.5625rem 0 0;
@@ -678,7 +681,7 @@
             font-size: 1.125rem;
             font-style: normal;
             font-weight: 600;
-            line-height: 110%; /* 1.2375rem */                
+            line-height: normal;              
         }
         p {
             margin-top: 0.625rem;
@@ -756,7 +759,7 @@
             font-size: 2rem;
             font-style: normal;
             font-weight: 700;
-            line-height: 110%;
+            line-height: normal;
         }
         p {
             padding: 1.5625rem 0 0;
@@ -869,7 +872,7 @@
             font-size: 1.125rem;
             font-style: normal;
             font-weight: 600;
-            line-height: 110%;
+            line-height: normal;
         }
         p {
             padding-top: 0.4375rem;
@@ -877,7 +880,7 @@
             font-size: 0.875rem;
             font-style: normal;
             font-weight: 400;
-            line-height: 110%;
+            line-height: normal;
         }
     }
 }
@@ -897,7 +900,7 @@
             font-size: 2rem;
             font-style: normal;
             font-weight: 700;
-            line-height: 110%;
+            line-height: normal;
         }
         p {
             padding: 1.75rem 0 0;
