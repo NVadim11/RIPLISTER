@@ -284,7 +284,6 @@
             height: 12.5rem;
             filter: brightness(50%);
             box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.30);
-            // height: 12.5rem;
             flex-shrink: 0;
             border-radius: 1.25rem;
         }
@@ -312,8 +311,6 @@
         flex-direction: column;
         align-items: center;
         @media screen and (min-width:$full) {
-            display: flex;
-            flex-direction: column;
             align-items: start;
         }
     }
@@ -409,13 +406,14 @@
         }
 
     }
-    &__link {
+    &__linkHowTo {
         display: flex;
         align-items: center;
         align-content: center;
         margin: 1.5625rem auto 0;
         width: fit-content;
         @media screen and (min-width: $full) {
+            position: relative;
             margin: 0 0 0 18.75rem;
             padding-bottom: 7.8125rem;
         }
@@ -427,7 +425,7 @@
             @media screen and (min-width: $full) {
                 width: 3.125rem;
                 height: 3.125rem;
-            }
+            } 
         }
         a {          
             color: var(--text-color-blue);
@@ -443,7 +441,8 @@
             }        
         }
     }
-    &__link:hover {
+    &__linkHowTo:hover {
+        cursor: pointer;
         svg { 
             background-color: var(--text-color-blue);
             path {
@@ -558,7 +557,7 @@
         background-position: center;
         background-size: 185%;
         @media screen and (min-width: $full) {
-
+            padding: 4.6875rem 5.9375rem 0 6.5625rem;
         }
         h2 {
             margin: 3.875rem 1.625rem 0;
@@ -569,16 +568,12 @@
             line-height: normal;
             color: var(--text-color-black);
             @media screen and (min-width: $full) {
-
-            }
-        }
-        a {
-            font-size: 1.25rem;
-            font-weight: 700;
-            line-height: normal;
-            text-align: left;
-            @media screen and (min-width: $full) {
-
+                position: relative;
+                left: -30rem;
+                margin: 0;
+                font-size: 2.75rem;
+                max-width: 31.25rem;
+                text-align: left;
             }
         }
         button {
@@ -589,20 +584,76 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;
+            white-space: nowrap;
             border-radius: 1.25rem;
             background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-            @media screen and (min-width: $full) {
-
+            @media screen and (min-width: $full) {  
+                position: relative;
+                left: 29.6875rem;
+                bottom: 7.5rem;            
+                margin: 0;
+                font-size: 2rem;
+                padding: 1.875rem 3.4375rem;
+                border-radius: 2.5rem;
             }
         }
         button:hover {
             background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
             transition: 0.25s;
             @media screen and (min-width: $full) {
-
+                position: relative;
+                left: 29.6875rem;
+                bottom: 7.5rem;            
+                margin: 0;
+                font-size: 2rem;
+                padding: 1.875rem 3.4375rem;
+                border-radius: 2.5rem;
             }
         } 
     }
+    &__linkHelp {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        margin : 1.5625rem auto 0;
+        @media screen and (min-width: $full) {
+            position: relative;
+            left: -626px;
+            top: 2.8125rem;
+            margin: 0;
+            padding: 0;            
+            }
+            svg {
+                width: 2.125rem;
+                height: 2.125rem;
+                border-radius: 3.125rem;            
+                margin-right: 0.5rem;
+                @media screen and (min-width: $full) {
+                    width: 3.125rem;
+                    height: 3.125rem;
+                } 
+        }
+        a {             
+            color: var(--text-color-blue);
+            font-size: 1.25rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-align: left;
+            @media screen and (min-width: $full) {
+                font-size: 2rem;
+            }
+        }
+    }
+    &__linkHelp:hover {
+        cursor: pointer;
+        svg { 
+            background-color: var(--text-color-blue);
+            path {
+                fill: var(--white-color); 
+            }
+        }        
+    }    
 }
 .mainRecent {
     margin-top: 2.5rem;
@@ -617,6 +668,10 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;
+            @media screen and (min-width: $full) {
+                text-align: left;
+                font-size: 3.25rem;
+            }
         }
         p {
             padding: 1.5625rem 0 0;
@@ -624,34 +679,15 @@
             font-size: 1rem;
             font-style: normal;
             font-weight: 400;
-            line-height: normal;       
+            line-height: normal;    
+            @media screen and (min-width: $full) {
+                text-align: left;
+                font-size: 1.5rem;
+                max-width: 48.75rem;
+            }   
         }
-        div {  
-            display: flex;
-            align-items: center;
-            align-content: center;
-            margin: 1.875rem auto 0;
-            width: fit-content;
-            svg {
-                margin-right: 0.5rem;
-                border-radius: 3.125rem;
-            }  
-            a {          
-                color: var(--text-color-blue);
-                font-size: 1.25rem;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;   
-                padding: 0.3125rem;         
-            }
-        }
-        div:hover {
-            svg {
-                background-color: var(--text-color-blue);
-            }
-            path {
-                fill: var(--white-color);
-            }
+        @media screen and (min-width: $full) {         
+            padding-left: 6.5625rem;            
         }
     }
     &__slider {
@@ -662,26 +698,40 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+        @media screen and (min-width: $full) {
+            border-radius: 1.875rem; 
+        }  
         &_photo {
             height: 11.875rem;
-            width: 8.75rem;            
+            width: 8.75rem;  
+            @media screen and (min-width: $full) {
+                width: 15.3125rem;
+                height: 19.375rem;
+                flex-shrink: 0;                
+            }          
             img {
                 border-radius: 0.875rem;  
-                width: 100%;                
+                width: 100%;              
             }
             img:hover {
-                cursor: pointer;
                 box-shadow: 0 0.625rem 0.625rem -0.3125rem rgb(0 0 0 / 0.4);
             }
         }
         &_text {
             margin-top: 1.25rem;
+            @media screen and (min-width: $full) {
+                margin-top: 2.5rem;
+            }
         h4 {
             text-align: center;
             font-size: 1.125rem;
             font-style: normal;
             font-weight: 600;
-            line-height: normal;              
+            line-height: normal;
+            @media screen and (min-width: $full){ 
+                font-size: 2rem;
+                max-width: 15.3125rem;
+            }           
         }
         p {
             margin-top: 0.625rem;
@@ -689,15 +739,26 @@
             font-weight: 400;
             line-height: normal;
             font-size: 0.75rem;
+            @media screen and (min-width: $full) {
+                font-size: 1.125rem;
+                margin-top: 1.125rem;
+                max-width: 15.3125rem;
+            }
         }
         }  
-    }    
+    }
+    &__slide:hover {
+        cursor: pointer;        
+    }  
     &__scrollbar {
         height: 0.375rem;
         width: 100%;
         border-radius: 1.875rem;
         background: #F3ECEC;   
         margin: 3.125rem 0 0 0;
+        @media screen and (min-width: $full) {
+            margin: 8.125rem 0 0 0;
+        }
         .swiper-scrollbar-drag {
             height: 0.375rem;
             border-radius: 1.875rem;
@@ -710,12 +771,21 @@
         flex-direction: column;
         align-items: center;
         margin-top: 3.75rem;
+        @media screen and (min-width: $full) {
+            flex-direction: row;
+            gap: 25rem;
+            margin: 9.0625rem 0
+        }
         h4 {
             font-size: 1.5rem;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
             text-align: center;
+            @media screen and (min-width: $full) {
+                font-size: 2.75rem;
+                text-align: start;
+            }
         }
         span {
             color: var(--text-color-blue);
@@ -723,10 +793,10 @@
             font-style: normal;
             font-weight: 600;
             line-height: normal;   
-            text-decoration: underline;         
-        }
-        span:hover {
-            text-decoration: none; 
+            text-decoration: underline;
+            @media screen and (min-width: $full) {
+                font-size: 2.75rem;
+            }     
         }
         button {
             margin: 2.5rem 0 2.8125rem;
@@ -738,12 +808,40 @@
             line-height: normal;
             border-radius: 1.25rem;
             background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+            @media screen and (min-width: $full) {
+                font-size: 2rem;
+                padding: 1.875rem 3.4375rem;
+                border-radius: 2.5rem;
+                margin: 0;
+                position: relative;
+                top: -1.8125rem;
+            }
         }
             button:hover {
                 background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
                 transition: 0.25s;
+                @media screen and (min-width: $full) {
+                    font-size: 2rem;
+                    padding: 1.875rem 3.4375rem;
+                    border-radius: 2.5rem;
+                    margin: 0;
+                }
             } 
-    }   
+    }
+    &__text {
+        @media screen and (min-width: $full) {
+        max-width: 37.5rem;
+        } 
+    }
+    &__text:hover {
+        cursor: pointer;
+        span {
+            text-decoration: none; 
+        }        
+    }  
+    @media screen and (min-width: $full) {
+        margin-top: 6.25rem;
+    } 
 }
 .mainFunerals {
     &__container {
