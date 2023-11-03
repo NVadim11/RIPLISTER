@@ -46,7 +46,7 @@ var tag = document.createElement('script');
       //    after the API code downloads.
       var player;
       function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
+        player = new YT.Player('youtube-player', {
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -56,7 +56,7 @@ var tag = document.createElement('script');
 
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
-        let theOverlay = document.getElementById("overlay");
+        let theOverlay = document.getElementById("youtube-overlay");
         player.mute(); 
         theOverlay.onclick = function() {
             this.style.display = "none";

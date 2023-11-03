@@ -39,15 +39,17 @@
             <img src="img/input-icon1.svg" alt="">
             <input type="text" name="firstName" id="firstName" placeholder="Ім'я" required>
         </div>
-        <div class="mainForm__input">
-            <img src="img/input-icon2.svg" alt="">
-            <input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="birthDate"
-                id="birthDate" placeholder="Дата народження" required />
-        </div>
-        <div class="mainForm__input">
-            <img src="img/input-icon2.svg" alt="">
-            <input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="deathDate"
-                id="deathDate" placeholder="Дата смерті" required />
+        <div class="mainForm__inputGroup">
+            <div class="mainForm__input">
+                <img src="img/input-icon2.svg" alt="">
+                <input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="birthDate"
+                    id="birthDate" placeholder="Дата народження" required />
+            </div>
+            <div class="mainForm__input">
+                <img src="img/input-icon2.svg" alt="">
+                <input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="deathDate"
+                    id="deathDate" placeholder="Дата смерті" required />
+            </div>
         </div>
         <div class="mainForm__input">
             <img src="img/input-icon3.svg" alt="">
@@ -79,8 +81,13 @@
             <div class="mainBenefits__wrapper swiper-wrapper">
                 <div class="mainBenefits__slide swiper-slide">
 
-                    <div id="overlay" title="play">I AM OVERLAY</div>
-                    <div id="player">
+                    <div class="mainBenefits__overlay" id="youtube-overlay" title="play">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
+                            <circle cx="35.9885" cy="35.7307" r="35.2307" stroke="white" stroke-opacity="0.5"/>
+                            <path d="M44.3156 34.6737L32.6894 27.4867C32.2627 27.2237 31.6963 27.1841 31.2287 27.3885C30.7573 27.5913 30.4629 28.0033 30.4629 28.4485V42.8177C30.4629 43.2677 30.7573 43.6781 31.2287 43.8809C31.428 43.9665 31.646 44.0092 31.8659 44.0092C32.1528 44.0092 32.4434 43.9316 32.6894 43.7779L44.3156 36.5972C44.6827 36.3675 44.8969 36.0126 44.8969 35.6355C44.8988 35.2521 44.6789 34.8987 44.3156 34.6737Z" fill="white"/>
+                          </svg>
+                    </div>
+                    <div class="mainBenefits__player" id="youtube-player">
                         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe>
                     </div>
 
@@ -190,6 +197,7 @@
                 <div class="mainRecent__slide swiper-slide">
                     <div class="mainRecent__slide_photo">
                         <img src="img/recent-photo1.png" alt="">
+                        <img src="img/svechka.png" alt="" class="mainRecent__slide_imgItem">
                     </div>
                     <div class="mainRecent__slide_text">
                         <h4>Призвище Ім'я По батькові</h4>
@@ -223,6 +231,61 @@
                         <p>21.01.1984 - 21.03.2023</p>
                     </div>
                 </div>
+                <div class="mainRecent__slide swiper-slide">
+                    <div class="mainRecent__slide_photo">
+                        <img src="img/recent-photo1.png" alt="">
+                    </div>
+                    <div class="mainRecent__slide_text">
+                        <h4>Призвище Ім'я По батькові</h4>
+                        <p>21.01.1984 - 21.03.2023</p>
+                    </div>
+                </div>
+                <div class="mainRecent__slide swiper-slide">
+                    <div class="mainRecent__slide_photo">
+                        <img src="img/recent-photo2.png" alt="">
+                    </div>
+                    <div class="mainRecent__slide_text">
+                        <h4>Призвище Ім'я По батькові</h4>
+                        <p>21.01.1984 - 21.03.2023</p>
+                    </div>
+                </div>
+                <div class="mainRecent__slide swiper-slide">
+                    <div class="mainRecent__slide_photo">
+                        <img src="img/recent-photo1.png" alt="">
+                    </div>
+                    <div class="mainRecent__slide_text">
+                        <h4>Призвище Ім'я По батькові</h4>
+                        <p>21.01.1984 - 21.03.2023</p>
+                    </div>
+                </div>
+                <div class="mainRecent__slide swiper-slide">
+                    <div class="mainRecent__slide_photo">
+                        <img src="img/recent-photo2.png" alt="">
+                    </div>
+                    <div class="mainRecent__slide_text">
+                        <h4>Призвище Ім'я По батькові</h4>
+                        <p>21.01.1984 - 21.03.2023</p>
+                    </div>
+                </div>
+                <div class="mainRecent__slide swiper-slide">
+                    <div class="mainRecent__slide_photo">
+                        <img src="img/recent-photo1.png" alt="">
+                 
+                    </div>
+                    <div class="mainRecent__slide_text">
+                        <h4>Призвище Ім'я По батькові</h4>
+                        <p>21.01.1984 - 21.03.2023</p>
+                    </div>
+                </div>
+                <div class="mainRecent__slide swiper-slide">
+                    <div class="mainRecent__slide_photo">
+                        <img src="img/recent-photo2.png" alt="">
+                    </div>
+                    <div class="mainRecent__slide_text">
+                        <h4>Призвище Ім'я По батькові</h4>
+                        <p>21.01.1984 - 21.03.2023</p>
+                    </div>
+                </div>
             </div>
             <div class="mainRecent__scrollbar">
             </div>
@@ -235,6 +298,7 @@
         </div>
     </div>
 </section>
+
 <section class="mainFunerals">
     <div class="mainFunerals__container">
         <div class="mainFunerals__header">

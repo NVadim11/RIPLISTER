@@ -1374,6 +1374,16 @@ label {
   outline: 0.0625rem solid var(--orange-color);
 }
 
+.mainForm__inputGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .mainForm__input {
   position: relative;
   -webkit-box-align: center;
@@ -1526,12 +1536,20 @@ label {
   height: 100%;
 }
 
-.mainBenefits #player {
+.mainBenefits__player {
   width: 100%;
   height: 100%;
 }
 
-.mainBenefits #overlay {
+.mainBenefits__player iframe {
+  -webkit-box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
+          box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 1.25rem;
+}
+
+.mainBenefits__overlay {
   position: absolute;
   /* Sit on top of the page content */
   display: block;
@@ -1551,6 +1569,20 @@ label {
   /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer;
   /* Add a pointer on hover */
+  -webkit-box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
+          box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mainVolunteer {
@@ -1911,7 +1943,8 @@ label {
 
 .mainRecent__slide_photo {
   height: 11.875rem;
-  width: 8.75rem;
+  width: 8.625rem;
+  position: relative;
 }
 
 .mainRecent__slide_photo img {
@@ -1922,6 +1955,13 @@ label {
 .mainRecent__slide_photo img:hover {
   -webkit-box-shadow: 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.4);
           box-shadow: 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.4);
+}
+
+.mainRecent__slide_imgItem {
+  position: absolute;
+  width: 3.625rem !important;
+  bottom: -0.625rem;
+  right: -1.75rem;
 }
 
 .mainRecent__slide_text {
@@ -3413,6 +3453,11 @@ label {
     height: 17.875rem;
     width: 33.875rem !important;
   }
+
+  .mainRecent__slide_photo {
+    height: 17.5rem;
+    width: 13.75rem !important;
+  }
 }
 
 @media (min-width: 89.99875em) {
@@ -3425,6 +3470,11 @@ label {
   .mainBenefits__slide {
     height: 24.25rem;
     width: 46rem !important;
+  }
+
+  .mainRecent__slide_photo {
+    height: 19.375rem;
+    width: 15.25rem !important;
   }
 }
 
@@ -3740,11 +3790,49 @@ label {
   }
 
   .mainForm {
-    padding: 7.5rem 0.625rem 0 0.625rem;
+    padding: 12.9375rem 0.625rem 0 0.625rem;
+  }
+
+  .mainForm__container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 2.875rem 3.0625rem;
+    gap: 0.625rem;
+  }
+
+  .mainForm__inputGroup {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 0.625rem;
+  }
+
+  .mainForm__input input {
+    min-width: 15rem;
+  }
+
+  .mainForm__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 0.5rem;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 
   .mainForm__btn button {
     border-radius: 1.875rem;
+    min-width: 15.5625rem;
+    margin: 0;
+    padding: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 
   .mainBenefits__title {
@@ -3977,15 +4065,17 @@ label {
     padding-left: 6.5625rem;
   }
 
+  .mainRecent__slider {
+    padding-left: 6.5625rem;
+  }
+
   .mainRecent__slide {
     border-radius: 1.875rem;
   }
 
-  .mainRecent__slide_photo {
-    width: 15.3125rem;
-    height: 19.375rem;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
+  .mainRecent__slide_imgItem {
+    width: 5.6875rem !important;
+    right: -2.5rem;
   }
 
   .mainRecent__slide_text {

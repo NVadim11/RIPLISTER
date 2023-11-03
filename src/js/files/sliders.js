@@ -116,7 +116,7 @@ function initSliders() {
 			spaceBetween: 12,
 			//autoHeight: true,
 			speed: 800,
-			loop: true,
+			// loop: true,
 			grabCursor: true,
 
 			pagination: {
@@ -125,19 +125,19 @@ function initSliders() {
 			},
 			breakpoints: {
 				767.98: {
-					slidesPerView: 2,
+					slidesPerView: 2.2,
 					spaceBetween: 21,
 				},
 				1279.98: {
-					slidesPerView: 2,
+					slidesPerView: 2.2,
 					spaceBetween: 31,
 				},
 				1439.98: {
-					slidesPerView: 2,
+					slidesPerView: 2.2,
 					spaceBetween: 42,
 				},
 				1919.98: {
-					slidesPerView: 2,
+					slidesPerView: 2.2,
 					spaceBetween: 58,
 				},
 			},
@@ -151,13 +151,31 @@ function initSliders() {
 			observer: true,
 			observeParents: true,
 			slidesPerView: 2.2,
-			spaceBetween: 1,
+			spaceBetween: 26,
 			autoHeight: true,
 			speed: 800,
 
 			scrollbar: {
 				el: '.mainRecent__scrollbar',
 				draggable: true,
+			},
+			breakpoints: {
+				767.98: {
+					slidesPerView: 4.2,
+					spaceBetween: 36,
+				},
+				1279.98: {
+					slidesPerView: 4.22,
+					spaceBetween: 56,
+				},
+				1439.98: {
+					slidesPerView: 4.2,
+					spaceBetween: 63,
+				},
+				1919.98: {
+					slidesPerView: 5.2,
+					spaceBetween: 63,
+				},
 			},
 		});
 	}

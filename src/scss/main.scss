@@ -119,9 +119,9 @@
 .mainForm {
     z-index: 5;
     padding: 5.9375rem 0.625rem 0 0.625rem;
-    @media screen and (min-width:$full) {
-        padding: 7.5rem 0.625rem 0 0.625rem;
-    }    
+    @media screen and (min-width: $full) {  
+        padding: 12.9375rem 0.625rem 0 0.625rem;
+    } 
     &__container {
         padding: 1.875rem 0 0 0;
         display: flex;  
@@ -132,6 +132,11 @@
         flex-direction: column;
         border-radius: 1.25rem;
         background: #FFF3ED;
+        @media screen and (min-width: $full) {  
+            flex-direction: row;
+            padding: 2.875rem 3.0625rem;
+            gap: 0.625rem;
+        }
     }
     &__searchType {
         display: flex;
@@ -181,12 +186,26 @@
             outline: 0.0625rem solid var(--orange-color);
         }     
     }
+    &__inputGroup {
+        display: flex;
+        flex-direction: column;
+        @media screen and (min-width: $full) {  
+            flex-direction: row;
+            gap: 0.625rem;
+        }
+    }
     &__input {
         position: relative;
         align-items: center;
         img {
             position: absolute;
-            padding: 1.5625rem 1rem 1.0625rem 1.0625rem;                
+            padding: 1.5625rem 1rem 1.0625rem 1.0625rem; 
+            @media screen and (min-width: $full) { 
+                // padding: 0;
+                // z-index: 2;
+                // left: 22px;
+                // top: 25px;
+            }
         }
         input {
             min-width: 19.625rem;
@@ -194,7 +213,13 @@
             padding: 1.0625rem 0 1.0625rem 3.375rem;
             border-radius: 1.25rem;
             border: 0.0625rem solid var(--orange-color);
-            background: var(--white-color);                
+            background: var(--white-color);  
+            @media screen and (min-width: $full) {  
+                min-width: 15rem;
+                // margin: 0;
+                // display: flex;
+                // position: relative;
+            }               
         }
         input[class="datePicker"]::-webkit-calendar-picker-indicator {
             position: absolute;
@@ -208,6 +233,11 @@
         }
     }
     &__btn {
+        @media screen and (min-width:$full) {
+            display: flex;
+            padding-top: 0.5rem;
+            align-self: flex-end;
+        }
         button {
             border-radius: 1.25rem;
             background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
@@ -223,6 +253,11 @@
             color: var(--white-color);
             @media screen and (min-width:$full) {
                 border-radius: 1.875rem; 
+                min-width: 15.5625rem;
+                margin: 0;
+                padding: 0;
+                justify-content: center;
+                align-self: flex-end;
             }
         }
         button:hover {
@@ -237,7 +272,7 @@
 }
 .mainBenefits {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;   
     &__title {
         text-align: center;
         font-size: 2rem;
@@ -335,11 +370,17 @@
             height: 100%;
         }
     }
-    #player {
+    &__player {
         width: 100%;
         height: 100%;
+
+        iframe {
+            box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.30);
+            flex-shrink: 0;
+            border-radius: 1.25rem;
+        }
     }
-    #overlay {
+    &__overlay {
         position: absolute; /* Sit on top of the page content */
         display: block;
         width: 100%; /* Full width (cover the whole page) */
@@ -353,6 +394,16 @@
         background-color: rgba(0,0,0,0.9); /* Black background with opacity */
         z-index: 52; /* Specify a stack order in case you're using a different order for other elements */
         cursor: pointer; /* Add a pointer on hover */
+        
+        box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.30);
+        flex-shrink: 0;
+        border-radius: 1.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            
+        }
     }
 }
 .mainVolunteer {
@@ -732,6 +783,7 @@
     &__container { 
     }
     &__title {
+  
         h2 {   
             padding: 3.75rem 0 0 0;         
             text-align: center;
@@ -763,6 +815,10 @@
     }
     &__slider {
         margin-top: 3.75rem;
+        @media screen and (min-width: $full) {         
+            padding-left: 6.5625rem;            
+        }
+ 
     }
     &__slide {
         display: flex;
@@ -774,19 +830,33 @@
         }  
         &_photo {
             height: 11.875rem;
-            width: 8.75rem;  
-            @media screen and (min-width: $full) {
-                width: 15.3125rem;
+            width: 8.625rem;  
+            position: relative;
+            @media screen and (min-width:$tablet) {
+                height: 17.5rem;
+                width: 13.75rem!important;
+            }
+            @media screen and (min-width:$pc) {
                 height: 19.375rem;
-                flex-shrink: 0;                
-            }          
+                width: 15.25rem!important;
+            }
             img {
                 border-radius: 0.875rem;  
-                width: 100%;              
+                width: 100%; 
             }
             img:hover {
                 box-shadow: 0 0.625rem 0.625rem -0.3125rem rgb(0 0 0 / 0.4);
             }
+        }
+        &_imgItem {
+            position: absolute;
+            width: 3.625rem!important;
+            bottom: -0.625rem;
+            right: -1.75rem;
+            @media screen and (min-width: $full) {
+                width: 5.6875rem!important;
+                right: -2.5rem;
+             }
         }
         &_text {
             margin-top: 1.25rem;
