@@ -4036,9 +4036,29 @@
             slidesPerView: 1.2,
             spaceBetween: 12,
             speed: 800,
+            loop: true,
+            grabCursor: true,
             pagination: {
                 el: ".mainBenefits__pagination",
                 clickable: true
+            },
+            breakpoints: {
+                767.98: {
+                    slidesPerView: 2,
+                    spaceBetween: 21
+                },
+                1279.98: {
+                    slidesPerView: 2,
+                    spaceBetween: 31
+                },
+                1439.98: {
+                    slidesPerView: 2,
+                    spaceBetween: 42
+                },
+                1919.98: {
+                    slidesPerView: 2,
+                    spaceBetween: 58
+                }
             }
         });
         if (document.querySelector(".mainRecent__slider")) new swiper_core_Swiper(".mainRecent__slider", {
@@ -4087,6 +4107,10 @@
             menuClose();
         }));
     }
+    var tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName("script")[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     window["FLS"] = true;
     isWebp();
     menuInit();

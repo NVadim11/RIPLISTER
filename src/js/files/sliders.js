@@ -116,10 +116,30 @@ function initSliders() {
 			spaceBetween: 12,
 			//autoHeight: true,
 			speed: 800,
+			loop: true,
+			grabCursor: true,
 
 			pagination: {
 				el: '.mainBenefits__pagination',
 				clickable: true,
+			},
+			breakpoints: {
+				767.98: {
+					slidesPerView: 2,
+					spaceBetween: 21,
+				},
+				1279.98: {
+					slidesPerView: 2,
+					spaceBetween: 31,
+				},
+				1439.98: {
+					slidesPerView: 2,
+					spaceBetween: 42,
+				},
+				1919.98: {
+					slidesPerView: 2,
+					spaceBetween: 58,
+				},
 			},
 		});
 	}
