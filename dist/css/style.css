@@ -841,8 +841,8 @@ label {
   border-radius: 2.5rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
 }
 
 .footer__contact button:hover svg {
@@ -1048,8 +1048,8 @@ label {
   border-radius: 2.5rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
 }
 
 .footerAlt__contact button:hover svg {
@@ -3460,7 +3460,10 @@ label {
 
   .footer__about p {
     font-size: 1rem;
-    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: start;
   }
 
   .footer__menu {
@@ -3492,14 +3495,12 @@ label {
   }
 
   .footer__list-item {
-    color: var(--text-color-black);
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.1125rem;
     text-transform: uppercase;
-    text-decoration-color: var(--text-color-underline);
   }
 
   .footer__contact {
@@ -3593,7 +3594,10 @@ label {
 
   .footerAlt__about p {
     font-size: 1rem;
-    text-align: left;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: start;
   }
 
   .footerAlt__menu {
@@ -3626,11 +3630,11 @@ label {
 
   .footerAlt__list-item {
     color: var(--text-color-black);
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.1125rem;
     text-transform: uppercase;
     text-decoration-color: var(--text-color-underline);
   }
