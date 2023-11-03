@@ -71,10 +71,14 @@
             @media screen and (min-width:$tablet) {
                 padding: 2rem 4.375rem;
             }
+            @media screen and (min-width:$full) {
+                border-radius: 2.5rem; 
+            }
             }
             button:hover {
                 background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
                 transition: 0.25s;
+                border-radius: 2.5rem; 
             }
         }
     &__bg {  
@@ -207,10 +211,14 @@
             font-weight: 700;
             line-height: normal;
             color: var(--white-color);
+            @media screen and (min-width:$full) {
+                border-radius: 1.875rem; 
+            }
         }
         button:hover {
             background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
             transition: 0.25s;
+            border-radius: 1.875rem; 
         }
         img {
             padding: 1rem 0.625rem 1rem;
@@ -466,6 +474,7 @@
             @media screen and (min-width: $full) {
                 width: 3.125rem;
                 height: 3.125rem;
+                margin-right: 1.25rem;
             } 
         }
         a {          
@@ -672,6 +681,7 @@
                 @media screen and (min-width: $full) {
                     width: 3.125rem;
                     height: 3.125rem;
+                    margin-right: 1.25rem;
                 } 
         }
         a {             
@@ -681,6 +691,7 @@
             font-weight: 700;
             line-height: normal;
             text-align: left;
+            padding: 0.3125rem; 
             @media screen and (min-width: $full) {
                 font-size: 2rem;
             }
@@ -828,7 +839,7 @@
                 text-align: start;
             }
         }
-        span {
+        a {
             color: var(--text-color-blue);
             font-size: 1.5rem;
             font-style: normal;
@@ -838,7 +849,11 @@
             @media screen and (min-width: $full) {
                 font-size: 2.75rem;
             }     
-        }
+        }        
+        a:hover {
+            cursor: pointer;
+            text-decoration: none; 
+        }  
         button {
             margin: 2.5rem 0 2.8125rem;
             padding: 1rem 2.125rem;
@@ -872,14 +887,9 @@
     &__text {
         @media screen and (min-width: $full) {
         max-width: 37.5rem;
+        padding-left: 6.5625rem;
         } 
     }
-    &__text:hover {
-        cursor: pointer;
-        span {
-            text-decoration: none; 
-        }        
-    }  
     @media screen and (min-width: $full) {
         margin-top: 6.25rem;
     } 
@@ -891,7 +901,13 @@
         text-align: center;
         flex-direction: column;
     }
-    &__title {
+    &__header {
+        @media screen and (min-width: $full) {
+            display: flex;
+            margin-top: 4.375rem;     
+        }
+    }
+    &__title {        
         h2 {   
             padding: 3.75rem 0 0 0;         
             text-align: center;
@@ -899,6 +915,10 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;
+            @media screen and (min-width: $full) {
+                font-size: 3.25rem;
+                text-align: start;
+            }
         }
         p {
             padding: 1.5625rem 0 0;
@@ -906,20 +926,37 @@
             font-size: 1rem;
             font-style: normal;
             font-weight: 400;
-            line-height: normal;       
+            line-height: normal;  
+            @media screen and (min-width: $full) {
+                font-size: 1.5rem;
+                text-align: start;
+            }     
+        }
+        @media screen and (min-width: $full) {
+            padding-left: 6.5625rem;
         }        
     }
     &__input {  
         position: relative;
-        align-items: center;
+        align-items: center;  
         img:first-of-type {
             position: absolute;
             padding: 2.8125rem 1.0625rem 1.0625rem 1.0625rem;
+            scale: 80%;
+            @media screen and (min-width: $full) {
+                scale: 100%;
+                top: 1.5625rem;
+                padding: 3.125rem 1.25rem 1.25rem 2rem;
+            }
         }
         img:last-of-type {
             position: absolute;
             padding: 2.8125rem 1.0625rem 1.0625rem 1.0625rem;
-            margin-left: 19.3125rem;
+            margin-left: 19.0625rem;
+            @media screen and (min-width: $full) {   
+                margin-left: 24.8125rem;
+                padding: 5rem 1.9375rem 1.5rem 0rem;
+            }
           }
         input {
             min-width: 22.1875rem;
@@ -927,8 +964,28 @@
             padding: 1.0625rem 0 1.0625rem 3.375rem;
             border-radius: 1.25rem;
             border: 0.0625rem solid var(--orange-color);
-            background: var(--white-color);                
+            background: var(--white-color);   
+            @media screen and (min-width: $full) {
+                border-radius: 1.875rem;
+                min-width: 28.125rem;
+                margin-top: 3.75rem;
+            }            
         }
+        input[type=text] {
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            padding-left: 3.125rem;
+            @media screen and (min-width: $full) {
+                padding-left: 4.6875rem;
+                font-size: 1.5rem;
+            }   
+        }
+        @media screen and (min-width: $full) {
+            margin-left: 16.875rem;
+            margin-right: 4.6875rem;
+        }       
     }
     &__companies {        
         margin-top: 1.875rem;
@@ -942,6 +999,8 @@
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(1, auto);
             column-gap: 5rem;
+            padding-left: 1.875rem;
+            margin-top: 6.25rem;
         }
     }
     .funeralCompany {        
@@ -1012,6 +1071,9 @@
             font-style: normal;
             font-weight: 600;
             line-height: normal;
+            @media screen and (min-width:$full) {
+                font-size: 2rem;
+            }
         }
         p {
             padding-top: 0.4375rem;
@@ -1020,6 +1082,9 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
+            @media screen and (min-width:$full) {
+                font-size: 1.5rem;
+            }
         }
     }
 }
@@ -1031,15 +1096,22 @@
             height: 0.125rem;
             background: var(--orange-border-transparent);
         }
+        @media screen and (min-width:$full) {
+            
+        }
     }
     &__title {
         h2 {   
-            padding: 3.5625rem 0 0 0;         
+            padding: 9.125rem 0 0 0;         
             text-align: center;
             font-size: 2rem;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
+            @media screen and (min-width:$full) {
+                font-size: 3.25rem;
+                text-align: start;
+            }
         }
         p {
             padding: 1.75rem 0 0;
@@ -1047,7 +1119,15 @@
             font-size: 1rem;
             font-style: normal;
             font-weight: 400;
-            line-height: normal;       
+            line-height: normal;    
+            @media screen and (min-width:$full) {
+                font-size: 1.5rem;
+                text-align: start;
+            }   
+        }
+        @media screen and (min-width:$full) {
+           max-width: 48.75rem;
+           padding-left: 6.5625rem;
         }
     }
     &__partners {
@@ -1115,4 +1195,7 @@
             transition: 0.25s;
         }
     }
+    @media screen and (min-width:$full) {
+        margin-top: 7.1875rem;
+    }  
 }
