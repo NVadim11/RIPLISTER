@@ -36,10 +36,10 @@
                 line-height: normal;            
             }
         }
-        p {
+        p {            
+            font-size: 1rem;
             color: var(--white-color);
-            text-align: center;
-            font-size: 24px;
+            text-align: center;            
             font-style: normal;
             font-weight: 400;
             line-height: normal;
@@ -48,6 +48,10 @@
             @media screen and (min-width:$tablet)  {
                 font-size: 1.25rem;
             }
+            @media screen and (min-width:$full) {
+                font-size: 1.5rem;
+                padding: 1.125rem 0.625rem 0;
+            }
         }
     }    
     &__btn {
@@ -55,6 +59,9 @@
     display: flex;
     justify-content: center;
     z-index: 2;
+    @media screen and (min-width:$full) {
+        margin-top: 4.375rem;
+    }
         button {
             padding: 1rem 2.125rem;
             color: var(--white-color);
@@ -111,7 +118,10 @@
 }   
 .mainForm {
     z-index: 5;
-    padding: 5.9375rem 0.625rem 0 0.625rem;    
+    padding: 5.9375rem 0.625rem 0 0.625rem;
+    @media screen and (min-width:$full) {
+        padding: 7.5rem 0.625rem 0 0.625rem;
+    }    
     &__container {
         padding: 1.875rem 0 0 0;
         display: flex;  
@@ -238,6 +248,7 @@
         @media screen and (min-width:$full) {
             font-size: 3.25rem;
             line-height: normal;
+            margin-top: 6.875rem;
         }
     }    
     &__descr {
@@ -260,6 +271,9 @@
     }
     &__slider {
         margin-top: 4.0625rem;
+        @media screen and (min-width:$full)  {
+            margin-top: 6.25rem;
+        }
     }
     &__pagination {
         display: flex;
@@ -281,6 +295,9 @@
             line-height: normal;
             font-size: 1.25rem;
             border-radius: 50%;
+        }
+        @media screen and (min-width:$full) {
+            margin: 5.9375rem 0 0 0;
         }
     }
     &__wrapper {
@@ -353,6 +370,7 @@
             flex-direction: row;
             border-radius: 1.875rem; 
             padding: 5.625rem 6.25rem;
+            margin-top: 6.5625rem;
         }
     }
     &__quote {
@@ -608,6 +626,7 @@
         background-size: 185%;
         @media screen and (min-width: $full) {
             padding: 4.6875rem 5.9375rem 0 6.5625rem;
+            margin-top: 6.5625rem;
         }
         h2 {
             margin: 3.875rem 1.625rem 0;

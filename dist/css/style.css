@@ -1218,9 +1218,9 @@ label {
 }
 
 .mainCover__container p {
+  font-size: 1rem;
   color: var(--white-color);
   text-align: center;
-  font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -3726,8 +3726,21 @@ label {
     line-height: normal;
   }
 
+  .mainCover__container p {
+    font-size: 1.5rem;
+    padding: 1.125rem 0.625rem 0;
+  }
+
+  .mainCover__btn {
+    margin-top: 4.375rem;
+  }
+
   .mainCover__btn button {
     border-radius: 2.5rem;
+  }
+
+  .mainForm {
+    padding: 7.5rem 0.625rem 0 0.625rem;
   }
 
   .mainForm__btn button {
@@ -3737,6 +3750,7 @@ label {
   .mainBenefits__title {
     font-size: 3.25rem;
     line-height: normal;
+    margin-top: 6.875rem;
   }
 
   .mainBenefits__descr {
@@ -3750,6 +3764,14 @@ label {
     gap: 3.125rem;
     font-size: 1.5rem;
     line-height: normal;
+  }
+
+  .mainBenefits__slider {
+    margin-top: 6.25rem;
+  }
+
+  .mainBenefits__pagination {
+    margin: 5.9375rem 0 0 0;
   }
 
   .mainBenefits__slide {
@@ -3767,6 +3789,7 @@ label {
             flex-direction: row;
     border-radius: 1.875rem;
     padding: 5.625rem 6.25rem;
+    margin-top: 6.5625rem;
   }
 
   .mainVolunteer__quote {
@@ -3889,6 +3912,7 @@ label {
 
   .mainInfo__create {
     padding: 4.6875rem 5.9375rem 0 6.5625rem;
+    margin-top: 6.5625rem;
   }
 
   .mainInfo__create h2 {
