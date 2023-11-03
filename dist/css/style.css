@@ -612,7 +612,7 @@ label {
 .headerMain {
   padding: 0 0.5rem;
   background-color: transparent;
-  height: 76px;
+  height: 4.75rem;
   z-index: 9;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3435,8 +3435,16 @@ label {
 }
 
 @media screen and (min-width: 119.99875em) {
+  .headerAlt {
+    padding-top: 3.4375rem;
+  }
+
   .headerAlt__logo img {
     max-width: 17.5rem;
+  }
+
+  .headerMain {
+    padding-top: 3.4375rem;
   }
 
   .headerMain__logo img {

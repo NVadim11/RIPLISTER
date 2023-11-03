@@ -9,6 +9,9 @@
 	@media screen and (min-width:$mobile) {
 		padding: 0 2.125rem;
 	}
+	@media screen and (min-width:$full) {
+		padding-top: 3.4375rem;
+	}
 	&__logo {
 		display: flex;
 		img {

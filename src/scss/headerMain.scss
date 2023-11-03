@@ -1,13 +1,16 @@
 .headerMain {
 	padding: 0 0.5rem;
 	background-color: transparent;
-	height: 76px;
+	height: 4.75rem;
 	z-index: 9;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	@media screen and (min-width:$mobile) {
 		padding: 0 2.125rem;
+	}
+	@media screen and (min-width:$full) {
+		padding-top: 3.4375rem;
 	}
 	&__logo {
 		display: flex;
