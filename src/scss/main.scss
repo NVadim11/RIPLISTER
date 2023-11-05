@@ -366,19 +366,15 @@
             border-radius: 1.25rem;
         }
         iframe {
-            width: 100%;
-            height: 100%;
+            box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.30);
+            flex-shrink: 0;
+            border-radius: 1.25rem;
         }
     }
     &__player {
         width: 100%;
         height: 100%;
 
-        iframe {
-            box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.30);
-            flex-shrink: 0;
-            border-radius: 1.25rem;
-        }
     }
     &__overlay {
         position: absolute; /* Sit on top of the page content */
