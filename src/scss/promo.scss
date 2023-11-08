@@ -1,8 +1,9 @@
-.promoCover {
-	&__container {
-	}
-	&__videoPlayer {
-		
+.promo {
+	display: flex;
+	flex-direction: column;
+	@media screen and (min-width:$mobile) {
+		display: flex;
+		flex-direction: row;
 	}
 // 	&__overlay {
 // 		position: absolute; /* Sit on top of the page content */
@@ -32,19 +33,84 @@
 	&__content {
 		display: flex;
 		flex-direction: column;
-		align-items: center;	
+		align-items: center;
+		order: 2;
+		@media screen and (min-width:$mobile) {
+			flex: 0 0 50%;
+			max-width: 50%;
+			order: 1;
+		}	
 	}
-	&__header {
+	&__content-header {
+		display: none;
+		flex-direction: column;
+		@media screen and (min-width:$mobile) {
+			display: flex;
+		}
 	}
-	&__icon {
+	&__cover {
+		order: 1;
+		display: flex;
+		flex-direction: column;
+		background-image: url("img/promoCover.png");
+		background-position: 100% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 28.8125rem;
+		@media screen and (min-width:$mobile) {
+			flex: 0 0 50%;
+			max-width: 50%;
+			order: 2;
+		}	
 	}
-	&__title {
-		font-weight: 600;
-		line-height: 4.5625rem;
-		letter-spacing: 0em;
+	&__cover-btnBox {
+		display: flex;
+		align-self: flex-end;
+		margin: 1rem 1.0625rem 0 0;
+	}
+	&__cover-header {
+		flex-direction: column;
+		margin-top: 4.5rem ;
+		@media screen and (min-width:$mobile) {
+			display: none;
+		}	
+	}
+	&__video {
+		display: flex;
+		flex-direction: column;
+	}
+	&__video-play {
+		display: flex;
+		justify-content: center;
+		margin-top: 1.9375rem;
+	}
+	&__video-text {
+		display: flex;
+		justify-content: center;
+		color: var(--white-color);
 		text-align: center;
-		font-size: 3.75rem;
-		color: var(--orange-color);
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin-top: 0.8125rem;
+	}
+
+
+	// header elements
+
+	&__headerIcon {
+		display: flex;
+		justify-content: center;
+	}
+	&__headerTitle {
+		color: var(--white-color);
+		text-align: center;
+		font-size: 2rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin-top: 2.375rem;
 	}
 	&__descr {		
 		font-size: 1rem;
