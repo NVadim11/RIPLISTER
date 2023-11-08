@@ -3027,7 +3027,7 @@ label {
           flex-direction: column;
 }
 
-.promo__content {
+.promo__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3144,65 +3144,139 @@ label {
 }
 
 .promo__descr {
-  font-size: 1rem;
+  margin: 2.1875rem 0.9375rem 0 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 400;
-  line-height: 1.375rem;
+  line-height: 1.25rem;
   letter-spacing: 0em;
   text-align: center;
 }
 
 .promo__link {
-  font-size: 1.25rem;
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
-  line-height: 1.5rem;
+  line-height: 1.375rem;
   letter-spacing: 0em;
-  text-align: left;
+  text-align: center;
+}
+
+.promo__link:hover {
+  cursor: pointer;
+}
+
+.promo__subscr {
+  margin: 0px 0.9375rem 0 0.9375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .promo__orangeText {
-  font-size: 1.5rem;
+  margin-top: 2.1875rem;
+  font-size: 1.125rem;
   font-weight: 600;
-  line-height: 1.9375rem;
+  line-height: 1.4375rem;
   letter-spacing: 0em;
   text-align: center;
   color: var(--orange-color);
 }
 
-.promo__submit .input-row {
-  width: 40rem;
-  height: 4.375rem;
-  top: 45.0625rem;
-  left: 51.4375rem;
-  border-radius: 1.875rem;
-  border: 0.0625rem solid var(--orange-color);
+.promo__submit {
+  margin: 0.9375rem 1.875rem 0 1.875rem;
+}
+
+.promo__submit form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .promo__submit .input-field {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.5rem;
-  letter-spacing: 0em;
-  text-align: left;
+  overflow: hidden;
 }
 
-.promo__submit .input-btn {
-  border-radius: 1.875rem;
-  background-color: var(--orange-color);
-  color: var(--white-color);
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.8125rem;
-  letter-spacing: 0em;
-  text-align: left;
+.promo__submit .input-field input {
+  text-align: center;
+  border-radius: 1.25rem;
+  border: 0.0625rem solid var(--orange-color);
   padding: 1.25rem 2.8125rem;
 }
 
-.promo__socialsText {
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.5rem;
+.promo__submit .input-field input[type=text] {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.0625rem;
   letter-spacing: 0em;
-  text-align: left;
+}
+
+.promo__submit .input-btn {
+  margin-top: 0.625rem;
+  border-radius: 1.875rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
+  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+  color: var(--white-color);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 1rem 2.3125rem;
+}
+
+.promo__submit .input-btn:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.promo__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.promo__socialsText {
+  margin: 3.125rem 3.125rem 0 3.125rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.0625rem;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.promo__socialsIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 2.1875rem;
+  margin-top: 1.125rem;
+  margin-bottom: 3.125rem;
 }
 
 .menu {
@@ -3571,7 +3645,7 @@ label {
             flex-direction: row;
   }
 
-  .promo__content {
+  .promo__container {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
