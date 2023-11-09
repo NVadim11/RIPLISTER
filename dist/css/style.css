@@ -467,6 +467,86 @@ label {
       flex-shrink: 0;
 }
 
+.promo-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1.875rem;
+}
+
+.promo-close {
+  position: absolute;
+  right: 1.5625rem;
+  top: 0.9375rem;
+}
+
+.promo__icon {
+  max-width: 10.9375rem;
+  margin-top: 6.5625rem;
+}
+
+.promo__icon img {
+  width: 100%;
+}
+
+.popup__promo-title {
+  margin-top: 1.875rem;
+  color: var(--orange-color);
+  text-align: center;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.promo-slide {
+  margin: 1.875rem 2.1875rem 0 2.1875rem;
+}
+
+.popup__promo-about {
+  margin: 2.5rem 2.1875rem 0 2.1875rem;
+  text-align: center;
+}
+
+.promo__subscr {
+  margin: 3.125rem 2.1875rem 0 2.1875rem;
+}
+
+.promo__orangeText {
+  color: #E55738;
+  text-align: center;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  /* 23.4px */
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  border-radius: 1.875rem;
+  background: #FDE6DF;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1.875rem;
+  background: #EB8069;
+}
+
 [class*=-ibg] {
   position: relative;
 }
@@ -3027,7 +3107,7 @@ label {
           flex-direction: column;
 }
 
-.promo__container {
+.promo__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3144,7 +3224,7 @@ label {
 }
 
 .promo__descr {
-  margin: 2.1875rem 0.9375rem 0 0.9375rem;
+  margin: 2.1875rem 1.5625rem 0 1.5625rem;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25rem;
@@ -3166,7 +3246,7 @@ label {
 }
 
 .promo__subscr {
-  margin: 0px 0.9375rem 0 0.9375rem;
+  margin: 0px 1.5625rem 0 1.5625rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3645,7 +3725,7 @@ label {
             flex-direction: row;
   }
 
-  .promo__container {
+  .promo__wrapper {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;

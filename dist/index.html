@@ -26,7 +26,7 @@
 				</svg>
 			</div>
 		</div> -->
-				<div class="promo__container">
+				<div class="promo__wrapper">
 					<div class="promo__content-header">
 						<div class="promo__headerIcon">
 							<a href="#">
@@ -213,18 +213,84 @@
 			</a>
 		</div>
 	</div>
-	<div id="popup" aria-hidden="true" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content">
-				<div class="popup__container">
-					<div class="promo__icon">
-						<a href="#">
-							<img src="img/orange-logo.svg" alt="">
+	<div id="popup" aria-hidden="true" class="popup promo-popup">
+		<div class="popup__wrapper promo-wrapper">
+			<div class="popup__content promo-content">
+				<button data-close type="button" class="popup__close promo-close">
+					<svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
+						<rect width="44" height="44.6659" rx="20" fill="url(#paint0_linear_1695_1848)" />
+						<path d="M28.5551 16.3201L16.0781 28.9859" stroke="white" stroke-width="2" />
+						<path d="M16.0777 16.3202L28.5547 28.986" stroke="white" stroke-width="2" />
+						<defs>
+							<linearGradient id="paint0_linear_1695_1848" x1="22" y1="0" x2="22" y2="44.6659" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#EF6446" />
+								<stop offset="1" stop-color="#DB4A2A" />
+							</linearGradient>
+						</defs>
+					</svg>
+				</button>
+				<div class="promo__icon">
+					<a href="#">
+						<img src="img/orange-logo.svg" alt="">
+					</a>
+				</div>
+				<h1 class="popup__promo-title">Пам'ятай, Згадуй,
+					Шануй пам'ять</h1>
+				<div class="mainBenefits__slide swiper-slide promo-slide">
+					<div class="mainBenefits__overlay promo-overlay" id="youtube-overlay" title="play">
+						<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
+							<circle cx="35.9885" cy="35.7307" r="35.2307" stroke="white" stroke-opacity="0.5" />
+							<path d="M44.3156 34.6737L32.6894 27.4867C32.2627 27.2237 31.6963 27.1841 31.2287 27.3885C30.7573 27.5913 30.4629 28.0033 30.4629 28.4485V42.8177C30.4629 43.2677 30.7573 43.6781 31.2287 43.8809C31.428 43.9665 31.646 44.0092 31.8659 44.0092C32.1528 44.0092 32.4434 43.9316 32.6894 43.7779L44.3156 36.5972C44.6827 36.3675 44.8969 36.0126 44.8969 35.6355C44.8988 35.2521 44.6789 34.8987 44.3156 34.6737Z" fill="white" />
+						</svg>
+					</div>
+					<div class="mainBenefits__player promo-player" id="youtube-player">
+					</div>
+
+					<!-- <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe> -->
+					<!-- <picture><source srcset="img/mainSlide1.webp" type="image/webp"><img src="img/mainSlide1.png" alt=""></picture> -->
+				</div>
+
+				<div class="popup__promo-about">
+					<p>Основною метою створення RIPlister, крім пошуку місця поховання близької людини, є допомога у формуванні
+						сімейного архіву, родоводу в особистому кабінеті користувача.
+					</p><br>
+					<p>Цей проект націлений допомагати здійснювати та отримувати важливі послуги та корисний буде тим, хто хоче
+						дистанційно замовляти послуги з догляду за близькими. Цей проект націлений допомагати здійснювати та
+						отримувати важливі послуги та корисний буде тим, хто хоче дистанційно замовляти послуги з догляду за
+						близькими.</p><br>
+					<p>Хай у вас все буде добре!</p>
+				</div>
+				<div class="promo__subscr">
+					<div class="promo__orangeText">
+						<h4>Щоб не пропуститти запуск проекту та буди в числі тих
+							кто отримує унікальний доступ, підпишиться:</h4>
+					</div>
+					<div class="promo__submit">
+						<form method="POST" action="">
+							<div class="input-row">
+								<div class="input-field" id="id_email_container">
+									<input id="id_email" name="email" type="email" placeholder="Ваш email">
+								</div>
+							</div>
+							<button type="submit" name="_submit" class="input-btn" value="Sign Up">Підписатися</button>
+						</form>
+					</div>
+				</div>
+				<div class="promo__socials">
+					<div class="promo__socialsText">
+						<h4>Також додавайся до наших сторінок у соцмережах:</h4>
+					</div>
+					<div class="promo__socialsIcons">
+						<a href="#" class="instagram-icon">
+							<img src="img/instagram-icon.svg" alt="Instagram icon" />
+						</a>
+						<a href="#" class="facebook-icon">
+							<img src="img/facebook-icon.svg" alt="facebook icon" />
+						</a>
+						<a href="#" class="twitter-icon">
+							<img src="img/twitter-icon.svg" alt="twitter icon" />
 						</a>
 					</div>
-					<h1 class="popup__title">Пам'ятай, Згадуй,
-						Шануй пам'ять</h1>
-					<p class="popup__description">Співробітник нашої служби підтримки відповість якомога швидше.</p>
 				</div>
 			</div>
 		</div>
