@@ -44,7 +44,7 @@
 	&__content-header {
 		display: none;
 		flex-direction: column;
-		@media screen and (min-width:$mobile) {
+		@media screen and (min-width:$tablet) {
 			display: flex;
 		}
 	}
@@ -57,10 +57,11 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		height: 28.8125rem;
-		@media screen and (min-width:$mobile) {
+		@media screen and (min-width:$tablet) {
 			flex: 0 0 50%;
 			max-width: 50%;
 			order: 2;
+			height: 36rem;
 		}	
 	}
 	&__cover-btnBox {
@@ -71,7 +72,7 @@
 	&__cover-header {
 		flex-direction: column;
 		margin-top: 4.5rem ;
-		@media screen and (min-width:$mobile) {
+		@media screen and (min-width:$tablet) {
 			display: none;
 		}	
 	}
@@ -83,6 +84,9 @@
 		display: flex;
 		justify-content: center;
 		margin-top: 1.9375rem;
+		@media screen and (min-width:$mini) {
+			margin-top: 3.4375rem;
+		}
 	}
 	&__video-text {
 		display: flex;
@@ -111,6 +115,14 @@
 		font-weight: 600;
 		line-height: normal;
 		margin-top: 2.375rem;
+		@media screen and (min-width:$mini) {
+			font-size: 2.25rem;
+			font-weight: 600;
+			line-height: 2.75rem;
+			letter-spacing: 0em;
+			text-align: center;
+			margin-top: 3.4375rem;
+		}
 	}
 	&__descr {	
 		margin: 2.1875rem 1.5625rem 0 1.5625rem;
@@ -119,6 +131,14 @@
 		line-height: 1.25rem;
 		letter-spacing: 0em;
 		text-align: center;			
+		@media screen and (min-width:$mini) {
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.375rem;
+			letter-spacing: 0em;
+			text-align: center;
+			margin-top: 3.125rem;
+		}
 	}
 	&__link {
 		margin-top: 1.25rem;
@@ -127,6 +147,13 @@
 		line-height: 1.375rem;
 		letter-spacing: 0em;
 		text-align: center;
+		@media screen and (min-width:$mini) {
+			font-size: 1.125rem;
+			font-weight: 600;
+			line-height: 1.375rem;
+			letter-spacing: 0em;
+			text-align: center;
+		}
 	}
 	&__link:hover {
 		cursor: pointer;
@@ -145,13 +172,22 @@
 		letter-spacing: 0em;
 		text-align: center;
 		color: var(--orange-color);
+		@media screen and (min-width:$mini) {
+			margin-top: 3.125rem;
+		}
 	}
 	&__submit {
 		margin: 0.9375rem 1.875rem 0 1.875rem;
+		@media screen and (min-width:$mini) {
+			margin-top: 1.25rem;
+		}
 		form {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			@media screen and (min-width:$mini) {
+				flex-direction: row;
+			}
 		}
 		.input-row {
 			
@@ -163,12 +199,18 @@
 				border-radius: 1.25rem;
 				border: 0.0625rem solid var(--orange-color);
 				padding: 1.25rem 2.8125rem;
+				@media screen and (min-width:$mini) {
+
+				}
 			}
 			input[type=text] {				
 				font-size: 0.875rem;
 				font-weight: 400;
 				line-height: 1.0625rem;
-				letter-spacing: 0em;				
+				letter-spacing: 0em;			
+				@media screen and (min-width:$mini) {
+
+				}	
 			}
 		}
 		.input-btn {
@@ -181,10 +223,16 @@
 			font-weight: 700;
 			line-height: normal;
 			padding: 1rem 2.3125rem;
+			@media screen and (min-width:$mini) {
+
+			}
 		}
 		.input-btn:hover {
 			background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
       transition: 0.25s;
+			@media screen and (min-width:$mini) {
+
+			}
 		}
 	}
 	&__socials {
@@ -193,12 +241,16 @@
 		align-items: center;
 	}
 	&__socialsText {
-		margin: 3.125rem 3.125rem 0 3.125rem;
+		margin: 3rem 3.125rem 0 3.125rem;
+		padding: 0 50px 0 50px;
 		font-size: 0.875rem;
 		font-weight: 600;
 		line-height: 1.0625rem;
 		letter-spacing: 0em;
 		text-align: center;
+		@media screen and (min-width:$mini) {
+			margin-top: 3.3125rem;
+		}
 	}
 	&__socialsIcons {
 		display: flex;
@@ -206,6 +258,9 @@
 		gap: 2.1875rem;
 		margin-top: 1.125rem;
 		margin-bottom: 3.125rem;
+		@media screen and (min-width:$mini) {
+			margin-bottom: 2.3125rem;
+		}
 		.instagram-icon {
 		}
 		.facebook-icon {

@@ -3338,7 +3338,8 @@ label {
 }
 
 .promo__socialsText {
-  margin: 3.125rem 3.125rem 0 3.125rem;
+  margin: 3rem 3.125rem 0 3.125rem;
+  padding: 0 50px 0 50px;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.0625rem;
@@ -3676,6 +3677,59 @@ label {
   .error404__grave img {
     max-width: 14.6875rem;
   }
+
+  .promo__video-play {
+    margin-top: 3.4375rem;
+  }
+
+  .promo__headerTitle {
+    font-size: 2.25rem;
+    font-weight: 600;
+    line-height: 2.75rem;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 3.4375rem;
+  }
+
+  .promo__descr {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 3.125rem;
+  }
+
+  .promo__link {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.375rem;
+    letter-spacing: 0em;
+    text-align: center;
+  }
+
+  .promo__orangeText {
+    margin-top: 3.125rem;
+  }
+
+  .promo__submit {
+    margin-top: 1.25rem;
+  }
+
+  .promo__submit form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .promo__socialsText {
+    margin-top: 3.3125rem;
+  }
+
+  .promo__socialsIcons {
+    margin-bottom: 2.3125rem;
+  }
 }
 
 @media (min-width: 47.99875em) {
@@ -3733,26 +3787,6 @@ label {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-  }
-
-  .promo__content-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-
-  .promo__cover {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 50%;
-            flex: 0 0 50%;
-    max-width: 50%;
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-  }
-
-  .promo__cover-header {
-    display: none;
   }
 }
 
@@ -3834,6 +3868,27 @@ label {
   .mainRecent__slide_photo {
     height: 17.5rem;
     width: 13.75rem !important;
+  }
+
+  .promo__content-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .promo__cover {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 50%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    height: 36rem;
+  }
+
+  .promo__cover-header {
+    display: none;
   }
 }
 
