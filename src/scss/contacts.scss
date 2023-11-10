@@ -7,10 +7,12 @@
 	flex-direction: column;
 }
 &__contact {
+	width: 100%;
+	display: block;
+	margin-left: 95px;
 }
 &__contact-title {
 	margin-top: 15.625rem;
-	width: fit-content;
 	font-size: 4rem;
 	font-weight: 600;	
 }
@@ -60,7 +62,6 @@ span {
 	}
 }
 &__contact-mail {
-	margin-bottom: 8.75rem;
 	display: flex;
   align-items: center; 
   justify-content: center;
@@ -76,5 +77,57 @@ span {
 &__contact-mail:hover {
 	cursor: pointer;
 	text-decoration-line: none;
+}
+&__form {
+	background-color: var(--modal-background-color);
+	margin-top: 8.75rem;	
+	padding-left: 13.75rem;
+}
+&__form-title {
+	padding-top: 5.3125rem;
+	font-size: 3.25rem;
+	font-weight: 700;
+	line-height: 3.9375rem;
+	letter-spacing: 0em;
+	text-align: left;
+
+}
+&__form-descr {
+	padding-top: 2.5rem;
+	font-size: 1.5rem;
+	font-weight: 400;
+	line-height: 2.125rem;
+	letter-spacing: 0em;
+	text-align: left;
+}
+&__form-inputs {
+}
+.contactsForm {
+	display: flex;
+	flex-direction: row;	
+	gap: 2.5rem;
+	margin-top: 4.0625rem;
+}
+&__form-input {
+	padding: 2.5rem 28.125rem 3.125rem 4.375rem;
+	font-size: 1.25rem;
+	font-weight: 400;
+	line-height: 1.5rem;
+	letter-spacing: 0em;
+	text-align: left;
+	border-radius: 2.5rem;
+	border: 1px solid var(--orange-color);
+}
+&__form-select {
+}
+&__formSelect {
+}
+&__form-textarea {
+}
+&__formTextarea {
+}
+&__form-button {
+}
+&__formSubmit {
 }
 }
