@@ -3166,6 +3166,7 @@ label {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  background: #FFF3ED;
 }
 
 .promo__wrapper {
@@ -3181,9 +3182,6 @@ label {
           flex-direction: column;
 }
 
-.no-webp .promo__cover{
-  background: url("img/promoCover.png"); }
-
 .promo__cover {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -3195,6 +3193,7 @@ label {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: url("img/promoCover.webp");
   background-position: 100% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4883,5 +4882,3 @@ label {
 .webp .mainInfo__create{ background: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 246, 244, 0.9)), to(rgba(253, 246, 244, 0.9))), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
 
 .webp .mainInfo__create{ background: linear-gradient(0deg, rgba(253, 246, 244, 0.9) 0%, rgba(253, 246, 244, 0.9) 100%), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
-
-.webp .promo__cover{ background: url(img/promoCover.webp); }
