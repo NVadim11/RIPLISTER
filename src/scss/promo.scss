@@ -1,23 +1,12 @@
 .promo {
 	display: flex;
 	flex-direction: column;
-	@media screen and (min-width:$mobile) {
-		display: flex;
-		flex-direction: row;
-	}
+
 	@media screen and (min-width:$tablet) {
 		display: flex;
 		flex-direction: row;
-		height: 100vh;
 	}
-	@media screen and (min-width:$pc) {
-		display: flex;
-		flex-direction: row;
-	}
-	@media screen and (min-width:$full) {
-		display: flex;
-		flex-direction: row;
-	}
+
 // 	&__overlay {
 // 		position: absolute; /* Sit on top of the page content */
 // 		display: block;
@@ -48,13 +37,21 @@
 		flex-direction: column;
 		align-items: center;
 		order: 2;
-		@media screen and (min-width:$mobile) {
+		@media screen and (min-width:$tablet) {
 			flex: 0 0 50%;
 			max-width: 50%;
 			order: 1;
 		}	
 	}
 	&__wrapper {
+		width: 320px;
+		margin: 0 auto;
+		@media screen and (min-width:$mobile) {
+			width: 29.75rem;
+		}
+		@media screen and (min-width:$full) {
+			width: 40rem;
+		}
 	}
 	&__content-header {
 		display: none;
@@ -72,17 +69,14 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		height: 28.8125rem;
-		@media screen and (min-width:$tablet) {
-			flex: 0 0 50%;
-			max-width: 50%;
-			order: 2;
+		@media screen and (min-width:$mobile) {
 			height: 36rem;
 		}	
 		@media screen and (min-width:$tablet) {
 			flex: 0 0 50%;
 			max-width: 50%;
 			order: 2;
-			height: 36rem;
+			height: 100vh;
 		}	
 	}
 	&__cover-btnBox {
@@ -93,6 +87,9 @@
 	&__cover-header {
 		flex-direction: column;
 		margin-top: 4.5rem ;
+		@media screen and (min-width:$mobile) {
+			margin-top: 6.625rem;
+		}
 		@media screen and (min-width:$tablet) {
 			display: none;
 		}	
@@ -105,7 +102,7 @@
 		display: flex;
 		justify-content: center;
 		margin-top: 1.9375rem;
-		@media screen and (min-width:$mini) {
+		@media screen and (min-width:$mobile) {
 			margin-top: 3.4375rem;
 		}
 	}
@@ -127,6 +124,12 @@
 	&__headerIcon {
 		display: flex;
 		justify-content: center;
+		@media screen and (min-width:$tablet) {
+			margin-top: 7.6875rem;
+		}
+		@media screen and (min-width:$full) {
+			margin-top: 9.375rem;
+		}
 	}
 	&__headerTitle {
 		color: var(--white-color);
@@ -136,7 +139,7 @@
 		font-weight: 600;
 		line-height: normal;
 		margin-top: 2.375rem;
-		@media screen and (min-width:$mini) {
+		@media screen and (min-width:$mobile) {
 			font-size: 2.25rem;
 			font-weight: 600;
 			line-height: 2.75rem;
@@ -144,22 +147,33 @@
 			text-align: center;
 			margin-top: 3.4375rem;
 		}
+		@media screen and (min-width:$tablet) {
+			color: var(--orange-color);
+			margin-top: 2rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 3.75rem;	
+			line-height: 1.2;	
+		}
 	}
 	&__descr {	
-		margin: 2.1875rem 1.5625rem 0 1.5625rem;
+		margin: 2.1875rem 0 0 0;
 		font-size: 0.875rem;
 		font-weight: 400;
 		line-height: 1.25rem;
 		letter-spacing: 0em;
-		text-align: center;			
-		@media screen and (min-width:$mini) {
+		text-align: center;	
+		@media screen and (min-width:$mobile) {
 			font-size: 1rem;
-			font-weight: 400;
-			line-height: 1.375rem;
-			letter-spacing: 0em;
-			text-align: center;
-			margin-top: 3.125rem;
-		}
+		}		
+		@media screen and (min-width:$tablet) {
+			font-size: 0.875rem;
+			margin-top: 1.6875rem;
+		}	
+		@media screen and (min-width:$tablet) {
+			font-size: 1rem;
+			margin-top: 2.375rem;
+		}	
 	}
 	&__link {
 		margin-top: 1.25rem;
@@ -168,92 +182,103 @@
 		line-height: 1.375rem;
 		letter-spacing: 0em;
 		text-align: center;
-		@media screen and (min-width:$mini) {
+		transition: .25s;
+		@media screen and (min-width:$tablet) {
+			font-size: 1rem;
+		}
+		@media screen and (min-width:$full) {
 			font-size: 1.125rem;
-			font-weight: 600;
-			line-height: 1.375rem;
-			letter-spacing: 0em;
-			text-align: center;
 		}
 	}
 	&__link:hover {
 		cursor: pointer;
+		transition: .25s;
 	}
 	&__subscr {
-		margin: 0px 1.5625rem 0 1.5625rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 	&__orangeText {
-		margin-top: 2.1875rem;
 		font-size: 1.125rem;
 		font-weight: 600;
 		line-height: 1.4375rem;
 		letter-spacing: 0em;
 		text-align: center;
 		color: var(--orange-color);
-		@media screen and (min-width:$mini) {
-			margin-top: 3.125rem;
+		margin-top: 2.25rem;
+		@media screen and (min-width:$mobile) {
+			margin-top: 3rem;
+		}
+		@media screen and (min-width:$tablet) {
+			font-size: 1.25rem;
+			margin-top: 2.5625rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.5rem;
+			margin-top: 5.6875rem;
 		}
 	}
 	&__submit {
-		margin: 0.9375rem 1.875rem 0 1.875rem;
-		@media screen and (min-width:$mini) {
+		margin: 0.9375rem 0 0 0;
+		width: 100%;
+		@media screen and (min-width:$mobile) {
 			margin-top: 1.25rem;
 		}
-		form {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			@media screen and (min-width:$mini) {
-				flex-direction: row;
-			}
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		position: relative;
+		@media screen and (min-width:$mobile) {
+			flex-direction: row;
 		}
-		.input-row {
-			
-		}
-		.input-field {
-			overflow: hidden;
+	}
+	&__input-row {
+		width: 100%;
+	}
+	&__input-field {
+		overflow: hidden;
 			input {
 				text-align: center;
 				border-radius: 1.25rem;
 				border: 0.0625rem solid var(--orange-color);
-				padding: 1.25rem 2.8125rem;
-				@media screen and (min-width:$mini) {
-
-				}
+				padding: 1.25rem 11.8125rem 1.25rem 1.125rem;
+				width: 100%;
+		
 			}
 			input[type=text] {				
 				font-size: 0.875rem;
 				font-weight: 400;
 				line-height: 1.0625rem;
 				letter-spacing: 0em;			
-				@media screen and (min-width:$mini) {
-
-				}	
+		
 			}
+	}
+	&__input-btn {
+		margin-top: 0.625rem;
+		border-radius: 1.25rem;
+		border: 0.0625rem solid var(--orange-color);
+		background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+		color: var(--white-color);
+		font-size: 1.125rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		padding: 1rem 2.3125rem;
+		@media screen and (min-width:$mobile) {
+			position: absolute;
+			margin-top: 0;
+			right: 0;
 		}
-		.input-btn {
-			margin-top: 0.625rem;
-			border-radius: 1.875rem;
-			background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-			color: var(--white-color);
-			font-size: 1.125rem;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-			padding: 1rem 2.3125rem;
-			@media screen and (min-width:$mini) {
-
-			}
-		}
-		.input-btn:hover {
-			background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
-      		transition: 0.25s;
-			@media screen and (min-width:$mini) {
-				
-			}
+	}
+	&__input-btn:hover {
+		background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+		  transition: 0.25s;
+		@media screen and (min-width:$mobile) {
+			
 		}
 	}
 	&__socials {
@@ -262,14 +287,13 @@
 		align-items: center;
 	}
 	&__socialsText {
-		margin: 3rem 3.125rem 0 3.125rem;
-		padding: 0 50px 0 50px;
+		margin: 3rem 0 0 0;
 		font-size: 0.875rem;
 		font-weight: 600;
 		line-height: 1.0625rem;
 		letter-spacing: 0em;
 		text-align: center;
-		@media screen and (min-width:$mini) {
+		@media screen and (min-width:$mobile) {
 			margin-top: 3.3125rem;
 		}
 	}
@@ -279,7 +303,7 @@
 		gap: 2.1875rem;
 		margin-top: 1.125rem;
 		margin-bottom: 3.125rem;
-		@media screen and (min-width:$mini) {
+		@media screen and (min-width:$mobile) {
 			margin-bottom: 2.3125rem;
 		}
 		.instagram-icon {

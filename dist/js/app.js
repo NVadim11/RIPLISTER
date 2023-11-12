@@ -4128,4 +4128,8 @@
     isWebp();
     menuInit();
     spollers();
+    flsForms.formFieldsInit({
+        viewPass: false,
+        autoHeight: false
+    });
 })();
