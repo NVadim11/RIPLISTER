@@ -101,6 +101,12 @@ import './libs/popup.js'
 // Робота з формами ========================================================================================================================================================================================================================================================
 // ========================================================================================================================================================================================================================================================
 
+
+// form
+// import './files/forms/forms.js'
+
+
+import * as flsForms from "./files/forms/forms.js"
 /* Робота з полями форми */
 /* Документація: https://template.fls.guru/template-docs/rabota-s-formami.html */
 flsForms.formFieldsInit({
@@ -109,7 +115,7 @@ flsForms.formFieldsInit({
 });
 /* Надсилання форми */
 /* Документація: https://template.fls.guru/template-docs/rabota-s-formami.html */
-// flsForms.formSubmit();
+flsForms.formSubmit();
 
 /* Модуль форми "кількість" */
 // flsForms.formQuantity();
@@ -182,12 +188,12 @@ import "./files/sliders.js"
 // Спостерігач за об'єктами з атрибутом data-watch
 // Документація: https://template.fls.guru/template-docs/modul-nabljudatel-za-poyavleniem-elementa-pri-skrolle.html
 // Сніппет(HTML):
-// import './libs/watcher.js'
+// import './libs/watcher.js';
 
 // Модуль поекранної прокрутки
 // Документація: https://template.fls.guru/template-docs/modul-poekrannoj-prokrutki-stranicy-fullpage.html
 // Сніппет(HTML):
-import './libs/fullpage.js'
+// import './libs/fullpage.js';
 
 // Модуль паралаксу
 // Документація: https://template.fls.guru/template-docs/paralaks-pri-skroli.html

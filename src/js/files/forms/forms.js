@@ -218,6 +218,9 @@ export function formSubmit() {
 			if (flsModules.popup) {
 				const popup = form.dataset.popupMessage;
 				popup ? flsModules.popup.open(popup) : null;
+				console.log(popup);
+				console.log(flsModules.popup);
+				console.log(flsModules.popup.open) ;
 			}
 		}, 0);
 		// Очищуємо форму

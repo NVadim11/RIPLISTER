@@ -7,7 +7,7 @@
 		flex-direction: row;
 	}
 	@media screen and (min-width:$full) {
-		justify-content: stretch;
+		// justify-content: stretch;
 	}
 
 // 	&__overlay {
@@ -47,7 +47,7 @@
 			order: 1;
 		}	
 		@media screen and (min-width:$full) {
-			align-self: stretch;
+			// align-self: stretch;
 		}	
 	}
 	&__wrapper {
@@ -71,7 +71,7 @@
 		order: 1;
 		display: flex;
 		flex-direction: column;
-		background: url("../img/promoCover.png") 100% 50% / cover no-repeat;
+		background: url("../img/promoCover.png") 0 0 / cover no-repeat;
 		height: 28.8125rem;
 		@media screen and (min-width:$mobile) {
 			height: 36rem;
@@ -85,20 +85,13 @@
 			justify-content: space-between;
 		}	
 		@media screen and (min-width:$full) {
-			align-self: stretch;
+			// align-self: stretch;
 		}	
 	}
 	&__cover-btnBox {
 		display: flex;
 		align-self: flex-end;
 		margin: 1rem 1.0625rem 0 0;
-	}
-	&__cover-link {
-		display: none;
-		@media screen and (min-width:$tablet) { 
-			display: flex;
-			align-self: end;
-		}
 	}
 	&__cover-header {
 		flex-direction: column;
@@ -118,6 +111,8 @@
 			flex-direction: row;
 			align-items: center;
 			margin: 0 1.6875rem 2.125rem 0;
+			display: flex;
+			align-self: end;
 		}
 		@media screen and (min-width:$full) {
 			flex-direction: row;
@@ -300,7 +295,10 @@
 				border: 0.0625rem solid var(--orange-color);
 				padding: 1.25rem 11.8125rem 1.25rem 1.125rem;
 				width: 100%;
-		
+				outline: none;
+				@media screen and (min-width:$tablet) {
+					text-align: start;
+				}
 			}
 			input[type=text] {				
 				font-size: 0.875rem;
