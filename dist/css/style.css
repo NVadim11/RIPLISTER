@@ -3182,6 +3182,9 @@ label {
           flex-direction: column;
 }
 
+.no-webp .promo__cover{
+  background: url("../img/promoCover.png"); }
+
 .promo__cover {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -3193,7 +3196,6 @@ label {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: url("img/promoCover.webp");
   background-position: 100% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3319,6 +3321,7 @@ label {
   text-align: center;
   color: var(--orange-color);
   margin-top: 2.25rem;
+  line-height: 130%;
 }
 
 .promo__submit {
@@ -3364,6 +3367,26 @@ label {
   letter-spacing: 0em;
 }
 
+.promo__input-field:focus-visible {
+  border: none;
+  outline: none;
+}
+
+.promo__input-field:active {
+  border: none;
+  outline: none;
+}
+
+.promo__input-field:focus {
+  border: none;
+  outline: none;
+}
+
+.promo__input-field:focus-within {
+  border: none;
+  outline: none;
+}
+
 .promo__input-btn {
   margin-top: 0.625rem;
   border-radius: 1.25rem;
@@ -3375,7 +3398,7 @@ label {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  padding: 1rem 2.3125rem;
+  padding: 1.0625rem 2.3125rem;
 }
 
 .promo__input-btn:hover {
@@ -3416,8 +3439,7 @@ label {
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 2.1875rem;
-  margin-top: 1.125rem;
-  margin-bottom: 3.125rem;
+  margin: 1.125rem 0 3.125rem 0;
 }
 
 .menu {
@@ -3830,8 +3852,16 @@ label {
     margin-top: 3.3125rem;
   }
 
+  .promo__socialsText {
+    margin-top: 3rem;
+  }
+
   .promo__socialsIcons {
-    margin-bottom: 2.3125rem;
+    margin: 1.125rem 0 2.3125rem 0;
+  }
+
+  .promo__socialsIcons {
+    margin: 1.125rem 0 2.3125rem 0;
   }
 }
 
@@ -3982,6 +4012,14 @@ label {
   .promo__orangeText {
     font-size: 1.25rem;
     margin-top: 2.5625rem;
+  }
+
+  .promo__socialsText {
+    margin-top: 2.375rem;
+  }
+
+  .promo__socialsIcons {
+    margin: 1.4375rem 0 2.125rem 0;
   }
 }
 
@@ -4856,8 +4894,26 @@ label {
     margin-bottom: 16.875rem;
   }
 
+  .promo {
+    -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+            justify-content: stretch;
+  }
+
+  .promo__content {
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+  }
+
   .promo__wrapper {
     width: 40rem;
+  }
+
+  .promo__cover {
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
   }
 
   .promo__headerIcon {
@@ -4877,8 +4933,19 @@ label {
     font-size: 1.5rem;
     margin-top: 5.6875rem;
   }
+
+  .promo__socialsText {
+    margin-top: 6.9375rem;
+    font-size: 1.25rem;
+  }
+
+  .promo__socialsIcons {
+    margin: 2rem 0 5.375rem 0;
+  }
 }
 
 .webp .mainInfo__create{ background: -webkit-gradient(linear, left bottom, left top, from(rgba(253, 246, 244, 0.9)), to(rgba(253, 246, 244, 0.9))), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
 
 .webp .mainInfo__create{ background: linear-gradient(0deg, rgba(253, 246, 244, 0.9) 0%, rgba(253, 246, 244, 0.9) 100%), url(img/candles-background.webp), lightgray 50%/cover no-repeat; }
+
+.webp .promo__cover{ background: url(../img/promoCover.webp); }

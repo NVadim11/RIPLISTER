@@ -6,6 +6,9 @@
 		display: flex;
 		flex-direction: row;
 	}
+	@media screen and (min-width:$full) {
+		justify-content: stretch;
+	}
 
 // 	&__overlay {
 // 		position: absolute; /* Sit on top of the page content */
@@ -43,6 +46,9 @@
 			max-width: 50%;
 			order: 1;
 		}	
+		@media screen and (min-width:$full) {
+			align-self: stretch;
+		}	
 	}
 	&__wrapper {
 		width: 320px;
@@ -65,7 +71,7 @@
 		order: 1;
 		display: flex;
 		flex-direction: column;
-		background: url("img/promoCover.webp");
+		background: url("../img/promoCover.png");
 		background-position: 100% 50%;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -78,6 +84,9 @@
 			max-width: 50%;
 			order: 2;
 			height: 100vh;
+		}	
+		@media screen and (min-width:$full) {
+			align-self: stretch;
 		}	
 	}
 	&__cover-btnBox {
@@ -208,6 +217,7 @@
 		text-align: center;
 		color: var(--orange-color);
 		margin-top: 2.25rem;
+		line-height: 130%;
 		@media screen and (min-width:$mobile) {
 			margin-top: 3rem;
 		}
@@ -258,6 +268,22 @@
 		
 			}
 	}
+	&__input-field:focus-visible {
+		border: none;
+		outline: none;
+	}
+	&__input-field:active {
+		border: none;
+		outline: none;
+	}
+	&__input-field:focus {
+		border: none;
+		outline: none;
+	}
+	&__input-field:focus-within {
+		border: none;
+		outline: none;
+	}
 	&__input-btn {
 		margin-top: 0.625rem;
 		border-radius: 1.25rem;
@@ -268,7 +294,7 @@
 		font-style: normal;
 		font-weight: 700;
 		line-height: normal;
-		padding: 1rem 2.3125rem;
+		padding: 1.0625rem 2.3125rem;
 		@media screen and (min-width:$mobile) {
 			position: absolute;
 			margin-top: 0;
@@ -278,9 +304,6 @@
 	&__input-btn:hover {
 		background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
 		  transition: 0.25s;
-		@media screen and (min-width:$mobile) {
-			
-		}
 	}
 	&__socials {
 		display: flex;
@@ -297,15 +320,33 @@
 		@media screen and (min-width:$mobile) {
 			margin-top: 3.3125rem;
 		}
+		@media screen and (min-width:$mobile) {
+			margin-top: 3rem;
+		}
+		@media screen and (min-width:$tablet) {
+			margin-top: 2.375rem;
+		}
+		@media screen and (min-width:$full) {
+			margin-top: 6.9375rem;
+			font-size: 1.25rem;
+		}
 	}
 	&__socialsIcons {
 		display: flex;
 		flex-direction: row;
 		gap: 2.1875rem;
-		margin-top: 1.125rem;
-		margin-bottom: 3.125rem;
+		margin: 1.125rem 0 3.125rem 0;
 		@media screen and (min-width:$mobile) {
-			margin-bottom: 2.3125rem;
+			margin: 1.125rem 0 2.3125rem 0;
+		}
+		@media screen and (min-width:$mobile) {
+			margin: 1.125rem 0 2.3125rem 0;
+		}
+		@media screen and (min-width:$tablet) {
+			margin: 1.4375rem 0 2.125rem 0;
+		}
+		@media screen and (min-width:$full) {
+			margin: 2rem 0 5.375rem 0;
 		}
 		.instagram-icon {
 		}
