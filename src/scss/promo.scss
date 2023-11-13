@@ -71,10 +71,7 @@
 		order: 1;
 		display: flex;
 		flex-direction: column;
-		background: url("../img/promoCover.png");
-		background-position: 100% 50%;
-		background-repeat: no-repeat;
-		background-size: cover;
+		background: url("../img/promoCover.png") 100% 50% / cover no-repeat;
 		height: 28.8125rem;
 		@media screen and (min-width:$mobile) {
 			height: 36rem;
