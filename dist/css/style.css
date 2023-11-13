@@ -3211,6 +3211,10 @@ label {
   margin: 1rem 1.0625rem 0 0;
 }
 
+.promo__cover-link {
+  display: none;
+}
+
 .promo__cover-header {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -3227,6 +3231,7 @@ label {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  cursor: pointer;
 }
 
 .promo__video-play {
@@ -3980,10 +3985,52 @@ label {
         -ms-flex-order: 2;
             order: 2;
     height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .promo__cover-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
   }
 
   .promo__cover-header {
     display: none;
+  }
+
+  .promo__video {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 1.6875rem 2.125rem 0;
+  }
+
+  .promo__video-play {
+    margin-top: 0;
+    margin-right: 0.9375rem;
+  }
+
+  .promo__video-play svg {
+    width: 4.4375rem;
+    height: 4.4375rem;
+  }
+
+  .promo__video-text {
+    text-align: start;
+    margin-top: 0;
+    font-size: 1.25rem;
   }
 
   .promo__headerIcon {
@@ -4914,6 +4961,30 @@ label {
     -ms-flex-item-align: stretch;
         -ms-grid-row-align: stretch;
         align-self: stretch;
+  }
+
+  .promo__video {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 5.375rem 3.625rem 0;
+  }
+
+  .promo__video-play {
+    margin-right: 1.4375rem;
+  }
+
+  .promo__video-play svg {
+    width: 6.0625rem;
+    height: 6.0625rem;
+  }
+
+  .promo__video-text {
+    font-size: 1.5rem;
   }
 
   .promo__headerIcon {

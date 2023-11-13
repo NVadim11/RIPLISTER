@@ -84,6 +84,8 @@
 			max-width: 50%;
 			order: 2;
 			height: auto;
+			display: flex;
+			justify-content: space-between;
 		}	
 		@media screen and (min-width:$full) {
 			align-self: stretch;
@@ -93,6 +95,13 @@
 		display: flex;
 		align-self: flex-end;
 		margin: 1rem 1.0625rem 0 0;
+	}
+	&__cover-link {
+		display: none;
+		@media screen and (min-width:$tablet) { 
+			display: flex;
+			align-self: end;
+		}
 	}
 	&__cover-header {
 		flex-direction: column;
@@ -107,6 +116,17 @@
 	&__video {
 		display: flex;
 		flex-direction: column;
+		cursor: pointer;
+		@media screen and (min-width:$tablet) {
+			flex-direction: row;
+			align-items: center;
+			margin: 0 1.6875rem 2.125rem 0;
+		}
+		@media screen and (min-width:$full) {
+			flex-direction: row;
+			align-items: center;
+			margin: 0 5.375rem 3.625rem 0;
+		}
 	}
 	&__video-play {
 		display: flex;
@@ -114,6 +134,23 @@
 		margin-top: 1.9375rem;
 		@media screen and (min-width:$mobile) {
 			margin-top: 3.4375rem;
+		}
+		@media screen and (min-width:$tablet) {
+			margin-top: 0;
+			margin-right: 0.9375rem;
+		}
+		@media screen and (min-width:$full) {
+			margin-right: 1.4375rem;
+		}
+		svg {
+			@media screen and (min-width:$tablet) {
+				width: 4.4375rem;
+				height: 4.4375rem;
+			}
+			@media screen and (min-width:$full) {
+				width: 6.0625rem;
+				height: 6.0625rem;
+			}
 		}
 	}
 	&__video-text {
@@ -126,6 +163,14 @@
 		font-weight: 600;
 		line-height: normal;
 		margin-top: 0.8125rem;
+		@media screen and (min-width:$tablet) {
+			text-align: start;
+			margin-top: 0;
+			font-size: 1.25rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.5rem;
+		}
 	}
 
 
