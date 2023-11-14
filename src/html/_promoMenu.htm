@@ -1,7 +1,7 @@
-<div id="popup" aria-hidden="true" class="popup promo-popup">
-	<div class="popup__wrapper promo-wrapper">
-		<div class="popup__content promo-content">
-			<button data-close type="button" class="popup__close promo-close">
+<div id="popup" aria-hidden="true" class="popup promoPopup">
+	<div class="popup__wrapper promoPopup__wrapper">
+		<div class="popup__content promoPopup__content">
+			<button data-close type="button" class="popup__close promoPopup__close">
 				<svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
 					<rect width="44" height="44.6659" rx="20" fill="url(#paint0_linear_1695_1848)" />
 					<path d="M28.5551 16.3201L16.0781 28.9859" stroke="white" stroke-width="2" />
@@ -15,14 +15,14 @@
 					</defs>
 				</svg>
 			</button>
-			<div class="promo__icon">
+			<div class="promoPopup__icon">
 				<a href="#">
 					<img src="img/orange-logo.svg" alt="">
 				</a>
 			</div>
-			<h1 class="popup__promo-title">Пам'ятай, Згадуй,
+			<h1 class="promoPopup__title">Пам'ятай, Згадуй,
 				Шануй пам'ять</h1>
-			<div class="mainBenefits__slide swiper-slide promo-slide">
+			<div class="mainBenefits__slide swiper-slide promoPopup__slide">
 				<div class="mainBenefits__overlay promo-overlay" id="youtube-overlay" title="play">
 					<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
 						<circle cx="35.9885" cy="35.7307" r="35.2307" stroke="white" stroke-opacity="0.5" />
@@ -38,34 +38,34 @@
 				<!-- <img src="img/mainSlide1.png" alt=""> -->
 			</div>
 
-			<div class="popup__promo-about">
+			<div class="promoPopup__about">
 				<p>Основною метою створення RIPlister, крім пошуку місця поховання близької людини, є допомога у формуванні
 					сімейного архіву, родоводу в особистому кабінеті користувача.
-				</p><br>
+				</p>
 				<p>Цей проект націлений допомагати здійснювати та отримувати важливі послуги та корисний буде тим, хто хоче
 					дистанційно замовляти послуги з догляду за близькими. Цей проект націлений допомагати здійснювати та
 					отримувати важливі послуги та корисний буде тим, хто хоче дистанційно замовляти послуги з догляду за
-					близькими.</p><br>
+					близькими.</p>
 				<p>Хай у вас все буде добре!</p>
 			</div>
-			<div class="promo__subscr">
-				<div class="promo__orangeText">
+			<div class="promoPopup__subscr">
+				<div class="promoPopup__orangeText">
 					<h4>Щоб не пропуститти запуск проекту та буди в числі тих
 						кто отримує унікальний доступ, підпишиться:</h4>
 				</div>
-				<div class="promo__submit">
-					<form method="POST" action="">
-						<div class="input-row">
-							<div class="input-field" id="id_email_container">
-								<input id="id_email" name="email" type="email" placeholder="Ваш email">
+				<div class="promoPopup__submit">
+					<form class="promoPopup__form" data-popup-message="#popupThanks" data-dev action="#">
+						<div class="promoPopup__input-row">
+							<div class="promoPopup__input-field" id="id_email_container">
+								<input class="promoPopup__input" id="id_email" type="email" data-required placeholder="Ваш email">
+								<button type="submit" class="promoPopup__input-btn">Підписатися</button>
 							</div>
 						</div>
-						<button type="submit" name="_submit" class="input-btn" value="Sign Up">Підписатися</button>
 					</form>
 				</div>
 			</div>
-			<div class="promo__socials">
-				<div class="promo__socialsText">
+			<div class="promoPopup__socials">
+				<div class="promoPopup__socialsText">
 					<h4>Також додавайся до наших сторінок у соцмережах:</h4>
 				</div>
 				<div class="promo__socialsIcons">
