@@ -894,6 +894,34 @@ label {
   top: 50%;
 }
 
+.popupVideo__content {
+  background: transparent;
+}
+
+.popupVideo__close {
+  position: relative;
+  float: right;
+  bottom: 1.875rem;
+  right: 2.1875rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.popupVideo__close button {
+  outline: none;
+}
+
+.popupVideo__close label {
+  margin-right: 1.25rem;
+  position: relative;
+  bottom: 0.9375rem;
+  color: var(--white-color);
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
 [class*=-ibg] {
   position: relative;
 }
