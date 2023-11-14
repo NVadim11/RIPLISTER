@@ -361,3 +361,41 @@ label {
   border-radius: 1.875rem;
 	background: #EB8069;
 }
+
+// =========================================================== //
+// Promo subscribe popup styles
+// =========================================================== //
+.popupThanks {
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 18.75rem;
+		height: 18.75rem;
+		border-radius: 1.875rem;
+		@media screen and (min-width: $full) {
+		}
+	}
+	&__close {
+		position: absolute;
+		right: 1.5625rem;
+		top: 0.9375rem;
+		transition: .25s;
+	}
+	&__orangeText {
+		color: #E55738;
+		text-align: center;
+		font-size: 1.125rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 130%;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		@media screen and (min-width: $full) {
+			margin: 0;
+			position: absolute;
+			top: 50%;
+		}
+	}
+}
