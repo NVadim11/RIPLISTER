@@ -116,7 +116,7 @@
 							</h1>
 						</div>
 					</div>
-					<div class="promo__video" data-popup="#popupVideo">
+					<div class="promo__video" data-popup="#popupVideo" data-popup-youtube="FzEv5vgd7K4">
 						<div class="promo__video-play">
 							<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
 								<circle cx="24" cy="24.0005" r="23.5" stroke="white" stroke-opacity="0.5" />
@@ -162,21 +162,20 @@
 						</svg>
 					</button>
 				</div>
-				<div class="mainBenefits__slide swiper-slide promoPopup__slide">
-					<!-- <div class="mainBenefits__overlay promo-overlay" id="youtube-overlay" title="play">
+				<div class="popup__text" data-youtube-place></div>
+				<!-- API version -->
+				<!-- <div class="mainBenefits__slide swiper-slide promoPopup__slide">
+				<div class="mainBenefits__overlay promo-overlay" id="youtube-overlay" title="play">
 					<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
 						<circle cx="35.9885" cy="35.7307" r="35.2307" stroke="white" stroke-opacity="0.5" />
 						<path
 							d="M44.3156 34.6737L32.6894 27.4867C32.2627 27.2237 31.6963 27.1841 31.2287 27.3885C30.7573 27.5913 30.4629 28.0033 30.4629 28.4485V42.8177C30.4629 43.2677 30.7573 43.6781 31.2287 43.8809C31.428 43.9665 31.646 44.0092 31.8659 44.0092C32.1528 44.0092 32.4434 43.9316 32.6894 43.7779L44.3156 36.5972C44.6827 36.3675 44.8969 36.0126 44.8969 35.6355C44.8988 35.2521 44.6789 34.8987 44.3156 34.6737Z"
 							fill="white" />
 					</svg>
-				</div> -->
-					<div class="mainBenefits__player promo-player" id="youtube-player">
-					</div>
-
-					<!-- <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe> -->
-					<!-- <picture><source srcset="img/mainSlide1.webp" type="image/webp"><img src="img/mainSlide1.png" alt=""></picture> -->
 				</div>
+				<div class="mainBenefits__player promo-player" id="youtube-player">
+				</div>
+			</div> -->
 			</div>
 		</div>
 	</div>
@@ -204,15 +203,14 @@
 				<h1 class="promoPopup__title">Пам'ятай, Згадуй,
 					Шануй пам'ять</h1>
 				<div class="mainBenefits__slide swiper-slide promoPopup__slide">
-					<div class="mainBenefits__overlay promo-overlay" id="youtube-overlay" title="play">
+					<div class="mainBenefits__overlay promo-overlay" id="youtube-overlay" title="play" data-popup="#popupVideo" data-popup-youtube="FzEv5vgd7K4">
 						<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
 							<circle cx="35.9885" cy="35.7307" r="35.2307" stroke="white" stroke-opacity="0.5" />
 							<path d="M44.3156 34.6737L32.6894 27.4867C32.2627 27.2237 31.6963 27.1841 31.2287 27.3885C30.7573 27.5913 30.4629 28.0033 30.4629 28.4485V42.8177C30.4629 43.2677 30.7573 43.6781 31.2287 43.8809C31.428 43.9665 31.646 44.0092 31.8659 44.0092C32.1528 44.0092 32.4434 43.9316 32.6894 43.7779L44.3156 36.5972C44.6827 36.3675 44.8969 36.0126 44.8969 35.6355C44.8988 35.2521 44.6789 34.8987 44.3156 34.6737Z" fill="white" />
 						</svg>
 					</div>
-					<div class="mainBenefits__player promo-player" id="youtube-player">
-					</div>
-
+					<!-- <div class="mainBenefits__player promo-player" id="youtube-player">
+				</div> -->
 					<!-- <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe> -->
 					<!-- <picture><source srcset="img/mainSlide1.webp" type="image/webp"><img src="img/mainSlide1.png" alt=""></picture> -->
 				</div>
@@ -283,63 +281,61 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 	<script src="js/app.min.js"></script>
 
-	<script>
-		// 2. This code loads the IFrame Player API code asynchronously.
-		var tag = document.createElement('script');
+	<!-- API version
+<script>
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script')
 
-		tag.src = "https://www.youtube.com/iframe_api";
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  tag.src = "https://www.youtube.com/iframe_api"
+  var firstScriptTag = document.getElementsByTagName('script')[0]
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
-		// 3. This function creates an <iframe> (and YouTube player)
-		//    after the API code downloads.
-		var player;
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  var player
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('youtube-player', {
 
-		function onYouTubeIframeAPIReady() {
-			player = new YT.Player('youtube-player', {
+      videoId: 'FzEv5vgd7K4',
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    })
+  }
 
-				videoId: 'FzEv5vgd7K4',
-				events: {
-					'onReady': onPlayerReady,
-					'onStateChange': onPlayerStateChange
-				}
-			});
-		}
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
 
-		// 4. The API will call this function when the video player is ready.
-		function onPlayerReady(event) {
+    let theOverlay = document.getElementById("youtube-overlay")
+    theOverlay.addEventListener("click", function () {
+      this.style.display = "none"
+      event.target.playVideo()
+    })
+  }
 
-			let theOverlay = document.getElementById("youtube-overlay");
-			theOverlay.addEventListener("click", function() {
-				this.style.display = "none";
-				event.target.playVideo();
-			});
-		}
+  // 5. The API calls this function when the player's state changes.
+  //    The function indicates that when playing a video (state=1),
+  //    the player should play for six seconds and then stop.
+  var done = false
+  function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+      setTimeout(stopVideo, 6000)
+      done = true
+    }
+  }
+  function stopVideo() {
+    player.stopVideo()
+  }
+  let stopVid = document.getElementById("popup__close")
+  stopVid.addEventListener("click", function stopVideo() {
+    player.stopVideo()
+  });
 
-		// 5. The API calls this function when the player's state changes.
-		//    The function indicates that when playing a video (state=1),
-		//    the player should play for six seconds and then stop.
-		var done = false;
-
-		function onPlayerStateChange(event) {
-			if (event.data == YT.PlayerState.PLAYING && !done) {
-				setTimeout(stopVideo, 6000);
-				done = true;
-			}
-		}
-
-		function stopVideo() {
-			player.stopVideo();
-		}
-		let stopVid = document.getElementById("popup__close");
-		stopVid.addEventListener("click", function stopVideo() {
-			player.stopVideo();
-		});
-	</script>
+</script> -->
 </body>
 
 </html>
