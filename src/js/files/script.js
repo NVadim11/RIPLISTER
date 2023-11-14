@@ -38,7 +38,6 @@ if (menuCloseBtn) {
 
 
 
-
 // for (let year = new Date().getFullYear() ; year <= 2023; year++) {
 //     let options = document.createElement("OPTION");  
 //     newsYearBtn.appendChild(options).innerHTML = year;

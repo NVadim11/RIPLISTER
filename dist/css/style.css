@@ -278,7 +278,8 @@ textarea {
   appearance: none;
 }
 
-.promo__input {
+.promo__input,
+.promoPopup__input {
   width: 100%;
   display: block;
   padding: 0px 20px;
@@ -327,6 +328,51 @@ textarea {
 }
 
 .promo__input[placeholder]:not([data-placeholder-nohiden]):focus::placeholder {
+  opacity: 0;
+}
+
+.promoPopup__input[placeholder]:not([data-placeholder-nohiden])::-webkit-input-placeholder {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.promoPopup__input[placeholder]:not([data-placeholder-nohiden])::-moz-placeholder {
+  -moz-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.promoPopup__input[placeholder]:not([data-placeholder-nohiden]):-ms-input-placeholder {
+  -ms-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.promoPopup__input[placeholder]:not([data-placeholder-nohiden])::-ms-input-placeholder {
+  -ms-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.promoPopup__input[placeholder]:not([data-placeholder-nohiden])::placeholder {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.promoPopup__input[placeholder]:not([data-placeholder-nohiden]):focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.promoPopup__input[placeholder]:not([data-placeholder-nohiden]):focus::-moz-placeholder {
+  opacity: 0;
+}
+
+.promoPopup__input[placeholder]:not([data-placeholder-nohiden]):focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+.promoPopup__input[placeholder]:not([data-placeholder-nohiden]):focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+.promoPopup__input[placeholder]:not([data-placeholder-nohiden]):focus::placeholder {
   opacity: 0;
 }
 
@@ -780,6 +826,18 @@ label {
   line-height: 1.0625rem;
   letter-spacing: 0em;
   text-align: center;
+}
+
+.promoPopup__socialsIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 2.1875rem;
+  margin: 1.125rem 0 3.125rem 0;
 }
 
 ::-webkit-scrollbar {
@@ -4347,6 +4405,10 @@ label {
 }
 
 @media screen and (min-width: 119.99875em) {
+  .promoPopup__icon {
+    max-width: 19.5rem;
+  }
+
   .promoPopup__title {
     font-size: 2.625rem;
     margin-top: 5rem;
@@ -4392,6 +4454,10 @@ label {
 
   .promoPopup__socialsText {
     font-size: 1.5rem;
+  }
+
+  .promoPopup__socialsIcons {
+    margin: 2rem 0 5.375rem 0;
   }
 
   .headerAlt {

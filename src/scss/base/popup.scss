@@ -170,6 +170,9 @@ label {
 	&__icon {
 		max-width: 10.9375rem;
 		margin-top: 105px;
+		@media screen and (min-width: $full) {
+			max-width: 19.5rem;
+		}
 		img {
 			width: 100%;
 		}
@@ -326,6 +329,21 @@ label {
 		text-align: center;
 		@media screen and (min-width:$full) {
 			font-size: 1.5rem;
+		}
+	}
+	&__socialsIcons {
+		display: flex;
+		flex-direction: row;
+		gap: 2.1875rem;
+		margin: 1.125rem 0 3.125rem 0;
+		@media screen and (min-width:$full) {
+			margin: 2rem 0 5.375rem 0;
+		}
+		.instagram-icon {
+		}
+		.facebook-icon {
+		}
+		.twitter-icon {
 		}
 	}
 }

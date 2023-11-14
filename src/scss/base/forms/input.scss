@@ -8,7 +8,8 @@ textarea {
 	-moz-appearance: none;
 	appearance: none;
 }
-.promo__input {
+.promo__input,
+.promoPopup__input {
 	width: 100%;
 	display: block;
 	padding: 0px 20px;
@@ -19,6 +20,14 @@ textarea {
 	}
 }
 .promo__input[placeholder]:not([data-placeholder-nohiden]) {
+	&::placeholder {
+		transition: opacity 0.3s;
+	}
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+.promoPopup__input[placeholder]:not([data-placeholder-nohiden]) {
 	&::placeholder {
 		transition: opacity 0.3s;
 	}
