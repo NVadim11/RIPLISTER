@@ -675,17 +675,17 @@ label {
 
 .promoPopup__iframe {
   margin-top: 1.875rem;
+  background: transparent;
   aspect-ratio: 16/9;
 }
 
 .promoPopup__iframe iframe {
   width: 100%;
-  height: 100%;
   aspect-ratio: 16/9;
 }
 
 .promoPopup__about {
-  margin: 2.375rem 34px 0 2.125rem;
+  margin: 2.375rem 2.125rem 0 2.125rem;
   text-align: center;
   font-size: 14px;
   font-style: normal;
@@ -902,13 +902,13 @@ label {
 
 .popupVideo {
   padding: 0;
-  padding: 6rem 4.75rem 4rem 4.75rem;
 }
 
 .popupVideo__content {
   position: relative;
+  background: transparent;
   max-width: 100%;
-  width: 80%;
+  width: 95%;
 }
 
 .popupVideo__close {
@@ -916,7 +916,11 @@ label {
   transition: 0.25s;
   position: absolute;
   right: 0;
-  top: -3.4375rem;
+  top: -2.8125rem;
+}
+
+.popupVideo__close svg {
+  width: 1.875rem;
 }
 
 .popupVideo__close button {
@@ -924,11 +928,11 @@ label {
 }
 
 .popupVideo__close label {
-  margin-right: 1.25rem;
+  margin-right: 0.625rem;
   position: relative;
   bottom: 0.9375rem;
   color: var(--white-color);
-  font-size: 2rem;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -4173,6 +4177,10 @@ label {
 }
 
 @media screen and (min-width: 47.99875em) {
+  .popupVideo {
+    padding: 2.875rem 2.25rem 2.125rem 2.25rem;
+  }
+
   .headerAlt {
     padding: 0 2.125rem;
   }
@@ -4277,6 +4285,24 @@ label {
 }
 
 @media screen and (min-width: 79.99875em) {
+  .popupVideo {
+    padding: 96px 4.75rem 4rem 4.75rem;
+  }
+
+  .popupVideo__close {
+    right: 0;
+    top: -3.4375rem;
+  }
+
+  .popupVideo__close svg {
+    width: 2.5rem;
+  }
+
+  .popupVideo__close label {
+    font-size: 1.5rem;
+    margin-right: 0.9375rem;
+  }
+
   .headerAlt__logo img {
     max-width: 12.6748rem;
   }
@@ -4479,6 +4505,20 @@ label {
 }
 
 @media screen and (min-width: 89.99875em) {
+  .popupVideo__content {
+    width: 85%;
+  }
+
+  .popupVideo__close svg {
+    width: 3.125rem;
+  }
+
+  .popupVideo__close label {
+    margin-right: 1.25rem;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
   .mainBenefits__slide {
     height: 24.25rem;
     width: 46rem !important;
@@ -4507,7 +4547,7 @@ label {
   }
 
   .promoPopup__about {
-    margin: 3.375rem 92px 0 92px;
+    margin: 5.875rem 5.75rem 0 5.75rem;
     font-size: 1.125rem;
   }
 
