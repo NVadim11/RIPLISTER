@@ -686,7 +686,7 @@
                     fixElementSelector: "[data-lp]",
                     youtubeAttribute: "data-popup-youtube",
                     youtubePlaceAttribute: "data-popup-youtube-place",
-                    setAutoplayYoutube: true,
+                    setAutoplayYoutube: false,
                     classes: {
                         popup: "popup",
                         popupContent: "popup__content",

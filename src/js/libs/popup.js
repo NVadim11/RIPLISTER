@@ -21,7 +21,7 @@ class Popup {
 			// Для об'єкту попапа
 			youtubeAttribute: 'data-popup-youtube', // Атрибут для коду youtube
 			youtubePlaceAttribute: 'data-popup-youtube-place', // Атрибут для вставки ролика youtube
-			setAutoplayYoutube: true,
+			setAutoplayYoutube: false,
 			// Зміна класів
 			classes: {
 				popup: 'popup',
