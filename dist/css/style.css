@@ -675,6 +675,7 @@ label {
 
 .promoPopup__iframe {
   margin-top: 1.875rem;
+  background: transparent;
   aspect-ratio: 16/9;
 }
 
@@ -902,13 +903,13 @@ label {
 
 .popupVideo {
   padding: 0;
-  padding: 6rem 4.75rem 4rem 4.75rem;
 }
 
 .popupVideo__content {
   position: relative;
+  background: transparent;
   max-width: 100%;
-  width: 80%;
+  width: 95%;
 }
 
 .popupVideo__close {
@@ -4555,6 +4556,14 @@ label {
     margin: 0;
     position: absolute;
     top: 50%;
+  }
+
+  .popupVideo {
+    padding: 6rem 4.75rem 4rem 4.75rem;
+  }
+
+  .popupVideo__content {
+    width: 85%;
   }
 
   .headerAlt {

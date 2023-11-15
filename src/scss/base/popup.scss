@@ -191,6 +191,7 @@ body::after {
 	  }
 	  &__iframe {
 		margin-top: 1.875rem;
+		background: transparent;
 		aspect-ratio: 16 / 9;
 		iframe {
 			width: 100%;
@@ -409,21 +410,22 @@ body::after {
 	// =========================================================== //
 	
 	.popupVideo {
-		padding: 0;
-		padding: 6rem 4.75rem 4rem 4.75rem;
+		padding: 0;		
 		@media screen and (min-width: $full) {
+			padding: 6rem 4.75rem 4rem 4.75rem;
 		}
 	  &__wrapper {
 	  }
 	  &__content {
 		position: relative;
+		background: transparent;
 		max-width: 100%;
-		width: 80%;
+		width: 95%;
 		@media screen and (min-width: $full) {
+			width: 85%;
 		}
 	  }
 	  &__close {
-
 		transition: .25s;
 		position: absolute;
 		right: 0;
