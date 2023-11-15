@@ -5,6 +5,7 @@
 	@media screen and (min-width:$tablet) {
 		display: flex;
 		flex-direction: row;
+		height: 100vh;
 	}
 	@media screen and (min-width:$full) {
 		// justify-content: stretch;

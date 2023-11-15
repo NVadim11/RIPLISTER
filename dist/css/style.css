@@ -4358,6 +4358,7 @@ label {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    height: 100vh;
   }
 
   .promo__content {
