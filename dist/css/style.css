@@ -664,7 +664,7 @@ label {
 }
 
 .promoPopup__title {
-  margin-top: 2.375rem;
+  margin: 2.375rem 2.1875rem 0 2.1875rem;
   color: var(--orange-color);
   text-align: center;
   font-size: 2rem;
@@ -687,7 +687,7 @@ label {
 .promoPopup__about {
   margin: 2.375rem 2.125rem 0 2.125rem;
   text-align: center;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
@@ -838,6 +838,9 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -4193,6 +4196,23 @@ label {
 }
 
 @media screen and (min-width: 47.99875em) {
+  .promoPopup__about {
+    margin: 2.8125rem 5.3125rem 0 5.3125rem;
+    font-size: 0.875rem;
+  }
+
+  .promoPopup__about p {
+    margin-bottom: 1.5625rem;
+  }
+
+  .promoPopup__orangeText {
+    margin: 0rem 5.3125rem 0rem 5.3125rem;
+  }
+
+  .promoPopup__input-field {
+    margin: 0rem 5.3125rem 1.5625rem 5.3125rem;
+  }
+
   .popupVideo {
     padding: 2.875rem 2.25rem 2.125rem 2.25rem;
   }
@@ -4301,6 +4321,11 @@ label {
 }
 
 @media screen and (min-width: 79.99875em) {
+  .promoPopup__about {
+    margin: 4.6875rem 7.5rem 0 7.5rem;
+    font-size: 1rem;
+  }
+
   .popupVideo {
     padding: 96px 4.75rem 4rem 4.75rem;
   }
@@ -4524,6 +4549,17 @@ label {
 }
 
 @media screen and (min-width: 89.99875em) {
+  .promoPopup__about {
+    margin: 4.6875rem 7.5rem 0 7.5rem;
+    font-size: 1rem;
+  }
+
+  .promoPopup__input-btn {
+    position: absolute;
+    margin-top: 0;
+    right: 0;
+  }
+
   .popupVideo__content {
     width: 85%;
   }
@@ -4570,6 +4606,10 @@ label {
     font-size: 1.125rem;
   }
 
+  .promoPopup__about p {
+    margin-bottom: 1.875rem;
+  }
+
   .promoPopup__orangeText {
     margin: 0 5.75rem;
   }
@@ -4591,12 +4631,6 @@ label {
 
   .promoPopup__input-field input {
     text-align: start;
-  }
-
-  .promoPopup__input-btn {
-    position: absolute;
-    margin-top: 0;
-    right: 0;
   }
 
   .promoPopup__socials {
