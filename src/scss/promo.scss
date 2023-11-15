@@ -7,7 +7,7 @@
 		flex-direction: row;
 	}
 	@media screen and (min-width:$full) {
-		// justify-content: stretch;
+	
 	}
 
 // 	&__overlay {
@@ -53,6 +53,8 @@
 	&__wrapper {
 		width: 320px;
 		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
 		@media screen and (min-width:$mobile) {
 			width: 29.75rem;
 		}
@@ -390,8 +392,8 @@
 		@media screen and (min-width:$tablet) {
 			margin: 1.4375rem 0 2.125rem 0;
 		}
-		@media screen and (min-width:$full) {
-			margin: 2rem 0 5.375rem 0;
+		@media screen and (min-width:$tablet) {
+			margin: 1.4375rem 0 2.125rem 0;
 		}
 		.instagram-icon {
 		}
@@ -402,7 +404,9 @@
 	}
 }
 
+.promo-wrapper {
 
+}
 
 
 
