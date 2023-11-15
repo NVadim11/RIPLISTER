@@ -3643,6 +3643,14 @@ label {
       -ms-flex-direction: column;
           flex-direction: column;
   cursor: pointer;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.promo__video:hover {
+  opacity: 0.7;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .promo__video-play {
