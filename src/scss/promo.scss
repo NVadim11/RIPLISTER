@@ -1,11 +1,10 @@
 .promo {
 	display: flex;
 	flex-direction: column;
-
+	min-height: 100%;
 	@media screen and (min-width:$tablet) {
 		display: flex;
 		flex-direction: row;
-		height: 100vh;
 	}
 	@media screen and (min-width:$full) {
 		// justify-content: stretch;
