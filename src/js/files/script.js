@@ -9,33 +9,53 @@ const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
 const radioBtnHumanText = document.querySelector(".searchType_human");
 const radioBtnCemeteryText = document.querySelector(".searchType_cemetery");
-const newsYearBtn = document.getElementById("year");
+const newsYearBtn = document.querySelector(".year");
 
 // Main header burger menu
 if (mainMenuBtn) {
-    const menu = document.querySelector('.menu');
+    const menu = document.querySelector(".menu");
     mainMenuBtn.addEventListener("click", function(e) {
-        menu.classList.add('_active');
+        menu.classList.add("_active");
         menuOpen()        
     });
 }
 // Alt header burger menu
 if (altMenuBtn) {
-    const menu = document.querySelector('.menu');
+    const menu = document.querySelector(".menu");
     altMenuBtn.addEventListener("click", function(e) {
-        menu.classList.add('_active');
+        menu.classList.add("_active");
         menuOpen()        
     });
 }
 if (menuCloseBtn) {
-    const menu = document.querySelector('.menu');
+    const menu = document.querySelector(".menu");
     menuCloseBtn.addEventListener("click", function(e) {
-        menu.classList.remove('_active');
+        menu.classList.remove("_active");
         menuClose()       
     });
 }
 
-
+// Promo language menu toggle
+document.addEventListener('DOMContentLoaded', function () {
+    var button = document.getElementById('toggleButton');
+    var myDiv = document.getElementById('langMenu');
+    function toggleDiv() {
+      if (myDiv.style.display === 'none' || myDiv.style.display === '') {
+        myDiv.style.display = 'flex';
+        document.addEventListener('click', closeDivOutside);
+      } else {
+        myDiv.style.display = 'none';
+        document.removeEventListener('click', closeDivOutside);
+      }
+    }
+    function closeDivOutside(event) {
+      if (!myDiv.contains(event.target) && event.target !== button) {
+        myDiv.style.display = 'none';
+        document.removeEventListener('click', closeDivOutside);
+      }
+    }
+    button.addEventListener('click', toggleDiv);
+  });
 
 
 // for (let year = new Date().getFullYear() ; year <= 2023; year++) {

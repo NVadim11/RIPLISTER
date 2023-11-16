@@ -4715,7 +4715,7 @@
         document.querySelector(".searchTypeBtn_cemetery");
         document.querySelector(".searchType_human");
         document.querySelector(".searchType_cemetery");
-        document.getElementById("year");
+        document.querySelector(".year");
         if (mainMenuBtn) {
             const menu = document.querySelector(".menu");
             mainMenuBtn.addEventListener("click", (function(e) {
@@ -4737,6 +4737,26 @@
                 menuClose();
             }));
         }
+        document.addEventListener("DOMContentLoaded", (function() {
+            var button = document.getElementById("toggleButton");
+            var myDiv = document.getElementById("langMenu");
+            function toggleDiv() {
+                if (myDiv.style.display === "none" || myDiv.style.display === "") {
+                    myDiv.style.display = "flex";
+                    document.addEventListener("click", closeDivOutside);
+                } else {
+                    myDiv.style.display = "none";
+                    document.removeEventListener("click", closeDivOutside);
+                }
+            }
+            function closeDivOutside(event) {
+                if (!myDiv.contains(event.target) && event.target !== button) {
+                    myDiv.style.display = "none";
+                    document.removeEventListener("click", closeDivOutside);
+                }
+            }
+            button.addEventListener("click", toggleDiv);
+        }));
         window["FLS"] = true;
         isWebp();
         menuInit();
