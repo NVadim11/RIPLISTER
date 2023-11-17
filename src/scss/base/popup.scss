@@ -164,7 +164,19 @@ body::after {
 		position: absolute;
 		right: 1.5625rem;
 		top: 0.9375rem;
-		transition: .25s;
+		svg {
+			rect {
+				transition: .25s;
+			}
+		}
+	  }
+	  &__close:hover {
+		svg {
+			rect {
+				transition: .25s;
+				fill: #EB8069;
+			}
+		}
 	  }
 	  &__icon {
 		max-width: 10.9375rem;
@@ -410,6 +422,19 @@ body::after {
 		right: 1.5625rem;
 		top: 0.9375rem;
 		transition: .25s;
+		svg {
+			rect {
+				transition: .25s;
+			}
+		}
+	  }
+	  &__close:hover {
+		svg {
+			rect {
+				transition: .25s;
+				fill: #EB8069;
+			}
+		}
 	  }
 	  &__orangeText {
 		color: #E55738;
@@ -463,6 +488,9 @@ body::after {
 		}
 		svg {
 			width: 1.875rem;
+			rect {
+				transition: .25s;
+			}
 			@media screen and (min-width: $tablet) {
 				width: 2.5rem;
 			}
@@ -490,6 +518,14 @@ body::after {
 				margin-right: 1.25rem;
 				font-size: 2rem;
 				font-weight: 600;
+			}
+		}
+	  }
+	  &__close:hover {
+		svg {
+			rect {
+				transition: .25s;
+				fill: #EB8069;
 			}
 		}
 	  }
