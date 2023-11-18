@@ -303,7 +303,11 @@
 		line-height: 1.375rem;
 		letter-spacing: 0em;
 		text-align: center;
-		transition: .25s;
+		cursor: pointer;
+		a {
+			text-decoration: underline;
+			transition: .25s;
+		}
 		@media screen and (min-width:$tablet) {
 			font-size: 1rem;
 		}
@@ -312,8 +316,10 @@
 		}
 	}
 	&__link:hover {
-		cursor: pointer;
-		transition: .25s;
+		a {
+			text-decoration: none;
+			transition: .25s;
+		}
 	}
 	&__subscr {
 		display: flex;
