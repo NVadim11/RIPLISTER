@@ -4746,6 +4746,30 @@
         document.addEventListener("click", (function(event) {
             if (event.target !== langMenu) langMenu.classList.remove("block");
         }));
+        let currentLang = "en";
+        const langButtons = document.querySelectorAll("[data-langBtn]");
+        let currentText = {};
+        const promoTexts = {
+            "promo_header-title": {
+                ua: "Пам'ятай, Згадуй, Шануй пам'ять",
+                en: "TEST123"
+            }
+        };
+        currentText = promoTexts;
+        console.log(promoTexts);
+        function changeLanguage() {
+            for (const key in currentText) {
+                const elem = document.querySelector(`[data-lang=${key}]`);
+                if (elem) elem.textContent = currentText[key][currentLang];
+            }
+        }
+        changeLanguage();
+        langButtons.forEach((btn => {
+            btn.addEventListener("click", (e => {
+                currentLang = e.target.dataset.btn;
+                changeLanguage();
+            }));
+        }));
         window["FLS"] = true;
         isWebp();
         menuInit();

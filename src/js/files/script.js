@@ -50,83 +50,35 @@ langMenuBtn.addEventListener("click", function(e){
 });
 
 // Language section
+  const allLangs = ["ua", "en"];
+  let currentLang = "en";
+  const langButtons = document.querySelectorAll("[data-langBtn]")
+  let currentText = {};
 
-  // const allLangs = ["ua", "en"];
-  // let currentLang = "";
-  // const langButtons = document.querySelectorAll("[data-langBtn]")
-  // const currentPathName = window.location.pathname;
-  // let currentText = {};
+  const promoTexts = {
+    "promo_header-title": {
+      ua: "Пам'ятай, Згадуй, Шануй пам'ять",
+      en: "TEST123",
+    }
+  }
 
-  // const promoTexts = {
-  //   "promo_header-title": {
-  //     ua: "Пам'ятай, Згадуй, Шануй пам'ять",
-  //     en: "TEST123",
-  //   }
-  // }
+  currentText = promoTexts;
+  console.log(promoTexts);
 
-  // function checkPagePathName() {
-  //   switch(currentPathName) {
-  //     case "/index.html":
-  //     currentText = promoTexts;
-  //     break;
 
-  //     default:
-  //       currentText = promoTexts;
-  //       break;
-  //   }
-  // }
-  // checkPagePathName();
+  function changeLanguage() {
+    for (const key in currentText) {
+      const elem = document.querySelector(`[data-lang=${key}]`);
+      if(elem) {
+        elem.textContent = currentText[key][currentLang]
+      }
+    }
+  }
+  changeLanguage();
 
-  // function changeLanguage() {
-  //   for (const key in currentText) {
-  //     const elem = document.querySelector(`[data-lang=${key}]`);
-  //     if(elem) {
-  //       elem.textContent = currentText[key][currentLang]
-  //     }
-  //   }
-  // }
-  // changeLanguage();
-
-  // langButtons.forEach(btn => {
-  //   btn.addEventListener("click", (e) => {
-  //     currentLang = e.target.dataset.btn;
-  //     changeLanguage();
-  //   })
-  // })
-
-// for (let year = new Date().getFullYear() ; year <= 2023; year++) {
-//     let options = document.createElement("OPTION");  
-//     newsYearBtn.appendChild(options).innerHTML = year;
-//   }
-
-// Contact us modal open
-// if (contactBtn) {
-//     const contactForm = document.querySelector(".contactModal");
-//     contactBtn.addEventListener("click", function(e) {
-//         contactForm.classList.add('_active');
-//         menuOpen()
-//     });
-// }
-// if(contactModalClose) {
-//     const contactForm = document.querySelector(".contactModal");
-//     contactModalClose.addEventListener("click", function(e) {
-//         contactForm.classList.remove('_active');
-//         menuClose()
-//     });
-// }
-
-// Search type text color
-// if (radioBtnHuman) {    
-//     radioBtnHuman.addEventListener("click", function(e) {
-//         radioBtnCemeteryText.style.color = "var(--text-color-black)"
-//         radioBtnHumanText.style.color = "var(--orange-color)"
-//     });    
-// }
-
-// if (radioBtnCemetery) {    
-//     radioBtnCemetery.addEventListener("click", function(e) {
-//         radioBtnHumanText.style.color = "var(--text-color-black)"
-//         radioBtnCemeteryText.style.color = "var(--orange-color)"
-//     });
-// }
-
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      currentLang = e.target.dataset.btn;
+      changeLanguage();
+    })
+  })
