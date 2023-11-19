@@ -37,8 +37,8 @@ if (menuCloseBtn) {
 
 // Promo language menu toggle
 document.addEventListener('DOMContentLoaded', function () {
-    var button = document.getElementById('toggleButton');
-    var myDiv = document.getElementById('langMenu');
+    let button = document.getElementById('toggleButton');
+    let myDiv = document.getElementById('langMenu');
     function toggleDiv() {
       if (myDiv.style.display === 'none' || myDiv.style.display === '') {
         myDiv.style.display = 'flex';
@@ -57,6 +57,49 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', toggleDiv);
   });
 
+// Language section
+  const allLangs = ["ua", "en"];
+  let currentLang = "en";
+  const langButtons = document.querySelectorAll("[data-langBtn]")
+  const currentPathName = window.location.pathname;
+  let currentText = {};
+
+  const promoTexts = {
+    "promo_header-title": {
+      ua: "Пам'ятай, Згадуй, Шануй пам'ять",
+      en: "TEST123",
+    }
+  }
+
+  function checkPagePathName() {
+    switch(currentPathName) {
+      case "/index.html":
+      currentText = promoTexts;
+      break;
+
+      default:
+        currentText = promoTexts;
+        break;
+    }
+  }
+  checkPagePathName();
+
+  function changeLanguage() {
+    for (const key in currentText) {
+      const elem = document.querySelector(`[data-lang=${key}]`);
+      if(elem) {
+        elem.textContent = currentText[key][currentLang]
+      }
+    }
+  }
+  changeLanguage();
+
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      currentLang = e.target.dataset.btn;
+      changeLanguage();
+    })
+  })
 
 // for (let year = new Date().getFullYear() ; year <= 2023; year++) {
 //     let options = document.createElement("OPTION");  

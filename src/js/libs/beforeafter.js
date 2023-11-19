@@ -1,9 +1,9 @@
 // Підключення функціоналу "Чертоги Фрілансера"
-import { isMobile, FLS } from "../files/functions.js";
+import { FLS, isMobile } from "../files/functions.js"
 // Підключення списку активних модулів
-import { flsModules } from "../files/modules.js";
+import { flsModules } from "../files/modules.js"
 // Підключення стілів необхідних для роботи модуля
-import "../../scss/base/beforeafter.scss";
+import "../../scss/base/beforeafter.scss"
 
 class BeforeAfter {
 	constructor(props) {
