@@ -48,37 +48,3 @@ langMenuBtn.addEventListener("click", function(e){
         langMenu.classList.remove('block'); 
     } 
 });
-
-// Language section
-  const allLangs = ["ua", "en"];
-  let currentLang = "en";
-  const langButtons = document.querySelectorAll("[data-langBtn]")
-  let currentText = {};
-
-  const promoTexts = {
-    "promo_header-title": {
-      ua: "Пам'ятай, Згадуй, Шануй пам'ять",
-      en: "TEST123",
-    }
-  }
-
-  currentText = promoTexts;
-  console.log(promoTexts);
-
-
-  function changeLanguage() {
-    for (const key in currentText) {
-      const elem = document.querySelector(`[data-lang=${key}]`);
-      if(elem) {
-        elem.textContent = currentText[key][currentLang]
-      }
-    }
-  }
-  changeLanguage();
-
-  langButtons.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      currentLang = e.target.dataset.btn;
-      changeLanguage();
-    })
-  })
