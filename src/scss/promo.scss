@@ -161,6 +161,9 @@
 	&__video {
 		display: flex;
 		flex-direction: column;
+		user-select: none;
+		max-width: fit-content;
+		margin: auto;
 		cursor: pointer;
 		transition: .25s;
 		svg {
@@ -245,6 +248,7 @@
 	&__headerIcon {
 		display: flex;
 		justify-content: center;
+		user-select: none;
 		@media screen and (min-width:$tablet) {
 			margin-top: 7.6875rem;
 		}
@@ -260,6 +264,7 @@
 		font-weight: 600;
 		line-height: normal;
 		margin-top: 2.375rem;
+		user-select: none;
 		@media screen and (min-width:$mobile) {
 			font-size: 2.25rem;
 			font-weight: 600;
@@ -297,13 +302,15 @@
 		}	
 	}
 	&__link {
-		margin-top: 1.25rem;
+		margin: 20px auto 0 auto;
 		font-size: 1.125rem;
 		font-weight: 600;
 		line-height: 1.375rem;
 		letter-spacing: 0em;
 		text-align: center;
 		transition: .25s;
+		user-select: none;
+		max-width: fit-content;
 		@media screen and (min-width:$tablet) {
 			font-size: 1rem;
 		}
