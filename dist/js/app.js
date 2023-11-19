@@ -4711,6 +4711,8 @@
         const mainMenuBtn = document.querySelector(".headerMain__menuBtn");
         const altMenuBtn = document.querySelector(".headerAlt__menuBtn");
         const menuCloseBtn = document.querySelector(".menu__closeBtn");
+        const langMenuBtn = document.querySelector(".headerAlt__langBtn");
+        const langMenu = document.querySelector(".promo__langMenu");
         document.querySelector(".searchTypeBtn_human");
         document.querySelector(".searchTypeBtn_cemetery");
         document.querySelector(".searchType_human");
@@ -4737,60 +4739,12 @@
                 menuClose();
             }));
         }
-        document.addEventListener("DOMContentLoaded", (function() {
-            let button = document.getElementById("toggleButton");
-            let myDiv = document.getElementById("langMenu");
-            function toggleDiv() {
-                if (myDiv.style.display === "none" || myDiv.style.display === "") {
-                    myDiv.style.display = "flex";
-                    document.addEventListener("click", closeDivOutside);
-                } else {
-                    myDiv.style.display = "none";
-                    document.removeEventListener("click", closeDivOutside);
-                }
-            }
-            function closeDivOutside(event) {
-                if (!myDiv.contains(event.target) && event.target !== button) {
-                    myDiv.style.display = "none";
-                    document.removeEventListener("click", closeDivOutside);
-                }
-            }
-            button.addEventListener("click", toggleDiv);
+        langMenuBtn.addEventListener("click", (function(e) {
+            e.stopPropagation();
+            langMenu.classList.toggle("block");
         }));
-        let currentLang = "en";
-        const langButtons = document.querySelectorAll("[data-langBtn]");
-        const currentPathName = window.location.pathname;
-        let currentText = {};
-        const promoTexts = {
-            "promo_header-title": {
-                ua: "Пам'ятай, Згадуй, Шануй пам'ять",
-                en: "TEST123"
-            }
-        };
-        function checkPagePathName() {
-            switch (currentPathName) {
-              case "/index.html":
-                currentText = promoTexts;
-                break;
-
-              default:
-                currentText = promoTexts;
-                break;
-            }
-        }
-        checkPagePathName();
-        function changeLanguage() {
-            for (const key in currentText) {
-                const elem = document.querySelector(`[data-lang=${key}]`);
-                if (elem) elem.textContent = currentText[key][currentLang];
-            }
-        }
-        changeLanguage();
-        langButtons.forEach((btn => {
-            btn.addEventListener("click", (e => {
-                currentLang = e.target.dataset.btn;
-                changeLanguage();
-            }));
+        document.addEventListener("click", (function(event) {
+            if (event.target !== langMenu) langMenu.classList.remove("block");
         }));
         window["FLS"] = true;
         isWebp();
