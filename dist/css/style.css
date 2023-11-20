@@ -3657,6 +3657,10 @@ label {
   display: flex;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   border-radius: 1.875rem;
   margin: 1rem 1.0625rem 0 0;
   background: transparent;
@@ -3681,21 +3685,14 @@ label {
 
 .promo__langMenu {
   display: none;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  max-width: 6.5938rem;
-  border-radius: 1.875rem;
-  margin: -36.875rem 1.0625rem 0 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  position: absolute;
+  top: 75px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
   border-radius: 1.875rem;
-  background-color: var(--modal-background-color);
+  background: var(--modal-background-color);
 }
 
 .promo__langMenu .uaBtn {
@@ -3725,6 +3722,7 @@ label {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: var(--modal-background-color);
   padding: 0.875rem 1.75rem 0.875rem 0.9375rem;
 }
 
@@ -4040,6 +4038,10 @@ label {
   -webkit-transition: 0.25s;
   transition: 0.25s;
   fill: #EB8069;
+}
+
+.block {
+  display: block;
 }
 
 .menu {

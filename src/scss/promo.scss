@@ -93,6 +93,7 @@
 	&__cover-btnBox {
 		display: flex;
 		align-self: flex-end;
+		user-select: none; 
 		border-radius: 1.875rem;
 		margin: 1rem 1.0625rem 0 0;
 		background: transparent;
@@ -112,18 +113,15 @@
 				fill: var(--text-color-black); 
 			}
 		}
-	}    
+	}
 	&__langMenu {
 		display: none;
-		align-self: flex-end;
-		max-width: 6.5938rem;
-		border-radius: 1.875rem;
-		margin: -36.875rem 1.0625rem 0 0;
-		flex-direction: column;
+		position: absolute;
+		top: 75px;
 		align-items: center;
 		text-align: center;		
 		border-radius: 1.875rem;
-		background-color: var(--modal-background-color);
+		background: var(--modal-background-color);
 		.uaBtn {
 			border-radius: 1.875rem 1.875rem 0 0;
 			svg {
@@ -142,12 +140,14 @@
 		align-items: center;
 		text-align: center;
 		justify-content: center;
+		background: var(--modal-background-color);
 		padding: 0.875rem 1.75rem 0.875rem 0.9375rem;
 	}
 	&__langBtn:hover {
 		background-color: var(--orange-color);
 		color: var(--white-color);
 	}
+
 	&__cover-header {
 		flex-direction: column;
 		margin-top: 4.5rem ;
@@ -499,10 +499,9 @@
 		}
 	}
 }
-
-.promo-wrapper {
-
-}
-
+// Display block toggle
+.block {
+	display: block;	
+	}
 
 
