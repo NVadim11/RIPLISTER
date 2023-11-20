@@ -18,6 +18,7 @@ i18next
 				"whiteTitleFirst": "Спадок пам'яті,",
 				"whiteTitleSecond": "що об'єднує нас.",
 				"promoVideoText": "Подивитись відео	про RIPlister",
+				"promoDisplayLng": "УКР",
       }
     },
     en: {
@@ -31,6 +32,7 @@ i18next
 				"whiteTitleFirst": "Legacy of memory",
 				"whiteTitleSecond": "that unites us.",
 				"promoVideoText": "Watch a video about RIPlister",
+				"promoDisplayLng": "ENG",
       }
     }
   }
@@ -49,6 +51,7 @@ function updateContent() {
  document.querySelector(".promo__whiteTitleFirst").innerHTML = i18next.t("whiteTitleFirst");
  document.querySelector(".promo__whiteTitleSecond").innerHTML = i18next.t("whiteTitleSecond");
  document.querySelector(".promo__video-text").innerHTML = i18next.t("promoVideoText");
+ document.querySelector(".headerAlt__langBtn span").innerHTML = i18next.t("promoDisplayLng");
 }
 export default function changeLng(lng) {
   i18next.changeLanguage(lng);

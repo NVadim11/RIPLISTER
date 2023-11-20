@@ -3682,6 +3682,11 @@ label {
   transition: 0.25s;
 }
 
+.promo .headerAlt__langBtn img {
+  width: 1.75rem;
+  height: 1.125rem;
+}
+
 .promo .headerAlt__langBtn .dropdownArrow path {
   -webkit-transition: 0.25s;
   transition: 0.25s;
@@ -3716,16 +3721,20 @@ label {
   border-radius: 1.875rem 1.875rem 0 0;
 }
 
-.promo__langMenu .uaBtn svg {
+.promo__langMenu .uaBtn img {
   margin-right: 0.625rem;
+  width: 1.75rem;
+  height: 1.125rem;
 }
 
 .promo__langMenu .enBtn {
   border-radius: 0 0 1.875rem 1.875rem;
 }
 
-.promo__langMenu .enBtn svg {
+.promo__langMenu .enBtn img {
   margin-right: 0.625rem;
+  width: 1.75rem;
+  height: 1.125rem;
 }
 
 .promo__langBtn {

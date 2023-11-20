@@ -10,6 +10,7 @@ const langMenuBtn = document.querySelector('.headerAlt__langBtn');
 const langMenu = document.querySelector('.promo__langMenu');
 const langUABtn = document.querySelector('.uaBtn');
 const langENBtn = document.querySelector('.enBtn');
+const langImg = document.getElementById("langImg");
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
 const radioBtnHumanText = document.querySelector(".searchType_human");
@@ -59,6 +60,7 @@ langUABtn.addEventListener("click", function(e){
     e.stopPropagation();
     langMenu.classList.remove('block'); 
     langMenuBtn.classList.remove('toggleLangBtn');
+    changeToUA();
     changeLng("ua");
 })
 
@@ -66,5 +68,33 @@ langENBtn.addEventListener("click", function(e){
     e.stopPropagation();
     langMenu.classList.remove('block'); 
     langMenuBtn.classList.remove('toggleLangBtn');
+    changeToEN();
     changeLng("en");
 })
+
+// Language img toggle
+function changeToUA() {    
+   let currentImg = langImg.src;
+   let uaFlag = "img/ua.svg";
+
+   let newImg = currentImg = uaFlag;
+
+   langImg.src = newImg;
+   localStorage.setItem('userImageChoice', newImg);
+}
+function changeToEN() {    
+    let currentImg = langImg.src;
+    let enFlag = "img/en.svg";
+ 
+    let newImg = currentImg = enFlag;
+ 
+    langImg.src = newImg;
+    localStorage.setItem('userImageChoice', newImg);
+ }
+
+document.addEventListener('DOMContentLoaded', function() {
+    let storedChoice = localStorage.getItem('userImageChoice');
+    if (storedChoice) {
+        document.getElementById('langImg').src = storedChoice;
+    }
+});

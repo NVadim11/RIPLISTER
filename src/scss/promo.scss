@@ -103,6 +103,10 @@
 		border-radius: 1.875rem;
 		max-width: 8.1875rem;
 		transition: .25s;
+		img {
+			width: 1.75rem;
+			height: 1.125rem;
+		}
 		.dropdownArrow { 			
 			path {
 				transition: .25s;
@@ -131,14 +135,18 @@
 		background: var(--modal-background-color);
 		.uaBtn {
 			border-radius: 1.875rem 1.875rem 0 0;
-			svg {
+			img {
 				margin-right: 0.625rem;
+				width: 1.75rem;
+				height: 1.125rem;
 			}
 		}
 		.enBtn {
 			border-radius: 0 0 1.875rem 1.875rem;	
-			svg {
+			img {
 				margin-right: 0.625rem;
+				width: 1.75rem;
+				height: 1.125rem;
 			}
 		}
 	}

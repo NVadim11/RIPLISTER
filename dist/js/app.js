@@ -6868,7 +6868,7 @@
             }
             return hasLocalStorageSupport;
         };
-        var localStorage = {
+        var i18nextBrowserLanguageDetector_localStorage = {
             name: "localStorage",
             lookup: function lookup(options) {
                 var found;
@@ -6991,7 +6991,7 @@
                     this.i18nOptions = i18nOptions;
                     this.addDetector(cookie$1);
                     this.addDetector(querystring);
-                    this.addDetector(localStorage);
+                    this.addDetector(i18nextBrowserLanguageDetector_localStorage);
                     this.addDetector(sessionStorage);
                     this.addDetector(navigator$1);
                     this.addDetector(htmlTag);
@@ -7051,7 +7051,8 @@
                         socialsText: "Також додавайся до наших сторінок у соцмережах",
                         whiteTitleFirst: "Спадок пам'яті,",
                         whiteTitleSecond: "що об'єднує нас.",
-                        promoVideoText: "Подивитись відео\tпро RIPlister"
+                        promoVideoText: "Подивитись відео\tпро RIPlister",
+                        promoDisplayLng: "УКР"
                     }
                 },
                 en: {
@@ -7064,7 +7065,8 @@
                         socialsText: "Also, join our social media pages for updates.",
                         whiteTitleFirst: "Legacy of memory",
                         whiteTitleSecond: "that unites us.",
-                        promoVideoText: "Watch a video about RIPlister"
+                        promoVideoText: "Watch a video about RIPlister",
+                        promoDisplayLng: "ENG"
                     }
                 }
             }
@@ -7081,6 +7083,7 @@
             document.querySelector(".promo__whiteTitleFirst").innerHTML = instance.t("whiteTitleFirst");
             document.querySelector(".promo__whiteTitleSecond").innerHTML = instance.t("whiteTitleSecond");
             document.querySelector(".promo__video-text").innerHTML = instance.t("promoVideoText");
+            document.querySelector(".headerAlt__langBtn span").innerHTML = instance.t("promoDisplayLng");
         }
         function changeLng(lng) {
             instance.changeLanguage(lng);
@@ -7095,6 +7098,7 @@
         const langMenu = document.querySelector(".promo__langMenu");
         const langUABtn = document.querySelector(".uaBtn");
         const langENBtn = document.querySelector(".enBtn");
+        const langImg = document.getElementById("langImg");
         document.querySelector(".searchTypeBtn_human");
         document.querySelector(".searchTypeBtn_cemetery");
         document.querySelector(".searchType_human");
@@ -7136,13 +7140,33 @@
             e.stopPropagation();
             langMenu.classList.remove("block");
             langMenuBtn.classList.remove("toggleLangBtn");
+            changeToUA();
             changeLng("ua");
         }));
         langENBtn.addEventListener("click", (function(e) {
             e.stopPropagation();
             langMenu.classList.remove("block");
             langMenuBtn.classList.remove("toggleLangBtn");
+            changeToEN();
             changeLng("en");
+        }));
+        function changeToUA() {
+            let currentImg = langImg.src;
+            let uaFlag = "img/ua.svg";
+            let newImg = currentImg = uaFlag;
+            langImg.src = newImg;
+            localStorage.setItem("userImageChoice", newImg);
+        }
+        function changeToEN() {
+            let currentImg = langImg.src;
+            let enFlag = "img/en.svg";
+            let newImg = currentImg = enFlag;
+            langImg.src = newImg;
+            localStorage.setItem("userImageChoice", newImg);
+        }
+        document.addEventListener("DOMContentLoaded", (function() {
+            let storedChoice = localStorage.getItem("userImageChoice");
+            if (storedChoice) document.getElementById("langImg").src = storedChoice;
         }));
         window["FLS"] = true;
         isWebp();
