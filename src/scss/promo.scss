@@ -135,7 +135,7 @@
 				margin-right: 0.625rem;
 			}
 		}
-		.engBtn {
+		.enBtn {
 			border-radius: 0 0 1.875rem 1.875rem;	
 			svg {
 				margin-right: 0.625rem;
@@ -148,7 +148,7 @@
 		text-align: center;
 		justify-content: center;
 		background: var(--modal-background-color);
-		padding: 0.875rem 1.75rem 0.875rem 0.9375rem;
+		padding: 0.875rem 1.5938rem 0.875rem 0.9375rem;
 		transition: .25s;
 	}
 	&__langBtn:hover {
@@ -233,6 +233,8 @@
 	&__video-text {
 		opacity: 0.7;
 		display: flex;
+		word-break: break-word;
+		width: 8.4375rem;
 		justify-content: center;
 		color: var(--white-color);
 		text-align: center;
@@ -244,10 +246,12 @@
 		@media screen and (min-width:$tablet) {
 			text-align: start;
 			margin-top: 0;
+			width: 10.625rem;
 			font-size: 1.25rem;
 		}
 		@media screen and (min-width:$full) {
 			font-size: 1.5rem;
+			width: 13.125rem;
 		}
 	}
 
@@ -272,8 +276,32 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-		margin-top: 2.375rem;
-		user-select: none;
+		margin-top: 2.375rem;		
+		@media screen and (min-width:$mobile) {
+			font-size: 2.25rem;
+			font-weight: 600;
+			line-height: 2.75rem;
+			letter-spacing: 0em;
+			text-align: center;
+			margin-top: 3.4375rem;
+		}
+		@media screen and (min-width:$tablet) {
+			color: var(--orange-color);
+			margin-top: 2rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 3.75rem;	
+			line-height: 1.2;	
+		}
+	}
+	&__headerTitleWhite {
+		color: var(--white-color);
+		text-align: center;
+		font-size: 2rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin-top: 2.375rem;		
 		@media screen and (min-width:$mobile) {
 			font-size: 2.25rem;
 			font-weight: 600;
@@ -390,22 +418,18 @@
 	&__input-field {
 		overflow: hidden;
 			input {
-				text-align: center;
+				text-align: start;
 				border-radius: 1.25rem;
 				border: 0.0625rem solid var(--orange-color);
 				padding: 1.25rem 11.8125rem 1.25rem 1.125rem;
 				width: 100%;
-				outline: none;
-				@media screen and (min-width:$tablet) {
-					text-align: start;
-				}
+				outline: none;	
 			}
 			input[type=text] {				
 				font-size: 0.875rem;
 				font-weight: 400;
 				line-height: 1.0625rem;
-				letter-spacing: 0em;			
-		
+				letter-spacing: 0em;	
 			}
 	}
 	&__input-field:focus-visible {
@@ -429,6 +453,7 @@
 		border-radius: 1.25rem;
 		border: 0.0625rem solid var(--orange-color);
 		background: #E55738;
+		user-select: none;
 		color: var(--white-color);
 		font-size: 1.125rem;
 		font-style: normal;

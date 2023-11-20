@@ -181,6 +181,7 @@ body::after {
 	  &__icon {
 		max-width: 10.9375rem;
 		margin-top: 105px;
+		user-select: none;
 		@media screen and (min-width: $full) {
 		  max-width: 19.5rem;
 		}
@@ -342,6 +343,7 @@ body::after {
 		font-weight: 700;
 		line-height: normal;
 		padding: 1.0625rem 2.3125rem;
+		user-select: none;
 		@media screen and (min-width:$pc) {
 		  position: absolute;
 		  margin-top: 0;

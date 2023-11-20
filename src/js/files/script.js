@@ -1,5 +1,6 @@
 // Підключення функціоналу "Чертоги Фрілансера"
 import { menuClose, menuOpen } from "./functions.js"
+import changeLng from "./languages.js"
 // Підключення списку активних модулів
 // Constants
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
@@ -7,6 +8,8 @@ const altMenuBtn = document.querySelector('.headerAlt__menuBtn');
 const menuCloseBtn = document.querySelector('.menu__closeBtn');
 const langMenuBtn = document.querySelector('.headerAlt__langBtn');
 const langMenu = document.querySelector('.promo__langMenu');
+const langUABtn = document.querySelector('.uaBtn');
+const langENBtn = document.querySelector('.enBtn');
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
 const radioBtnHumanText = document.querySelector(".searchType_human");
@@ -39,9 +42,9 @@ if (menuCloseBtn) {
 
 // Promo language menu toggle
 langMenuBtn.addEventListener("click", function(e){ 
-  e.stopPropagation(); 
-  langMenu.classList.toggle('block');
-  langMenuBtn.classList.toggle('toggleLangBtn');
+    e.stopPropagation(); 
+    langMenu.classList.toggle('block');
+    langMenuBtn.classList.toggle('toggleLangBtn');
 });
 
   document.addEventListener('click', function (event) { 
@@ -50,3 +53,14 @@ langMenuBtn.addEventListener("click", function(e){
         langMenuBtn.classList.remove('toggleLangBtn');
     } 
 });
+
+// Promo language switcher logic
+langUABtn.addEventListener("click", function(e){
+    e.stopPropagation();
+    changeLng("ua");
+})
+
+langENBtn.addEventListener("click", function(e){
+    e.stopPropagation();
+    changeLng("en");
+})
