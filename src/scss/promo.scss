@@ -97,20 +97,27 @@
 		border-radius: 1.875rem;
 		margin: 1rem 1.0625rem 0 0;
 		background: transparent;
+		cursor: pointer;
 	}	
 	.headerAlt__langBtn {
 		border-radius: 1.875rem;
 		max-width: 8.1875rem;
-		
+		transition: .25s;
+		.dropdownArrow { 			
+			path {
+				transition: .25s;
+			}
+		}
 	}
 	.headerAlt__langBtn:hover {
-		border-radius: 1.875rem;		
 		background: #FFF;
 		color: var(--orange-color);
-		transition: .15s;
+		transition: .25s;
 		.dropdownArrow { 			
 			path {
 				fill: var(--text-color-black); 
+				transition: .25s;
+				
 			}
 		}
 	}
@@ -142,10 +149,12 @@
 		justify-content: center;
 		background: var(--modal-background-color);
 		padding: 0.875rem 1.75rem 0.875rem 0.9375rem;
+		transition: .25s;
 	}
 	&__langBtn:hover {
 		background-color: var(--orange-color);
 		color: var(--white-color);
+		transition: .25s;
 	}
 
 	&__cover-header {
@@ -504,4 +513,16 @@
 	display: block;	
 	}
 
-
+// Arrow state
+.toggleLangBtn {
+	background: #FFF;
+	color: var(--orange-color);
+	transition: .25s;
+	.dropdownArrow { 		
+		transform: rotate(180deg);	
+		path {
+			fill: var(--text-color-black); 
+			transition: .25s;
+		}
+	}
+}

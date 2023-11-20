@@ -6747,6 +6747,7 @@
         langMenuBtn.addEventListener("click", (function(e) {
             e.stopPropagation();
             langMenu.classList.toggle("block");
+            langMenuBtn.classList.toggle("toggleLangBtn");
         }));
         document.addEventListener("click", (function(event) {
             if (event.target !== langMenu) langMenu.classList.remove("block");

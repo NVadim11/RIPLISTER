@@ -3664,23 +3664,32 @@ label {
   border-radius: 1.875rem;
   margin: 1rem 1.0625rem 0 0;
   background: transparent;
+  cursor: pointer;
 }
 
 .promo .headerAlt__langBtn {
   border-radius: 1.875rem;
   max-width: 8.1875rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.promo .headerAlt__langBtn .dropdownArrow path {
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .promo .headerAlt__langBtn:hover {
-  border-radius: 1.875rem;
   background: #FFF;
   color: var(--orange-color);
-  -webkit-transition: 0.15s;
-  transition: 0.15s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .promo .headerAlt__langBtn:hover .dropdownArrow path {
   fill: var(--text-color-black);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .promo__langMenu {
@@ -3724,11 +3733,15 @@ label {
           justify-content: center;
   background: var(--modal-background-color);
   padding: 0.875rem 1.75rem 0.875rem 0.9375rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .promo__langBtn:hover {
   background-color: var(--orange-color);
   color: var(--white-color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .promo__cover-header {
@@ -4042,6 +4055,25 @@ label {
 
 .block {
   display: block;
+}
+
+.toggleLangBtn {
+  background: #FFF;
+  color: var(--orange-color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.toggleLangBtn .dropdownArrow {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.toggleLangBtn .dropdownArrow path {
+  fill: var(--text-color-black);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .menu {

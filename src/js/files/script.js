@@ -40,8 +40,9 @@ if (menuCloseBtn) {
 // Promo language menu toggle
 langMenuBtn.addEventListener("click", function(e){ 
   e.stopPropagation(); 
-  langMenu.classList.toggle('block');}
-);
+  langMenu.classList.toggle('block');
+  langMenuBtn.classList.toggle('toggleLangBtn');
+});
 
   document.addEventListener('click', function (event) { 
     if (event.target !== langMenu) { 
