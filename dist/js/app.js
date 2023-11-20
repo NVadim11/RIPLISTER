@@ -6750,7 +6750,10 @@
             langMenuBtn.classList.toggle("toggleLangBtn");
         }));
         document.addEventListener("click", (function(event) {
-            if (event.target !== langMenu) langMenu.classList.remove("block");
+            if (event.target !== langMenu) {
+                langMenu.classList.remove("block");
+                langMenuBtn.classList.remove("toggleLangBtn");
+            }
         }));
         window["FLS"] = true;
         isWebp();

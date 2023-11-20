@@ -47,5 +47,6 @@ langMenuBtn.addEventListener("click", function(e){
   document.addEventListener('click', function (event) { 
     if (event.target !== langMenu) { 
         langMenu.classList.remove('block'); 
+        langMenuBtn.classList.remove('toggleLangBtn');
     } 
 });
