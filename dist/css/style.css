@@ -972,6 +972,8 @@ label {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .popupVideo__close:hover svg rect {
