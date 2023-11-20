@@ -7134,10 +7134,14 @@
         }));
         langUABtn.addEventListener("click", (function(e) {
             e.stopPropagation();
+            langMenu.classList.remove("block");
+            langMenuBtn.classList.remove("toggleLangBtn");
             changeLng("ua");
         }));
         langENBtn.addEventListener("click", (function(e) {
             e.stopPropagation();
+            langMenu.classList.remove("block");
+            langMenuBtn.classList.remove("toggleLangBtn");
             changeLng("en");
         }));
         window["FLS"] = true;
