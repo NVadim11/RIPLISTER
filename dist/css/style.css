@@ -3855,10 +3855,6 @@ label {
   letter-spacing: 0em;
   text-align: center;
   cursor: pointer;
-}
-
-.promo__link a {
-  text-decoration: underline;
   -webkit-transition: 0.25s;
   transition: 0.25s;
   -webkit-user-select: none;
@@ -3868,6 +3864,12 @@ label {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
+}
+
+.promo__link a {
+  text-decoration: underline;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .promo__link:hover a {
