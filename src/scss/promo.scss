@@ -99,6 +99,9 @@
 		background: transparent;
 		cursor: pointer;
 	}	
+	&__cover-btnBox:focus {
+		border-radius: 1.875rem;
+	}
 	.headerAlt__langBtn {
 		border-radius: 1.875rem;
 		max-width: 8.1875rem;
@@ -112,10 +115,6 @@
 				transition: .25s;
 			}
 		}
-	}
-	.headerAlt__langBtn:focus {
-		outline-color: transparent;
-		border-radius: 1.875rem;
 	}
 	.headerAlt__langBtn:hover {
 		background: #FFF;

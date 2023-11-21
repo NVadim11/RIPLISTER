@@ -3704,6 +3704,10 @@ label {
   cursor: pointer;
 }
 
+.promo__cover-btnBox:focus {
+  border-radius: 1.875rem;
+}
+
 .promo .headerAlt__langBtn {
   border-radius: 1.875rem;
   max-width: 8.1875rem;
@@ -3719,11 +3723,6 @@ label {
 .promo .headerAlt__langBtn .dropdownArrow path {
   -webkit-transition: 0.25s;
   transition: 0.25s;
-}
-
-.promo .headerAlt__langBtn:focus {
-  outline-color: transparent;
-  border-radius: 1.875rem;
 }
 
 .promo .headerAlt__langBtn:hover {
