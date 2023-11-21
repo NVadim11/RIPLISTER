@@ -3704,15 +3704,12 @@ label {
   cursor: pointer;
 }
 
-.promo__cover-btnBox:focus {
-  border-radius: 1.875rem;
-}
-
 .promo .headerAlt__langBtn {
   border-radius: 1.875rem;
   max-width: 8.1875rem;
   -webkit-transition: 0.25s;
   transition: 0.25s;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .promo .headerAlt__langBtn img {
