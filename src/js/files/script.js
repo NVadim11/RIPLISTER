@@ -40,6 +40,15 @@ if (menuCloseBtn) {
         menuClose()       
     });
 }
+// Language img change
+function flagCheck() {
+    if (langImg.src === "img/ua.svg") {
+        return langImg
+    } else {
+        langImg.src = "img/en.svg"
+    }
+}
+flagCheck();
 
 // Promo language menu toggle
 langMenuBtn.addEventListener("click", function(e){ 
@@ -86,7 +95,7 @@ function changeToEN() {
     let currentImg = langImg.src;
     let enFlag = "img/en.svg";
  
-    let newImg = currentImg = enFlag;
+    let newImg = currentImg = enFlag
  
     langImg.src = newImg;
     localStorage.setItem('userImageChoice', newImg);

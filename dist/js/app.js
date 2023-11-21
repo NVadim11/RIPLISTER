@@ -7155,6 +7155,10 @@
                 menuClose();
             }));
         }
+        function flagCheck() {
+            if (langImg.src === "img/ua.svg") return langImg; else langImg.src = "img/en.svg";
+        }
+        flagCheck();
         langMenuBtn.addEventListener("click", (function(e) {
             e.stopPropagation();
             langMenu.classList.toggle("block");
