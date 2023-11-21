@@ -113,6 +113,10 @@
 			}
 		}
 	}
+	.headerAlt__langBtn:focus {
+		outline-color: transparent;
+		border-radius: 1.875rem;
+	}
 	.headerAlt__langBtn:hover {
 		background: #FFF;
 		color: var(--orange-color);

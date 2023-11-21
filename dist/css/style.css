@@ -895,7 +895,7 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 18.75rem;
+  width: 21.875rem;
   height: 18.75rem;
   border-radius: 1.875rem;
 }
@@ -919,8 +919,35 @@ label {
   fill: #EB8069;
 }
 
-.popupThanks__orangeText {
-  color: #E55738;
+.popupThanks__closeBtn {
+  border-radius: 1.25rem;
+  border: 0.0625rem solid var(--orange-color);
+  background: #E55738;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: var(--white-color);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 1.0625rem 2.3125rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  position: absolute;
+  top: 70%;
+}
+
+.popupThanks__closeBtn:hover {
+  background: #EB8069;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  border-color: #EB8069;
+}
+
+.popupThanks__Text {
+  color: var(--text-color-black);
   text-align: center;
   font-size: 1.125rem;
   font-style: normal;
@@ -3694,6 +3721,11 @@ label {
   transition: 0.25s;
 }
 
+.promo .headerAlt__langBtn:focus {
+  outline-color: transparent;
+  border-radius: 1.875rem;
+}
+
 .promo .headerAlt__langBtn:hover {
   background: #FFF;
   color: var(--orange-color);
@@ -4893,7 +4925,12 @@ label {
     margin: 2rem 0 5.375rem 0;
   }
 
-  .popupThanks__orangeText {
+  .popupThanks__content {
+    width: 28.125rem;
+    height: 18.75rem;
+  }
+
+  .popupThanks__Text {
     margin: 0;
     position: absolute;
     top: 50%;

@@ -7054,6 +7054,7 @@
                         promoVideoText: "Подивитись відео\tпро RIPlister",
                         promoDisplayLng: "УКР",
                         thanksPopupText: "Дякуємо вам за підписку!",
+                        thanksPopupBtn: "Продовжити",
                         promoVideoLabel: "ЗАКРИТИ",
                         promoPopupTitle: "Спадок пам'яті, що об'єднує нас.",
                         promoPopup__about1: "Ласкаво просимо до нашого проєкту! Ми - команда ентузіастів, які працюють над створенням унікального вебсайту, який надасть можливість легко знайти місце поховання людини, що вас цікавить, а також допомогти відшукати ваші коріння та родинні зв'язки.",
@@ -7077,6 +7078,7 @@
                         promoVideoText: "Watch a video about RIPlister",
                         promoDisplayLng: "ENG",
                         thanksPopupText: "Thank you for subscribing!",
+                        thanksPopupBtn: "Continue",
                         promoVideoLabel: "CLOSE",
                         promoPopupTitle: "Legacy of memory that unites us.",
                         promoPopup__about1: "Welcome to our project! We are a team of enthusiasts working on creating a unique website that will allow you to easily find the burial place of a person you're interested in and help you discover your roots and family connections.",
@@ -7104,7 +7106,8 @@
             document.querySelector(".promo__whiteTitleSecond").innerHTML = instance.t("whiteTitleSecond");
             document.querySelector(".promo__video-text").innerHTML = instance.t("promoVideoText");
             document.querySelector(".headerAlt__langBtn span").innerHTML = instance.t("promoDisplayLng");
-            document.querySelector(".popupThanks__orangeText h4").innerHTML = instance.t("thanksPopupText");
+            document.querySelector(".popupThanks__Text h4").innerHTML = instance.t("thanksPopupText");
+            document.querySelector(".popupThanks__closeBtn").innerHTML = instance.t("thanksPopupBtn");
             document.querySelector(".promoPopup__orangeText h4").innerHTML = instance.t("promoOrangeText");
             document.querySelector(".popupVideo__close label").innerHTML = instance.t("promoVideoLabel");
             document.querySelector(".promoPopup__title").innerHTML = instance.t("promoPopupTitle");

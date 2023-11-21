@@ -47,7 +47,7 @@ function flagCheck() {
     } else {
         langImg.src = "img/en.svg"
     }
-}
+}   
 flagCheck();
 
 // Promo language menu toggle

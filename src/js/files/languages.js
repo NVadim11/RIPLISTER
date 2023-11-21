@@ -20,6 +20,7 @@ i18next
 				"promoVideoText": "Подивитись відео	про RIPlister",
 				"promoDisplayLng": "УКР",
         "thanksPopupText": "Дякуємо вам за підписку!",
+        "thanksPopupBtn": "Продовжити",
         "promoVideoLabel": "ЗАКРИТИ",
         "promoPopupTitle": "Спадок пам'яті, що об'єднує нас.",
         "promoPopup__about1": "Ласкаво просимо до нашого проєкту! Ми - команда ентузіастів, які працюють над створенням унікального вебсайту, який надасть можливість легко знайти місце поховання людини, що вас цікавить, а також допомогти відшукати ваші коріння та родинні зв'язки.",
@@ -43,6 +44,7 @@ i18next
 				"promoVideoText": "Watch a video about RIPlister",
 				"promoDisplayLng": "ENG",
         "thanksPopupText": "Thank you for subscribing!",
+        "thanksPopupBtn": "Continue",
         "promoVideoLabel": "CLOSE",
         "promoPopupTitle": "Legacy of memory that unites us.",
         "promoPopup__about1": "Welcome to our project! We are a team of enthusiasts working on creating a unique website that will allow you to easily find the burial place of a person you're interested in and help you discover your roots and family connections.",
@@ -72,7 +74,8 @@ function updateContent() {
  document.querySelector(".promo__whiteTitleSecond").innerHTML = i18next.t("whiteTitleSecond");
  document.querySelector(".promo__video-text").innerHTML = i18next.t("promoVideoText");
  document.querySelector(".headerAlt__langBtn span").innerHTML = i18next.t("promoDisplayLng");
- document.querySelector(".popupThanks__orangeText h4").innerHTML = i18next.t("thanksPopupText");
+ document.querySelector(".popupThanks__Text h4").innerHTML = i18next.t("thanksPopupText");
+ document.querySelector(".popupThanks__closeBtn").innerHTML = i18next.t("thanksPopupBtn");
  document.querySelector(".promoPopup__orangeText h4").innerHTML = i18next.t("promoOrangeText");
  document.querySelector(".popupVideo__close label").innerHTML = i18next.t("promoVideoLabel");
  document.querySelector(".promoPopup__title").innerHTML = i18next.t("promoPopupTitle");

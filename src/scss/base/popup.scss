@@ -412,11 +412,13 @@ body::after {
 	  &__content {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		width: 18.75rem;
+		align-items: center;	
+		width: 21.875rem;
 		height: 18.75rem;
 		border-radius: 1.875rem;
 		@media screen and (min-width: $full) {
+			width: 28.125rem;
+			height: 18.75rem;
 		}
 	  }
 	  &__close {
@@ -438,8 +440,28 @@ body::after {
 			}
 		}
 	  }
-	  &__orangeText {
-		color: #E55738;
+		&__closeBtn {
+			border-radius: 1.25rem;
+			border: 0.0625rem solid var(--orange-color);
+			background: #E55738;
+			user-select: none;
+			color: var(--white-color);
+			font-size: 1.125rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			padding: 1.0625rem 2.3125rem;
+			transition: .25s;
+			position: absolute;
+			top: 70%;
+		}
+		&__closeBtn:hover {
+			background: #EB8069;
+				transition: 0.25s;
+				border-color: #EB8069;
+		}
+	  &__Text {
+		color: var(--text-color-black);
 		text-align: center;
 		font-size: 1.125rem;
 		font-style: normal;
