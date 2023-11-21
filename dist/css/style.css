@@ -220,6 +220,19 @@ h6 {
   font-size: inherit;
 }
 
+.noSelect {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.noSelect:focus {
+  outline: none !important;
+}
+
 .lock body {
   overflow: hidden;
   -ms-touch-action: none;
@@ -3702,7 +3715,6 @@ label {
   margin: 1rem 1.0625rem 0 0;
   background: transparent;
   cursor: pointer;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .promo .headerAlt__langBtn {
@@ -3710,7 +3722,6 @@ label {
   max-width: 8.1875rem;
   -webkit-transition: 0.25s;
   transition: 0.25s;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .promo .headerAlt__langBtn img {
