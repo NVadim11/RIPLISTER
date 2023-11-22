@@ -5089,6 +5089,11 @@ s .popupThanks__content {
   .promo__orangeText {
     font-size: 1.25rem;
     margin-top: 2.5625rem;
+    height: 8rem;
+  }
+
+  .promo__submit {
+    margin-top: 0;
   }
 
   .promo__socialsText {

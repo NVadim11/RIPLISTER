@@ -8109,10 +8109,8 @@
                 menuClose();
             }));
         }
-        function flagCheck() {
-            if (langImg.src === "img/ua.svg") return langImg; else langImg.src = "img/en.svg";
-        }
-        flagCheck();
+        const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
+        if (userLang === "en") langImg.src = "img/en.svg"; else langImg.src = "img/ua.svg";
         langMenuBtn.addEventListener("click", (function(e) {
             e.stopPropagation();
             langMenu.classList.toggle("block");
@@ -8123,20 +8121,6 @@
                 langMenu.classList.remove("block");
                 langMenuBtn.classList.remove("toggleLangBtn");
             }
-        }));
-        langUABtn.addEventListener("click", (function(e) {
-            e.stopPropagation();
-            langMenu.classList.remove("block");
-            langMenuBtn.classList.remove("toggleLangBtn");
-            changeToUA();
-            changeLng("ua");
-        }));
-        langENBtn.addEventListener("click", (function(e) {
-            e.stopPropagation();
-            langMenu.classList.remove("block");
-            langMenuBtn.classList.remove("toggleLangBtn");
-            changeToEN();
-            changeLng("en");
         }));
         function changeToUA() {
             let currentImg = langImg.src;
@@ -8152,6 +8136,20 @@
             langImg.src = newImg;
             localStorage.setItem("userImageChoice", newImg);
         }
+        langUABtn.addEventListener("click", (function(e) {
+            e.stopPropagation();
+            langMenu.classList.remove("block");
+            langMenuBtn.classList.remove("toggleLangBtn");
+            changeToUA();
+            changeLng("ua");
+        }));
+        langENBtn.addEventListener("click", (function(e) {
+            e.stopPropagation();
+            langMenu.classList.remove("block");
+            langMenuBtn.classList.remove("toggleLangBtn");
+            changeToEN();
+            changeLng("en");
+        }));
         document.addEventListener("DOMContentLoaded", (function() {
             let storedChoice = localStorage.getItem("userImageChoice");
             if (storedChoice) document.getElementById("langImg").src = storedChoice;

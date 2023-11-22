@@ -394,6 +394,7 @@
 		@media screen and (min-width:$tablet) {
 			font-size: 1.25rem;
 			margin-top: 2.5625rem;
+			height: 8rem;
 		}
 		@media screen and (min-width:$full) {
 			font-size: 1.5rem;
@@ -408,6 +409,9 @@
 		width: 100%;
 		@media screen and (min-width:$mobile) {
 			margin-top: 1.25rem;
+		}
+		@media screen and (min-width:$tablet) {
+			margin-top: 0;
 		}
 	}
 	&__form {
