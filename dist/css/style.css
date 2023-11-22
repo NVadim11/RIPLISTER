@@ -228,12 +228,6 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-a:focus,
-a:visited,
-a:active {
-  outline: none;
-}
-
 * {
   -webkit-tap-highlight-color: transparent;
 }
@@ -914,7 +908,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   width: 21.875rem;
-  height: 18.75rem;
+  height: 16.75rem;
   border-radius: 1.875rem;
 }
 
@@ -953,8 +947,7 @@ label {
   padding: 1.0625rem 2.3125rem;
   -webkit-transition: 0.25s;
   transition: 0.25s;
-  position: absolute;
-  top: 70%;
+  margin: 2rem 0 0 0;
 }
 
 .popupThanks__closeBtn:hover {
@@ -971,9 +964,7 @@ label {
   font-style: normal;
   font-weight: 600;
   line-height: 130%;
-  margin: 0;
-  position: absolute;
-  top: 50%;
+  margin: 6rem 0 0 0;
 }
 
 .popupVideo {
@@ -4945,8 +4936,6 @@ label {
 
   .popupThanks__Text {
     margin: 0;
-    position: absolute;
-    top: 50%;
   }
 
   .headerAlt {

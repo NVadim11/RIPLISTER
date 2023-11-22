@@ -34,6 +34,7 @@ body::after {
   .popup_show .popup__content {
 	visibility: visible;
 	transform: scale(1);
+	// transform: translateY(0);
   }
   .popup__wrapper {
 	align-items: center;
@@ -414,7 +415,7 @@ body::after {
 		flex-direction: column;
 		align-items: center;	
 		width: 21.875rem;
-		height: 18.75rem;
+		height: 16.75rem;
 		border-radius: 1.875rem;
 		@media screen and (min-width: $full) {
 			width: 28.125rem;
@@ -452,8 +453,7 @@ body::after {
 			line-height: normal;
 			padding: 1.0625rem 2.3125rem;
 			transition: .25s;
-			position: absolute;
-			top: 70%;
+			margin: 2rem 0 0 0;
 		}
 		&__closeBtn:hover {
 			background: #EB8069;
@@ -467,13 +467,9 @@ body::after {
 		font-style: normal;
 		font-weight: 600;
 		line-height: 130%;
-		margin: 0;
-		position: absolute;
-		top: 50%;
+		margin: 6rem 0 0 0;
 		@media screen and (min-width: $full) {
 		  margin: 0;
-		  position: absolute;
-		  top: 50%;
 		}
 	  }
 	}

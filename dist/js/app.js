@@ -693,7 +693,7 @@
                         popupActive: "popup_show",
                         bodyActive: "popup-show"
                     },
-                    focusCatch: false,
+                    focusCatch: true,
                     closeEsc: true,
                     bodyLock: true,
                     hashSettings: {
