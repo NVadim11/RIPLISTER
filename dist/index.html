@@ -37,7 +37,7 @@
 				<div class="promo__descr">
 					<p></p>
 				</div>
-				<div class="promo__link" data-popup="#popup" data-popup-youtube="FzEv5vgd7K4">
+				<div class="promo__link" data-popup="#promoPopup" data-popup-youtube="FzEv5vgd7K4">
 					<a href=""></a>
 				</div>
 				<div class="promo__subscr">
@@ -53,11 +53,6 @@
 							</div>
 							<button type="submit" class="promo__input-btn"></button>
 						</form>
-						<!-- <form class="form" data-dev data-popup-message="#popupThanks" action="#" >
-						<input type="text" data-required="email" name="form[email]" data-validate data-error="Введен не верный E-mail" placeholder="E-mail" class="input">
-						<button type="submit" >Send</button>
-					</form> -->
-
 					</div>
 				</div>
 				<div class="promo__socials">
@@ -150,17 +145,6 @@
 			</div>
 		</div>
 	</section>
-
-	<!-- <div class="promoCover__videoPlayer">
-			<div class="promoCover__overlay" id="youtube-overlay" title="play">
-				<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
-					<circle cx="35.9885" cy="35.7307" r="35.2307" stroke="white" stroke-opacity="0.5" />
-					<path
-						d="M44.3156 34.6737L32.6894 27.4867C32.2627 27.2237 31.6963 27.1841 31.2287 27.3885C30.7573 27.5913 30.4629 28.0033 30.4629 28.4485V42.8177C30.4629 43.2677 30.7573 43.6781 31.2287 43.8809C31.428 43.9665 31.646 44.0092 31.8659 44.0092C32.1528 44.0092 32.4434 43.9316 32.6894 43.7779L44.3156 36.5972C44.6827 36.3675 44.8969 36.0126 44.8969 35.6355C44.8988 35.2521 44.6789 34.8987 44.3156 34.6737Z"
-						fill="white" />
-				</svg>
-			</div>
-		</div> -->
 	<!-- </main> -->
 	<!-- </div> -->
 	<div id="popupVideo" class="popup popupVideo">
@@ -183,24 +167,10 @@
 					</button>
 				</div>
 				<div class="popup__text popupVideo__iframe" data-youtube-place></div>
-
-				<!-- API version -->
-				<!-- <div class="mainBenefits__slide swiper-slide promoPopup__slide">
-				<div class="mainBenefits__overlay promo-overlay" id="youtube-overlay" title="play">
-					<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
-						<circle cx="35.9885" cy="35.7307" r="35.2307" stroke="white" stroke-opacity="0.5" />
-						<path
-							d="M44.3156 34.6737L32.6894 27.4867C32.2627 27.2237 31.6963 27.1841 31.2287 27.3885C30.7573 27.5913 30.4629 28.0033 30.4629 28.4485V42.8177C30.4629 43.2677 30.7573 43.6781 31.2287 43.8809C31.428 43.9665 31.646 44.0092 31.8659 44.0092C32.1528 44.0092 32.4434 43.9316 32.6894 43.7779L44.3156 36.5972C44.6827 36.3675 44.8969 36.0126 44.8969 35.6355C44.8988 35.2521 44.6789 34.8987 44.3156 34.6737Z"
-							fill="white" />
-					</svg>
-				</div>
-				<div class="mainBenefits__player promo-player" id="youtube-player">
-				</div>
-			</div> -->
 			</div>
 		</div>
 	</div>
-	<div id="popup" aria-hidden="true" class="popup promoPopup">
+	<div id="promoPopup" aria-hidden="true" class="popup promoPopup">
 		<div class="popup__wrapper promoPopup__wrapper">
 			<div class="popup__content promoPopup__content" id="promoPopup__content">
 				<button data-close type="button" class="popup__close promoPopup__close">
@@ -216,6 +186,9 @@
 						</defs>
 					</svg>
 				</button>
+
+
+				<!-- <div> -->
 				<div class="promoPopup__icon">
 					<a href="#">
 						<img src="img/orange-logo.svg" alt="">
@@ -224,22 +197,6 @@
 				<h1 class="promoPopup__title"></h1>
 				<div class="popup__text promoPopup__iframe mainBenefits__slide" data-youtube-place>
 				</div>
-				<!-- <div class="mainBenefits__slide swiper-slide promoPopup__slide"> -->
-				<!-- <div class="mainBenefits__overlay promo-overlay" id="youtube-overlay" title="play" data-popup="#popupVideo"
-					data-popup-youtube="FzEv5vgd7K4">
-					<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
-						<circle cx="35.9885" cy="35.7307" r="35.2307" stroke="white" stroke-opacity="0.5" />
-						<path
-							d="M44.3156 34.6737L32.6894 27.4867C32.2627 27.2237 31.6963 27.1841 31.2287 27.3885C30.7573 27.5913 30.4629 28.0033 30.4629 28.4485V42.8177C30.4629 43.2677 30.7573 43.6781 31.2287 43.8809C31.428 43.9665 31.646 44.0092 31.8659 44.0092C32.1528 44.0092 32.4434 43.9316 32.6894 43.7779L44.3156 36.5972C44.6827 36.3675 44.8969 36.0126 44.8969 35.6355C44.8988 35.2521 44.6789 34.8987 44.3156 34.6737Z"
-							fill="white" />
-					</svg>
-				</div> -->
-				<!-- <div class="popup__text" data-youtube-place></div> -->
-				<!-- <div class="mainBenefits__player promo-player" id="youtube-player">
-				</div> -->
-				<!-- <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe> -->
-				<!-- <picture><source srcset="img/mainSlide1.webp" type="image/webp"><img src="img/mainSlide1.png" alt=""></picture> -->
-				<!-- </div> -->
 				<div class="promoPopup__about">
 					<p class="promoPopup__about1"></p>
 					<p class="promoPopup__about2"></p>
@@ -284,12 +241,15 @@
 
 						</a>
 						<!-- <a href="#" class="promo__socialIcon twitter-icon">
-						<svg xmlns="http://www.w3.org/2000/svg" width="31" height="26" viewBox="0 0 31 26" fill="none">
-							<path d="M10.0932 25.8504C21.3283 25.8504 27.4723 16.2449 27.4723 7.91529C27.4723 7.64249 27.4669 7.37093 27.455 7.1005C28.6476 6.21076 29.6842 5.10039 30.5018 3.83639C29.4074 4.33849 28.2296 4.67644 26.9941 4.82882C28.2552 4.04847 29.2234 2.81396 29.6801 1.34233C28.5 2.06433 27.193 2.58911 25.8015 2.87242C24.6869 1.64719 23.1 0.880859 21.343 0.880859C17.9698 0.880859 15.2345 3.7038 15.2345 7.18349C15.2345 7.67816 15.2882 8.15923 15.393 8.6208C10.3164 8.35718 5.8149 5.84888 2.80224 2.03484C2.27766 2.96634 1.97515 4.04847 1.97515 5.20307C1.97515 7.39 3.0535 9.32063 4.6933 10.4501C3.69118 10.4181 2.7498 10.1342 1.927 9.66169C1.9261 9.68818 1.9261 9.71396 1.9261 9.74221C1.9261 12.795 4.03155 15.3438 6.82642 15.9213C6.31322 16.0657 5.77314 16.1431 5.21579 16.1431C4.82287 16.1431 4.43994 16.1032 4.06781 16.0295C4.84545 18.5341 7.10035 20.3566 9.77374 20.4076C7.68318 22.0986 5.04965 23.1058 2.18745 23.1058C1.69503 23.1058 1.2086 23.0768 0.730469 23.0185C3.43373 24.8066 6.6436 25.85 10.0935 25.85" fill="#E55738"/>
-						</svg>
-					</a> -->
+							<svg xmlns="http://www.w3.org/2000/svg" width="31" height="26" viewBox="0 0 31 26" fill="none">
+								<path d="M10.0932 25.8504C21.3283 25.8504 27.4723 16.2449 27.4723 7.91529C27.4723 7.64249 27.4669 7.37093 27.455 7.1005C28.6476 6.21076 29.6842 5.10039 30.5018 3.83639C29.4074 4.33849 28.2296 4.67644 26.9941 4.82882C28.2552 4.04847 29.2234 2.81396 29.6801 1.34233C28.5 2.06433 27.193 2.58911 25.8015 2.87242C24.6869 1.64719 23.1 0.880859 21.343 0.880859C17.9698 0.880859 15.2345 3.7038 15.2345 7.18349C15.2345 7.67816 15.2882 8.15923 15.393 8.6208C10.3164 8.35718 5.8149 5.84888 2.80224 2.03484C2.27766 2.96634 1.97515 4.04847 1.97515 5.20307C1.97515 7.39 3.0535 9.32063 4.6933 10.4501C3.69118 10.4181 2.7498 10.1342 1.927 9.66169C1.9261 9.68818 1.9261 9.71396 1.9261 9.74221C1.9261 12.795 4.03155 15.3438 6.82642 15.9213C6.31322 16.0657 5.77314 16.1431 5.21579 16.1431C4.82287 16.1431 4.43994 16.1032 4.06781 16.0295C4.84545 18.5341 7.10035 20.3566 9.77374 20.4076C7.68318 22.0986 5.04965 23.1058 2.18745 23.1058C1.69503 23.1058 1.2086 23.0768 0.730469 23.0185C3.43373 24.8066 6.6436 25.85 10.0935 25.85" fill="#E55738"/>
+							</svg>
+						</a> -->
 					</div>
 				</div>
+				<!-- </div> -->
+
+
 			</div>
 		</div>
 	</div>
@@ -318,58 +278,8 @@
 	</div>
 	<script src="js/app.min.js"></script>
 
-	<!-- API version
-<script>
-  // 2. This code loads the IFrame Player API code asynchronously.
-  var tag = document.createElement('script')
 
-  tag.src = "https://www.youtube.com/iframe_api"
-  var firstScriptTag = document.getElementsByTagName('script')[0]
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
-  // 3. This function creates an <iframe> (and YouTube player)
-  //    after the API code downloads.
-  var player
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('youtube-player', {
-
-      videoId: 'FzEv5vgd7K4',
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-      }
-    })
-  }
-
-  // 4. The API will call this function when the video player is ready.
-  function onPlayerReady(event) {
-
-    let theOverlay = document.getElementById("youtube-overlay")
-    theOverlay.addEventListener("click", function () {
-      this.style.display = "none"
-      event.target.playVideo()
-    })
-  }
-
-  // 5. The API calls this function when the player's state changes.
-  //    The function indicates that when playing a video (state=1),
-  //    the player should play for six seconds and then stop.
-  var done = false
-  function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-      setTimeout(stopVideo, 6000)
-      done = true
-    }
-  }
-  function stopVideo() {
-    player.stopVideo()
-  }
-  let stopVid = document.getElementById("popup__close")
-  stopVid.addEventListener("click", function stopVideo() {
-    player.stopVideo()
-  });
-
-</script> -->
 </body>
 
 </html>
