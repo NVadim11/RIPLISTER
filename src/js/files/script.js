@@ -40,15 +40,15 @@ if (menuCloseBtn) {
         menuClose()       
     });
 }
-
-// Language detection
-const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
-
-if (userLang === "en") {
-    langImg.src = "img/en.svg";
-} else {
-    langImg.src = "img/ua.svg";
-}
+// Language img change
+function flagCheck() {
+    if (langImg.src === "img/ua.svg") {
+        return langImg
+    } else {
+        langImg.src = "img/en.svg"
+    }
+}   
+flagCheck();
 
 // Promo language menu toggle
 langMenuBtn.addEventListener("click", function(e){ 
@@ -64,27 +64,7 @@ langMenuBtn.addEventListener("click", function(e){
     } 
 });
 
-// Language img toggle
-function changeToUA() {    
-    let currentImg = langImg.src;
-    let uaFlag = "img/ua.svg";
- 
-    let newImg = currentImg = uaFlag;
- 
-    langImg.src = newImg;
-    localStorage.setItem('userImageChoice', newImg);
- }
- function changeToEN() {    
-     let currentImg = langImg.src;
-     let enFlag = "img/en.svg";
-  
-     let newImg = currentImg = enFlag
-  
-     langImg.src = newImg;
-     localStorage.setItem('userImageChoice', newImg);
-  }
-
- // Promo language switcher logic
+// Promo language switcher logic
 langUABtn.addEventListener("click", function(e){
     e.stopPropagation();
     langMenu.classList.remove('block'); 
@@ -100,6 +80,26 @@ langENBtn.addEventListener("click", function(e){
     changeToEN();
     changeLng("en");
 })
+
+// Language img toggle
+function changeToUA() {    
+   let currentImg = langImg.src;
+   let uaFlag = "img/ua.svg";
+
+   let newImg = currentImg = uaFlag;
+
+   langImg.src = newImg;
+   localStorage.setItem('userImageChoice', newImg);
+}
+function changeToEN() {    
+    let currentImg = langImg.src;
+    let enFlag = "img/en.svg";
+ 
+    let newImg = currentImg = enFlag
+ 
+    langImg.src = newImg;
+    localStorage.setItem('userImageChoice', newImg);
+ }
 
 document.addEventListener('DOMContentLoaded', function() {
     let storedChoice = localStorage.getItem('userImageChoice');

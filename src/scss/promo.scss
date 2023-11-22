@@ -559,3 +559,17 @@
 		}
 	}
 }
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+	border-radius: 1.875rem;
+	background: #FDE6DF;
+} 
+/* Handle */
+::-webkit-scrollbar-thumb {
+	border-radius: 1.875rem;
+	background: #EB8069;
+}
