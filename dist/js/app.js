@@ -7055,7 +7055,7 @@
                         promoDisplayLng: "УКР",
                         thanksPopupText: "Дякуємо вам за підписку!",
                         thanksPopupBtn: "Продовжити",
-                        promoVideoLabel: "ЗАКРИТИ",
+                        promoVideoLabel: "Закрити",
                         promoPopupTitle: "Спадок пам'яті, що об'єднує нас.",
                         promoPopup__about1: "Ласкаво просимо до нашого проєкту! Ми - команда ентузіастів, які працюють над створенням унікального вебсайту, який надасть можливість легко знайти місце поховання людини, що вас цікавить, а також допомогти відшукати ваші коріння та родинні зв'язки.",
                         promoPopup__about2: "Ми знаємо, як важливо мати зручну та надійну платформу, яка допоможе знайти поховання за ім'ям та прізвищем. Наша команда працює над створенням потужної бази даних, що охоплюватиме поховання з різних країн та регіонів, щоб забезпечити найактуальнішу інформацію.",
@@ -7079,7 +7079,7 @@
                         promoDisplayLng: "ENG",
                         thanksPopupText: "Thank you for subscribing!",
                         thanksPopupBtn: "Continue",
-                        promoVideoLabel: "CLOSE",
+                        promoVideoLabel: "Close",
                         promoPopupTitle: "Legacy of memory that unites us.",
                         promoPopup__about1: "Welcome to our project! We are a team of enthusiasts working on creating a unique website that will allow you to easily find the burial place of a person you're interested in and help you discover your roots and family connections.",
                         promoPopup__about2: "We understand the importance of having a convenient and reliable platform that can help locate burials by name and surname. Our team is working on building a powerful database that will cover burials from different countries and regions to provide the most up-to-date information.",
@@ -7158,10 +7158,8 @@
                 menuClose();
             }));
         }
-        function flagCheck() {
-            if (langImg.src === "img/ua.svg") return langImg; else langImg.src = "img/en.svg";
-        }
-        flagCheck();
+        const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
+        if (userLang === "en") langImg.src = "img/en.svg"; else langImg.src = "img/ua.svg";
         langMenuBtn.addEventListener("click", (function(e) {
             e.stopPropagation();
             langMenu.classList.toggle("block");
@@ -7172,20 +7170,6 @@
                 langMenu.classList.remove("block");
                 langMenuBtn.classList.remove("toggleLangBtn");
             }
-        }));
-        langUABtn.addEventListener("click", (function(e) {
-            e.stopPropagation();
-            langMenu.classList.remove("block");
-            langMenuBtn.classList.remove("toggleLangBtn");
-            changeToUA();
-            changeLng("ua");
-        }));
-        langENBtn.addEventListener("click", (function(e) {
-            e.stopPropagation();
-            langMenu.classList.remove("block");
-            langMenuBtn.classList.remove("toggleLangBtn");
-            changeToEN();
-            changeLng("en");
         }));
         function changeToUA() {
             let currentImg = langImg.src;
@@ -7201,6 +7185,20 @@
             langImg.src = newImg;
             localStorage.setItem("userImageChoice", newImg);
         }
+        langUABtn.addEventListener("click", (function(e) {
+            e.stopPropagation();
+            langMenu.classList.remove("block");
+            langMenuBtn.classList.remove("toggleLangBtn");
+            changeToUA();
+            changeLng("ua");
+        }));
+        langENBtn.addEventListener("click", (function(e) {
+            e.stopPropagation();
+            langMenu.classList.remove("block");
+            langMenuBtn.classList.remove("toggleLangBtn");
+            changeToEN();
+            changeLng("en");
+        }));
         document.addEventListener("DOMContentLoaded", (function() {
             let storedChoice = localStorage.getItem("userImageChoice");
             if (storedChoice) document.getElementById("langImg").src = storedChoice;

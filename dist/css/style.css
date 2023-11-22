@@ -984,6 +984,9 @@ label {
   position: absolute;
   right: 0;
   top: -2.8125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .popupVideo__close svg {
@@ -1002,7 +1005,6 @@ label {
 .popupVideo__close label {
   margin-right: 0.625rem;
   position: relative;
-  bottom: 0.9375rem;
   color: var(--white-color);
   font-size: 1rem;
   font-style: normal;
