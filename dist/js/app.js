@@ -8002,7 +8002,6 @@
                         socialsText: "Також додавайся до наших сторінок у соцмережах",
                         whiteTitleFirst: "Спадок пам'яті,",
                         whiteTitleSecond: "що об'єднує нас.",
-                        promoVideoText: "Подивитись відео\tпро RIPlister",
                         promoDisplayLng: "УКР",
                         thanksPopupText: "Дякуємо вам за підписку!",
                         thanksPopupBtn: "Продовжити",
@@ -8026,7 +8025,6 @@
                         socialsText: "Also, join our social media pages for updates.",
                         whiteTitleFirst: "Legacy of memory",
                         whiteTitleSecond: "that unites us.",
-                        promoVideoText: "Watch a video about RIPlister",
                         promoDisplayLng: "ENG",
                         thanksPopupText: "Thank you for subscribing!",
                         thanksPopupBtn: "Continue",
@@ -8084,6 +8082,7 @@
         const langImg = document.getElementById("langImg");
         const promoUaVid = document.getElementById("promo__uaVideo");
         const promoEnVid = document.getElementById("promo__enVideo");
+        const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
         document.querySelector(".searchTypeBtn_human");
         document.querySelector(".searchTypeBtn_cemetery");
         document.querySelector(".searchType_human");
@@ -8110,15 +8109,18 @@
                 menuClose();
             }));
         }
-        const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
-        if (userLang === "en") langImg.src = "img/en.svg"; else langImg.src = "img/ua.svg";
-        if (userLang === "en") {
-            promoEnVid.style.display = "flex";
-            promoUaVid.style.display = "none";
-        } else {
-            promoUaVid.style.display = "flex";
-            promoEnVid.style.display = "none";
+        function languageDetection() {
+            if (userLang === "en") langImg.src = "img/en.svg"; else langImg.src = "img/ua.svg";
+            if (localStorage.getItem("i18nextLng") === "en") {
+                promoEnVid.style.display = "flex";
+                promoUaVid.style.display = "none";
+            }
+            if (localStorage.getItem("i18nextLng") === "ua") {
+                promoEnVid.style.display = "none";
+                promoUaVid.style.display = "flex";
+            }
         }
+        languageDetection();
         langMenuBtn.addEventListener("click", (function(e) {
             e.stopPropagation();
             langMenu.classList.toggle("block");
@@ -8165,6 +8167,7 @@
         document.addEventListener("DOMContentLoaded", (function() {
             let storedChoice = localStorage.getItem("userImageChoice");
             if (storedChoice) document.getElementById("langImg").src = storedChoice;
+            console.log(localStorage);
         }));
         window["FLS"] = true;
         isWebp();

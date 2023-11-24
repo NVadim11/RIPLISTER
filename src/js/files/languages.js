@@ -17,7 +17,6 @@ i18next
 				"socialsText": "Також додавайся до наших сторінок у соцмережах",
 				"whiteTitleFirst": "Спадок пам'яті,",
 				"whiteTitleSecond": "що об'єднує нас.",
-				"promoVideoText": "Подивитись відео	про RIPlister",
 				"promoDisplayLng": "УКР",
         "thanksPopupText": "Дякуємо вам за підписку!",
         "thanksPopupBtn": "Продовжити",
@@ -41,7 +40,6 @@ i18next
 				"socialsText": "Also, join our social media pages for updates.",
 				"whiteTitleFirst": "Legacy of memory",
 				"whiteTitleSecond": "that unites us.",
-				"promoVideoText": "Watch a video about RIPlister",
 				"promoDisplayLng": "ENG",
         "thanksPopupText": "Thank you for subscribing!",
         "thanksPopupBtn": "Continue",
@@ -72,7 +70,6 @@ function updateContent() {
  document.querySelector(".promoPopup__socialsText h4").innerHTML = i18next.t("socialsText");
  document.querySelector(".promo__whiteTitleFirst").innerHTML = i18next.t("whiteTitleFirst");
  document.querySelector(".promo__whiteTitleSecond").innerHTML = i18next.t("whiteTitleSecond");
-//  document.querySelector(".promo__video-text").innerHTML = i18next.t("promoVideoText");
  document.querySelector(".headerAlt__langBtn span").innerHTML = i18next.t("promoDisplayLng");
  document.querySelector(".popupThanks__Text h4").innerHTML = i18next.t("thanksPopupText");
  document.querySelector(".popupThanks__closeBtn").innerHTML = i18next.t("thanksPopupBtn");

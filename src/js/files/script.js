@@ -13,6 +13,7 @@ const langENBtn = document.querySelector('.enBtn');
 const langImg = document.getElementById("langImg");
 const promoUaVid = document.getElementById("promo__uaVideo");
 const promoEnVid = document.getElementById("promo__enVideo");
+const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
 const radioBtnHumanText = document.querySelector(".searchType_human");
@@ -44,21 +45,24 @@ if (menuCloseBtn) {
 }
 
 // Language detection
-const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
-
-if (userLang === "en") {
-    langImg.src = "img/en.svg";
-} else {
-    langImg.src = "img/ua.svg";
+function languageDetection() {    
+    if (userLang === "en") {
+        langImg.src = "img/en.svg";
+    } else {
+        langImg.src = "img/ua.svg";
+    }
+    if (localStorage.getItem('i18nextLng') === "en") {
+        promoEnVid.style.display = "flex";
+        promoUaVid.style.display = "none";
+        
+    }
+    if (localStorage.getItem('i18nextLng') === "ua") {
+        promoEnVid.style.display = "none";
+        promoUaVid.style.display = "flex";       
+    }
 }
+languageDetection();
 
-if (userLang === "en") {
-    promoEnVid.style.display = "flex";
-    promoUaVid.style.display = "none";
-} else {
-    promoUaVid.style.display = "flex";
-    promoEnVid.style.display = "none";
-}
 
 // Promo language menu toggle
 langMenuBtn.addEventListener("click", function(e){ 
@@ -120,4 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (storedChoice) {
         document.getElementById('langImg').src = storedChoice;
     }
+
+    console.log(localStorage)
 });
