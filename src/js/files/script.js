@@ -43,7 +43,6 @@ if (menuCloseBtn) {
         menuClose()       
     });
 }
-
 // Language detection
 function languageDetection() {    
     if (userLang === "en") {
@@ -51,18 +50,17 @@ function languageDetection() {
     } else {
         langImg.src = "img/ua.svg";
     }
-    if (localStorage.getItem('i18nextLng') === "en") {
+    if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
         promoEnVid.style.display = "flex";
         promoUaVid.style.display = "none";
         
     }
-    if (localStorage.getItem('i18nextLng') === "ua") {
+    if (localStorage.getItem('i18nextLng').slice(0, 2) === "ua") {
         promoEnVid.style.display = "none";
         promoUaVid.style.display = "flex";       
     }
 }
 languageDetection();
-
 
 // Promo language menu toggle
 langMenuBtn.addEventListener("click", function(e){ 
@@ -124,6 +122,5 @@ document.addEventListener('DOMContentLoaded', function() {
     if (storedChoice) {
         document.getElementById('langImg').src = storedChoice;
     }
-
     console.log(localStorage)
 });

@@ -8111,11 +8111,11 @@
         }
         function languageDetection() {
             if (userLang === "en") langImg.src = "img/en.svg"; else langImg.src = "img/ua.svg";
-            if (localStorage.getItem("i18nextLng") === "en") {
+            if (localStorage.getItem("i18nextLng").slice(0, 2) === "en") {
                 promoEnVid.style.display = "flex";
                 promoUaVid.style.display = "none";
             }
-            if (localStorage.getItem("i18nextLng") === "ua") {
+            if (localStorage.getItem("i18nextLng").slice(0, 2) === "ua") {
                 promoEnVid.style.display = "none";
                 promoUaVid.style.display = "flex";
             }
