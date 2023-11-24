@@ -501,14 +501,10 @@ body::after {
 	  }
 	  &__close {
 		transition: .25s;
-		position: absolute;
-		right: 0;
-		top: -2.8125rem;
+		margin-bottom: 1.6875rem;
 		display: flex;
-		@media screen and (min-width: $tablet) {
-			right: 0;
-			top: -3.4375rem;
-		}
+		align-items: center;
+		justify-content: flex-end;
 		svg {
 			width: 1.875rem;
 			rect {
