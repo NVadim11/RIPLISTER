@@ -8146,6 +8146,8 @@
             langImg.src = newImg;
             promoUaVid.style.display = "flex";
             promoEnVid.style.display = "none";
+            promoUaLink.style.display = "flex";
+            promoEnLink.style.display = "none";
             localStorage.setItem("userImageChoice", newImg);
         }
         function changeToEN() {
@@ -8155,6 +8157,8 @@
             langImg.src = newImg;
             promoEnVid.style.display = "flex";
             promoUaVid.style.display = "none";
+            promoEnLink.style.display = "flex";
+            promoUaLink.style.display = "none";
             localStorage.setItem("userImageChoice", newImg);
         }
         langUABtn.addEventListener("click", (function(e) {
