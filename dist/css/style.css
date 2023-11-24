@@ -664,8 +664,8 @@ label {
 
 .promoPopup__close {
   position: absolute;
-  right: 1.5625rem;
-  top: 0.9375rem;
+  right: 35px;
+  top: 15px;
 }
 
 .promoPopup__close svg rect {

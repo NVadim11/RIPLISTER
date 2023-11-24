@@ -13,7 +13,8 @@ const langENBtn = document.querySelector('.enBtn');
 const langImg = document.getElementById("langImg");
 const promoUaVid = document.getElementById("promo__uaVideo");
 const promoEnVid = document.getElementById("promo__enVideo");
-const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
+const promoUaLink = document.getElementById("promo__uaLink");
+const promoEnLink = document.getElementById("promo__enLink");
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
 const radioBtnHumanText = document.querySelector(".searchType_human");
@@ -45,6 +46,7 @@ if (menuCloseBtn) {
 }
 // Language detection
 function languageDetection() {    
+    const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
     if (userLang === "en") {
         langImg.src = "img/en.svg";
     } else {
@@ -52,12 +54,19 @@ function languageDetection() {
     }
     if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
         promoEnVid.style.display = "flex";
-        promoUaVid.style.display = "none";
-        
+        promoUaVid.style.display = "none";         
     }
     if (localStorage.getItem('i18nextLng').slice(0, 2) === "ua") {
         promoEnVid.style.display = "none";
-        promoUaVid.style.display = "flex";       
+        promoUaVid.style.display = "flex";        
+    }
+    if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
+        promoEnLink.style.display = "flex";
+        promoUaLink.style.display = "none";           
+    }
+    if (localStorage.getItem('i18nextLng').slice(0, 2) === "ua") {
+        promoUaLink.style.display = "flex";    
+        promoEnLink.style.display = "none";        
     }
 }
 languageDetection();

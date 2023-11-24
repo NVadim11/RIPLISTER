@@ -7996,7 +7996,6 @@
                     translation: {
                         promoTitle: "Спадок пам'яті, що об'єднує нас.",
                         promoDescr: "RIPlister народився з бажанням не лише для полегшення пошуку місць поховання та підвищення рівня догляду за могилами, але й з метою створення простору для збереження спогадів і формування родинного архіву. Цей проект спрямований на підтримку пам'яті про близьких людей та важливі моменти, створення місця, де можна зберігати найдорожчі історії та спогади.",
-                        promoLink: "Детальніше про проект",
                         promoOrangeText: "Бажаєте бути серед перших, хто долучиться до цієї ініціативи? Підпишіться, щоб мати можливість скористатися нею з моменту запуску.",
                         promoInputBtn: "Підписатися",
                         socialsText: "Також додавайся до наших сторінок у соцмережах",
@@ -8019,7 +8018,6 @@
                     translation: {
                         promoTitle: "Legacy of memory that unites us.",
                         promoDescr: "RIPlister was born not only to facilitate the search for burial places and enhance the care levels for graves but also with the purpose of creating a space for preserving memories and forming a family archive. This project is aimed at supporting the memory of loved ones and significant moments, establishing a place to store the most cherished stories and memories.",
-                        promoLink: "More about the project",
                         promoOrangeText: "Would you like to be among the first to join this initiative? Subscribe now to ensure early access upon its launch.",
                         promoInputBtn: "Subscribe",
                         socialsText: "Also, join our social media pages for updates.",
@@ -8045,7 +8043,6 @@
         function updateContent() {
             document.querySelector(".promo__headerTitle").innerHTML = instance.t("promoTitle");
             document.querySelector(".promo__descr").innerHTML = instance.t("promoDescr");
-            document.querySelector(".promo__link a").innerHTML = instance.t("promoLink");
             document.querySelector(".promo__orangeText").innerHTML = instance.t("promoOrangeText");
             document.querySelector(".promo__input-btn").innerHTML = instance.t("promoInputBtn");
             document.querySelector(".promoPopup__input-btn").innerHTML = instance.t("promoInputBtn");
@@ -8082,7 +8079,8 @@
         const langImg = document.getElementById("langImg");
         const promoUaVid = document.getElementById("promo__uaVideo");
         const promoEnVid = document.getElementById("promo__enVideo");
-        const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
+        const promoUaLink = document.getElementById("promo__uaLink");
+        const promoEnLink = document.getElementById("promo__enLink");
         document.querySelector(".searchTypeBtn_human");
         document.querySelector(".searchTypeBtn_cemetery");
         document.querySelector(".searchType_human");
@@ -8110,6 +8108,7 @@
             }));
         }
         function languageDetection() {
+            const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
             if (userLang === "en") langImg.src = "img/en.svg"; else langImg.src = "img/ua.svg";
             if (localStorage.getItem("i18nextLng").slice(0, 2) === "en") {
                 promoEnVid.style.display = "flex";
@@ -8118,6 +8117,14 @@
             if (localStorage.getItem("i18nextLng").slice(0, 2) === "ua") {
                 promoEnVid.style.display = "none";
                 promoUaVid.style.display = "flex";
+            }
+            if (localStorage.getItem("i18nextLng").slice(0, 2) === "en") {
+                promoEnLink.style.display = "flex";
+                promoUaLink.style.display = "none";
+            }
+            if (localStorage.getItem("i18nextLng").slice(0, 2) === "ua") {
+                promoUaLink.style.display = "flex";
+                promoEnLink.style.display = "none";
             }
         }
         languageDetection();

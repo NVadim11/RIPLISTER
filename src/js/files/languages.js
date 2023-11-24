@@ -11,7 +11,6 @@ i18next
       translation: {
         "promoTitle": "Спадок пам'яті, що об'єднує нас.",
 				"promoDescr": "RIPlister народився з бажанням не лише для полегшення пошуку місць поховання та підвищення рівня догляду за могилами, але й з метою створення простору для збереження спогадів і формування родинного архіву. Цей проект спрямований на підтримку пам'яті про близьких людей та важливі моменти, створення місця, де можна зберігати найдорожчі історії та спогади.",
-				"promoLink": "Детальніше про проект",
 				"promoOrangeText": "Бажаєте бути серед перших, хто долучиться до цієї ініціативи? Підпишіться, щоб мати можливість скористатися нею з моменту запуску.",
 				"promoInputBtn": "Підписатися",
 				"socialsText": "Також додавайся до наших сторінок у соцмережах",
@@ -34,7 +33,6 @@ i18next
       translation: {
 				"promoTitle": "Legacy of memory that unites us.",
 				"promoDescr": "RIPlister was born not only to facilitate the search for burial places and enhance the care levels for graves but also with the purpose of creating a space for preserving memories and forming a family archive. This project is aimed at supporting the memory of loved ones and significant moments, establishing a place to store the most cherished stories and memories.",
-				"promoLink": "More about the project",
 				"promoOrangeText": "Would you like to be among the first to join this initiative? Subscribe now to ensure early access upon its launch.",
 				"promoInputBtn": "Subscribe",
 				"socialsText": "Also, join our social media pages for updates.",
@@ -62,7 +60,6 @@ i18next
 function updateContent() {
  document.querySelector(".promo__headerTitle").innerHTML = i18next.t("promoTitle");
  document.querySelector(".promo__descr").innerHTML = i18next.t("promoDescr");
- document.querySelector(".promo__link a").innerHTML = i18next.t("promoLink");
  document.querySelector(".promo__orangeText").innerHTML = i18next.t("promoOrangeText");
  document.querySelector(".promo__input-btn").innerHTML = i18next.t("promoInputBtn");
  document.querySelector(".promoPopup__input-btn").innerHTML = i18next.t("promoInputBtn");
@@ -76,12 +73,12 @@ function updateContent() {
  document.querySelector(".promoPopup__orangeText h4").innerHTML = i18next.t("promoOrangeText");
  document.querySelector(".popupVideo__close label").innerHTML = i18next.t("promoVideoLabel");
  document.querySelector(".promoPopup__title").innerHTML = i18next.t("promoPopupTitle");
-document.querySelector(".promoPopup__about1").innerHTML = i18next.t("promoPopup__about1");
-document.querySelector(".promoPopup__about2").innerHTML = i18next.t("promoPopup__about2");
-document.querySelector(".promoPopup__about3").innerHTML = i18next.t("promoPopup__about3");
-document.querySelector(".promoPopup__about4").innerHTML = i18next.t("promoPopup__about4");
-document.querySelector(".promoPopup__about5").innerHTML = i18next.t("promoPopup__about5");
-document.querySelector(".promoPopup__about6").innerHTML = i18next.t("promoPopup__about6");
+ document.querySelector(".promoPopup__about1").innerHTML = i18next.t("promoPopup__about1");
+ document.querySelector(".promoPopup__about2").innerHTML = i18next.t("promoPopup__about2");
+ document.querySelector(".promoPopup__about3").innerHTML = i18next.t("promoPopup__about3");
+ document.querySelector(".promoPopup__about4").innerHTML = i18next.t("promoPopup__about4");
+ document.querySelector(".promoPopup__about5").innerHTML = i18next.t("promoPopup__about5");
+ document.querySelector(".promoPopup__about6").innerHTML = i18next.t("promoPopup__about6");
 }
 export default function changeLng(lng) {
   i18next.changeLanguage(lng);
