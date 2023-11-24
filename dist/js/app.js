@@ -8055,7 +8055,6 @@
             document.querySelector(".promoPopup__socialsText h4").innerHTML = instance.t("socialsText");
             document.querySelector(".promo__whiteTitleFirst").innerHTML = instance.t("whiteTitleFirst");
             document.querySelector(".promo__whiteTitleSecond").innerHTML = instance.t("whiteTitleSecond");
-            document.querySelector(".promo__video-text").innerHTML = instance.t("promoVideoText");
             document.querySelector(".headerAlt__langBtn span").innerHTML = instance.t("promoDisplayLng");
             document.querySelector(".popupThanks__Text h4").innerHTML = instance.t("thanksPopupText");
             document.querySelector(".popupThanks__closeBtn").innerHTML = instance.t("thanksPopupBtn");
@@ -8083,6 +8082,8 @@
         const langUABtn = document.querySelector(".uaBtn");
         const langENBtn = document.querySelector(".enBtn");
         const langImg = document.getElementById("langImg");
+        const promoUaVid = document.getElementById("promo__uaVideo");
+        const promoEnVid = document.getElementById("promo__enVideo");
         document.querySelector(".searchTypeBtn_human");
         document.querySelector(".searchTypeBtn_cemetery");
         document.querySelector(".searchType_human");
@@ -8111,6 +8112,13 @@
         }
         const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
         if (userLang === "en") langImg.src = "img/en.svg"; else langImg.src = "img/ua.svg";
+        if (userLang === "en") {
+            promoEnVid.style.display = "flex";
+            promoUaVid.style.display = "none";
+        } else {
+            promoUaVid.style.display = "flex";
+            promoEnVid.style.display = "none";
+        }
         langMenuBtn.addEventListener("click", (function(e) {
             e.stopPropagation();
             langMenu.classList.toggle("block");
@@ -8127,6 +8135,8 @@
             let uaFlag = "img/ua.svg";
             let newImg = currentImg = uaFlag;
             langImg.src = newImg;
+            promoUaVid.style.display = "flex";
+            promoEnVid.style.display = "none";
             localStorage.setItem("userImageChoice", newImg);
         }
         function changeToEN() {
@@ -8134,6 +8144,8 @@
             let enFlag = "img/en.svg";
             let newImg = currentImg = enFlag;
             langImg.src = newImg;
+            promoEnVid.style.display = "flex";
+            promoUaVid.style.display = "none";
             localStorage.setItem("userImageChoice", newImg);
         }
         langUABtn.addEventListener("click", (function(e) {

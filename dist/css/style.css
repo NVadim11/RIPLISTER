@@ -3819,9 +3819,7 @@ s .popupThanks__content {
 }
 
 .promo__video {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -5040,9 +5038,6 @@ s .popupThanks__content {
         -ms-flex-align: center;
             align-items: center;
     margin: 0 1.6875rem 2.125rem 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -ms-flex-item-align: end;
         -ms-grid-row-align: end;
         align-self: end;

@@ -11,6 +11,8 @@ const langMenu = document.querySelector('.promo__langMenu');
 const langUABtn = document.querySelector('.uaBtn');
 const langENBtn = document.querySelector('.enBtn');
 const langImg = document.getElementById("langImg");
+const promoUaVid = document.getElementById("promo__uaVideo");
+const promoEnVid = document.getElementById("promo__enVideo");
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
 const radioBtnHumanText = document.querySelector(".searchType_human");
@@ -50,6 +52,14 @@ if (userLang === "en") {
     langImg.src = "img/ua.svg";
 }
 
+if (userLang === "en") {
+    promoEnVid.style.display = "flex";
+    promoUaVid.style.display = "none";
+} else {
+    promoUaVid.style.display = "flex";
+    promoEnVid.style.display = "none";
+}
+
 // Promo language menu toggle
 langMenuBtn.addEventListener("click", function(e){ 
     e.stopPropagation(); 
@@ -72,6 +82,8 @@ function changeToUA() {
     let newImg = currentImg = uaFlag;
  
     langImg.src = newImg;
+    promoUaVid.style.display = "flex";
+    promoEnVid.style.display = "none";
     localStorage.setItem('userImageChoice', newImg);
  }
  function changeToEN() {    
@@ -81,6 +93,8 @@ function changeToUA() {
      let newImg = currentImg = enFlag
   
      langImg.src = newImg;
+     promoEnVid.style.display = "flex";
+     promoUaVid.style.display = "none";
      localStorage.setItem('userImageChoice', newImg);
   }
 

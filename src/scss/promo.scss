@@ -176,7 +176,7 @@
 		}	
 	}
 	&__video {
-		display: flex;
+		display: none;
 		flex-direction: column;
 		user-select: none;
 		max-width: fit-content;
@@ -189,8 +189,7 @@
 		@media screen and (min-width:$tablet) {
 			flex-direction: row;
 			align-items: center;
-			margin: 0 1.6875rem 2.125rem 0;
-			display: flex;
+			margin: 0 1.6875rem 2.125rem 0;		
 			align-self: end;
 		}
 		@media screen and (min-width:$full) {
