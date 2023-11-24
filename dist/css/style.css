@@ -788,7 +788,7 @@ label {
   text-align: center;
   border-radius: 1.25rem;
   border: 0.0625rem solid var(--orange-color);
-  padding: 1.25rem 2.8125rem 20px 2.8125rem;
+  padding: 1.25rem 1.8125rem 1.25rem 1.125rem;
   width: 100%;
   outline: none;
 }
@@ -4894,6 +4894,10 @@ s .popupThanks__content {
     font-size: 1rem;
   }
 
+  .promoPopup__input-field input {
+    padding: 1.25rem 11.8125rem 1.25rem 1.125rem;
+  }
+
   .popupVideo {
     padding: 96px 4.75rem 4rem 4.75rem;
   }
@@ -5197,10 +5201,6 @@ s .popupThanks__content {
 
   .promoPopup__input-field {
     margin: 0 6.375rem;
-  }
-
-  .promoPopup__input-field input {
-    text-align: start;
   }
 
   .promoPopup__socials {

@@ -300,14 +300,15 @@ body::after {
 		  margin: 0 6.375rem;
 		}
 		input {
-		  text-align: center;
+			text-align: center;
 		  border-radius: 1.25rem;
 		  border: 0.0625rem solid var(--orange-color);
-		  padding: 1.25rem 2.8125rem 20px 2.8125rem;
+		  padding: 1.25rem 1.8125rem 1.25rem 1.125rem;
 		  width: 100%;
-		  outline: none;
-		  @media screen and (min-width:$full) {
-			text-align: start;
+		  outline: none;	
+		  @media screen and (min-width:$tablet) {
+
+			  padding: 1.25rem 11.8125rem 1.25rem 1.125rem;
 		  }
 		}
 		input[type=text] {        
