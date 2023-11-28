@@ -49,8 +49,16 @@ function languageDetection() {
     const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
     if (userLang === "en") {
         langImg.src = "img/en.svg";
+        promoEnVid.style.display = "flex";
+        promoUaVid.style.display = "none"; 
+        promoEnLink.style.display = "flex";
+        promoUaLink.style.display = "none";   
     } else {
         langImg.src = "img/ua.svg";
+        promoEnVid.style.display = "none";
+        promoUaVid.style.display = "flex";  
+        promoUaLink.style.display = "flex";    
+        promoEnLink.style.display = "none"; 
     }
     if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
         promoEnVid.style.display = "flex";
@@ -93,6 +101,7 @@ function changeToUA() {
     let newImg = currentImg = uaFlag;
  
     langImg.src = newImg;
+
     promoUaVid.style.display = "flex";
     promoEnVid.style.display = "none";
     promoUaLink.style.display = "flex";
@@ -106,10 +115,12 @@ function changeToUA() {
      let newImg = currentImg = enFlag
   
      langImg.src = newImg;
+
      promoEnVid.style.display = "flex";
      promoUaVid.style.display = "none";
      promoEnLink.style.display = "flex";
      promoUaLink.style.display = "none";
+
      localStorage.setItem('userImageChoice', newImg);
   }
 
@@ -132,6 +143,9 @@ langENBtn.addEventListener("click", function(e){
 
 document.addEventListener('DOMContentLoaded', function() {
     let storedChoice = localStorage.getItem('userImageChoice');
+    if (storedChoice) {
+        document.getElementById('langImg').src = storedChoice;
+    }
     if (storedChoice) {
         document.getElementById('langImg').src = storedChoice;
     }
