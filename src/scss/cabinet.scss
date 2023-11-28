@@ -1,7 +1,7 @@
 .cabinet {
 }
 .cabinet__container {	
-	margin: 54px 50px 200px 80px;
+	margin: 6.5rem 3.125rem 12.5rem 5rem;
 }
 .tabs {
 	display: flex;
@@ -9,26 +9,26 @@
 .tabs__navigation {
 	display: flex;
 	flex-direction: column;
-	border: solid 1px #EC6041;	
-	border-radius: 30px;
+	border: solid 0.0625rem #EC6041;	
+	border-radius: 1.875rem;
 	overflow: hidden;
 }
 .tabs__title {
 	color: var(--text-color-black);
-	border: solid 1px #F5BFB4;	
-	padding: 40px 200px 40px 100px;	
-	font-size: 28px;
+	border: solid 0.0625rem #F5BFB4;	
+	padding: 2.5rem 12.5rem 2.5rem 6.25rem;	
+	font-size: 1.75rem;
 	font-weight: 400;
-	line-height: 34px;
+	line-height: 2.125rem;
 	letter-spacing: 0em;
 	text-align: left;
 	cursor: pointer;
 }
 ._tab-active {
 	color: var(--orange-color);
-	font-size: 28px;
+	font-size: 1.75rem;
 	font-weight: 600;
-	line-height: 34px;
+	line-height: 2.125rem;
 	letter-spacing: 0em;
 	text-align: left;
 }
