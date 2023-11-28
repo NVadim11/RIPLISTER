@@ -21,6 +21,17 @@ const radioBtnHumanText = document.querySelector(".searchType_human");
 const radioBtnCemeteryText = document.querySelector(".searchType_cemetery");
 const newsYearBtn = document.querySelector(".year");
 
+const input = document.getElementById("file-input");
+const image = document.getElementById("img-preview");
+
+input.addEventListener("change", (e) => {
+  if (e.target.files.length) {
+    const src = URL.createObjectURL(e.target.files[0]);
+    image.src = src;
+  }
+});
+
+
 // Main header burger menu
 if (mainMenuBtn) {
     const menu = document.querySelector(".menu");
