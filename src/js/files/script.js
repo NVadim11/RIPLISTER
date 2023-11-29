@@ -48,114 +48,114 @@ if (menuCloseBtn) {
 }
 
 // Profile picture upload
-photoPictureInput.onchange = function() {
-    photoPicture.src = URL.createObjectURL(photoPictureInput.files[0]);
-}
+// photoPictureInput.onchange = function() {
+//     photoPicture.src = URL.createObjectURL(photoPictureInput.files[0]);
+// }
 
 // Language detection
-function languageDetection() {    
-    const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
-    if (userLang === "en") {
-        langImg.src = "img/en.svg";
-        promoEnVid.style.display = "flex";
-        promoUaVid.style.display = "none"; 
-        promoEnLink.style.display = "flex";
-        promoUaLink.style.display = "none";   
-    } else {
-        langImg.src = "img/ua.svg";
-        promoEnVid.style.display = "none";
-        promoUaVid.style.display = "flex";  
-        promoUaLink.style.display = "flex";    
-        promoEnLink.style.display = "none"; 
-    }
-    if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
-        promoEnVid.style.display = "flex";
-        promoUaVid.style.display = "none";         
-    }
-    if (localStorage.getItem('i18nextLng').slice(0, 2) === "ua") {
-        promoEnVid.style.display = "none";
-        promoUaVid.style.display = "flex";        
-    }
-    if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
-        promoEnLink.style.display = "flex";
-        promoUaLink.style.display = "none";           
-    }
-    if (localStorage.getItem('i18nextLng').slice(0, 2) === "ua") {
-        promoUaLink.style.display = "flex";    
-        promoEnLink.style.display = "none";        
-    }
-}
-languageDetection();
+// function languageDetection() {    
+//     const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
+//     if (userLang === "en") {
+//         langImg.src = "img/en.svg";
+//         promoEnVid.style.display = "flex";
+//         promoUaVid.style.display = "none"; 
+//         promoEnLink.style.display = "flex";
+//         promoUaLink.style.display = "none";   
+//     } else {
+//         langImg.src = "img/ua.svg";
+//         promoEnVid.style.display = "none";
+//         promoUaVid.style.display = "flex";  
+//         promoUaLink.style.display = "flex";    
+//         promoEnLink.style.display = "none"; 
+//     }
+//     if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
+//         promoEnVid.style.display = "flex";
+//         promoUaVid.style.display = "none";         
+//     }
+//     if (localStorage.getItem('i18nextLng').slice(0, 2) === "ua") {
+//         promoEnVid.style.display = "none";
+//         promoUaVid.style.display = "flex";        
+//     }
+//     if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
+//         promoEnLink.style.display = "flex";
+//         promoUaLink.style.display = "none";           
+//     }
+//     if (localStorage.getItem('i18nextLng').slice(0, 2) === "ua") {
+//         promoUaLink.style.display = "flex";    
+//         promoEnLink.style.display = "none";        
+//     }
+// }
+// languageDetection();
 
 // Promo language menu toggle
-langMenuBtn.addEventListener("click", function(e){ 
-    e.stopPropagation(); 
-    langMenu.classList.toggle('block');
-    langMenuBtn.classList.toggle('toggleLangBtn');
-});
+// langMenuBtn.addEventListener("click", function(e){ 
+//     e.stopPropagation(); 
+//     langMenu.classList.toggle('block');
+//     langMenuBtn.classList.toggle('toggleLangBtn');
+// });
 
-  document.addEventListener('click', function (event) { 
-    if (event.target !== langMenu) { 
-        langMenu.classList.remove('block'); 
-        langMenuBtn.classList.remove('toggleLangBtn');
-    } 
-});
+//   document.addEventListener('click', function (event) { 
+//     if (event.target !== langMenu) { 
+//         langMenu.classList.remove('block'); 
+//         langMenuBtn.classList.remove('toggleLangBtn');
+//     } 
+// });
 
 // Language img toggle
-function changeToUA() {    
-    let currentImg = langImg.src;
-    let uaFlag = "img/ua.svg";
+// function changeToUA() {    
+//     let currentImg = langImg.src;
+//     let uaFlag = "img/ua.svg";
  
-    let newImg = currentImg = uaFlag;
+//     let newImg = currentImg = uaFlag;
  
-    langImg.src = newImg;
+//     langImg.src = newImg;
 
-    promoUaVid.style.display = "flex";
-    promoEnVid.style.display = "none";
-    promoUaLink.style.display = "flex";
-    promoEnLink.style.display = "none";
-    localStorage.setItem('userImageChoice', newImg);
- }
- function changeToEN() {    
-     let currentImg = langImg.src;
-     let enFlag = "img/en.svg";
+//     promoUaVid.style.display = "flex";
+//     promoEnVid.style.display = "none";
+//     promoUaLink.style.display = "flex";
+//     promoEnLink.style.display = "none";
+//     localStorage.setItem('userImageChoice', newImg);
+//  }
+//  function changeToEN() {    
+//      let currentImg = langImg.src;
+//      let enFlag = "img/en.svg";
   
-     let newImg = currentImg = enFlag
+//      let newImg = currentImg = enFlag
   
-     langImg.src = newImg;
+//      langImg.src = newImg;
 
-     promoEnVid.style.display = "flex";
-     promoUaVid.style.display = "none";
-     promoEnLink.style.display = "flex";
-     promoUaLink.style.display = "none";
+//      promoEnVid.style.display = "flex";
+//      promoUaVid.style.display = "none";
+//      promoEnLink.style.display = "flex";
+//      promoUaLink.style.display = "none";
 
-     localStorage.setItem('userImageChoice', newImg);
-  }
+//      localStorage.setItem('userImageChoice', newImg);
+//   }
 
  // Promo language switcher logic
-langUABtn.addEventListener("click", function(e){
-    e.stopPropagation();
-    langMenu.classList.remove('block'); 
-    langMenuBtn.classList.remove('toggleLangBtn');
-    changeToUA();
-    changeLng("ua");
-})
+// langUABtn.addEventListener("click", function(e){
+//     e.stopPropagation();
+//     langMenu.classList.remove('block'); 
+//     langMenuBtn.classList.remove('toggleLangBtn');
+//     changeToUA();
+//     changeLng("ua");
+// })
 
-langENBtn.addEventListener("click", function(e){
-    e.stopPropagation();
-    langMenu.classList.remove('block'); 
-    langMenuBtn.classList.remove('toggleLangBtn');
-    changeToEN();
-    changeLng("en");
-})
+// langENBtn.addEventListener("click", function(e){
+//     e.stopPropagation();
+//     langMenu.classList.remove('block'); 
+//     langMenuBtn.classList.remove('toggleLangBtn');
+//     changeToEN();
+//     changeLng("en");
+// })
 
-document.addEventListener('DOMContentLoaded', function() {
-    let storedChoice = localStorage.getItem('userImageChoice');
-    if (storedChoice) {
-        document.getElementById('langImg').src = storedChoice;
-    }
-    if (storedChoice) {
-        document.getElementById('langImg').src = storedChoice;
-    }
-    console.log(localStorage)
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     let storedChoice = localStorage.getItem('userImageChoice');
+//     if (storedChoice) {
+//         document.getElementById('langImg').src = storedChoice;
+//     }
+//     if (storedChoice) {
+//         document.getElementById('langImg').src = storedChoice;
+//     }
+//     console.log(localStorage)
+// });
