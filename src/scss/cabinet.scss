@@ -1,28 +1,43 @@
 .cabinet {
-}
-.cabinet__container {	
-	margin: 6.5rem 3.125rem 12.5rem 5rem;
+	&__container {	
+		margin: 6.5rem 3.125rem 12.5rem 5rem;
+	}
 }
 .tabs {
 	display: flex;
-}
-.tabs__navigation {
-	display: flex;
-	flex-direction: column;
-	border: solid 0.0625rem #EC6041;	
-	border-radius: 1.875rem;
-	overflow: hidden;
-}
-.tabs__title {
-	color: var(--text-color-black);
-	border: solid 0.0625rem #F5BFB4;	
-	padding: 2.5rem 12.5rem 2.5rem 6.25rem;	
-	font-size: 1.75rem;
-	font-weight: 400;
-	line-height: 2.125rem;
-	letter-spacing: 0em;
-	text-align: left;
-	cursor: pointer;
+	&__navigation {
+		display: flex;
+		flex-direction: column;
+		border: solid 0.0625rem #EC6041;	
+		border-radius: 1.875rem;
+		overflow: hidden;
+	}
+	&__title {
+		color: var(--text-color-black);
+		border: solid 0.0625rem #F5BFB4;	
+		padding: 2.5rem 12.5rem 2.5rem 6.25rem;	
+		font-size: 1.75rem;
+		font-weight: 400;
+		line-height: 2.125rem;
+		letter-spacing: 0em;
+		text-align: left;
+		cursor: pointer;
+	}
+	&__content {
+		margin-left: 4.0625rem;
+	}
+	&__body {
+	}
+	&__body-Title {
+		color: var(--text-color-black);
+		font-size: 2.25rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__body-Content {
+		padding: 2.8125rem;
+	}
 }
 ._tab-active {
 	color: var(--orange-color);
@@ -32,25 +47,18 @@
 	letter-spacing: 0em;
 	text-align: left;
 }
-.tabs__content {
-}
-.tabs__body {
-}
-.tabs__body-Title {
-}
-.tabs__body-Content {
-}
 .profile-photo__container {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: start;
 	justify-content: center;
 	label {
+		margin-top: 1.875rem;		
 		display: block;
 		cursor: pointer;
 		user-select: none;
 		color: var(--text-color-blue);
-		font-size: 24px;
+		font-size: 1.5rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
@@ -67,11 +75,10 @@
 	border-radius: 1.875rem;
 	overflow: hidden;
 	display: flex;
-	width: 244px;
-	height: 310px;
+	width: 15.25rem;
+	height: 19.375rem;
 	img {
 		width: 100%;
 		height: auto;
 	}
 }
-

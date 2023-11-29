@@ -1,6 +1,6 @@
 // Підключення функціоналу "Чертоги Фрілансера"
 import { menuClose, menuOpen } from "./functions.js"
-import changeLng from "./languages.js"
+// import changeLng from "./languages.js"
 // Підключення списку активних модулів
 // Constants
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
@@ -48,9 +48,9 @@ if (menuCloseBtn) {
 }
 
 // Profile picture upload
-// photoPictureInput.onchange = function() {
-//     photoPicture.src = URL.createObjectURL(photoPictureInput.files[0]);
-// }
+photoPictureInput.onchange = function() {
+    photoPicture.src = URL.createObjectURL(photoPictureInput.files[0]);
+}
 
 // Language detection
 // function languageDetection() {    

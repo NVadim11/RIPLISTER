@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('html/_head.htm',{
-"title":"Riplister"
+"title":"HomePage"
 })
 
 <body>
-	<!-- <div class="wrapper promo-wrapper"> -->
-	<!-- <main class="main"> -->
-	@@include('html/_promo.htm',{})
-	<!-- </main> -->
-	<!-- </div> -->
-	@@include('html/_popupVideo.htm',{})
-	@@include('html/_promoMenu.htm',{})
-	@@include('html/_popupThanks.htm',{})
+	<div class="wrapper">
+		@@include('html/_headerAlt.htm',{})
+		<main class="main">
+			@@include('html/_main.htm',{})
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popupMenu.htm',{})
+	@@include('html/_contactUs.htm',{})
 	@@include('html/_js.htm',{})
 </body>
 

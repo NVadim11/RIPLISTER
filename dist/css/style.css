@@ -4207,6 +4207,22 @@ s .popupThanks__content {
   cursor: pointer;
 }
 
+.tabs__content {
+  margin-left: 4.0625rem;
+}
+
+.tabs__body-Title {
+  color: var(--text-color-black);
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.tabs__body-Content {
+  padding: 2.8125rem;
+}
+
 ._tab-active {
   color: var(--orange-color);
   font-size: 1.75rem;
@@ -4224,15 +4240,16 @@ s .popupThanks__content {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 .profile-photo__container label {
+  margin-top: 1.875rem;
   display: block;
   cursor: pointer;
   -webkit-user-select: none;
@@ -4240,7 +4257,7 @@ s .popupThanks__content {
       -ms-user-select: none;
           user-select: none;
   color: var(--text-color-blue);
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -4261,8 +4278,8 @@ s .popupThanks__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 244px;
-  height: 310px;
+  width: 15.25rem;
+  height: 19.375rem;
 }
 
 .profile__photo img {

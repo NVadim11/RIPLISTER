@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Riplister</title>
+	<title>HomePage</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -19,283 +19,658 @@
 </head>
 
 <body>
-	<!-- <div class="wrapper promo-wrapper"> -->
-	<!-- <main class="main"> -->
-	<section class="promo wrapper">
-		<div class="promo__content">
-			<div class="promo__wrapper">
-				<div class="promo__content-header">
-					<div class="promo__headerIcon">
-						<a href="#">
-							<img src="img/orange-logo.svg" alt="logo picture">
-						</a>
-					</div>
-					<div class="promo__headerTitle">
-						<h1></h1>
-					</div>
-				</div>
-				<div class="promo__descr">
-					<p></p>
-				</div>
-				<div class="promo__link" id="promo__uaLink" data-popup="#promoPopup" data-popup-youtube="FzEv5vgd7K4">
-					<a href="">Детальніше про проект</a>
-				</div>
-				<div class="promo__link" id="promo__enLink" data-popup="#promoPopup" data-popup-youtube="1GiBDSlSl3w">
-					<a href="">More about the project</a>
-				</div>
-				<div class="promo__subscr">
-					<div class="promo__orangeText">
-						<h4></h4>
-					</div>
-					<div class="promo__submit">
-						<form class="promo__form" data-popup-message="#popupThanks" data-ajax method="POST" action="#">
-							<div class="promo__input-row">
-								<div class="promo__input-field" id="id_email_container">
-									<input class="promo__input" id="id_email" type="email" data-required placeholder="Email">
-								</div>
-							</div>
-							<button type="submit" class="promo__input-btn"></button>
-						</form>
-					</div>
-				</div>
-				<div class="promo__socials">
-
-					<div class="promo__socialsText">
-						<h4></h4>
-					</div>
-					<div class="promo__socialsIcons">
-						<a href="https://instagram.com/rip_lister?igshid=OGQ5ZDc2ODk2ZA==" class="promo__socialIcon instagram-icon">
-							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M10.105 2.91465C12.5283 2.80466 20.5007 2.77716 22.7313 2.99714C24.8793 3.20336 26.091 3.90453 27.0686 5.07313C28.0875 6.28299 28.3216 8.11151 28.4042 10.1325C28.5006 12.566 28.5419 20.485 28.3216 22.6985C28.1013 24.857 27.3715 26.0668 26.2149 27.0155C24.9481 28.0603 23.227 28.2803 21.2029 28.3628C18.8071 28.459 10.7797 28.4865 8.60414 28.2666C6.40107 28.0466 5.24446 27.3592 4.26685 26.1906C3.19286 24.912 3.01386 23.1659 2.91748 21.1312C2.80733 18.8627 2.79356 10.6962 3.00009 8.57896C3.20663 6.53046 3.92263 5.19687 5.07924 4.26198C6.37354 3.20336 8.06714 3.01088 10.105 2.91465ZM0.0672639 21.0487C0.191186 23.6196 0.383954 25.4207 1.58187 27.3042C2.58702 28.899 4.19801 30.0538 6.05684 30.6313C8.14976 31.2774 10.9587 31.2225 13.2719 31.2225C15.8329 31.2225 18.4766 31.2774 21.0239 31.1812C23.6814 31.0712 25.43 30.8787 27.344 29.6689C28.7759 28.7478 30.0289 27.2767 30.6761 25.2007C31.3645 23.001 31.2269 20.3475 31.2269 17.9416C31.2269 15.3569 31.2269 12.7722 31.2269 10.1875C31.2131 7.80905 30.8413 5.59557 29.6985 3.90453C29.1477 3.07963 28.5694 2.4747 27.8121 1.89727C27.0961 1.34734 26.2287 0.921138 25.2097 0.591178C23.2132 -0.0274967 20.1978 0.0137483 17.9672 0.0137483C15.4061 0.0137483 12.7624 -0.041245 10.2151 0.0687416C7.66784 0.16498 5.78146 0.398702 3.92263 1.59481C-0.139274 4.19324 0.0397256 8.86767 0.0259564 13.3084C0.0121873 15.8381 -0.0428893 18.519 0.0672639 21.0487Z" fill="#E55738" />
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M15.0606 10.5956C18.0325 10.2209 20.3485 12.4824 20.643 15.0384C21.0045 18.0092 18.7688 20.3376 16.1985 20.6454C13.2265 20.9933 10.8838 18.7719 10.5892 16.1892C10.2412 13.1783 12.4635 10.9168 15.0606 10.5956ZM7.83148 16.0822C8.126 20.2038 11.5531 23.6697 16.0244 23.4155C20.1879 23.1746 23.6819 19.6685 23.4142 15.199C23.1732 11.0104 19.6256 7.54452 15.1409 7.82554C11.0444 8.09318 7.4968 11.626 7.83148 16.0822Z" fill="#E55738" />
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M23.084 6.29994C22.3364 6.48231 21.6924 7.22322 21.9109 8.1693C22.0949 8.91021 22.831 9.53713 23.7856 9.33196C25.7869 8.91021 25.1198 5.8098 23.084 6.29994Z" fill="#E55738" />
-							</svg>
-
-						</a>
-						<a href="https://www.facebook.com/riplistercom" class="promo__socialIcon facebook-icon">
-							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4858 2.91465C12.9092 2.80466 20.8815 2.77716 23.1121 2.99714C25.2601 3.20336 26.4581 3.90453 27.4494 5.07313C28.4683 6.28299 28.7024 8.11151 28.785 10.1325C28.8814 12.566 28.9227 20.485 28.7024 22.6985C28.4821 24.857 27.7524 26.0668 26.5957 27.0155C25.329 28.0603 23.6078 28.2803 21.5838 28.3628C19.1879 28.459 11.1468 28.4865 8.985 28.2666C6.78193 28.0466 5.62532 27.3592 4.64771 26.1906C3.57372 24.912 3.39472 23.1659 3.29834 21.1312C3.18818 18.8627 3.17442 10.6962 3.38095 8.57896C3.58749 6.53046 4.30349 5.19687 5.46009 4.26198C6.75439 3.20336 8.448 3.01088 10.4858 2.91465ZM0.448123 21.0487C0.572046 23.6196 0.764814 25.4207 1.94896 27.3042C2.96788 28.899 4.57887 30.0538 6.4377 30.6313C8.53061 31.2774 11.3395 31.2225 13.6527 31.2225C16.2138 31.2225 18.8575 31.2774 21.4048 31.1812C24.0622 31.0712 25.8109 30.8787 27.7248 29.6689C29.1568 28.7478 30.4098 27.2767 31.0569 25.2007C31.7454 23.001 31.6077 20.3475 31.6077 17.9416C31.6077 15.3569 31.6077 12.7722 31.6077 10.1875C31.5939 7.80905 31.2222 5.59557 30.0793 3.90453C29.5286 3.07963 28.9503 2.4747 28.193 1.89727C27.477 1.34734 26.5957 0.921138 25.5906 0.591178C23.5941 -0.0274967 20.5786 0.0137483 18.348 0.0137483C15.787 0.0137483 13.1433 -0.041245 10.596 0.0687416C8.0487 0.16498 6.16232 0.398702 4.30349 1.59481C0.241586 4.19324 0.420585 8.86767 0.406816 13.3084C0.393047 15.8381 0.33797 18.519 0.448123 21.0487Z" fill="#E55738" />
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M12.2632 13.7723V16.4973H14.7596V23.4286H17.024V16.484L19.4873 16.4973C19.5535 15.5978 19.6861 14.6851 19.7634 13.7723H17.024C17.024 13.5739 17.024 13.6268 17.024 13.2829C17.024 11.9337 17.0571 11.2326 17.3996 10.7696C17.7862 10.2405 18.3937 10.2538 19.5867 10.267H20.0506L20.0727 7.89922C19.2111 7.80663 18.3827 7.76694 17.6315 7.87276C16.8362 8.00504 16.1514 8.30928 15.6654 8.94421C14.7927 10.095 14.7264 11.4178 14.7375 13.0977C14.7485 13.4549 14.7596 13.5078 14.7596 13.7723H12.2632Z" fill="#E55738" />
-							</svg>
-						</a>
-
-						<a href="https://www.tiktok.com/@rip.lister?_t=8hSVn0lfMwx&_r=1" class="promo__socialIcon twitter-icon">
-							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M10.105 2.91465C12.5283 2.80466 20.5007 2.77716 22.7313 2.99714C24.8793 3.20336 26.0772 3.90452 27.0686 5.07313C28.0875 6.28299 28.3216 8.11151 28.4042 10.1325C28.5006 12.566 28.5419 20.485 28.3216 22.6985C28.1013 24.857 27.3715 26.0668 26.2149 27.0155C24.9481 28.0603 23.227 28.2803 21.2029 28.3628C18.8071 28.459 10.7659 28.4865 8.60414 28.2666C6.40107 28.0466 5.24447 27.3592 4.26686 26.1906C3.19286 24.912 3.01386 23.1659 2.91748 21.1312C2.80733 18.8627 2.79356 10.6962 3.00009 8.57896C3.20663 6.53046 3.92263 5.19687 5.07924 4.26198C6.37354 3.20336 8.06714 3.01088 10.105 2.91465ZM0.0672639 21.0487C0.191186 23.6196 0.383954 25.4207 1.5681 27.3042C2.58702 28.899 4.19801 30.0538 6.05685 30.6313C8.14976 31.2774 10.9587 31.2225 13.2719 31.2225C15.8329 31.2225 18.4766 31.2774 21.0239 31.1812C23.6814 31.0712 25.43 30.8787 27.344 29.6689C28.7759 28.7478 30.0289 27.2767 30.6761 25.2007C31.3645 23.001 31.2269 20.3475 31.2269 17.9416C31.2269 15.3569 31.2269 12.7722 31.2269 10.1875C31.2131 7.80905 30.8413 5.59557 29.6985 3.90453C29.1477 3.07963 28.5694 2.4747 27.8121 1.89727C27.0961 1.34734 26.2149 0.921138 25.2097 0.591178C23.2132 -0.0274966 20.1978 0.0137483 17.9672 0.0137483C15.4061 0.0137483 12.7624 -0.041245 10.2151 0.0687416C7.66784 0.16498 5.78146 0.398702 3.92263 1.59481C-0.139273 4.19324 0.0397256 8.86767 0.0259564 13.3084C0.0121873 15.8381 -0.0428893 18.519 0.0672639 21.0487Z" fill="#E55738" />
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M12.9348 19.5503C12.9478 19.5625 12.9613 19.5749 12.9743 19.5872C13.0946 19.6762 13.1822 19.8012 13.298 19.8975C13.6576 20.1944 14.0614 20.3557 14.525 20.3849C15.623 20.4543 16.5793 19.6039 16.7036 18.4865C16.7096 18.4321 16.7071 18.3772 16.7071 18.323C16.7071 14.9577 16.7071 11.5928 16.7071 8.22756C16.7071 8.00076 16.7071 8.00076 16.927 8.00076C17.4238 8.00076 17.9204 8.00024 18.4166 8.00128C18.463 8.00128 18.5118 7.99217 18.5543 8.02255C18.5577 8.02486 18.5602 8.02763 18.5636 8.02924C18.5873 8.05455 18.5942 8.08695 18.6011 8.11999C18.7915 9.02679 19.2551 9.75061 19.9817 10.2966C20.028 10.331 20.0655 10.3734 20.1095 10.4098C20.1411 10.4372 20.1726 10.4654 20.2047 10.4927C20.2268 10.4911 20.2431 10.5052 20.2609 10.5152C20.6278 10.7314 21.0204 10.8731 21.4372 10.9443C21.5995 10.9717 21.7637 10.9901 21.9294 10.9886C21.9985 10.9879 22.0005 10.9901 21.9999 11.0579V11.1543L21.996 11.5308L21.9999 11.5341V14.1297L21.9497 14.123C21.4712 14.0581 21.0046 13.9376 20.5543 13.7567C20.1232 13.5832 19.7177 13.3623 19.336 13.0923C19.3128 13.0757 19.2882 13.0605 19.2512 13.0364C19.2512 13.0811 19.2512 13.1137 19.2512 13.1457C19.2512 14.8469 19.2532 16.548 19.2507 18.2484C19.2502 19.1549 19.0223 19.9972 18.5522 20.7656C17.9845 21.6938 17.1973 22.3472 16.196 22.7207C15.5889 22.9487 14.96 23.0361 14.3144 22.9866C13.2253 22.9039 12.2829 22.4753 11.4804 21.7153C11.4591 21.695 11.4406 21.6715 11.4211 21.6491C11.3825 21.6143 11.345 21.5796 11.3067 21.5451C11.019 21.3003 10.8188 20.983 10.6321 20.6587C10.3443 20.1592 10.1577 19.6192 10.0664 19.0456C10.0144 18.7175 9.98788 18.387 10.0054 18.0553C10.0623 16.9861 10.4118 16.0315 11.0814 15.2064C11.6435 14.5147 12.3456 14.0313 13.1723 13.7406C13.8887 13.4879 14.5014 13.4778 15.2248 13.5602C15.2603 13.5646 15.2697 13.5815 15.2691 13.6133C15.2682 13.6317 15.2691 13.6497 15.2691 13.6682C15.2691 14.4743 15.2691 15.2803 15.2686 16.0864C15.2686 16.1161 15.2761 16.1475 15.2577 16.1794C15.1542 16.1591 15.0531 16.1272 14.948 16.1121C14.3435 16.0249 13.798 16.1704 13.3187 16.5592C12.8976 16.9008 12.6386 17.3496 12.5514 17.8928C12.459 18.4699 12.575 19.0048 12.8968 19.4893C12.9106 19.5089 12.9222 19.5295 12.9348 19.5503Z" fill="#E55738" />
-							</svg>
-						</a>
-
-					</div>
-				</div>
+	<div class="wrapper">
+		<header class="headerAlt">
+			<div class="headerAlt__logo">
+				<a href="#" class="header__logo">
+					<img src="img/white-logo.svg" alt="">
+				</a>
 			</div>
-		</div>
-		<div class="promo__cover">
-			<div class="promo__cover-btnBox ">
-				<div class="headerAlt__langBtn">
-					<img src="img/ua.svg" id="langImg" alt="">
+
+			<nav class="headerAlt__menu">
+				<ul>
+					<li>
+						<a href="#">Про нас</a>
+					</li>
+					<li>
+						<a href="#">
+							Інструкції
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Волонтерство
+						</a>
+					</li>
+					<li>
+						<a href="#">Новини</a>
+					</li>
+					<li>
+						<a href="#">
+							Блог
+						</a>
+					</li>
+					<li>
+						<a href="#">Контакти</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="headerAlt__btnBox">
+				<button class="headerAlt__entryBtn"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="26" viewBox="0 0 28 26" fill="none">
+						<path d="M0.829306 12.1159H14.8289L11.3216 8.51329C11.1661 8.35365 11.0787 8.1371 11.0787 7.91134C11.0787 7.68557 11.1661 7.46902 11.3216 7.30938C11.477 7.14974 11.6879 7.06006 11.9077 7.06006C12.1276 7.06006 12.3385 7.14974 12.494 7.30938L17.4168 12.3654C17.4554 12.4043 17.49 12.4471 17.5202 12.4933C17.5264 12.5035 17.5302 12.5137 17.5364 12.5239C17.5592 12.5607 17.5792 12.5992 17.5962 12.6391C17.6024 12.6545 17.6062 12.6711 17.6111 12.6864C17.6242 12.7228 17.635 12.76 17.6435 12.7978C17.6657 12.9088 17.6657 13.0233 17.6435 13.1343C17.6351 13.1716 17.6243 13.2084 17.6111 13.2443C17.6111 13.2609 17.6024 13.2775 17.5962 13.2928C17.5795 13.3323 17.56 13.3704 17.5376 13.4067C17.5314 13.4169 17.5264 13.4284 17.5202 13.44C17.49 13.4861 17.4554 13.529 17.4168 13.5679L12.494 18.6226C12.3385 18.7822 12.1276 18.8719 11.9077 18.8719C11.6879 18.8719 11.477 18.7822 11.3216 18.6226C11.1661 18.4629 11.0787 18.2464 11.0787 18.0206C11.0787 17.7949 11.1661 17.5784 11.3216 17.4188L14.8289 13.8174H0.829306C0.609392 13.8174 0.398483 13.7277 0.242981 13.568C0.0874786 13.4083 8.58307e-05 13.1918 8.58307e-05 12.966C8.58307e-05 12.7402 0.0874786 12.5236 0.242981 12.364C0.398483 12.2043 0.609392 12.1159 0.829306 12.1159Z" fill="#DB4A2A" />
+						<path d="M2.08477 16.3607C2.19358 16.3524 2.30287 16.3663 2.40638 16.4017C2.50989 16.4371 2.60556 16.4933 2.68775 16.5669C2.76994 16.6406 2.83703 16.7303 2.88517 16.8309C2.93331 16.9314 2.96151 17.0408 2.96814 17.1526C3.09274 18.968 3.28459 20.8307 4.24771 21.9207C5.28417 22.872 6.59314 23.4523 7.97814 23.5749C10.0524 23.9901 12.1595 24.2076 14.2727 24.2248C16.3546 24.1697 18.43 23.9645 20.4838 23.6107C21.2442 23.5731 21.982 23.3327 22.6243 22.9132C23.2667 22.4937 23.7915 21.9096 24.147 21.2184C24.8305 19.6485 25.2024 17.9545 25.2409 16.2353C25.297 15.3974 25.3195 14.5377 25.3357 13.7982C25.3793 11.8447 25.2696 9.93329 25.1575 8.32005C25.1619 6.94535 24.8413 5.59012 24.223 4.37076C23.7988 3.74231 23.2063 3.25346 22.5173 2.96345C21.8312 2.66805 21.1148 2.45345 20.3817 2.32378C16.9547 1.63662 13.4423 1.52004 9.97918 1.97841L9.61537 2.02448C7.95677 2.08888 6.33847 2.56749 4.90066 3.41891C4.32846 3.93327 3.86611 4.5637 3.54275 5.27045C3.21939 5.97721 3.04202 6.74503 3.02175 7.52561C3.0076 7.63641 2.97232 7.74326 2.91795 7.84006C2.86358 7.93686 2.79117 8.0217 2.70486 8.08978C2.61855 8.15785 2.52001 8.20783 2.41489 8.23681C2.30978 8.26578 2.20013 8.2732 2.09223 8.25867C1.98432 8.24414 1.88026 8.20791 1.78598 8.15209C1.6917 8.09626 1.60908 8.02192 1.54278 7.93329C1.47649 7.84467 1.4278 7.74348 1.39959 7.63556C1.37137 7.52763 1.36414 7.41504 1.37829 7.30424C1.42072 6.28604 1.67258 5.28858 2.11732 4.37748C2.56206 3.46638 3.18958 2.66232 3.95866 2.01808C5.61414 1.00097 7.48996 0.42237 9.41726 0.334417L9.77233 0.289675C13.4078 -0.193437 17.0954 -0.0716393 20.6932 0.650426C21.5524 0.8027 22.3919 1.05551 23.1951 1.40394C24.1689 1.82559 25.0046 2.52484 25.6035 3.41891C26.393 4.87891 26.8084 6.52086 26.8108 8.19082C26.9267 9.84244 27.0376 11.805 26.9927 13.8289C26.9765 14.5876 26.9529 15.4703 26.8955 16.3441C26.8457 18.3002 26.41 20.2256 25.6148 22.0038C25.1326 22.9276 24.4323 23.7123 23.5781 24.2861C22.7239 24.8598 21.7431 25.2043 20.7256 25.2879C18.5951 25.6539 16.4421 25.8651 14.2827 25.9199H14.1382C11.9714 25.8949 9.81111 25.6684 7.68407 25.2432C5.93599 25.0695 4.29482 24.3003 3.02175 23.058C1.70103 21.5638 1.45426 19.3748 1.31472 17.2614C1.30138 17.0373 1.37482 16.8169 1.51906 16.6482C1.66329 16.4795 1.86666 16.3762 2.08477 16.3607Z" fill="#DB4A2A" />
+					</svg>Увійти на сайт</button>
+				<button class="headerAlt__langBtn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" viewBox="0 0 28 18" fill="none">
+						<path d="M0 15.8663C0 17.0447 0.93882 18.0001 2.09699 18.0001H25.903C27.0611 18.0001 28 17.0448 28 15.8663V8.66699H0V15.8663Z" fill="#FFCB46" />
+						<path d="M25.903 0H2.09699C0.93882 0 0 0.887031 0 1.98131V8.66642H28V1.98131C28 0.887031 27.0612 0 25.903 0Z" fill="#296BE2" />
+					</svg>
 					<span>УКР</span>
-					<svg class="dropdownArrow" xmlns="http://www.w3.org/2000/svg" width="11" height="17" viewBox="0 0 11 17" fill="none">
+					<svg xmlns="http://www.w3.org/2000/svg" width="11" height="17" viewBox="0 0 11 17" fill="none">
 						<path d="M5.75567 16.6588L5.75646 16.658L10.0894 12.3041C10.414 11.9779 10.4128 11.4504 10.0866 11.1257C9.76038 10.801 9.2328 10.8023 8.90817 11.1285L5.9991 14.0517L5.9991 0.833256C5.9991 0.373049 5.62605 0 5.16585 0C4.70564 0 4.33259 0.373049 4.33259 0.833256L4.33259 14.0517L1.42353 11.1285C1.09889 10.8023 0.571315 10.8011 0.245136 11.1257C-0.0811253 11.4504 -0.0822496 11.978 0.242304 12.3042L4.57523 16.6581L4.57603 16.6588C4.90175 16.9852 5.43103 16.9841 5.75567 16.6588Z" fill="white" />
 					</svg>
-				</div>
-				<div class="promo__langMenu">
-					<a class="promo__langBtn uaBtn">
-						<img src="img/ua.svg" alt="">
-						<span>УКР</span>
-					</a>
-					<a class="promo__langBtn enBtn">
-						<img src="img/en.svg" alt="">
-						<span>ENG</span>
-					</a>
-				</div>
-			</div>
-
-			<div class="promo__cover-header">
-				<div class="promo__headerIcon">
-					<svg xmlns="http://www.w3.org/2000/svg" width="182" height="35" viewBox="0 0 182 35" fill="none">
-						<path d="M71.3672 9.0115H76.4853V23.067H85.1189V27.131H71.3672V9.0115ZM90.9713 9.0115H96.0895V27.131H90.9713V9.0115ZM109.929 27.4934C108.464 27.4934 107.043 27.3122 105.664 26.9498C104.286 26.5873 103.165 26.1042 102.304 25.5002L103.984 21.721C104.794 22.2559 105.733 22.6873 106.802 23.0153C107.87 23.3432 108.921 23.507 109.955 23.507C111.92 23.507 112.902 23.0153 112.902 22.0317C112.902 21.514 112.622 21.13 112.062 20.8798C111.502 20.6296 110.601 20.3664 109.361 20.0903C107.999 19.7969 106.862 19.482 105.949 19.1455C105.035 18.809 104.251 18.2697 103.596 17.5277C102.941 16.7857 102.614 15.7848 102.614 14.525C102.614 13.4206 102.916 12.4241 103.519 11.5354C104.122 10.6466 105.022 9.94338 106.22 9.42573C107.418 8.90809 108.887 8.64923 110.627 8.64923C111.816 8.64923 112.988 8.78294 114.143 9.05044C115.297 9.31786 116.314 9.7105 117.193 10.2281L115.616 14.0332C113.893 13.1013 112.221 12.6354 110.601 12.6354C109.585 12.6354 108.844 12.7864 108.378 13.0885C107.913 13.3904 107.68 13.783 107.68 14.2662C107.68 14.7493 107.956 15.1117 108.508 15.3533C109.059 15.5949 109.947 15.8451 111.17 16.104C112.549 16.3974 113.69 16.7122 114.595 17.0488C115.5 17.3853 116.284 17.9202 116.947 18.6537C117.611 19.387 117.943 20.3837 117.943 21.6434C117.943 22.7305 117.641 23.7142 117.038 24.5943C116.435 25.4743 115.53 26.1776 114.324 26.7039C113.117 27.2302 111.653 27.4934 109.929 27.4934H109.929ZM127.724 13.0754H122.166V9.0115H138.374V13.0754H132.842V27.131H127.724V13.0754ZM158.65 23.1706V27.131H144.123V9.0115H158.314V12.9719H149.189V16.0263H157.228V19.8573H149.189V23.1706H158.65H158.65ZM173.239 22.3164H170.448V27.131H165.329V9.0115H173.601C175.238 9.0115 176.66 9.28331 177.866 9.82694C179.073 10.3706 180.003 11.1471 180.658 12.1566C181.313 13.1661 181.64 14.3525 181.64 15.7157C181.64 17.0272 181.334 18.1705 180.723 19.1455C180.111 20.1205 179.236 20.8841 178.099 21.4363L182.002 27.131H176.522L173.239 22.3164L173.239 22.3164ZM176.47 15.7157C176.47 14.8702 176.203 14.2143 175.669 13.7484C175.135 13.2825 174.342 13.0496 173.291 13.0496H170.448V18.3559H173.291C174.342 18.3559 175.135 18.1273 175.669 17.67C176.203 17.2127 176.47 16.5613 176.47 15.7157Z" fill="white" />
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M3.81357 0H60.5597C62.657 0 64.3732 1.71857 64.3732 3.81887V28.9947C64.3732 32.3084 61.6869 34.9947 58.3732 34.9947H6C2.68629 34.9947 0 32.3084 0 28.9947V3.81887C0 1.7185 1.71632 0 3.81357 0Z" fill="url(#paint0_linear_1695_1814)" />
-						<path d="M15.132 22.3174H12.4963V26.8631H7.66406V9.7558H15.4737C17.0193 9.7558 18.3617 10.0124 19.5006 10.5256C20.6395 11.0388 21.5181 11.772 22.1363 12.7251C22.7546 13.6782 23.0637 14.7983 23.0637 16.0855C23.0637 17.3238 22.775 18.4031 22.1973 19.3236C21.6198 20.2442 20.7941 20.9652 19.7202 21.4865L23.4054 26.8631H18.2315L15.132 22.3174ZM18.1827 16.0855C18.1827 15.2871 17.9305 14.668 17.4261 14.2281C16.9218 13.7882 16.1733 13.5683 15.1809 13.5683H12.4963V18.5783H15.1809C16.1733 18.5783 16.9218 18.3624 17.4261 17.9307C17.9305 17.4989 18.1827 16.8839 18.1827 16.0855V16.0855Z" fill="white" />
-						<path d="M50.6847 9.75587C52.2303 9.75587 53.5726 10.0125 54.7116 10.5256C55.8504 11.0389 56.729 11.7721 57.3473 12.7252C57.9656 13.6783 58.2747 14.7984 58.2747 16.0855C58.2747 17.3727 57.9656 18.4887 57.3473 19.4337C56.729 20.3787 55.8504 21.1077 54.7116 21.621C53.5726 22.1342 52.2303 22.3908 50.6847 22.3908H47.7072V26.8631H42.875V9.7558H50.6847V9.75587ZM50.3918 18.5784C51.3842 18.5784 52.1327 18.3625 52.6371 17.9308C53.1414 17.499 53.3937 16.884 53.3937 16.0856C53.3937 15.2872 53.1414 14.6681 52.6371 14.2283C52.1327 13.7884 51.3842 13.5684 50.3918 13.5684H47.7072V18.5785H50.3918V18.5784Z" fill="white" />
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M30.336 35.0001H35.1686V17.2554C35.1686 15.9243 34.0814 14.8358 32.752 14.8358C31.4231 14.8358 30.3359 15.9243 30.3359 17.2554V35.0001H30.336Z" fill="white" />
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M32.4181 13.5898C31.7205 12.6251 31.341 11.1075 32.3173 11.1464C33.1935 11.1818 32.9425 13.0841 33.0764 13.5644C37.8402 11.664 33.6481 5.49267 32.0586 5.04468C32.5241 7.1389 30.8559 7.51094 30.3315 9.4471C30.2177 9.86734 30.1985 10.3294 30.264 10.8011C30.4255 11.9647 31.0634 13.3711 32.4181 13.5898H32.4181Z" fill="white" />
-						<defs>
-							<linearGradient id="paint0_linear_1695_1814" x1="32.1866" y1="0" x2="32.1866" y2="34.9947" gradientUnits="userSpaceOnUse">
-								<stop stop-color="#EF6446" />
-								<stop offset="1" stop-color="#DB4A2A" />
-							</linearGradient>
-						</defs>
-					</svg>
-				</div>
-				<div class="promo__headerTitleWhite">
-					<h1>
-						<span class="promo__whiteTitleFirst"></span>
-						<br>
-						<span class="promo__whiteTitleSecond"></span>
-					</h1>
-				</div>
-			</div>
-			<div class="promo__video" id="promo__uaVideo" data-popup="#popupVideo" data-popup-youtube="FzEv5vgd7K4">
-				<div class="promo__video-play">
-					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-						<circle cx="24" cy="24.0005" r="23.5" stroke="white" stroke-opacity="0.5" />
-						<path d="M29.5938 23.2904L21.7846 18.463C21.498 18.2863 21.1175 18.2597 20.8034 18.397C20.4868 18.5332 20.2891 18.8099 20.2891 19.109V28.7607C20.2891 29.0629 20.4868 29.3386 20.8034 29.4748C20.9373 29.5323 21.0838 29.561 21.2314 29.561C21.4242 29.561 21.6194 29.5088 21.7846 29.4056L29.5938 24.5824C29.8404 24.4281 29.9843 24.1897 29.9843 23.9364C29.9855 23.6789 29.8379 23.4415 29.5938 23.2904Z" fill="white" />
-					</svg>
-				</div>
-				<div class="promo__video-text">
-					Подивитись відео про RIPlister
-				</div>
-			</div>
-			<div class="promo__video" id="promo__enVideo" data-popup="#popupVideo" data-popup-youtube="1GiBDSlSl3w">
-				<div class="promo__video-play">
-					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-						<circle cx="24" cy="24.0005" r="23.5" stroke="white" stroke-opacity="0.5" />
-						<path d="M29.5938 23.2904L21.7846 18.463C21.498 18.2863 21.1175 18.2597 20.8034 18.397C20.4868 18.5332 20.2891 18.8099 20.2891 19.109V28.7607C20.2891 29.0629 20.4868 29.3386 20.8034 29.4748C20.9373 29.5323 21.0838 29.561 21.2314 29.561C21.4242 29.561 21.6194 29.5088 21.7846 29.4056L29.5938 24.5824C29.8404 24.4281 29.9843 24.1897 29.9843 23.9364C29.9855 23.6789 29.8379 23.4415 29.5938 23.2904Z" fill="white" />
-					</svg>
-				</div>
-				<div class="promo__video-text">
-					Watch a video about RIPlister
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- </main> -->
-	<!-- </div> -->
-	<div id="popupVideo" class="popup popupVideo">
-		<div class="popup__wrapper popupVideo__wrapper">
-			<div class="popup__content popupVideo__content">
-				<div class="popupVideo__close">
-					<label for="button"></label>
-					<button data-close type="button">
-						<svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
-							<rect width="44" height="44.6659" rx="20" fill="#E55738" />
-							<path d="M28.5551 16.3201L16.0781 28.9859" stroke="white" stroke-width="2" />
-							<path d="M16.0777 16.3202L28.5547 28.986" stroke="white" stroke-width="2" />
-							<defs>
-								<linearGradient id="paint0_linear_1695_1848" x1="22" y1="0" x2="22" y2="44.6659" gradientUnits="userSpaceOnUse">
-									<stop stop-color="#EF6446" />
-									<stop offset="1" stop-color="#DB4A2A" />
-								</linearGradient>
-							</defs>
-						</svg>
-					</button>
-				</div>
-				<div class="popup__text popupVideo__iframe" data-youtube-place></div>
-			</div>
-		</div>
-	</div>
-	<div id="promoPopup" aria-hidden="true" class="popup promoPopup">
-		<div class="popup__wrapper promoPopup__wrapper">
-			<div class="popup__content promoPopup__content" id="promoPopup__content">
-				<button data-close type="button" class="popup__close promoPopup__close">
-					<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
-						<rect width="52" height="52" rx="20" fill="url(#paint0_linear_2574_3504)" />
-						<path d="M33.7455 19L19 33.7455" stroke="white" stroke-width="2" />
-						<path d="M19.0006 19L33.7461 33.7455" stroke="white" stroke-width="2" />
-						<defs>
-							<linearGradient id="paint0_linear_2574_3504" x1="26" y1="0" x2="26" y2="52" gradientUnits="userSpaceOnUse">
-								<stop stop-color="#EF6446" />
-								<stop offset="1" stop-color="#DB4A2A" />
-							</linearGradient>
-						</defs>
-					</svg>
 				</button>
+			</div>
 
-
-				<!-- <div> -->
-				<div class="promoPopup__icon">
-					<a href="#">
-						<img src="img/orange-logo.svg" alt="">
-					</a>
-				</div>
-				<h1 class="promoPopup__title"></h1>
-				<div class="popup__text promoPopup__iframe mainBenefits__slide" data-youtube-place>
-				</div>
-				<div class="promoPopup__about">
-					<p class="promoPopup__about1"></p>
-					<p class="promoPopup__about2"></p>
-					<p class="promoPopup__about3"></p>
-					<p class="promoPopup__about4"></p>
-					<p class="promoPopup__about5"></p>
-					<p class="promoPopup__about6"></p>
-				</div>
-				<div class="promoPopup__subscr">
-					<div class="promoPopup__orangeText">
-						<h4></h4>
+			<div class="headerAlt__menuBtn">
+				<button class="scroll-lock"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
+						<rect width="14" height="2" rx="1" fill="#DB4A2A" />
+						<rect y="14" width="14" height="2" rx="1" fill="#DB4A2A" />
+						<rect y="7" width="12" height="2" rx="1" fill="#DB4A2A" />
+					</svg>Меню</button>
+			</div>
+		</header>
+		<main class="main">
+			<section class="mainCover">
+				<div class="mainCover__container">
+					<h2>Створіть сторінку пам’яті
+						<br>
+						дорогої вам людини
+					</h2>
+					<p>Збережіть світлу пам'ять про рідних та близьких які відійшли у вічність,
+						<br>
+						діліться їх історіями та світлинами, записуйте спогади
+					</p>
+					<div class="mainCover__btn">
+						<button>Створити сторінку пам’яті</button>
 					</div>
-					<div class="promoPopup__submit">
-						<form class="promoPopup__form" data-popup-message="#popupThanks" data-ajax method="POST" action="#">
-							<div class="promoPopup__input-row">
-								<div class="promoPopup__input-field" id="id_email_container">
-									<input class="promoPopup__input" id="id_email" type="email" data-required placeholder="Email">
-									<button type="submit" class="promoPopup__input-btn"></button>
+				</div>
+				<div class="mainCover__bg">
+					<picture><source srcset="img/375-title-background.webp" type="image/webp"><img src="img/375-title-background.png" alt="Background picture"></picture>
+				</div>
+				<div class="mainCover__bg-desktop">
+					<picture><source srcset="img/background-desktop.webp" type="image/webp"><img src="img/background-desktop.png" alt="Background picture"></picture>
+				</div>
+			</section>
+
+			<form class="mainForm">
+				<div class="mainForm__container">
+					<!-- <div class="mainForm__searchType">
+            <label for="searchType">
+                <p>Пошук:</p>
+            </label>
+            <input class="searchTypeBtn_human" type="radio" name="search_type">
+            <span class="searchType_human">Людина</span>
+            <input class="searchTypeBtn_cemetery" type="radio" name="search_type">
+            <span class="searchType_cemetery">Кладовище</span>
+        </div> -->
+					<div class="mainForm__input">
+						<img src="img/input-icon1.svg" alt="">
+						<input type="text" name="secondName" id="secondName" placeholder="Прізвище" required>
+					</div>
+					<div class="mainForm__input">
+						<img src="img/input-icon1.svg" alt="">
+						<input type="text" name="firstName" id="firstName" placeholder="Ім'я" required>
+					</div>
+					<div class="mainForm__inputGroup">
+						<div class="mainForm__input">
+							<img src="img/input-icon2.svg" alt="">
+							<input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="birthDate" id="birthDate" placeholder="Дата народження" required />
+						</div>
+						<div class="mainForm__input">
+							<img src="img/input-icon2.svg" alt="">
+							<input type="text" class="datePicker" onfocus="this.type='date'" onblur="this.type='text'" name="deathDate" id="deathDate" placeholder="Дата смерті" required />
+						</div>
+					</div>
+					<div class="mainForm__input">
+						<img src="img/input-icon3.svg" alt="">
+						<input type="text" name="burialPlace" id="burialPlace" placeholder="Місце поховання" required>
+					</div>
+					<div class="mainForm__btn">
+						<button>
+							<img src="img/search-item.svg" alt=""><span>Пошук</span>
+						</button>
+					</div>
+				</div>
+			</form>
+
+			<section class="mainBenefits">
+				<div class="mainBenefits__container">
+					<div class="mainBenefits__title">
+						<h2>Чим корисний проект RIPlister?</h2>
+					</div>
+					<div class="mainBenefits__descr">
+						<p>Riplister - ваш помічник у збереженні пам'яті про близьких, що пішли з життя. Створюйте сторінки пам'яті
+							для
+							покійних рідних, діліться їх історіями та фотографіями. Записуйте спогади.</p>
+						<p>
+							З Riplister ви можете зберігати спогади про тих, кого втратили, і відновити зв'язки з родичами, які теж
+							скорблять за своїми близькими. Збережіть спогади та вірність пам'яті з Riplister.
+						</p>
+					</div>
+					<div class="mainBenefits__slider">
+						<div class="mainBenefits__wrapper swiper-wrapper">
+							<div class="mainBenefits__slide swiper-slide">
+
+								<div class="mainBenefits__overlay" id="youtube-overlay" title="play">
+									<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
+										<circle cx="35.9885" cy="35.7307" r="35.2307" stroke="white" stroke-opacity="0.5" />
+										<path d="M44.3156 34.6737L32.6894 27.4867C32.2627 27.2237 31.6963 27.1841 31.2287 27.3885C30.7573 27.5913 30.4629 28.0033 30.4629 28.4485V42.8177C30.4629 43.2677 30.7573 43.6781 31.2287 43.8809C31.428 43.9665 31.646 44.0092 31.8659 44.0092C32.1528 44.0092 32.4434 43.9316 32.6894 43.7779L44.3156 36.5972C44.6827 36.3675 44.8969 36.0126 44.8969 35.6355C44.8988 35.2521 44.6789 34.8987 44.3156 34.6737Z" fill="white" />
+									</svg>
+								</div>
+								<div class="mainBenefits__player" id="youtube-player">
+								</div>
+
+								<!-- <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe> -->
+								<!-- <picture><source srcset="img/mainSlide1.webp" type="image/webp"><img src="img/mainSlide1.png" alt=""></picture> -->
+							</div>
+							<div class="mainBenefits__slide swiper-slide">
+								<picture><source srcset="img/mainSlide1.webp" type="image/webp"><img src="img/mainSlide1.png" alt=""></picture>
+							</div>
+							<div class="mainBenefits__slide swiper-slide">
+								<picture><source srcset="img/mainSlide1.webp" type="image/webp"><img src="img/mainSlide1.png" alt=""></picture>
+							</div>
+							<div class="mainBenefits__slide swiper-slide">
+								<picture><source srcset="img/mainSlide1.webp" type="image/webp"><img src="img/mainSlide1.png" alt=""></picture>
+							</div>
+							<div class="mainBenefits__slide swiper-slide">
+								<picture><source srcset="img/mainSlide1.webp" type="image/webp"><img src="img/mainSlide1.png" alt=""></picture>
+							</div>
+						</div>
+						<div class="mainBenefits__pagination">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="mainVolunteer">
+				<div class="mainVolunteer__container">
+					<div class="mainVolunteer__quote">
+						<img src="img/ticks.svg" alt="quote ticks">
+						<p>Людина вмирає тоді, коли вмирає останній спогад про неї.</p>
+						<span>Джоан Роулінг</span>
+					</div>
+					<button class="volunteerBtn">Стати волонтером</button>
+				</div>
+			</section>
+
+			<section class="mainInfo">
+				<div class="mainInfo__container">
+					<div class="mainInfo__header">
+						<div class="mainInfo__descr">
+							<h1>Як створити сторінку пам’яті?</h1>
+							<p>Це головний крок у записі ваших спогадів.Ви допомагаєте вашим нащадкам зрозуміти своє коріння краще,
+								а
+								вашому втраченому близькому жити далі у серцях та пам'яті.</p>
+						</div>
+						<div class="mainInfo__linkHowTo">
+							<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+								<path d="M17.1147 10.6858C19.2655 10.6858 20.5419 11.8049 20.5419 13.6933C20.5419 15.337 19.7026 16.0889 18.4262 16.9981C17.4295 17.715 17.1497 18.397 17.1497 19.4286V20.1805H16.3978C16.2404 19.656 16.1705 19.044 16.1705 18.5369C16.1705 17.6976 16.5902 16.9806 17.2546 16.5085C18.4436 15.6517 19.3704 15.0048 19.3704 13.8157C19.3704 12.4693 18.5486 11.7349 17.0448 11.7349C15.7159 11.7349 14.7367 12.7491 14.7367 14.5501L13.6001 14.4102C13.6001 12.0846 14.999 10.6858 17.1147 10.6858ZM16.1006 23.1356V21.4395H17.5519V23.1356H16.1006Z" fill="#3C88F9" />
+								<circle cx="17" cy="17" r="16.5" stroke="#3C88F9" />
+							</svg>
+							<a target="_blank" href="#">
+								Як це зробити?
+							</a>
+						</div>
+					</div>
+					<div class="mainInfo__row">
+						<div class="mainInfo__item">
+							<div><span>1</span></div>
+							<h4>Реєстрація </h4>
+							<p>Спочатку вам потрібно зареєструватися на сайті або увійти за допомогою облікового запису Google або
+								Facebook. Для цього натисніть кнопку "Увійти" у верхньому правому куті.</p>
+						</div>
+						<div class="mainInfo__item">
+							<div><span>2</span></div>
+							<h4>Внесення даних</h4>
+							<p>Натисніть “Створити сторінку пам'яті” та внесіть наступні дані: ПІБ, дати народження і смерті, місце
+								поховання та завантажте фотографії. Додайте інформацію про життя та діяльність покійної особи.</p>
+						</div>
+						<div class="mainInfo__item">
+							<div><span>3</span></div>
+							<h4>Публікація</h4>
+							<p>Після перевірки інформації модератором, сторінка пам'яті стане доступна для перегляду на сайті. Ви
+								зможете редагувати і доповнювати її, а також поділитися нею з іншими користувачами.</p>
+						</div>
+					</div>
+					<div class="mainInfo__create">
+						<h2>Подивіться як створити сторінку пам’яті</h2>
+						<div class="mainInfo__linkHelp">
+							<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+								<path d="M17.1147 10.6858C19.2655 10.6858 20.5419 11.8049 20.5419 13.6933C20.5419 15.337 19.7026 16.0889 18.4262 16.9981C17.4295 17.715 17.1497 18.397 17.1497 19.4286V20.1805H16.3978C16.2404 19.656 16.1705 19.044 16.1705 18.5369C16.1705 17.6976 16.5902 16.9806 17.2546 16.5085C18.4436 15.6517 19.3704 15.0048 19.3704 13.8157C19.3704 12.4693 18.5486 11.7349 17.0448 11.7349C15.7159 11.7349 14.7367 12.7491 14.7367 14.5501L13.6001 14.4102C13.6001 12.0846 14.999 10.6858 17.1147 10.6858ZM16.1006 23.1356V21.4395H17.5519V23.1356H16.1006Z" fill="#3C88F9" />
+								<circle cx="17" cy="17" r="16.5" stroke="#3C88F9" />
+							</svg>
+							<a href="#">
+								Допомога
+							</a>
+						</div>
+						<button class="titleBtn">Створити сторінку пам’яті</button>
+					</div>
+				</div>
+			</section>
+
+			<section class="mainRecent">
+				<div class="mainRecent__container">
+					<div class="mainRecent__title">
+						<h2>Нещодавні додавання</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore
+							magna aliqua.
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+					</div>
+					<div class="mainRecent__slider">
+						<div class="mainRecent__wrapper swiper-wrapper">
+							<div class="mainRecent__slide swiper-slide">
+								<div class="mainRecent__slide_photo">
+									<picture><source srcset="img/recent-photo1.webp" type="image/webp"><img src="img/recent-photo1.png" alt=""></picture>
+									<picture><source srcset="img/svechka.webp" type="image/webp"><img src="img/svechka.png" alt="" class="mainRecent__slide_imgItem"></picture>
+								</div>
+								<div class="mainRecent__slide_text">
+									<h4>Призвище Ім'я По батькові</h4>
+									<p>21.01.1984 - 21.03.2023</p>
 								</div>
 							</div>
-						</form>
+							<div class="mainRecent__slide swiper-slide">
+								<div class="mainRecent__slide_photo">
+									<picture><source srcset="img/recent-photo2.webp" type="image/webp"><img src="img/recent-photo2.png" alt=""></picture>
+								</div>
+								<div class="mainRecent__slide_text">
+									<h4>Призвище Ім'я По батькові</h4>
+									<p>21.01.1984 - 21.03.2023</p>
+								</div>
+							</div>
+							<div class="mainRecent__slide swiper-slide">
+								<div class="mainRecent__slide_photo">
+									<picture><source srcset="img/recent-photo1.webp" type="image/webp"><img src="img/recent-photo1.png" alt=""></picture>
+								</div>
+								<div class="mainRecent__slide_text">
+									<h4>Призвище Ім'я По батькові</h4>
+									<p>21.01.1984 - 21.03.2023</p>
+								</div>
+							</div>
+							<div class="mainRecent__slide swiper-slide">
+								<div class="mainRecent__slide_photo">
+									<picture><source srcset="img/recent-photo2.webp" type="image/webp"><img src="img/recent-photo2.png" alt=""></picture>
+								</div>
+								<div class="mainRecent__slide_text">
+									<h4>Призвище Ім'я По батькові</h4>
+									<p>21.01.1984 - 21.03.2023</p>
+								</div>
+							</div>
+							<div class="mainRecent__slide swiper-slide">
+								<div class="mainRecent__slide_photo">
+									<picture><source srcset="img/recent-photo1.webp" type="image/webp"><img src="img/recent-photo1.png" alt=""></picture>
+								</div>
+								<div class="mainRecent__slide_text">
+									<h4>Призвище Ім'я По батькові</h4>
+									<p>21.01.1984 - 21.03.2023</p>
+								</div>
+							</div>
+							<div class="mainRecent__slide swiper-slide">
+								<div class="mainRecent__slide_photo">
+									<picture><source srcset="img/recent-photo2.webp" type="image/webp"><img src="img/recent-photo2.png" alt=""></picture>
+								</div>
+								<div class="mainRecent__slide_text">
+									<h4>Призвище Ім'я По батькові</h4>
+									<p>21.01.1984 - 21.03.2023</p>
+								</div>
+							</div>
+							<div class="mainRecent__slide swiper-slide">
+								<div class="mainRecent__slide_photo">
+									<picture><source srcset="img/recent-photo1.webp" type="image/webp"><img src="img/recent-photo1.png" alt=""></picture>
+								</div>
+								<div class="mainRecent__slide_text">
+									<h4>Призвище Ім'я По батькові</h4>
+									<p>21.01.1984 - 21.03.2023</p>
+								</div>
+							</div>
+							<div class="mainRecent__slide swiper-slide">
+								<div class="mainRecent__slide_photo">
+									<picture><source srcset="img/recent-photo2.webp" type="image/webp"><img src="img/recent-photo2.png" alt=""></picture>
+								</div>
+								<div class="mainRecent__slide_text">
+									<h4>Призвище Ім'я По батькові</h4>
+									<p>21.01.1984 - 21.03.2023</p>
+								</div>
+							</div>
+							<div class="mainRecent__slide swiper-slide">
+								<div class="mainRecent__slide_photo">
+									<picture><source srcset="img/recent-photo1.webp" type="image/webp"><img src="img/recent-photo1.png" alt=""></picture>
+
+								</div>
+								<div class="mainRecent__slide_text">
+									<h4>Призвище Ім'я По батькові</h4>
+									<p>21.01.1984 - 21.03.2023</p>
+								</div>
+							</div>
+							<div class="mainRecent__slide swiper-slide">
+								<div class="mainRecent__slide_photo">
+									<picture><source srcset="img/recent-photo2.webp" type="image/webp"><img src="img/recent-photo2.png" alt=""></picture>
+								</div>
+								<div class="mainRecent__slide_text">
+									<h4>Призвище Ім'я По батькові</h4>
+									<p>21.01.1984 - 21.03.2023</p>
+								</div>
+							</div>
+						</div>
+						<div class="mainRecent__scrollbar">
+						</div>
+					</div>
+					<div class="mainRecent__register">
+						<div class="mainRecent__text">
+							<h4>Вы можете <a href="#"> присоединиться и создать страницу памяти</a> для своих близких</h4>
+						</div>
+						<button class="titleBtn">Створити сторінку пам'яті</button>
 					</div>
 				</div>
-				<div class="promoPopup__socials">
-					<div class="promoPopup__socialsText">
-						<h4></h4>
+			</section>
+
+			<section class="mainFunerals">
+				<div class="mainFunerals__container">
+					<div class="mainFunerals__header">
+						<div class="mainFunerals__title">
+							<h2>Ритуальні послуги</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+								et
+								dolore magna aliqua.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+								tempor </p>
+						</div>
+						<div class="mainFunerals__input">
+							<img src="img/input-icon3.svg" alt="">
+							<img src="img/arrow-down-orange.svg" alt="">
+							<input type="text" name="region" id="region" placeholder="Оберіть регіон">
+						</div>
 					</div>
-					<div class="promoPopup__socialsIcons">
-						<a href="https://instagram.com/rip_lister?igshid=OGQ5ZDc2ODk2ZA==" class="promo__socialIcon instagram-icon">
-							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M10.105 2.91465C12.5283 2.80466 20.5007 2.77716 22.7313 2.99714C24.8793 3.20336 26.091 3.90453 27.0686 5.07313C28.0875 6.28299 28.3216 8.11151 28.4042 10.1325C28.5006 12.566 28.5419 20.485 28.3216 22.6985C28.1013 24.857 27.3715 26.0668 26.2149 27.0155C24.9481 28.0603 23.227 28.2803 21.2029 28.3628C18.8071 28.459 10.7797 28.4865 8.60414 28.2666C6.40107 28.0466 5.24446 27.3592 4.26685 26.1906C3.19286 24.912 3.01386 23.1659 2.91748 21.1312C2.80733 18.8627 2.79356 10.6962 3.00009 8.57896C3.20663 6.53046 3.92263 5.19687 5.07924 4.26198C6.37354 3.20336 8.06714 3.01088 10.105 2.91465ZM0.0672639 21.0487C0.191186 23.6196 0.383954 25.4207 1.58187 27.3042C2.58702 28.899 4.19801 30.0538 6.05684 30.6313C8.14976 31.2774 10.9587 31.2225 13.2719 31.2225C15.8329 31.2225 18.4766 31.2774 21.0239 31.1812C23.6814 31.0712 25.43 30.8787 27.344 29.6689C28.7759 28.7478 30.0289 27.2767 30.6761 25.2007C31.3645 23.001 31.2269 20.3475 31.2269 17.9416C31.2269 15.3569 31.2269 12.7722 31.2269 10.1875C31.2131 7.80905 30.8413 5.59557 29.6985 3.90453C29.1477 3.07963 28.5694 2.4747 27.8121 1.89727C27.0961 1.34734 26.2287 0.921138 25.2097 0.591178C23.2132 -0.0274967 20.1978 0.0137483 17.9672 0.0137483C15.4061 0.0137483 12.7624 -0.041245 10.2151 0.0687416C7.66784 0.16498 5.78146 0.398702 3.92263 1.59481C-0.139274 4.19324 0.0397256 8.86767 0.0259564 13.3084C0.0121873 15.8381 -0.0428893 18.519 0.0672639 21.0487Z" fill="#E55738" />
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M15.0606 10.5956C18.0325 10.2209 20.3485 12.4824 20.643 15.0384C21.0045 18.0092 18.7688 20.3376 16.1985 20.6454C13.2265 20.9933 10.8838 18.7719 10.5892 16.1892C10.2412 13.1783 12.4635 10.9168 15.0606 10.5956ZM7.83148 16.0822C8.126 20.2038 11.5531 23.6697 16.0244 23.4155C20.1879 23.1746 23.6819 19.6685 23.4142 15.199C23.1732 11.0104 19.6256 7.54452 15.1409 7.82554C11.0444 8.09318 7.4968 11.626 7.83148 16.0822Z" fill="#E55738" />
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M23.084 6.29994C22.3364 6.48231 21.6924 7.22322 21.9109 8.1693C22.0949 8.91021 22.831 9.53713 23.7856 9.33196C25.7869 8.91021 25.1198 5.8098 23.084 6.29994Z" fill="#E55738" />
-							</svg>
-
-						</a>
-						<a href="https://www.facebook.com/riplistercom" class="promo__socialIcon facebook-icon">
-							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M10.4858 2.91465C12.9092 2.80466 20.8815 2.77716 23.1121 2.99714C25.2601 3.20336 26.4581 3.90453 27.4494 5.07313C28.4683 6.28299 28.7024 8.11151 28.785 10.1325C28.8814 12.566 28.9227 20.485 28.7024 22.6985C28.4821 24.857 27.7524 26.0668 26.5957 27.0155C25.329 28.0603 23.6078 28.2803 21.5838 28.3628C19.1879 28.459 11.1468 28.4865 8.985 28.2666C6.78193 28.0466 5.62532 27.3592 4.64771 26.1906C3.57372 24.912 3.39472 23.1659 3.29834 21.1312C3.18818 18.8627 3.17442 10.6962 3.38095 8.57896C3.58749 6.53046 4.30349 5.19687 5.46009 4.26198C6.75439 3.20336 8.448 3.01088 10.4858 2.91465ZM0.448123 21.0487C0.572046 23.6196 0.764814 25.4207 1.94896 27.3042C2.96788 28.899 4.57887 30.0538 6.4377 30.6313C8.53061 31.2774 11.3395 31.2225 13.6527 31.2225C16.2138 31.2225 18.8575 31.2774 21.4048 31.1812C24.0622 31.0712 25.8109 30.8787 27.7248 29.6689C29.1568 28.7478 30.4098 27.2767 31.0569 25.2007C31.7454 23.001 31.6077 20.3475 31.6077 17.9416C31.6077 15.3569 31.6077 12.7722 31.6077 10.1875C31.5939 7.80905 31.2222 5.59557 30.0793 3.90453C29.5286 3.07963 28.9503 2.4747 28.193 1.89727C27.477 1.34734 26.5957 0.921138 25.5906 0.591178C23.5941 -0.0274967 20.5786 0.0137483 18.348 0.0137483C15.787 0.0137483 13.1433 -0.041245 10.596 0.0687416C8.0487 0.16498 6.16232 0.398702 4.30349 1.59481C0.241586 4.19324 0.420585 8.86767 0.406816 13.3084C0.393047 15.8381 0.33797 18.519 0.448123 21.0487Z" fill="#E55738" />
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M12.2632 13.7723V16.4973H14.7596V23.4286H17.024V16.484L19.4873 16.4973C19.5535 15.5978 19.6861 14.6851 19.7634 13.7723H17.024C17.024 13.5739 17.024 13.6268 17.024 13.2829C17.024 11.9337 17.0571 11.2326 17.3996 10.7696C17.7862 10.2405 18.3937 10.2538 19.5867 10.267H20.0506L20.0727 7.89922C19.2111 7.80663 18.3827 7.76694 17.6315 7.87276C16.8362 8.00504 16.1514 8.30928 15.6654 8.94421C14.7927 10.095 14.7264 11.4178 14.7375 13.0977C14.7485 13.4549 14.7596 13.5078 14.7596 13.7723H12.2632Z" fill="#E55738" />
-							</svg>
-
-						</a>
-
-						<a href="hhttps://www.tiktok.com/@rip.lister?_t=8hSVn0lfMwx&_r=1" class="promo__socialIcon twitter-icon">
-							<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M10.105 2.91465C12.5283 2.80466 20.5007 2.77716 22.7313 2.99714C24.8793 3.20336 26.0772 3.90452 27.0686 5.07313C28.0875 6.28299 28.3216 8.11151 28.4042 10.1325C28.5006 12.566 28.5419 20.485 28.3216 22.6985C28.1013 24.857 27.3715 26.0668 26.2149 27.0155C24.9481 28.0603 23.227 28.2803 21.2029 28.3628C18.8071 28.459 10.7659 28.4865 8.60414 28.2666C6.40107 28.0466 5.24447 27.3592 4.26686 26.1906C3.19286 24.912 3.01386 23.1659 2.91748 21.1312C2.80733 18.8627 2.79356 10.6962 3.00009 8.57896C3.20663 6.53046 3.92263 5.19687 5.07924 4.26198C6.37354 3.20336 8.06714 3.01088 10.105 2.91465ZM0.0672639 21.0487C0.191186 23.6196 0.383954 25.4207 1.5681 27.3042C2.58702 28.899 4.19801 30.0538 6.05685 30.6313C8.14976 31.2774 10.9587 31.2225 13.2719 31.2225C15.8329 31.2225 18.4766 31.2774 21.0239 31.1812C23.6814 31.0712 25.43 30.8787 27.344 29.6689C28.7759 28.7478 30.0289 27.2767 30.6761 25.2007C31.3645 23.001 31.2269 20.3475 31.2269 17.9416C31.2269 15.3569 31.2269 12.7722 31.2269 10.1875C31.2131 7.80905 30.8413 5.59557 29.6985 3.90453C29.1477 3.07963 28.5694 2.4747 27.8121 1.89727C27.0961 1.34734 26.2149 0.921138 25.2097 0.591178C23.2132 -0.0274966 20.1978 0.0137483 17.9672 0.0137483C15.4061 0.0137483 12.7624 -0.041245 10.2151 0.0687416C7.66784 0.16498 5.78146 0.398702 3.92263 1.59481C-0.139273 4.19324 0.0397256 8.86767 0.0259564 13.3084C0.0121873 15.8381 -0.0428893 18.519 0.0672639 21.0487Z" fill="#E55738" />
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M12.9348 19.5503C12.9478 19.5625 12.9613 19.5749 12.9743 19.5872C13.0946 19.6762 13.1822 19.8012 13.298 19.8975C13.6576 20.1944 14.0614 20.3557 14.525 20.3849C15.623 20.4543 16.5793 19.6039 16.7036 18.4865C16.7096 18.4321 16.7071 18.3772 16.7071 18.323C16.7071 14.9577 16.7071 11.5928 16.7071 8.22756C16.7071 8.00076 16.7071 8.00076 16.927 8.00076C17.4238 8.00076 17.9204 8.00024 18.4166 8.00128C18.463 8.00128 18.5118 7.99217 18.5543 8.02255C18.5577 8.02486 18.5602 8.02763 18.5636 8.02924C18.5873 8.05455 18.5942 8.08695 18.6011 8.11999C18.7915 9.02679 19.2551 9.75061 19.9817 10.2966C20.028 10.331 20.0655 10.3734 20.1095 10.4098C20.1411 10.4372 20.1726 10.4654 20.2047 10.4927C20.2268 10.4911 20.2431 10.5052 20.2609 10.5152C20.6278 10.7314 21.0204 10.8731 21.4372 10.9443C21.5995 10.9717 21.7637 10.9901 21.9294 10.9886C21.9985 10.9879 22.0005 10.9901 21.9999 11.0579V11.1543L21.996 11.5308L21.9999 11.5341V14.1297L21.9497 14.123C21.4712 14.0581 21.0046 13.9376 20.5543 13.7567C20.1232 13.5832 19.7177 13.3623 19.336 13.0923C19.3128 13.0757 19.2882 13.0605 19.2512 13.0364C19.2512 13.0811 19.2512 13.1137 19.2512 13.1457C19.2512 14.8469 19.2532 16.548 19.2507 18.2484C19.2502 19.1549 19.0223 19.9972 18.5522 20.7656C17.9845 21.6938 17.1973 22.3472 16.196 22.7207C15.5889 22.9487 14.96 23.0361 14.3144 22.9866C13.2253 22.9039 12.2829 22.4753 11.4804 21.7153C11.4591 21.695 11.4406 21.6715 11.4211 21.6491C11.3825 21.6143 11.345 21.5796 11.3067 21.5451C11.019 21.3003 10.8188 20.983 10.6321 20.6587C10.3443 20.1592 10.1577 19.6192 10.0664 19.0456C10.0144 18.7175 9.98788 18.387 10.0054 18.0553C10.0623 16.9861 10.4118 16.0315 11.0814 15.2064C11.6435 14.5147 12.3456 14.0313 13.1723 13.7406C13.8887 13.4879 14.5014 13.4778 15.2248 13.5602C15.2603 13.5646 15.2697 13.5815 15.2691 13.6133C15.2682 13.6317 15.2691 13.6497 15.2691 13.6682C15.2691 14.4743 15.2691 15.2803 15.2686 16.0864C15.2686 16.1161 15.2761 16.1475 15.2577 16.1794C15.1542 16.1591 15.0531 16.1272 14.948 16.1121C14.3435 16.0249 13.798 16.1704 13.3187 16.5592C12.8976 16.9008 12.6386 17.3496 12.5514 17.8928C12.459 18.4699 12.575 19.0048 12.8968 19.4893C12.9106 19.5089 12.9222 19.5295 12.9348 19.5503Z" fill="#E55738" />
-							</svg>
-
-						</a>
-						<!-- <a href="#" class="promo__socialIcon twitter-icon">
-							<svg xmlns="http://www.w3.org/2000/svg" width="31" height="26" viewBox="0 0 31 26" fill="none">
-								<path d="M10.0932 25.8504C21.3283 25.8504 27.4723 16.2449 27.4723 7.91529C27.4723 7.64249 27.4669 7.37093 27.455 7.1005C28.6476 6.21076 29.6842 5.10039 30.5018 3.83639C29.4074 4.33849 28.2296 4.67644 26.9941 4.82882C28.2552 4.04847 29.2234 2.81396 29.6801 1.34233C28.5 2.06433 27.193 2.58911 25.8015 2.87242C24.6869 1.64719 23.1 0.880859 21.343 0.880859C17.9698 0.880859 15.2345 3.7038 15.2345 7.18349C15.2345 7.67816 15.2882 8.15923 15.393 8.6208C10.3164 8.35718 5.8149 5.84888 2.80224 2.03484C2.27766 2.96634 1.97515 4.04847 1.97515 5.20307C1.97515 7.39 3.0535 9.32063 4.6933 10.4501C3.69118 10.4181 2.7498 10.1342 1.927 9.66169C1.9261 9.68818 1.9261 9.71396 1.9261 9.74221C1.9261 12.795 4.03155 15.3438 6.82642 15.9213C6.31322 16.0657 5.77314 16.1431 5.21579 16.1431C4.82287 16.1431 4.43994 16.1032 4.06781 16.0295C4.84545 18.5341 7.10035 20.3566 9.77374 20.4076C7.68318 22.0986 5.04965 23.1058 2.18745 23.1058C1.69503 23.1058 1.2086 23.0768 0.730469 23.0185C3.43373 24.8066 6.6436 25.85 10.0935 25.85" fill="#E55738"/>
-							</svg>
-						</a> -->
+					<div class="mainFunerals__companies">
+						<div class="funeralCompany">
+							<div class="funeralCompany__imageBox">
+								<picture><source srcset="img/funeral-company1.webp" type="image/webp"><img src="img/funeral-company1.png" alt=""></picture>
+							</div>
+							<h4>Декор</h4>
+							<p>Бюро Ритуальних услуг</p>
+						</div>
+						<div class="funeralCompany">
+							<div class="funeralCompany__imageBox">
+								<div class="funeralCompany__fullDay">
+									<span>24/7 Цілодобово</span>
+								</div>
+								<picture><source srcset="img/funeral-company2.webp" type="image/webp"><img src="img/funeral-company2.png" alt=""></picture>
+							</div>
+							<h4>Декор</h4>
+							<p>Бюро Ритуальних услуг</p>
+						</div>
+						<div class="funeralCompany">
+							<div class="funeralCompany__imageBox">
+								<picture><source srcset="img/funeral-company3.webp" type="image/webp"><img src="img/funeral-company3.png" alt=""></picture>
+							</div>
+							<h4>Декор</h4>
+							<p>Бюро Ритуальних услуг</p>
+						</div>
+						<div class="funeralCompany">
+							<div class="funeralCompany__imageBox">
+								<picture><source srcset="img/funeral-company4.webp" type="image/webp"><img src="img/funeral-company4.png" alt=""></picture>
+							</div>
+							<h4>Декор</h4>
+							<p>Бюро Ритуальних услуг</p>
+						</div>
 					</div>
 				</div>
-				<!-- </div> -->
+			</section>
 
-
+			<section class="mainPartners">
+				<div class="mainPartners__container ">
+					<div class="mainPartners__title">
+						<h2>Наши партнеры</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore
+							magna aliqua.
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+					</div>
+					<div class="mainPartners__partners">
+						<div>
+							<picture><source srcset="img/partner1.webp" type="image/webp"><img src="img/partner1.png" alt=""></picture>
+						</div>
+						<div>
+							<picture><source srcset="img/partner2.webp" type="image/webp"><img src="img/partner2.png" alt=""></picture>
+						</div>
+						<div>
+							<picture><source srcset="img/partner3.webp" type="image/webp"><img src="img/partner3.png" alt=""></picture>
+						</div>
+						<div>
+							<picture><source srcset="img/partner4.webp" type="image/webp"><img src="img/partner4.png" alt=""></picture>
+						</div>
+						<div>
+							<picture><source srcset="img/partner5.webp" type="image/webp"><img src="img/partner5.png" alt=""></picture>
+						</div>
+						<div>
+							<picture><source srcset="img/partner6.webp" type="image/webp"><img src="img/partner6.png" alt=""></picture>
+						</div>
+						<div>
+							<picture><source srcset="img/partner7.webp" type="image/webp"><img src="img/partner7.png" alt=""></picture>
+						</div>
+						<div>
+							<picture><source srcset="img/partner8.webp" type="image/webp"><img src="img/partner8.png" alt=""></picture>
+						</div>
+					</div>
+					<hr>
+					<div class="mainPartners__partner">
+						<h4>Стати нашим партнером та приєднатись до нас</h4>
+						<button>Відправити запит</button>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__logo">
+					<a href="#">
+						<img src="img/black-logo.svg" alt="RiPLister logo" />
+					</a>
+				</div>
+				<div class="footer__about">
+					<p>
+						У серці кожного з нас є місце для особливої людини, якої вже немає у
+						цьому світі. Ми згадуємо про нього щодня або лише у особливі хвилини
+						свого життя. У будь-якому випадку важливим є те, що пам'ять про нього
+						жива.
+					</p>
+					<br />
+					<p>
+						RIP Lister – сайт пам'яті. Ми хочемо допомогти зберегти спогади про
+						покійних для сім'ї та друзів, близьких родичів та знайомих, для
+						нащадків, дітей та онуків, яким буде важлива історія їхньої родини.
+					</p>
+				</div>
+				<div class="footer__menu">
+					<ul class="footer__list">
+						<li class="footer__list-item">
+							<a href="#">про нас</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#">
+								послуги
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#">
+								контакти
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#">інструкції</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#">
+								питання - відповідь
+							</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#">новини</a>
+						</li>
+						<li class="footer__list-item">
+							<a href="#">
+								блог
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer__contact">
+					<button data-popup="#popup">
+						<svg xmlns="http://www.w3.org/2000/svg" width="36" height="27" viewBox="0 0 36 27" fill="none">
+							<rect width="35.8904" height="26.2" rx="6" fill="#E55738" />
+							<path d="M5.62599 5.86294C9.6288 9.7635 13.6316 13.6637 17.6344 17.5643C18.3806 18.2912 19.5258 17.1486 18.7785 16.4202C14.7757 12.52 10.7729 8.61942 6.77007 4.71923C6.0239 3.99195 4.8787 5.13492 5.62599 5.86294Z" fill="white" />
+							<path d="M18.7778 17.5645C22.7806 13.6643 26.7834 9.7637 30.7862 5.86351C31.5331 5.13549 30.3887 3.99214 29.6421 4.71942C25.6393 8.61961 21.6365 12.5202 17.6337 16.4204C16.8868 17.1484 18.0312 18.2917 18.7778 17.5645Z" fill="white" />
+							<path d="M30.7427 20.3252C28.0792 17.7992 25.4153 15.2735 22.7519 12.7475C21.9964 12.0313 20.8505 13.1732 21.6078 13.8916C24.2713 16.4176 26.9351 18.9433 29.5986 21.4693C30.354 22.1854 31.5 21.0432 30.7427 20.3252Z" fill="white" />
+							<path d="M6.88457 21.4689C9.54805 18.9429 12.2119 16.4172 14.8754 13.8912C15.6323 13.1732 14.4871 12.0306 13.7313 12.7471C11.0678 15.2731 8.40396 17.7988 5.74048 20.3248C4.98356 21.0428 6.12876 22.1858 6.88457 21.4689Z" fill="white" />
+						</svg>
+						Напишіть нам
+					</button>
+				</div>
+				<div class="footer__ref">
+					<a href="#">РЕФЕРАЛЬНА ПРОГРАМА</a>
+				</div>
+				<div class="footer__links">
+					<div class="footer__policy">
+						<a href="#">Політика конфіденційності</a>
+						<a href="#">Публічна оферта</a>
+					</div>
+					<div class="footer__socials">
+						<a href="#" class="instagram-icon">
+							<img src="img/instagram-icon.svg" alt="Instagram icon" />
+						</a>
+						<a href="#" class="facebook-icon">
+							<img src="img/facebook-icon.svg" alt="facebook icon" />
+						</a>
+						<a href="#" class="twitter-icon">
+							<img src="img/twitter-icon.svg" alt="twitter icon" />
+						</a>
+					</div>
+					<div class="footer__copyright">
+						<p>© 2023 <span>RIPLISTER</span>.</p>
+						<p>Всі права захищенні</p>
+					</div>
+				</div>
 			</div>
-		</div>
+		</footer>
 	</div>
-	<div id="popupThanks" class="popup popupThanks">
-		<div class="popup__wrapper popupThanks__wrapper">
-			<div class="popup__content popupThanks__content">
-				<button data-close type="button" class="popup__close popupThanks__close">
-					<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
-						<rect width="44" height="44" rx="18" fill="url(#paint0_linear_2574_3511)" />
-						<path d="M28.5512 16.0769L16.0742 28.5539" stroke="white" stroke-width="2" />
-						<path d="M16.0738 16.0768L28.5508 28.5538" stroke="white" stroke-width="2" />
-						<defs>
-							<linearGradient id="paint0_linear_2574_3511" x1="22" y1="0" x2="22" y2="44" gradientUnits="userSpaceOnUse">
-								<stop stop-color="#EF6446" />
-								<stop offset="1" stop-color="#DB4A2A" />
-							</linearGradient>
-						</defs>
+	<div class="menu">
+		<div class="menu__header">
+			<div class="menu__left">
+				<button class="menu__langBtn">
+					<img src="img/flag_ua.svg" alt="">
+					<span>УКР</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="11" height="17" viewBox="0 0 11 17" fill="none">
+						<path d="M5.75567 16.6588L5.75646 16.658L10.0894 12.3041C10.414 11.9779 10.4128 11.4504 10.0866 11.1257C9.76038 10.801 9.2328 10.8023 8.90817 11.1285L5.9991 14.0517L5.9991 0.833256C5.9991 0.373049 5.62605 0 5.16585 0C4.70564 0 4.33259 0.373049 4.33259 0.833256L4.33259 14.0517L1.42353 11.1285C1.09889 10.8023 0.571315 10.8011 0.245136 11.1257C-0.0811253 11.4504 -0.0822496 11.978 0.242304 12.3042L4.57523 16.6581L4.57603 16.6588C4.90175 16.9852 5.43103 16.9841 5.75567 16.6588Z" fill="black" />
 					</svg>
 				</button>
-				<div class="popupThanks__Text">
-					<h4></h4>
+			</div>
+			<div class="menu__right">
+				<button class="menu__entryBtn"><img src="img/entryBtn.svg" alt="">Ввійти на сайт</button>
+				<button class="menu__closeBtn"><img src="img/closeBtn.svg" alt=""></button>
+			</div>
+		</div>
+		<nav class="menu__nav">
+			<ul class="menu__list">
+				<li class="menu__list-item">
+					<a href="#">про нас</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">
+						послуги
+					</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">
+						контакти
+					</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">інструкції</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">
+						питання - відповідь
+					</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">новини</a>
+				</li>
+				<li class="menu__list-item">
+					<a href="#">
+						блог
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="menu__ref">
+			<a href="#">РЕФЕРАЛЬНА ПРОГРАМА</a>
+		</div>
+		<div class="menu__contact">
+			<button class="scroll-lock" data-popup="#popup">
+				<svg xmlns="http://www.w3.org/2000/svg" width="36" height="27" viewBox="0 0 36 27" fill="none">
+					<rect width="35.8904" height="26.2" rx="6" fill="#E55738" />
+					<path d="M5.62599 5.86294C9.6288 9.7635 13.6316 13.6637 17.6344 17.5643C18.3806 18.2912 19.5258 17.1486 18.7785 16.4202C14.7757 12.52 10.7729 8.61942 6.77007 4.71923C6.0239 3.99195 4.8787 5.13492 5.62599 5.86294Z" fill="white" />
+					<path d="M18.7778 17.5645C22.7806 13.6643 26.7834 9.7637 30.7862 5.86351C31.5331 5.13549 30.3887 3.99214 29.6421 4.71942C25.6393 8.61961 21.6365 12.5202 17.6337 16.4204C16.8868 17.1484 18.0312 18.2917 18.7778 17.5645Z" fill="white" />
+					<path d="M30.7427 20.3252C28.0792 17.7992 25.4153 15.2735 22.7519 12.7475C21.9964 12.0313 20.8505 13.1732 21.6078 13.8916C24.2713 16.4176 26.9351 18.9433 29.5986 21.4693C30.354 22.1854 31.5 21.0432 30.7427 20.3252Z" fill="white" />
+					<path d="M6.88457 21.4689C9.54805 18.9429 12.2119 16.4172 14.8754 13.8912C15.6323 13.1732 14.4871 12.0306 13.7313 12.7471C11.0678 15.2731 8.40396 17.7988 5.74048 20.3248C4.98356 21.0428 6.12876 22.1858 6.88457 21.4689Z" fill="white" />
+				</svg>
+				Напишіть нам
+			</button>
+		</div>
+		<div class="menu__links">
+			<a href="#">Політика конфіденційності</a>
+			<a href="#">Публічна оферта</a>
+		</div>
+		<div class="menu__socials">
+			<a href="#" class="instagram-icon">
+				<img src="img/instagram-icon.svg" alt="Instagram icon" />
+			</a>
+			<a href="#" class="facebook-icon">
+				<img src="img/facebook-icon.svg" alt="facebook icon" />
+			</a>
+			<a href="#" class="twitter-icon">
+				<img src="img/twitter-icon.svg" alt="twitter icon" />
+			</a>
+		</div>
+	</div>
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__container">
+					<h4 class="popup__title">Напишіть нам</h4>
+					<p class="popup__description">Співробітник нашої служби підтримки відповість якомога швидше.</p>
+					<div class="popup__form">
+						<form action="URL" id="contactForm" class="contactForm">
+							<input class="popup__input" type="text" name="usrname" placeholder="Ваше Ім'я" />
+							<input class="popup__input" type="text" name="email" placeholder="Ваш email" />
+						</form>
+						<br />
+						<label>Тема звернення:</label>
+						<select name="popup__select" class="popup__select">
+							<option value="value1" selected>
+								<span>Питання з партнерства</span>
+							</option>
+						</select>
+						<br />
+						<textarea class="popup__textarea" rows="10" cols="50" name="comment" form="usrform">Текст повідомлення</textarea>
+						<button class="popup__submitBtn" type="submit">Відправити</button>
+					</div>
+					<button data-close type="button" class="popup__close">
+						<img src="img/popup-close.svg" alt="">
+					</button>
 				</div>
-				<button data-close type="button" class="popupThanks__closeBtn"></button>
 			</div>
 		</div>
 	</div>
