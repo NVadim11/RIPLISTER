@@ -1235,40 +1235,43 @@ s .popupThanks__content {
   text-transform: uppercase;
 }
 
-.headerMain__search {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-}
-
-.headerMain__search svg {
-  position: absolute;
-  margin-left: 1.25rem;
-}
-
-.headerMain__search input {
-  padding: 1rem 1.125rem;
-  border-radius: 1.875rem;
-  border: 0.0625rem solid #AAA;
-  overflow: hidden;
-  padding: 0.9375rem 0.625rem 0.9375rem 50px;
-}
-
 .headerMain__btnBox {
   display: none;
 }
 
-.headerMain__entryBtn {
-  border-radius: 2.5rem;
+.headerMain__searchBtn {
+  position: relative;
+  padding: 1.4375rem 2.8125rem 1.4375rem 5.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
   color: var(--white-color);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 1.875rem;
+}
+
+.headerMain__searchBtn svg {
+  position: absolute;
+  left: 47px;
+}
+
+.headerMain__searchBtn:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.headerMain__entryBtn {
+  border-radius: 1.875rem;
+  border: 0.0625rem solid var(--white-color);
+  background: var(--white-color);
+  color: var(--text-color-black);
   padding: 0.8125rem 1.125rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1281,19 +1284,18 @@ s .popupThanks__content {
 }
 
 .headerMain__entryBtn svg {
-  margin-right: 0.4375rem;
+  margin-right: 1.0625rem;
 }
 
 .headerMain__entryBtn:hover {
   cursor: pointer;
-  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
-  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  border: 0.0625rem solid var(--text-color-black);
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
 
 .headerMain__langBtn {
-  border-radius: 1.125rem;
+  border-radius: 1.875rem;
   border: 0.0625rem solid #AAA;
   padding: 0.8125rem;
   display: -webkit-box;
@@ -4168,6 +4170,104 @@ s .popupThanks__content {
 ::-webkit-scrollbar-thumb {
   border-radius: 1.875rem;
   background: #EB8069;
+}
+
+.cabinet__container {
+  margin: 6.5rem 3.125rem 12.5rem 5rem;
+}
+
+.tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tabs__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: solid 0.0625rem #EC6041;
+  border-radius: 1.875rem;
+  overflow: hidden;
+}
+
+.tabs__title {
+  color: var(--text-color-black);
+  border: solid 0.0625rem #F5BFB4;
+  padding: 2.5rem 12.5rem 2.5rem 6.25rem;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 2.125rem;
+  letter-spacing: 0em;
+  text-align: left;
+  cursor: pointer;
+}
+
+._tab-active {
+  color: var(--orange-color);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 2.125rem;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.profile-photo__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile-photo__container label {
+  display: block;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: var(--text-color-blue);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: underline;
+}
+
+.profile-photo__container label:hover {
+  text-decoration: none;
+}
+
+.profile-photo__container input {
+  display: none;
+}
+
+.profile__photo {
+  border-radius: 1.875rem;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 244px;
+  height: 310px;
+}
+
+.profile__photo img {
+  width: 100%;
+  height: auto;
 }
 
 .menu {

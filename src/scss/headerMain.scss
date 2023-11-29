@@ -50,22 +50,6 @@
 			text-transform: uppercase;
 		}
 	}
-	&__search {
-			display: flex;
-			align-items:center;
-    	text-align: center; 
-		svg {
-			position: absolute;
-			margin-left: 1.25rem; 
-		}	
-		input {	
-			padding: 1rem 1.125rem;
-			border-radius: 1.875rem;
-			border: 0.0625rem solid #AAA;
-			overflow: hidden;
-			padding: 0.9375rem 0.625rem 0.9375rem 50px;
-		};
-	}
 	&__btnBox {
 		display: none;
 		@media screen and (min-width:$tablet) {
@@ -73,28 +57,49 @@
 			gap: 0.625rem;
 		}
 	}
-	&__entryBtn {
-		border-radius: 2.5rem;
+	&__searchBtn {
+		position: relative;
+		padding: 1.4375rem 2.8125rem 1.4375rem 5.25rem;
 		background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 		color: var(--white-color);
+		font-size: 1.25rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		border-radius: 1.875rem;
+		svg {
+			position: absolute;
+			left: 47px; 
+		}	
+	}
+	&__searchBtn:hover {
+		cursor: pointer;
+		background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+		transition: 0.25s;
+}
+	&__entryBtn {
+		border-radius: 1.875rem;
+		border: 0.0625rem solid var(--white-color);
+		background: var(--white-color);
+		color: var(--text-color-black);
 		padding: 0.8125rem 1.125rem;
-		font-size: 1rem;
+		font-size: 1.25rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
 		display: flex;
 		align-items: center;
-      svg {
-          margin-right: 0.4375rem;
+		  svg {
+          margin-right: 1.0625rem;
       }
 	}
 	&__entryBtn:hover {
 		cursor: pointer;
-		background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+		border: 0.0625rem solid var(--text-color-black);
 		transition: 0.25s;
 }
 	&__langBtn {
-		border-radius: 1.125rem;
+		border-radius: 1.875rem;
         border: 0.0625rem solid #AAA;
         padding: 0.8125rem;
         display: flex;
