@@ -8186,14 +8186,6 @@
         document.querySelector(".searchType_human");
         document.querySelector(".searchType_cemetery");
         document.querySelector(".year");
-        const input = document.getElementById("file-input");
-        const script_image = document.getElementById("img-preview");
-        input.addEventListener("change", (e => {
-            if (e.target.files.length) {
-                const src = URL.createObjectURL(e.target.files[0]);
-                script_image.src = src;
-            }
-        }));
         if (mainMenuBtn) {
             const menu = document.querySelector(".menu");
             mainMenuBtn.addEventListener("click", (function(e) {

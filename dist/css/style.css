@@ -4216,49 +4216,6 @@ s .popupThanks__content {
   text-align: left;
 }
 
-#file-input {
-  display: none;
-}
-
-.preview {
-  padding: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  max-width: 350px;
-  margin: auto;
-  background-color: rgb(255, 255, 255);
-  -webkit-box-shadow: 0 0 20px rgba(170, 170, 170, 0.2);
-          box-shadow: 0 0 20px rgba(170, 170, 170, 0.2);
-}
-
-img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-bottom: 20px;
-}
-
-label {
-  font-weight: 600;
-  cursor: pointer;
-  color: #fff;
-  border-radius: 8px;
-  padding: 10px 20px;
-  background-color: rgb(101, 101, 255);
-}
-
 .menu {
   z-index: 100;
   position: fixed;
