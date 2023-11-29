@@ -4216,6 +4216,60 @@ s .popupThanks__content {
   text-align: left;
 }
 
+.profile-photo__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profile-photo__container label {
+  display: block;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: var(--text-color-blue);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: underline;
+}
+
+.profile-photo__container label:hover {
+  text-decoration: none;
+}
+
+.profile-photo__container input {
+  display: none;
+}
+
+.profile__photo {
+  border-radius: 1.875rem;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 244px;
+  height: 310px;
+}
+
+.profile__photo img {
+  width: 100%;
+  height: auto;
+}
+
 .menu {
   z-index: 100;
   position: fixed;

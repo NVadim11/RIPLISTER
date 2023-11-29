@@ -36,3 +36,42 @@
 }
 .tabs__body {
 }
+.tabs__body-Title {
+}
+.tabs__body-Content {
+}
+.profile-photo__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	label {
+		display: block;
+		cursor: pointer;
+		user-select: none;
+		color: var(--text-color-blue);
+		font-size: 24px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		text-decoration: underline;
+	}
+	label:hover {
+		text-decoration: none;
+	}
+	input {
+		display: none;
+	}
+}
+.profile__photo {
+	border-radius: 1.875rem;
+	overflow: hidden;
+	display: flex;
+	width: 244px;
+	height: 310px;
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+

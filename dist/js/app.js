@@ -8181,6 +8181,8 @@
         const promoEnVid = document.getElementById("promo__enVideo");
         const promoUaLink = document.getElementById("promo__uaLink");
         const promoEnLink = document.getElementById("promo__enLink");
+        const photoPicture = document.getElementById("profilePicture");
+        const photoPictureInput = document.getElementById("profilePictureInput");
         document.querySelector(".searchTypeBtn_human");
         document.querySelector(".searchTypeBtn_cemetery");
         document.querySelector(".searchType_human");
@@ -8207,6 +8209,9 @@
                 menuClose();
             }));
         }
+        photoPictureInput.onchange = function() {
+            photoPicture.src = URL.createObjectURL(photoPictureInput.files[0]);
+        };
         function languageDetection() {
             const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
             if (userLang === "en") langImg.src = "img/en.svg"; else langImg.src = "img/ua.svg";

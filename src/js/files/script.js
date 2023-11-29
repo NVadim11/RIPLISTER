@@ -15,6 +15,8 @@ const promoUaVid = document.getElementById("promo__uaVideo");
 const promoEnVid = document.getElementById("promo__enVideo");
 const promoUaLink = document.getElementById("promo__uaLink");
 const promoEnLink = document.getElementById("promo__enLink");
+const photoPicture = document.getElementById("profilePicture");
+const photoPictureInput = document.getElementById("profilePictureInput");
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
 const radioBtnHumanText = document.querySelector(".searchType_human");
@@ -44,6 +46,12 @@ if (menuCloseBtn) {
         menuClose()       
     });
 }
+
+// Profile picture upload
+photoPictureInput.onchange = function() {
+    photoPicture.src = URL.createObjectURL(photoPictureInput.files[0]);
+}
+
 // Language detection
 function languageDetection() {    
     const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
