@@ -5980,8 +5980,8 @@
         document.getElementById("promo__enVideo");
         document.getElementById("promo__uaLink");
         document.getElementById("promo__enLink");
-        const photoPicture = document.getElementById("profilePicture");
-        const photoPictureInput = document.getElementById("profilePictureInput");
+        const profilePicture = document.getElementById("profilePicture");
+        const profilePictureInput = document.getElementById("profilePictureInput");
         document.querySelector(".searchTypeBtn_human");
         document.querySelector(".searchTypeBtn_cemetery");
         document.querySelector(".searchType_human");
@@ -6008,9 +6008,16 @@
                 menuClose();
             }));
         }
-        photoPictureInput.onchange = function() {
-            photoPicture.src = URL.createObjectURL(photoPictureInput.files[0]);
-        };
+        if (!localStorage.getItem("profilePictureInput")) profilePicture.setAttribute("src", "img/profile-placeholder.png"); else profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"));
+        profilePictureInput.addEventListener("change", (e => {
+            const image = e.target.files[0];
+            const reader = new FileReader;
+            reader.readAsDataURL(image);
+            reader.addEventListener("load", (() => {
+                localStorage.setItem("profilePictureInput", reader.result);
+                if (!localStorage.getItem("profilePictureInput")) profilePicture.setAttribute("src", "img/profile-placeholder.png"); else profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"));
+            }));
+        }));
         window["FLS"] = true;
         isWebp();
         menuInit();

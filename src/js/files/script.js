@@ -15,8 +15,8 @@ const promoUaVid = document.getElementById("promo__uaVideo");
 const promoEnVid = document.getElementById("promo__enVideo");
 const promoUaLink = document.getElementById("promo__uaLink");
 const promoEnLink = document.getElementById("promo__enLink");
-const photoPicture = document.getElementById("profilePicture");
-const photoPictureInput = document.getElementById("profilePictureInput");
+const profilePicture = document.getElementById("profilePicture");
+const profilePictureInput = document.getElementById("profilePictureInput");
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
 const radioBtnHumanText = document.querySelector(".searchType_human");
@@ -47,10 +47,27 @@ if (menuCloseBtn) {
     });
 }
 
-// Profile picture upload
-photoPictureInput.onchange = function() {
-    photoPicture.src = URL.createObjectURL(photoPictureInput.files[0]);
-}
+// Profile picture upload/save to localStorage
+    if (!localStorage.getItem("profilePictureInput")) {
+        profilePicture.setAttribute("src", "img/profile-placeholder.png")
+    } else {        
+        profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
+    }
+
+profilePictureInput.addEventListener("change", (e) => {
+    const image = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(image);
+    reader.addEventListener("load", () => {
+        localStorage.setItem("profilePictureInput", reader.result)       
+    if (!localStorage.getItem("profilePictureInput")) {
+        profilePicture.setAttribute("src", "img/profile-placeholder.png")
+    } else {        
+        profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
+    }    
+    });    
+})
+
 
 // Language detection
 // function languageDetection() {    
