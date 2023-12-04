@@ -1,18 +1,19 @@
+import changeLng from "./translations.js"
 /* Promo Page */
-
-const langMenuBtn = document.querySelector('.headerAlt__langBtn');
-const langMenu = document.querySelector('.promo__langMenu');
+const langMenuBtn = document.querySelector('.langMenuBtn');
+const langMenu = document.querySelector('.langMenu');
 const langUABtn = document.querySelector('.uaBtn');
 const langENBtn = document.querySelector('.enBtn');
 const langImg = document.getElementById("langImg");
-const promoUaVid = document.getElementById("promo__uaVideo");
-const promoEnVid = document.getElementById("promo__enVideo");
-const promoUaLink = document.getElementById("promo__uaLink");
-const promoEnLink = document.getElementById("promo__enLink");
+// const uaVid = document.querySelector("uaVideo");
+// const enVid = document.querySelector("enVideo");
+// const uaLink = document.querySelector("uaLink");
+// const enLink = document.querySelector("enLink");
 
 const url = 'http://../profile.html';
 const pathname = new URL(url).pathname.slice(1);
 const currentPage = location.href.split( '/' )[3];
+
 if (pathname === currentPage) {
   languageDetection();
 }
@@ -21,32 +22,32 @@ if (pathname === currentPage) {
     const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
     if (userLang === "en") {
         langImg.src = "img/en.svg";
-        promoEnVid.style.display = "flex";
-        promoUaVid.style.display = "none"; 
-        promoEnLink.style.display = "flex";
-        promoUaLink.style.display = "none";   
+        // enVid.style.display = "flex";
+        // uaVid.style.display = "none"; 
+        // enLink.style.display = "flex";
+        // uaLink.style.display = "none";   
     } else {
         langImg.src = "img/ua.svg";
-        promoEnVid.style.display = "none";
-        promoUaVid.style.display = "flex";  
-        promoUaLink.style.display = "flex";    
-        promoEnLink.style.display = "none"; 
+        // enVid.style.display = "none";
+        // uaVid.style.display = "flex";  
+        // uaLink.style.display = "flex";    
+        // enLink.style.display = "none"; 
     }
     if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
-        promoEnVid.style.display = "flex";
-        promoUaVid.style.display = "none";         
+        // enVid.style.display = "flex";
+        // uaVid.style.display = "none";         
     }
     if (localStorage.getItem('i18nextLng').slice(0, 2) === "ua") {
-        promoEnVid.style.display = "none";
-        promoUaVid.style.display = "flex";        
+        // enVid.style.display = "none";
+        // uaVid.style.display = "flex";        
     }
     if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
-        promoEnLink.style.display = "flex";
-        promoUaLink.style.display = "none";           
+        // enLink.style.display = "flex";
+        // uaLink.style.display = "none";           
     }
     if (localStorage.getItem('i18nextLng').slice(0, 2) === "ua") {
-        promoUaLink.style.display = "flex";    
-        promoEnLink.style.display = "none";        
+        // uaLink.style.display = "flex";    
+        // enLink.style.display = "none";        
     }
   }
   languageDetection();
@@ -73,10 +74,10 @@ if (pathname === currentPage) {
   
     langImg.src = newImg;
   
-    promoUaVid.style.display = "flex";
-    promoEnVid.style.display = "none";
-    promoUaLink.style.display = "flex";
-    promoEnLink.style.display = "none";
+    // uaVid.style.display = "flex";
+    // enVid.style.display = "none";
+    // uaLink.style.display = "flex";
+    // enLink.style.display = "none";
     localStorage.setItem('userImageChoice', newImg);
   }
   function changeToEN() {    
@@ -87,11 +88,10 @@ if (pathname === currentPage) {
   
      langImg.src = newImg;
   
-     promoEnVid.style.display = "flex";
-     promoUaVid.style.display = "none";
-     promoEnLink.style.display = "flex";
-     promoUaLink.style.display = "none";
-  
+    //  enVid.style.display = "flex";
+    //  uaVid.style.display = "none";
+    //  enLink.style.display = "flex";
+    //  uaLink.style.display = "none";  
      localStorage.setItem('userImageChoice', newImg);
   }
   

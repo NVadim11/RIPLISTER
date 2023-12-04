@@ -1,20 +1,10 @@
 // Підключення функціоналу "Чертоги Фрілансера"
 import { menuClose, menuOpen } from "./functions.js"
-import changeLng from "./translations.js"
 // Підключення списку активних модулів
 // Constants
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
 const altMenuBtn = document.querySelector('.headerAlt__menuBtn');
 const menuCloseBtn = document.querySelector('.menu__closeBtn');
-const langMenuBtn = document.querySelector('.headerAlt__langBtn');
-const langMenu = document.querySelector('.promo__langMenu');
-const langUABtn = document.querySelector('.uaBtn');
-const langENBtn = document.querySelector('.enBtn');
-const langImg = document.getElementById("langImg");
-const promoUaVid = document.getElementById("promo__uaVideo");
-const promoEnVid = document.getElementById("promo__enVideo");
-const promoUaLink = document.getElementById("promo__uaLink");
-const promoEnLink = document.getElementById("promo__enLink");
 const profilePicture = document.getElementById("profilePicture");
 const profilePictureInput = document.getElementById("profilePictureInput");
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");

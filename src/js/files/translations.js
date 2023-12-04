@@ -16,7 +16,7 @@ i18next
 				"socialsText": "Також додавайся до наших сторінок у соцмережах",
 				"whiteTitleFirst": "Спадок пам'яті,",
 				"whiteTitleSecond": "що об'єднує нас.",
-				"promoDisplayLng": "УКР",
+				"langDisplayLng": "УКР",
         "thanksPopupText": "Дякуємо вам за підписку!",
         "thanksPopupBtn": "Продовжити",
         "promoVideoLabel": "Закрити",
@@ -38,7 +38,7 @@ i18next
 				"socialsText": "Also, join our social media pages for updates.",
 				"whiteTitleFirst": "Legacy of memory",
 				"whiteTitleSecond": "that unites us.",
-				"promoDisplayLng": "ENG",
+				"langDisplayLng": "ENG",
         "thanksPopupText": "Thank you for subscribing!",
         "thanksPopupBtn": "Continue",
         "promoVideoLabel": "Close",
@@ -85,7 +85,7 @@ function updateContent() {
         document.querySelector(".promoPopup__socialsText h4").innerHTML = i18next.t("socialsText");
         document.querySelector(".promo__whiteTitleFirst").innerHTML = i18next.t("whiteTitleFirst");
         document.querySelector(".promo__whiteTitleSecond").innerHTML = i18next.t("whiteTitleSecond");
-        document.querySelector(".headerAlt__langBtn span").innerHTML = i18next.t("promoDisplayLng");
+        document.querySelector(".langMenuBtn span").innerHTML = i18next.t("langDisplayLng");
         document.querySelector(".popupThanks__Text h4").innerHTML = i18next.t("thanksPopupText");
         document.querySelector(".popupThanks__closeBtn").innerHTML = i18next.t("thanksPopupBtn");
         document.querySelector(".promoPopup__orangeText h4").innerHTML = i18next.t("promoOrangeText");
@@ -99,7 +99,7 @@ function updateContent() {
         document.querySelector(".promoPopup__about6").innerHTML = i18next.t("promoPopup__about6");
     }
     else {
-         console.log('123');
+      document.querySelector(".langMenuBtn span").innerHTML = i18next.t("langDisplayLng");
     }
 }
     // updateContent();
