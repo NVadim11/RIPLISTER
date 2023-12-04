@@ -1,6 +1,6 @@
 <?php
-	use PHPMailer\PHPMailer\PHPMailer;
-	use PHPMailer\PHPMailer\Exception;
+	// use PHPMailer\PHPMailer\PHPMailer;
+	// use PHPMailer\PHPMailer\Exception;
 
 	require 'phpmailer/src/Exception.php';
 	require 'phpmailer/src/PHPMailer.php';
@@ -22,11 +22,11 @@
 	*/
 
 	//Від кого лист
-	$mail->setFrom('from@gmail.com', 'Фрілансер по життю'); // Вказати потрібний E-mail
+	$mail->setFrom('palaginvad@gmail.com', 'Riplister'); // Вказати потрібний E-mail
 	//Кому відправити
-	$mail->addAddress('to@gmail.com'); // Вказати потрібний E-mail
+	$mail->addAddress('palaginvad@gmail.com'); // Вказати потрібний E-mail
 	//Тема листа
-	$mail->Subject = 'Вітання! Це "Фрілансер по життю"';
+	$mail->Subject = 'test';
 
 	//Тіло листа
 	$body = '<h1>Зустрічайте супер листа!</h1>';

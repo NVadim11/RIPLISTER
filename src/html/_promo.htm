@@ -25,10 +25,10 @@
 					<h4></h4>
 				</div>
 				<div class="promo__submit">
-					<form class="promo__form" data-popup-message="#popupThanks" data-ajax method="POST" action="#">
+					<form class="promo__form" data-popup-message="#popupThanks" data-dev action="#">
 						<div class="promo__input-row">
 							<div class="promo__input-field" id="id_email_container">
-								<input class="promo__input" id="id_email" type="email" data-required placeholder="Email">
+								<input name="form[]" data-error="Введен не верный E-mail" class="promo__input" type="text" id="id_email" data-validate data-required="email" placeholder="Email">
 							</div>
 						</div>
 						<button type="submit" class="promo__input-btn"></button>
@@ -171,3 +171,4 @@
 		</div>
 	</div>
 </section>
+

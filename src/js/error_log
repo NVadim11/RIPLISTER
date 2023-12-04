@@ -1,0 +1,80 @@
+[01-Dec-2023 16:05:55 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:05:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:08:02 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:08:02 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:09:32 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:09:32 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:23:28 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:23:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:30:51 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:30:51 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:35:23 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:35:23 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:39:56 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:39:56 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:51:21 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 16:51:21 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:04:57 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:04:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:07:42 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:07:42 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:08:06 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:08:06 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:08:11 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:08:11 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:08:29 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:08:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:08:30 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:08:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:09:34 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:09:34 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:20:27 UTC] PHP Warning:  require(phpmailer/src/Exception.php): Failed to open stream: No such file or directory in /home/riplister/public_html/components/sendmail/sendmail.php on line 5
+[01-Dec-2023 17:20:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'phpmailer/src/Exception.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/riplister/public_html/components/sendmail/sendmail.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/riplister/public_html/components/sendmail/sendmail.php on line 5

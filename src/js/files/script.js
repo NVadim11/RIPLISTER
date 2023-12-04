@@ -1,6 +1,6 @@
 // Підключення функціоналу "Чертоги Фрілансера"
 import { menuClose, menuOpen } from "./functions.js"
-// import changeLng from "./languages.js"
+import changeLng from "./languages.js"
 // Підключення списку активних модулів
 // Constants
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
@@ -69,17 +69,18 @@ profilePictureInput.addEventListener("change", (e) => {
 })
 
 
-// Language detection
+// language logic
+
 // function languageDetection() {    
 //     const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
 //     if (userLang === "en") {
-//         langImg.src = "img/en.svg";
+//         langImg.src = "../html/img/en.svg";
 //         promoEnVid.style.display = "flex";
 //         promoUaVid.style.display = "none"; 
 //         promoEnLink.style.display = "flex";
 //         promoUaLink.style.display = "none";   
 //     } else {
-//         langImg.src = "img/ua.svg";
+//         langImg.src = "../html/img/ua.svg";
 //         promoEnVid.style.display = "none";
 //         promoUaVid.style.display = "flex";  
 //         promoUaLink.style.display = "flex";    
@@ -104,7 +105,6 @@ profilePictureInput.addEventListener("change", (e) => {
 // }
 // languageDetection();
 
-// Promo language menu toggle
 // langMenuBtn.addEventListener("click", function(e){ 
 //     e.stopPropagation(); 
 //     langMenu.classList.toggle('block');
@@ -118,10 +118,9 @@ profilePictureInput.addEventListener("change", (e) => {
 //     } 
 // });
 
-// Language img toggle
 // function changeToUA() {    
 //     let currentImg = langImg.src;
-//     let uaFlag = "img/ua.svg";
+//     let uaFlag = "../html/img/ua.svg";
  
 //     let newImg = currentImg = uaFlag;
  
@@ -135,7 +134,7 @@ profilePictureInput.addEventListener("change", (e) => {
 //  }
 //  function changeToEN() {    
 //      let currentImg = langImg.src;
-//      let enFlag = "img/en.svg";
+//      let enFlag = "../html/img/en.svg";
   
 //      let newImg = currentImg = enFlag
   
@@ -149,7 +148,6 @@ profilePictureInput.addEventListener("change", (e) => {
 //      localStorage.setItem('userImageChoice', newImg);
 //   }
 
- // Promo language switcher logic
 // langUABtn.addEventListener("click", function(e){
 //     e.stopPropagation();
 //     langMenu.classList.remove('block'); 
@@ -174,5 +172,4 @@ profilePictureInput.addEventListener("change", (e) => {
 //     if (storedChoice) {
 //         document.getElementById('langImg').src = storedChoice;
 //     }
-//     console.log(localStorage)
 // });

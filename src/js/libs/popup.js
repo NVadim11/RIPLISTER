@@ -105,7 +105,7 @@ class Popup {
 		this.options.init ? this.initPopups() : null
 	}
 	initPopups() {
-		this.popupLogging(`Прокинувся`);
+		// this.popupLogging(`Прокинувся`);
 		this.eventsPopup();
 	}
 	eventsPopup() {
@@ -253,7 +253,7 @@ class Popup {
 						popup: this
 					}
 				}));
-				this.popupLogging(`Відкрив попап`);
+				// this.popupLogging(`Відкрив попап`);
 
 			} else this.popupLogging(`Йой, такого попапу немає. Перевірте коректність введення. `);
 		}
@@ -307,7 +307,7 @@ class Popup {
 			this._focusTrap();
 		}, 50);
 
-		this.popupLogging(`Закрив попап`);
+		// this.popupLogging(`Закрив попап`);
 	}
 	// Отримання хешу 
 	_getHash() {

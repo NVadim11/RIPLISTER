@@ -178,16 +178,18 @@ export function formSubmit() {
 				const formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#';
 				const formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'GET';
 				const formData = new FormData(form);
-
+				console.log(formData)
 				form.classList.add('_sending');
 				const response = await fetch(formAction, {
 					method: formMethod,
 					body: formData
 				});
+				console.log(formAction);
 				if (response.ok) {
 					let responseResult = await response.json();
 					form.classList.remove('_sending');
 					formSent(form, responseResult);
+					console.log(responseResult);
 				} else {
 					alert("Помилка");
 					form.classList.remove('_sending');
@@ -218,9 +220,9 @@ export function formSubmit() {
 			if (flsModules.popup) {
 				const popup = form.dataset.popupMessage;
 				popup ? flsModules.popup.open(popup) : null;
-				console.log(popup);
-				console.log(flsModules.popup);
-				console.log(flsModules.popup.open) ;
+				// console.log(popup);
+				// console.log(flsModules.popup);
+				// console.log(flsModules.popup.open) ;
 			}
 		}, 0);
 		// Очищуємо форму

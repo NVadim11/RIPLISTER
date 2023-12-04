@@ -281,6 +281,10 @@ a {
   max-width: 22.1875rem;
 }
 
+.form__error {
+  position: absolute;
+}
+
 input[type=text],
 input[type=email],
 input[type=tel],
@@ -900,7 +904,7 @@ label {
   background: #EB8069;
 }
 
-s .popupThanks__content {
+.popupThanks__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5327,7 +5331,7 @@ s .popupThanks__content {
     margin: 2rem 0 5.375rem 0;
   }
 
-  s .popupThanks__content {
+  .popupThanks__content {
     width: 28.125rem;
     height: 18.75rem;
   }
