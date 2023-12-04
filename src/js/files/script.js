@@ -1,6 +1,6 @@
 // Підключення функціоналу "Чертоги Фрілансера"
 import { menuClose, menuOpen } from "./functions.js"
-import changeLng from "./languages.js"
+import changeLng from "./translations.js"
 // Підключення списку активних модулів
 // Constants
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
@@ -48,128 +48,22 @@ if (menuCloseBtn) {
 }
 
 // Profile picture upload/save to localStorage
-    if (!localStorage.getItem("profilePictureInput")) {
-        profilePicture.setAttribute("src", "img/profile-placeholder.png")
-    } else {        
-        profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
-    }
-
-profilePictureInput.addEventListener("change", (e) => {
-    const image = e.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(image);
-    reader.addEventListener("load", () => {
-        localStorage.setItem("profilePictureInput", reader.result)       
-    if (!localStorage.getItem("profilePictureInput")) {
-        profilePicture.setAttribute("src", "img/profile-placeholder.png")
-    } else {        
-        profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
-    }    
-    });    
-})
-
-
-// language logic
-
-// function languageDetection() {    
-//     const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
-//     if (userLang === "en") {
-//         langImg.src = "../html/img/en.svg";
-//         promoEnVid.style.display = "flex";
-//         promoUaVid.style.display = "none"; 
-//         promoEnLink.style.display = "flex";
-//         promoUaLink.style.display = "none";   
-//     } else {
-//         langImg.src = "../html/img/ua.svg";
-//         promoEnVid.style.display = "none";
-//         promoUaVid.style.display = "flex";  
-//         promoUaLink.style.display = "flex";    
-//         promoEnLink.style.display = "none"; 
+//     if (!localStorage.getItem("profilePictureInput")) {
+//         profilePicture.setAttribute("src", "img/profile-placeholder.png")
+//     } else {        
+//         profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
 //     }
-//     if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
-//         promoEnVid.style.display = "flex";
-//         promoUaVid.style.display = "none";         
-//     }
-//     if (localStorage.getItem('i18nextLng').slice(0, 2) === "ua") {
-//         promoEnVid.style.display = "none";
-//         promoUaVid.style.display = "flex";        
-//     }
-//     if (localStorage.getItem('i18nextLng').slice(0, 2) === "en") {
-//         promoEnLink.style.display = "flex";
-//         promoUaLink.style.display = "none";           
-//     }
-//     if (localStorage.getItem('i18nextLng').slice(0, 2) === "ua") {
-//         promoUaLink.style.display = "flex";    
-//         promoEnLink.style.display = "none";        
-//     }
-// }
-// languageDetection();
 
-// langMenuBtn.addEventListener("click", function(e){ 
-//     e.stopPropagation(); 
-//     langMenu.classList.toggle('block');
-//     langMenuBtn.classList.toggle('toggleLangBtn');
-// });
-
-//   document.addEventListener('click', function (event) { 
-//     if (event.target !== langMenu) { 
-//         langMenu.classList.remove('block'); 
-//         langMenuBtn.classList.remove('toggleLangBtn');
-//     } 
-// });
-
-// function changeToUA() {    
-//     let currentImg = langImg.src;
-//     let uaFlag = "../html/img/ua.svg";
- 
-//     let newImg = currentImg = uaFlag;
- 
-//     langImg.src = newImg;
-
-//     promoUaVid.style.display = "flex";
-//     promoEnVid.style.display = "none";
-//     promoUaLink.style.display = "flex";
-//     promoEnLink.style.display = "none";
-//     localStorage.setItem('userImageChoice', newImg);
-//  }
-//  function changeToEN() {    
-//      let currentImg = langImg.src;
-//      let enFlag = "../html/img/en.svg";
-  
-//      let newImg = currentImg = enFlag
-  
-//      langImg.src = newImg;
-
-//      promoEnVid.style.display = "flex";
-//      promoUaVid.style.display = "none";
-//      promoEnLink.style.display = "flex";
-//      promoUaLink.style.display = "none";
-
-//      localStorage.setItem('userImageChoice', newImg);
-//   }
-
-// langUABtn.addEventListener("click", function(e){
-//     e.stopPropagation();
-//     langMenu.classList.remove('block'); 
-//     langMenuBtn.classList.remove('toggleLangBtn');
-//     changeToUA();
-//     changeLng("ua");
+// profilePictureInput.addEventListener("change", (e) => {
+//     const image = e.target.files[0];
+//     const reader = new FileReader();
+//     reader.readAsDataURL(image);
+//     reader.addEventListener("load", () => {
+//         localStorage.setItem("profilePictureInput", reader.result)       
+//     if (!localStorage.getItem("profilePictureInput")) {
+//         profilePicture.setAttribute("src", "img/profile-placeholder.png")
+//     } else {        
+//         profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
+//     }    
+//     });    
 // })
-
-// langENBtn.addEventListener("click", function(e){
-//     e.stopPropagation();
-//     langMenu.classList.remove('block'); 
-//     langMenuBtn.classList.remove('toggleLangBtn');
-//     changeToEN();
-//     changeLng("en");
-// })
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     let storedChoice = localStorage.getItem('userImageChoice');
-//     if (storedChoice) {
-//         document.getElementById('langImg').src = storedChoice;
-//     }
-//     if (storedChoice) {
-//         document.getElementById('langImg').src = storedChoice;
-//     }
-// });
