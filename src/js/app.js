@@ -90,6 +90,8 @@ flsFunctions.tabs();
 Сніппет (HTML): pl, pop
 */
 import './libs/popup.js'
+// import * as flsPopups from './libs/popup.js'
+// flsPopups.popupPromo();
 
 /*
 Модуль паралаксу мишею
@@ -113,6 +115,7 @@ flsForms.formFieldsInit({
 /* Надсилання форми */
 /* Документація: https://template.fls.guru/template-docs/rabota-s-formami.html */
 flsForms.formSubmit();
+// flsForms.promoFormSubmit();
 
 /* Модуль форми "кількість" */
 // flsForms.formQuantity();

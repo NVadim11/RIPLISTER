@@ -27,6 +27,7 @@ i18next
         "promoPopup__about4": "У нашому проєкті ми також пропонуємо різноманітні послуги, які допоможуть вам дбати про могилу вашого близького. Ви зможете замовити послугу з прибирання могили, яка дозволить підтримувати її в чистоті та порядку. Крім того, ми пропонуємо нанесення QR-коду на могилу, який дозволить людям перейти на сторінку пам'яті вашого рідного. Це створить можливість для кожного, хто відвідує могилу, дізнатися більше про людину, що похована там, і висловити свою шану та повагу.",
         "promoPopup__about5": "Ми з великим запалом продовжуємо працювати над розробкою сайту, щоб забезпечити вам якісну та інтуїтивно зрозумілу платформу. Наша мета - зробити процес пошуку місць поховання, вшанування пам'яті та догляду за могилами простими та доступними для всіх.",
         "promoPopup__about6": "Приєднуйтесь до нас, аби бути в курсі розвитку проєкту та мати можливість робити свій внесок у розширення світової бази поховань. Разом ми зможемо створити особливе місце, де пам'ять про наших рідних буде жити назавжди.",
+        "promoPopup__thanksField" : "Дякуємо вам за підписку!"
       }
     },
     en: {
@@ -49,6 +50,7 @@ i18next
         "promoPopup__about4": "In our project, we also offer various services to help you care for the grave of your loved one. You'll be able to request a grave maintenance service to keep it clean and tidy. Additionally, we provide the option to add a QR code to the grave, allowing people to visit the memorial page of your loved one. This creates an opportunity for anyone visiting the grave to learn more about the person buried there and express their respect and tribute.",
         "promoPopup__about5": "We are passionate about continuing our work on developing the website to provide you with a high-quality and user-friendly platform. Our goal is to make the process of searching for burial places, honoring memories, and caring for graves simple and accessible to everyone.",
         "promoPopup__about6": "Join us to stay updated on the project's development and have the opportunity to contribute to the expansion of the global burial database. Together, we can create a special place where the memory of our loved ones will live forever.",
+        "promoPopup__thanksField": "Thank you for subscribing!"
       }
     }
   }
@@ -72,10 +74,10 @@ i18next
 
 
 function updateContent() {
-    const url = 'http://../promo.html';
-    const pathname = new URL(url).pathname.slice(1);
-    const currentPage = location.href.split( '/' )[3];
-    if (currentPage === pathname) {
+    // const url = 'http://../promo.html';
+    // const pathname = new URL(url).pathname.slice(1);
+    // const currentPage = location.href.split( '/' )[3];
+    // if (currentPage === pathname) {
         document.querySelector(".promo__headerTitle").innerHTML = i18next.t("promoTitle");
         document.querySelector(".promo__descr").innerHTML = i18next.t("promoDescr");
         document.querySelector(".promo__orangeText").innerHTML = i18next.t("promoOrangeText");
@@ -85,8 +87,9 @@ function updateContent() {
         document.querySelector(".promoPopup__socialsText h4").innerHTML = i18next.t("socialsText");
         document.querySelector(".promo__whiteTitleFirst").innerHTML = i18next.t("whiteTitleFirst");
         document.querySelector(".promo__whiteTitleSecond").innerHTML = i18next.t("whiteTitleSecond");
-        document.querySelector(".langMenuBtn span").innerHTML = i18next.t("langDisplayLng");
-        document.querySelector(".popupThanks__Text h4").innerHTML = i18next.t("thanksPopupText");
+        // document.querySelector(".langMenuBtn span").innerHTML = i18next.t("langDisplayLng");
+        document.querySelector(".headerAlt__langBtn span").innerHTML = i18next.t("langDisplayLng");
+        document.querySelector(".popupThanks__msg h4").innerHTML = i18next.t("thanksPopupText");
         document.querySelector(".popupThanks__closeBtn").innerHTML = i18next.t("thanksPopupBtn");
         document.querySelector(".promoPopup__orangeText h4").innerHTML = i18next.t("promoOrangeText");
         document.querySelector(".popupVideo__close label").innerHTML = i18next.t("promoVideoLabel");
@@ -97,12 +100,13 @@ function updateContent() {
         document.querySelector(".promoPopup__about4").innerHTML = i18next.t("promoPopup__about4");
         document.querySelector(".promoPopup__about5").innerHTML = i18next.t("promoPopup__about5");
         document.querySelector(".promoPopup__about6").innerHTML = i18next.t("promoPopup__about6");
-    }
-    else {
-      document.querySelector(".langMenuBtn span").innerHTML = i18next.t("langDisplayLng");
-    }
+        document.querySelector(".promoPopup__input-thanksMsg").innerHTML = i18next.t("promoPopup__thanksField");
+    // }
+    // else {
+    //   document.querySelector(".langMenuBtn span").innerHTML = i18next.t("langDisplayLng");
+    // }
 }
-    // updateContent();
+    updateContent();
 
 
 export default function changeLng(lng) {

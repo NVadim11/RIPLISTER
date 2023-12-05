@@ -1,5 +1,6 @@
 // Підключення функціоналу "Чертоги Фрілансера"
 import { menuClose, menuOpen } from "./functions.js"
+import changeLng from "./translations.js"
 // Підключення списку активних модулів
 // Constants
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
@@ -36,6 +37,8 @@ if (menuCloseBtn) {
         menuClose()       
     });
 }
+
+
 
 // Profile picture upload/save to localStorage
 //     if (!localStorage.getItem("profilePictureInput")) {

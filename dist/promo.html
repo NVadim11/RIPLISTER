@@ -51,7 +51,7 @@
 						<form class="promo__form" data-popup-message="#popupThanks" data-dev action="#">
 							<div class="promo__input-row">
 								<div class="promo__input-field" id="id_email_container">
-									<input name="form[]" data-error="Введен не верный E-mail" class="promo__input" type="text" id="id_email" data-validate data-required="email" placeholder="Email">
+									<input name="form[]" class="promo__input" type="text" id="id_email" data-validate data-required="email" placeholder="Email">
 								</div>
 							</div>
 							<button type="submit" class="promo__input-btn"></button>
@@ -162,9 +162,9 @@
 	</section>
 	<!-- </main> -->
 	<!-- </div> -->
-	<div id="popupVideo" class="popup popupVideo">
-		<div class="popup__wrapper popupVideo__wrapper">
-			<div class="popup__content popupVideo__content">
+	<div id="popupVideo" class="popupVideo">
+		<div class="popupVideo__wrapper">
+			<div class="popupVideo__content">
 				<div class="popupVideo__close">
 					<label for="button"></label>
 					<button data-close type="button">
@@ -181,14 +181,14 @@
 						</svg>
 					</button>
 				</div>
-				<div class="popup__text popupVideo__iframe" data-youtube-place></div>
+				<div class="popupVideo__text popupVideo__iframe" data-youtube-place></div>
 			</div>
 		</div>
 	</div>
-	<div id="promoPopup" aria-hidden="true" class="popup promoPopup">
-		<div class="popup__wrapper promoPopup__wrapper">
-			<div class="popup__content promoPopup__content" id="promoPopup__content">
-				<button data-close type="button" class="popup__close promoPopup__close">
+	<div id="promoPopup" aria-hidden="true" class="promoPopup">
+		<div class="promoPopup__wrapper">
+			<div class="promoPopup__content" id="promoPopup__content">
+				<button data-close type="button" class="promoPopup__close">
 					<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
 						<rect width="52" height="52" rx="20" fill="url(#paint0_linear_2574_3504)" />
 						<path d="M33.7455 19L19 33.7455" stroke="white" stroke-width="2" />
@@ -210,7 +210,7 @@
 					</a>
 				</div>
 				<h1 class="promoPopup__title"></h1>
-				<div class="popup__text promoPopup__iframe mainBenefits__slide" data-youtube-place>
+				<div class="promoPopup__text promoPopup__iframe mainBenefits__slide" data-youtube-place>
 				</div>
 				<div class="promoPopup__about">
 					<p class="promoPopup__about1"></p>
@@ -225,11 +225,13 @@
 						<h4></h4>
 					</div>
 					<div class="promoPopup__submit">
-						<form class="promoPopup__form" data-popup-message="#popupThanks" data-ajax method="POST" action="#">
+						<form class="promoPopup__form" data-dev action="#">
 							<div class="promoPopup__input-row">
 								<div class="promoPopup__input-field" id="id_email_container">
 									<input class="promoPopup__input" id="id_email" type="email" data-required placeholder="Email">
 									<button type="submit" class="promoPopup__input-btn"></button>
+								</div>
+								<div class="promoPopup__input-thanksMsg">
 								</div>
 							</div>
 						</form>
@@ -276,10 +278,10 @@
 			</div>
 		</div>
 	</div>
-	<div id="popupThanks" class="popup popupThanks">
-		<div class="popup__wrapper popupThanks__wrapper">
-			<div class="popup__content popupThanks__content">
-				<button data-close type="button" class="popup__close popupThanks__close">
+	<div id="popupThanks" class="popupThanks">
+		<div class="popupThanks__wrapper">
+			<div class="popupThanks__content">
+				<button data-close type="button" class="popupThanks__close">
 					<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
 						<rect width="44" height="44" rx="18" fill="url(#paint0_linear_2574_3511)" />
 						<path d="M28.5512 16.0769L16.0742 28.5539" stroke="white" stroke-width="2" />
@@ -292,7 +294,7 @@
 						</defs>
 					</svg>
 				</button>
-				<div class="popupThanks__Text">
+				<div class="popupThanks__msg">
 					<h4></h4>
 				</div>
 				<button data-close type="button" class="popupThanks__closeBtn"></button>

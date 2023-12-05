@@ -188,14 +188,19 @@ export function formSubmit() {
 				if (response.ok) {
 					let responseResult = await response.json();
 					form.classList.remove('_sending');
+					const showSubscribe = document.querySelector('.promoPopup__input-thanksMsg');
+					showSubscribe.classList.add('_active');
 					formSent(form, responseResult);
 					console.log(responseResult);
+				
 				} else {
 					alert("Помилка");
 					form.classList.remove('_sending');
 				}
 			} else if (form.hasAttribute('data-dev')) {	// Якщо режим розробки
 				e.preventDefault();
+				const showSubscribe = document.querySelector('.promoPopup__input-thanksMsg');
+				showSubscribe.classList.add('_active');
 				formSent(form);
 			}
 		} else {
@@ -222,7 +227,11 @@ export function formSubmit() {
 				popup ? flsModules.popup.open(popup) : null;
 				// console.log(popup);
 				// console.log(flsModules.popup);
-				// console.log(flsModules.popup.open) ;
+				// console.log(flsModules.popup.open);
+			}
+			if (flsModules.popupThanks) {
+				const popup = form.dataset.popupMessage;
+				popup ? flsModules.popupThanks.open(popup) : null;
 			}
 		}, 0);
 		// Очищуємо форму
@@ -234,6 +243,7 @@ export function formSubmit() {
 		FLS(`[Форми]: ${message}`);
 	}
 }
+
 /* Модуль форми "кількість" */
 export function formQuantity() {
 	document.addEventListener("click", function (e) {
