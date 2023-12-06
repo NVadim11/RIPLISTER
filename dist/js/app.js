@@ -788,7 +788,7 @@
                     attributeOpenButton: "data-popup",
                     attributeCloseButton: "data-close",
                     fixElementSelector: "[data-lp]",
-                    youtubeAttributePromo: "data-popup-youtube",
+                    youtubeAttributePromo: "data-popupLink-youtube",
                     youtubePlaceAttributePromo: "data-popup-youtube-place",
                     setAutoplayYoutube: false,
                     classes: {
@@ -1029,11 +1029,11 @@
                 let config = {
                     logging: true,
                     init: true,
-                    attributeOpenButton: "data-popup",
+                    attributeOpenButton: "data-popup-video",
                     attributeCloseButton: "data-close",
                     fixElementSelector: "[data-lp]",
                     youtubeAttributeVideo: "data-popup-youtube",
-                    youtubePlaceAttributeVideo: "data-popup-youtube-place",
+                    youtubePlaceAttributeVideo: "data-youtube-place",
                     setAutoplayYoutube: false,
                     classes: {
                         popup: "popupVideo",

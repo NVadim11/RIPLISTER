@@ -377,7 +377,7 @@ class PopupPromo {
 			// Для сторонніх об'єктів
 			fixElementSelector: '[data-lp]', // Атрибут для елементів із лівим паддингом (які fixed)
 			// Для об'єкту попапа
-			youtubeAttributePromo: 'data-popup-youtube', // Атрибут для коду youtube
+			youtubeAttributePromo: 'data-popupLink-youtube', // Атрибут для коду youtube
 			youtubePlaceAttributePromo: 'data-popup-youtube-place', // Атрибут для вставки ролика youtube
 			setAutoplayYoutube: false,
 			// Зміна класів
@@ -729,13 +729,13 @@ class PopupVideo {
 			logging: true,
 			init: true,
 			//Для кнопок
-			attributeOpenButton: 'data-popup', // Атрибут для кнопки, яка викликає попап
+			attributeOpenButton: 'data-popup-video', // Атрибут для кнопки, яка викликає попап
 			attributeCloseButton: 'data-close', // Атрибут для кнопки, що закриває попап
 			// Для сторонніх об'єктів
 			fixElementSelector: '[data-lp]', // Атрибут для елементів із лівим паддингом (які fixed)
 			// Для об'єкту попапа
 			youtubeAttributeVideo: 'data-popup-youtube', // Атрибут для коду youtube
-			youtubePlaceAttributeVideo: 'data-popup-youtube-place', // Атрибут для вставки ролика youtube
+			youtubePlaceAttributeVideo: 'data-youtube-place', // Атрибут для вставки ролика youtube
 			setAutoplayYoutube: false,
 			// Зміна класів
 			classes: {
