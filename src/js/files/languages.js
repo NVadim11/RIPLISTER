@@ -1,31 +1,40 @@
 import changeLng from "./translations.js"
 /* Promo Page */
-// const langMenuBtn = document.querySelector('.langMenuBtn');
-// const langMenu = document.querySelector('.langMenu');
-// const langUABtn = document.querySelector('.uaBtn');
-// const langENBtn = document.querySelector('.enBtn');
-// const langImg = document.getElementById("langImg");
-// const uaVid = document.querySelector("uaVideo");
-// const enVid = document.querySelector("enVideo");
-// const uaLink = document.querySelector("uaLink");
-// const enLink = document.querySelector("enLink");
-
-const langMenuBtn = document.querySelector('.headerAlt__langBtn');
-const langMenu = document.querySelector('.promo__langMenu');
+const langMenuBtn = document.querySelector('.langMenuBtn');
+const langMenu = document.querySelector('.langMenu');
 const langUABtn = document.querySelector('.uaBtn');
 const langENBtn = document.querySelector('.enBtn');
 const langImg = document.getElementById("langImg");
-const promoUaVid = document.getElementById("promo__uaVideo");
-const promoEnVid = document.getElementById("promo__enVideo");
-const promoUaLink = document.getElementById("promo__uaLink");
-const promoEnLink = document.getElementById("promo__enLink");
+const uaVid = document.querySelector("uaVideo");
+const enVid = document.querySelector("enVideo");
+const uaLink = document.querySelector("uaLink");
+const enLink = document.querySelector("enLink");
 
-const url = 'http://../profile.html';
-const pathname = new URL(url).pathname.slice(1);
-const currentPage = location.href.split( '/' )[3];
-if (pathname === currentPage) {
+/* Promo Page */
+// const langMenuBtn = document.querySelector('.headerAlt__langBtn');
+// const langMenu = document.querySelector('.promo__langMenu');
+// const langUABtn = document.querySelector('.uaBtn');
+// const langENBtn = document.querySelector('.enBtn');
+// const langImg = document.getElementById("langImg");
+// const promoUaVid = document.getElementById("promo__uaVideo");
+// const promoEnVid = document.getElementById("promo__enVideo");
+// const promoUaLink = document.getElementById("promo__uaLink");
+// const promoEnLink = document.getElementById("promo__enLink");
+
+const urlProfile = 'http://../profile.html';
+const pathnameProfile = new URL(urlProfile).pathnameProfile.slice(1);
+const currentPageProfile = location.href.split( '/' )[3];
+if (pathnameProfile === currentPageProfile) {
   languageDetection();
 }
+
+// const urlPromo = 'http://../promo.html';
+// const pathnamePromo= new URL(urlPromo).pathnamePromo.slice(1);
+// const currentPagePromo = location.href.split( '/' )[3];
+// if (pathnamePromo === currentPagePromo) {
+//   languageDetection();
+// }
+
 
   function languageDetection() {    
     const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
