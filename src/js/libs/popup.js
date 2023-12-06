@@ -600,9 +600,11 @@ class PopupPromo {
 
 				this.isOpen = true;
 
-				setTimeout(() => {
-					this._focusTrap();
-				}, 50);
+
+				// отключение фокуса по центру
+				// setTimeout(() => {
+				// 	this._focusTrap();
+				// }, 50);
 
 				// Після відкриття
 				this.options.on.afterOpen(this);
@@ -662,9 +664,10 @@ class PopupPromo {
 			}
 		}));
 
-		setTimeout(() => {
-			this._focusTrap();
-		}, 50);
+		//отключение фокуса по центру
+		// setTimeout(() => {
+		// 	this._focusTrap();
+		// }, 50);
 
 		// this.popupLogging(`Закрив попап`);
 	}
@@ -709,14 +712,15 @@ class PopupPromo {
 			e.preventDefault();
 		}
 	}
-	_focusTrap() {
-		const focusable = this.previousOpen.element.querySelectorAll(this._focusEl);
-		if (!this.isOpen && this.lastFocusEl) {
-			this.lastFocusEl.focus();
-		} else {
-			focusable[0].focus();
-		}
-	}
+	//отключение фокуса по центру
+	// _focusTrap() {
+	// 	const focusable = this.previousOpen.element.querySelectorAll(this._focusEl);
+	// 	if (!this.isOpen && this.lastFocusEl) {
+	// 		this.lastFocusEl.focus();
+	// 	} else {
+	// 		focusable[0].focus();
+	// 	}
+	// }
 	// Функція виведення в консоль
 	popupLogging(message) {
 		this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
