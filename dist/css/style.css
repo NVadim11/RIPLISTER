@@ -1544,7 +1544,7 @@ label {
 }
 
 .headerMain__langBtn .dropdownArrow path {
-  fill: var(--text-color-black);
+  fill: var(--white-color);
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }

@@ -1,6 +1,5 @@
 // Підключення функціоналу "Чертоги Фрілансера"
 import { menuClose, menuOpen } from "./functions.js"
-import changeLng from "./translations.js"
 // Підключення списку активних модулів
 // Constants
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
@@ -40,14 +39,17 @@ if (menuCloseBtn) {
 
 
 
-// Profile picture upload/save to localStorage
+// Profile picture upload/save to LocalStorage
+// const url = 'http://../profile.html';
+// const pathname = new URL(url).pathname.slice(1);
+// const currentPage = location.href.split( '/' )[3];
+// if (currentPage === pathname) {
 //     if (!localStorage.getItem("profilePictureInput")) {
-//         profilePicture.setAttribute("src", "img/profile-placeholder.png")
+//             profilePicture.setAttribute("src", "img/profile-placeholder.png")
 //     } else {        
-//         profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
+//             profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
 //     }
-
-// profilePictureInput.addEventListener("change", (e) => {
+//     profilePictureInput.addEventListener("change", (e) => {
 //     const image = e.target.files[0];
 //     const reader = new FileReader();
 //     reader.readAsDataURL(image);
@@ -60,3 +62,4 @@ if (menuCloseBtn) {
 //     }    
 //     });    
 // })
+// }
