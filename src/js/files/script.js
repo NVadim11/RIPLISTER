@@ -2,6 +2,8 @@
 import { menuClose, menuOpen } from "./functions.js"
 // Підключення списку активних модулів
 // Constants
+const currentPage = location.href.split( '/' )[3].slice(0, -5);
+
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
 const altMenuBtn = document.querySelector('.headerAlt__menuBtn');
 const menuCloseBtn = document.querySelector('.menu__closeBtn');
@@ -39,27 +41,31 @@ if (menuCloseBtn) {
 
 
 
-// Profile picture upload/save to LocalStorage
-// const url = 'http://../profile.html';
-// const pathname = new URL(url).pathname.slice(1);
-// const currentPage = location.href.split( '/' )[3];
-// if (currentPage === pathname) {
-//     if (!localStorage.getItem("profilePictureInput")) {
-//             profilePicture.setAttribute("src", "img/profile-placeholder.png")
-//     } else {        
-//             profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
-//     }
-//     profilePictureInput.addEventListener("change", (e) => {
-//     const image = e.target.files[0];
-//     const reader = new FileReader();
-//     reader.readAsDataURL(image);
-//     reader.addEventListener("load", () => {
-//         localStorage.setItem("profilePictureInput", reader.result)       
-//     if (!localStorage.getItem("profilePictureInput")) {
-//         profilePicture.setAttribute("src", "img/profile-placeholder.png")
-//     } else {        
-//         profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
-//     }    
-//     });    
-// })
-// }
+//  Profile picture upload/save to LocalStorage
+switch (currentPage) {
+    case "profile":
+        function profileLogic() {
+            if (!localStorage.getItem("profilePictureInput")) {
+                profilePicture.setAttribute("src", "img/profile-placeholder.png")
+        } else {        
+                profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
+        }
+        profilePictureInput.addEventListener("change", (e) => {
+        const image = e.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(image);
+        reader.addEventListener("load", () => {
+            localStorage.setItem("profilePictureInput", reader.result)       
+        if (!localStorage.getItem("profilePictureInput")) {
+            profilePicture.setAttribute("src", "img/profile-placeholder.png")
+        } else {        
+            profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
+        }    
+        });    
+        })
+        }
+        profileLogic();
+        break;
+    default:
+        break;
+}

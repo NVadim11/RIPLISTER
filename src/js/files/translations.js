@@ -9,6 +9,7 @@ i18next
   resources: {
     ua: {
       translation: {
+        // =================== Promo page =================== //
         "promoTitle": "Спадок пам'яті, що об'єднує нас.",
 				"promoDescr": "RIPlister народився з бажанням не лише для полегшення пошуку місць поховання та підвищення рівня догляду за могилами, але й з метою створення простору для збереження спогадів і формування родинного архіву. Цей проект спрямований на підтримку пам'яті про близьких людей та важливі моменти, створення місця, де можна зберігати найдорожчі історії та спогади.",
 				"promoOrangeText": "Бажаєте бути серед перших, хто долучиться до цієї ініціативи? Підпишіться, щоб мати можливість скористатися нею з моменту запуску.",
@@ -28,6 +29,7 @@ i18next
         "promoPopup__about5": "Ми з великим запалом продовжуємо працювати над розробкою сайту, щоб забезпечити вам якісну та інтуїтивно зрозумілу платформу. Наша мета - зробити процес пошуку місць поховання, вшанування пам'яті та догляду за могилами простими та доступними для всіх.",
         "promoPopup__about6": "Приєднуйтесь до нас, аби бути в курсі розвитку проєкту та мати можливість робити свій внесок у розширення світової бази поховань. Разом ми зможемо створити особливе місце, де пам'ять про наших рідних буде жити назавжди.",
         "promoPopup__thanksField" : "Дякуємо вам за підписку!"
+        // =================== Profile page =================== //
       }
     },
     en: {
@@ -59,54 +61,39 @@ i18next
   updateContent();
 });
 
-
-
-
-// const url = 'http://../promo.html';
-// var url = initial_url .split( '/' );
-// const pathname = new URL(url).pathname;
-// console.log(pathname);
-// window.onload
-
-// const currentPage = location.href.split( '/' )[3];
-// console.log(currentPage);
-
-
-
 function updateContent() {
-    // const url = 'http://../promo.html';
-    // const pathname = new URL(url).pathname.slice(1);
-    // const currentPage = location.href.split( '/' )[3];
-    // if (currentPage === pathname) {
-        document.querySelector(".promo__headerTitle").innerHTML = i18next.t("promoTitle");
-        document.querySelector(".promo__descr").innerHTML = i18next.t("promoDescr");
-        document.querySelector(".promo__orangeText").innerHTML = i18next.t("promoOrangeText");
-        document.querySelector(".promo__input-btn").innerHTML = i18next.t("promoInputBtn");
-        document.querySelector(".promoPopup__input-btn").innerHTML = i18next.t("promoInputBtn");
-        document.querySelector(".promo__socialsText").innerHTML = i18next.t("socialsText");
-        document.querySelector(".promoPopup__socialsText h4").innerHTML = i18next.t("socialsText");
-        document.querySelector(".promo__whiteTitleFirst").innerHTML = i18next.t("whiteTitleFirst");
-        document.querySelector(".promo__whiteTitleSecond").innerHTML = i18next.t("whiteTitleSecond");
-        // document.querySelector(".langMenuBtn span").innerHTML = i18next.t("langDisplayLng");
-        document.querySelector(".headerAlt__langBtn span").innerHTML = i18next.t("langDisplayLng");
-        document.querySelector(".popupThanks__msg h4").innerHTML = i18next.t("thanksPopupText");
-        document.querySelector(".popupThanks__closeBtn").innerHTML = i18next.t("thanksPopupBtn");
-        document.querySelector(".promoPopup__orangeText h4").innerHTML = i18next.t("promoOrangeText");
-        document.querySelector(".popupVideo__close label").innerHTML = i18next.t("promoVideoLabel");
-        document.querySelector(".promoPopup__title").innerHTML = i18next.t("promoPopupTitle");
-        document.querySelector(".promoPopup__about1").innerHTML = i18next.t("promoPopup__about1");
-        document.querySelector(".promoPopup__about2").innerHTML = i18next.t("promoPopup__about2");
-        document.querySelector(".promoPopup__about3").innerHTML = i18next.t("promoPopup__about3");
-        document.querySelector(".promoPopup__about4").innerHTML = i18next.t("promoPopup__about4");
-        document.querySelector(".promoPopup__about5").innerHTML = i18next.t("promoPopup__about5");
-        document.querySelector(".promoPopup__about6").innerHTML = i18next.t("promoPopup__about6");
-        document.querySelector(".promoPopup__input-thanksMsg").innerHTML = i18next.t("promoPopup__thanksField");
-    // }
-    // else {
-    //   document.querySelector(".langMenuBtn span").innerHTML = i18next.t("langDisplayLng");
-    // }
+  const currentPage = location.href.split( '/' )[3].slice(0, -5);
+  switch (currentPage) {
+    case "promo":
+      document.querySelector(".promo__headerTitle").innerHTML = i18next.t("promoTitle");
+      document.querySelector(".promo__descr").innerHTML = i18next.t("promoDescr");
+      document.querySelector(".promo__orangeText").innerHTML = i18next.t("promoOrangeText");
+      document.querySelector(".promo__input-btn").innerHTML = i18next.t("promoInputBtn");
+      document.querySelector(".promoPopup__input-btn").innerHTML = i18next.t("promoInputBtn");
+      document.querySelector(".promo__socialsText").innerHTML = i18next.t("socialsText");
+      document.querySelector(".promoPopup__socialsText h4").innerHTML = i18next.t("socialsText");
+      document.querySelector(".promo__whiteTitleFirst").innerHTML = i18next.t("whiteTitleFirst");
+      document.querySelector(".promo__whiteTitleSecond").innerHTML = i18next.t("whiteTitleSecond");
+      document.querySelector(".headerAlt__langBtn span").innerHTML = i18next.t("langDisplayLng");
+      document.querySelector(".popupThanks__msg h4").innerHTML = i18next.t("thanksPopupText");
+      document.querySelector(".popupThanks__closeBtn").innerHTML = i18next.t("thanksPopupBtn");
+      document.querySelector(".promoPopup__orangeText h4").innerHTML = i18next.t("promoOrangeText");
+      document.querySelector(".popupVideo__close label").innerHTML = i18next.t("promoVideoLabel");
+      document.querySelector(".promoPopup__title").innerHTML = i18next.t("promoPopupTitle");
+      document.querySelector(".promoPopup__about1").innerHTML = i18next.t("promoPopup__about1");
+      document.querySelector(".promoPopup__about2").innerHTML = i18next.t("promoPopup__about2");
+      document.querySelector(".promoPopup__about3").innerHTML = i18next.t("promoPopup__about3");
+      document.querySelector(".promoPopup__about4").innerHTML = i18next.t("promoPopup__about4");
+      document.querySelector(".promoPopup__about5").innerHTML = i18next.t("promoPopup__about5");
+      document.querySelector(".promoPopup__about6").innerHTML = i18next.t("promoPopup__about6");
+      document.querySelector(".promoPopup__input-thanksMsg").innerHTML = i18next.t("promoPopup__thanksField");
+      break;  
+    default:
+      document.querySelector(".langMenuBtn span").innerHTML = i18next.t("langDisplayLng");
+      break;
+  }
 }
-    updateContent();
+  updateContent();
 
 
 export default function changeLng(lng) {
