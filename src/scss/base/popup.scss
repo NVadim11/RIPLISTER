@@ -13,12 +13,14 @@ body::after {
   }
 //   general styles
   .popup-show body::after,
+	.popupLoginForm-show body::after,
   .promoPopup-show body::after,
   .popupThanks-show body::after,
   .popupVideo-show body::after {
 	opacity: 1;
   }
-  .popup, 
+  .popup,
+	.popupLoginForm,
   .promoPopup,
   .popupThanks,
   .popupVideo {
@@ -34,6 +36,7 @@ body::after {
   }
 //   general styles
   .popup_show,
+	.popupLoginForm_show,
   .promoPopup_show,
   .popupThanks_show,
   .popupVideo_show {
@@ -44,6 +47,7 @@ body::after {
   }
 //   general styles
   .popup_show .popup__content,
+	.popupLoginForm_show .popupLoginForm__content,
 	.promoPopup_show .promoPopup__content,
 	.popupThanks_show .popupThanks__content,
 	.popupVideo_show .popupVideo__content {
@@ -52,6 +56,7 @@ body::after {
 	// transform: scale(1);
   }
   .popup__wrapper,
+	.popupLoginForm__wrapper,
   .promoPopup__wrapper,
   .popupThanks__wrapper,
   .popupVideo__wrapper {
@@ -65,6 +70,7 @@ body::after {
   }
 //   general styles
   .popup__content,
+	.popupLoginForm__content,
   .promoPopup__content,
   .popupThanks__content,
   .popupVideo__content {
@@ -172,6 +178,77 @@ body::after {
   }
   
 // =========================================================== //
+// Popup Login Form
+// =========================================================== //
+
+.popupLoginForm {
+	display: block;
+	&__wrapper {
+	}
+	&__content {
+		padding: 0 5.25rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-radius: 1.875rem;
+		@media screen and (min-width: $full) {
+		}
+		form {
+			margin-top: 1.0625rem;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	&__close {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		svg {
+			rect {
+				transition: .25s;
+			}
+		}
+	}
+	&__title {
+		margin-top: 7.0625rem;
+		color: var(--text-color-black);
+		font-size: 2rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+	}
+	&__descr {
+		margin-top: 1.0625rem;
+		color: var(--text-color-black);
+		text-align: center;
+		font-size: 1.125rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%; /* 25.2px */
+	}
+	&__input {
+		margin-top: 0.8125rem;
+		border-radius: 1.25rem;
+		border: 0.0625rem solid #EC6041;
+		background: #FFF;
+		padding: 1.0625rem 1.875rem;
+	}
+	&__btnField {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	&__passRecover {
+		margin-top: 1.25rem;
+	}
+	.button {
+		margin-top: 30px;
+		border-radius: 20px;
+		background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+		padding: 16px 77px;
+	}
+}
+// =========================================================== //
 // Promo popup styles
 // =========================================================== //
 .promoPopup {
@@ -185,8 +262,8 @@ body::after {
 	}
 	&__close {
 	position: absolute;
-	right: 35px;
-	top: 15px;
+	right: 0.9375rem;
+	top: 0.9375rem;
 	svg {
 		rect {
 			transition: .25s;
@@ -203,7 +280,7 @@ body::after {
 	}
 	&__icon {
 	max-width: 10.9375rem;
-	margin-top: 105px;
+	margin-top: 6.5625rem;
 	user-select: none;
 	@media screen and (min-width: $full) {
 		max-width: 19.5rem;
@@ -441,7 +518,7 @@ body::after {
 	}
 	&__close {
 	position: absolute;
-	right: 1.5625rem;
+	right: 0.9375rem;
 	top: 0.9375rem;
 	transition: .25s;
 	svg {
