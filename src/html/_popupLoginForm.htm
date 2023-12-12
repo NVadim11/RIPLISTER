@@ -23,17 +23,24 @@
 			<div class="popupLoginForm__descr">
 				123 123 123
 			</div>
-			<form>
-				<input type="text" name="form[email]" data-error="Error" placeholder="E-mail" class="popupLoginForm__input">
-				<input type="password" name="form[password]" data-error="Error" placeholder="Password"
-					class="popupLoginForm__input">
+
+			<form class="popupLoginForm__form">
+				<div class="popupLoginForm__input-group">
+					<input type="text" id="popupLoginForm__username" placeholder="Email" class="popupLoginForm__input">
+					<span class="error-message"></span>
+				</div>
+				<br>
+				<div class="popupLoginForm__input-group">
+					<input type="password" id="popupLoginForm__password" placeholder="Password" class="popupLoginForm__input">
+					<span class="error-message"></span>
+				</div>
+				<br>
 				<div class="popupLoginForm__btnField">
 					<div class="popupLoginForm__passRecover">
 						<a href="">Нагадати пароль</a>
 					</div>
 					<button type="submit" class="button">Увійти</button>
 				</div>
-
 			</form>
 		</div>
 	</div>
