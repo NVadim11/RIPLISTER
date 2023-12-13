@@ -1,13 +1,21 @@
-[
-	{
-		"id": "100001",
-		"email":"helloworld@gmail.com",
-		"password":"helloworld"
-	},
-	{
-		"id": "100002",
-		"email":"john@beatles.uk",
-		"password":"lennon"
-	}
-]
-
+{ 
+	"users": 
+	[
+		{
+			"id": 1,
+			"first_name": "John",
+			"last_name": "Doe",
+			"email": "johndoe@gmail.com",
+			"username": "john20",
+			"password": "doe20"
+		},
+		{
+			"id": 2,
+			"first_name": "Julia",
+			"last_name": "Chan",
+			"email": "juliachan@gmail.com",
+			"username": "julia19",
+			"password": "chan19"
+		}
+	]
+}
