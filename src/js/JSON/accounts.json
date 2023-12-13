@@ -7,7 +7,7 @@
 			"last_name": "Doe",
 			"email": "johndoe@gmail.com",
 			"username": "john20",
-			"password": "doe20"
+			"password": "Johntest123"
 		},
 		{
 			"id": 2,
@@ -15,7 +15,7 @@
 			"last_name": "Chan",
 			"email": "juliachan@gmail.com",
 			"username": "julia19",
-			"password": "chan19"
+			"password": "Juliatest123"
 		}
 	]
 }
