@@ -492,8 +492,10 @@ class PopupLogin {
 			}
 			// Закриття на порожньому місці (popup__wrapper) та кнопки закриття (popup__close) для закриття
 			const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
+			const form = document.getElementById("popupLoginForm");
 			if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
 				e.preventDefault();
+				document.querySelector(".popupLoginForm__invalidUser").classList.remove("show_errorMsg");
 				this.close();
 				return;
 			}
@@ -502,11 +504,13 @@ class PopupLogin {
 		document.addEventListener("keydown", function (e) {
 			if (this.options.closeEsc && e.which == 27 && e.code === 'Escape' && this.isOpen) {
 				e.preventDefault();
+				document.querySelector(".popupLoginForm__invalidUser").classList.remove("show_errorMsg");
 				this.close();
 				return;
 			}
 			if (this.options.focusCatch && e.which == 9 && this.isOpen) {
 				this._focusCatch(e);
+				document.querySelector(".popupLoginForm__invalidUser").classList.remove("show_errorMsg");
 				return;
 			}
 		}.bind(this))

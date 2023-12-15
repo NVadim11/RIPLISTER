@@ -762,6 +762,13 @@ label {
   margin-top: 1.25rem;
 }
 
+.popupLoginForm__emailReq,
+.popupLoginForm__emailValid,
+.popupLoginForm__passReq,
+.popupLoginForm__invalidUser {
+  display: none;
+}
+
 .popupLoginForm .button {
   margin-top: 30px;
   border-radius: 20px;
@@ -1209,6 +1216,12 @@ label {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: var(--white-color);
+}
+
+.show_errorMsg {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
 .headerAlt {
