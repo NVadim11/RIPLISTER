@@ -510,7 +510,7 @@ class PopupLogin {
 			}
 			if (this.options.focusCatch && e.which == 9 && this.isOpen) {
 				this._focusCatch(e);
-				document.querySelector(".popupLoginForm__invalidUser").classList.remove("show_errorMsg");
+				// document.querySelector(".popupLoginForm__invalidUser").classList.remove("show_errorMsg");
 				return;
 			}
 		}.bind(this))

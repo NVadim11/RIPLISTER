@@ -4,8 +4,8 @@ const form = document.getElementById("popupLoginForm");
 const closeModal = document.querySelector(".popupLoginForm__close");
 
 const emailReq = document.querySelector(".popupLoginForm__emailReq")
-const emailValid = document.querySelector(".popupLoginForm__emailValid");
 const passReq = document.querySelector(".popupLoginForm__passReq");
+const emailValid = document.querySelector(".popupLoginForm__emailValid");
 const invalidUser = document.querySelector(".popupLoginForm__invalidUser");
 
 const successMsg = document.querySelector(".popupLoginForm__successMsg");
@@ -54,62 +54,49 @@ const validateEmail = (inputEmail)=> inputEmail.value.match(/^[a-z0-9!#$%&'*+/=?
 const validatePassword = (inputPassword) => inputPassword.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/);
 
 // сделать проверку по языку для сообщений 
-function formValidate (inputEmail, inputPassword) {
-    if(!validateEmail(inputEmail)){
-        return;
-    }
-    if(!validatePassword(inputPassword)){
-        return;
-    }
-}
-
-// Function used to display errors
-// function generateError() {
-
-    // if(errorName == "email"){
-    //     emailError.innerText = errorMsg;    
-    // }
-    
-    // else if(errorName == "password"){
-    //     passwordError.innerText = errorMsg;
-    // } 
-    // else if(errorName == "invalidUser") {
-    //     userError.innerHTML = errorMsg;
-    // }
+// function formValidate (inputEmail, inputPassword) {
+//     if(!validateEmail(inputEmail)){
+//         // emailValid.classList.add("show_errorMsg");
+//         return;
+//     }
+//     if(!validatePassword(inputPassword)){
+//         // passReq.classList.add("show_errorMsg");
+//         return;
+//     }
 // }
 
 // Focusout event listener. Triggers when the user clicks anywhere else besides the input
 email.addEventListener("focusout", (e)=>{
     if(!validateEmail(email)){
-
+        emailValid.classList.add("show_errorMsg");
     }
 });
 
 // Focusout event listener triggers when the user clicks anywhere else besides the input
 password.addEventListener("focusout", (e)=>{
     if(!validatePassword(password) && password.value.length === 0 ) {
-
+        passReq.classList.add("show_errorMsg");
     }
 });
 
 // FocusIn event listener. Triggers when the user clicks anywhere else besides the input
 email.addEventListener("focusin", (e)=>{
     if(!validateEmail(email)){
-
+        emailValid.classList.remove("show_errorMsg");    
     }
 });
 
 // FocusIn event listener triggers when the user clicks anywhere else besides the input
 password.addEventListener("focusin", (e)=>{
     if(!validatePassword(password)){      
- 
+        passReq.classList.remove("show_errorMsg");
     }
 });
 
 //triggers when user submits the form
 form.addEventListener("submit",(e) => {
     e.preventDefault();
-    formValidate(email, password);
+    // formValidate(email, password);
     login();
     e.target.reset();
 });
