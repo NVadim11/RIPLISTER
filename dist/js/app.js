@@ -6191,6 +6191,80 @@
             class_loaded: "_lazy-loaded",
             use_native: true
         });
+        const accounts_namespaceObject = JSON.parse('{"r":[{"id":1,"first_name":"John","last_name":"Doe","email":"johndoe@gmail.com","username":"john20","password":"Johntest123"},{"id":2,"first_name":"Julia","last_name":"Chan","email":"juliachan@gmail.com","username":"julia19","password":"Juliatest123"}]}');
+        const email = document.getElementById("popupLoginForm__email");
+        const auth_password = document.getElementById("popupLoginForm__password");
+        const auth_form = document.getElementById("popupLoginForm");
+        document.querySelector(".popupLoginForm__successMsg");
+        let emailError = document.getElementById("popupLoginForm__emailError");
+        let passwordError = document.getElementById("popupLoginForm__passwordError");
+        let userError = document.getElementById("popupLoginForm__invalidUser");
+        console.log(accounts_namespaceObject.r);
+        function login() {
+            let emailInput = email.value;
+            let passwordInput = auth_password.value;
+            let userFound = accounts_namespaceObject.r.find((user => user.email === emailInput && user.password === passwordInput));
+            if (userFound) {
+                email.parentElement.classList.remove("error");
+                auth_password.parentElement.classList.remove("error");
+                console.log("Login Success");
+                console.log(userFound);
+            } else {
+                generateError("invalidUser", "Email or password is incorrect");
+                email.parentElement.classList.add("error");
+                auth_password.parentElement.classList.add("error");
+            }
+        }
+        const validateEmail = inputEmail => inputEmail.value.match(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/);
+        const validatePassword = inputPassword => inputPassword.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/);
+        function auth_formValidate(inputEmail, inputPassword) {
+            if (!validateEmail(inputEmail)) {
+                emailError = "please enter a valid email address";
+                generateError("email", emailError);
+                return;
+            }
+            if (!validatePassword(inputPassword)) {
+                console.log("invalid password");
+                passwordError = "please enter correct password";
+                generateError("password", passwordError);
+                return;
+            }
+        }
+        function generateError(errorName, errorMsg) {
+            if (errorName == "email") emailError.innerText = errorMsg; else if (errorName == "password") passwordError.innerText = errorMsg; else if (errorName == "invalidUser") userError.innerHTML = errorMsg;
+        }
+        email.addEventListener("focusout", (e => {
+            if (!validateEmail(email)) {
+                generateError("email", "This field is required");
+                email.parentElement.classList.add("error");
+            }
+        }));
+        auth_password.addEventListener("focusout", (e => {
+            if (!validatePassword(auth_password)) {
+                generateError("password", "This field is required");
+                auth_password.parentElement.classList.add("error");
+            }
+        }));
+        email.addEventListener("focusin", (e => {
+            if (!validateEmail(email)) {
+                emailError.innerText = "";
+                userError.innerText = "";
+                email.parentElement.classList.remove("error");
+            }
+        }));
+        auth_password.addEventListener("focusin", (e => {
+            if (!validatePassword(auth_password)) {
+                passwordError.innerText = "";
+                userError.innerText = "";
+                auth_password.parentElement.classList.remove("error");
+            }
+        }));
+        auth_form.addEventListener("submit", (e => {
+            e.preventDefault();
+            auth_formValidate(email, auth_password);
+            login();
+            e.target.reset();
+        }));
         const consoleLogger = {
             type: "logger",
             log(args) {
@@ -8615,59 +8689,7 @@
             updateContent();
         }));
         const currentPage = location.href.split("/")[3].slice(0, -5);
-        const mainMenuBtn = document.querySelector(".headerMain__menuBtn");
-        const altMenuBtn = document.querySelector(".headerAlt__menuBtn");
-        const menuCloseBtn = document.querySelector(".menu__closeBtn");
-        const profilePicture = document.getElementById("profilePicture");
-        const profilePictureInput = document.getElementById("profilePictureInput");
-        document.querySelector(".searchTypeBtn_human");
-        document.querySelector(".searchTypeBtn_cemetery");
-        document.querySelector(".searchType_human");
-        document.querySelector(".searchType_cemetery");
-        document.querySelector(".year");
-        if (mainMenuBtn) {
-            const menu = document.querySelector(".menu");
-            mainMenuBtn.addEventListener("click", (function(e) {
-                menu.classList.add("_active");
-                menuOpen();
-            }));
-        }
-        if (altMenuBtn) {
-            const menu = document.querySelector(".menu");
-            altMenuBtn.addEventListener("click", (function(e) {
-                menu.classList.add("_active");
-                menuOpen();
-            }));
-        }
-        if (menuCloseBtn) {
-            const menu = document.querySelector(".menu");
-            menuCloseBtn.addEventListener("click", (function(e) {
-                menu.classList.remove("_active");
-                menuClose();
-            }));
-        }
         switch (currentPage) {
-          case "profile":
-            function profileLogic() {
-                if (!localStorage.getItem("profilePictureInput")) profilePicture.setAttribute("src", "img/profile-placeholder.png"); else profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"));
-                profilePictureInput.addEventListener("change", (e => {
-                    const image = e.target.files[0];
-                    const reader = new FileReader;
-                    reader.readAsDataURL(image);
-                    reader.addEventListener("load", (() => {
-                        localStorage.setItem("profilePictureInput", reader.result);
-                        if (!localStorage.getItem("profilePictureInput")) profilePicture.setAttribute("src", "img/profile-placeholder.png"); else profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"));
-                    }));
-                }));
-            }
-            profileLogic();
-            break;
-
-          default:
-            break;
-        }
-        const languages_currentPage = location.href.split("/")[3].slice(0, -5);
-        switch (languages_currentPage) {
           case "promo":
             function promoLngDetection() {
                 const langMenuBtn = document.querySelector(".headerAlt__langBtn");
@@ -8828,80 +8850,58 @@
             lngMenuSwitcher();
             break;
         }
-        const accounts_namespaceObject = JSON.parse('{"r":[{"id":1,"first_name":"John","last_name":"Doe","email":"johndoe@gmail.com","username":"john20","password":"Johntest123"},{"id":2,"first_name":"Julia","last_name":"Chan","email":"juliachan@gmail.com","username":"julia19","password":"Juliatest123"}]}');
-        const email = document.getElementById("popupLoginForm__email");
-        const login_password = document.getElementById("popupLoginForm__password");
-        const login_form = document.getElementById("popupLoginForm");
-        document.querySelector(".popupLoginForm__successMsg");
-        let emailError = document.getElementById("popupLoginForm__emailError");
-        let passwordError = document.getElementById("popupLoginForm__passwordError");
-        let userError = document.getElementById("popupLoginForm__invalidUser");
-        console.log(accounts_namespaceObject.r);
-        function login() {
-            let emailInput = email.value;
-            let passwordInput = login_password.value;
-            let userFound = accounts_namespaceObject.r.find((user => user.email === emailInput && user.password === passwordInput));
-            if (userFound) {
-                email.parentElement.classList.remove("error");
-                login_password.parentElement.classList.remove("error");
-                console.log("Login Success");
-                console.log(userFound);
-            } else {
-                generateError("invalidUser", "Email or password is incorrect");
-                email.parentElement.classList.add("error");
-                login_password.parentElement.classList.add("error");
-            }
+        const script_currentPage = location.href.split("/")[3].slice(0, -5);
+        const mainMenuBtn = document.querySelector(".headerMain__menuBtn");
+        const altMenuBtn = document.querySelector(".headerAlt__menuBtn");
+        const menuCloseBtn = document.querySelector(".menu__closeBtn");
+        const profilePicture = document.getElementById("profilePicture");
+        const profilePictureInput = document.getElementById("profilePictureInput");
+        document.querySelector(".searchTypeBtn_human");
+        document.querySelector(".searchTypeBtn_cemetery");
+        document.querySelector(".searchType_human");
+        document.querySelector(".searchType_cemetery");
+        document.querySelector(".year");
+        if (mainMenuBtn) {
+            const menu = document.querySelector(".menu");
+            mainMenuBtn.addEventListener("click", (function(e) {
+                menu.classList.add("_active");
+                menuOpen();
+            }));
         }
-        const validateEmail = inputEmail => inputEmail.value.match(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/);
-        const validatePassword = inputPassword => inputPassword.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/);
-        function login_formValidate(inputEmail, inputPassword) {
-            if (!validateEmail(inputEmail)) {
-                emailError = "please enter a valid email address";
-                generateError("email", emailError);
-                return;
-            }
-            if (!validatePassword(inputPassword)) {
-                console.log("invalid password");
-                passwordError = "please enter correct password";
-                generateError("password", passwordError);
-                return;
-            }
+        if (altMenuBtn) {
+            const menu = document.querySelector(".menu");
+            altMenuBtn.addEventListener("click", (function(e) {
+                menu.classList.add("_active");
+                menuOpen();
+            }));
         }
-        function generateError(errorName, errorMsg) {
-            if (errorName == "email") emailError.innerText = errorMsg; else if (errorName == "password") passwordError.innerText = errorMsg; else if (errorName == "invalidUser") userError.innerHTML = errorMsg;
+        if (menuCloseBtn) {
+            const menu = document.querySelector(".menu");
+            menuCloseBtn.addEventListener("click", (function(e) {
+                menu.classList.remove("_active");
+                menuClose();
+            }));
         }
-        email.addEventListener("focusout", (e => {
-            if (!validateEmail(email)) {
-                generateError("email", "This field is required");
-                email.parentElement.classList.add("error");
+        switch (script_currentPage) {
+          case "profile":
+            function profileLogic() {
+                if (!localStorage.getItem("profilePictureInput")) profilePicture.setAttribute("src", "img/profile-placeholder.png"); else profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"));
+                profilePictureInput.addEventListener("change", (e => {
+                    const image = e.target.files[0];
+                    const reader = new FileReader;
+                    reader.readAsDataURL(image);
+                    reader.addEventListener("load", (() => {
+                        localStorage.setItem("profilePictureInput", reader.result);
+                        if (!localStorage.getItem("profilePictureInput")) profilePicture.setAttribute("src", "img/profile-placeholder.png"); else profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"));
+                    }));
+                }));
             }
-        }));
-        login_password.addEventListener("focusout", (e => {
-            if (!validatePassword(login_password)) {
-                generateError("password", "This field is required");
-                login_password.parentElement.classList.add("error");
-            }
-        }));
-        email.addEventListener("focusin", (e => {
-            if (!validateEmail(email)) {
-                emailError.innerText = "";
-                userError.innerText = "";
-                email.parentElement.classList.remove("error");
-            }
-        }));
-        login_password.addEventListener("focusin", (e => {
-            if (!validatePassword(login_password)) {
-                passwordError.innerText = "";
-                userError.innerText = "";
-                login_password.parentElement.classList.remove("error");
-            }
-        }));
-        login_form.addEventListener("submit", (e => {
-            e.preventDefault();
-            login_formValidate(email, login_password);
-            login();
-            e.target.reset();
-        }));
+            profileLogic();
+            break;
+
+          default:
+            break;
+        }
         window["FLS"] = true;
         isWebp();
         menuInit();
