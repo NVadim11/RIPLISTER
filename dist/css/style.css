@@ -681,7 +681,6 @@ label {
 }
 
 .popupLoginForm__content {
-  padding: 0 5.25rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -692,6 +691,7 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 5.3125rem;
   border-radius: 1.875rem;
 }
 
@@ -706,10 +706,30 @@ label {
           flex-direction: column;
 }
 
+.popupLoginForm__formContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popupLoginForm__formContent hr {
+  height: 0.125rem;
+  width: 100%;
+  margin-top: 2.875rem;
+  background: var(--orange-border-transparent);
+}
+
 .popupLoginForm__close {
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 0.9375rem;
+  top: 0.9375rem;
 }
 
 .popupLoginForm__close svg rect {
@@ -730,7 +750,7 @@ label {
   margin-top: 1.0625rem;
   color: var(--text-color-black);
   text-align: center;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
@@ -742,7 +762,8 @@ label {
   border-radius: 1.25rem;
   border: 0.0625rem solid #EC6041;
   background: #FFF;
-  padding: 1.0625rem 1.875rem;
+  width: 16.25rem;
+  padding: 1.0625rem 0rem 1.0625rem 1.875rem;
 }
 
 .popupLoginForm__btnField {
@@ -759,7 +780,12 @@ label {
 }
 
 .popupLoginForm__passRecover {
+  font-size: 1rem;
   margin-top: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  letter-spacing: 0em;
+  text-align: center;
 }
 
 .popupLoginForm__emailReq,
@@ -770,11 +796,35 @@ label {
 }
 
 .popupLoginForm .button {
-  margin-top: 30px;
-  border-radius: 20px;
+  margin-top: 1.875rem;
+  border-radius: 1.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-  padding: 16px 77px;
+  color: var(--white-color);
+  padding: 1rem 4.8125rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.375rem;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.popupLoginForm__successMsg {
+  display: none;
+}
+
+.popupLoginForm__socialsLogin {
+  margin-top: 2.6875rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.popupLoginForm__socials {
+  margin-top: 2.0625rem;
+  margin-bottom: 4.375rem;
 }
 
 .promoPopup__content {
