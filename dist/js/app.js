@@ -6194,43 +6194,105 @@
             class_loaded: "_lazy-loaded",
             use_native: true
         });
-        const accounts_namespaceObject = JSON.parse('{"r":[{"id":1,"first_name":"John","last_name":"Doe","email":"johndoe@gmail.com","username":"john20","password":"Johntest123"},{"id":2,"first_name":"Julia","last_name":"Chan","email":"juliachan@gmail.com","username":"julia19","password":"Juliatest123"}]}');
+        const accounts_namespaceObject = JSON.parse('{"r":[{"id":1,"first_name":"John","last_name":"Doe","email":"johndoe@gmail.com","password":"Johntest123"},{"id":2,"first_name":"Julia","last_name":"Chan","email":"juliachan@gmail.com","password":"Juliatest123"}]}');
+        const loginTitle = document.getElementById("loginTitle");
+        const registerTitle = document.getElementById("registerTitle");
+        const firstName = document.getElementById("popupLoginForm__firstName");
+        const lastName = document.getElementById("popupLoginForm__lastName");
         const email = document.getElementById("popupLoginForm__email");
         const auth_password = document.getElementById("popupLoginForm__password");
         const auth_form = document.getElementById("popupLoginForm");
+        const passRecover = document.querySelector(".popupLoginForm__passRecover");
+        const loginBtn = document.querySelector(".popupLoginForm__loginBtn");
+        const registerBtn = document.querySelector(".popupLoginForm__registerBtn");
         document.querySelector(".popupLoginForm__close");
-        document.querySelector(".popupLoginForm__emailReq");
-        const passReq = document.querySelector(".popupLoginForm__passReq");
-        const emailValid = document.querySelector(".popupLoginForm__emailValid");
+        const invalidInformation = document.querySelector(".popupLoginForm__invalidInformation");
         const invalidUser = document.querySelector(".popupLoginForm__invalidUser");
         document.querySelector(".popupLoginForm__successMsg");
         console.log(accounts_namespaceObject.r);
+        const validateFirstName = inputFirstName => inputFirstName.value.match(/^[a-zA-Z\xC0-\uFFFF]+([ \-']{0,1}[a-zA-Z\xC0-\uFFFF]+){0,2}[.]{0,1}$/);
+        const validateLastName = inputLastName => inputLastName.value.match(/^[a-zA-Z\xC0-\uFFFF]+([ \-']{0,1}[a-zA-Z\xC0-\uFFFF]+){0,2}[.]{0,1}$/);
+        const validateEmail = inputEmail => inputEmail.value.match(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/);
+        const validatePassword = inputPassword => inputPassword.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/);
+        if (auth_form) {
+            registerTitle.addEventListener("click", (function() {
+                firstName.style.display = "block";
+                lastName.style.display = "block";
+                registerBtn.style.display = "block";
+                loginBtn.style.display = "none";
+                passRecover.style.display = "none";
+            }));
+            loginTitle.addEventListener("click", (function() {
+                firstName.style.display = "none";
+                lastName.style.display = "none";
+                registerBtn.style.display = "none";
+                loginBtn.style.display = "block";
+                passRecover.style.display = "block";
+            }));
+        }
+        function register() {
+            let firstNameInput = firstName.value.trim().charAt(0).toUpperCase() + firstName.value.trim().slice(1).toLowerCase();
+            let lastNameInput = lastName.value.trim().charAt(0).toUpperCase() + lastName.value.trim().slice(1).toLowerCase();
+            let emailInput = email.value.trim();
+            let passwordInput = auth_password.value.trim();
+            console.log({
+                firstNameInput,
+                lastNameInput,
+                emailInput,
+                passwordInput
+            });
+        }
         function login() {
             let emailInput = email.value;
             let passwordInput = auth_password.value;
             let userFound = accounts_namespaceObject.r.find((user => user.email === emailInput && user.password === passwordInput));
-            if (userFound) {
+            if (!userFound) invalidUser.classList.add("show_errorMsg"); else if (emailInput === "" || passwordInput === "") invalidInformation.classList.add("show_errorMsg"); else {
+                invalidInformation.classList.remove("show_errorMsg");
+                invalidUser.classList.remove("show_errorMsg");
                 console.log("Login Success");
                 console.log(userFound);
-            } else invalidUser.classList.toggle("show_errorMsg");
+            }
         }
-        const validateEmail = inputEmail => inputEmail.value.match(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/);
-        const validatePassword = inputPassword => inputPassword.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/);
-        email.addEventListener("focusout", (e => {
-            if (!validateEmail(email)) emailValid.classList.add("show_errorMsg");
-        }));
-        auth_password.addEventListener("focusout", (e => {
-            if (!validatePassword(auth_password) && auth_password.value.length === 0) passReq.classList.add("show_errorMsg");
-        }));
-        email.addEventListener("focusin", (e => {
-            if (!validateEmail(email)) emailValid.classList.remove("show_errorMsg");
-        }));
-        auth_password.addEventListener("focusin", (e => {
-            if (!validatePassword(auth_password)) passReq.classList.remove("show_errorMsg");
-        }));
-        auth_form.addEventListener("submit", (e => {
+        if (firstName) {
+            firstName.addEventListener("focusout", (e => {
+                if (!validateFirstName(firstName)) firstName.style.border = "2px solid #F00";
+            }));
+            firstName.addEventListener("focusin", (e => {
+                firstName.style.border = "0.0625rem solid #EC6041";
+            }));
+        }
+        if (lastName) {
+            lastName.addEventListener("focusout", (e => {
+                if (!validateLastName(lastName)) lastName.style.border = "2px solid #F00";
+            }));
+            lastName.addEventListener("focusin", (e => {
+                lastName.style.border = "0.0625rem solid #EC6041";
+            }));
+        }
+        if (email) {
+            email.addEventListener("focusout", (e => {
+                if (!validateEmail(email)) email.style.border = "2px solid #F00";
+            }));
+            email.addEventListener("focusin", (e => {
+                if (!validateEmail(email)) ;
+            }));
+        }
+        if (auth_password) {
+            auth_password.addEventListener("focusout", (e => {
+                if (!validatePassword(auth_password) && auth_password.value.length === 0) auth_password.style.border = "2px solid #F00";
+            }));
+            auth_password.addEventListener("focusin", (e => {
+                if (!validatePassword(auth_password)) ;
+            }));
+        }
+        if (loginBtn) auth_form.addEventListener("submit", (e => {
             e.preventDefault();
             login();
+            e.target.reset();
+        }));
+        if (registerBtn) auth_form.addEventListener("submit", (e => {
+            e.preventDefault();
+            register();
             e.target.reset();
         }));
         const consoleLogger = {

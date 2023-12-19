@@ -738,12 +738,25 @@ label {
 }
 
 .popupLoginForm__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.375rem;
   margin-top: 7.0625rem;
   color: var(--text-color-black);
   font-size: 2rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+.popupLoginForm__registerTitle {
+  color: #3C88F9;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
 }
 
 .popupLoginForm__descr {
@@ -788,11 +801,31 @@ label {
   text-align: center;
 }
 
-.popupLoginForm__emailReq,
-.popupLoginForm__emailValid,
-.popupLoginForm__passReq,
-.popupLoginForm__invalidUser {
+.popupLoginForm__invalidUser,
+.popupLoginForm__invalidInformation,
+.popupLoginForm__registerDescr,
+.popupLoginForm__firstName,
+.popupLoginForm__lastName,
+.popupLoginForm__registerBtn {
   display: none;
+}
+
+.popupLoginForm__invalidInformation,
+.popupLoginForm__invalidUser {
+  margin-top: 1.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F00;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.popupLoginForm .errorSignSvg {
+  display: block;
+  margin-right: 0.6875rem;
 }
 
 .popupLoginForm .button {

@@ -1,11 +1,18 @@
+// import { menuClose, menuOpen } from "./functions.js"
+
+const loginTitle = document.getElementById("loginTitle");
+const registerTitle = document.getElementById("registerTitle");
+const firstName = document.getElementById("popupLoginForm__firstName");
+const lastName = document.getElementById("popupLoginForm__lastName");
 const email = document.getElementById("popupLoginForm__email");
 const password = document.getElementById("popupLoginForm__password"); 
 const form = document.getElementById("popupLoginForm");
+const passRecover = document.querySelector(".popupLoginForm__passRecover");
+const loginBtn = document.querySelector(".popupLoginForm__loginBtn");
+const registerBtn = document.querySelector(".popupLoginForm__registerBtn");
 const closeModal = document.querySelector(".popupLoginForm__close");
 
-const emailReq = document.querySelector(".popupLoginForm__emailReq")
-const passReq = document.querySelector(".popupLoginForm__passReq");
-const emailValid = document.querySelector(".popupLoginForm__emailValid");
+const invalidInformation = document.querySelector(".popupLoginForm__invalidInformation");
 const invalidUser = document.querySelector(".popupLoginForm__invalidUser");
 
 const successMsg = document.querySelector(".popupLoginForm__successMsg");
@@ -13,24 +20,39 @@ const successMsg = document.querySelector(".popupLoginForm__successMsg");
 import usersDB from "../JSON/accounts.json"
 console.log(usersDB.users);
 
-// const users = [
-		// {
-		// 	"id": 1,
-		// 	"first_name": "John",
-		// 	"last_name": "Doe",
-		// 	"email": "johndoe@gmail.com",
-		// 	"username": "john20",
-		// 	"password": "Johntest123"
-		// },
-		// {
-		// 	"id": 2,
-		// 	"first_name": "Julia",
-		// 	"last_name": "Chan",
-		// 	"email": "juliachan@gmail.com",
-		// 	"username": "julia19",
-		// 	"password": "Juliatest123"
-		// }
-// 	]
+const validateFirstName = (inputFirstName) => inputFirstName.value.match(/^[a-zA-Z\xC0-\uFFFF]+([ \-']{0,1}[a-zA-Z\xC0-\uFFFF]+){0,2}[.]{0,1}$/);
+
+const validateLastName = (inputLastName) => inputLastName.value.match(/^[a-zA-Z\xC0-\uFFFF]+([ \-']{0,1}[a-zA-Z\xC0-\uFFFF]+){0,2}[.]{0,1}$/);
+
+const validateEmail = (inputEmail) => inputEmail.value.match(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/);
+
+const validatePassword = (inputPassword) => inputPassword.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/);
+
+if (form) {
+    registerTitle.addEventListener("click", function() {
+        firstName.style.display = "block";
+        lastName.style.display = "block";
+        registerBtn.style.display = "block";
+        loginBtn.style.display = "none";
+        passRecover.style.display = "none";
+    })
+    loginTitle.addEventListener("click", function() {
+        firstName.style.display = "none";
+        lastName.style.display = "none";
+        registerBtn.style.display = "none";
+        loginBtn.style.display = "block";
+        passRecover.style.display = "block";
+    })
+}
+
+function register() {
+    let firstNameInput = (firstName.value.trim()).charAt(0).toUpperCase() + (firstName.value.trim()).slice(1).toLowerCase();
+    let lastNameInput =  (lastName.value.trim()).charAt(0).toUpperCase() + (lastName.value.trim()).slice(1).toLowerCase();
+    let emailInput = email.value.trim();
+    let passwordInput = password.value.trim();
+
+    console.log({firstNameInput, lastNameInput, emailInput, passwordInput});
+}
 
 function login() {
     let emailInput = email.value;
@@ -38,65 +60,73 @@ function login() {
 
     let userFound = usersDB.users.find(user => user.email === emailInput && user.password === passwordInput)
 
-    if (userFound) {
+    if (!userFound) {
+        invalidUser.classList.add("show_errorMsg");
+    } else if (emailInput === "" || passwordInput === "") {
+        invalidInformation.classList.add("show_errorMsg");
+    }
+    else {
+        invalidInformation.classList.remove("show_errorMsg");
+        invalidUser.classList.remove("show_errorMsg");
         console.log("Login Success");
         console.log(userFound)
     }
-    else {
-        invalidUser.classList.toggle("show_errorMsg");
-    }
+}
+if (firstName) {
+    firstName.addEventListener("focusout", (e)=>{
+        if(!validateFirstName(firstName)){
+            firstName.style.border = "2px solid #F00";   
+        }
+    });
+    firstName.addEventListener("focusin", (e) => {
+        firstName.style.border = "0.0625rem solid #EC6041";
+    });
+}
+if (lastName) {
+    lastName.addEventListener("focusout", (e)=>{
+        if(!validateLastName(lastName)){
+            lastName.style.border = "2px solid #F00";
+        }
+    });
+    lastName.addEventListener("focusin", (e) => {
+        lastName.style.border = "0.0625rem solid #EC6041";
+    });
+}
+if (email) {
+    email.addEventListener("focusout", (e)=>{
+        if(!validateEmail(email)){
+           email.style.border = "2px solid #F00";
+        }
+    });
+    email.addEventListener("focusin", (e)=>{
+        if(!validateEmail(email)){           
+        }
+    });
 }
 
-// Function to validate the email
-const validateEmail = (inputEmail)=> inputEmail.value.match(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/);
+if (password) {
+    password.addEventListener("focusout", (e)=>{
+        if(!validatePassword(password) && password.value.length === 0 ) {
+          password.style.border = "2px solid #F00";
+        }
+    });
+    password.addEventListener("focusin", (e)=>{
+        if(!validatePassword(password)){    
+        }
+    });
+}
 
-// Validation example Password123, at least one Upper case and one number.
-const validatePassword = (inputPassword) => inputPassword.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/);
-
-// сделать проверку по языку для сообщений 
-// function formValidate (inputEmail, inputPassword) {
-//     if(!validateEmail(inputEmail)){
-//         // emailValid.classList.add("show_errorMsg");
-//         return;
-//     }
-//     if(!validatePassword(inputPassword)){
-//         // passReq.classList.add("show_errorMsg");
-//         return;
-//     }
-// }
-
-// Focusout event listener. Triggers when the user clicks anywhere else besides the input
-email.addEventListener("focusout", (e)=>{
-    if(!validateEmail(email)){
-        emailValid.classList.add("show_errorMsg");
-    }
-});
-
-// Focusout event listener triggers when the user clicks anywhere else besides the input
-password.addEventListener("focusout", (e)=>{
-    if(!validatePassword(password) && password.value.length === 0 ) {
-        passReq.classList.add("show_errorMsg");
-    }
-});
-
-// FocusIn event listener. Triggers when the user clicks anywhere else besides the input
-email.addEventListener("focusin", (e)=>{
-    if(!validateEmail(email)){
-        emailValid.classList.remove("show_errorMsg");    
-    }
-});
-
-// FocusIn event listener triggers when the user clicks anywhere else besides the input
-password.addEventListener("focusin", (e)=>{
-    if(!validatePassword(password)){      
-        passReq.classList.remove("show_errorMsg");
-    }
-});
-
-//triggers when user submits the form
-form.addEventListener("submit",(e) => {
-    e.preventDefault();
-    // formValidate(email, password);
-    login();
-    e.target.reset();
-});
+if (loginBtn) {
+    form.addEventListener("submit",(e) => {
+        e.preventDefault();        
+        login();        
+        e.target.reset();
+    });
+}
+if (registerBtn) {
+    form.addEventListener("submit",(e) => {
+        e.preventDefault();        
+        register();        
+        e.target.reset();
+    });
+}

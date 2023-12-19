@@ -1,4 +1,4 @@
-<div id="popupLoginForm" class="popupLoginForm">
+<div id="popupLoginForm" aria-hidden="true" class="popupLoginForm">
 	<div class="popupLoginForm__wrapper">
 		<div class="popupLoginForm__content">
 
@@ -20,32 +20,62 @@
 					</button>
 				</div>
 				<div class="popupLoginForm__title">
-					<h1>Увійти</h1>
+					<div class="popupLoginForm__loginTitle" id="loginTitle">
+						<h1>Увійти</h1>
+					</div>
+					<div class="popupLoginForm__registerTitle" id="registerTitle">
+						<h1>Реєстрація</h1>
+					</div>
 				</div>
 				<div class="popupLoginForm__descr">
-					<p>Введите ваши данные для входа или используйте
-						ваши соцсети</p>
+					<div class="popupLoginForm__loginDescr" id="loginDescr">
+						<p>Введіть дані для входу або використовуйте ваші соцмережі</p>
+					</div>
+					<div class="popupLoginForm__registerDescr" id="registerDescr">
+						<p>Якщо ви ще не заходив на сайт – ведіть ваші дані для реєстрації та подальшого входу на ресурс</p>
+					</div>
 				</div>
 
 				<form id="popupLoginForm__form" class="popupLoginForm__form">
 					<div class="popupLoginForm__input-group">
+						<input type="text" id="popupLoginForm__firstName" data-no-focus-classes placeholder="Ім'я"
+							class="popupLoginForm__input popupLoginForm__firstName">
+					</div>
+					<div class="popupLoginForm__input-group">
+						<input type="text" id="popupLoginForm__lastName" data-no-focus-classes placeholder="Прізвище"
+							class="popupLoginForm__input popupLoginForm__lastName">
+					</div>
+					<div class="popupLoginForm__input-group">
 						<input type="text" id="popupLoginForm__email" data-no-focus-classes placeholder="Email"
 							class="popupLoginForm__input">
-						<span class="popupLoginForm__emailReq">This field is required</span>
-						<span class="popupLoginForm__emailValid">Enter a valid email</span>
 					</div>
 					<div class="popupLoginForm__input-group">
 						<input type="password" id="popupLoginForm__password" data-no-focus-classes placeholder="Password"
 							class="popupLoginForm__input">
-						<span class="popupLoginForm__passReq">Enter a valid password</span>
 					</div>
-					<span class="popupLoginForm__invalidUser">Incorrect email or password</span>
 					<div class="popupLoginForm__btnField">
 						<div class="popupLoginForm__passRecover">
 							<a href="">Нагадати пароль</a>
 						</div>
-						<button type="submit" class="button">Увійти</button>
+						<button type="submit" class="button popupLoginForm__loginBtn">Увійти</button>
+						<button type="submit" class="button popupLoginForm__registerBtn">Реєстрація</button>
 					</div>
+					<span class="popupLoginForm__invalidInformation"><span class="errorSignSvg"><svg
+								xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<rect width="24" height="24" rx="12" fill="#FF0000" />
+								<path
+									d="M12.1867 14.5971H11.1467C10.8267 12.3197 10.6667 10.4308 10.6667 8.93048V6H12.6667V8.93048C12.6667 10.4308 12.5067 12.3197 12.1867 14.5971ZM10.7067 17.3333V15.7305H12.6467V17.3333H10.7067Z"
+									fill="white" />
+							</svg></span>Заповніть поля коректно
+					</span>
+					<span class="popupLoginForm__invalidUser"><span class="errorSignSvg"><svg xmlns="http://www.w3.org/2000/svg"
+								width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<rect width="24" height="24" rx="12" fill="#FF0000" />
+								<path
+									d="M12.1867 14.5971H11.1467C10.8267 12.3197 10.6667 10.4308 10.6667 8.93048V6H12.6667V8.93048C12.6667 10.4308 12.5067 12.3197 12.1867 14.5971ZM10.7067 17.3333V15.7305H12.6467V17.3333H10.7067Z"
+									fill="white" />
+							</svg></span>Incorrect email or password
+					</span>
 				</form>
 				<hr>
 			</div>
