@@ -6209,31 +6209,62 @@
         const invalidInformation = document.querySelector(".popupLoginForm__invalidInformation");
         const invalidUser = document.querySelector(".popupLoginForm__invalidUser");
         document.querySelector(".popupLoginForm__successMsg");
-        console.log(accounts_namespaceObject.r);
-        const validateFirstName = inputFirstName => inputFirstName.value.match(/^[a-zA-Z\xC0-\uFFFF]+([ \-']{0,1}[a-zA-Z\xC0-\uFFFF]+){0,2}[.]{0,1}$/);
-        const validateLastName = inputLastName => inputLastName.value.match(/^[a-zA-Z\xC0-\uFFFF]+([ \-']{0,1}[a-zA-Z\xC0-\uFFFF]+){0,2}[.]{0,1}$/);
-        const validateEmail = inputEmail => inputEmail.value.match(/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/);
-        const validatePassword = inputPassword => inputPassword.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/);
-        if (auth_form) {
-            registerTitle.addEventListener("click", (function() {
-                firstName.style.display = "block";
-                lastName.style.display = "block";
-                registerBtn.style.display = "block";
-                loginBtn.style.display = "none";
-                passRecover.style.display = "none";
-                loginTitle.classList.add("notActiveForm");
-                registerTitle.classList.remove("notActiveForm");
+        const validateForm = (formSelector, callback) => {
+            const formElement = document.querySelector(formSelector);
+            const validationOptions = [ {
+                attribute: "minlength",
+                isValid: input => input.value && input.value.length >= parseInt(input.minLength, 10)
+            }, {
+                attribute: "required",
+                isValid: input => input.value.trim() !== ""
+            }, {
+                attribute: "pattern",
+                isValid: input => {
+                    const patternRegex = new RegExp(input.pattern);
+                    return patternRegex.test(input.value);
+                }
+            } ];
+            const validateSingleFormGroup = formGroup => {
+                const input = formGroup.querySelector("input");
+                const errorIcon = formGroup.querySelector(".inputError");
+                let formGroupError = false;
+                for (const option of validationOptions) if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
+                    input.style.border = "0.125rem solid #F00";
+                    errorIcon.style.display = "block";
+                    formGroupError = true;
+                }
+                if (!formGroupError) {
+                    input.style.border = "0.0625rem solid #EC6041";
+                    errorIcon.style.display = "none";
+                }
+                return !formGroupError;
+            };
+            formElement.setAttribute("novalidate", "");
+            Array.from(formElement.elements).forEach((element => {
+                element.addEventListener("blur", (event => {
+                    validateSingleFormGroup(event.srcElement.parentElement);
+                }));
             }));
-            loginTitle.addEventListener("click", (function() {
-                firstName.style.display = "none";
-                lastName.style.display = "none";
-                registerBtn.style.display = "none";
-                loginBtn.style.display = "block";
-                passRecover.style.display = "block";
-                loginTitle.classList.remove("notActiveForm");
-                registerTitle.classList.add("notActiveForm");
+            const validateAllFormGroups = formToValidate => {
+                const formGroups = Array.from(formToValidate.querySelectorAll(".popupLoginForm__input-group"));
+                return formGroups.every((formGroup => validateSingleFormGroup(formGroup)));
+            };
+            formElement.addEventListener("submit", (event => {
+                event.preventDefault();
+                const formValid = validateAllFormGroups(formElement);
+                if (formValid) {
+                    console.log("form is valid");
+                    callback(formElement);
+                }
             }));
-        }
+        };
+        const sendToAPI = formElement => {
+            const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit")).reduce(((accumulator, element) => ({
+                ...accumulator,
+                [element.id]: element.value
+            })), {});
+            console.log(formObject);
+        };
         function login() {
             let emailInput = email.value;
             let passwordInput = auth_password.value;
@@ -6245,55 +6276,28 @@
                 console.log(userFound);
             }
         }
-        if (firstName) {
-            firstName.addEventListener("focusout", (e => {
-                if (!validateFirstName(firstName)) {
-                    firstName.style.border = "2px solid #F00";
-                    document.querySelector(".firstNameError").style.display = "block";
-                }
+        validateForm("#popupLoginForm__form", sendToAPI);
+        validateForm("#popupLoginForm__form", login);
+        if (auth_form) {
+            registerTitle.addEventListener("click", (function() {
+                loginTitle.classList.add("notActiveForm");
+                registerTitle.classList.remove("notActiveForm");
+                firstName.style.display = "block";
+                lastName.style.display = "block";
+                registerBtn.style.display = "block";
+                loginBtn.style.display = "none";
+                passRecover.style.display = "none";
             }));
-            firstName.addEventListener("focusin", (e => {
-                document.querySelector(".firstNameError").style.display = "none";
-            }));
-        }
-        if (lastName) {
-            lastName.addEventListener("focusout", (e => {
-                if (!validateLastName(lastName)) {
-                    lastName.style.border = "2px solid #F00";
-                    document.querySelector(".lastNameError").style.display = "block";
-                }
-            }));
-            lastName.addEventListener("focusin", (e => {
-                document.querySelector(".lastNameError").style.display = "none";
-            }));
-        }
-        if (email) {
-            email.addEventListener("focusout", (e => {
-                if (!validateEmail(email)) {
-                    email.style.border = "2px solid #F00";
-                    document.querySelector(".emailError").style.display = "block";
-                }
-            }));
-            email.addEventListener("focusin", (e => {
-                if (!validateEmail(email)) document.querySelector(".emailError").style.display = "none";
+            loginTitle.addEventListener("click", (function() {
+                loginTitle.classList.remove("notActiveForm");
+                registerTitle.classList.add("notActiveForm");
+                firstName.style.display = "none";
+                lastName.style.display = "none";
+                registerBtn.style.display = "none";
+                loginBtn.style.display = "block";
+                passRecover.style.display = "block";
             }));
         }
-        if (auth_password) {
-            auth_password.addEventListener("focusout", (e => {
-                if (!validatePassword(auth_password) && auth_password.value.length === 0) {
-                    auth_password.style.border = "2px solid #F00";
-                    document.querySelector(".passwordError").style.display = "block";
-                }
-            }));
-            auth_password.addEventListener("focusin", (e => {
-                if (!validatePassword(auth_password)) document.querySelector(".passwordError").style.display = "none";
-            }));
-        }
-        if (loginBtn) auth_form.addEventListener("submit", (e => {
-            e.preventDefault();
-            login();
-            e.target.reset();
-        }));
         const consoleLogger = {
             type: "logger",
             log(args) {

@@ -754,6 +754,14 @@ label {
   line-height: normal;
 }
 
+.popupLoginForm__title:hover {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .popupLoginForm .notActiveForm {
   position: absolute;
   bottom: 60%;
@@ -819,14 +827,11 @@ label {
           flex-direction: row;
 }
 
-.popupLoginForm .firstNameError,
-.popupLoginForm .lastNameError,
-.popupLoginForm .emailError,
-.popupLoginForm .passwordError {
+.popupLoginForm .inputError {
   display: none;
   position: absolute;
   top: 1.75rem;
-  right: -2.1875rem;
+  right: -1.875rem;
   scale: 80%;
 }
 

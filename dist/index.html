@@ -717,32 +717,31 @@
 							<p>Якщо ви ще не заходив на сайт – ведіть ваші дані для реєстрації та подальшого входу на ресурс</p>
 						</div>
 					</div>
-
 					<form id="popupLoginForm__form" class="popupLoginForm__form">
 						<div class="popupLoginForm__input-group">
-							<input type="text" id="popupLoginForm__firstName" data-no-focus-classes placeholder="Ім'я" class="popupLoginForm__input popupLoginForm__firstName">
-							<svg class="firstNameError" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<input required minlength="2" type="text" id="popupLoginForm__firstName" data-no-focus-classes placeholder="Ім'я" class="popupLoginForm__input popupLoginForm__firstName">
+							<svg class="inputError" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 								<rect width="24" height="24" rx="12" fill="#FF0000" />
 								<path d="M12.1867 14.5971H11.1467C10.8267 12.3197 10.6667 10.4308 10.6667 8.93048V6H12.6667V8.93048C12.6667 10.4308 12.5067 12.3197 12.1867 14.5971ZM10.7067 17.3333V15.7305H12.6467V17.3333H10.7067Z" fill="white" />
 							</svg>
 						</div>
 						<div class="popupLoginForm__input-group">
-							<input type="text" id="popupLoginForm__lastName" data-no-focus-classes placeholder="Прізвище" class="popupLoginForm__input popupLoginForm__lastName">
-							<svg class="lastNameError" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<input required minlength="2" type="text" id="popupLoginForm__lastName" data-no-focus-classes placeholder="Прізвище" class="popupLoginForm__input popupLoginForm__lastName">
+							<svg class="inputError" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 								<rect width="24" height="24" rx="12" fill="#FF0000" />
 								<path d="M12.1867 14.5971H11.1467C10.8267 12.3197 10.6667 10.4308 10.6667 8.93048V6H12.6667V8.93048C12.6667 10.4308 12.5067 12.3197 12.1867 14.5971ZM10.7067 17.3333V15.7305H12.6467V17.3333H10.7067Z" fill="white" />
 							</svg>
 						</div>
 						<div class="popupLoginForm__input-group">
-							<input type="text" id="popupLoginForm__email" data-no-focus-classes placeholder="Email" class="popupLoginForm__input">
-							<svg class="emailError" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<input required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" id="popupLoginForm__email" data-no-focus-classes placeholder="Email" class="popupLoginForm__input">
+							<svg class="inputError" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 								<rect width="24" height="24" rx="12" fill="#FF0000" />
 								<path d="M12.1867 14.5971H11.1467C10.8267 12.3197 10.6667 10.4308 10.6667 8.93048V6H12.6667V8.93048C12.6667 10.4308 12.5067 12.3197 12.1867 14.5971ZM10.7067 17.3333V15.7305H12.6467V17.3333H10.7067Z" fill="white" />
 							</svg>
 						</div>
 						<div class="popupLoginForm__input-group">
-							<input type="password" id="popupLoginForm__password" data-no-focus-classes placeholder="Password" class="popupLoginForm__input">
-							<svg class="passwordError" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" type="password" id="popupLoginForm__password" data-no-focus-classes placeholder="Password" class="popupLoginForm__input">
+							<svg class="inputError" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 								<rect width="24" height="24" rx="12" fill="#FF0000" />
 								<path d="M12.1867 14.5971H11.1467C10.8267 12.3197 10.6667 10.4308 10.6667 8.93048V6H12.6667V8.93048C12.6667 10.4308 12.5067 12.3197 12.1867 14.5971ZM10.7067 17.3333V15.7305H12.6467V17.3333H10.7067Z" fill="white" />
 							</svg>

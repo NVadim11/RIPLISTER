@@ -232,6 +232,10 @@ body::after {
 		font-weight: 700;
 		line-height: normal;
 	}
+	&__title:hover {
+		cursor: pointer;
+		user-select: none;
+	}
 	.notActiveForm {
 		position: absolute;
 		bottom: 60%;
@@ -283,11 +287,11 @@ body::after {
 		position: relative;
 		flex-direction: row;
 	}
-	.firstNameError, .lastNameError, .emailError, .passwordError {
+	.inputError {
 		display: none;
 		position: absolute;
 		top: 1.75rem;
-		right: -2.1875rem;
+		right: -1.875rem;
 		scale: 80%;	
 	}
 	&__invalidUser, &__invalidInformation, &__registerDescr, &__firstName, &__lastName, &__registerBtn{
