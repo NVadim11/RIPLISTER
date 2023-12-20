@@ -222,6 +222,8 @@ body::after {
 	}
 	&__title {
 		display: flex;
+		align-items: flex-start;
+		position: relative;
 		gap: 0.375rem;
 		margin-top: 7.0625rem;
 		color: var(--text-color-black);
@@ -230,15 +232,20 @@ body::after {
 		font-weight: 700;
 		line-height: normal;
 	}
-	&__loginTitle {
-	}
-	&__registerTitle {
+	.notActiveForm {
+		position: absolute;
+		bottom: 60%;
+		left: 105%;
+		width: 100%;
 		color: #3C88F9;
 		font-size: 1.25rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-		text-decoration-line: underline;
+	}
+	&__loginTitle {	
+	}
+	&__registerTitle {
 	}
 	&__descr {
 		margin-top: 1.0625rem;
@@ -271,6 +278,18 @@ body::after {
 		text-align: center;
 
 	}
+	&__input-group {
+		display: flex;
+		position: relative;
+		flex-direction: row;
+	}
+	.firstNameError, .lastNameError, .emailError, .passwordError {
+		display: none;
+		position: absolute;
+		top: 1.75rem;
+		right: -2.1875rem;
+		scale: 80%;	
+	}
 	&__invalidUser, &__invalidInformation, &__registerDescr, &__firstName, &__lastName, &__registerBtn{
 		display: none;
 	}
@@ -285,6 +304,7 @@ body::after {
 	}
 	.errorSignSvg {
 		display: block;
+		scale: 80%;	
 		margin-right: 0.6875rem;
 	}
 	.button {

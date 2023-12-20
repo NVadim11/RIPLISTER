@@ -741,6 +741,10 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
   gap: 0.375rem;
   margin-top: 7.0625rem;
   color: var(--text-color-black);
@@ -750,13 +754,16 @@ label {
   line-height: normal;
 }
 
-.popupLoginForm__registerTitle {
+.popupLoginForm .notActiveForm {
+  position: absolute;
+  bottom: 60%;
+  left: 105%;
+  width: 100%;
   color: #3C88F9;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  text-decoration-line: underline;
 }
 
 .popupLoginForm__descr {
@@ -801,6 +808,28 @@ label {
   text-align: center;
 }
 
+.popupLoginForm__input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.popupLoginForm .firstNameError,
+.popupLoginForm .lastNameError,
+.popupLoginForm .emailError,
+.popupLoginForm .passwordError {
+  display: none;
+  position: absolute;
+  top: 1.75rem;
+  right: -2.1875rem;
+  scale: 80%;
+}
+
 .popupLoginForm__invalidUser,
 .popupLoginForm__invalidInformation,
 .popupLoginForm__registerDescr,
@@ -825,6 +854,7 @@ label {
 
 .popupLoginForm .errorSignSvg {
   display: block;
+  scale: 80%;
   margin-right: 0.6875rem;
 }
 

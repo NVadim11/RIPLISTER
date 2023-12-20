@@ -28,6 +28,16 @@ const validateEmail = (inputEmail) => inputEmail.value.match(/^[a-z0-9!#$%&'*+/=
 
 const validatePassword = (inputPassword) => inputPassword.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/);
 
+// position: absolute;
+// bottom: 60%;
+// left: 105%;
+// width: 100%;
+// color: #3C88F9;
+// font-size: 1.25rem;
+// font-style: normal;
+// font-weight: 600;
+// line-height: normal;
+
 if (form) {
     registerTitle.addEventListener("click", function() {
         firstName.style.display = "block";
@@ -35,6 +45,8 @@ if (form) {
         registerBtn.style.display = "block";
         loginBtn.style.display = "none";
         passRecover.style.display = "none";
+        loginTitle.classList.add("notActiveForm");
+        registerTitle.classList.remove("notActiveForm");
     })
     loginTitle.addEventListener("click", function() {
         firstName.style.display = "none";
@@ -42,6 +54,8 @@ if (form) {
         registerBtn.style.display = "none";
         loginBtn.style.display = "block";
         passRecover.style.display = "block";
+        loginTitle.classList.remove("notActiveForm");
+        registerTitle.classList.add("notActiveForm");
     })
 }
 
@@ -76,30 +90,34 @@ if (firstName) {
     firstName.addEventListener("focusout", (e)=>{
         if(!validateFirstName(firstName)){
             firstName.style.border = "2px solid #F00";   
+            document.querySelector(".firstNameError").style.display = "block";
         }
     });
     firstName.addEventListener("focusin", (e) => {
-        firstName.style.border = "0.0625rem solid #EC6041";
+        document.querySelector(".firstNameError").style.display = "none";
     });
 }
 if (lastName) {
     lastName.addEventListener("focusout", (e)=>{
         if(!validateLastName(lastName)){
             lastName.style.border = "2px solid #F00";
+            document.querySelector(".lastNameError").style.display = "block";
         }
     });
     lastName.addEventListener("focusin", (e) => {
-        lastName.style.border = "0.0625rem solid #EC6041";
+        document.querySelector(".lastNameError").style.display = "none";
     });
 }
 if (email) {
     email.addEventListener("focusout", (e)=>{
         if(!validateEmail(email)){
            email.style.border = "2px solid #F00";
+           document.querySelector(".emailError").style.display = "block";
         }
     });
     email.addEventListener("focusin", (e)=>{
-        if(!validateEmail(email)){           
+        if(!validateEmail(email)){     
+            document.querySelector(".emailError").style.display = "none";      
         }
     });
 }
@@ -108,10 +126,12 @@ if (password) {
     password.addEventListener("focusout", (e)=>{
         if(!validatePassword(password) && password.value.length === 0 ) {
           password.style.border = "2px solid #F00";
+          document.querySelector(".passwordError").style.display = "block";
         }
     });
     password.addEventListener("focusin", (e)=>{
-        if(!validatePassword(password)){    
+        if(!validatePassword(password)){ 
+            document.querySelector(".passwordError").style.display = "none";   
         }
     });
 }
@@ -120,13 +140,6 @@ if (loginBtn) {
     form.addEventListener("submit",(e) => {
         e.preventDefault();        
         login();        
-        e.target.reset();
-    });
-}
-if (registerBtn) {
-    form.addEventListener("submit",(e) => {
-        e.preventDefault();        
-        register();        
         e.target.reset();
     });
 }

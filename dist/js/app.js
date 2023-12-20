@@ -6221,6 +6221,8 @@
                 registerBtn.style.display = "block";
                 loginBtn.style.display = "none";
                 passRecover.style.display = "none";
+                loginTitle.classList.add("notActiveForm");
+                registerTitle.classList.remove("notActiveForm");
             }));
             loginTitle.addEventListener("click", (function() {
                 firstName.style.display = "none";
@@ -6228,19 +6230,9 @@
                 registerBtn.style.display = "none";
                 loginBtn.style.display = "block";
                 passRecover.style.display = "block";
+                loginTitle.classList.remove("notActiveForm");
+                registerTitle.classList.add("notActiveForm");
             }));
-        }
-        function register() {
-            let firstNameInput = firstName.value.trim().charAt(0).toUpperCase() + firstName.value.trim().slice(1).toLowerCase();
-            let lastNameInput = lastName.value.trim().charAt(0).toUpperCase() + lastName.value.trim().slice(1).toLowerCase();
-            let emailInput = email.value.trim();
-            let passwordInput = auth_password.value.trim();
-            console.log({
-                firstNameInput,
-                lastNameInput,
-                emailInput,
-                passwordInput
-            });
         }
         function login() {
             let emailInput = email.value;
@@ -6255,44 +6247,51 @@
         }
         if (firstName) {
             firstName.addEventListener("focusout", (e => {
-                if (!validateFirstName(firstName)) firstName.style.border = "2px solid #F00";
+                if (!validateFirstName(firstName)) {
+                    firstName.style.border = "2px solid #F00";
+                    document.querySelector(".firstNameError").style.display = "block";
+                }
             }));
             firstName.addEventListener("focusin", (e => {
-                firstName.style.border = "0.0625rem solid #EC6041";
+                document.querySelector(".firstNameError").style.display = "none";
             }));
         }
         if (lastName) {
             lastName.addEventListener("focusout", (e => {
-                if (!validateLastName(lastName)) lastName.style.border = "2px solid #F00";
+                if (!validateLastName(lastName)) {
+                    lastName.style.border = "2px solid #F00";
+                    document.querySelector(".lastNameError").style.display = "block";
+                }
             }));
             lastName.addEventListener("focusin", (e => {
-                lastName.style.border = "0.0625rem solid #EC6041";
+                document.querySelector(".lastNameError").style.display = "none";
             }));
         }
         if (email) {
             email.addEventListener("focusout", (e => {
-                if (!validateEmail(email)) email.style.border = "2px solid #F00";
+                if (!validateEmail(email)) {
+                    email.style.border = "2px solid #F00";
+                    document.querySelector(".emailError").style.display = "block";
+                }
             }));
             email.addEventListener("focusin", (e => {
-                if (!validateEmail(email)) ;
+                if (!validateEmail(email)) document.querySelector(".emailError").style.display = "none";
             }));
         }
         if (auth_password) {
             auth_password.addEventListener("focusout", (e => {
-                if (!validatePassword(auth_password) && auth_password.value.length === 0) auth_password.style.border = "2px solid #F00";
+                if (!validatePassword(auth_password) && auth_password.value.length === 0) {
+                    auth_password.style.border = "2px solid #F00";
+                    document.querySelector(".passwordError").style.display = "block";
+                }
             }));
             auth_password.addEventListener("focusin", (e => {
-                if (!validatePassword(auth_password)) ;
+                if (!validatePassword(auth_password)) document.querySelector(".passwordError").style.display = "none";
             }));
         }
         if (loginBtn) auth_form.addEventListener("submit", (e => {
             e.preventDefault();
             login();
-            e.target.reset();
-        }));
-        if (registerBtn) auth_form.addEventListener("submit", (e => {
-            e.preventDefault();
-            register();
             e.target.reset();
         }));
         const consoleLogger = {
