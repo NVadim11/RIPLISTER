@@ -13,14 +13,14 @@ body::after {
   }
 //   general styles
   .popup-show body::after,
-	.popupLoginForm-show body::after,
+	.popupAuthForm-show body::after,
   .promoPopup-show body::after,
   .popupThanks-show body::after,
   .popupVideo-show body::after {
 	opacity: 1;
   }
   .popup,
-	.popupLoginForm,
+	.popupAuthForm,
   .promoPopup,
   .popupThanks,
   .popupVideo {
@@ -36,7 +36,7 @@ body::after {
   }
 //   general styles
   .popup_show,
-	.popupLoginForm_show,
+	.popupAuthForm_show,
   .promoPopup_show,
   .popupThanks_show,
   .popupVideo_show {
@@ -47,7 +47,7 @@ body::after {
   }
 //   general styles
   .popup_show .popup__content,
-	.popupLoginForm_show .popupLoginForm__content,
+	.popupAuthForm_show .popupAuthForm__content,
 	.promoPopup_show .promoPopup__content,
 	.popupThanks_show .popupThanks__content,
 	.popupVideo_show .popupVideo__content {
@@ -56,7 +56,7 @@ body::after {
 	// transform: scale(1);
   }
   .popup__wrapper,
-	.popupLoginForm__wrapper,
+	.popupAuthForm__wrapper,
   .promoPopup__wrapper,
   .popupThanks__wrapper,
   .popupVideo__wrapper {
@@ -70,7 +70,7 @@ body::after {
   }
 //   general styles
   .popup__content,
-	.popupLoginForm__content,
+	.popupAuthForm__content,
   .promoPopup__content,
   .popupThanks__content,
   .popupVideo__content {
@@ -181,7 +181,7 @@ body::after {
 // Popup Login Form
 // =========================================================== //
 
-.popupLoginForm {
+.popupAuthForm {
 	display: block;
 	&__wrapper {
 	}
@@ -221,6 +221,7 @@ body::after {
 		}
 	}
 	&__title {
+		max-width: fit-content;
 		display: flex;
 		align-items: flex-start;
 		position: relative;
@@ -237,6 +238,7 @@ body::after {
 		user-select: none;
 	}
 	.notActiveForm {
+		max-width: fit-content;
 		position: absolute;
 		bottom: 60%;
 		left: 105%;
@@ -247,11 +249,21 @@ body::after {
 		font-weight: 600;
 		line-height: normal;
 	}
+	&__loginFormContent {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__registerFormContent {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 	&__loginTitle {	
 	}
 	&__registerTitle {
 	}
-	&__descr {
+	&__loginFormDescr, &__registerFormDescr {
 		margin-top: 1.0625rem;
 		color: var(--text-color-black);
 		text-align: center;
@@ -287,17 +299,16 @@ body::after {
 		position: relative;
 		flex-direction: row;
 	}
-	.inputError {
+	.inputError, .fNameError, .lNameError, .emailError, .passwordError{
 		display: none;
 		position: absolute;
 		top: 1.75rem;
 		right: -1.875rem;
 		scale: 80%;	
 	}
-	&__invalidUser, &__invalidInformation, &__registerDescr, &__firstName, &__lastName, &__registerBtn{
-		display: none;
-	}
 	&__invalidInformation, &__invalidUser {
+		display: none;
+		flex-direction: row;
 		margin-top: 1.25rem;
 		align-items: center;
 		color: #F00;
@@ -309,7 +320,7 @@ body::after {
 	.errorSignSvg {
 		display: block;
 		scale: 80%;	
-		margin-right: 0.6875rem;
+		margin-right: 10px;
 	}
 	.button {
 		margin-top: 1.875rem;

@@ -372,8 +372,8 @@ class PopupLogin {
 			logging: true,
 			init: true,
 			//Для кнопок
-			attributeOpenButton: 'data-popupLoginForm', // Атрибут для кнопки, яка викликає попап
-			attributeCloseButton: 'data-popupLoginForm-close', // Атрибут для кнопки, що закриває попап
+			attributeOpenButton: 'data-popupAuthForm', // Атрибут для кнопки, яка викликає попап
+			attributeCloseButton: 'data-popupAuthForm-close', // Атрибут для кнопки, що закриває попап
 			// Для сторонніх об'єктів
 			fixElementSelector: '[data-lp]', // Атрибут для елементів із лівим паддингом (які fixed)
 			// Для об'єкту попапа
@@ -382,11 +382,11 @@ class PopupLogin {
 			// setAutoplayYoutube: false,
 			// Зміна класів
 			classes: {
-				popup: 'popupLoginForm',
-				popupWrapper: 'popupLoginForm__wrapper',
-				popupContent: 'popupLoginForm__content',
-				popupActive: 'popupLoginForm_show', // Додається для попапа, коли він відкривається
-				bodyActive: 'popupLoginForm-show', // Додається для боді, коли попап відкритий
+				popup: 'popupAuthForm',
+				popupWrapper: 'popupAuthForm__wrapper',
+				popupContent: 'popupAuthForm__content',
+				popupActive: 'popupAuthForm_show', // Додається для попапа, коли він відкривається
+				bodyActive: 'popupAuthForm-show', // Додається для боді, коли попап відкритий
 			},
 			focusCatch: true, // Фокус усередині попапа зациклений
 			closeEsc: true, // Закриття ESC
@@ -492,10 +492,10 @@ class PopupLogin {
 			}
 			// Закриття на порожньому місці (popup__wrapper) та кнопки закриття (popup__close) для закриття
 			const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
-			const form = document.getElementById("popupLoginForm");
+			const form = document.getElementById("popupAuthForm");
 			if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
 				e.preventDefault();
-				document.querySelector(".popupLoginForm__invalidUser").classList.remove("show_errorMsg");
+				document.querySelector(".popupAuthForm__invalidUser").classList.remove("show_errorMsg");
 				this.close();
 				return;
 			}
@@ -504,7 +504,7 @@ class PopupLogin {
 		document.addEventListener("keydown", function (e) {
 			if (this.options.closeEsc && e.which == 27 && e.code === 'Escape' && this.isOpen) {
 				e.preventDefault();
-				document.querySelector(".popupLoginForm__invalidUser").classList.remove("show_errorMsg");
+				document.querySelector(".popupAuthForm__invalidUser").classList.remove("show_errorMsg");
 				this.close();
 				return;
 			}

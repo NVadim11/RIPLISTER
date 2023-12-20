@@ -466,7 +466,7 @@ body::after {
 }
 
 .popup-show body::after,
-.popupLoginForm-show body::after,
+.popupAuthForm-show body::after,
 .promoPopup-show body::after,
 .popupThanks-show body::after,
 .popupVideo-show body::after {
@@ -474,7 +474,7 @@ body::after {
 }
 
 .popup,
-.popupLoginForm,
+.popupAuthForm,
 .promoPopup,
 .popupThanks,
 .popupVideo {
@@ -491,7 +491,7 @@ body::after {
 }
 
 .popup_show,
-.popupLoginForm_show,
+.popupAuthForm_show,
 .promoPopup_show,
 .popupThanks_show,
 .popupVideo_show {
@@ -502,7 +502,7 @@ body::after {
 }
 
 .popup_show .popup__content,
-.popupLoginForm_show .popupLoginForm__content,
+.popupAuthForm_show .popupAuthForm__content,
 .promoPopup_show .promoPopup__content,
 .popupThanks_show .popupThanks__content,
 .popupVideo_show .popupVideo__content {
@@ -513,7 +513,7 @@ body::after {
 }
 
 .popup__wrapper,
-.popupLoginForm__wrapper,
+.popupAuthForm__wrapper,
 .promoPopup__wrapper,
 .popupThanks__wrapper,
 .popupVideo__wrapper {
@@ -538,7 +538,7 @@ body::after {
 }
 
 .popup__content,
-.popupLoginForm__content,
+.popupAuthForm__content,
 .promoPopup__content,
 .popupThanks__content,
 .popupVideo__content {
@@ -556,7 +556,7 @@ body::after {
 }
 
 .lock .popup__content,
-.lock .popupLoginForm__content,
+.lock .popupAuthForm__content,
 .lock .promoPopup__content,
 .lock .popupThanks__content,
 .lock .popupVideo__content {
@@ -676,11 +676,11 @@ label {
       flex-shrink: 0;
 }
 
-.popupLoginForm {
+.popupAuthForm {
   display: block;
 }
 
-.popupLoginForm__content {
+.popupAuthForm__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -695,7 +695,7 @@ label {
   border-radius: 1.875rem;
 }
 
-.popupLoginForm__content form {
+.popupAuthForm__content form {
   margin-top: 1.0625rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -706,7 +706,7 @@ label {
           flex-direction: column;
 }
 
-.popupLoginForm__formContent {
+.popupAuthForm__formContent {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -719,25 +719,28 @@ label {
           align-items: center;
 }
 
-.popupLoginForm__formContent hr {
+.popupAuthForm__formContent hr {
   height: 0.125rem;
   width: 100%;
   margin-top: 2.875rem;
   background: var(--orange-border-transparent);
 }
 
-.popupLoginForm__close {
+.popupAuthForm__close {
   position: absolute;
   right: 0.9375rem;
   top: 0.9375rem;
 }
 
-.popupLoginForm__close svg rect {
+.popupAuthForm__close svg rect {
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
 
-.popupLoginForm__title {
+.popupAuthForm__title {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -754,7 +757,7 @@ label {
   line-height: normal;
 }
 
-.popupLoginForm__title:hover {
+.popupAuthForm__title:hover {
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -762,7 +765,10 @@ label {
           user-select: none;
 }
 
-.popupLoginForm .notActiveForm {
+.popupAuthForm .notActiveForm {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   position: absolute;
   bottom: 60%;
   left: 105%;
@@ -774,7 +780,34 @@ label {
   line-height: normal;
 }
 
-.popupLoginForm__descr {
+.popupAuthForm__loginFormContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popupAuthForm__registerFormContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popupAuthForm__loginFormDescr,
+.popupAuthForm__registerFormDescr {
   margin-top: 1.0625rem;
   color: var(--text-color-black);
   text-align: center;
@@ -785,7 +818,7 @@ label {
   /* 25.2px */
 }
 
-.popupLoginForm__input {
+.popupAuthForm__input {
   margin-top: 0.8125rem;
   border-radius: 1.25rem;
   border: 0.0625rem solid #EC6041;
@@ -794,7 +827,7 @@ label {
   padding: 1.0625rem 0rem 1.0625rem 1.875rem;
 }
 
-.popupLoginForm__btnField {
+.popupAuthForm__btnField {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -807,7 +840,7 @@ label {
           flex-direction: column;
 }
 
-.popupLoginForm__passRecover {
+.popupAuthForm__passRecover {
   font-size: 1rem;
   margin-top: 1.25rem;
   font-weight: 400;
@@ -816,7 +849,7 @@ label {
   text-align: center;
 }
 
-.popupLoginForm__input-group {
+.popupAuthForm__input-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -827,7 +860,11 @@ label {
           flex-direction: row;
 }
 
-.popupLoginForm .inputError {
+.popupAuthForm .inputError,
+.popupAuthForm .fNameError,
+.popupAuthForm .lNameError,
+.popupAuthForm .emailError,
+.popupAuthForm .passwordError {
   display: none;
   position: absolute;
   top: 1.75rem;
@@ -835,17 +872,13 @@ label {
   scale: 80%;
 }
 
-.popupLoginForm__invalidUser,
-.popupLoginForm__invalidInformation,
-.popupLoginForm__registerDescr,
-.popupLoginForm__firstName,
-.popupLoginForm__lastName,
-.popupLoginForm__registerBtn {
+.popupAuthForm__invalidInformation,
+.popupAuthForm__invalidUser {
   display: none;
-}
-
-.popupLoginForm__invalidInformation,
-.popupLoginForm__invalidUser {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-top: 1.25rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -857,13 +890,13 @@ label {
   line-height: normal;
 }
 
-.popupLoginForm .errorSignSvg {
+.popupAuthForm .errorSignSvg {
   display: block;
   scale: 80%;
-  margin-right: 0.6875rem;
+  margin-right: 10px;
 }
 
-.popupLoginForm .button {
+.popupAuthForm .button {
   margin-top: 1.875rem;
   border-radius: 1.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
@@ -877,11 +910,11 @@ label {
   text-align: left;
 }
 
-.popupLoginForm__successMsg {
+.popupAuthForm__successMsg {
   display: none;
 }
 
-.popupLoginForm__socialsLogin {
+.popupAuthForm__socialsLogin {
   margin-top: 2.6875rem;
   font-size: 1.25rem;
   font-weight: 700;
@@ -890,7 +923,7 @@ label {
   text-align: left;
 }
 
-.popupLoginForm__socials {
+.popupAuthForm__socials {
   margin-top: 2.0625rem;
   margin-bottom: 4.375rem;
 }
