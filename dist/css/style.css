@@ -858,11 +858,7 @@ label {
           flex-direction: row;
 }
 
-.popupAuthForm .inputError,
-.popupAuthForm .fNameError,
-.popupAuthForm .lNameError,
-.popupAuthForm .emailError,
-.popupAuthForm .passwordError {
+.popupAuthForm .inputError {
   display: none;
   position: absolute;
   top: 1.75rem;

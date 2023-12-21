@@ -299,7 +299,7 @@ body::after {
 		position: relative;
 		flex-direction: row;
 	}
-	.inputError, .fNameError, .lNameError, .emailError, .passwordError{
+	.inputError {
 		display: none;
 		position: absolute;
 		top: 1.75rem;

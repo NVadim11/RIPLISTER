@@ -2,34 +2,38 @@ const loginTitle = document.getElementById("loginTitle");
 const registerTitle = document.getElementById("registerTitle");
 const loginFormContent = document.getElementById("loginFormContent");
 const registerFormContent = document.getElementById("registerFormContent");
-const firstName = document.getElementById("popupAuthForm__firstName");
-const lastName = document.getElementById("popupAuthForm__lastName");
-const email = document.getElementById("popupAuthForm__email");
-const password = document.getElementById("popupAuthForm__password"); 
-const form = document.getElementById("popupAuthForm");
-const passRecover = document.querySelector(".popupAuthForm__passRecover");
-const loginBtn = document.querySelector(".popupAuthForm__loginBtn");
-const registerBtn = document.querySelector(".popupAuthForm__registerBtn");
-const closeModal = document.querySelector(".popupAuthForm__close");
 
 const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
 const invalidUser = document.querySelector(".popupAuthForm__invalidUser");
 const successMsg = document.querySelector(".popupAuthForm__successMsg");
 
+const inputItem = document.querySelectorAll(".popupAuthForm__input");
+const inputErrorIcon = document.querySelectorAll(".inputError");
+
 import usersDB from "../JSON/accounts.json"
+console.log(usersDB.users);
+
+function formStylesReset() {
+    invalidInformation.style.display = "none";
+    invalidUser.style.display = "none";  
+    inputItem.forEach((input) => input.style.border = "0.0625rem solid #EC6041");   
+    inputErrorIcon.forEach((icon) => icon.style.display = "none");
+}
 
 // login/register toggle
 function registerToggler() {       
         loginTitle.classList.add("notActiveForm");
         registerTitle.classList.remove("notActiveForm");
         loginFormContent.style.display = "none";
-        registerFormContent.style.display = "flex";       
+        registerFormContent.style.display = "flex"; 
+        formStylesReset();
     };
 function loginToggler() {        
         loginTitle.classList.remove("notActiveForm");
         registerTitle.classList.add("notActiveForm");
         loginFormContent.style.display = "flex";
         registerFormContent.style.display = "none";
+        formStylesReset();
     };
 
 loginTitle.addEventListener("click", function() {loginToggler()}); 
@@ -88,36 +92,20 @@ const validateForm = (formSelector, callback) => {
     return formGroups.every(formGroup => validateSingleFormGroup(formGroup));
     };    
 
-    formElement.addEventListener("submit", event => {
-        event.preventDefault();
+    formElement.addEventListener("submit", event => {      
+        event.preventDefault();  
         const formValid = validateAllFormGroups(formElement)
         if (formValid) {  
-        console.log("form is valid");
+        invalidInformation.style.display = "none";
+        invalidUser.style.display = "none";    
         callback(formElement);
+        } else {
+            invalidInformation.style.display = "flex";
         }
     })
 };
 
-function login() {
-    let emailInput = email.value;
-    let passwordInput = password.value;
-
-    let userFound = usersDB.users.find(user => user.email === emailInput && user.password === passwordInput)
-
-    if (!userFound) {
-        invalidUser.classList.add("show_errorMsg");
-    } else if (emailInput === "" || passwordInput === "") {
-        invalidInformation.classList.add("show_errorMsg");
-    }
-    else {
-        invalidInformation.classList.remove("show_errorMsg");
-        invalidUser.classList.remove("show_errorMsg");
-        console.log("Login Success");
-        console.log(userFound)
-    }
-}
-
-const sendToAPI = (formElement) => {
+const register = (formElement) => {
     const formObject = Array.from(formElement.elements)
     .filter(element => element.type !=="submit")
     .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
@@ -125,8 +113,48 @@ const sendToAPI = (formElement) => {
     // Submitting to API
 };
 
-validateForm("#popupAuthForm__registerForm", sendToAPI);
-validateForm("#popupAuthForm__registerForm", login);
+function login(formElement) {
+    const formObject = Array.from(formElement.elements)
+    .filter(element => element.type !=="submit")
+    .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
+
+    let userFound = usersDB.users.find(user => user.email === formObject.popupAuthForm__email && user.password === formObject.popupAuthForm__password)
+
+    if (!userFound) {
+        invalidUser.style.display = "flex";
+    } else if (formObject.popupAuthForm__email === "" || formObject.popupAuthForm__password === "") {
+        invalidInformation.style.display = "flex";
+    }
+    else {
+        invalidInformation.style.display = "none";
+        invalidUser.style.display = "none";
+        console.log("Login Success");
+        console.log(userFound)
+    }
+}
+
+
+validateForm("#popupAuthForm__registerForm", register);
+validateForm("#popupAuthForm__loginForm", login);
+
+// function login() {
+//     let emailInput = email.value;
+//     let passwordInput = password.value;
+
+//     let userFound = usersDB.users.find(user => user.email === emailInput && user.password === passwordInput)
+
+//     if (!userFound) {
+//         invalidUser.classList.add("show_errorMsg");
+//     } else if (emailInput === "" || passwordInput === "") {
+//         invalidInformation.classList.add("show_errorMsg");
+//     }
+//     else {
+//         invalidInformation.classList.remove("show_errorMsg");
+//         invalidUser.classList.remove("show_errorMsg");
+//         console.log("Login Success");
+//         console.log(userFound)
+//     }
+// }
 
 // function register() {
 //     let firstNameInput = (firstName.value.trim()).charAt(0).toUpperCase() + (firstName.value.trim()).slice(1).toLowerCase();
