@@ -4,6 +4,7 @@
 // Сніппет (HTML): pl
 
 // Підключення функціоналу "Чортоги Фрілансера"
+import { formContentReset, formStylesReset } from "../files/auth.js"
 import { FLS, bodyLock, bodyLockStatus, bodyUnlock } from "../files/functions.js"
 import { flsModules } from "../files/modules.js"
 
@@ -494,10 +495,8 @@ class PopupLogin {
 			const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
 			if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
 				e.preventDefault();
-				document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
-				document.querySelector(".popupAuthForm__invalidUser").style.display = "none";	
-				document.getElementById("popupAuthForm__loginForm").reset();		
-				document.getElementById("popupAuthForm__registerForm").reset();				
+				formStylesReset();
+				formContentReset();				
 				this.close();
 				return;
 			}
@@ -506,10 +505,8 @@ class PopupLogin {
 		document.addEventListener("keydown", function (e) {
 			if (this.options.closeEsc && e.which == 27 && e.code === 'Escape' && this.isOpen) {
 				e.preventDefault();
-				document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
-				document.querySelector(".popupAuthForm__invalidUser").style.display = "none";	
-				document.getElementById("popupAuthForm__loginForm").reset();		
-				document.getElementById("popupAuthForm__registerForm").reset();	
+				formStylesReset();
+				formContentReset();
 				this.close();
 				return;
 			}

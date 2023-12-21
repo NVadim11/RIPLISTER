@@ -13,11 +13,18 @@ const inputErrorIcon = document.querySelectorAll(".inputError");
 import usersDB from "../JSON/accounts.json"
 console.log(usersDB.users);
 
-function formStylesReset() {
+export function formStylesReset() {
     invalidInformation.style.display = "none";
     invalidUser.style.display = "none";  
     inputItem.forEach((input) => input.style.border = "0.0625rem solid #EC6041");   
     inputErrorIcon.forEach((icon) => icon.style.display = "none");
+}
+
+export function formContentReset() {
+    document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
+    document.querySelector(".popupAuthForm__invalidUser").style.display = "none";	
+    document.getElementById("popupAuthForm__loginForm").reset();		
+    document.getElementById("popupAuthForm__registerForm").reset();	
 }
 
 // login/register toggle
@@ -27,6 +34,7 @@ function registerToggler() {
         loginFormContent.style.display = "none";
         registerFormContent.style.display = "flex"; 
         formStylesReset();
+        formContentReset()
     };
 function loginToggler() {        
         loginTitle.classList.remove("notActiveForm");
@@ -34,6 +42,7 @@ function loginToggler() {
         loginFormContent.style.display = "flex";
         registerFormContent.style.display = "none";
         formStylesReset();
+        formContentReset()
     };
 
 loginTitle.addEventListener("click", function() {loginToggler()}); 

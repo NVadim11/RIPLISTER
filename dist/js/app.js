@@ -779,6 +779,123 @@
                 }
             }
         }
+        const accounts_namespaceObject = JSON.parse('{"r":[{"id":1,"first_name":"John","last_name":"Doe","email":"johndoe@gmail.com","password":"Johntest123"},{"id":2,"first_name":"Julia","last_name":"Chan","email":"juliachan@gmail.com","password":"Juliatest123"}]}');
+        const loginTitle = document.getElementById("loginTitle");
+        const registerTitle = document.getElementById("registerTitle");
+        const loginFormContent = document.getElementById("loginFormContent");
+        const registerFormContent = document.getElementById("registerFormContent");
+        const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
+        const invalidUser = document.querySelector(".popupAuthForm__invalidUser");
+        document.querySelector(".popupAuthForm__successMsg");
+        const inputItem = document.querySelectorAll(".popupAuthForm__input");
+        const inputErrorIcon = document.querySelectorAll(".inputError");
+        console.log(accounts_namespaceObject.r);
+        function formStylesReset() {
+            invalidInformation.style.display = "none";
+            invalidUser.style.display = "none";
+            inputItem.forEach((input => input.style.border = "0.0625rem solid #EC6041"));
+            inputErrorIcon.forEach((icon => icon.style.display = "none"));
+        }
+        function formContentReset() {
+            document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
+            document.querySelector(".popupAuthForm__invalidUser").style.display = "none";
+            document.getElementById("popupAuthForm__loginForm").reset();
+            document.getElementById("popupAuthForm__registerForm").reset();
+        }
+        function registerToggler() {
+            loginTitle.classList.add("notActiveForm");
+            registerTitle.classList.remove("notActiveForm");
+            loginFormContent.style.display = "none";
+            registerFormContent.style.display = "flex";
+            formStylesReset();
+            formContentReset();
+        }
+        function loginToggler() {
+            loginTitle.classList.remove("notActiveForm");
+            registerTitle.classList.add("notActiveForm");
+            loginFormContent.style.display = "flex";
+            registerFormContent.style.display = "none";
+            formStylesReset();
+            formContentReset();
+        }
+        loginTitle.addEventListener("click", (function() {
+            loginToggler();
+        }));
+        registerTitle.addEventListener("click", (function() {
+            registerToggler();
+        }));
+        const validateForm = (formSelector, callback) => {
+            const formElement = document.querySelector(formSelector);
+            const validationOptions = [ {
+                attribute: "minlength",
+                isValid: input => input.value && input.value.length >= parseInt(input.minLength, 10)
+            }, {
+                attribute: "required",
+                isValid: input => input.value.trim() !== ""
+            }, {
+                attribute: "pattern",
+                isValid: input => {
+                    const patternRegex = new RegExp(input.pattern);
+                    return patternRegex.test(input.value);
+                }
+            } ];
+            const validateSingleFormGroup = formGroup => {
+                const input = formGroup.querySelector("input");
+                const errorIcon = formGroup.querySelector(".inputError");
+                let formGroupError = false;
+                for (const option of validationOptions) if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
+                    input.style.border = "0.125rem solid #F00";
+                    errorIcon.style.display = "block";
+                    formGroupError = true;
+                }
+                if (!formGroupError) {
+                    input.style.border = "0.0625rem solid #EC6041";
+                    errorIcon.style.display = "none";
+                }
+                return !formGroupError;
+            };
+            Array.from(formElement.elements).forEach((element => {
+                element.addEventListener("blur", (event => {
+                    validateSingleFormGroup(event.srcElement.parentElement);
+                }));
+            }));
+            const validateAllFormGroups = formToValidate => {
+                const formGroups = Array.from(formToValidate.querySelectorAll(".popupAuthForm__input-group"));
+                return formGroups.every((formGroup => validateSingleFormGroup(formGroup)));
+            };
+            formElement.addEventListener("submit", (event => {
+                event.preventDefault();
+                const formValid = validateAllFormGroups(formElement);
+                if (formValid) {
+                    invalidInformation.style.display = "none";
+                    invalidUser.style.display = "none";
+                    callback(formElement);
+                    event.target.reset();
+                } else invalidInformation.style.display = "flex";
+            }));
+        };
+        const register = formElement => {
+            const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit")).reduce(((accumulator, element) => ({
+                ...accumulator,
+                [element.id]: element.value
+            })), {});
+            console.log(formObject);
+        };
+        function login(formElement) {
+            const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit")).reduce(((accumulator, element) => ({
+                ...accumulator,
+                [element.id]: element.value
+            })), {});
+            let userFound = accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email && user.password === formObject.popupAuthForm__password));
+            if (!userFound) invalidUser.style.display = "flex"; else if (formObject.popupAuthForm__email === "" || formObject.popupAuthForm__password === "") invalidInformation.style.display = "flex"; else {
+                invalidInformation.style.display = "none";
+                invalidUser.style.display = "none";
+                console.log("Login Success");
+                console.log(userFound);
+            }
+        }
+        validateForm("#popupAuthForm__registerForm", register);
+        validateForm("#popupAuthForm__loginForm", login);
         const flsModules = {};
         class Popup {
             constructor(options) {
@@ -1100,10 +1217,8 @@
                     const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
                     if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
                         e.preventDefault();
-                        document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
-                        document.querySelector(".popupAuthForm__invalidUser").style.display = "none";
-                        document.getElementById("popupAuthForm__loginForm").reset();
-                        document.getElementById("popupAuthForm__registerForm").reset();
+                        formStylesReset();
+                        formContentReset();
                         this.close();
                         return;
                     }
@@ -1111,10 +1226,8 @@
                 document.addEventListener("keydown", function(e) {
                     if (this.options.closeEsc && e.which == 27 && e.code === "Escape" && this.isOpen) {
                         e.preventDefault();
-                        document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
-                        document.querySelector(".popupAuthForm__invalidUser").style.display = "none";
-                        document.getElementById("popupAuthForm__loginForm").reset();
-                        document.getElementById("popupAuthForm__registerForm").reset();
+                        formStylesReset();
+                        formContentReset();
                         this.close();
                         return;
                     }
@@ -6199,115 +6312,6 @@
             class_loaded: "_lazy-loaded",
             use_native: true
         });
-        const accounts_namespaceObject = JSON.parse('{"r":[{"id":1,"first_name":"John","last_name":"Doe","email":"johndoe@gmail.com","password":"Johntest123"},{"id":2,"first_name":"Julia","last_name":"Chan","email":"juliachan@gmail.com","password":"Juliatest123"}]}');
-        const loginTitle = document.getElementById("loginTitle");
-        const registerTitle = document.getElementById("registerTitle");
-        const loginFormContent = document.getElementById("loginFormContent");
-        const registerFormContent = document.getElementById("registerFormContent");
-        const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
-        const invalidUser = document.querySelector(".popupAuthForm__invalidUser");
-        document.querySelector(".popupAuthForm__successMsg");
-        const inputItem = document.querySelectorAll(".popupAuthForm__input");
-        const inputErrorIcon = document.querySelectorAll(".inputError");
-        console.log(accounts_namespaceObject.r);
-        function formStylesReset() {
-            invalidInformation.style.display = "none";
-            invalidUser.style.display = "none";
-            inputItem.forEach((input => input.style.border = "0.0625rem solid #EC6041"));
-            inputErrorIcon.forEach((icon => icon.style.display = "none"));
-        }
-        function registerToggler() {
-            loginTitle.classList.add("notActiveForm");
-            registerTitle.classList.remove("notActiveForm");
-            loginFormContent.style.display = "none";
-            registerFormContent.style.display = "flex";
-            formStylesReset();
-        }
-        function loginToggler() {
-            loginTitle.classList.remove("notActiveForm");
-            registerTitle.classList.add("notActiveForm");
-            loginFormContent.style.display = "flex";
-            registerFormContent.style.display = "none";
-            formStylesReset();
-        }
-        loginTitle.addEventListener("click", (function() {
-            loginToggler();
-        }));
-        registerTitle.addEventListener("click", (function() {
-            registerToggler();
-        }));
-        const validateForm = (formSelector, callback) => {
-            const formElement = document.querySelector(formSelector);
-            const validationOptions = [ {
-                attribute: "minlength",
-                isValid: input => input.value && input.value.length >= parseInt(input.minLength, 10)
-            }, {
-                attribute: "required",
-                isValid: input => input.value.trim() !== ""
-            }, {
-                attribute: "pattern",
-                isValid: input => {
-                    const patternRegex = new RegExp(input.pattern);
-                    return patternRegex.test(input.value);
-                }
-            } ];
-            const validateSingleFormGroup = formGroup => {
-                const input = formGroup.querySelector("input");
-                const errorIcon = formGroup.querySelector(".inputError");
-                let formGroupError = false;
-                for (const option of validationOptions) if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
-                    input.style.border = "0.125rem solid #F00";
-                    errorIcon.style.display = "block";
-                    formGroupError = true;
-                }
-                if (!formGroupError) {
-                    input.style.border = "0.0625rem solid #EC6041";
-                    errorIcon.style.display = "none";
-                }
-                return !formGroupError;
-            };
-            Array.from(formElement.elements).forEach((element => {
-                element.addEventListener("blur", (event => {
-                    validateSingleFormGroup(event.srcElement.parentElement);
-                }));
-            }));
-            const validateAllFormGroups = formToValidate => {
-                const formGroups = Array.from(formToValidate.querySelectorAll(".popupAuthForm__input-group"));
-                return formGroups.every((formGroup => validateSingleFormGroup(formGroup)));
-            };
-            formElement.addEventListener("submit", (event => {
-                event.preventDefault();
-                const formValid = validateAllFormGroups(formElement);
-                if (formValid) {
-                    invalidInformation.style.display = "none";
-                    invalidUser.style.display = "none";
-                    callback(formElement);
-                    event.target.reset();
-                } else invalidInformation.style.display = "flex";
-            }));
-        };
-        const register = formElement => {
-            const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit")).reduce(((accumulator, element) => ({
-                ...accumulator,
-                [element.id]: element.value
-            })), {});
-            console.log(formObject);
-        };
-        function login(formElement) {
-            const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit")).reduce(((accumulator, element) => ({
-                ...accumulator,
-                [element.id]: element.value
-            })), {});
-            let userFound = accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email && user.password === formObject.popupAuthForm__password));
-            if (!userFound) invalidUser.style.display = "flex"; else if (formObject.popupAuthForm__email === "" || formObject.popupAuthForm__password === "") invalidInformation.style.display = "flex"; else {
-                invalidInformation.style.display = "none";
-                invalidUser.style.display = "none";
-                console.log("Login Success");
-                console.log(userFound);
-            }
-        }
-        validateForm("#popupAuthForm__registerForm", register);
-        validateForm("#popupAuthForm__loginForm", login);
         const consoleLogger = {
             type: "logger",
             log(args) {
