@@ -1098,10 +1098,12 @@
                         return;
                     }
                     const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
-                    document.getElementById("popupAuthForm");
                     if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
                         e.preventDefault();
-                        document.querySelector(".popupAuthForm__invalidUser").classList.remove("show_errorMsg");
+                        document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
+                        document.querySelector(".popupAuthForm__invalidUser").style.display = "none";
+                        document.getElementById("popupAuthForm__loginForm").reset();
+                        document.getElementById("popupAuthForm__registerForm").reset();
                         this.close();
                         return;
                     }
@@ -1109,7 +1111,10 @@
                 document.addEventListener("keydown", function(e) {
                     if (this.options.closeEsc && e.which == 27 && e.code === "Escape" && this.isOpen) {
                         e.preventDefault();
-                        document.querySelector(".popupAuthForm__invalidUser").classList.remove("show_errorMsg");
+                        document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
+                        document.querySelector(".popupAuthForm__invalidUser").style.display = "none";
+                        document.getElementById("popupAuthForm__loginForm").reset();
+                        document.getElementById("popupAuthForm__registerForm").reset();
                         this.close();
                         return;
                     }
@@ -6277,6 +6282,7 @@
                     invalidInformation.style.display = "none";
                     invalidUser.style.display = "none";
                     callback(formElement);
+                    event.target.reset();
                 } else invalidInformation.style.display = "flex";
             }));
         };
