@@ -232,9 +232,6 @@ body::after {
 		font-style: normal;
 		font-weight: 700;
 		line-height: normal;
-	}
-	&__title:hover {
-		cursor: pointer;
 		user-select: none;
 	}
 	.notActiveForm {
@@ -249,6 +246,11 @@ body::after {
 		font-weight: 600;
 		line-height: normal;
 	}
+	.notActiveForm:hover {
+		cursor: pointer;
+		user-select: none;
+	}
+
 	&__loginFormContent {
 		display: flex;
 		flex-direction: column;

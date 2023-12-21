@@ -755,10 +755,6 @@ label {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-}
-
-.popupAuthForm__title:hover {
-  cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -778,6 +774,14 @@ label {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+.popupAuthForm .notActiveForm:hover {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .popupAuthForm__loginFormContent {
