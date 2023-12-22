@@ -784,10 +784,13 @@
         const registerTitle = document.getElementById("registerTitle");
         const loginFormContent = document.getElementById("loginFormContent");
         const registerFormContent = document.getElementById("registerFormContent");
+        const passwordRecovery = document.getElementById("passwordRecovery");
         const formContent = document.querySelector(".popupAuthForm__formContent");
         const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
         const invalidUser = document.querySelector(".popupAuthForm__invalidUser");
         const successMsg = document.querySelector(".popupAuthForm__successMsg");
+        const passRecoveryForm = document.querySelector(".popupAuthForm__passRecoveryForm");
+        const passRecoveryMsg = document.querySelector(".popupAuthForm__recoveryMsg");
         const inputItem = document.querySelectorAll(".popupAuthForm__input");
         const inputErrorIcon = document.querySelectorAll(".inputError");
         console.log(accounts_namespaceObject.r);
@@ -825,6 +828,17 @@
             formContent.style.display = "none";
             successMsg.style.display = "flex";
         }
+        function passRecoverySentToggler() {
+            invalidInformation.style.display = "none";
+            passRecoveryForm.style.display = "none";
+            passRecoveryMsg.style.display = "flex";
+        }
+        passwordRecovery.addEventListener("click", (() => {
+            invalidInformation.style.display = "none";
+            invalidUser.style.display = "none";
+            formContent.style.display = "none";
+            passRecoveryForm.style.display = "flex";
+        }));
         loginTitle.addEventListener("click", (function() {
             loginToggler();
         }));
@@ -881,13 +895,13 @@
                 } else invalidInformation.style.display = "flex";
             }));
         };
-        const register = formElement => {
+        function register(formElement) {
             const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit")).reduce(((accumulator, element) => ({
                 ...accumulator,
                 [element.id]: element.value
             })), {});
             console.log(formObject);
-        };
+        }
         function login(formElement) {
             const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit")).reduce(((accumulator, element) => ({
                 ...accumulator,
@@ -896,12 +910,22 @@
             let userFound = accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email && user.password === formObject.popupAuthForm__password));
             if (!userFound) invalidUser.style.display = "flex"; else if (formObject.popupAuthForm__email === "" || formObject.popupAuthForm__password === "") invalidInformation.style.display = "flex"; else {
                 successToggler();
-                console.log("Login Success");
                 console.log(userFound);
+            }
+        }
+        function passRecovery(formElement) {
+            const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit")).reduce(((accumulator, element) => ({
+                ...accumulator,
+                [element.id]: element.value
+            })), {});
+            if (formObject.popupAuthForm__email === "") invalidInformation.style.display = "flex"; else {
+                passRecoverySentToggler();
+                console.log(formObject);
             }
         }
         validateForm("#popupAuthForm__registerForm", register);
         validateForm("#popupAuthForm__loginForm", login);
+        validateForm("#popupAuthForm__passRecoveryForm", passRecovery);
         const flsModules = {};
         class Popup {
             constructor(options) {
@@ -1226,7 +1250,9 @@
                         e.preventDefault();
                         formStylesReset();
                         formContentReset();
+                        document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
                         document.querySelector(".popupAuthForm__successMsg").style.display = "none";
+                        document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
                         this.close();
                         return;
                     }
@@ -1236,7 +1262,9 @@
                         e.preventDefault();
                         formStylesReset();
                         formContentReset();
+                        document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
                         document.querySelector(".popupAuthForm__successMsg").style.display = "none";
+                        document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
                         this.close();
                         return;
                     }

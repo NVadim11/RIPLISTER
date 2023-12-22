@@ -810,7 +810,8 @@ label {
 
 .popupAuthForm__loginFormDescr,
 .popupAuthForm__registerFormDescr,
-.popupAuthForm__successDescr {
+.popupAuthForm__successDescr,
+.popupAuthForm__recoveryDescr {
   margin-top: 1.0625rem;
   color: var(--text-color-black);
   text-align: center;
@@ -819,6 +820,10 @@ label {
   font-weight: 400;
   line-height: 140%;
   /* 25.2px */
+}
+
+.popupAuthForm__passRecoveryDescr {
+  margin-top: 5.25rem;
 }
 
 .popupAuthForm__input {
@@ -844,12 +849,20 @@ label {
 }
 
 .popupAuthForm__passRecover {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-size: 1rem;
   margin-top: 1.25rem;
   font-weight: 400;
   line-height: 1.25rem;
   letter-spacing: 0em;
   text-align: center;
+}
+
+.popupAuthForm__passRecover:hover {
+  cursor: pointer;
 }
 
 .popupAuthForm__input-group {
@@ -872,7 +885,8 @@ label {
 }
 
 .popupAuthForm__invalidInformation,
-.popupAuthForm__invalidUser {
+.popupAuthForm__invalidUser,
+.popupAuthForm__invalidEmail {
   display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -909,11 +923,15 @@ label {
   text-align: left;
 }
 
-.popupAuthForm .authSuccessBtn {
+.popupAuthForm__authSuccessBtn,
+.popupAuthForm__passRecoveryBtn,
+.popupAuthForm__passRecoveryCloseBtn {
   margin-bottom: 4.8125rem;
 }
 
-.popupAuthForm__successMsg {
+.popupAuthForm__successMsg,
+.popupAuthForm__passRecoveryForm,
+.popupAuthForm__recoveryMsg {
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

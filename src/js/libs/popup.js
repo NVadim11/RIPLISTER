@@ -498,7 +498,9 @@ class PopupLogin {
 				e.preventDefault();
 				formStylesReset();
 				formContentReset();	
+				document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
 				document.querySelector(".popupAuthForm__successMsg").style.display = "none";			
+				document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
 				this.close();
 				return;
 			}
@@ -509,7 +511,9 @@ class PopupLogin {
 				e.preventDefault();
 				formStylesReset();
 				formContentReset();
-				document.querySelector(".popupAuthForm__successMsg").style.display = "none";
+				document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
+				document.querySelector(".popupAuthForm__successMsg").style.display = "none";	
+				document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
 				this.close();
 				return;
 			}

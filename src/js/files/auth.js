@@ -2,11 +2,14 @@ const loginTitle = document.getElementById("loginTitle");
 const registerTitle = document.getElementById("registerTitle");
 const loginFormContent = document.getElementById("loginFormContent");
 const registerFormContent = document.getElementById("registerFormContent");
+const passwordRecovery = document.getElementById("passwordRecovery")
 
 const formContent = document.querySelector(".popupAuthForm__formContent");
 const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
 const invalidUser = document.querySelector(".popupAuthForm__invalidUser");
 const successMsg = document.querySelector(".popupAuthForm__successMsg");
+const passRecoveryForm = document.querySelector(".popupAuthForm__passRecoveryForm");
+const passRecoveryMsg = document.querySelector(".popupAuthForm__recoveryMsg");
 
 const inputItem = document.querySelectorAll(".popupAuthForm__input");
 const inputErrorIcon = document.querySelectorAll(".inputError");
@@ -19,14 +22,14 @@ export function formStylesReset() {
     invalidUser.style.display = "none";  
     inputItem.forEach((input) => input.style.border = "0.0625rem solid #EC6041");   
     inputErrorIcon.forEach((icon) => icon.style.display = "none");
-}
+};
 
 export function formContentReset() {
     document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
     document.querySelector(".popupAuthForm__invalidUser").style.display = "none";	
     document.getElementById("popupAuthForm__loginForm").reset();		
     document.getElementById("popupAuthForm__registerForm").reset();	
-}
+};
 
 // login/register toggle
 function registerToggler() {       
@@ -45,13 +48,26 @@ function loginToggler() {
         formStylesReset();
         formContentReset()
     };
-
 function successToggler() {
     invalidInformation.style.display = "none";
     invalidUser.style.display = "none";
     formContent.style.display = "none";
     successMsg.style.display = "flex";
-}
+};
+function passRecoverySentToggler() {
+    invalidInformation.style.display = "none";
+    passRecoveryForm.style.display = "none";
+    passRecoveryMsg.style.display = "flex";
+};
+
+passwordRecovery.addEventListener("click", () => {
+    invalidInformation.style.display = "none";
+    invalidUser.style.display = "none";
+    formContent.style.display = "none";
+    passRecoveryForm.style.display = "flex";
+});
+
+
 
 loginTitle.addEventListener("click", function() {loginToggler()}); 
 registerTitle.addEventListener("click", function() {registerToggler()});
@@ -75,8 +91,7 @@ const validateForm = (formSelector, callback) => {
                 return patternRegex.test(input.value);
             },
         }
-
-    ]
+    ];
 
     const validateSingleFormGroup = formGroup => {
         const input = formGroup.querySelector("input")
@@ -95,7 +110,7 @@ const validateForm = (formSelector, callback) => {
             errorIcon.style.display = "none"; 
         }
         return !formGroupError;
-    }
+    };
 
     Array.from(formElement.elements).forEach(element => {
         element.addEventListener("blur", event => {
@@ -123,7 +138,7 @@ const validateForm = (formSelector, callback) => {
     })
 };
 
-const register = (formElement) => {
+function register (formElement) {
     const formObject = Array.from(formElement.elements)
     .filter(element => element.type !=="submit")
     .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
@@ -144,12 +159,24 @@ function login(formElement) {
         invalidInformation.style.display = "flex";
     }
     else {
-        successToggler();
-        console.log("Login Success");
-        console.log(userFound)
-    }
-}
+        successToggler();        
+        console.log(userFound);
+    };
+};
 
+function passRecovery(formElement) {
+    const formObject = Array.from(formElement.elements)
+    .filter(element => element.type !=="submit")
+    .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
+    if (formObject.popupAuthForm__email === "") {
+        invalidInformation.style.display = "flex";
+    } else {
+        passRecoverySentToggler();
+        console.log(formObject);
+        // Submitting to API
+    }
+};
 
 validateForm("#popupAuthForm__registerForm", register);
 validateForm("#popupAuthForm__loginForm", login);
+validateForm("#popupAuthForm__passRecoveryForm", passRecovery);

@@ -265,7 +265,7 @@ body::after {
 	}
 	&__registerTitle {
 	}
-	&__loginFormDescr, &__registerFormDescr, &__successDescr {
+	&__loginFormDescr, &__registerFormDescr, &__successDescr, &__recoveryDescr {
 		margin-top: 1.0625rem;
 		color: var(--text-color-black);
 		text-align: center;
@@ -273,6 +273,9 @@ body::after {
 		font-style: normal;
 		font-weight: 400;
 		line-height: 140%; /* 25.2px */
+	}
+	&__passRecoveryDescr {
+		margin-top: 5.25rem;
 	}
 	&__input {
 		margin-top: 0.8125rem;
@@ -288,13 +291,16 @@ body::after {
 		flex-direction: column;
 	}
 	&__passRecover {
+		user-select: none;
 		font-size: 1rem;
 		margin-top: 1.25rem;
 		font-weight: 400;
 		line-height: 1.25rem;
 		letter-spacing: 0em;
 		text-align: center;
-
+	}
+	&__passRecover:hover {
+		cursor: pointer;
 	}
 	&__input-group {
 		display: flex;
@@ -308,7 +314,7 @@ body::after {
 		right: -1.875rem;
 		scale: 80%;	
 	}
-	&__invalidInformation, &__invalidUser {
+	&__invalidInformation, &__invalidUser, &__invalidEmail {
 		display: none;
 		flex-direction: row;
 		margin-top: 1.25rem;
@@ -336,10 +342,10 @@ body::after {
 		letter-spacing: 0em;
 		text-align: left;
 	}
-	.authSuccessBtn {
+	&__authSuccessBtn, &__passRecoveryBtn, &__passRecoveryCloseBtn {
 		margin-bottom: 4.8125rem;
 	}
-	&__successMsg {
+	&__successMsg, &__passRecoveryForm, &__recoveryMsg {
 		display: none;
 		flex-direction: column;
 		align-items: center;
