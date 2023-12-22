@@ -845,7 +845,7 @@
         registerTitle.addEventListener("click", (function() {
             registerToggler();
         }));
-        const validateForm = (formSelector, callback) => {
+        function validateForm(formSelector, callback) {
             const formElement = document.querySelector(formSelector);
             const validationOptions = [ {
                 attribute: "minlength",
@@ -864,14 +864,16 @@
                 const input = formGroup.querySelector("input");
                 const errorIcon = formGroup.querySelector(".inputError");
                 let formGroupError = false;
-                for (const option of validationOptions) if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
-                    input.style.border = "0.125rem solid #F00";
-                    errorIcon.style.display = "block";
-                    formGroupError = true;
-                }
-                if (!formGroupError) {
-                    input.style.border = "0.0625rem solid #EC6041";
-                    errorIcon.style.display = "none";
+                for (const option of validationOptions) if (input) {
+                    if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
+                        input.style.border = "0.125rem solid #F00";
+                        errorIcon.style.display = "block";
+                        formGroupError = true;
+                    }
+                    if (!formGroupError) {
+                        input.style.border = "0.0625rem solid #EC6041";
+                        errorIcon.style.display = "none";
+                    }
                 }
                 return !formGroupError;
             };
@@ -894,7 +896,7 @@
                     event.target.reset();
                 } else invalidInformation.style.display = "flex";
             }));
-        };
+        }
         function register(formElement) {
             const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit")).reduce(((accumulator, element) => ({
                 ...accumulator,
@@ -923,9 +925,9 @@
                 console.log(formObject);
             }
         }
-        validateForm("#popupAuthForm__registerForm", register);
-        validateForm("#popupAuthForm__loginForm", login);
-        validateForm("#popupAuthForm__passRecoveryForm", passRecovery);
+        if (registerFormContent) validateForm("#popupAuthForm__registerForm", register);
+        if (loginFormContent) validateForm("#popupAuthForm__loginForm", login);
+        if (passRecoveryForm) validateForm("#popupAuthForm__passRecoveryForm", passRecovery);
         const flsModules = {};
         class Popup {
             constructor(options) {
