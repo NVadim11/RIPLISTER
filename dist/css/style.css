@@ -4837,6 +4837,23 @@ label {
   letter-spacing: 0em;
   text-align: left;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile__navigation-item:last-child {
+  border-bottom-left-radius: 1.875rem;
+  border-bottom-right-radius: 1.875rem;
+  border-left: 1px solid var(--orange-color);
+  border-right: 1px solid var(--orange-color);
+  width: 22.5rem;
+}
+
+.profile__navigation-item:nth-child(7) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border: none;
 }
 
 .profile__navigation-text {
@@ -4845,6 +4862,9 @@ label {
 
 .profile__tab-title {
   margin: 3.4375rem 0 0 0;
+}
+
+.profile__tab-title h4 {
   color: #171717;
   text-align: center;
   font-size: 2rem;
@@ -4852,6 +4872,10 @@ label {
   font-weight: 600;
   line-height: 110%;
   /* 35.2px */
+}
+
+.profile__editBox {
+  display: none;
 }
 
 .profile__personals-item {
@@ -4881,17 +4905,50 @@ label {
   font-weight: 600;
   line-height: normal;
   text-decoration-line: underline;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 .profile__personals-supportBtn svg {
   margin: 0 0.5rem 0 0;
 }
 
+.profile__field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0 0 1.25rem 0;
+}
+
+.profile__field span {
+  color: #7D7D7D;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0.625rem 0 0;
+}
+
 .personals {
-  padding: 28px 0 0 0;
   border-radius: 1.25rem;
   background: #FFF8F6;
   margin: 2.75rem 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .personals__editBox {
@@ -5048,6 +5105,30 @@ label {
   margin: 0 0 0 0;
 }
 
+.personals__personals-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0 0 1.25rem 0;
+}
+
+.personals__personals-field span {
+  color: #7D7D7D;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0.625rem 0 0;
+}
+
 .personals__fieldSocials {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5058,7 +5139,6 @@ label {
 .personals__lineOrange {
   height: 2px;
   background-color: var(--orange-color);
-  margin: 0 10px;
 }
 
 .personals__passChange {
@@ -5121,6 +5201,7 @@ label {
   line-height: 2.125rem;
   letter-spacing: 0em;
   text-align: left;
+  background: #FFF8F6;
 }
 
 ._tab-active svg path {
@@ -5129,6 +5210,10 @@ label {
 
 ._tab-active svg path:nth-child(2) {
   fill: #fff;
+}
+
+._tab-active .profile__navigation-text {
+  color: #E55738;
 }
 
 .menu {
@@ -5839,6 +5924,182 @@ label {
   .promo__socialsIcons {
     margin: 1.125rem 0 2.3125rem 0;
   }
+
+  .profile__wrapper-navigation {
+    gap: 1.25rem;
+  }
+
+  .profile__navigation {
+    gap: 1.25rem;
+  }
+
+  .profile__tab-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .profile__editBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #3C88F9;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration-line: underline;
+  }
+
+  .profile__editBox a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .profile__editBox svg {
+    margin: 0 0.625rem 0 0;
+  }
+
+  .profile__personals-item {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 2.1875rem 0 7.5rem 0;
+  }
+
+  .profile__personals-supportBtn svg {
+    margin: 0 1.25rem 0 0;
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  .profile__field {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    font-size: 1.25rem;
+  }
+
+  .profile__field span {
+    margin: 0 0 10px 0;
+  }
+
+  .personals {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 1.25rem 1.25rem 2.8125rem 1.25rem;
+    margin: 2.75rem 0 1.875rem 0;
+  }
+
+  .personals__editBox {
+    display: none;
+  }
+
+  .personals__photoBox {
+    margin: 0;
+  }
+
+  .personals__changeBox {
+    margin: 1.875rem 0 0 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .personals__changeBox label {
+    font-size: 1rem;
+  }
+
+  .personals__deleteBtn {
+    margin: 0.9375rem 0 0 0;
+    font-size: 1rem;
+  }
+
+  .personals__fieldsGroup {
+    margin: 0 0 0 1.25rem;
+    padding: 0;
+    width: 100%;
+  }
+
+  .personals__field {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    font-size: 1.25rem;
+  }
+
+  .personals__field span {
+    margin: 0 0 10px 0;
+  }
+
+  .personals__personals-field {
+    font-size: 1.25rem;
+    margin: 0;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .personals__personals-field span {
+    margin: 0 10px 0 0;
+  }
+
+  .personals__fieldSocials {
+    gap: 1.25rem;
+  }
+
+  .personals__fieldSocials svg {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  .personals__passChange {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 1.875rem 0 0 0;
+  }
+
+  .personals__passChangeBtn {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  .personals__deleteProfileBtn {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 79.99875em) {
@@ -6065,6 +6326,71 @@ label {
 
   .promo__socialsIcons {
     margin: 1.4375rem 0 2.125rem 0;
+  }
+
+  .profile__tabs {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 10.9375rem 0 0 0;
+  }
+
+  .profile__wrapper-navigation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    gap: 0;
+  }
+
+  .profile__navigation {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-top-right-radius: 1.875rem;
+    border-top-left-radius: 1.875rem;
+    border: 1px solid var(--orange-color);
+    gap: 0;
+  }
+
+  .profile__navigation-item {
+    width: 22.5rem;
+    padding: 2.1875rem 0 2.1875rem 1.5625rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid var(--orange-color);
+  }
+
+  .profile__navigation-item svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .profile__navigation-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 0 0 0.9375rem;
+    color: #171717;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .profile__content {
+    width: 100%;
+    margin: 0 0 0 2.5rem;
+  }
+
+  .profile__tab-title {
+    margin: 0;
   }
 }
 

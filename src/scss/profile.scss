@@ -5,16 +5,38 @@
 		display: flex;
 		flex-direction: column;
 		margin: 3.75rem 0 0 0;
+		@media screen and (min-width:$tablet) {
+			flex-direction: row;
+			margin: 10.9375rem 0 0 0;
+		}
 	}
 	&__wrapper-navigation {
 		display: flex;
 		justify-content: center;
 		gap: 1rem;
+		@media screen and (min-width:$mobile) {
+			gap: 1.25rem;
+		}
+		@media screen and (min-width:$tablet) {
+			flex-direction: column;
+			justify-content:flex-start;
+			gap: 0;
+		}
 	}
 	&__navigation {
 		display: flex;
 		overflow: hidden;
 		gap: 1rem;
+		@media screen and (min-width:$mobile) {
+			gap: 1.25rem;
+		}
+		@media screen and (min-width:$tablet) {
+			flex-direction: column;
+			border-top-right-radius: 1.875rem;
+			border-top-left-radius: 1.875rem;
+			border: 1px solid var(--orange-color);
+			gap: 0;
+		}
 	}
 	&__navigation-item {
 		color: var(--text-color-black);
@@ -24,23 +46,88 @@
 		letter-spacing: 0em;
 		text-align: left;
 		cursor: pointer;
+		display: flex;
+		@media screen and (min-width:$tablet) {
+			width: 22.5rem;
+			padding: 2.1875rem 0 2.1875rem 1.5625rem;
+			align-items: center;
+			border-bottom: 1px solid var(--orange-color);
+			svg {
+				width: 2rem;
+				height: 2rem;
+			}
+		}
+	}
+	&__navigation-item:last-child {
+		border-bottom-left-radius: 1.875rem;
+		border-bottom-right-radius: 1.875rem;
+		border-left: 1px solid var(--orange-color);
+		border-right: 1px solid var(--orange-color);
+		width: 22.5rem;
+	}
+	&__navigation-item:nth-child(7) {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		border: none;
 	}
 	&__navigation-text {
 		display: none;
+		@media screen and (min-width:$tablet) {
+			display: flex;
+			margin: 0 0 0 0.9375rem;
+			color: #171717;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+		}
 	}
 	&__content {
+		@media screen and (min-width:$tablet) {
+			width: 100%;
+			margin: 0 0 0 2.5rem;
+		}
 	}
 	&__tab {
 
 	}
 	&__tab-title {
 		margin: 3.4375rem 0 0 0;
-		color: #171717;
-		text-align: center;
-		font-size: 2rem;
-		font-style: normal;
-		font-weight: 600;
-		line-height: 110%; /* 35.2px */
+		h4 {
+			color: #171717;
+			text-align: center;
+			font-size: 2rem;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 110%; /* 35.2px */
+		}
+		@media screen and (min-width:$mobile) {
+			display: flex;
+			justify-content: space-between;
+		}
+		@media screen and (min-width:$tablet) {
+			margin: 0;
+		}
+	}
+	&__editBox {
+		display: none;
+		@media screen and (min-width:$mobile) {
+			display: flex;
+			align-items: center;
+			color: #3C88F9;
+			font-size: 0.875rem;
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+			text-decoration-line: underline;
+			a {
+				display: flex;
+				align-items: center;
+			}
+			svg {
+				margin: 0 0.625rem 0 0;
+			}
+		}
 	}
 	&__tab-content {
 
@@ -50,6 +137,11 @@
 		flex-direction: column;
 		align-items: center;
 		padding: 1.5625rem 0 7.5rem 0;
+		@media screen and (min-width:$mobile) {
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 2.1875rem 0 7.5rem 0;
+		}
 	}
 	&__personals-supportBtn {
 		display: flex;
@@ -60,25 +152,65 @@
 		font-weight: 600;
 		line-height: normal;
 		text-decoration-line: underline;
+		order: 1;
 		svg {
 			margin: 0 0.5rem 0 0;
+			@media screen and (min-width:$mobile) {
+				margin: 0 1.25rem 0 0;
+				width: 1.875rem;
+				height: 1.875rem;
+			}
+		}
+	}
+	&__field {
+		display: flex;
+		align-items: center;
+		color: #000;
+		font-size: 1.125rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin: 0 0 1.25rem 0;
+		@media screen and (min-width:$mobile) {
+			flex-direction: column;
+			align-items: flex-start;
+			font-size: 1.25rem;
+		}
+		span {
+			color: #7D7D7D;
+			font-size: 1.125rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			margin: 0 0.625rem 0 0;
+			@media screen and (min-width:$mobile) {
+				margin: 0 0 10px 0;
+			}
 		}
 	}
 }
 
 //personal data
 .personals {
-	padding: 28px 0 0 0;
 	border-radius: 1.25rem;
 	background: #FFF8F6;
 	margin: 2.75rem 0 0 0;
+	display: flex;
+	flex-direction: column;
+	@media screen and (min-width:$mobile) {
+		flex-direction: row;
+		padding: 1.25rem 1.25rem 2.8125rem 1.25rem;
+		margin: 2.75rem 0 1.875rem 0;
+	}
 	&__imageData {
-
 	}
 	&__editBox {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+		@media screen and (min-width:$mobile) {
+			display: none;
+		}
 	}
 	&__editBtn {
 		display: flex;
@@ -106,6 +238,9 @@
 		display: flex;
 		width: 15.625rem;
 		height: 15.625rem;
+		@media screen and (min-width:$mobile) {
+			margin: 0;
+		}
 		img {
 			width: 100%;
 			max-width: 100%;
@@ -117,6 +252,10 @@
 		width: 15.625rem;
 		justify-content: space-between;
 		margin: 1.5625rem 0 0 0;
+		@media screen and (min-width:$mobile) {
+			margin: 1.875rem 0 0 0;
+			flex-direction: column;
+		}
 		label {
 			display: block;
 			cursor: pointer;
@@ -127,6 +266,9 @@
 			font-weight: 600;
 			line-height: normal;
 			text-decoration-line: underline;
+			@media screen and (min-width:$mobile) {
+			font-size: 1rem;
+			}
 		}
 		label:hover {
 			text-decoration: none;
@@ -145,12 +287,20 @@
 		display: flex;
 		align-items: center;
 		gap: 0.3125rem;
+		@media screen and (min-width:$mobile) {
+			margin: 0.9375rem 0 0 0;
+			font-size: 1rem;
+		}
 	}
 	&__fieldsGroup {
 		display: flex;
 		flex-direction: column;
 		padding: 40px 10px;
-		// border-bottom: 2px solid var(--orange-color);
+		@media screen and (min-width:$mobile) {
+			margin: 0 0 0 1.25rem;
+			padding: 0;
+			width: 100%;
+		}
 	}
 	&__field {
 		display: flex;
@@ -161,6 +311,11 @@
 		font-weight: 600;
 		line-height: normal;
 		margin: 0 0 1.25rem 0;
+		@media screen and (min-width:$mobile) {
+			flex-direction: column;
+			align-items: flex-start;
+			font-size: 1.25rem;
+		}
 		span {
 			color: #7D7D7D;
 			font-size: 1.125rem;
@@ -168,25 +323,66 @@
 			font-weight: 400;
 			line-height: normal;
 			margin: 0 0.625rem 0 0;
+			@media screen and (min-width:$mobile) {
+				margin: 0 0 10px 0;
+			}
 		}
 	}
 	&__field:last-child {
 		margin: 0 0 0 0;
 	}
+	&__personals-field {
+		display: flex;
+		align-items: center;
+		color: #000;
+		font-size: 1.125rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin: 0 0 1.25rem 0;
+		@media screen and (min-width:$mobile) {
+			font-size: 1.25rem;
+			margin: 0;
+			order: 2;
+		}
+		span {
+			color: #7D7D7D;
+			font-size: 1.125rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			margin: 0 0.625rem 0 0;
+			@media screen and (min-width:$mobile) {
+				margin: 0 10px 0 0;
+			}
+		}
+	}
 	&__fieldSocials {
 		display: flex;
 		gap: 0.5rem;
+		@media screen and (min-width:$mobile) {
+			gap: 1.25rem;
+			svg {
+				width: 1.875rem;
+				height: 1.875rem;
+			}
+		}
 	}
 	&__lineOrange {
 		height: 2px;
 		background-color: var(--orange-color);
-		margin: 0 10px;
 	}
 	&__passChange {
 		padding: 1.875rem 0 2.5rem 0;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		@media screen and (min-width:$mobile) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding: 1.875rem 0 0 0;
+		}
 	}
 	&__passChangeBtn {
 		display: flex;
@@ -201,6 +397,10 @@
 		svg {
 			margin: 0 0.3125rem 0 0;
 		}
+		@media screen and (min-width:$mobile) {
+			font-size: 1.25rem;
+			margin: 0;
+		}
 	}
 	&__deleteProfileBtn {
 		display: flex;
@@ -214,6 +414,9 @@
 		svg {
 			margin: 0 0.3125rem 0 0;
 		}
+		@media screen and (min-width:$mobile) {
+			font-size: 1rem;
+		}
 	}
 }
 
@@ -224,6 +427,7 @@
 	line-height: 2.125rem;
 	letter-spacing: 0em;
 	text-align: left;
+	background: #FFF8F6;
 	svg {
 		path {
 			fill: var(--orange-color);
@@ -231,5 +435,8 @@
 		path:nth-child(2) {
 			fill: #fff;
 		}
+	}
+	.profile__navigation-text {
+		color: #E55738;
 	}
 }
