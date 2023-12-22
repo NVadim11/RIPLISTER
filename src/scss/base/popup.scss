@@ -265,7 +265,7 @@ body::after {
 	}
 	&__registerTitle {
 	}
-	&__loginFormDescr, &__registerFormDescr {
+	&__loginFormDescr, &__registerFormDescr, &__successDescr {
 		margin-top: 1.0625rem;
 		color: var(--text-color-black);
 		text-align: center;
@@ -336,8 +336,14 @@ body::after {
 		letter-spacing: 0em;
 		text-align: left;
 	}
+	.authSuccessBtn {
+		margin-bottom: 4.8125rem;
+	}
 	&__successMsg {
 		display: none;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
 	}
 	&__socialsLogin {
 		margin-top: 2.6875rem;

@@ -809,7 +809,8 @@ label {
 }
 
 .popupAuthForm__loginFormDescr,
-.popupAuthForm__registerFormDescr {
+.popupAuthForm__registerFormDescr,
+.popupAuthForm__successDescr {
   margin-top: 1.0625rem;
   color: var(--text-color-black);
   text-align: center;
@@ -908,8 +909,20 @@ label {
   text-align: left;
 }
 
+.popupAuthForm .authSuccessBtn {
+  margin-bottom: 4.8125rem;
+}
+
 .popupAuthForm__successMsg {
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
 .popupAuthForm__socialsLogin {

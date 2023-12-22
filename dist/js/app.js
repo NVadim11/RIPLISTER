@@ -784,9 +784,10 @@
         const registerTitle = document.getElementById("registerTitle");
         const loginFormContent = document.getElementById("loginFormContent");
         const registerFormContent = document.getElementById("registerFormContent");
+        const formContent = document.querySelector(".popupAuthForm__formContent");
         const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
         const invalidUser = document.querySelector(".popupAuthForm__invalidUser");
-        document.querySelector(".popupAuthForm__successMsg");
+        const successMsg = document.querySelector(".popupAuthForm__successMsg");
         const inputItem = document.querySelectorAll(".popupAuthForm__input");
         const inputErrorIcon = document.querySelectorAll(".inputError");
         console.log(accounts_namespaceObject.r);
@@ -817,6 +818,12 @@
             registerFormContent.style.display = "none";
             formStylesReset();
             formContentReset();
+        }
+        function successToggler() {
+            invalidInformation.style.display = "none";
+            invalidUser.style.display = "none";
+            formContent.style.display = "none";
+            successMsg.style.display = "flex";
         }
         loginTitle.addEventListener("click", (function() {
             loginToggler();
@@ -888,8 +895,7 @@
             })), {});
             let userFound = accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email && user.password === formObject.popupAuthForm__password));
             if (!userFound) invalidUser.style.display = "flex"; else if (formObject.popupAuthForm__email === "" || formObject.popupAuthForm__password === "") invalidInformation.style.display = "flex"; else {
-                invalidInformation.style.display = "none";
-                invalidUser.style.display = "none";
+                successToggler();
                 console.log("Login Success");
                 console.log(userFound);
             }
@@ -1209,6 +1215,7 @@
                             if (!this.isOpen) this.lastFocusEl = buttonOpen;
                             this.targetOpen.selector = `${this._dataValue}`;
                             this._selectorOpen = true;
+                            document.querySelector(".popupAuthForm__formContent").style.display = "flex";
                             this.open();
                             return;
                         } else this.popupLogging(`Йой, не заповнено атрибут у ${buttonOpen.classList}`);
@@ -1219,6 +1226,7 @@
                         e.preventDefault();
                         formStylesReset();
                         formContentReset();
+                        document.querySelector(".popupAuthForm__successMsg").style.display = "none";
                         this.close();
                         return;
                     }
@@ -1228,6 +1236,7 @@
                         e.preventDefault();
                         formStylesReset();
                         formContentReset();
+                        document.querySelector(".popupAuthForm__successMsg").style.display = "none";
                         this.close();
                         return;
                     }
