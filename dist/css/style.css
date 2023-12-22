@@ -774,6 +774,7 @@ label {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  text-decoration-line: underline;
 }
 
 .popupAuthForm .notActiveForm:hover {
@@ -782,6 +783,7 @@ label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  text-decoration-line: none;
 }
 
 .popupAuthForm__loginFormContent {
@@ -923,6 +925,12 @@ label {
   text-align: left;
 }
 
+.popupAuthForm .button:hover {
+  border-radius: 1.25rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+}
+
 .popupAuthForm__authSuccessBtn,
 .popupAuthForm__passRecoveryBtn,
 .popupAuthForm__passRecoveryCloseBtn {
@@ -931,7 +939,8 @@ label {
 
 .popupAuthForm__successMsg,
 .popupAuthForm__passRecoveryForm,
-.popupAuthForm__recoveryMsg {
+.popupAuthForm__recoveryMsg,
+.popupAuthForm__successRegMsg {
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;

@@ -8,6 +8,7 @@ const formContent = document.querySelector(".popupAuthForm__formContent");
 const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
 const invalidUser = document.querySelector(".popupAuthForm__invalidUser");
 const successMsg = document.querySelector(".popupAuthForm__successMsg");
+const successRegMsg = document.querySelector(".popupAuthForm__successRegMsg");
 const passRecoveryForm = document.querySelector(".popupAuthForm__passRecoveryForm");
 const passRecoveryMsg = document.querySelector(".popupAuthForm__recoveryMsg");
 
@@ -54,6 +55,12 @@ invalidUser.style.display = "none";
 formContent.style.display = "none";
 successMsg.style.display = "flex";
 };
+function successRegToggler() {
+    invalidInformation.style.display = "none";
+    invalidUser.style.display = "none";
+    formContent.style.display = "none";
+    successRegMsg.style.display = "flex";
+    };
 function passRecoverySentToggler() {
 invalidInformation.style.display = "none";
 passRecoveryForm.style.display = "none";
@@ -144,6 +151,7 @@ if(passwordRecovery){
         const formObject = Array.from(formElement.elements)
         .filter(element => element.type !=="submit")
         .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
+        successRegToggler();
         console.log(formObject);
         // Submitting to API
     };

@@ -789,6 +789,7 @@
         const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
         const invalidUser = document.querySelector(".popupAuthForm__invalidUser");
         const successMsg = document.querySelector(".popupAuthForm__successMsg");
+        const successRegMsg = document.querySelector(".popupAuthForm__successRegMsg");
         const passRecoveryForm = document.querySelector(".popupAuthForm__passRecoveryForm");
         const passRecoveryMsg = document.querySelector(".popupAuthForm__recoveryMsg");
         const inputItem = document.querySelectorAll(".popupAuthForm__input");
@@ -827,6 +828,12 @@
             invalidUser.style.display = "none";
             formContent.style.display = "none";
             successMsg.style.display = "flex";
+        }
+        function successRegToggler() {
+            invalidInformation.style.display = "none";
+            invalidUser.style.display = "none";
+            formContent.style.display = "none";
+            successRegMsg.style.display = "flex";
         }
         function passRecoverySentToggler() {
             invalidInformation.style.display = "none";
@@ -902,6 +909,7 @@
                 ...accumulator,
                 [element.id]: element.value
             })), {});
+            successRegToggler();
             console.log(formObject);
         }
         function login(formElement) {
@@ -1254,7 +1262,12 @@
                         formContentReset();
                         document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
                         document.querySelector(".popupAuthForm__successMsg").style.display = "none";
+                        document.querySelector(".popupAuthForm__successRegMsg").style.display = "none";
                         document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
+                        document.getElementById("loginTitle").classList.remove("notActiveForm");
+                        document.getElementById("registerTitle").classList.add("notActiveForm");
+                        document.getElementById("loginFormContent").style.display = "flex";
+                        document.getElementById("registerFormContent").style.display = "none";
                         this.close();
                         return;
                     }
@@ -1266,7 +1279,12 @@
                         formContentReset();
                         document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
                         document.querySelector(".popupAuthForm__successMsg").style.display = "none";
+                        document.querySelector(".popupAuthForm__successRegMsg").style.display = "none";
                         document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
+                        document.getElementById("loginTitle").classList.remove("notActiveForm");
+                        document.getElementById("registerTitle").classList.add("notActiveForm");
+                        document.getElementById("loginFormContent").style.display = "flex";
+                        document.getElementById("registerFormContent").style.display = "none";
                         this.close();
                         return;
                     }

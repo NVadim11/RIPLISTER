@@ -499,8 +499,13 @@ class PopupLogin {
 				formStylesReset();
 				formContentReset();	
 				document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
-				document.querySelector(".popupAuthForm__successMsg").style.display = "none";			
+				document.querySelector(".popupAuthForm__successMsg").style.display = "none";
+				document.querySelector(".popupAuthForm__successRegMsg").style.display = "none";	
 				document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
+				document.getElementById("loginTitle").classList.remove("notActiveForm");
+				document.getElementById("registerTitle").classList.add("notActiveForm");
+				document.getElementById("loginFormContent").style.display = "flex";
+				document.getElementById("registerFormContent").style.display = "none";
 				this.close();
 				return;
 			}
@@ -512,8 +517,13 @@ class PopupLogin {
 				formStylesReset();
 				formContentReset();
 				document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
-				document.querySelector(".popupAuthForm__successMsg").style.display = "none";	
+				document.querySelector(".popupAuthForm__successMsg").style.display = "none";
+				document.querySelector(".popupAuthForm__successRegMsg").style.display = "none";	
 				document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
+				document.getElementById("loginTitle").classList.remove("notActiveForm");
+				document.getElementById("registerTitle").classList.add("notActiveForm");
+				document.getElementById("loginFormContent").style.display = "flex";
+				document.getElementById("registerFormContent").style.display = "none";
 				this.close();
 				return;
 			}
