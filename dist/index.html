@@ -684,22 +684,22 @@
 	<div id="popupAuthForm" aria-hidden="true" class="popupAuthForm">
 		<div class="popupAuthForm__wrapper">
 			<div class="popupAuthForm__content">
+				<div data-popupAuthForm-close class="popupAuthForm__close">
+					<button type="button">
+						<svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
+							<rect width="44" height="44.6659" rx="20" fill="#E55738" />
+							<path d="M28.5551 16.3201L16.0781 28.9859" stroke="white" stroke-width="2" />
+							<path d="M16.0777 16.3202L28.5547 28.986" stroke="white" stroke-width="2" />
+							<defs>
+								<linearGradient id="paint0_linear_1695_1848" x1="22" y1="0" x2="22" y2="44.6659" gradientUnits="userSpaceOnUse">
+									<stop stop-color="#EF6446" />
+									<stop offset="1" stop-color="#DB4A2A" />
+								</linearGradient>
+							</defs>
+						</svg>
+					</button>
+				</div>
 				<div class="popupAuthForm__formContent">
-					<div data-popupAuthForm-close class="popupAuthForm__close">
-						<button type="button">
-							<svg xmlns="http://www.w3.org/2000/svg" width="44" height="45" viewBox="0 0 44 45" fill="none">
-								<rect width="44" height="44.6659" rx="20" fill="#E55738" />
-								<path d="M28.5551 16.3201L16.0781 28.9859" stroke="white" stroke-width="2" />
-								<path d="M16.0777 16.3202L28.5547 28.986" stroke="white" stroke-width="2" />
-								<defs>
-									<linearGradient id="paint0_linear_1695_1848" x1="22" y1="0" x2="22" y2="44.6659" gradientUnits="userSpaceOnUse">
-										<stop stop-color="#EF6446" />
-										<stop offset="1" stop-color="#DB4A2A" />
-									</linearGradient>
-								</defs>
-							</svg>
-						</button>
-					</div>
 					<div class="popupAuthForm__title">
 						<div class="popupAuthForm__loginTitle" id="loginTitle">
 							<h1>Увійти</h1>
@@ -729,8 +729,8 @@
 								</svg>
 							</div>
 							<div class="popupAuthForm__btnField">
-								<div class="popupAuthForm__passRecover">
-									<a href="">Нагадати пароль</a>
+								<div id="passwordRecovery" class="popupAuthForm__passRecover">
+									<p>Нагадати пароль</p>
 								</div>
 								<button type="submit" class="button popupAuthForm__loginBtn">Увійти</button>
 							</div>
@@ -746,9 +746,6 @@
 							</span>
 						</form>
 						<hr>
-						<div class="popupAuthForm__successMsg">
-							<h2>success</h2>
-						</div>
 						<div class="popupAuthForm__socialsLogin">
 							<h4>Увійти через соцмережі:</h4>
 						</div>
@@ -768,7 +765,6 @@
 							</svg>
 						</div>
 					</div>
-
 
 					<div class="popupAuthForm__registerFormContent" id="registerFormContent">
 						<div class="popupAuthForm__registerFormDescr" id="registerFormDescr">
@@ -813,9 +809,6 @@
 							</span>
 						</form>
 						<hr>
-						<div class="popupAuthForm__successMsg">
-							<h2>success</h2>
-						</div>
 						<div class="popupAuthForm__socialsLogin">
 							<h4>Увійти через соцмережі:</h4>
 						</div>
@@ -835,7 +828,60 @@
 							</svg>
 						</div>
 					</div>
-
+				</div>
+				<div class="popupAuthForm__passRecoveryForm">
+					<div class="popupAuthForm__passRecoveryDescr">
+						<p>Введіть емейл, на який буде відправлено лист з паролем</p>
+					</div>
+					<form novalidate id="popupAuthForm__passRecoveryForm" class="popupAuthForm__loginForm">
+						<div class="popupAuthForm__input-group">
+							<input required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" id="popupAuthForm__email" data-no-focus-classes placeholder="Email" class="popupAuthForm__input">
+							<svg class="inputError" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<rect width="24" height="24" rx="12" fill="#FF0000" />
+								<path d="M12.1867 14.5971H11.1467C10.8267 12.3197 10.6667 10.4308 10.6667 8.93048V6H12.6667V8.93048C12.6667 10.4308 12.5067 12.3197 12.1867 14.5971ZM10.7067 17.3333V15.7305H12.6467V17.3333H10.7067Z" fill="white" />
+							</svg>
+						</div>
+						<button type="submit" class="button popupAuthForm__passRecoveryBtn">Відправити</button>
+					</form>
+				</div>
+				<div class="popupAuthForm__successMsg">
+					<div class="popupAuthForm__title">
+						<h1>Ви успішно увійшли</h1>
+					</div>
+					<div class="popupAuthForm__successDescr">
+						<p>Насолоджуйтесь використанням сайту, заробляйте на різних послугах та приємного проведення часу</p>
+					</div>
+					<div class="popupAuthForm__btnField">
+						<div data-popupAuthForm-close>
+							<button class="button popupAuthForm__authSuccessBtn">Продовжити</button>
+						</div>
+					</div>
+				</div>
+				<div class="popupAuthForm__successRegMsg">
+					<div class="popupAuthForm__title">
+						<h1>Ви успішно зареєструвалися</h1>
+					</div>
+					<div class="popupAuthForm__successDescr">
+						<p>Насолоджуйтесь використанням сайту, заробляйте на різних послугах та приємного проведення часу</p>
+					</div>
+					<div class="popupAuthForm__btnField">
+						<div data-popupAuthForm-close>
+							<button class="button popupAuthForm__authSuccessBtn">Продовжити</button>
+						</div>
+					</div>
+				</div>
+				<div class="popupAuthForm__recoveryMsg">
+					<div class="popupAuthForm__title">
+						<h1>Лист відправлено</h1>
+					</div>
+					<div class="popupAuthForm__recoveryDescr">
+						<p>Зачекайте кілька хвилин і докладна інструкція вже буде у вас на пошті</p>
+					</div>
+					<div class="popupAuthForm__btnField">
+						<div data-popupAuthForm-close>
+							<button class="button popupAuthForm__passRecoveryCloseBtn">Закрити</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

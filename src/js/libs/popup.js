@@ -484,6 +484,7 @@ class PopupLogin {
 					if (!this.isOpen) this.lastFocusEl = buttonOpen;
 					this.targetOpen.selector = `${this._dataValue}`;
 					this._selectorOpen = true;
+					document.querySelector(".popupAuthForm__formContent").style.display = "flex";
 					this.open();
 					return;
 
@@ -496,7 +497,15 @@ class PopupLogin {
 			if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
 				e.preventDefault();
 				formStylesReset();
-				formContentReset();				
+				formContentReset();	
+				document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
+				document.querySelector(".popupAuthForm__successMsg").style.display = "none";
+				document.querySelector(".popupAuthForm__successRegMsg").style.display = "none";	
+				document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
+				document.getElementById("loginTitle").classList.remove("notActiveForm");
+				document.getElementById("registerTitle").classList.add("notActiveForm");
+				document.getElementById("loginFormContent").style.display = "flex";
+				document.getElementById("registerFormContent").style.display = "none";
 				this.close();
 				return;
 			}
@@ -507,6 +516,14 @@ class PopupLogin {
 				e.preventDefault();
 				formStylesReset();
 				formContentReset();
+				document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
+				document.querySelector(".popupAuthForm__successMsg").style.display = "none";
+				document.querySelector(".popupAuthForm__successRegMsg").style.display = "none";	
+				document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
+				document.getElementById("loginTitle").classList.remove("notActiveForm");
+				document.getElementById("registerTitle").classList.add("notActiveForm");
+				document.getElementById("loginFormContent").style.display = "flex";
+				document.getElementById("registerFormContent").style.display = "none";
 				this.close();
 				return;
 			}

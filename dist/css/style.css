@@ -774,6 +774,7 @@ label {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  text-decoration-line: underline;
 }
 
 .popupAuthForm .notActiveForm:hover {
@@ -782,6 +783,7 @@ label {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  text-decoration-line: none;
 }
 
 .popupAuthForm__loginFormContent {
@@ -809,7 +811,9 @@ label {
 }
 
 .popupAuthForm__loginFormDescr,
-.popupAuthForm__registerFormDescr {
+.popupAuthForm__registerFormDescr,
+.popupAuthForm__successDescr,
+.popupAuthForm__recoveryDescr {
   margin-top: 1.0625rem;
   color: var(--text-color-black);
   text-align: center;
@@ -818,6 +822,10 @@ label {
   font-weight: 400;
   line-height: 140%;
   /* 25.2px */
+}
+
+.popupAuthForm__passRecoveryDescr {
+  margin-top: 5.25rem;
 }
 
 .popupAuthForm__input {
@@ -843,12 +851,20 @@ label {
 }
 
 .popupAuthForm__passRecover {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-size: 1rem;
   margin-top: 1.25rem;
   font-weight: 400;
   line-height: 1.25rem;
   letter-spacing: 0em;
   text-align: center;
+}
+
+.popupAuthForm__passRecover:hover {
+  cursor: pointer;
 }
 
 .popupAuthForm__input-group {
@@ -871,7 +887,8 @@ label {
 }
 
 .popupAuthForm__invalidInformation,
-.popupAuthForm__invalidUser {
+.popupAuthForm__invalidUser,
+.popupAuthForm__invalidEmail {
   display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -908,8 +925,31 @@ label {
   text-align: left;
 }
 
-.popupAuthForm__successMsg {
+.popupAuthForm .button:hover {
+  border-radius: 1.25rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
+  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+}
+
+.popupAuthForm__authSuccessBtn,
+.popupAuthForm__passRecoveryBtn,
+.popupAuthForm__passRecoveryCloseBtn {
+  margin-bottom: 4.8125rem;
+}
+
+.popupAuthForm__successMsg,
+.popupAuthForm__passRecoveryForm,
+.popupAuthForm__recoveryMsg,
+.popupAuthForm__successRegMsg {
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
 .popupAuthForm__socialsLogin {
