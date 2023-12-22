@@ -833,7 +833,7 @@
             passRecoveryForm.style.display = "none";
             passRecoveryMsg.style.display = "flex";
         }
-        passwordRecovery.addEventListener("click", (() => {
+        if (passwordRecovery) passwordRecovery.addEventListener("click", (() => {
             invalidInformation.style.display = "none";
             invalidUser.style.display = "none";
             formContent.style.display = "none";

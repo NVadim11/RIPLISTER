@@ -60,14 +60,14 @@ function passRecoverySentToggler() {
     passRecoveryMsg.style.display = "flex";
 };
 
-passwordRecovery.addEventListener("click", () => {
-    invalidInformation.style.display = "none";
-    invalidUser.style.display = "none";
-    formContent.style.display = "none";
-    passRecoveryForm.style.display = "flex";
-});
-
-
+if(passwordRecovery){
+    passwordRecovery.addEventListener("click", () => {
+        invalidInformation.style.display = "none";
+        invalidUser.style.display = "none";
+        formContent.style.display = "none";
+        passRecoveryForm.style.display = "flex";
+    });
+};
 
 loginTitle.addEventListener("click", function() {loginToggler()}); 
 registerTitle.addEventListener("click", function() {registerToggler()});
