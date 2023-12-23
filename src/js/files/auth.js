@@ -1,3 +1,4 @@
+const authForm = document.getElementById("popupAuthForm");
 const loginTitle = document.getElementById("loginTitle");
 const registerTitle = document.getElementById("registerTitle");
 const loginFormContent = document.getElementById("loginFormContent");
@@ -26,10 +27,24 @@ export function formStylesReset() {
 };
 
 export function formContentReset() {
-    document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
-    document.querySelector(".popupAuthForm__invalidUser").style.display = "none";	
+    invalidInformation.style.display = "none";
+    invalidUser.style.display = "none";	
     document.getElementById("popupAuthForm__loginForm").reset();		
     document.getElementById("popupAuthForm__registerForm").reset();	
+};
+
+
+export function formStateReset() {
+    if (authForm) {
+        passRecoveryForm.style.display = "none";
+        successMsg.style.display = "none";
+        successRegMsg.style.display = "none";	
+        passRecoveryMsg.style.display = "none";
+        loginTitle.classList.remove("notActiveForm");
+        registerTitle.classList.add("notActiveForm");
+        loginFormContent.style.display = "flex";
+        registerFormContent.style.display = "none";
+    }
 };
 
 // login/register toggle
