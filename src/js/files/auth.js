@@ -1,4 +1,3 @@
-const authForm = document.getElementById("popupAuthForm");
 const loginTitle = document.getElementById("loginTitle");
 const registerTitle = document.getElementById("registerTitle");
 const loginFormContent = document.getElementById("loginFormContent");
@@ -35,16 +34,22 @@ export function formContentReset() {
 
 
 export function formStateReset() {
-    if (authForm) {
-        passRecoveryForm.style.display = "none";
-        successMsg.style.display = "none";
-        successRegMsg.style.display = "none";	
-        passRecoveryMsg.style.display = "none";
+        if(passRecoveryForm) {
+            passRecoveryForm.style.display = "none";
+        }
+        if (successMsg) {
+            successMsg.style.display = "none";
+        }
+        if (successRegMsg) {
+            successRegMsg.style.display = "none";	
+        }
+        if (passRecoveryMsg) {
+            passRecoveryMsg.style.display = "none";
+        }      
         loginTitle.classList.remove("notActiveForm");
         registerTitle.classList.add("notActiveForm");
         loginFormContent.style.display = "flex";
-        registerFormContent.style.display = "none";
-    }
+        registerFormContent.style.display = "none";    
 };
 
 // login/register toggle

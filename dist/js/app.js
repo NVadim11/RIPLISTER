@@ -780,7 +780,6 @@
             }
         }
         const accounts_namespaceObject = JSON.parse('{"r":[{"id":1,"first_name":"John","last_name":"Doe","email":"johndoe@gmail.com","password":"Johntest123"},{"id":2,"first_name":"Julia","last_name":"Chan","email":"juliachan@gmail.com","password":"Juliatest123"}]}');
-        const authForm = document.getElementById("popupAuthForm");
         const loginTitle = document.getElementById("loginTitle");
         const registerTitle = document.getElementById("registerTitle");
         const loginFormContent = document.getElementById("loginFormContent");
@@ -807,18 +806,6 @@
             invalidUser.style.display = "none";
             document.getElementById("popupAuthForm__loginForm").reset();
             document.getElementById("popupAuthForm__registerForm").reset();
-        }
-        function formStateReset() {
-            if (authForm) {
-                passRecoveryForm.style.display = "none";
-                successMsg.style.display = "none";
-                successRegMsg.style.display = "none";
-                passRecoveryMsg.style.display = "none";
-                loginTitle.classList.remove("notActiveForm");
-                registerTitle.classList.add("notActiveForm");
-                loginFormContent.style.display = "flex";
-                registerFormContent.style.display = "none";
-            }
         }
         function registerToggler() {
             loginTitle.classList.add("notActiveForm");
@@ -1273,7 +1260,6 @@
                         e.preventDefault();
                         formStylesReset();
                         formContentReset();
-                        formStateReset();
                         this.close();
                         return;
                     }
@@ -1283,7 +1269,6 @@
                         e.preventDefault();
                         formStylesReset();
                         formContentReset();
-                        formStateReset();
                         this.close();
                         return;
                     }

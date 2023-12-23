@@ -4,7 +4,7 @@
 // Сніппет (HTML): pl
 
 // Підключення функціоналу "Чортоги Фрілансера"
-import { formContentReset, formStateReset, formStylesReset } from "../files/auth.js"
+import { formContentReset, formStylesReset } from "../files/auth.js"
 import { FLS, bodyLock, bodyLockStatus, bodyUnlock } from "../files/functions.js"
 import { flsModules } from "../files/modules.js"
 
@@ -498,7 +498,7 @@ class PopupLogin {
 				e.preventDefault();
 				formStylesReset();
 				formContentReset();	
-				formStateReset();
+				// formStateReset(); needs import
 				this.close();
 				return;
 			}
@@ -509,7 +509,7 @@ class PopupLogin {
 				e.preventDefault();
 				formStylesReset();
 				formContentReset();	
-				formStateReset();
+				// formStateReset(); needs import
 				this.close();
 				return;
 			}
