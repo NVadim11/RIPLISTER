@@ -807,6 +807,16 @@
             document.getElementById("popupAuthForm__loginForm").reset();
             document.getElementById("popupAuthForm__registerForm").reset();
         }
+        function formStateReset() {
+            if (passRecoveryForm) passRecoveryForm.style.display = "none";
+            if (successMsg) successMsg.style.display = "none";
+            if (successRegMsg) successRegMsg.style.display = "none";
+            if (passRecoveryMsg) passRecoveryMsg.style.display = "none";
+            loginTitle.classList.remove("notActiveForm");
+            registerTitle.classList.add("notActiveForm");
+            loginFormContent.style.display = "flex";
+            registerFormContent.style.display = "none";
+        }
         function registerToggler() {
             loginTitle.classList.add("notActiveForm");
             registerTitle.classList.remove("notActiveForm");
@@ -1260,6 +1270,7 @@
                         e.preventDefault();
                         formStylesReset();
                         formContentReset();
+                        formStateReset();
                         this.close();
                         return;
                     }
@@ -1269,6 +1280,7 @@
                         e.preventDefault();
                         formStylesReset();
                         formContentReset();
+                        formStateReset();
                         this.close();
                         return;
                     }

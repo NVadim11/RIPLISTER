@@ -80,7 +80,7 @@ function successRegToggler() {
     invalidUser.style.display = "none";
     formContent.style.display = "none";
     successRegMsg.style.display = "flex";
-    };
+};
 function passRecoverySentToggler() {
 invalidInformation.style.display = "none";
 passRecoveryForm.style.display = "none";
