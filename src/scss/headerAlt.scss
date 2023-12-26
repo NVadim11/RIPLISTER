@@ -1,5 +1,4 @@
 .headerAlt {
-	padding: 0 0.5rem;
 	background-color: transparent;
 	height: 4.75rem;
 	z-index: 9;
@@ -7,10 +6,22 @@
 	justify-content: space-between;
 	align-items: center;
 	@media screen and (min-width:$mobile) {
-		padding: 0 2.125rem;
+		height: 6rem;
+	}
+	@media screen and (min-width:$tablet) {
+		height: 7.875rem;
+	}
+	@media screen and (min-width:$pc) {
+		height: 6.625rem;
 	}
 	@media screen and (min-width:$full) {
-		padding-top: 3.4375rem;
+		height: 11.125rem;
+	}
+	&__container {
+		width: 100%;
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
 	}
 	&__logo {
 		display: flex;

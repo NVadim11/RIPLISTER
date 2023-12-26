@@ -7,10 +7,22 @@
 	justify-content: space-between;
 	align-items: center;
 	@media screen and (min-width:$mobile) {
-		padding: 0 2.125rem;
+		height: 6rem;
+	}
+	@media screen and (min-width:$tablet) {
+		height: 7.875rem;
+	}
+	@media screen and (min-width:$pc) {
+		height: 6.625rem;
 	}
 	@media screen and (min-width:$full) {
-		padding-top: 3.4375rem;
+		height: 11.125rem;
+	}
+	&__container {
+		width: 100%;
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
 	}
 	&__logo {
 		display: flex;
@@ -35,7 +47,10 @@
 		}
 		ul {
 			display: flex;
-			gap: 1.5625rem;
+			gap: 25px;
+			@media screen and (min-width:$tablet) {
+				gap: 0.625rem;
+			}
 		}
 		li {
 
@@ -67,9 +82,35 @@
 		font-weight: 600;
 		line-height: normal;
 		border-radius: 1.875rem;
+		@media screen and (min-width:$tablet) {
+			padding: 0.9375rem;
+			border-radius: 1.25rem;
+		}
+		@media screen and (min-width:$pc) {
+			padding: 1.4375rem 2.8125rem 1.4375rem 5.25rem;
+			border-radius: 1.875rem;
+		}
+		span {
+			@media screen and (min-width:$tablet) {
+				display: none;
+			}
+			@media screen and (min-width:$pc) {
+				display: flex;
+			}
+		}
 		svg {
 			position: absolute;
 			left: 47px; 
+			@media screen and (min-width:$tablet) {
+				position: relative;
+				left: 0;
+				width: 1.0625rem;
+				height: 1.0625rem;
+			}
+			@media screen and (min-width:$pc) {
+				position: absolute;
+				left: 47px;
+			}
 		}	
 	}
 	&__searchBtn:hover {
