@@ -9,13 +9,46 @@ const personalsWrapper = document.querySelector(".profile__personals-wrapper");
 const closeEditBtn = document.querySelector(".personalsEdit__button-close");
 const saveBtn = document.querySelector(".personalsEdit__button-save");
 
-const passInput = document.querySelector(".personalsEdit__input");
-const showPass = document.querySelector(".personalsEdit__showPass");
-const hidePass = document.querySelector(".personalsEdit__hidePass");
+// const passInput = document.querySelector(".personalsEdit__input");
+const currentPassword = document.getElementById("personalsEdit__currentPass");
+const newPassword = document.getElementById("personalsEdit__newPass");
+const repreatPassword = document.getElementById("personalsEdit__repeatPass");
 
+const showPass = document.querySelector(".personalsEdit__showPass");
+const showNewPass = document.querySelector(".personalsEdit__showNewPass");
+const showRepeatPass = document.querySelector(".personalsEdit__showRepeatPass");
 
 // show hide password
+function toggleDisplaySVG(elementID) {
+    (function(style) {
+        style.display = style.display === 'none' ? '' : 'none';
+    })
+    (document.getElementById(elementID).style);
+    };
 
+if (showPass) {
+    showPass.addEventListener("click", function (e) {
+        const type = currentPassword.getAttribute("type") === "password" ? "text" : "password";
+        currentPassword.setAttribute("type", type);
+        toggleDisplaySVG("passHiddenSVG");
+    });
+};
+
+if (showNewPass) {
+    showNewPass.addEventListener("click", function (e) {
+        const type = newPassword.getAttribute("type") === "password" ? "text" : "password";
+        newPassword.setAttribute("type", type);
+        toggleDisplaySVG("newPassHiddenSVG");
+    });
+};
+
+if (showRepeatPass) {
+    showRepeatPass.addEventListener("click", function (e) {
+        const type = repreatPassword.getAttribute("type") === "password" ? "text" : "password";
+        repreatPassword.setAttribute("type", type);
+        toggleDisplaySVG("repeatPassHiddenSVG");
+    });
+};
 
 // show hide state
 if (editBtn) {
@@ -31,14 +64,6 @@ if (closeEditBtn) {
         personalsWrapper.classList.remove("_hide");
     })
 }
-
-// if (saveBtn) {
-//     saveBtn.addEventListener("click", function (e) {
-//         e.preventDefault();
-//         personalsEditWrapper.classList.remove("_active");
-//         personalsWrapper.classList.remove("_hide");
-//     })
-// }
 
 // form validate
 

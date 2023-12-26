@@ -713,7 +713,7 @@
 			margin-right: 0.625rem;
 		}
 	}
-	&__showPass {
+	&__showPass, &__showNewPass, &__showRepeatPass {
 		position: absolute;
 		z-index: 1;
 		right: 0;
@@ -721,15 +721,8 @@
 		top: 1.4375rem;
 		svg {
 			z-index: 1;
+			height: 1.4375rem;
 		}
-	}
-	&__hidePass {
-		display: none;
-		position: absolute;
-		z-index: 1;
-		right: 0;
-		right: 3.75rem;
-		top: 1.4375rem;
 	}
 	&__tips {
 		margin: 1.25rem 0 0 0;
