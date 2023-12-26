@@ -344,57 +344,57 @@
 													</div>
 												</div>
 											</div>
-											<form id="personalsEdit__form" class="personalsEdit__form">
+											<form novalidate id="personalsEdit__form" class="personalsEdit__form">
 												<div class="personalsEdit__input-group">
 													<div class="personalsEdit__input-fields">
 														<div class="personalsEdit__input-field">
-															<label for="nick">Ваш Нікнейм:
+															<label minlength="2" for="Nickname">Ваш Нікнейм:
 																<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5" fill="none">
 																	<path d="M0 2.35577L0.347958 1.21795C1.14977 1.51709 1.73222 1.77618 2.09531 1.99519C1.9995 1.02831 1.94907 0.363248 1.94402 0H3.04085C3.02572 0.528846 2.96773 1.19124 2.86687 1.98718C3.38628 1.7094 3.98134 1.45299 4.65204 1.21795L5 2.35577C4.35956 2.58013 3.73172 2.7297 3.11649 2.80449C3.4241 3.08761 3.85779 3.59241 4.41755 4.31891L3.50983 5C3.21735 4.57799 2.87191 4.00374 2.47353 3.27724C2.10035 4.03045 1.77257 4.6047 1.49017 5L0.597579 4.31891C1.18255 3.55502 1.60111 3.05021 1.85325 2.80449C1.20272 2.67094 0.584972 2.52137 0 2.35577Z" fill="#7D7D7D" />
 																</svg>
 															</label>
-															<input id="personalsEdit__nickname" class="personalsEdit__input" type="text">
+															<input required minlength="2" id="personalsEdit__nickname" class="personalsEdit__input" type="text">
 														</div>
 													</div>
 													<div class="personalsEdit__input-fields">
 														<div class="personalsEdit__input-field">
-															<label for="nick">Ім'я:
+															<label for="First name">Ім'я:
 															</label>
-															<input id="personalsEdit__name" class="personalsEdit__input" type="text">
+															<input minlength="2" id="personalsEdit__name" class="personalsEdit__input" type="text">
 														</div>
 														<div class="personalsEdit__input-field">
-															<label for="nick">Email:
+															<label for="Email">Email:
 																<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5" fill="none">
 																	<path d="M0 2.35577L0.347958 1.21795C1.14977 1.51709 1.73222 1.77618 2.09531 1.99519C1.9995 1.02831 1.94907 0.363248 1.94402 0H3.04085C3.02572 0.528846 2.96773 1.19124 2.86687 1.98718C3.38628 1.7094 3.98134 1.45299 4.65204 1.21795L5 2.35577C4.35956 2.58013 3.73172 2.7297 3.11649 2.80449C3.4241 3.08761 3.85779 3.59241 4.41755 4.31891L3.50983 5C3.21735 4.57799 2.87191 4.00374 2.47353 3.27724C2.10035 4.03045 1.77257 4.6047 1.49017 5L0.597579 4.31891C1.18255 3.55502 1.60111 3.05021 1.85325 2.80449C1.20272 2.67094 0.584972 2.52137 0 2.35577Z" fill="#7D7D7D" />
 																</svg>
 															</label>
-															<input id="personalsEdit__email" class="personalsEdit__input" type="text">
+															<input required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" id="personalsEdit__email" class="personalsEdit__input" type="text">
 														</div>
 													</div>
 													<div class="personalsEdit__input-fields">
 														<div class="personalsEdit__input-field">
-															<label for="nick">Фамілія:
+															<label for="Last name">Фамілія:
 															</label>
-															<input id="personalsEdit__surname" class="personalsEdit__input" type="text">
+															<input minlength="2" id="personalsEdit__surname" class="personalsEdit__input" type="text">
 														</div>
 														<div class="personalsEdit__input-field">
-															<label for="nick">Телефон:
+															<label for="Phone number">Телефон:
 															</label>
-															<input class="personalsEdit__phone" class="personalsEdit__input" type="text">
-														</div>
-													</div>
-													<div class="personalsEdit__input-fields">
-														<div class="personalsEdit__input-field">
-															<label for="nick">Країна:
-															</label>
-															<input class="personalsEdit__country" class="personalsEdit__input" type="text">
+															<input pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" id="personalsEdit__phone" class="personalsEdit__input" type="text">
 														</div>
 													</div>
 													<div class="personalsEdit__input-fields">
 														<div class="personalsEdit__input-field">
-															<label for="nick">Місто:
+															<label for="Country">Країна:
 															</label>
-															<input id="personalsEdit__city" class="personalsEdit__input" type="text">
+															<input minlength="2" id="personalsEdit__country" class="personalsEdit__input" type="text">
+														</div>
+													</div>
+													<div class="personalsEdit__input-fields">
+														<div class="personalsEdit__input-field">
+															<label for="City">Місто:
+															</label>
+															<input minlength="2" id="personalsEdit__city" class="personalsEdit__input" type="text">
 														</div>
 													</div>
 												</div>
@@ -410,22 +410,16 @@
 													</div>
 													<div class="personalsEdit__input-fields">
 														<div class="personalsEdit__input-field">
-															<label for="nick">Instagram:
-																<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5" fill="none">
-																	<path d="M0 2.35577L0.347958 1.21795C1.14977 1.51709 1.73222 1.77618 2.09531 1.99519C1.9995 1.02831 1.94907 0.363248 1.94402 0H3.04085C3.02572 0.528846 2.96773 1.19124 2.86687 1.98718C3.38628 1.7094 3.98134 1.45299 4.65204 1.21795L5 2.35577C4.35956 2.58013 3.73172 2.7297 3.11649 2.80449C3.4241 3.08761 3.85779 3.59241 4.41755 4.31891L3.50983 5C3.21735 4.57799 2.87191 4.00374 2.47353 3.27724C2.10035 4.03045 1.77257 4.6047 1.49017 5L0.597579 4.31891C1.18255 3.55502 1.60111 3.05021 1.85325 2.80449C1.20272 2.67094 0.584972 2.52137 0 2.35577Z" fill="#7D7D7D" />
-																</svg>
+															<label for="Socials">Instagram:
 															</label>
-															<input id="personalsEdit__instagram" class="personalsEdit__input" type="text">
+															<input minlength="2" id="personalsEdit__instagram" class="personalsEdit__input" type="text">
 														</div>
 													</div>
 													<div class="personalsEdit__input-fields">
 														<div class="personalsEdit__input-field">
-															<label for="nick">Facebook:
-																<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5" fill="none">
-																	<path d="M0 2.35577L0.347958 1.21795C1.14977 1.51709 1.73222 1.77618 2.09531 1.99519C1.9995 1.02831 1.94907 0.363248 1.94402 0H3.04085C3.02572 0.528846 2.96773 1.19124 2.86687 1.98718C3.38628 1.7094 3.98134 1.45299 4.65204 1.21795L5 2.35577C4.35956 2.58013 3.73172 2.7297 3.11649 2.80449C3.4241 3.08761 3.85779 3.59241 4.41755 4.31891L3.50983 5C3.21735 4.57799 2.87191 4.00374 2.47353 3.27724C2.10035 4.03045 1.77257 4.6047 1.49017 5L0.597579 4.31891C1.18255 3.55502 1.60111 3.05021 1.85325 2.80449C1.20272 2.67094 0.584972 2.52137 0 2.35577Z" fill="#7D7D7D" />
-																</svg>
+															<label for="Socials">Facebook:
 															</label>
-															<input id="personalsEdit__facebook" class="personalsEdit__input" type="text">
+															<input minlength="2" id="personalsEdit__facebook" class="personalsEdit__input" type="text">
 														</div>
 													</div>
 												</div>
@@ -441,9 +435,10 @@
 													</div>
 													<div class="personalsEdit__input-fields">
 														<div class="personalsEdit__input-field">
-															<label id="personalsEdit__currentPass" class="personalsEdit__input" for="nick">Текущий пароль:
+															<label for="Password">Текущий
+																пароль:
 															</label>
-															<input type="password">
+															<input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" type="password" id="personalsEdit__currentPass" class="personalsEdit__input">
 															<div class="personalsEdit__showPass">
 																<svg xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23" fill="none">
 																	<path fill-rule="evenodd" clip-rule="evenodd" d="M11.7095 12.8883C10.7134 11.3298 11.2606 9.45086 12.2707 8.4428C13.284 7.4317 15.1534 6.88451 16.7 7.86523L11.7095 12.8883ZM18.0521 6.54389C16.8357 5.84466 15.9486 5.36952 14.2613 5.55241C12.8245 5.70813 11.6647 6.42881 10.961 7.13309C10.2506 7.84394 9.53959 8.99136 9.38137 10.4283C9.18805 12.1842 9.70406 13.0098 10.3605 14.2432L8.03971 16.5577C7.199 16.1115 6.2262 15.3912 5.52187 14.8041L4.77853 14.1121C4.05171 13.4446 2.50531 11.8014 2.16665 11.039C2.32253 10.647 3.26284 9.53464 3.54043 9.20043C3.67317 9.04048 3.79678 8.93327 3.92495 8.78125C4.06013 8.62102 4.16223 8.51099 4.30822 8.35897C5.45016 7.16998 7.43655 5.67237 9.11421 4.9412C12.6732 3.39035 16.1829 3.22176 19.9203 4.6509L18.0521 6.54394V6.54389ZM21.3656 3.22328L19.2914 2.47374C16.8537 1.76474 14.266 1.64205 11.773 2.1398C9.36306 2.62093 6.8994 3.77765 5.00744 5.2639C3.35363 6.56307 1.4063 8.58005 0.32707 10.4747C0.142715 10.7984 0.0952266 11.1659 0.286808 11.5272C0.435248 11.807 0.66421 12.1421 0.847587 12.4055C1.05873 12.7086 1.22548 12.9211 1.43178 13.2014C1.62184 13.4596 1.86983 13.7785 2.06945 14.0035L3.79004 15.7882C3.92544 15.915 4.03139 15.9739 4.16869 16.102C4.43634 16.3517 4.66509 16.5404 4.95219 16.7546C5.21348 16.9497 5.47634 17.1636 5.78099 17.3632C5.9785 17.4927 6.48369 17.7826 6.63447 17.9403C6.32232 18.3849 4.15766 20.3102 3.92772 20.7495C3.52885 21.5118 4.46177 22.7603 5.60088 21.6144L24.9238 2.28971C25.1663 2.04722 25.6489 1.62766 25.8053 1.32768C26.2049 0.56119 25.2674 -0.68197 24.1336 0.464311C23.4128 1.19298 21.9811 2.68461 21.3656 3.22328H21.3656Z" fill="#E55738" />
@@ -461,9 +456,9 @@
 													</div>
 													<div class="personalsEdit__input-fields">
 														<div class="personalsEdit__input-field">
-															<label for="nick">Новый пароль:
+															<label for="New password">Новый пароль:
 															</label>
-															<input id="personalsEdit__newPass" class="personalsEdit__input" type="password">
+															<input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" id="personalsEdit__newPass" class="personalsEdit__input" type="password">
 															<div class="personalsEdit__showPass">
 																<svg xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23" fill="none">
 																	<path fill-rule="evenodd" clip-rule="evenodd" d="M11.7095 12.8883C10.7134 11.3298 11.2606 9.45086 12.2707 8.4428C13.284 7.4317 15.1534 6.88451 16.7 7.86523L11.7095 12.8883ZM18.0521 6.54389C16.8357 5.84466 15.9486 5.36952 14.2613 5.55241C12.8245 5.70813 11.6647 6.42881 10.961 7.13309C10.2506 7.84394 9.53959 8.99136 9.38137 10.4283C9.18805 12.1842 9.70406 13.0098 10.3605 14.2432L8.03971 16.5577C7.199 16.1115 6.2262 15.3912 5.52187 14.8041L4.77853 14.1121C4.05171 13.4446 2.50531 11.8014 2.16665 11.039C2.32253 10.647 3.26284 9.53464 3.54043 9.20043C3.67317 9.04048 3.79678 8.93327 3.92495 8.78125C4.06013 8.62102 4.16223 8.51099 4.30822 8.35897C5.45016 7.16998 7.43655 5.67237 9.11421 4.9412C12.6732 3.39035 16.1829 3.22176 19.9203 4.6509L18.0521 6.54394V6.54389ZM21.3656 3.22328L19.2914 2.47374C16.8537 1.76474 14.266 1.64205 11.773 2.1398C9.36306 2.62093 6.8994 3.77765 5.00744 5.2639C3.35363 6.56307 1.4063 8.58005 0.32707 10.4747C0.142715 10.7984 0.0952266 11.1659 0.286808 11.5272C0.435248 11.807 0.66421 12.1421 0.847587 12.4055C1.05873 12.7086 1.22548 12.9211 1.43178 13.2014C1.62184 13.4596 1.86983 13.7785 2.06945 14.0035L3.79004 15.7882C3.92544 15.915 4.03139 15.9739 4.16869 16.102C4.43634 16.3517 4.66509 16.5404 4.95219 16.7546C5.21348 16.9497 5.47634 17.1636 5.78099 17.3632C5.9785 17.4927 6.48369 17.7826 6.63447 17.9403C6.32232 18.3849 4.15766 20.3102 3.92772 20.7495C3.52885 21.5118 4.46177 22.7603 5.60088 21.6144L24.9238 2.28971C25.1663 2.04722 25.6489 1.62766 25.8053 1.32768C26.2049 0.56119 25.2674 -0.68197 24.1336 0.464311C23.4128 1.19298 21.9811 2.68461 21.3656 3.22328H21.3656Z" fill="#E55738" />
@@ -481,9 +476,9 @@
 													</div>
 													<div class="personalsEdit__input-fields">
 														<div class="personalsEdit__input-field">
-															<label for="nick">Повторите новый пароль:
+															<label for="New password repeat">Повторите новый пароль:
 															</label>
-															<input id="personalsEdit__repeatPass" class="personalsEdit__input" type="password">
+															<input pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" id="personalsEdit__repeatPass" class="personalsEdit__input" type="password">
 															<div class="personalsEdit__showPass">
 																<svg xmlns="http://www.w3.org/2000/svg" width="30" height="23" viewBox="0 0 30 23" fill="none">
 																	<path fill-rule="evenodd" clip-rule="evenodd" d="M11.7095 12.8883C10.7134 11.3298 11.2606 9.45086 12.2707 8.4428C13.284 7.4317 15.1534 6.88451 16.7 7.86523L11.7095 12.8883ZM18.0521 6.54389C16.8357 5.84466 15.9486 5.36952 14.2613 5.55241C12.8245 5.70813 11.6647 6.42881 10.961 7.13309C10.2506 7.84394 9.53959 8.99136 9.38137 10.4283C9.18805 12.1842 9.70406 13.0098 10.3605 14.2432L8.03971 16.5577C7.199 16.1115 6.2262 15.3912 5.52187 14.8041L4.77853 14.1121C4.05171 13.4446 2.50531 11.8014 2.16665 11.039C2.32253 10.647 3.26284 9.53464 3.54043 9.20043C3.67317 9.04048 3.79678 8.93327 3.92495 8.78125C4.06013 8.62102 4.16223 8.51099 4.30822 8.35897C5.45016 7.16998 7.43655 5.67237 9.11421 4.9412C12.6732 3.39035 16.1829 3.22176 19.9203 4.6509L18.0521 6.54394V6.54389ZM21.3656 3.22328L19.2914 2.47374C16.8537 1.76474 14.266 1.64205 11.773 2.1398C9.36306 2.62093 6.8994 3.77765 5.00744 5.2639C3.35363 6.56307 1.4063 8.58005 0.32707 10.4747C0.142715 10.7984 0.0952266 11.1659 0.286808 11.5272C0.435248 11.807 0.66421 12.1421 0.847587 12.4055C1.05873 12.7086 1.22548 12.9211 1.43178 13.2014C1.62184 13.4596 1.86983 13.7785 2.06945 14.0035L3.79004 15.7882C3.92544 15.915 4.03139 15.9739 4.16869 16.102C4.43634 16.3517 4.66509 16.5404 4.95219 16.7546C5.21348 16.9497 5.47634 17.1636 5.78099 17.3632C5.9785 17.4927 6.48369 17.7826 6.63447 17.9403C6.32232 18.3849 4.15766 20.3102 3.92772 20.7495C3.52885 21.5118 4.46177 22.7603 5.60088 21.6144L24.9238 2.28971C25.1663 2.04722 25.6489 1.62766 25.8053 1.32768C26.2049 0.56119 25.2674 -0.68197 24.1336 0.464311C23.4128 1.19298 21.9811 2.68461 21.3656 3.22328H21.3656Z" fill="#E55738" />
@@ -533,7 +528,7 @@
 															</button>
 														</div>
 														<div class="personalsEdit__button-group">
-															<button class="personalsEdit__button-delete">
+															<button type="button" class="personalsEdit__button-delete">
 																<svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 15 18" fill="none">
 																	<path d="M13.618 5.09766C13.9901 5.09766 14.2481 4.72145 14.1086 4.37646C13.6131 3.15158 12.4114 2.28516 11.011 2.28516H10.3636C10.1222 1.00993 9.00415 0 7.63601 0H6.51101C5.14375 0 4.02494 1.00927 3.78338 2.28516H3.13601C1.7356 2.28516 0.533885 3.15158 0.0384284 4.37646C-0.101107 4.72145 0.156905 5.09766 0.529034 5.09766H13.618ZM6.51101 1.05469H7.63601C8.40593 1.05469 9.05949 1.57268 9.27949 2.28516H4.86753C5.08753 1.57268 5.74109 1.05469 6.51101 1.05469Z" fill="#3C88F9" />
 																	<path d="M1.97343 16.5342C2.03211 17.3584 2.72528 18.0039 3.55145 18.0039H10.587C11.4131 18.0039 12.1063 17.3584 12.165 16.5342L12.9041 6.15625H1.23438L1.97343 16.5342ZM8.5113 8.97757C8.52585 8.68669 8.77388 8.46236 9.0643 8.47723C9.35519 8.49179 9.5792 8.73939 9.56465 9.03024L9.2834 14.6552C9.2693 14.9372 9.03628 15.1562 8.75714 15.1562C8.4535 15.1562 8.21503 14.9023 8.23001 14.6026L8.5113 8.97757ZM5.07414 8.47723C5.36464 8.46264 5.61263 8.68673 5.62715 8.97757L5.9084 14.6026C5.92338 14.9025 5.68473 15.1562 5.38127 15.1562C5.10212 15.1562 4.86911 14.9372 4.85501 14.6552L4.57376 9.03024C4.55924 8.73939 4.78326 8.49179 5.07414 8.47723Z" fill="#3C88F9" />
@@ -827,14 +822,14 @@
 						</div>
 						<form novalidate id="popupAuthForm__loginForm" class="popupAuthForm__loginForm">
 							<div class="popupAuthForm__input-group">
-								<input required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" id="popupAuthForm__loginEmail" data-no-focus-classes placeholder="Email" class="popupAuthForm__input">
+								<input required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" id="popupAuthForm__email" data-no-focus-classes placeholder="Email" class="popupAuthForm__input">
 								<svg class="inputError" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 									<rect width="24" height="24" rx="12" fill="#FF0000" />
 									<path d="M12.1867 14.5971H11.1467C10.8267 12.3197 10.6667 10.4308 10.6667 8.93048V6H12.6667V8.93048C12.6667 10.4308 12.5067 12.3197 12.1867 14.5971ZM10.7067 17.3333V15.7305H12.6467V17.3333H10.7067Z" fill="white" />
 								</svg>
 							</div>
 							<div class="popupAuthForm__input-group">
-								<input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" type="password" id="popupAuthForm__loginPassword" data-no-focus-classes placeholder="Password" class="popupAuthForm__input">
+								<input required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" type="password" id="popupAuthForm__password" data-no-focus-classes placeholder="Password" class="popupAuthForm__input">
 								<svg class="inputError" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 									<rect width="24" height="24" rx="12" fill="#FF0000" />
 									<path d="M12.1867 14.5971H11.1467C10.8267 12.3197 10.6667 10.4308 10.6667 8.93048V6H12.6667V8.93048C12.6667 10.4308 12.5067 12.3197 12.1867 14.5971ZM10.7067 17.3333V15.7305H12.6467V17.3333H10.7067Z" fill="white" />

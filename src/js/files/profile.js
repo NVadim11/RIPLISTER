@@ -1,7 +1,8 @@
-// Підключення функціоналу "Чертоги Фрілансера"
-import { menuClose, menuOpen } from "./functions.js"
+// import { menuClose, menuOpen } from "./functions.js"
 
 //Constants
+const personalsEditForm = document.getElementById("personalsEdit__form");
+
 const editBtn = document.querySelector(".profile__editBox");
 const personalsEditWrapper = document.querySelector(".profile__personals-editWrapper");
 const personalsWrapper = document.querySelector(".profile__personals-wrapper");
@@ -31,92 +32,88 @@ if (closeEditBtn) {
     })
 }
 
-if (saveBtn) {
-    saveBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        personalsEditWrapper.classList.remove("_active");
-        personalsWrapper.classList.remove("_hide");
-    })
-}
+// if (saveBtn) {
+//     saveBtn.addEventListener("click", function (e) {
+//         e.preventDefault();
+//         personalsEditWrapper.classList.remove("_active");
+//         personalsWrapper.classList.remove("_hide");
+//     })
+// }
 
 // form validate
 
-// function validateForm (formSelector, callback) {
-//     const formElement = document.querySelector(formSelector);
+function validateForm (formSelector, callback) {
+    const formElement = document.querySelector(formSelector);
 
-//     const validationOptions = [
-//         {
-//             attribute: "minlength",
-//             isValid: input => input.value && input.value.length >= parseInt(input.minLength, 10)        
-//             },
-//         {
-//             attribute: "required",
-//             isValid: input => input.value.trim() !== "",
-//             },
-//         {
-//             attribute: "pattern",
-//             isValid: input => {
-//                 const patternRegex = new RegExp(input.pattern);
-//                 return patternRegex.test(input.value);
-//             },
-//         }
-//     ];
+    const validationOptions = [
+        {
+            attribute: "minlength",
+            isValid: input => input.value && input.value.length >= parseInt(input.minLength, 10)        
+            },
+        {
+            attribute: "required",
+            isValid: input => input.value.trim() !== "",
+            },
+        {
+            attribute: "pattern",
+            isValid: input => {
+                const patternRegex = new RegExp(input.pattern);
+                return patternRegex.test(input.value);
+            },
+        }
+    ];
 
-//     const validateSingleFormGroup = (formGroup) => {
-//         const input = formGroup.querySelector("input")
-//         const errorIcon = formGroup.querySelector(".inputError")
+    const validateSingleFormGroup = (formGroup) => {
+        const input = formGroup.querySelector("input")
+        // const errorIcon = formGroup.querySelector(".inputError")
 
-//         let formGroupError = false;
-//         for(const option of validationOptions) {
-//             if (input) {
-//                 if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
-//                     input.style.border = "0.125rem solid #F00";    
-//                     errorIcon.style.display = "block";  
-//                     formGroupError = true;
-//                 }
-//                 if (!formGroupError) {
-//                     input.style.border = "0.0625rem solid #EC6041";
-//                     errorIcon.style.display = "none"; 
-//                 }
-//             }              
-//         }
-//         return !formGroupError;
-//     };
+        let formGroupError = false;
+        for(const option of validationOptions) {
+            if (input) {
+                if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
+                    input.style.border = "0.125rem solid #F00";    
+                    // errorIcon.style.display = "block";  
+                    formGroupError = true;
+                }
+                if (!formGroupError) {
+                    input.style.border = "0.0625rem solid #AAA";
+                    // errorIcon.style.display = "none"; 
+                }
+            }              
+        }
+        return !formGroupError;
+    };
 
-//     Array.from(formElement.elements).forEach(element => {
-//         element.addEventListener("blur", event => {
-//             validateSingleFormGroup(event.srcElement.parentElement);
-//         })
-//     })
+    Array.from(formElement.elements).forEach(element => {
+        element.addEventListener("blur", event => {
+            validateSingleFormGroup(event.srcElement.parentElement);
+        })
+    })
 
-//     const validateAllFormGroups = formToValidate => {
-//     const formGroups = Array.from(formToValidate.querySelectorAll(".popupAuthForm__input-group"))
+    const validateAllFormGroups = formToValidate => {
+    const formGroups = Array.from(formToValidate.querySelectorAll(".personalsEdit__input-field"))
 
-//     return formGroups.every(formGroup => validateSingleFormGroup(formGroup));
-//     };    
+    return formGroups.every(formGroup => validateSingleFormGroup(formGroup));
+    };    
 
-//     formElement.addEventListener("submit", event => {      
-//         event.preventDefault();  
-//         const formValid = validateAllFormGroups(formElement)
-//         if (formValid) {  
-//         invalidInformation.style.display = "none";
-//         invalidUser.style.display = "none";    
-//         callback(formElement);
-//         event.target.reset();
-//         } else {
-//             invalidInformation.style.display = "flex";
-//         }
-//     })
-// };
+    if (saveBtn)
+    saveBtn.addEventListener("click", event => {
+        event.preventDefault();  
+        const formValid = validateAllFormGroups(formElement)
+        if (formValid) {  
+            callback(formElement);
+        }
+})
+};
 
-// function validateForm (formSelector) {
-//     const formElement = document.querySelector(formSelector);
+function savePersonalData (formElement) {
+    const formObject = Array.from(formElement.elements)
+    .filter(element => element.type !=="submit" && element.type !=="label")
+    .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
+    console.log(formObject);
+    // Submitting to API
+};
 
-//     formElement.setAttribute('novalidate', '');
-
-//     formElement.addEventListener('submit', (event) => {
-//         event.preventDefault();
-//     });
-// }
-
-// validateForm('#personalsEdit__form');
+if(personalsEditForm) {
+    validateForm("#personalsEdit__form", savePersonalData);
+};
