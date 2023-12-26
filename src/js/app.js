@@ -250,5 +250,6 @@ import './files/scroll/lazyload.js'
 import "./files/auth.js"
 import "./files/languages.js"
 import "./files/script.js"
+import "./files/profile.js"
 import "./files/translations.js"
 //============================================================================================================================================================================================================================================

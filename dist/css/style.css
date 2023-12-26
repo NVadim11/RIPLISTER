@@ -4819,6 +4819,7 @@ label {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 1rem;
+  height: 100%;
 }
 
 .profile__navigation {
@@ -4842,21 +4843,15 @@ label {
   display: flex;
 }
 
-.profile__navigation-item:last-child {
-  border-bottom-left-radius: 1.875rem;
-  border-bottom-right-radius: 1.875rem;
-  border-left: 1px solid var(--orange-color);
-  border-right: 1px solid var(--orange-color);
-  width: 22.5rem;
-}
-
 .profile__navigation-item:nth-child(7) {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border: none;
+  border-bottom: 1px solid var(--orange-color);
 }
 
 .profile__navigation-text {
+  display: none;
+}
+
+.profile__personals-editWrapper {
   display: none;
 }
 
@@ -4962,6 +4957,7 @@ label {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 1.875rem 0 0 0;
 }
 
 .personals__editBtn {
@@ -5173,6 +5169,10 @@ label {
 
 .personals__passChangeBtn svg {
   margin: 0 0.3125rem 0 0;
+  width: 10.515px;
+  height: 14px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .personals__deleteProfileBtn {
@@ -5192,6 +5192,341 @@ label {
 
 .personals__deleteProfileBtn svg {
   margin: 0 0.3125rem 0 0;
+  width: 9.431px;
+  height: 12px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.personalsEdit__editBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1.875rem 0 0 0;
+}
+
+.personalsEdit__editBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #3C88F9;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.personalsEdit__editBtn svg {
+  margin: 0 0.625rem 0 0;
+}
+
+.personalsEdit__uploadBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.personalsEdit__photoBox {
+  margin: 1.5625rem 0 0 0;
+  border-radius: 1.875rem;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15.625rem;
+  height: 15.625rem;
+  border-radius: 30px;
+  background: #FFF8F6;
+}
+
+.personalsEdit__photoBox img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.personalsEdit__changeBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15.625rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 1.5625rem 0 0 0;
+}
+
+.personalsEdit__changeBox label {
+  display: block;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #E55738;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.personalsEdit__changeBox label:hover {
+  text-decoration: none;
+}
+
+.personalsEdit__changeBox input {
+  display: none;
+}
+
+.personalsEdit__deleteBtn {
+  color: #3C88F9;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.3125rem;
+}
+
+.personalsEdit__input-group {
+  margin-bottom: 4.0625rem;
+}
+
+.personalsEdit__input-group:first-child {
+  margin-top: 1.25rem;
+}
+
+.personalsEdit__input-title {
+  margin: 0 0 2.8125rem 0;
+}
+
+.personalsEdit__input-title svg {
+  margin: 0 1.25rem 0 0;
+}
+
+.personalsEdit__input-title h4 {
+  color: #E55738;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.personalsEdit__input-title .personals__lineOrange {
+  margin: 1.25rem 0 0 0;
+}
+
+.personalsEdit__input-fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.25rem;
+  margin: 0 0 2.5rem 0;
+}
+
+.personalsEdit__input-fields:last-child {
+  margin-bottom: 0;
+}
+
+.personalsEdit__input-field {
+  position: relative;
+}
+
+.personalsEdit__input-field label {
+  position: absolute;
+  color: #7D7D7D;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  z-index: 2;
+  top: -0.625rem;
+  margin-left: 1.5625rem;
+  background: var(--white-color);
+  padding: 0 0.5625rem;
+}
+
+.personalsEdit__input-field svg {
+  position: absolute;
+  top: 0;
+}
+
+.personalsEdit__input-field input {
+  position: relative;
+  width: 23.625rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 1.875rem;
+  border: 0.0625rem solid #AAA;
+  z-index: 1;
+  color: #000;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 1.25rem 1.5625rem;
+}
+
+.personalsEdit__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 3.4375rem 0 0 0;
+}
+
+.personalsEdit__button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.personalsEdit__button-close {
+  padding: 1rem;
+  border-radius: 30px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#64A2FF), to(#2A86DB));
+  background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);
+  color: var(--white-color);
+  padding: 1.25rem 2.8125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-right: 0.9375rem;
+}
+
+.personalsEdit__button-close svg {
+  margin-right: 0.625rem;
+}
+
+.personalsEdit__button-save {
+  padding: 1rem;
+  border-radius: 30px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
+  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+  color: var(--white-color);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.25rem 2.8125rem;
+}
+
+.personalsEdit__button-save svg {
+  margin-right: 0.625rem;
+}
+
+.personalsEdit__button-delete {
+  padding: 1rem;
+  color: #3C88F9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.personalsEdit__button-delete svg {
+  margin-right: 0.625rem;
+}
+
+.personalsEdit__showPass {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  right: 3.75rem;
+  top: 1.4375rem;
+}
+
+.personalsEdit__showPass svg {
+  z-index: 1;
+}
+
+.personalsEdit__hidePass {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  right: 3.75rem;
+  top: 1.4375rem;
+}
+
+.personalsEdit__tips {
+  margin: 1.25rem 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2.8125rem;
+}
+
+.personalsEdit__tip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #7D7D7D;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.personalsEdit__tip svg {
+  margin: 0 0.625rem 0.625rem 0;
+}
+
+.personalsEdit__tip:last-child {
+  color: #F00;
 }
 
 ._tab-active {
@@ -5214,6 +5549,20 @@ label {
 
 ._tab-active .profile__navigation-text {
   color: #E55738;
+}
+
+.profile__personals-editWrapper._active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profile__personals-wrapper._hide {
+  display: none;
 }
 
 .menu {
@@ -6092,12 +6441,51 @@ label {
     padding: 1.875rem 0 0 0;
   }
 
+  .personals__passChangeBtn svg {
+    width: 12.575px;
+    height: 16px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+
   .personals__passChangeBtn {
     font-size: 1.25rem;
     margin: 0;
   }
 
+  .personals__deleteProfileBtn svg {
+    width: 12.575px;
+    height: 16px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+
   .personals__deleteProfileBtn {
+    font-size: 1rem;
+  }
+
+  .personalsEdit__editBox {
+    display: none;
+  }
+
+  .personalsEdit__photoBox {
+    margin: 0;
+  }
+
+  .personalsEdit__changeBox {
+    margin: 1.875rem 0 0 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .personalsEdit__changeBox label {
+    font-size: 1rem;
+  }
+
+  .personalsEdit__deleteBtn {
+    margin: 0.9375rem 0 0 0;
     font-size: 1rem;
   }
 }
@@ -6345,6 +6733,8 @@ label {
         -ms-flex-pack: start;
             justify-content: flex-start;
     gap: 0;
+    border: 1px solid var(--orange-color);
+    border-radius: 1.875rem;
   }
 
   .profile__navigation {
@@ -6354,7 +6744,6 @@ label {
             flex-direction: column;
     border-top-right-radius: 1.875rem;
     border-top-left-radius: 1.875rem;
-    border: 1px solid var(--orange-color);
     gap: 0;
   }
 
@@ -6370,6 +6759,10 @@ label {
   .profile__navigation-item svg {
     width: 2rem;
     height: 2rem;
+  }
+
+  .profile__navigation-item:last-child {
+    border-bottom: none;
   }
 
   .profile__navigation-text {
@@ -6391,6 +6784,13 @@ label {
 
   .profile__tab-title {
     margin: 0;
+  }
+}
+
+@media screen and (min-width: 79.99875em) and (min-width: 89.99875em) {
+  .profile__navigation-item svg {
+    width: 2.625rem;
+    height: 2.625rem;
   }
 }
 
@@ -6439,6 +6839,72 @@ label {
   .mainRecent__slide_photo {
     height: 19.375rem;
     width: 15.25rem !important;
+  }
+
+  .profile__navigation-item {
+    padding: 2.5rem 0 2.5rem 2.5rem;
+  }
+
+  .profile__navigation-text {
+    margin: 0 0 0 1.25rem;
+  }
+
+  .profile__tab-title h4 {
+    font-size: 2.25rem;
+  }
+
+  .profile__editBox {
+    font-size: 1rem;
+  }
+
+  .personals__passChangeBtn svg {
+    width: 14.147px;
+    height: 18px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+
+  .personals__deleteProfileBtn svg {
+    width: 14.147px;
+    height: 18px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+
+  .personalsEdit {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 4.0625rem 0 0 0;
+  }
+
+  .personalsEdit__imageData {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 2.5rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .personalsEdit__uploadTips {
+    width: 15.625rem;
+    margin: 2.1875rem 0 0 0;
+  }
+
+  .personalsEdit__uploadTips p {
+    color: #7D7D7D;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    /* 25.2px */
+  }
+
+  .personalsEdit__form {
+    width: 100%;
   }
 }
 
@@ -7403,6 +7869,10 @@ label {
 
   .promo__socialsText {
     margin-top: 6.9375rem;
+    font-size: 1.25rem;
+  }
+
+  .profile__editBox {
     font-size: 1.25rem;
   }
 }

@@ -46,7 +46,7 @@ switch (currentPage) {
     case "profile":
         function profileLogic() {
             if (!localStorage.getItem("profilePictureInput")) {
-                profilePicture.setAttribute("src", "img/profile-placeholder.png")
+                profilePicture.setAttribute("src", "img/upload-image.svg")
         } else {        
                 profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
         }
@@ -57,7 +57,7 @@ switch (currentPage) {
         reader.addEventListener("load", () => {
             localStorage.setItem("profilePictureInput", reader.result)       
         if (!localStorage.getItem("profilePictureInput")) {
-            profilePicture.setAttribute("src", "img/profile-placeholder.png")
+            profilePicture.setAttribute("src", "img/upload-image.svg")
         } else {        
             profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
         }    
