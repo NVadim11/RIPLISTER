@@ -4,7 +4,7 @@
 // Сніппет (HTML): pl
 
 // Підключення функціоналу "Чортоги Фрілансера"
-import { formContentReset, formStylesReset } from "../files/auth.js"
+import { formContentReset, formStateReset, formStylesReset } from "../files/auth.js"
 import { FLS, bodyLock, bodyLockStatus, bodyUnlock } from "../files/functions.js"
 import { flsModules } from "../files/modules.js"
 
@@ -498,14 +498,7 @@ class PopupLogin {
 				e.preventDefault();
 				formStylesReset();
 				formContentReset();	
-				document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
-				document.querySelector(".popupAuthForm__successMsg").style.display = "none";
-				document.querySelector(".popupAuthForm__successRegMsg").style.display = "none";	
-				document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
-				document.getElementById("loginTitle").classList.remove("notActiveForm");
-				document.getElementById("registerTitle").classList.add("notActiveForm");
-				document.getElementById("loginFormContent").style.display = "flex";
-				document.getElementById("registerFormContent").style.display = "none";
+				formStateReset();
 				this.close();
 				return;
 			}
@@ -515,21 +508,13 @@ class PopupLogin {
 			if (this.options.closeEsc && e.which == 27 && e.code === 'Escape' && this.isOpen) {
 				e.preventDefault();
 				formStylesReset();
-				formContentReset();
-				document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
-				document.querySelector(".popupAuthForm__successMsg").style.display = "none";
-				document.querySelector(".popupAuthForm__successRegMsg").style.display = "none";	
-				document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
-				document.getElementById("loginTitle").classList.remove("notActiveForm");
-				document.getElementById("registerTitle").classList.add("notActiveForm");
-				document.getElementById("loginFormContent").style.display = "flex";
-				document.getElementById("registerFormContent").style.display = "none";
+				formContentReset();	
+				formStateReset();
 				this.close();
 				return;
 			}
 			if (this.options.focusCatch && e.which == 9 && this.isOpen) {
 				this._focusCatch(e);
-				// document.querySelector(".popupLoginForm__invalidUser").classList.remove("show_errorMsg");
 				return;
 			}
 		}.bind(this))

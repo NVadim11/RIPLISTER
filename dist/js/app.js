@@ -786,8 +786,8 @@
         const registerFormContent = document.getElementById("registerFormContent");
         const passwordRecovery = document.getElementById("passwordRecovery");
         const formContent = document.querySelector(".popupAuthForm__formContent");
-        const auth_invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
-        const auth_invalidUser = document.querySelector(".popupAuthForm__invalidUser");
+        const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
+        const invalidUser = document.querySelector(".popupAuthForm__invalidUser");
         const successMsg = document.querySelector(".popupAuthForm__successMsg");
         const successRegMsg = document.querySelector(".popupAuthForm__successRegMsg");
         const passRecoveryForm = document.querySelector(".popupAuthForm__passRecoveryForm");
@@ -796,16 +796,26 @@
         const inputErrorIcon = document.querySelectorAll(".inputError");
         console.log(accounts_namespaceObject.r);
         function formStylesReset() {
-            auth_invalidInformation.style.display = "none";
-            auth_invalidUser.style.display = "none";
+            invalidInformation.style.display = "none";
+            invalidUser.style.display = "none";
             inputItem.forEach((input => input.style.border = "0.0625rem solid #EC6041"));
             inputErrorIcon.forEach((icon => icon.style.display = "none"));
         }
         function formContentReset() {
-            document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
-            document.querySelector(".popupAuthForm__invalidUser").style.display = "none";
+            invalidInformation.style.display = "none";
+            invalidUser.style.display = "none";
             document.getElementById("popupAuthForm__loginForm").reset();
             document.getElementById("popupAuthForm__registerForm").reset();
+        }
+        function formStateReset() {
+            if (passRecoveryForm) passRecoveryForm.style.display = "none";
+            if (successMsg) successMsg.style.display = "none";
+            if (successRegMsg) successRegMsg.style.display = "none";
+            if (passRecoveryMsg) passRecoveryMsg.style.display = "none";
+            loginTitle.classList.remove("notActiveForm");
+            registerTitle.classList.add("notActiveForm");
+            loginFormContent.style.display = "flex";
+            registerFormContent.style.display = "none";
         }
         function registerToggler() {
             loginTitle.classList.add("notActiveForm");
@@ -824,25 +834,25 @@
             formContentReset();
         }
         function successToggler() {
-            auth_invalidInformation.style.display = "none";
-            auth_invalidUser.style.display = "none";
+            invalidInformation.style.display = "none";
+            invalidUser.style.display = "none";
             formContent.style.display = "none";
             successMsg.style.display = "flex";
         }
         function successRegToggler() {
-            auth_invalidInformation.style.display = "none";
-            auth_invalidUser.style.display = "none";
+            invalidInformation.style.display = "none";
+            invalidUser.style.display = "none";
             formContent.style.display = "none";
             successRegMsg.style.display = "flex";
         }
         function passRecoverySentToggler() {
-            auth_invalidInformation.style.display = "none";
+            invalidInformation.style.display = "none";
             passRecoveryForm.style.display = "none";
             passRecoveryMsg.style.display = "flex";
         }
         if (passwordRecovery) passwordRecovery.addEventListener("click", (() => {
-            auth_invalidInformation.style.display = "none";
-            auth_invalidUser.style.display = "none";
+            invalidInformation.style.display = "none";
+            invalidUser.style.display = "none";
             formContent.style.display = "none";
             passRecoveryForm.style.display = "flex";
         }));
@@ -897,11 +907,11 @@
                 event.preventDefault();
                 const formValid = validateAllFormGroups(formElement);
                 if (formValid) {
-                    auth_invalidInformation.style.display = "none";
-                    auth_invalidUser.style.display = "none";
+                    invalidInformation.style.display = "none";
+                    invalidUser.style.display = "none";
                     callback(formElement);
                     event.target.reset();
-                } else auth_invalidInformation.style.display = "flex";
+                } else invalidInformation.style.display = "flex";
             }));
         }
         function register(formElement) {
@@ -918,7 +928,7 @@
                 [element.id]: element.value
             })), {});
             let userFound = accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email && user.password === formObject.popupAuthForm__password));
-            if (!userFound) auth_invalidUser.style.display = "flex"; else if (formObject.popupAuthForm__email === "" || formObject.popupAuthForm__password === "") auth_invalidInformation.style.display = "flex"; else {
+            if (!userFound) invalidUser.style.display = "flex"; else if (formObject.popupAuthForm__email === "" || formObject.popupAuthForm__password === "") invalidInformation.style.display = "flex"; else {
                 successToggler();
                 console.log(userFound);
             }
@@ -928,7 +938,7 @@
                 ...accumulator,
                 [element.id]: element.value
             })), {});
-            if (formObject.popupAuthForm__email === "") auth_invalidInformation.style.display = "flex"; else {
+            if (formObject.popupAuthForm__email === "") invalidInformation.style.display = "flex"; else {
                 passRecoverySentToggler();
                 console.log(formObject);
             }
@@ -1260,14 +1270,7 @@
                         e.preventDefault();
                         formStylesReset();
                         formContentReset();
-                        document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
-                        document.querySelector(".popupAuthForm__successMsg").style.display = "none";
-                        document.querySelector(".popupAuthForm__successRegMsg").style.display = "none";
-                        document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
-                        document.getElementById("loginTitle").classList.remove("notActiveForm");
-                        document.getElementById("registerTitle").classList.add("notActiveForm");
-                        document.getElementById("loginFormContent").style.display = "flex";
-                        document.getElementById("registerFormContent").style.display = "none";
+                        formStateReset();
                         this.close();
                         return;
                     }
@@ -1277,14 +1280,7 @@
                         e.preventDefault();
                         formStylesReset();
                         formContentReset();
-                        document.querySelector(".popupAuthForm__passRecoveryForm").style.display = "none";
-                        document.querySelector(".popupAuthForm__successMsg").style.display = "none";
-                        document.querySelector(".popupAuthForm__successRegMsg").style.display = "none";
-                        document.querySelector(".popupAuthForm__recoveryMsg").style.display = "none";
-                        document.getElementById("loginTitle").classList.remove("notActiveForm");
-                        document.getElementById("registerTitle").classList.add("notActiveForm");
-                        document.getElementById("loginFormContent").style.display = "flex";
-                        document.getElementById("registerFormContent").style.display = "none";
+                        formStateReset();
                         this.close();
                         return;
                     }
@@ -8809,14 +8805,15 @@
             personalsEditWrapper.classList.add("_active");
             personalsWrapper.classList.add("_hide");
         }));
-        if (closeEditBtn) {
+        if (closeEditBtn) closeEditBtn.addEventListener("click", (function(e) {
             personalsEditWrapper.classList.remove("_active");
             personalsWrapper.classList.remove("_hide");
-        }
-        if (saveBtn) {
+        }));
+        if (saveBtn) saveBtn.addEventListener("click", (function(e) {
+            e.preventDefault();
             personalsEditWrapper.classList.remove("_active");
             personalsWrapper.classList.remove("_hide");
-        }
+        }));
         window["FLS"] = true;
         isWebp();
         menuInit();

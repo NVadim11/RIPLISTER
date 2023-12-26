@@ -25,79 +25,98 @@ if (editBtn) {
 }
 
 if (closeEditBtn) {
-    personalsEditWrapper.classList.remove("_active");
-    personalsWrapper.classList.remove("_hide");
+    closeEditBtn.addEventListener("click", function (e) {
+        personalsEditWrapper.classList.remove("_active");
+        personalsWrapper.classList.remove("_hide");
+    })
 }
 
 if (saveBtn) {
-    personalsEditWrapper.classList.remove("_active");
-    personalsWrapper.classList.remove("_hide");
+    saveBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        personalsEditWrapper.classList.remove("_active");
+        personalsWrapper.classList.remove("_hide");
+    })
 }
 
-function validateForm (formSelector, callback) {
-    const formElement = document.querySelector(formSelector);
+// form validate
 
-    const validationOptions = [
-        {
-            attribute: "minlength",
-            isValid: input => input.value && input.value.length >= parseInt(input.minLength, 10)        
-            },
-        {
-            attribute: "required",
-            isValid: input => input.value.trim() !== "",
-            },
-        {
-            attribute: "pattern",
-            isValid: input => {
-                const patternRegex = new RegExp(input.pattern);
-                return patternRegex.test(input.value);
-            },
-        }
-    ];
+// function validateForm (formSelector, callback) {
+//     const formElement = document.querySelector(formSelector);
 
-    const validateSingleFormGroup = (formGroup) => {
-        const input = formGroup.querySelector("input")
-        const errorIcon = formGroup.querySelector(".inputError")
+//     const validationOptions = [
+//         {
+//             attribute: "minlength",
+//             isValid: input => input.value && input.value.length >= parseInt(input.minLength, 10)        
+//             },
+//         {
+//             attribute: "required",
+//             isValid: input => input.value.trim() !== "",
+//             },
+//         {
+//             attribute: "pattern",
+//             isValid: input => {
+//                 const patternRegex = new RegExp(input.pattern);
+//                 return patternRegex.test(input.value);
+//             },
+//         }
+//     ];
 
-        let formGroupError = false;
-        for(const option of validationOptions) {
-            if (input) {
-                if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
-                    input.style.border = "0.125rem solid #F00";    
-                    errorIcon.style.display = "block";  
-                    formGroupError = true;
-                }
-                if (!formGroupError) {
-                    input.style.border = "0.0625rem solid #EC6041";
-                    errorIcon.style.display = "none"; 
-                }
-            }              
-        }
-        return !formGroupError;
-    };
+//     const validateSingleFormGroup = (formGroup) => {
+//         const input = formGroup.querySelector("input")
+//         const errorIcon = formGroup.querySelector(".inputError")
 
-    Array.from(formElement.elements).forEach(element => {
-        element.addEventListener("blur", event => {
-            validateSingleFormGroup(event.srcElement.parentElement);
-        })
-    })
+//         let formGroupError = false;
+//         for(const option of validationOptions) {
+//             if (input) {
+//                 if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
+//                     input.style.border = "0.125rem solid #F00";    
+//                     errorIcon.style.display = "block";  
+//                     formGroupError = true;
+//                 }
+//                 if (!formGroupError) {
+//                     input.style.border = "0.0625rem solid #EC6041";
+//                     errorIcon.style.display = "none"; 
+//                 }
+//             }              
+//         }
+//         return !formGroupError;
+//     };
 
-    const validateAllFormGroups = formToValidate => {
-    const formGroups = Array.from(formToValidate.querySelectorAll(".popupAuthForm__input-group"))
+//     Array.from(formElement.elements).forEach(element => {
+//         element.addEventListener("blur", event => {
+//             validateSingleFormGroup(event.srcElement.parentElement);
+//         })
+//     })
 
-    return formGroups.every(formGroup => validateSingleFormGroup(formGroup));
-    };    
+//     const validateAllFormGroups = formToValidate => {
+//     const formGroups = Array.from(formToValidate.querySelectorAll(".popupAuthForm__input-group"))
 
-    formElement.addEventListener("submit", event => {      
-        event.preventDefault();  
-        const formValid = validateAllFormGroups(formElement)
-        if (formValid) {  
-        invalidInformation.style.display = "none";
-        invalidUser.style.display = "none";    
-        callback(formElement);
-        event.target.reset();
-        } else {
-            invalidInformation.style.display = "flex";
-        }
-    })
-};
+//     return formGroups.every(formGroup => validateSingleFormGroup(formGroup));
+//     };    
+
+//     formElement.addEventListener("submit", event => {      
+//         event.preventDefault();  
+//         const formValid = validateAllFormGroups(formElement)
+//         if (formValid) {  
+//         invalidInformation.style.display = "none";
+//         invalidUser.style.display = "none";    
+//         callback(formElement);
+//         event.target.reset();
+//         } else {
+//             invalidInformation.style.display = "flex";
+//         }
+//     })
+// };
+
+// function validateForm (formSelector) {
+//     const formElement = document.querySelector(formSelector);
+
+//     formElement.setAttribute('novalidate', '');
+
+//     formElement.addEventListener('submit', (event) => {
+//         event.preventDefault();
+//     });
+// }
+
+// validateForm('#personalsEdit__form');

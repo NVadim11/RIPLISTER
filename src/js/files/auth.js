@@ -26,10 +26,30 @@ export function formStylesReset() {
 };
 
 export function formContentReset() {
-    document.querySelector(".popupAuthForm__invalidInformation").style.display = "none";
-    document.querySelector(".popupAuthForm__invalidUser").style.display = "none";	
+    invalidInformation.style.display = "none";
+    invalidUser.style.display = "none";	
     document.getElementById("popupAuthForm__loginForm").reset();		
     document.getElementById("popupAuthForm__registerForm").reset();	
+};
+
+
+export function formStateReset() {
+        if(passRecoveryForm) {
+            passRecoveryForm.style.display = "none";
+        }
+        if (successMsg) {
+            successMsg.style.display = "none";
+        }
+        if (successRegMsg) {
+            successRegMsg.style.display = "none";	
+        }
+        if (passRecoveryMsg) {
+            passRecoveryMsg.style.display = "none";
+        }      
+        loginTitle.classList.remove("notActiveForm");
+        registerTitle.classList.add("notActiveForm");
+        loginFormContent.style.display = "flex";
+        registerFormContent.style.display = "none";    
 };
 
 // login/register toggle
@@ -60,7 +80,7 @@ function successRegToggler() {
     invalidUser.style.display = "none";
     formContent.style.display = "none";
     successRegMsg.style.display = "flex";
-    };
+};
 function passRecoverySentToggler() {
 invalidInformation.style.display = "none";
 passRecoveryForm.style.display = "none";
