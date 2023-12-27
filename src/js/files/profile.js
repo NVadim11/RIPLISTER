@@ -80,6 +80,10 @@ function validateForm (formSelector, callback) {
             isValid: input => input.value.trim() !== "",
             },
         {
+            attribute: "ignore",
+            isValid: input => input.value.trim() == "",
+            },
+        {
             attribute: "pattern",
             isValid: input => {
                 const patternRegex = new RegExp(input.pattern);
@@ -100,8 +104,9 @@ function validateForm (formSelector, callback) {
                     // errorIcon.style.display = "block";  
                     formGroupError = true;
                 }
-                if (!formGroupError) {
+                if (!formGroupError || input.hasAttribute("ignore")) {
                     input.style.border = "0.0625rem solid #AAA";
+                    formGroupError = false;
                     // errorIcon.style.display = "none"; 
                 }
             }              

@@ -9051,6 +9051,9 @@
                 attribute: "required",
                 isValid: input => input.value.trim() !== ""
             }, {
+                attribute: "ignore",
+                isValid: input => input.value.trim() == ""
+            }, {
                 attribute: "pattern",
                 isValid: input => {
                     const patternRegex = new RegExp(input.pattern);
@@ -9065,7 +9068,10 @@
                         input.style.border = "0.125rem solid #F00";
                         formGroupError = true;
                     }
-                    if (!formGroupError) input.style.border = "0.0625rem solid #AAA";
+                    if (!formGroupError || input.hasAttribute("ignore")) {
+                        input.style.border = "0.0625rem solid #AAA";
+                        formGroupError = false;
+                    }
                 }
                 return !formGroupError;
             };

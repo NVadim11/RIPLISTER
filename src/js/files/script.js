@@ -69,6 +69,3 @@ switch (currentPage) {
     default:
         break;
 }
-
-
-//\\
