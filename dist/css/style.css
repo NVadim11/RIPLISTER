@@ -2108,7 +2108,6 @@ label {
 
 .footer__contact button {
   padding: 1.0625rem 0.9375rem;
-  border-radius: 1.25rem;
   border: 0.0625rem solid var(--orange-border-transparent);
   color: var(--text-color-black);
   font-size: 1rem;
@@ -2121,6 +2120,7 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 2.5rem;
 }
 
 .footer__contact button:hover {
@@ -2534,7 +2534,7 @@ label {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  border-radius: 1.25rem;
+  border-radius: 2.5rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 }
@@ -2544,7 +2544,6 @@ label {
   background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
   -webkit-transition: 0.25s;
   transition: 0.25s;
-  border-radius: 2.5rem;
 }
 
 .mainCover__bg {
@@ -4925,10 +4924,6 @@ label {
   display: flex;
 }
 
-.profile__navigation-item:nth-child(7) {
-  border-bottom: 1px solid var(--orange-color);
-}
-
 .profile__navigation-text {
   display: none;
 }
@@ -6247,10 +6242,6 @@ label {
     height: 6rem;
   }
 
-  .headerAlt__container {
-    max-width: 76.25rem;
-  }
-
   .headerAlt__logo img {
     max-width: 10.3999rem;
   }
@@ -6888,6 +6879,10 @@ label {
     border-bottom: none;
   }
 
+  .profile__navigation-item:nth-child(7) {
+    border-bottom: 1px solid var(--orange-color);
+  }
+
   .profile__navigation-text {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -7222,7 +7217,6 @@ label {
   .footer__contact button {
     font-size: 1.5rem;
     padding: 1.25rem 1.875rem;
-    border-radius: 1.875rem;
   }
 
   .footer__ref {
@@ -7441,7 +7435,7 @@ label {
   }
 
   .mainCover__btn button {
-    border-radius: 2.5rem;
+    border-radius: 40px;
   }
 
   .mainCover__bg-desktop {

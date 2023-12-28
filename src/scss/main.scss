@@ -69,7 +69,7 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            border-radius: 1.25rem;
+            border-radius: 2.5rem;
             background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
             @media screen and (min-width:$mobile) {
                 font-size: 1.5rem;
@@ -79,13 +79,13 @@
                 padding: 2rem 4.375rem;
             }
             @media screen and (min-width:$full) {
-                border-radius: 2.5rem; 
+                border-radius: 40px; 
             }
             }
             button:hover {
                 background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
                 transition: 0.25s;
-                border-radius: 2.5rem; 
+                // border-radius: 2.5rem; 
             }
         }
     &__bg {  

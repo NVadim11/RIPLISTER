@@ -73,7 +73,9 @@
 		}
 	}
 	&__navigation-item:nth-child(7) {
-		border-bottom: 1px solid var(--orange-color);
+		@media screen and (min-width:$tablet) {
+			border-bottom: 1px solid var(--orange-color);		
+		}
 	}
 	&__navigation-text {
 		display: none;

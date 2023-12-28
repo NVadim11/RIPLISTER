@@ -86,6 +86,7 @@
     }
     &__contact {
         margin-top: 2.8125rem;
+        
         @media screen and (min-width:$full) {
             margin-top: 5rem;  
         }
@@ -94,7 +95,6 @@
         }
         button {
             padding: 1.0625rem 0.9375rem;
-            border-radius: 1.25rem;
             border: 0.0625rem solid var(--orange-border-transparent);
             color: var(--text-color-black);
             font-size: 1rem;
@@ -103,10 +103,10 @@
             line-height: normal;    
             display: flex;
             align-items: center;
+            border-radius: 2.5rem;
             @media screen and (min-width:$full) {
                 font-size: 1.5rem;
                 padding: 1.25rem 1.875rem;
-                border-radius: 1.875rem;
             }
         }
         button:hover {   
