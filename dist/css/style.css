@@ -1413,6 +1413,84 @@ label {
   display: flex !important;
 }
 
+.pagging {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10.625rem 0 0 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  gap: 3.75rem;
+}
+
+.pagging__arrow {
+  width: 70px;
+  height: 70px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 30px;
+  border: 1px solid rgba(229, 87, 56, 0.5);
+}
+
+.pagging__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pagging__item {
+  color: var(--text-color-black);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.btn-gotop {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 60px;
+  right: 30px;
+  border: solid 1px #dddddd;
+  border-radius: 50%;
+  color: #dddddd;
+  background-color: transparent;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+.btn-gotop.show {
+  opacity: 1;
+}
+
+.btn-gotop i {
+  font-size: 24px;
+}
+
+.btn-gotop:hover {
+  border: 1.5px solid steelblue;
+  background-color: steelblue;
+}
+
 .headerAlt {
   background-color: transparent;
   height: 4.75rem;
@@ -7067,6 +7145,14 @@ label {
 @media (min-width: 119.99875em) {
   [class*=__container] {
     max-width: 103.75rem;
+  }
+
+  .pagging__list {
+    gap: 3.75rem;
+  }
+
+  .pagging__item {
+    font-size: 2rem;
   }
 }
 

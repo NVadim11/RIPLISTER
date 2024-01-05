@@ -10,3 +10,111 @@
 .show_errorMsg {
     display:flex!important;
 }
+
+// стиль пагинации
+.pagging {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10.625rem 0 0 0;
+	align-self: center;
+	gap: 3.75rem;
+	// .pagging__arrow
+	&__arrow {
+		width: 70px;
+		height: 70px;
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 30px;
+		border: 1px solid rgba(229, 87, 56, 0.50);
+		svg {
+
+		}
+		@media (min-width: $full) {
+			svg {
+
+			}
+		}
+	}
+	// .pagging__list
+	&__list {
+		display: flex;
+		@media (min-width: $full) {
+			gap: 3.75rem;
+		}
+		li {
+			@media (min-width: $full) {
+			}
+		}
+	}
+	// .pagging__item
+	&__item {
+		color: var(--text-color-black);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		@media (min-width: $full) {
+			font-size: 2rem;
+		}
+		&._active {
+		}
+	}
+}
+
+// стиль кнопки пин ту топ
+.btn-gotop {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 60px;
+    right: 30px;
+    border: solid 1px #dddddd;
+    border-radius: 50%;
+    color: #dddddd;
+    background-color: transparent;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s;
+    
+    &.show {
+      opacity: 1;
+    }
+  
+    i {
+      font-size: 24px;
+    }
+  
+    &:hover {
+      border: 1.5px solid steelblue;
+      background-color: steelblue;
+    }
+  }
+  
+.textBlock {
+    h1 {
+
+    }
+    h2 {
+
+    }
+    h3 {
+
+    }
+    h4 {
+
+    }
+    p {
+
+    }
+    i {
+
+    }
+    strong {
+
+    }
+    table {
+        
+    }
+}
