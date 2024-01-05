@@ -7,8 +7,6 @@ const currentPage = location.href.split( '/' )[3].slice(0, -5);
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
 const altMenuBtn = document.querySelector('.headerAlt__menuBtn');
 const menuCloseBtn = document.querySelector('.menu__closeBtn');
-const profilePicture = document.getElementById("profilePicture");
-const profilePictureInput = document.getElementById("profilePictureInput");
 const radioBtnHuman = document.querySelector(".searchTypeBtn_human");
 const radioBtnCemetery = document.querySelector(".searchTypeBtn_cemetery");
 const radioBtnHumanText = document.querySelector(".searchType_human");
@@ -22,7 +20,7 @@ if (mainMenuBtn) {
         menu.classList.add("_active");
         menuOpen()        
     });
-}
+};
 // Alt header burger menu
 if (altMenuBtn) {
     const menu = document.querySelector(".menu");
@@ -30,42 +28,11 @@ if (altMenuBtn) {
         menu.classList.add("_active");
         menuOpen()        
     });
-}
+};
 if (menuCloseBtn) {
     const menu = document.querySelector(".menu");
     menuCloseBtn.addEventListener("click", function(e) {
         menu.classList.remove("_active");
         menuClose()       
     });
-}
-
-
-
-//  Profile picture upload/save to LocalStorage
-switch (currentPage) {
-    case "profile":
-        function profileLogic() {
-            if (!localStorage.getItem("profilePictureInput")) {
-                profilePicture.setAttribute("src", "img/upload-image.svg")
-        } else {        
-                profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
-        }
-        profilePictureInput.addEventListener("change", (e) => {
-        const image = e.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(image);
-        reader.addEventListener("load", () => {
-            localStorage.setItem("profilePictureInput", reader.result)       
-        if (!localStorage.getItem("profilePictureInput")) {
-            profilePicture.setAttribute("src", "img/upload-image.svg")
-        } else {        
-            profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
-        }    
-        });    
-        })
-        }
-        profileLogic();
-        break;
-    default:
-        break;
-}
+};

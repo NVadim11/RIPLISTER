@@ -67,7 +67,7 @@
                         });
                     }
                     window.dispatchEvent(e);
-                }, u = "src", s = "srcset", d = "sizes", f = "poster", _ = "llOriginalAttrs", g = "data", v = "loading", b = "loaded", m = "applied", p = "error", h = "native", E = "data-", I = "ll-status", y = function(n, t) {
+                }, u = "src", s = "srcset", d = "sizes", f = "poster", _ = "llOriginalAttrs", g = "data", v = "loading", b = "loaded", p = "applied", m = "error", h = "native", E = "data-", I = "ll-status", y = function(n, t) {
                     return n.getAttribute(E + t);
                 }, k = function(n) {
                     return y(n, I);
@@ -82,8 +82,8 @@
                     return null === k(n);
                 }, O = function(n) {
                     return k(n) === h;
-                }, x = [ v, b, m, p ], C = function(n, t, e, i) {
-                    n && (void 0 === i ? void 0 === e ? n(t) : n(t, e) : n(t, e, i));
+                }, x = [ v, b, p, m ], C = function(n, t, e, i) {
+                    n && "function" == typeof n && (void 0 === i ? void 0 === e ? n(t) : n(t, e) : n(t, e, i));
                 }, N = function(n, t) {
                     o ? n.classList.add(t) : n.className += (n.className ? " " : "") + t;
                 }, M = function(n, t) {
@@ -130,7 +130,7 @@
                         }));
                     }
                 }, K = function(n, t, e) {
-                    N(n, t.class_applied), w(n, m), e && (t.unobserve_completed && T(n, t), C(t.callback_applied, n, e));
+                    N(n, t.class_applied), w(n, p), e && (t.unobserve_completed && T(n, t), C(t.callback_applied, n, e));
                 }, Q = function(n, t, e) {
                     N(n, t.class_loading), w(n, v), e && (R(e, 1), C(t.callback_loading, n, e));
                 }, W = function(n, t, e) {
@@ -195,7 +195,7 @@
                     }), (function(o) {
                         !function(n, t, e, i) {
                             var o = O(t);
-                            rn(t, e, i), N(t, e.class_error), w(t, p), C(e.callback_error, t, i), e.restore_on_error && q(t, B), 
+                            rn(t, e, i), N(t, e.class_error), w(t, m), C(e.callback_error, t, i), e.restore_on_error && q(t, B), 
                             o || nn(e, i);
                         }(0, n, t, e), an(i);
                     }));
@@ -292,16 +292,16 @@
                     }));
                 }, bn = function(n) {
                     return Array.prototype.slice.call(n);
-                }, mn = function(n) {
-                    return n.container.querySelectorAll(n.elements_selector);
                 }, pn = function(n) {
+                    return n.container.querySelectorAll(n.elements_selector);
+                }, mn = function(n) {
                     return function(n) {
-                        return k(n) === p;
+                        return k(n) === m;
                     }(n);
                 }, hn = function(n, t) {
                     return function(n) {
                         return bn(n).filter(L);
-                    }(n || mn(t));
+                    }(n || pn(t));
                 }, En = function(n, e) {
                     var o = c(n);
                     this._settings = o, this.loadingCount = 0, function(n, t) {
@@ -317,7 +317,7 @@
                         t && (e._onlineHandler = function() {
                             !function(n, t) {
                                 var e;
-                                (e = mn(n), bn(e).filter(pn)).forEach((function(t) {
+                                (e = pn(n), bn(e).filter(mn)).forEach((function(t) {
                                     M(t, n.class_error), A(t);
                                 })), t.update();
                             }(n, e);
@@ -346,7 +346,7 @@
                     },
                     destroy: function() {
                         this._observer && this._observer.disconnect(), t && window.removeEventListener("online", this._onlineHandler), 
-                        mn(this._settings).forEach((function(n) {
+                        pn(this._settings).forEach((function(n) {
                             U(n);
                         })), delete this._observer, delete this._settings, delete this._onlineHandler, delete this.loadingCount, 
                         delete this.toLoadCount;
@@ -359,7 +359,7 @@
                     },
                     restoreAll: function() {
                         var n = this._settings;
-                        mn(n).forEach((function(t) {
+                        pn(n).forEach((function(t) {
                             fn(t, n);
                         }));
                     }
@@ -1764,6 +1764,10 @@
             extend(win, ssrWindow);
             return win;
         }
+        function classesToTokens(classes) {
+            if (classes === void 0) classes = "";
+            return classes.trim().split(" ").filter((c => !!c.trim()));
+        }
         function deleteProps(obj) {
             const object = obj;
             Object.keys(object).forEach((key => {
@@ -1879,10 +1883,16 @@
             if (selector === void 0) selector = "";
             return [ ...element.children ].filter((el => el.matches(selector)));
         }
+        function showWarning(text) {
+            try {
+                console.warn(text);
+                return;
+            } catch (err) {}
+        }
         function utils_createElement(tag, classes) {
             if (classes === void 0) classes = [];
             const el = document.createElement(tag);
-            el.classList.add(...Array.isArray(classes) ? classes : [ classes ]);
+            el.classList.add(...Array.isArray(classes) ? classes : classesToTokens(classes));
             return el;
         }
         function utils_elementOffset(el) {
@@ -2236,21 +2246,8 @@
         }
         function updateSlides() {
             const swiper = this;
-            function getDirectionLabel(property) {
-                if (swiper.isHorizontal()) return property;
-                return {
-                    width: "height",
-                    "margin-top": "margin-left",
-                    "margin-bottom ": "margin-right",
-                    "margin-left": "margin-top",
-                    "margin-right": "margin-bottom",
-                    "padding-left": "padding-top",
-                    "padding-right": "padding-bottom",
-                    marginRight: "marginBottom"
-                }[property];
-            }
             function getDirectionPropertyValue(node, label) {
-                return parseFloat(node.getPropertyValue(getDirectionLabel(label)) || 0);
+                return parseFloat(node.getPropertyValue(swiper.getDirectionLabel(label)) || 0);
             }
             const params = swiper.params;
             const {wrapperEl, slidesEl, size: swiperSize, rtlTranslate: rtl, wrongRTL} = swiper;
@@ -2284,17 +2281,17 @@
                 utils_setCSSProperty(wrapperEl, "--swiper-centered-offset-after", "");
             }
             const gridEnabled = params.grid && params.grid.rows > 1 && swiper.grid;
-            if (gridEnabled) swiper.grid.initSlides(slidesLength);
+            if (gridEnabled) swiper.grid.initSlides(slides); else if (swiper.grid) swiper.grid.unsetSlides();
             let slideSize;
             const shouldResetSlideSize = params.slidesPerView === "auto" && params.breakpoints && Object.keys(params.breakpoints).filter((key => typeof params.breakpoints[key].slidesPerView !== "undefined")).length > 0;
             for (let i = 0; i < slidesLength; i += 1) {
                 slideSize = 0;
                 let slide;
                 if (slides[i]) slide = slides[i];
-                if (gridEnabled) swiper.grid.updateSlide(i, slide, slidesLength, getDirectionLabel);
+                if (gridEnabled) swiper.grid.updateSlide(i, slide, slides);
                 if (slides[i] && elementStyle(slide, "display") === "none") continue;
                 if (params.slidesPerView === "auto") {
-                    if (shouldResetSlideSize) slides[i].style[getDirectionLabel("width")] = ``;
+                    if (shouldResetSlideSize) slides[i].style[swiper.getDirectionLabel("width")] = ``;
                     const slideStyles = getComputedStyle(slide);
                     const currentTransform = slide.style.transform;
                     const currentWebKitTransform = slide.style.webkitTransform;
@@ -2318,7 +2315,7 @@
                 } else {
                     slideSize = (swiperSize - (params.slidesPerView - 1) * spaceBetween) / params.slidesPerView;
                     if (params.roundLengths) slideSize = Math.floor(slideSize);
-                    if (slides[i]) slides[i].style[getDirectionLabel("width")] = `${slideSize}px`;
+                    if (slides[i]) slides[i].style[swiper.getDirectionLabel("width")] = `${slideSize}px`;
                 }
                 if (slides[i]) slides[i].swiperSlideSize = slideSize;
                 slidesSizesGrid.push(slideSize);
@@ -2342,8 +2339,8 @@
             }
             swiper.virtualSize = Math.max(swiper.virtualSize, swiperSize) + offsetAfter;
             if (rtl && wrongRTL && (params.effect === "slide" || params.effect === "coverflow")) wrapperEl.style.width = `${swiper.virtualSize + spaceBetween}px`;
-            if (params.setWrapperSize) wrapperEl.style[getDirectionLabel("width")] = `${swiper.virtualSize + spaceBetween}px`;
-            if (gridEnabled) swiper.grid.updateWrapperSize(slideSize, snapGrid, getDirectionLabel);
+            if (params.setWrapperSize) wrapperEl.style[swiper.getDirectionLabel("width")] = `${swiper.virtualSize + spaceBetween}px`;
+            if (gridEnabled) swiper.grid.updateWrapperSize(slideSize, snapGrid);
             if (!params.centeredSlides) {
                 const newSlidesGrid = [];
                 for (let i = 0; i < snapGrid.length; i += 1) {
@@ -2369,7 +2366,7 @@
             }
             if (snapGrid.length === 0) snapGrid = [ 0 ];
             if (spaceBetween !== 0) {
-                const key = swiper.isHorizontal() && rtl ? "marginLeft" : getDirectionLabel("marginRight");
+                const key = swiper.isHorizontal() && rtl ? "marginLeft" : swiper.getDirectionLabel("marginRight");
                 slides.filter(((_, slideIndex) => {
                     if (!params.cssMode || params.loop) return true;
                     if (slideIndex === slides.length - 1) return false;
@@ -2428,6 +2425,7 @@
             }
             if (slidesGrid.length !== previousSlidesGridLength) swiper.emit("slidesGridLengthChange");
             if (params.watchSlidesProgress) swiper.updateSlidesOffset();
+            swiper.emit("slidesUpdated");
             if (!isVirtual && !params.cssMode && (params.effect === "slide" || params.effect === "fade")) {
                 const backFaceHiddenClass = `${params.containerModifierClass}backface-hidden`;
                 const hasClassBackfaceClassAdded = swiper.el.classList.contains(backFaceHiddenClass);
@@ -2476,7 +2474,7 @@
             let offsetCenter = -translate;
             if (rtl) offsetCenter = translate;
             slides.forEach((slideEl => {
-                slideEl.classList.remove(params.slideVisibleClass);
+                slideEl.classList.remove(params.slideVisibleClass, params.slideFullyVisibleClass);
             }));
             swiper.visibleSlidesIndexes = [];
             swiper.visibleSlides = [];
@@ -2490,12 +2488,14 @@
                 const originalSlideProgress = (offsetCenter - snapGrid[0] + (params.centeredSlides ? swiper.minTranslate() : 0) - slideOffset) / (slide.swiperSlideSize + spaceBetween);
                 const slideBefore = -(offsetCenter - slideOffset);
                 const slideAfter = slideBefore + swiper.slidesSizesGrid[i];
+                const isFullyVisible = slideBefore >= 0 && slideBefore <= swiper.size - swiper.slidesSizesGrid[i];
                 const isVisible = slideBefore >= 0 && slideBefore < swiper.size - 1 || slideAfter > 1 && slideAfter <= swiper.size || slideBefore <= 0 && slideAfter >= swiper.size;
                 if (isVisible) {
                     swiper.visibleSlides.push(slide);
                     swiper.visibleSlidesIndexes.push(i);
                     slides[i].classList.add(params.slideVisibleClass);
                 }
+                if (isFullyVisible) slides[i].classList.add(params.slideFullyVisibleClass);
                 slide.progress = rtl ? -slideProgress : slideProgress;
                 slide.originalProgress = rtl ? -originalSlideProgress : originalSlideProgress;
             }
@@ -2550,25 +2550,37 @@
             const swiper = this;
             const {slides, params, slidesEl, activeIndex} = swiper;
             const isVirtual = swiper.virtual && params.virtual.enabled;
+            const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
             const getFilteredSlide = selector => utils_elementChildren(slidesEl, `.${params.slideClass}${selector}, swiper-slide${selector}`)[0];
             slides.forEach((slideEl => {
                 slideEl.classList.remove(params.slideActiveClass, params.slideNextClass, params.slidePrevClass);
             }));
             let activeSlide;
+            let prevSlide;
+            let nextSlide;
             if (isVirtual) if (params.loop) {
                 let slideIndex = activeIndex - swiper.virtual.slidesBefore;
                 if (slideIndex < 0) slideIndex = swiper.virtual.slides.length + slideIndex;
                 if (slideIndex >= swiper.virtual.slides.length) slideIndex -= swiper.virtual.slides.length;
                 activeSlide = getFilteredSlide(`[data-swiper-slide-index="${slideIndex}"]`);
-            } else activeSlide = getFilteredSlide(`[data-swiper-slide-index="${activeIndex}"]`); else activeSlide = slides[activeIndex];
+            } else activeSlide = getFilteredSlide(`[data-swiper-slide-index="${activeIndex}"]`); else if (gridEnabled) {
+                activeSlide = slides.filter((slideEl => slideEl.column === activeIndex))[0];
+                nextSlide = slides.filter((slideEl => slideEl.column === activeIndex + 1))[0];
+                prevSlide = slides.filter((slideEl => slideEl.column === activeIndex - 1))[0];
+            } else activeSlide = slides[activeIndex];
             if (activeSlide) {
                 activeSlide.classList.add(params.slideActiveClass);
-                let nextSlide = elementNextAll(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
-                if (params.loop && !nextSlide) nextSlide = slides[0];
-                if (nextSlide) nextSlide.classList.add(params.slideNextClass);
-                let prevSlide = elementPrevAll(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
-                if (params.loop && !prevSlide === 0) prevSlide = slides[slides.length - 1];
-                if (prevSlide) prevSlide.classList.add(params.slidePrevClass);
+                if (gridEnabled) {
+                    if (nextSlide) nextSlide.classList.add(params.slideNextClass);
+                    if (prevSlide) prevSlide.classList.add(params.slidePrevClass);
+                } else {
+                    nextSlide = elementNextAll(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
+                    if (params.loop && !nextSlide) nextSlide = slides[0];
+                    if (nextSlide) nextSlide.classList.add(params.slideNextClass);
+                    prevSlide = elementPrevAll(activeSlide, `.${params.slideClass}, swiper-slide`)[0];
+                    if (params.loop && !prevSlide === 0) prevSlide = slides[slides.length - 1];
+                    if (prevSlide) prevSlide.classList.add(params.slidePrevClass);
+                }
             }
             swiper.emitSlidesClasses();
         }
@@ -2578,7 +2590,12 @@
             const slideEl = imageEl.closest(slideSelector());
             if (slideEl) {
                 let lazyEl = slideEl.querySelector(`.${swiper.params.lazyPreloaderClass}`);
-                if (!lazyEl && swiper.isElement) lazyEl = slideEl.shadowRoot.querySelector(`.${swiper.params.lazyPreloaderClass}`);
+                if (!lazyEl && swiper.isElement) if (slideEl.shadowRoot) lazyEl = slideEl.shadowRoot.querySelector(`.${swiper.params.lazyPreloaderClass}`); else requestAnimationFrame((() => {
+                    if (slideEl.shadowRoot) {
+                        lazyEl = slideEl.shadowRoot.querySelector(`.${swiper.params.lazyPreloaderClass}`);
+                        if (lazyEl) lazyEl.remove();
+                    }
+                }));
                 if (lazyEl) lazyEl.remove();
             }
         };
@@ -2640,16 +2657,28 @@
                 snapIndex = skip + Math.floor((activeIndex - skip) / params.slidesPerGroup);
             }
             if (snapIndex >= snapGrid.length) snapIndex = snapGrid.length - 1;
-            if (activeIndex === previousIndex) {
+            if (activeIndex === previousIndex && !swiper.params.loop) {
                 if (snapIndex !== previousSnapIndex) {
                     swiper.snapIndex = snapIndex;
                     swiper.emit("snapIndexChange");
                 }
-                if (swiper.params.loop && swiper.virtual && swiper.params.virtual.enabled) swiper.realIndex = getVirtualRealIndex(activeIndex);
                 return;
             }
+            if (activeIndex === previousIndex && swiper.params.loop && swiper.virtual && swiper.params.virtual.enabled) {
+                swiper.realIndex = getVirtualRealIndex(activeIndex);
+                return;
+            }
+            const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
             let realIndex;
-            if (swiper.virtual && params.virtual.enabled && params.loop) realIndex = getVirtualRealIndex(activeIndex); else if (swiper.slides[activeIndex]) realIndex = parseInt(swiper.slides[activeIndex].getAttribute("data-swiper-slide-index") || activeIndex, 10); else realIndex = activeIndex;
+            if (swiper.virtual && params.virtual.enabled && params.loop) realIndex = getVirtualRealIndex(activeIndex); else if (gridEnabled) {
+                const firstSlideInColumn = swiper.slides.filter((slideEl => slideEl.column === activeIndex))[0];
+                let activeSlideIndex = parseInt(firstSlideInColumn.getAttribute("data-swiper-slide-index"), 10);
+                if (Number.isNaN(activeSlideIndex)) activeSlideIndex = Math.max(swiper.slides.indexOf(firstSlideInColumn), 0);
+                realIndex = Math.floor(activeSlideIndex / params.grid.rows);
+            } else if (swiper.slides[activeIndex]) {
+                const slideIndex = swiper.slides[activeIndex].getAttribute("data-swiper-slide-index");
+                if (slideIndex) realIndex = parseInt(slideIndex, 10); else realIndex = activeIndex;
+            } else realIndex = activeIndex;
             Object.assign(swiper, {
                 previousSnapIndex,
                 snapIndex,
@@ -2661,13 +2690,18 @@
             if (swiper.initialized) preload(swiper);
             swiper.emit("activeIndexChange");
             swiper.emit("snapIndexChange");
-            if (previousRealIndex !== realIndex) swiper.emit("realIndexChange");
-            if (swiper.initialized || swiper.params.runCallbacksOnInit) swiper.emit("slideChange");
+            if (swiper.initialized || swiper.params.runCallbacksOnInit) {
+                if (previousRealIndex !== realIndex) swiper.emit("realIndexChange");
+                swiper.emit("slideChange");
+            }
         }
-        function updateClickedSlide(e) {
+        function updateClickedSlide(el, path) {
             const swiper = this;
             const params = swiper.params;
-            const slide = e.closest(`.${params.slideClass}, swiper-slide`);
+            let slide = el.closest(`.${params.slideClass}, swiper-slide`);
+            if (!slide && swiper.isElement && path && path.length > 1 && path.includes(el)) [ ...path.slice(path.indexOf(el) + 1, path.length) ].forEach((pathEl => {
+                if (!slide && pathEl.matches && pathEl.matches(`.${params.slideClass}, swiper-slide`)) slide = pathEl;
+            }));
             let slideFound = false;
             let slideIndex;
             if (slide) for (let i = 0; i < swiper.slides.length; i += 1) if (swiper.slides[i] === slide) {
@@ -2963,9 +2997,41 @@
                 index = indexAsNumber;
             }
             const swiper = this;
+            const gridEnabled = swiper.grid && swiper.params.grid && swiper.params.grid.rows > 1;
             let newIndex = index;
-            if (swiper.params.loop) if (swiper.virtual && swiper.params.virtual.enabled) newIndex += swiper.virtual.slidesBefore; else newIndex = swiper.getSlideIndexByData(newIndex);
-            return swiper.slideTo(newIndex, speed, runCallbacks, internal);
+            if (swiper.params.loop) if (swiper.virtual && swiper.params.virtual.enabled) newIndex += swiper.virtual.slidesBefore; else {
+                let targetSlideIndex;
+                if (gridEnabled) {
+                    const slideIndex = newIndex * swiper.params.grid.rows;
+                    targetSlideIndex = swiper.slides.filter((slideEl => slideEl.getAttribute("data-swiper-slide-index") * 1 === slideIndex))[0].column;
+                } else targetSlideIndex = swiper.getSlideIndexByData(newIndex);
+                const cols = gridEnabled ? Math.ceil(swiper.slides.length / swiper.params.grid.rows) : swiper.slides.length;
+                const {centeredSlides} = swiper.params;
+                let slidesPerView = swiper.params.slidesPerView;
+                if (slidesPerView === "auto") slidesPerView = swiper.slidesPerViewDynamic(); else {
+                    slidesPerView = Math.ceil(parseFloat(swiper.params.slidesPerView, 10));
+                    if (centeredSlides && slidesPerView % 2 === 0) slidesPerView += 1;
+                }
+                let needLoopFix = cols - targetSlideIndex < slidesPerView;
+                if (centeredSlides) needLoopFix = needLoopFix || targetSlideIndex < Math.ceil(slidesPerView / 2);
+                if (needLoopFix) {
+                    const direction = centeredSlides ? targetSlideIndex < swiper.activeIndex ? "prev" : "next" : targetSlideIndex - swiper.activeIndex - 1 < swiper.params.slidesPerView ? "next" : "prev";
+                    swiper.loopFix({
+                        direction,
+                        slideTo: true,
+                        activeSlideIndex: direction === "next" ? targetSlideIndex + 1 : targetSlideIndex - cols + 1,
+                        slideRealIndex: direction === "next" ? swiper.realIndex : void 0
+                    });
+                }
+                if (gridEnabled) {
+                    const slideIndex = newIndex * swiper.params.grid.rows;
+                    newIndex = swiper.slides.filter((slideEl => slideEl.getAttribute("data-swiper-slide-index") * 1 === slideIndex))[0].column;
+                } else newIndex = swiper.getSlideIndexByData(newIndex);
+            }
+            requestAnimationFrame((() => {
+                swiper.slideTo(newIndex, speed, runCallbacks, internal);
+            }));
+            return swiper;
         }
         function slideNext(speed, runCallbacks, internal) {
             if (speed === void 0) speed = this.params.speed;
@@ -2983,6 +3049,12 @@
                     direction: "next"
                 });
                 swiper._clientLeft = swiper.wrapperEl.clientLeft;
+                if (swiper.activeIndex === swiper.slides.length - 1 && params.cssMode) {
+                    requestAnimationFrame((() => {
+                        swiper.slideTo(swiper.activeIndex + increment, speed, runCallbacks, internal);
+                    }));
+                    return true;
+                }
             }
             if (params.rewind && swiper.isEnd) return swiper.slideTo(0, speed, runCallbacks, internal);
             return swiper.slideTo(swiper.activeIndex + increment, speed, runCallbacks, internal);
@@ -3028,6 +3100,11 @@
             if (params.rewind && swiper.isBeginning) {
                 const lastIndex = swiper.params.virtual && swiper.params.virtual.enabled && swiper.virtual ? swiper.virtual.slides.length - 1 : swiper.slides.length - 1;
                 return swiper.slideTo(lastIndex, speed, runCallbacks, internal);
+            } else if (params.loop && swiper.activeIndex === 0 && params.cssMode) {
+                requestAnimationFrame((() => {
+                    swiper.slideTo(prevIndex, speed, runCallbacks, internal);
+                }));
+                return true;
             }
             return swiper.slideTo(prevIndex, speed, runCallbacks, internal);
         }
@@ -3097,10 +3174,39 @@
             const swiper = this;
             const {params, slidesEl} = swiper;
             if (!params.loop || swiper.virtual && swiper.params.virtual.enabled) return;
-            const slides = utils_elementChildren(slidesEl, `.${params.slideClass}, swiper-slide`);
-            slides.forEach(((el, index) => {
-                el.setAttribute("data-swiper-slide-index", index);
-            }));
+            const initSlides = () => {
+                const slides = utils_elementChildren(slidesEl, `.${params.slideClass}, swiper-slide`);
+                slides.forEach(((el, index) => {
+                    el.setAttribute("data-swiper-slide-index", index);
+                }));
+            };
+            const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
+            const slidesPerGroup = params.slidesPerGroup * (gridEnabled ? params.grid.rows : 1);
+            const shouldFillGroup = swiper.slides.length % slidesPerGroup !== 0;
+            const shouldFillGrid = gridEnabled && swiper.slides.length % params.grid.rows !== 0;
+            const addBlankSlides = amountOfSlides => {
+                for (let i = 0; i < amountOfSlides; i += 1) {
+                    const slideEl = swiper.isElement ? utils_createElement("swiper-slide", [ params.slideBlankClass ]) : utils_createElement("div", [ params.slideClass, params.slideBlankClass ]);
+                    swiper.slidesEl.append(slideEl);
+                }
+            };
+            if (shouldFillGroup) {
+                if (params.loopAddBlankSlides) {
+                    const slidesToAdd = slidesPerGroup - swiper.slides.length % slidesPerGroup;
+                    addBlankSlides(slidesToAdd);
+                    swiper.recalcSlides();
+                    swiper.updateSlides();
+                } else showWarning("Swiper Loop Warning: The number of slides is not even to slidesPerGroup, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)");
+                initSlides();
+            } else if (shouldFillGrid) {
+                if (params.loopAddBlankSlides) {
+                    const slidesToAdd = params.grid.rows - swiper.slides.length % params.grid.rows;
+                    addBlankSlides(slidesToAdd);
+                    swiper.recalcSlides();
+                    swiper.updateSlides();
+                } else showWarning("Swiper Loop Warning: The number of slides is not even to grid.rows, loop mode may not function properly. You need to add more slides (or make duplicates, or empty slides)");
+                initSlides();
+            } else initSlides();
             swiper.loopFix({
                 slideRealIndex,
                 direction: params.centeredSlides ? void 0 : "next"
@@ -3112,6 +3218,7 @@
             if (!swiper.params.loop) return;
             swiper.emit("beforeLoopFix");
             const {slides, allowSlidePrev, allowSlideNext, slidesEl, params} = swiper;
+            const {centeredSlides} = params;
             swiper.allowSlidePrev = true;
             swiper.allowSlideNext = true;
             if (swiper.virtual && params.virtual.enabled) {
@@ -3121,43 +3228,65 @@
                 swiper.emit("loopFix");
                 return;
             }
-            const slidesPerView = params.slidesPerView === "auto" ? swiper.slidesPerViewDynamic() : Math.ceil(parseFloat(params.slidesPerView, 10));
-            let loopedSlides = params.loopedSlides || slidesPerView;
-            if (loopedSlides % params.slidesPerGroup !== 0) loopedSlides += params.slidesPerGroup - loopedSlides % params.slidesPerGroup;
+            let slidesPerView = params.slidesPerView;
+            if (slidesPerView === "auto") slidesPerView = swiper.slidesPerViewDynamic(); else {
+                slidesPerView = Math.ceil(parseFloat(params.slidesPerView, 10));
+                if (centeredSlides && slidesPerView % 2 === 0) slidesPerView += 1;
+            }
+            const slidesPerGroup = params.slidesPerGroupAuto ? slidesPerView : params.slidesPerGroup;
+            let loopedSlides = slidesPerGroup;
+            if (loopedSlides % slidesPerGroup !== 0) loopedSlides += slidesPerGroup - loopedSlides % slidesPerGroup;
+            loopedSlides += params.loopAdditionalSlides;
             swiper.loopedSlides = loopedSlides;
+            const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
+            if (slides.length < slidesPerView + loopedSlides) showWarning("Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled and not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters"); else if (gridEnabled && params.grid.fill === "row") showWarning("Swiper Loop Warning: Loop mode is not compatible with grid.fill = `row`");
             const prependSlidesIndexes = [];
             const appendSlidesIndexes = [];
             let activeIndex = swiper.activeIndex;
-            if (typeof activeSlideIndex === "undefined") activeSlideIndex = swiper.getSlideIndex(swiper.slides.filter((el => el.classList.contains(params.slideActiveClass)))[0]); else activeIndex = activeSlideIndex;
+            if (typeof activeSlideIndex === "undefined") activeSlideIndex = swiper.getSlideIndex(slides.filter((el => el.classList.contains(params.slideActiveClass)))[0]); else activeIndex = activeSlideIndex;
             const isNext = direction === "next" || !direction;
             const isPrev = direction === "prev" || !direction;
             let slidesPrepended = 0;
             let slidesAppended = 0;
-            if (activeSlideIndex < loopedSlides) {
-                slidesPrepended = Math.max(loopedSlides - activeSlideIndex, params.slidesPerGroup);
-                for (let i = 0; i < loopedSlides - activeSlideIndex; i += 1) {
-                    const index = i - Math.floor(i / slides.length) * slides.length;
-                    prependSlidesIndexes.push(slides.length - index - 1);
+            const cols = gridEnabled ? Math.ceil(slides.length / params.grid.rows) : slides.length;
+            const activeColIndex = gridEnabled ? slides[activeSlideIndex].column : activeSlideIndex;
+            const activeColIndexWithShift = activeColIndex + (centeredSlides && typeof setTranslate === "undefined" ? -slidesPerView / 2 + .5 : 0);
+            if (activeColIndexWithShift < loopedSlides) {
+                slidesPrepended = Math.max(loopedSlides - activeColIndexWithShift, slidesPerGroup);
+                for (let i = 0; i < loopedSlides - activeColIndexWithShift; i += 1) {
+                    const index = i - Math.floor(i / cols) * cols;
+                    if (gridEnabled) {
+                        const colIndexToPrepend = cols - index - 1;
+                        for (let i = slides.length - 1; i >= 0; i -= 1) if (slides[i].column === colIndexToPrepend) prependSlidesIndexes.push(i);
+                    } else prependSlidesIndexes.push(cols - index - 1);
                 }
-            } else if (activeSlideIndex > swiper.slides.length - loopedSlides * 2) {
-                slidesAppended = Math.max(activeSlideIndex - (swiper.slides.length - loopedSlides * 2), params.slidesPerGroup);
+            } else if (activeColIndexWithShift + slidesPerView > cols - loopedSlides) {
+                slidesAppended = Math.max(activeColIndexWithShift - (cols - loopedSlides * 2), slidesPerGroup);
                 for (let i = 0; i < slidesAppended; i += 1) {
-                    const index = i - Math.floor(i / slides.length) * slides.length;
-                    appendSlidesIndexes.push(index);
+                    const index = i - Math.floor(i / cols) * cols;
+                    if (gridEnabled) slides.forEach(((slide, slideIndex) => {
+                        if (slide.column === index) appendSlidesIndexes.push(slideIndex);
+                    })); else appendSlidesIndexes.push(index);
                 }
             }
+            swiper.__preventObserver__ = true;
+            requestAnimationFrame((() => {
+                swiper.__preventObserver__ = false;
+            }));
             if (isPrev) prependSlidesIndexes.forEach((index => {
-                swiper.slides[index].swiperLoopMoveDOM = true;
-                slidesEl.prepend(swiper.slides[index]);
-                swiper.slides[index].swiperLoopMoveDOM = false;
+                slides[index].swiperLoopMoveDOM = true;
+                slidesEl.prepend(slides[index]);
+                slides[index].swiperLoopMoveDOM = false;
             }));
             if (isNext) appendSlidesIndexes.forEach((index => {
-                swiper.slides[index].swiperLoopMoveDOM = true;
-                slidesEl.append(swiper.slides[index]);
-                swiper.slides[index].swiperLoopMoveDOM = false;
+                slides[index].swiperLoopMoveDOM = true;
+                slidesEl.append(slides[index]);
+                slides[index].swiperLoopMoveDOM = false;
             }));
             swiper.recalcSlides();
-            if (params.slidesPerView === "auto") swiper.updateSlides();
+            if (params.slidesPerView === "auto") swiper.updateSlides(); else if (gridEnabled && (prependSlidesIndexes.length > 0 && isPrev || appendSlidesIndexes.length > 0 && isNext)) swiper.slides.forEach(((slide, slideIndex) => {
+                swiper.grid.updateSlide(slideIndex, slide, swiper.slides);
+            }));
             if (params.watchSlidesProgress) swiper.updateSlidesOffset();
             if (slideTo) if (prependSlidesIndexes.length > 0 && isPrev) {
                 if (typeof slideRealIndex === "undefined") {
@@ -3167,12 +3296,13 @@
                     if (byMousewheel) swiper.setTranslate(swiper.translate - diff); else {
                         swiper.slideTo(activeIndex + slidesPrepended, 0, false, true);
                         if (setTranslate) {
-                            swiper.touches[swiper.isHorizontal() ? "startX" : "startY"] += diff;
-                            swiper.touchEventsData.currentTranslate = swiper.translate;
+                            swiper.touchEventsData.startTranslate = swiper.touchEventsData.startTranslate - diff;
+                            swiper.touchEventsData.currentTranslate = swiper.touchEventsData.currentTranslate - diff;
                         }
                     }
                 } else if (setTranslate) {
-                    swiper.slideToLoop(slideRealIndex, 0, false, true);
+                    const shift = gridEnabled ? prependSlidesIndexes.length / params.grid.rows : prependSlidesIndexes.length;
+                    swiper.slideTo(swiper.activeIndex + shift, 0, false, true);
                     swiper.touchEventsData.currentTranslate = swiper.translate;
                 }
             } else if (appendSlidesIndexes.length > 0 && isNext) if (typeof slideRealIndex === "undefined") {
@@ -3182,11 +3312,14 @@
                 if (byMousewheel) swiper.setTranslate(swiper.translate - diff); else {
                     swiper.slideTo(activeIndex - slidesAppended, 0, false, true);
                     if (setTranslate) {
-                        swiper.touches[swiper.isHorizontal() ? "startX" : "startY"] += diff;
-                        swiper.touchEventsData.currentTranslate = swiper.translate;
+                        swiper.touchEventsData.startTranslate = swiper.touchEventsData.startTranslate - diff;
+                        swiper.touchEventsData.currentTranslate = swiper.touchEventsData.currentTranslate - diff;
                     }
                 }
-            } else swiper.slideToLoop(slideRealIndex, 0, false, true);
+            } else {
+                const shift = gridEnabled ? appendSlidesIndexes.length / params.grid.rows : appendSlidesIndexes.length;
+                swiper.slideTo(swiper.activeIndex - shift, 0, false, true);
+            }
             swiper.allowSlidePrev = allowSlidePrev;
             swiper.allowSlideNext = allowSlideNext;
             if (swiper.controller && swiper.controller.control && !byController) {
@@ -3268,26 +3401,46 @@
             }
             return __closestFrom(base);
         }
+        function preventEdgeSwipe(swiper, event, startX) {
+            const window = ssr_window_esm_getWindow();
+            const {params} = swiper;
+            const edgeSwipeDetection = params.edgeSwipeDetection;
+            const edgeSwipeThreshold = params.edgeSwipeThreshold;
+            if (edgeSwipeDetection && (startX <= edgeSwipeThreshold || startX >= window.innerWidth - edgeSwipeThreshold)) {
+                if (edgeSwipeDetection === "prevent") {
+                    event.preventDefault();
+                    return true;
+                }
+                return false;
+            }
+            return true;
+        }
         function onTouchStart(event) {
             const swiper = this;
             const document = ssr_window_esm_getDocument();
-            const window = ssr_window_esm_getWindow();
-            const data = swiper.touchEventsData;
-            data.evCache.push(event);
-            const {params, touches, enabled} = swiper;
-            if (!enabled) return;
-            if (!params.simulateTouch && event.pointerType === "mouse") return;
-            if (swiper.animating && params.preventInteractionOnTransition) return;
-            if (!swiper.animating && params.cssMode && params.loop) swiper.loopFix();
             let e = event;
             if (e.originalEvent) e = e.originalEvent;
+            const data = swiper.touchEventsData;
+            if (e.type === "pointerdown") {
+                if (data.pointerId !== null && data.pointerId !== e.pointerId) return;
+                data.pointerId = e.pointerId;
+            } else if (e.type === "touchstart" && e.targetTouches.length === 1) data.touchId = e.targetTouches[0].identifier;
+            if (e.type === "touchstart") {
+                preventEdgeSwipe(swiper, e, e.targetTouches[0].pageX);
+                return;
+            }
+            const {params, touches, enabled} = swiper;
+            if (!enabled) return;
+            if (!params.simulateTouch && e.pointerType === "mouse") return;
+            if (swiper.animating && params.preventInteractionOnTransition) return;
+            if (!swiper.animating && params.cssMode && params.loop) swiper.loopFix();
             let targetEl = e.target;
             if (params.touchEventsTarget === "wrapper") if (!swiper.wrapperEl.contains(targetEl)) return;
             if ("which" in e && e.which === 3) return;
             if ("button" in e && e.button > 0) return;
             if (data.isTouched && data.isMoved) return;
             const swipingClassHasValue = !!params.noSwipingClass && params.noSwipingClass !== "";
-            const eventPath = event.composedPath ? event.composedPath() : event.path;
+            const eventPath = e.composedPath ? e.composedPath() : e.path;
             if (swipingClassHasValue && e.target && e.target.shadowRoot && eventPath) targetEl = eventPath[0];
             const noSwipingSelector = params.noSwipingSelector ? params.noSwipingSelector : `.${params.noSwipingClass}`;
             const isTargetShadow = !!(e.target && e.target.shadowRoot);
@@ -3300,9 +3453,7 @@
             touches.currentY = e.pageY;
             const startX = touches.currentX;
             const startY = touches.currentY;
-            const edgeSwipeDetection = params.edgeSwipeDetection || params.iOSEdgeSwipeDetection;
-            const edgeSwipeThreshold = params.edgeSwipeThreshold || params.iOSEdgeSwipeThreshold;
-            if (edgeSwipeDetection && (startX <= edgeSwipeThreshold || startX >= window.innerWidth - edgeSwipeThreshold)) if (edgeSwipeDetection === "prevent") event.preventDefault(); else return;
+            if (!preventEdgeSwipe(swiper, e, startX)) return;
             Object.assign(data, {
                 isTouched: true,
                 isMoved: false,
@@ -3337,13 +3488,20 @@
             if (!params.simulateTouch && event.pointerType === "mouse") return;
             let e = event;
             if (e.originalEvent) e = e.originalEvent;
+            if (e.type === "pointermove") {
+                if (data.touchId !== null) return;
+                const id = e.pointerId;
+                if (id !== data.pointerId) return;
+            }
+            let targetTouch;
+            if (e.type === "touchmove") {
+                targetTouch = [ ...e.changedTouches ].filter((t => t.identifier === data.touchId))[0];
+                if (!targetTouch || targetTouch.identifier !== data.touchId) return;
+            } else targetTouch = e;
             if (!data.isTouched) {
                 if (data.startMoving && data.isScrolling) swiper.emit("touchMoveOpposite", e);
                 return;
             }
-            const pointerIndex = data.evCache.findIndex((cachedEv => cachedEv.pointerId === e.pointerId));
-            if (pointerIndex >= 0) data.evCache[pointerIndex] = e;
-            const targetTouch = data.evCache.length > 1 ? data.evCache[0] : e;
             const pageX = targetTouch.pageX;
             const pageY = targetTouch.pageY;
             if (e.preventedByNestedSwiper) {
@@ -3357,8 +3515,6 @@
                     Object.assign(touches, {
                         startX: pageX,
                         startY: pageY,
-                        prevX: swiper.touches.currentX,
-                        prevY: swiper.touches.currentY,
                         currentX: pageX,
                         currentY: pageY
                     });
@@ -3379,7 +3535,8 @@
                 return;
             }
             if (data.allowTouchCallbacks) swiper.emit("touchMove", e);
-            if (e.targetTouches && e.targetTouches.length > 1) return;
+            touches.previousX = touches.currentX;
+            touches.previousY = touches.currentY;
             touches.currentX = pageX;
             touches.currentY = pageY;
             const diffX = touches.currentX - touches.startX;
@@ -3394,7 +3551,7 @@
             }
             if (data.isScrolling) swiper.emit("touchMoveOpposite", e);
             if (typeof data.startMoving === "undefined") if (touches.currentX !== touches.startX || touches.currentY !== touches.startY) data.startMoving = true;
-            if (data.isScrolling || swiper.zoom && swiper.params.zoom && swiper.params.zoom.enabled && data.evCache.length > 1) {
+            if (data.isScrolling) {
                 data.isTouched = false;
                 return;
             }
@@ -3418,8 +3575,9 @@
             swiper.swipeDirection = diff > 0 ? "prev" : "next";
             swiper.touchesDirection = touchesDiff > 0 ? "prev" : "next";
             const isLoop = swiper.params.loop && !params.cssMode;
+            const allowLoopFix = swiper.touchesDirection === "next" && swiper.allowSlideNext || swiper.touchesDirection === "prev" && swiper.allowSlidePrev;
             if (!data.isMoved) {
-                if (isLoop) swiper.loopFix({
+                if (isLoop && allowLoopFix) swiper.loopFix({
                     direction: swiper.swipeDirection
                 });
                 data.startTranslate = swiper.getTranslate();
@@ -3436,12 +3594,18 @@
                 swiper.emit("sliderFirstMove", e);
             }
             let loopFixed;
-            if (data.isMoved && prevTouchesDirection !== swiper.touchesDirection && isLoop && Math.abs(diff) >= 1) {
-                swiper.loopFix({
-                    direction: swiper.swipeDirection,
-                    setTranslate: true
+            (new Date).getTime();
+            if (data.isMoved && data.allowThresholdMove && prevTouchesDirection !== swiper.touchesDirection && isLoop && allowLoopFix && Math.abs(diff) >= 1) {
+                Object.assign(touches, {
+                    startX: pageX,
+                    startY: pageY,
+                    currentX: pageX,
+                    currentY: pageY,
+                    startTranslate: data.currentTranslate
                 });
-                loopFixed = true;
+                data.loopSwapReset = true;
+                data.startTranslate = data.currentTranslate;
+                return;
             }
             swiper.emit("sliderMove", e);
             data.isMoved = true;
@@ -3450,7 +3614,7 @@
             let resistanceRatio = params.resistanceRatio;
             if (params.touchReleaseOnEdges) resistanceRatio = 0;
             if (diff > 0) {
-                if (isLoop && !loopFixed && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.size / 2 : swiper.minTranslate())) swiper.loopFix({
+                if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate > (params.centeredSlides ? swiper.minTranslate() - swiper.slidesSizesGrid[swiper.activeIndex + 1] : swiper.minTranslate())) swiper.loopFix({
                     direction: "prev",
                     setTranslate: true,
                     activeSlideIndex: 0
@@ -3460,7 +3624,7 @@
                     if (params.resistance) data.currentTranslate = swiper.minTranslate() - 1 + (-swiper.minTranslate() + data.startTranslate + diff) ** resistanceRatio;
                 }
             } else if (diff < 0) {
-                if (isLoop && !loopFixed && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.size / 2 : swiper.maxTranslate())) swiper.loopFix({
+                if (isLoop && allowLoopFix && !loopFixed && data.allowThresholdMove && data.currentTranslate < (params.centeredSlides ? swiper.maxTranslate() + swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] : swiper.maxTranslate())) swiper.loopFix({
                     direction: "next",
                     setTranslate: true,
                     activeSlideIndex: swiper.slides.length - (params.slidesPerView === "auto" ? swiper.slidesPerViewDynamic() : Math.ceil(parseFloat(params.slidesPerView, 10)))
@@ -3499,17 +3663,27 @@
         function onTouchEnd(event) {
             const swiper = this;
             const data = swiper.touchEventsData;
-            const pointerIndex = data.evCache.findIndex((cachedEv => cachedEv.pointerId === event.pointerId));
-            if (pointerIndex >= 0) data.evCache.splice(pointerIndex, 1);
-            if ([ "pointercancel", "pointerout", "pointerleave", "contextmenu" ].includes(event.type)) {
-                const proceed = [ "pointercancel", "contextmenu" ].includes(event.type) && (swiper.browser.isSafari || swiper.browser.isWebView);
-                if (!proceed) return;
-            }
-            const {params, touches, rtlTranslate: rtl, slidesGrid, enabled} = swiper;
-            if (!enabled) return;
-            if (!params.simulateTouch && event.pointerType === "mouse") return;
             let e = event;
             if (e.originalEvent) e = e.originalEvent;
+            let targetTouch;
+            const isTouchEvent = e.type === "touchend" || e.type === "touchcancel";
+            if (!isTouchEvent) {
+                if (data.touchId !== null) return;
+                if (e.pointerId !== data.pointerId) return;
+                targetTouch = e;
+            } else {
+                targetTouch = [ ...e.changedTouches ].filter((t => t.identifier === data.touchId))[0];
+                if (!targetTouch || targetTouch.identifier !== data.touchId) return;
+            }
+            if ([ "pointercancel", "pointerout", "pointerleave", "contextmenu" ].includes(e.type)) {
+                const proceed = [ "pointercancel", "contextmenu" ].includes(e.type) && (swiper.browser.isSafari || swiper.browser.isWebView);
+                if (!proceed) return;
+            }
+            data.pointerId = null;
+            data.touchId = null;
+            const {params, touches, rtlTranslate: rtl, slidesGrid, enabled} = swiper;
+            if (!enabled) return;
+            if (!params.simulateTouch && e.pointerType === "mouse") return;
             if (data.allowTouchCallbacks) swiper.emit("touchEnd", e);
             data.allowTouchCallbacks = false;
             if (!data.isTouched) {
@@ -3523,7 +3697,7 @@
             const timeDiff = touchEndTime - data.touchStartTime;
             if (swiper.allowClick) {
                 const pathTree = e.path || e.composedPath && e.composedPath();
-                swiper.updateClickedSlide(pathTree && pathTree[0] || e.target);
+                swiper.updateClickedSlide(pathTree && pathTree[0] || e.target, pathTree);
                 swiper.emit("tap click", e);
                 if (timeDiff < 300 && touchEndTime - data.lastClickTime < 300) swiper.emit("doubleTap doubleClick", e);
             }
@@ -3531,7 +3705,7 @@
             utils_nextTick((() => {
                 if (!swiper.destroyed) swiper.allowClick = true;
             }));
-            if (!data.isTouched || !data.isMoved || !swiper.swipeDirection || touches.diff === 0 || data.currentTranslate === data.startTranslate) {
+            if (!data.isTouched || !data.isMoved || !swiper.swipeDirection || touches.diff === 0 && !data.loopSwapReset || data.currentTranslate === data.startTranslate && !data.loopSwapReset) {
                 data.isTouched = false;
                 data.isMoved = false;
                 data.startMoving = false;
@@ -3549,16 +3723,17 @@
                 });
                 return;
             }
+            const swipeToLast = currentPos >= -swiper.maxTranslate() && !swiper.params.loop;
             let stopIndex = 0;
             let groupSize = swiper.slidesSizesGrid[0];
             for (let i = 0; i < slidesGrid.length; i += i < params.slidesPerGroupSkip ? 1 : params.slidesPerGroup) {
                 const increment = i < params.slidesPerGroupSkip - 1 ? 1 : params.slidesPerGroup;
                 if (typeof slidesGrid[i + increment] !== "undefined") {
-                    if (currentPos >= slidesGrid[i] && currentPos < slidesGrid[i + increment]) {
+                    if (swipeToLast || currentPos >= slidesGrid[i] && currentPos < slidesGrid[i + increment]) {
                         stopIndex = i;
                         groupSize = slidesGrid[i + increment] - slidesGrid[i];
                     }
-                } else if (currentPos >= slidesGrid[i]) {
+                } else if (swipeToLast || currentPos >= slidesGrid[i]) {
                     stopIndex = i;
                     groupSize = slidesGrid[slidesGrid.length - 1] - slidesGrid[slidesGrid.length - 2];
                 }
@@ -3643,25 +3818,46 @@
             if (swiper.params.cssMode || swiper.params.slidesPerView !== "auto" && !swiper.params.autoHeight) return;
             swiper.update();
         }
-        let dummyEventAttached = false;
-        function dummyEventListener() {}
+        function onDocumentTouchStart() {
+            const swiper = this;
+            if (swiper.documentTouchHandlerProceeded) return;
+            swiper.documentTouchHandlerProceeded = true;
+            if (swiper.params.touchReleaseOnEdges) swiper.el.style.touchAction = "auto";
+        }
         const events = (swiper, method) => {
             const document = ssr_window_esm_getDocument();
             const {params, el, wrapperEl, device} = swiper;
             const capture = !!params.nested;
             const domMethod = method === "on" ? "addEventListener" : "removeEventListener";
             const swiperMethod = method;
+            document[domMethod]("touchstart", swiper.onDocumentTouchStart, {
+                passive: false,
+                capture
+            });
+            el[domMethod]("touchstart", swiper.onTouchStart, {
+                passive: false
+            });
             el[domMethod]("pointerdown", swiper.onTouchStart, {
                 passive: false
+            });
+            document[domMethod]("touchmove", swiper.onTouchMove, {
+                passive: false,
+                capture
             });
             document[domMethod]("pointermove", swiper.onTouchMove, {
                 passive: false,
                 capture
             });
+            document[domMethod]("touchend", swiper.onTouchEnd, {
+                passive: true
+            });
             document[domMethod]("pointerup", swiper.onTouchEnd, {
                 passive: true
             });
             document[domMethod]("pointercancel", swiper.onTouchEnd, {
+                passive: true
+            });
+            document[domMethod]("touchcancel", swiper.onTouchEnd, {
                 passive: true
             });
             document[domMethod]("pointerout", swiper.onTouchEnd, {
@@ -3682,18 +3878,14 @@
         };
         function attachEvents() {
             const swiper = this;
-            const document = ssr_window_esm_getDocument();
             const {params} = swiper;
             swiper.onTouchStart = onTouchStart.bind(swiper);
             swiper.onTouchMove = onTouchMove.bind(swiper);
             swiper.onTouchEnd = onTouchEnd.bind(swiper);
+            swiper.onDocumentTouchStart = onDocumentTouchStart.bind(swiper);
             if (params.cssMode) swiper.onScroll = onScroll.bind(swiper);
             swiper.onClick = onClick.bind(swiper);
             swiper.onLoad = onLoad.bind(swiper);
-            if (!dummyEventAttached) {
-                document.addEventListener("touchstart", dummyEventListener);
-                dummyEventAttached = true;
-            }
             events(swiper, "on");
         }
         function detachEvents() {
@@ -3734,9 +3926,11 @@
             }));
             const directionChanged = breakpointParams.direction && breakpointParams.direction !== params.direction;
             const needsReLoop = params.loop && (breakpointParams.slidesPerView !== params.slidesPerView || directionChanged);
+            const wasLoop = params.loop;
             if (directionChanged && initialized) swiper.changeDirection();
             utils_extend(swiper.params, breakpointParams);
             const isEnabled = swiper.params.enabled;
+            const hasLoop = swiper.params.loop;
             Object.assign(swiper, {
                 allowTouchMove: swiper.params.allowTouchMove,
                 allowSlideNext: swiper.params.allowSlideNext,
@@ -3745,11 +3939,14 @@
             if (wasEnabled && !isEnabled) swiper.disable(); else if (!wasEnabled && isEnabled) swiper.enable();
             swiper.currentBreakpoint = breakpoint;
             swiper.emit("_beforeBreakpoint", breakpointParams);
-            if (needsReLoop && initialized) {
+            if (initialized) if (needsReLoop) {
                 swiper.loopDestroy();
                 swiper.loopCreate(realIndex);
                 swiper.updateSlides();
-            }
+            } else if (!wasLoop && hasLoop) {
+                swiper.loopCreate(realIndex);
+                swiper.updateSlides();
+            } else if (wasLoop && !hasLoop) swiper.loopDestroy();
             swiper.emit("breakpoint", breakpointParams);
         }
         function getBreakpoint(breakpoints, base, containerEl) {
@@ -3861,6 +4058,7 @@
             resizeObserver: true,
             nested: false,
             createElements: false,
+            eventsPrefix: "swiper",
             enabled: true,
             focusableElements: "input, select, option, textarea, button, video, label",
             width: null,
@@ -3912,7 +4110,8 @@
             preventClicksPropagation: true,
             slideToClickedSlide: false,
             loop: false,
-            loopedSlides: null,
+            loopAddBlankSlides: true,
+            loopAdditionalSlides: 0,
             loopPreventsSliding: true,
             rewind: false,
             allowSlidePrev: true,
@@ -3925,8 +4124,10 @@
             maxBackfaceHiddenSlides: 10,
             containerModifierClass: "swiper-",
             slideClass: "swiper-slide",
+            slideBlankClass: "swiper-slide-blank",
             slideActiveClass: "swiper-slide-active",
             slideVisibleClass: "swiper-slide-visible",
+            slideFullyVisibleClass: "swiper-slide-fully-visible",
             slideNextClass: "swiper-slide-next",
             slidePrevClass: "swiper-slide-prev",
             wrapperClass: "swiper-wrapper",
@@ -3944,16 +4145,15 @@
                     utils_extend(allModulesParams, obj);
                     return;
                 }
-                if ([ "navigation", "pagination", "scrollbar" ].indexOf(moduleParamName) >= 0 && params[moduleParamName] === true) params[moduleParamName] = {
-                    auto: true
+                if (params[moduleParamName] === true) params[moduleParamName] = {
+                    enabled: true
                 };
+                if (moduleParamName === "navigation" && params[moduleParamName] && params[moduleParamName].enabled && !params[moduleParamName].prevEl && !params[moduleParamName].nextEl) params[moduleParamName].auto = true;
+                if ([ "pagination", "scrollbar" ].indexOf(moduleParamName) >= 0 && params[moduleParamName] && params[moduleParamName].enabled && !params[moduleParamName].el) params[moduleParamName].auto = true;
                 if (!(moduleParamName in params && "enabled" in moduleParams)) {
                     utils_extend(allModulesParams, obj);
                     return;
                 }
-                if (params[moduleParamName] === true) params[moduleParamName] = {
-                    enabled: true
-                };
                 if (typeof params[moduleParamName] === "object" && !("enabled" in params[moduleParamName])) params[moduleParamName].enabled = true;
                 if (!params[moduleParamName]) params[moduleParamName] = {
                     enabled: false
@@ -4069,7 +4269,8 @@
                         velocities: [],
                         allowMomentumBounce: void 0,
                         startMoving: void 0,
-                        evCache: []
+                        pointerId: null,
+                        touchId: null
                     },
                     allowClick: true,
                     allowTouchMove: swiper.params.allowTouchMove,
@@ -4086,6 +4287,19 @@
                 swiper.emit("_swiper");
                 if (swiper.params.init) swiper.init();
                 return swiper;
+            }
+            getDirectionLabel(property) {
+                if (this.isHorizontal()) return property;
+                return {
+                    width: "height",
+                    "margin-top": "margin-left",
+                    "margin-bottom ": "margin-right",
+                    "margin-left": "margin-top",
+                    "margin-right": "margin-bottom",
+                    "padding-left": "padding-top",
+                    "padding-right": "padding-bottom",
+                    marginRight: "marginBottom"
+                }[property];
             }
             getSlideIndex(slideEl) {
                 const {slidesEl, params} = this;
@@ -4156,6 +4370,7 @@
                 const swiper = this;
                 const {params, slides, slidesGrid, slidesSizesGrid, size: swiperSize, activeIndex} = swiper;
                 let spv = 1;
+                if (typeof params.slidesPerView === "number") return params.slidesPerView;
                 if (params.centeredSlides) {
                     let slideSize = slides[activeIndex] ? slides[activeIndex].swiperSlideSize : 0;
                     let breakLoop;
@@ -4322,7 +4537,7 @@
                     el.removeAttribute("style");
                     wrapperEl.removeAttribute("style");
                     if (slides && slides.length) slides.forEach((slideEl => {
-                        slideEl.classList.remove(params.slideVisibleClass, params.slideActiveClass, params.slideNextClass, params.slidePrevClass);
+                        slideEl.classList.remove(params.slideVisibleClass, params.slideFullyVisibleClass, params.slideActiveClass, params.slideNextClass, params.slidePrevClass);
                         slideEl.removeAttribute("style");
                         slideEl.removeAttribute("data-swiper-slide-index");
                     }));
@@ -4495,7 +4710,11 @@
                 let {nextEl, prevEl} = swiper.navigation;
                 nextEl = makeElementsArray(nextEl);
                 prevEl = makeElementsArray(prevEl);
-                [ ...nextEl, ...prevEl ].filter((el => !!el)).forEach((el => el.classList[swiper.enabled ? "remove" : "add"](swiper.params.navigation.lockClass)));
+                if (swiper.enabled) {
+                    update();
+                    return;
+                }
+                [ ...nextEl, ...prevEl ].filter((el => !!el)).forEach((el => el.classList.add(swiper.params.navigation.lockClass)));
             }));
             on("click", ((_s, e) => {
                 let {nextEl, prevEl} = swiper.navigation;
@@ -4592,19 +4811,6 @@
                 const index = utils_elementIndex(bulletEl) * swiper.params.slidesPerGroup;
                 if (swiper.params.loop) {
                     if (swiper.realIndex === index) return;
-                    const realIndex = swiper.realIndex;
-                    const newSlideIndex = swiper.getSlideIndexByData(index);
-                    const currentSlideIndex = swiper.getSlideIndexByData(swiper.realIndex);
-                    if (newSlideIndex > swiper.slides.length - swiper.loopedSlides) {
-                        const indexBeforeLoopFix = swiper.activeIndex;
-                        swiper.loopFix({
-                            direction: newSlideIndex > currentSlideIndex ? "next" : "prev",
-                            activeSlideIndex: newSlideIndex,
-                            slideTo: false
-                        });
-                        const indexAfterFix = swiper.activeIndex;
-                        if (indexBeforeLoopFix === indexAfterFix) swiper.slideToLoop(realIndex, 0, false, true);
-                    }
                     swiper.slideToLoop(index);
                 } else swiper.slideTo(index);
             }
@@ -4715,7 +4921,7 @@
             function render() {
                 const params = swiper.params.pagination;
                 if (isPaginationDisabled()) return;
-                const slidesLength = swiper.virtual && swiper.params.virtual.enabled ? swiper.virtual.slides.length : swiper.slides.length;
+                const slidesLength = swiper.virtual && swiper.params.virtual.enabled ? swiper.virtual.slides.length : swiper.grid && swiper.params.grid.rows > 1 ? swiper.slides.length / Math.ceil(swiper.params.grid.rows) : swiper.slides.length;
                 let el = swiper.pagination.el;
                 el = makeElementsArray(el);
                 let paginationHTML = "";
@@ -5047,13 +5253,16 @@
                 if (!params.el) return;
                 let el;
                 if (typeof params.el === "string" && swiper.isElement) el = swiper.el.querySelector(params.el);
-                if (!el && typeof params.el === "string") el = document.querySelectorAll(params.el); else if (!el) el = params.el;
+                if (!el && typeof params.el === "string") {
+                    el = document.querySelectorAll(params.el);
+                    if (!el.length) return;
+                } else if (!el) el = params.el;
                 if (swiper.params.uniqueNavElements && typeof params.el === "string" && el.length > 1 && swiperEl.querySelectorAll(params.el).length === 1) el = swiperEl.querySelector(params.el);
                 if (el.length > 0) el = el[0];
                 el.classList.add(swiper.isHorizontal() ? params.horizontalClass : params.verticalClass);
                 let dragEl;
                 if (el) {
-                    dragEl = el.querySelector(`.${swiper.params.scrollbar.dragClass}`);
+                    dragEl = el.querySelector(classes_to_selector_classesToSelector(swiper.params.scrollbar.dragClass));
                     if (!dragEl) {
                         dragEl = utils_createElement("div", swiper.params.scrollbar.dragClass);
                         el.append(dragEl);
@@ -5064,12 +5273,12 @@
                     dragEl
                 });
                 if (params.draggable) enableDraggable();
-                if (el) el.classList[swiper.enabled ? "remove" : "add"](swiper.params.scrollbar.lockClass);
+                if (el) el.classList[swiper.enabled ? "remove" : "add"](...classesToTokens(swiper.params.scrollbar.lockClass));
             }
             function destroy() {
                 const params = swiper.params.scrollbar;
                 const el = swiper.scrollbar.el;
-                if (el) el.classList.remove(swiper.isHorizontal() ? params.horizontalClass : params.verticalClass);
+                if (el) el.classList.remove(...classesToTokens(swiper.isHorizontal() ? params.horizontalClass : params.verticalClass));
                 disableDraggable();
             }
             on("init", (() => {
@@ -5090,21 +5299,21 @@
             }));
             on("enable disable", (() => {
                 const {el} = swiper.scrollbar;
-                if (el) el.classList[swiper.enabled ? "remove" : "add"](swiper.params.scrollbar.lockClass);
+                if (el) el.classList[swiper.enabled ? "remove" : "add"](...classesToTokens(swiper.params.scrollbar.lockClass));
             }));
             on("destroy", (() => {
                 destroy();
             }));
             const enable = () => {
-                swiper.el.classList.remove(swiper.params.scrollbar.scrollbarDisabledClass);
-                if (swiper.scrollbar.el) swiper.scrollbar.el.classList.remove(swiper.params.scrollbar.scrollbarDisabledClass);
+                swiper.el.classList.remove(...classesToTokens(swiper.params.scrollbar.scrollbarDisabledClass));
+                if (swiper.scrollbar.el) swiper.scrollbar.el.classList.remove(...classesToTokens(swiper.params.scrollbar.scrollbarDisabledClass));
                 init();
                 updateSize();
                 setTranslate();
             };
             const disable = () => {
-                swiper.el.classList.add(swiper.params.scrollbar.scrollbarDisabledClass);
-                if (swiper.scrollbar.el) swiper.scrollbar.el.classList.add(swiper.params.scrollbar.scrollbarDisabledClass);
+                swiper.el.classList.add(...classesToTokens(swiper.params.scrollbar.scrollbarDisabledClass));
+                if (swiper.scrollbar.el) swiper.scrollbar.el.classList.add(...classesToTokens(swiper.params.scrollbar.scrollbarDisabledClass));
                 destroy();
             };
             Object.assign(swiper.scrollbar, {
@@ -5223,8 +5432,8 @@
             return string ? string.slice(0, _trimmedEndIndex(string) + 1).replace(reTrimStart, "") : string;
         }
         const _baseTrim = baseTrim;
-        var _Symbol_Symbol = _root.Symbol;
-        const _Symbol = _Symbol_Symbol;
+        var Symbol = _root.Symbol;
+        const _Symbol = Symbol;
         var objectProto = Object.prototype;
         var _getRawTag_hasOwnProperty = objectProto.hasOwnProperty;
         var nativeObjectToString = objectProto.toString;
@@ -6156,2429 +6365,6 @@
             class_loaded: "_lazy-loaded",
             use_native: true
         });
-        const consoleLogger = {
-            type: "logger",
-            log(args) {
-                this.output("log", args);
-            },
-            warn(args) {
-                this.output("warn", args);
-            },
-            error(args) {
-                this.output("error", args);
-            },
-            output(type, args) {
-                if (console && console[type]) console[type].apply(console, args);
-            }
-        };
-        class Logger {
-            constructor(concreteLogger) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                this.init(concreteLogger, options);
-            }
-            init(concreteLogger) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                this.prefix = options.prefix || "i18next:";
-                this.logger = concreteLogger || consoleLogger;
-                this.options = options;
-                this.debug = options.debug;
-            }
-            log() {
-                for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) args[_key] = arguments[_key];
-                return this.forward(args, "log", "", true);
-            }
-            warn() {
-                for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) args[_key2] = arguments[_key2];
-                return this.forward(args, "warn", "", true);
-            }
-            error() {
-                for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) args[_key3] = arguments[_key3];
-                return this.forward(args, "error", "");
-            }
-            deprecate() {
-                for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) args[_key4] = arguments[_key4];
-                return this.forward(args, "warn", "WARNING DEPRECATED: ", true);
-            }
-            forward(args, lvl, prefix, debugOnly) {
-                if (debugOnly && !this.debug) return null;
-                if (typeof args[0] === "string") args[0] = `${prefix}${this.prefix} ${args[0]}`;
-                return this.logger[lvl](args);
-            }
-            create(moduleName) {
-                return new Logger(this.logger, {
-                    prefix: `${this.prefix}:${moduleName}:`,
-                    ...this.options
-                });
-            }
-            clone(options) {
-                options = options || this.options;
-                options.prefix = options.prefix || this.prefix;
-                return new Logger(this.logger, options);
-            }
-        }
-        var baseLogger = new Logger;
-        class EventEmitter {
-            constructor() {
-                this.observers = {};
-            }
-            on(events, listener) {
-                events.split(" ").forEach((event => {
-                    this.observers[event] = this.observers[event] || [];
-                    this.observers[event].push(listener);
-                }));
-                return this;
-            }
-            off(event, listener) {
-                if (!this.observers[event]) return;
-                if (!listener) {
-                    delete this.observers[event];
-                    return;
-                }
-                this.observers[event] = this.observers[event].filter((l => l !== listener));
-            }
-            emit(event) {
-                for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) args[_key - 1] = arguments[_key];
-                if (this.observers[event]) {
-                    const cloned = [].concat(this.observers[event]);
-                    cloned.forEach((observer => {
-                        observer(...args);
-                    }));
-                }
-                if (this.observers["*"]) {
-                    const cloned = [].concat(this.observers["*"]);
-                    cloned.forEach((observer => {
-                        observer.apply(observer, [ event, ...args ]);
-                    }));
-                }
-            }
-        }
-        function defer() {
-            let res;
-            let rej;
-            const promise = new Promise(((resolve, reject) => {
-                res = resolve;
-                rej = reject;
-            }));
-            promise.resolve = res;
-            promise.reject = rej;
-            return promise;
-        }
-        function makeString(object) {
-            if (object == null) return "";
-            return "" + object;
-        }
-        function copy(a, s, t) {
-            a.forEach((m => {
-                if (s[m]) t[m] = s[m];
-            }));
-        }
-        function getLastOfPath(object, path, Empty) {
-            function cleanKey(key) {
-                return key && key.indexOf("###") > -1 ? key.replace(/###/g, ".") : key;
-            }
-            function canNotTraverseDeeper() {
-                return !object || typeof object === "string";
-            }
-            const stack = typeof path !== "string" ? [].concat(path) : path.split(".");
-            while (stack.length > 1) {
-                if (canNotTraverseDeeper()) return {};
-                const key = cleanKey(stack.shift());
-                if (!object[key] && Empty) object[key] = new Empty;
-                if (Object.prototype.hasOwnProperty.call(object, key)) object = object[key]; else object = {};
-            }
-            if (canNotTraverseDeeper()) return {};
-            return {
-                obj: object,
-                k: cleanKey(stack.shift())
-            };
-        }
-        function setPath(object, path, newValue) {
-            const {obj, k} = getLastOfPath(object, path, Object);
-            obj[k] = newValue;
-        }
-        function pushPath(object, path, newValue, concat) {
-            const {obj, k} = getLastOfPath(object, path, Object);
-            obj[k] = obj[k] || [];
-            if (concat) obj[k] = obj[k].concat(newValue);
-            if (!concat) obj[k].push(newValue);
-        }
-        function getPath(object, path) {
-            const {obj, k} = getLastOfPath(object, path);
-            if (!obj) return;
-            return obj[k];
-        }
-        function getPathWithDefaults(data, defaultData, key) {
-            const value = getPath(data, key);
-            if (value !== void 0) return value;
-            return getPath(defaultData, key);
-        }
-        function deepExtend(target, source, overwrite) {
-            for (const prop in source) if (prop !== "__proto__" && prop !== "constructor") if (prop in target) if (typeof target[prop] === "string" || target[prop] instanceof String || typeof source[prop] === "string" || source[prop] instanceof String) {
-                if (overwrite) target[prop] = source[prop];
-            } else deepExtend(target[prop], source[prop], overwrite); else target[prop] = source[prop];
-            return target;
-        }
-        function regexEscape(str) {
-            return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-        }
-        var _entityMap = {
-            "&": "&amp;",
-            "<": "&lt;",
-            ">": "&gt;",
-            '"': "&quot;",
-            "'": "&#39;",
-            "/": "&#x2F;"
-        };
-        function i18next_escape(data) {
-            if (typeof data === "string") return data.replace(/[&<>"'\/]/g, (s => _entityMap[s]));
-            return data;
-        }
-        const chars = [ " ", ",", "?", "!", ";" ];
-        function looksLikeObjectPath(key, nsSeparator, keySeparator) {
-            nsSeparator = nsSeparator || "";
-            keySeparator = keySeparator || "";
-            const possibleChars = chars.filter((c => nsSeparator.indexOf(c) < 0 && keySeparator.indexOf(c) < 0));
-            if (possibleChars.length === 0) return true;
-            const r = new RegExp(`(${possibleChars.map((c => c === "?" ? "\\?" : c)).join("|")})`);
-            let matched = !r.test(key);
-            if (!matched) {
-                const ki = key.indexOf(keySeparator);
-                if (ki > 0 && !r.test(key.substring(0, ki))) matched = true;
-            }
-            return matched;
-        }
-        function deepFind(obj, path) {
-            let keySeparator = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : ".";
-            if (!obj) return;
-            if (obj[path]) return obj[path];
-            const paths = path.split(keySeparator);
-            let current = obj;
-            for (let i = 0; i < paths.length; ++i) {
-                if (!current) return;
-                if (typeof current[paths[i]] === "string" && i + 1 < paths.length) return;
-                if (current[paths[i]] === void 0) {
-                    let j = 2;
-                    let p = paths.slice(i, i + j).join(keySeparator);
-                    let mix = current[p];
-                    while (mix === void 0 && paths.length > i + j) {
-                        j++;
-                        p = paths.slice(i, i + j).join(keySeparator);
-                        mix = current[p];
-                    }
-                    if (mix === void 0) return;
-                    if (mix === null) return null;
-                    if (path.endsWith(p)) {
-                        if (typeof mix === "string") return mix;
-                        if (p && typeof mix[p] === "string") return mix[p];
-                    }
-                    const joinedPath = paths.slice(i + j).join(keySeparator);
-                    if (joinedPath) return deepFind(mix, joinedPath, keySeparator);
-                    return;
-                }
-                current = current[paths[i]];
-            }
-            return current;
-        }
-        function getCleanedCode(code) {
-            if (code && code.indexOf("_") > 0) return code.replace("_", "-");
-            return code;
-        }
-        class ResourceStore extends EventEmitter {
-            constructor(data) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {
-                    ns: [ "translation" ],
-                    defaultNS: "translation"
-                };
-                super();
-                this.data = data || {};
-                this.options = options;
-                if (this.options.keySeparator === void 0) this.options.keySeparator = ".";
-                if (this.options.ignoreJSONStructure === void 0) this.options.ignoreJSONStructure = true;
-            }
-            addNamespaces(ns) {
-                if (this.options.ns.indexOf(ns) < 0) this.options.ns.push(ns);
-            }
-            removeNamespaces(ns) {
-                const index = this.options.ns.indexOf(ns);
-                if (index > -1) this.options.ns.splice(index, 1);
-            }
-            getResource(lng, ns, key) {
-                let options = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
-                const keySeparator = options.keySeparator !== void 0 ? options.keySeparator : this.options.keySeparator;
-                const ignoreJSONStructure = options.ignoreJSONStructure !== void 0 ? options.ignoreJSONStructure : this.options.ignoreJSONStructure;
-                let path = [ lng, ns ];
-                if (key && typeof key !== "string") path = path.concat(key);
-                if (key && typeof key === "string") path = path.concat(keySeparator ? key.split(keySeparator) : key);
-                if (lng.indexOf(".") > -1) path = lng.split(".");
-                const result = getPath(this.data, path);
-                if (result || !ignoreJSONStructure || typeof key !== "string") return result;
-                return deepFind(this.data && this.data[lng] && this.data[lng][ns], key, keySeparator);
-            }
-            addResource(lng, ns, key, value) {
-                let options = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : {
-                    silent: false
-                };
-                const keySeparator = options.keySeparator !== void 0 ? options.keySeparator : this.options.keySeparator;
-                let path = [ lng, ns ];
-                if (key) path = path.concat(keySeparator ? key.split(keySeparator) : key);
-                if (lng.indexOf(".") > -1) {
-                    path = lng.split(".");
-                    value = ns;
-                    ns = path[1];
-                }
-                this.addNamespaces(ns);
-                setPath(this.data, path, value);
-                if (!options.silent) this.emit("added", lng, ns, key, value);
-            }
-            addResources(lng, ns, resources) {
-                let options = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {
-                    silent: false
-                };
-                for (const m in resources) if (typeof resources[m] === "string" || Object.prototype.toString.apply(resources[m]) === "[object Array]") this.addResource(lng, ns, m, resources[m], {
-                    silent: true
-                });
-                if (!options.silent) this.emit("added", lng, ns, resources);
-            }
-            addResourceBundle(lng, ns, resources, deep, overwrite) {
-                let options = arguments.length > 5 && arguments[5] !== void 0 ? arguments[5] : {
-                    silent: false
-                };
-                let path = [ lng, ns ];
-                if (lng.indexOf(".") > -1) {
-                    path = lng.split(".");
-                    deep = resources;
-                    resources = ns;
-                    ns = path[1];
-                }
-                this.addNamespaces(ns);
-                let pack = getPath(this.data, path) || {};
-                if (deep) deepExtend(pack, resources, overwrite); else pack = {
-                    ...pack,
-                    ...resources
-                };
-                setPath(this.data, path, pack);
-                if (!options.silent) this.emit("added", lng, ns, resources);
-            }
-            removeResourceBundle(lng, ns) {
-                if (this.hasResourceBundle(lng, ns)) delete this.data[lng][ns];
-                this.removeNamespaces(ns);
-                this.emit("removed", lng, ns);
-            }
-            hasResourceBundle(lng, ns) {
-                return this.getResource(lng, ns) !== void 0;
-            }
-            getResourceBundle(lng, ns) {
-                if (!ns) ns = this.options.defaultNS;
-                if (this.options.compatibilityAPI === "v1") return {
-                    ...this.getResource(lng, ns)
-                };
-                return this.getResource(lng, ns);
-            }
-            getDataByLanguage(lng) {
-                return this.data[lng];
-            }
-            hasLanguageSomeTranslations(lng) {
-                const data = this.getDataByLanguage(lng);
-                const n = data && Object.keys(data) || [];
-                return !!n.find((v => data[v] && Object.keys(data[v]).length > 0));
-            }
-            toJSON() {
-                return this.data;
-            }
-        }
-        var postProcessor = {
-            processors: {},
-            addPostProcessor(module) {
-                this.processors[module.name] = module;
-            },
-            handle(processors, value, key, options, translator) {
-                processors.forEach((processor => {
-                    if (this.processors[processor]) value = this.processors[processor].process(value, key, options, translator);
-                }));
-                return value;
-            }
-        };
-        const checkedLoadedFor = {};
-        class Translator extends EventEmitter {
-            constructor(services) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                super();
-                copy([ "resourceStore", "languageUtils", "pluralResolver", "interpolator", "backendConnector", "i18nFormat", "utils" ], services, this);
-                this.options = options;
-                if (this.options.keySeparator === void 0) this.options.keySeparator = ".";
-                this.logger = baseLogger.create("translator");
-            }
-            changeLanguage(lng) {
-                if (lng) this.language = lng;
-            }
-            exists(key) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {
-                    interpolation: {}
-                };
-                if (key === void 0 || key === null) return false;
-                const resolved = this.resolve(key, options);
-                return resolved && resolved.res !== void 0;
-            }
-            extractFromKey(key, options) {
-                let nsSeparator = options.nsSeparator !== void 0 ? options.nsSeparator : this.options.nsSeparator;
-                if (nsSeparator === void 0) nsSeparator = ":";
-                const keySeparator = options.keySeparator !== void 0 ? options.keySeparator : this.options.keySeparator;
-                let namespaces = options.ns || this.options.defaultNS || [];
-                const wouldCheckForNsInKey = nsSeparator && key.indexOf(nsSeparator) > -1;
-                const seemsNaturalLanguage = !this.options.userDefinedKeySeparator && !options.keySeparator && !this.options.userDefinedNsSeparator && !options.nsSeparator && !looksLikeObjectPath(key, nsSeparator, keySeparator);
-                if (wouldCheckForNsInKey && !seemsNaturalLanguage) {
-                    const m = key.match(this.interpolator.nestingRegexp);
-                    if (m && m.length > 0) return {
-                        key,
-                        namespaces
-                    };
-                    const parts = key.split(nsSeparator);
-                    if (nsSeparator !== keySeparator || nsSeparator === keySeparator && this.options.ns.indexOf(parts[0]) > -1) namespaces = parts.shift();
-                    key = parts.join(keySeparator);
-                }
-                if (typeof namespaces === "string") namespaces = [ namespaces ];
-                return {
-                    key,
-                    namespaces
-                };
-            }
-            translate(keys, options, lastKey) {
-                if (typeof options !== "object" && this.options.overloadTranslationOptionHandler) options = this.options.overloadTranslationOptionHandler(arguments);
-                if (typeof options === "object") options = {
-                    ...options
-                };
-                if (!options) options = {};
-                if (keys === void 0 || keys === null) return "";
-                if (!Array.isArray(keys)) keys = [ String(keys) ];
-                const returnDetails = options.returnDetails !== void 0 ? options.returnDetails : this.options.returnDetails;
-                const keySeparator = options.keySeparator !== void 0 ? options.keySeparator : this.options.keySeparator;
-                const {key, namespaces} = this.extractFromKey(keys[keys.length - 1], options);
-                const namespace = namespaces[namespaces.length - 1];
-                const lng = options.lng || this.language;
-                const appendNamespaceToCIMode = options.appendNamespaceToCIMode || this.options.appendNamespaceToCIMode;
-                if (lng && lng.toLowerCase() === "cimode") {
-                    if (appendNamespaceToCIMode) {
-                        const nsSeparator = options.nsSeparator || this.options.nsSeparator;
-                        if (returnDetails) return {
-                            res: `${namespace}${nsSeparator}${key}`,
-                            usedKey: key,
-                            exactUsedKey: key,
-                            usedLng: lng,
-                            usedNS: namespace,
-                            usedParams: this.getUsedParamsDetails(options)
-                        };
-                        return `${namespace}${nsSeparator}${key}`;
-                    }
-                    if (returnDetails) return {
-                        res: key,
-                        usedKey: key,
-                        exactUsedKey: key,
-                        usedLng: lng,
-                        usedNS: namespace,
-                        usedParams: this.getUsedParamsDetails(options)
-                    };
-                    return key;
-                }
-                const resolved = this.resolve(keys, options);
-                let res = resolved && resolved.res;
-                const resUsedKey = resolved && resolved.usedKey || key;
-                const resExactUsedKey = resolved && resolved.exactUsedKey || key;
-                const resType = Object.prototype.toString.apply(res);
-                const noObject = [ "[object Number]", "[object Function]", "[object RegExp]" ];
-                const joinArrays = options.joinArrays !== void 0 ? options.joinArrays : this.options.joinArrays;
-                const handleAsObjectInI18nFormat = !this.i18nFormat || this.i18nFormat.handleAsObject;
-                const handleAsObject = typeof res !== "string" && typeof res !== "boolean" && typeof res !== "number";
-                if (handleAsObjectInI18nFormat && res && handleAsObject && noObject.indexOf(resType) < 0 && !(typeof joinArrays === "string" && resType === "[object Array]")) {
-                    if (!options.returnObjects && !this.options.returnObjects) {
-                        if (!this.options.returnedObjectHandler) this.logger.warn("accessing an object - but returnObjects options is not enabled!");
-                        const r = this.options.returnedObjectHandler ? this.options.returnedObjectHandler(resUsedKey, res, {
-                            ...options,
-                            ns: namespaces
-                        }) : `key '${key} (${this.language})' returned an object instead of string.`;
-                        if (returnDetails) {
-                            resolved.res = r;
-                            resolved.usedParams = this.getUsedParamsDetails(options);
-                            return resolved;
-                        }
-                        return r;
-                    }
-                    if (keySeparator) {
-                        const resTypeIsArray = resType === "[object Array]";
-                        const copy = resTypeIsArray ? [] : {};
-                        const newKeyToUse = resTypeIsArray ? resExactUsedKey : resUsedKey;
-                        for (const m in res) if (Object.prototype.hasOwnProperty.call(res, m)) {
-                            const deepKey = `${newKeyToUse}${keySeparator}${m}`;
-                            copy[m] = this.translate(deepKey, {
-                                ...options,
-                                joinArrays: false,
-                                ns: namespaces
-                            });
-                            if (copy[m] === deepKey) copy[m] = res[m];
-                        }
-                        res = copy;
-                    }
-                } else if (handleAsObjectInI18nFormat && typeof joinArrays === "string" && resType === "[object Array]") {
-                    res = res.join(joinArrays);
-                    if (res) res = this.extendTranslation(res, keys, options, lastKey);
-                } else {
-                    let usedDefault = false;
-                    let usedKey = false;
-                    const needsPluralHandling = options.count !== void 0 && typeof options.count !== "string";
-                    const hasDefaultValue = Translator.hasDefaultValue(options);
-                    const defaultValueSuffix = needsPluralHandling ? this.pluralResolver.getSuffix(lng, options.count, options) : "";
-                    const defaultValueSuffixOrdinalFallback = options.ordinal && needsPluralHandling ? this.pluralResolver.getSuffix(lng, options.count, {
-                        ordinal: false
-                    }) : "";
-                    const defaultValue = options[`defaultValue${defaultValueSuffix}`] || options[`defaultValue${defaultValueSuffixOrdinalFallback}`] || options.defaultValue;
-                    if (!this.isValidLookup(res) && hasDefaultValue) {
-                        usedDefault = true;
-                        res = defaultValue;
-                    }
-                    if (!this.isValidLookup(res)) {
-                        usedKey = true;
-                        res = key;
-                    }
-                    const missingKeyNoValueFallbackToKey = options.missingKeyNoValueFallbackToKey || this.options.missingKeyNoValueFallbackToKey;
-                    const resForMissing = missingKeyNoValueFallbackToKey && usedKey ? void 0 : res;
-                    const updateMissing = hasDefaultValue && defaultValue !== res && this.options.updateMissing;
-                    if (usedKey || usedDefault || updateMissing) {
-                        this.logger.log(updateMissing ? "updateKey" : "missingKey", lng, namespace, key, updateMissing ? defaultValue : res);
-                        if (keySeparator) {
-                            const fk = this.resolve(key, {
-                                ...options,
-                                keySeparator: false
-                            });
-                            if (fk && fk.res) this.logger.warn("Seems the loaded translations were in flat JSON format instead of nested. Either set keySeparator: false on init or make sure your translations are published in nested format.");
-                        }
-                        let lngs = [];
-                        const fallbackLngs = this.languageUtils.getFallbackCodes(this.options.fallbackLng, options.lng || this.language);
-                        if (this.options.saveMissingTo === "fallback" && fallbackLngs && fallbackLngs[0]) for (let i = 0; i < fallbackLngs.length; i++) lngs.push(fallbackLngs[i]); else if (this.options.saveMissingTo === "all") lngs = this.languageUtils.toResolveHierarchy(options.lng || this.language); else lngs.push(options.lng || this.language);
-                        const send = (l, k, specificDefaultValue) => {
-                            const defaultForMissing = hasDefaultValue && specificDefaultValue !== res ? specificDefaultValue : resForMissing;
-                            if (this.options.missingKeyHandler) this.options.missingKeyHandler(l, namespace, k, defaultForMissing, updateMissing, options); else if (this.backendConnector && this.backendConnector.saveMissing) this.backendConnector.saveMissing(l, namespace, k, defaultForMissing, updateMissing, options);
-                            this.emit("missingKey", l, namespace, k, res);
-                        };
-                        if (this.options.saveMissing) if (this.options.saveMissingPlurals && needsPluralHandling) lngs.forEach((language => {
-                            this.pluralResolver.getSuffixes(language, options).forEach((suffix => {
-                                send([ language ], key + suffix, options[`defaultValue${suffix}`] || defaultValue);
-                            }));
-                        })); else send(lngs, key, defaultValue);
-                    }
-                    res = this.extendTranslation(res, keys, options, resolved, lastKey);
-                    if (usedKey && res === key && this.options.appendNamespaceToMissingKey) res = `${namespace}:${key}`;
-                    if ((usedKey || usedDefault) && this.options.parseMissingKeyHandler) if (this.options.compatibilityAPI !== "v1") res = this.options.parseMissingKeyHandler(this.options.appendNamespaceToMissingKey ? `${namespace}:${key}` : key, usedDefault ? res : void 0); else res = this.options.parseMissingKeyHandler(res);
-                }
-                if (returnDetails) {
-                    resolved.res = res;
-                    resolved.usedParams = this.getUsedParamsDetails(options);
-                    return resolved;
-                }
-                return res;
-            }
-            extendTranslation(res, key, options, resolved, lastKey) {
-                var _this = this;
-                if (this.i18nFormat && this.i18nFormat.parse) res = this.i18nFormat.parse(res, {
-                    ...this.options.interpolation.defaultVariables,
-                    ...options
-                }, options.lng || this.language || resolved.usedLng, resolved.usedNS, resolved.usedKey, {
-                    resolved
-                }); else if (!options.skipInterpolation) {
-                    if (options.interpolation) this.interpolator.init({
-                        ...options,
-                        interpolation: {
-                            ...this.options.interpolation,
-                            ...options.interpolation
-                        }
-                    });
-                    const skipOnVariables = typeof res === "string" && (options && options.interpolation && options.interpolation.skipOnVariables !== void 0 ? options.interpolation.skipOnVariables : this.options.interpolation.skipOnVariables);
-                    let nestBef;
-                    if (skipOnVariables) {
-                        const nb = res.match(this.interpolator.nestingRegexp);
-                        nestBef = nb && nb.length;
-                    }
-                    let data = options.replace && typeof options.replace !== "string" ? options.replace : options;
-                    if (this.options.interpolation.defaultVariables) data = {
-                        ...this.options.interpolation.defaultVariables,
-                        ...data
-                    };
-                    res = this.interpolator.interpolate(res, data, options.lng || this.language, options);
-                    if (skipOnVariables) {
-                        const na = res.match(this.interpolator.nestingRegexp);
-                        const nestAft = na && na.length;
-                        if (nestBef < nestAft) options.nest = false;
-                    }
-                    if (!options.lng && this.options.compatibilityAPI !== "v1" && resolved && resolved.res) options.lng = resolved.usedLng;
-                    if (options.nest !== false) res = this.interpolator.nest(res, (function() {
-                        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) args[_key] = arguments[_key];
-                        if (lastKey && lastKey[0] === args[0] && !options.context) {
-                            _this.logger.warn(`It seems you are nesting recursively key: ${args[0]} in key: ${key[0]}`);
-                            return null;
-                        }
-                        return _this.translate(...args, key);
-                    }), options);
-                    if (options.interpolation) this.interpolator.reset();
-                }
-                const postProcess = options.postProcess || this.options.postProcess;
-                const postProcessorNames = typeof postProcess === "string" ? [ postProcess ] : postProcess;
-                if (res !== void 0 && res !== null && postProcessorNames && postProcessorNames.length && options.applyPostProcessor !== false) res = postProcessor.handle(postProcessorNames, res, key, this.options && this.options.postProcessPassResolved ? {
-                    i18nResolved: {
-                        ...resolved,
-                        usedParams: this.getUsedParamsDetails(options)
-                    },
-                    ...options
-                } : options, this);
-                return res;
-            }
-            resolve(keys) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                let found;
-                let usedKey;
-                let exactUsedKey;
-                let usedLng;
-                let usedNS;
-                if (typeof keys === "string") keys = [ keys ];
-                keys.forEach((k => {
-                    if (this.isValidLookup(found)) return;
-                    const extracted = this.extractFromKey(k, options);
-                    const key = extracted.key;
-                    usedKey = key;
-                    let namespaces = extracted.namespaces;
-                    if (this.options.fallbackNS) namespaces = namespaces.concat(this.options.fallbackNS);
-                    const needsPluralHandling = options.count !== void 0 && typeof options.count !== "string";
-                    const needsZeroSuffixLookup = needsPluralHandling && !options.ordinal && options.count === 0 && this.pluralResolver.shouldUseIntlApi();
-                    const needsContextHandling = options.context !== void 0 && (typeof options.context === "string" || typeof options.context === "number") && options.context !== "";
-                    const codes = options.lngs ? options.lngs : this.languageUtils.toResolveHierarchy(options.lng || this.language, options.fallbackLng);
-                    namespaces.forEach((ns => {
-                        if (this.isValidLookup(found)) return;
-                        usedNS = ns;
-                        if (!checkedLoadedFor[`${codes[0]}-${ns}`] && this.utils && this.utils.hasLoadedNamespace && !this.utils.hasLoadedNamespace(usedNS)) {
-                            checkedLoadedFor[`${codes[0]}-${ns}`] = true;
-                            this.logger.warn(`key "${usedKey}" for languages "${codes.join(", ")}" won't get resolved as namespace "${usedNS}" was not yet loaded`, "This means something IS WRONG in your setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!");
-                        }
-                        codes.forEach((code => {
-                            if (this.isValidLookup(found)) return;
-                            usedLng = code;
-                            const finalKeys = [ key ];
-                            if (this.i18nFormat && this.i18nFormat.addLookupKeys) this.i18nFormat.addLookupKeys(finalKeys, key, code, ns, options); else {
-                                let pluralSuffix;
-                                if (needsPluralHandling) pluralSuffix = this.pluralResolver.getSuffix(code, options.count, options);
-                                const zeroSuffix = `${this.options.pluralSeparator}zero`;
-                                const ordinalPrefix = `${this.options.pluralSeparator}ordinal${this.options.pluralSeparator}`;
-                                if (needsPluralHandling) {
-                                    finalKeys.push(key + pluralSuffix);
-                                    if (options.ordinal && pluralSuffix.indexOf(ordinalPrefix) === 0) finalKeys.push(key + pluralSuffix.replace(ordinalPrefix, this.options.pluralSeparator));
-                                    if (needsZeroSuffixLookup) finalKeys.push(key + zeroSuffix);
-                                }
-                                if (needsContextHandling) {
-                                    const contextKey = `${key}${this.options.contextSeparator}${options.context}`;
-                                    finalKeys.push(contextKey);
-                                    if (needsPluralHandling) {
-                                        finalKeys.push(contextKey + pluralSuffix);
-                                        if (options.ordinal && pluralSuffix.indexOf(ordinalPrefix) === 0) finalKeys.push(contextKey + pluralSuffix.replace(ordinalPrefix, this.options.pluralSeparator));
-                                        if (needsZeroSuffixLookup) finalKeys.push(contextKey + zeroSuffix);
-                                    }
-                                }
-                            }
-                            let possibleKey;
-                            while (possibleKey = finalKeys.pop()) if (!this.isValidLookup(found)) {
-                                exactUsedKey = possibleKey;
-                                found = this.getResource(code, ns, possibleKey, options);
-                            }
-                        }));
-                    }));
-                }));
-                return {
-                    res: found,
-                    usedKey,
-                    exactUsedKey,
-                    usedLng,
-                    usedNS
-                };
-            }
-            isValidLookup(res) {
-                return res !== void 0 && !(!this.options.returnNull && res === null) && !(!this.options.returnEmptyString && res === "");
-            }
-            getResource(code, ns, key) {
-                let options = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
-                if (this.i18nFormat && this.i18nFormat.getResource) return this.i18nFormat.getResource(code, ns, key, options);
-                return this.resourceStore.getResource(code, ns, key, options);
-            }
-            getUsedParamsDetails() {
-                let options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-                const optionsKeys = [ "defaultValue", "ordinal", "context", "replace", "lng", "lngs", "fallbackLng", "ns", "keySeparator", "nsSeparator", "returnObjects", "returnDetails", "joinArrays", "postProcess", "interpolation" ];
-                const useOptionsReplaceForData = options.replace && typeof options.replace !== "string";
-                let data = useOptionsReplaceForData ? options.replace : options;
-                if (useOptionsReplaceForData && typeof options.count !== "undefined") data.count = options.count;
-                if (this.options.interpolation.defaultVariables) data = {
-                    ...this.options.interpolation.defaultVariables,
-                    ...data
-                };
-                if (!useOptionsReplaceForData) {
-                    data = {
-                        ...data
-                    };
-                    for (const key of optionsKeys) delete data[key];
-                }
-                return data;
-            }
-            static hasDefaultValue(options) {
-                const prefix = "defaultValue";
-                for (const option in options) if (Object.prototype.hasOwnProperty.call(options, option) && prefix === option.substring(0, prefix.length) && void 0 !== options[option]) return true;
-                return false;
-            }
-        }
-        function capitalize(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        }
-        class LanguageUtil {
-            constructor(options) {
-                this.options = options;
-                this.supportedLngs = this.options.supportedLngs || false;
-                this.logger = baseLogger.create("languageUtils");
-            }
-            getScriptPartFromCode(code) {
-                code = getCleanedCode(code);
-                if (!code || code.indexOf("-") < 0) return null;
-                const p = code.split("-");
-                if (p.length === 2) return null;
-                p.pop();
-                if (p[p.length - 1].toLowerCase() === "x") return null;
-                return this.formatLanguageCode(p.join("-"));
-            }
-            getLanguagePartFromCode(code) {
-                code = getCleanedCode(code);
-                if (!code || code.indexOf("-") < 0) return code;
-                const p = code.split("-");
-                return this.formatLanguageCode(p[0]);
-            }
-            formatLanguageCode(code) {
-                if (typeof code === "string" && code.indexOf("-") > -1) {
-                    const specialCases = [ "hans", "hant", "latn", "cyrl", "cans", "mong", "arab" ];
-                    let p = code.split("-");
-                    if (this.options.lowerCaseLng) p = p.map((part => part.toLowerCase())); else if (p.length === 2) {
-                        p[0] = p[0].toLowerCase();
-                        p[1] = p[1].toUpperCase();
-                        if (specialCases.indexOf(p[1].toLowerCase()) > -1) p[1] = capitalize(p[1].toLowerCase());
-                    } else if (p.length === 3) {
-                        p[0] = p[0].toLowerCase();
-                        if (p[1].length === 2) p[1] = p[1].toUpperCase();
-                        if (p[0] !== "sgn" && p[2].length === 2) p[2] = p[2].toUpperCase();
-                        if (specialCases.indexOf(p[1].toLowerCase()) > -1) p[1] = capitalize(p[1].toLowerCase());
-                        if (specialCases.indexOf(p[2].toLowerCase()) > -1) p[2] = capitalize(p[2].toLowerCase());
-                    }
-                    return p.join("-");
-                }
-                return this.options.cleanCode || this.options.lowerCaseLng ? code.toLowerCase() : code;
-            }
-            isSupportedCode(code) {
-                if (this.options.load === "languageOnly" || this.options.nonExplicitSupportedLngs) code = this.getLanguagePartFromCode(code);
-                return !this.supportedLngs || !this.supportedLngs.length || this.supportedLngs.indexOf(code) > -1;
-            }
-            getBestMatchFromCodes(codes) {
-                if (!codes) return null;
-                let found;
-                codes.forEach((code => {
-                    if (found) return;
-                    const cleanedLng = this.formatLanguageCode(code);
-                    if (!this.options.supportedLngs || this.isSupportedCode(cleanedLng)) found = cleanedLng;
-                }));
-                if (!found && this.options.supportedLngs) codes.forEach((code => {
-                    if (found) return;
-                    const lngOnly = this.getLanguagePartFromCode(code);
-                    if (this.isSupportedCode(lngOnly)) return found = lngOnly;
-                    found = this.options.supportedLngs.find((supportedLng => {
-                        if (supportedLng === lngOnly) return supportedLng;
-                        if (supportedLng.indexOf("-") < 0 && lngOnly.indexOf("-") < 0) return;
-                        if (supportedLng.indexOf(lngOnly) === 0) return supportedLng;
-                    }));
-                }));
-                if (!found) found = this.getFallbackCodes(this.options.fallbackLng)[0];
-                return found;
-            }
-            getFallbackCodes(fallbacks, code) {
-                if (!fallbacks) return [];
-                if (typeof fallbacks === "function") fallbacks = fallbacks(code);
-                if (typeof fallbacks === "string") fallbacks = [ fallbacks ];
-                if (Object.prototype.toString.apply(fallbacks) === "[object Array]") return fallbacks;
-                if (!code) return fallbacks.default || [];
-                let found = fallbacks[code];
-                if (!found) found = fallbacks[this.getScriptPartFromCode(code)];
-                if (!found) found = fallbacks[this.formatLanguageCode(code)];
-                if (!found) found = fallbacks[this.getLanguagePartFromCode(code)];
-                if (!found) found = fallbacks.default;
-                return found || [];
-            }
-            toResolveHierarchy(code, fallbackCode) {
-                const fallbackCodes = this.getFallbackCodes(fallbackCode || this.options.fallbackLng || [], code);
-                const codes = [];
-                const addCode = c => {
-                    if (!c) return;
-                    if (this.isSupportedCode(c)) codes.push(c); else this.logger.warn(`rejecting language code not found in supportedLngs: ${c}`);
-                };
-                if (typeof code === "string" && (code.indexOf("-") > -1 || code.indexOf("_") > -1)) {
-                    if (this.options.load !== "languageOnly") addCode(this.formatLanguageCode(code));
-                    if (this.options.load !== "languageOnly" && this.options.load !== "currentOnly") addCode(this.getScriptPartFromCode(code));
-                    if (this.options.load !== "currentOnly") addCode(this.getLanguagePartFromCode(code));
-                } else if (typeof code === "string") addCode(this.formatLanguageCode(code));
-                fallbackCodes.forEach((fc => {
-                    if (codes.indexOf(fc) < 0) addCode(this.formatLanguageCode(fc));
-                }));
-                return codes;
-            }
-        }
-        let sets = [ {
-            lngs: [ "ach", "ak", "am", "arn", "br", "fil", "gun", "ln", "mfe", "mg", "mi", "oc", "pt", "pt-BR", "tg", "tl", "ti", "tr", "uz", "wa" ],
-            nr: [ 1, 2 ],
-            fc: 1
-        }, {
-            lngs: [ "af", "an", "ast", "az", "bg", "bn", "ca", "da", "de", "dev", "el", "en", "eo", "es", "et", "eu", "fi", "fo", "fur", "fy", "gl", "gu", "ha", "hi", "hu", "hy", "ia", "it", "kk", "kn", "ku", "lb", "mai", "ml", "mn", "mr", "nah", "nap", "nb", "ne", "nl", "nn", "no", "nso", "pa", "pap", "pms", "ps", "pt-PT", "rm", "sco", "se", "si", "so", "son", "sq", "sv", "sw", "ta", "te", "tk", "ur", "yo" ],
-            nr: [ 1, 2 ],
-            fc: 2
-        }, {
-            lngs: [ "ay", "bo", "cgg", "fa", "ht", "id", "ja", "jbo", "ka", "km", "ko", "ky", "lo", "ms", "sah", "su", "th", "tt", "ug", "vi", "wo", "zh" ],
-            nr: [ 1 ],
-            fc: 3
-        }, {
-            lngs: [ "be", "bs", "cnr", "dz", "hr", "ru", "sr", "uk" ],
-            nr: [ 1, 2, 5 ],
-            fc: 4
-        }, {
-            lngs: [ "ar" ],
-            nr: [ 0, 1, 2, 3, 11, 100 ],
-            fc: 5
-        }, {
-            lngs: [ "cs", "sk" ],
-            nr: [ 1, 2, 5 ],
-            fc: 6
-        }, {
-            lngs: [ "csb", "pl" ],
-            nr: [ 1, 2, 5 ],
-            fc: 7
-        }, {
-            lngs: [ "cy" ],
-            nr: [ 1, 2, 3, 8 ],
-            fc: 8
-        }, {
-            lngs: [ "fr" ],
-            nr: [ 1, 2 ],
-            fc: 9
-        }, {
-            lngs: [ "ga" ],
-            nr: [ 1, 2, 3, 7, 11 ],
-            fc: 10
-        }, {
-            lngs: [ "gd" ],
-            nr: [ 1, 2, 3, 20 ],
-            fc: 11
-        }, {
-            lngs: [ "is" ],
-            nr: [ 1, 2 ],
-            fc: 12
-        }, {
-            lngs: [ "jv" ],
-            nr: [ 0, 1 ],
-            fc: 13
-        }, {
-            lngs: [ "kw" ],
-            nr: [ 1, 2, 3, 4 ],
-            fc: 14
-        }, {
-            lngs: [ "lt" ],
-            nr: [ 1, 2, 10 ],
-            fc: 15
-        }, {
-            lngs: [ "lv" ],
-            nr: [ 1, 2, 0 ],
-            fc: 16
-        }, {
-            lngs: [ "mk" ],
-            nr: [ 1, 2 ],
-            fc: 17
-        }, {
-            lngs: [ "mnk" ],
-            nr: [ 0, 1, 2 ],
-            fc: 18
-        }, {
-            lngs: [ "mt" ],
-            nr: [ 1, 2, 11, 20 ],
-            fc: 19
-        }, {
-            lngs: [ "or" ],
-            nr: [ 2, 1 ],
-            fc: 2
-        }, {
-            lngs: [ "ro" ],
-            nr: [ 1, 2, 20 ],
-            fc: 20
-        }, {
-            lngs: [ "sl" ],
-            nr: [ 5, 1, 2, 3 ],
-            fc: 21
-        }, {
-            lngs: [ "he", "iw" ],
-            nr: [ 1, 2, 20, 21 ],
-            fc: 22
-        } ];
-        let _rulesPluralsTypes = {
-            1: function(n) {
-                return Number(n > 1);
-            },
-            2: function(n) {
-                return Number(n != 1);
-            },
-            3: function(n) {
-                return 0;
-            },
-            4: function(n) {
-                return Number(n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2);
-            },
-            5: function(n) {
-                return Number(n == 0 ? 0 : n == 1 ? 1 : n == 2 ? 2 : n % 100 >= 3 && n % 100 <= 10 ? 3 : n % 100 >= 11 ? 4 : 5);
-            },
-            6: function(n) {
-                return Number(n == 1 ? 0 : n >= 2 && n <= 4 ? 1 : 2);
-            },
-            7: function(n) {
-                return Number(n == 1 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2);
-            },
-            8: function(n) {
-                return Number(n == 1 ? 0 : n == 2 ? 1 : n != 8 && n != 11 ? 2 : 3);
-            },
-            9: function(n) {
-                return Number(n >= 2);
-            },
-            10: function(n) {
-                return Number(n == 1 ? 0 : n == 2 ? 1 : n < 7 ? 2 : n < 11 ? 3 : 4);
-            },
-            11: function(n) {
-                return Number(n == 1 || n == 11 ? 0 : n == 2 || n == 12 ? 1 : n > 2 && n < 20 ? 2 : 3);
-            },
-            12: function(n) {
-                return Number(n % 10 != 1 || n % 100 == 11);
-            },
-            13: function(n) {
-                return Number(n !== 0);
-            },
-            14: function(n) {
-                return Number(n == 1 ? 0 : n == 2 ? 1 : n == 3 ? 2 : 3);
-            },
-            15: function(n) {
-                return Number(n % 10 == 1 && n % 100 != 11 ? 0 : n % 10 >= 2 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2);
-            },
-            16: function(n) {
-                return Number(n % 10 == 1 && n % 100 != 11 ? 0 : n !== 0 ? 1 : 2);
-            },
-            17: function(n) {
-                return Number(n == 1 || n % 10 == 1 && n % 100 != 11 ? 0 : 1);
-            },
-            18: function(n) {
-                return Number(n == 0 ? 0 : n == 1 ? 1 : 2);
-            },
-            19: function(n) {
-                return Number(n == 1 ? 0 : n == 0 || n % 100 > 1 && n % 100 < 11 ? 1 : n % 100 > 10 && n % 100 < 20 ? 2 : 3);
-            },
-            20: function(n) {
-                return Number(n == 1 ? 0 : n == 0 || n % 100 > 0 && n % 100 < 20 ? 1 : 2);
-            },
-            21: function(n) {
-                return Number(n % 100 == 1 ? 1 : n % 100 == 2 ? 2 : n % 100 == 3 || n % 100 == 4 ? 3 : 0);
-            },
-            22: function(n) {
-                return Number(n == 1 ? 0 : n == 2 ? 1 : (n < 0 || n > 10) && n % 10 == 0 ? 2 : 3);
-            }
-        };
-        const nonIntlVersions = [ "v1", "v2", "v3" ];
-        const intlVersions = [ "v4" ];
-        const suffixesOrder = {
-            zero: 0,
-            one: 1,
-            two: 2,
-            few: 3,
-            many: 4,
-            other: 5
-        };
-        function createRules() {
-            const rules = {};
-            sets.forEach((set => {
-                set.lngs.forEach((l => {
-                    rules[l] = {
-                        numbers: set.nr,
-                        plurals: _rulesPluralsTypes[set.fc]
-                    };
-                }));
-            }));
-            return rules;
-        }
-        class PluralResolver {
-            constructor(languageUtils) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                this.languageUtils = languageUtils;
-                this.options = options;
-                this.logger = baseLogger.create("pluralResolver");
-                if ((!this.options.compatibilityJSON || intlVersions.includes(this.options.compatibilityJSON)) && (typeof Intl === "undefined" || !Intl.PluralRules)) {
-                    this.options.compatibilityJSON = "v3";
-                    this.logger.error("Your environment seems not to be Intl API compatible, use an Intl.PluralRules polyfill. Will fallback to the compatibilityJSON v3 format handling.");
-                }
-                this.rules = createRules();
-            }
-            addRule(lng, obj) {
-                this.rules[lng] = obj;
-            }
-            getRule(code) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                if (this.shouldUseIntlApi()) try {
-                    return new Intl.PluralRules(getCleanedCode(code), {
-                        type: options.ordinal ? "ordinal" : "cardinal"
-                    });
-                } catch {
-                    return;
-                }
-                return this.rules[code] || this.rules[this.languageUtils.getLanguagePartFromCode(code)];
-            }
-            needsPlural(code) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                const rule = this.getRule(code, options);
-                if (this.shouldUseIntlApi()) return rule && rule.resolvedOptions().pluralCategories.length > 1;
-                return rule && rule.numbers.length > 1;
-            }
-            getPluralFormsOfKey(code, key) {
-                let options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-                return this.getSuffixes(code, options).map((suffix => `${key}${suffix}`));
-            }
-            getSuffixes(code) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                const rule = this.getRule(code, options);
-                if (!rule) return [];
-                if (this.shouldUseIntlApi()) return rule.resolvedOptions().pluralCategories.sort(((pluralCategory1, pluralCategory2) => suffixesOrder[pluralCategory1] - suffixesOrder[pluralCategory2])).map((pluralCategory => `${this.options.prepend}${options.ordinal ? `ordinal${this.options.prepend}` : ""}${pluralCategory}`));
-                return rule.numbers.map((number => this.getSuffix(code, number, options)));
-            }
-            getSuffix(code, count) {
-                let options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-                const rule = this.getRule(code, options);
-                if (rule) {
-                    if (this.shouldUseIntlApi()) return `${this.options.prepend}${options.ordinal ? `ordinal${this.options.prepend}` : ""}${rule.select(count)}`;
-                    return this.getSuffixRetroCompatible(rule, count);
-                }
-                this.logger.warn(`no plural rule found for: ${code}`);
-                return "";
-            }
-            getSuffixRetroCompatible(rule, count) {
-                const idx = rule.noAbs ? rule.plurals(count) : rule.plurals(Math.abs(count));
-                let suffix = rule.numbers[idx];
-                if (this.options.simplifyPluralSuffix && rule.numbers.length === 2 && rule.numbers[0] === 1) if (suffix === 2) suffix = "plural"; else if (suffix === 1) suffix = "";
-                const returnSuffix = () => this.options.prepend && suffix.toString() ? this.options.prepend + suffix.toString() : suffix.toString();
-                if (this.options.compatibilityJSON === "v1") {
-                    if (suffix === 1) return "";
-                    if (typeof suffix === "number") return `_plural_${suffix.toString()}`;
-                    return returnSuffix();
-                } else if (this.options.compatibilityJSON === "v2") return returnSuffix(); else if (this.options.simplifyPluralSuffix && rule.numbers.length === 2 && rule.numbers[0] === 1) return returnSuffix();
-                return this.options.prepend && idx.toString() ? this.options.prepend + idx.toString() : idx.toString();
-            }
-            shouldUseIntlApi() {
-                return !nonIntlVersions.includes(this.options.compatibilityJSON);
-            }
-        }
-        function deepFindWithDefaults(data, defaultData, key) {
-            let keySeparator = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : ".";
-            let ignoreJSONStructure = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : true;
-            let path = getPathWithDefaults(data, defaultData, key);
-            if (!path && ignoreJSONStructure && typeof key === "string") {
-                path = deepFind(data, key, keySeparator);
-                if (path === void 0) path = deepFind(defaultData, key, keySeparator);
-            }
-            return path;
-        }
-        class Interpolator {
-            constructor() {
-                let options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-                this.logger = baseLogger.create("interpolator");
-                this.options = options;
-                this.format = options.interpolation && options.interpolation.format || (value => value);
-                this.init(options);
-            }
-            init() {
-                let options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-                if (!options.interpolation) options.interpolation = {
-                    escapeValue: true
-                };
-                const iOpts = options.interpolation;
-                this.escape = iOpts.escape !== void 0 ? iOpts.escape : i18next_escape;
-                this.escapeValue = iOpts.escapeValue !== void 0 ? iOpts.escapeValue : true;
-                this.useRawValueToEscape = iOpts.useRawValueToEscape !== void 0 ? iOpts.useRawValueToEscape : false;
-                this.prefix = iOpts.prefix ? regexEscape(iOpts.prefix) : iOpts.prefixEscaped || "{{";
-                this.suffix = iOpts.suffix ? regexEscape(iOpts.suffix) : iOpts.suffixEscaped || "}}";
-                this.formatSeparator = iOpts.formatSeparator ? iOpts.formatSeparator : iOpts.formatSeparator || ",";
-                this.unescapePrefix = iOpts.unescapeSuffix ? "" : iOpts.unescapePrefix || "-";
-                this.unescapeSuffix = this.unescapePrefix ? "" : iOpts.unescapeSuffix || "";
-                this.nestingPrefix = iOpts.nestingPrefix ? regexEscape(iOpts.nestingPrefix) : iOpts.nestingPrefixEscaped || regexEscape("$t(");
-                this.nestingSuffix = iOpts.nestingSuffix ? regexEscape(iOpts.nestingSuffix) : iOpts.nestingSuffixEscaped || regexEscape(")");
-                this.nestingOptionsSeparator = iOpts.nestingOptionsSeparator ? iOpts.nestingOptionsSeparator : iOpts.nestingOptionsSeparator || ",";
-                this.maxReplaces = iOpts.maxReplaces ? iOpts.maxReplaces : 1e3;
-                this.alwaysFormat = iOpts.alwaysFormat !== void 0 ? iOpts.alwaysFormat : false;
-                this.resetRegExp();
-            }
-            reset() {
-                if (this.options) this.init(this.options);
-            }
-            resetRegExp() {
-                const regexpStr = `${this.prefix}(.+?)${this.suffix}`;
-                this.regexp = new RegExp(regexpStr, "g");
-                const regexpUnescapeStr = `${this.prefix}${this.unescapePrefix}(.+?)${this.unescapeSuffix}${this.suffix}`;
-                this.regexpUnescape = new RegExp(regexpUnescapeStr, "g");
-                const nestingRegexpStr = `${this.nestingPrefix}(.+?)${this.nestingSuffix}`;
-                this.nestingRegexp = new RegExp(nestingRegexpStr, "g");
-            }
-            interpolate(str, data, lng, options) {
-                let match;
-                let value;
-                let replaces;
-                const defaultData = this.options && this.options.interpolation && this.options.interpolation.defaultVariables || {};
-                function regexSafe(val) {
-                    return val.replace(/\$/g, "$$$$");
-                }
-                const handleFormat = key => {
-                    if (key.indexOf(this.formatSeparator) < 0) {
-                        const path = deepFindWithDefaults(data, defaultData, key, this.options.keySeparator, this.options.ignoreJSONStructure);
-                        return this.alwaysFormat ? this.format(path, void 0, lng, {
-                            ...options,
-                            ...data,
-                            interpolationkey: key
-                        }) : path;
-                    }
-                    const p = key.split(this.formatSeparator);
-                    const k = p.shift().trim();
-                    const f = p.join(this.formatSeparator).trim();
-                    return this.format(deepFindWithDefaults(data, defaultData, k, this.options.keySeparator, this.options.ignoreJSONStructure), f, lng, {
-                        ...options,
-                        ...data,
-                        interpolationkey: k
-                    });
-                };
-                this.resetRegExp();
-                const missingInterpolationHandler = options && options.missingInterpolationHandler || this.options.missingInterpolationHandler;
-                const skipOnVariables = options && options.interpolation && options.interpolation.skipOnVariables !== void 0 ? options.interpolation.skipOnVariables : this.options.interpolation.skipOnVariables;
-                const todos = [ {
-                    regex: this.regexpUnescape,
-                    safeValue: val => regexSafe(val)
-                }, {
-                    regex: this.regexp,
-                    safeValue: val => this.escapeValue ? regexSafe(this.escape(val)) : regexSafe(val)
-                } ];
-                todos.forEach((todo => {
-                    replaces = 0;
-                    while (match = todo.regex.exec(str)) {
-                        const matchedVar = match[1].trim();
-                        value = handleFormat(matchedVar);
-                        if (value === void 0) if (typeof missingInterpolationHandler === "function") {
-                            const temp = missingInterpolationHandler(str, match, options);
-                            value = typeof temp === "string" ? temp : "";
-                        } else if (options && Object.prototype.hasOwnProperty.call(options, matchedVar)) value = ""; else if (skipOnVariables) {
-                            value = match[0];
-                            continue;
-                        } else {
-                            this.logger.warn(`missed to pass in variable ${matchedVar} for interpolating ${str}`);
-                            value = "";
-                        } else if (typeof value !== "string" && !this.useRawValueToEscape) value = makeString(value);
-                        const safeValue = todo.safeValue(value);
-                        str = str.replace(match[0], safeValue);
-                        if (skipOnVariables) {
-                            todo.regex.lastIndex += value.length;
-                            todo.regex.lastIndex -= match[0].length;
-                        } else todo.regex.lastIndex = 0;
-                        replaces++;
-                        if (replaces >= this.maxReplaces) break;
-                    }
-                }));
-                return str;
-            }
-            nest(str, fc) {
-                let options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-                let match;
-                let value;
-                let clonedOptions;
-                function handleHasOptions(key, inheritedOptions) {
-                    const sep = this.nestingOptionsSeparator;
-                    if (key.indexOf(sep) < 0) return key;
-                    const c = key.split(new RegExp(`${sep}[ ]*{`));
-                    let optionsString = `{${c[1]}`;
-                    key = c[0];
-                    optionsString = this.interpolate(optionsString, clonedOptions);
-                    const matchedSingleQuotes = optionsString.match(/'/g);
-                    const matchedDoubleQuotes = optionsString.match(/"/g);
-                    if (matchedSingleQuotes && matchedSingleQuotes.length % 2 === 0 && !matchedDoubleQuotes || matchedDoubleQuotes.length % 2 !== 0) optionsString = optionsString.replace(/'/g, '"');
-                    try {
-                        clonedOptions = JSON.parse(optionsString);
-                        if (inheritedOptions) clonedOptions = {
-                            ...inheritedOptions,
-                            ...clonedOptions
-                        };
-                    } catch (e) {
-                        this.logger.warn(`failed parsing options string in nesting for key ${key}`, e);
-                        return `${key}${sep}${optionsString}`;
-                    }
-                    delete clonedOptions.defaultValue;
-                    return key;
-                }
-                while (match = this.nestingRegexp.exec(str)) {
-                    let formatters = [];
-                    clonedOptions = {
-                        ...options
-                    };
-                    clonedOptions = clonedOptions.replace && typeof clonedOptions.replace !== "string" ? clonedOptions.replace : clonedOptions;
-                    clonedOptions.applyPostProcessor = false;
-                    delete clonedOptions.defaultValue;
-                    let doReduce = false;
-                    if (match[0].indexOf(this.formatSeparator) !== -1 && !/{.*}/.test(match[1])) {
-                        const r = match[1].split(this.formatSeparator).map((elem => elem.trim()));
-                        match[1] = r.shift();
-                        formatters = r;
-                        doReduce = true;
-                    }
-                    value = fc(handleHasOptions.call(this, match[1].trim(), clonedOptions), clonedOptions);
-                    if (value && match[0] === str && typeof value !== "string") return value;
-                    if (typeof value !== "string") value = makeString(value);
-                    if (!value) {
-                        this.logger.warn(`missed to resolve ${match[1]} for nesting ${str}`);
-                        value = "";
-                    }
-                    if (doReduce) value = formatters.reduce(((v, f) => this.format(v, f, options.lng, {
-                        ...options,
-                        interpolationkey: match[1].trim()
-                    })), value.trim());
-                    str = str.replace(match[0], value);
-                    this.regexp.lastIndex = 0;
-                }
-                return str;
-            }
-        }
-        function parseFormatStr(formatStr) {
-            let formatName = formatStr.toLowerCase().trim();
-            const formatOptions = {};
-            if (formatStr.indexOf("(") > -1) {
-                const p = formatStr.split("(");
-                formatName = p[0].toLowerCase().trim();
-                const optStr = p[1].substring(0, p[1].length - 1);
-                if (formatName === "currency" && optStr.indexOf(":") < 0) {
-                    if (!formatOptions.currency) formatOptions.currency = optStr.trim();
-                } else if (formatName === "relativetime" && optStr.indexOf(":") < 0) {
-                    if (!formatOptions.range) formatOptions.range = optStr.trim();
-                } else {
-                    const opts = optStr.split(";");
-                    opts.forEach((opt => {
-                        if (!opt) return;
-                        const [key, ...rest] = opt.split(":");
-                        const val = rest.join(":").trim().replace(/^'+|'+$/g, "");
-                        if (!formatOptions[key.trim()]) formatOptions[key.trim()] = val;
-                        if (val === "false") formatOptions[key.trim()] = false;
-                        if (val === "true") formatOptions[key.trim()] = true;
-                        if (!isNaN(val)) formatOptions[key.trim()] = parseInt(val, 10);
-                    }));
-                }
-            }
-            return {
-                formatName,
-                formatOptions
-            };
-        }
-        function createCachedFormatter(fn) {
-            const cache = {};
-            return function invokeFormatter(val, lng, options) {
-                const key = lng + JSON.stringify(options);
-                let formatter = cache[key];
-                if (!formatter) {
-                    formatter = fn(getCleanedCode(lng), options);
-                    cache[key] = formatter;
-                }
-                return formatter(val);
-            };
-        }
-        class Formatter {
-            constructor() {
-                let options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-                this.logger = baseLogger.create("formatter");
-                this.options = options;
-                this.formats = {
-                    number: createCachedFormatter(((lng, opt) => {
-                        const formatter = new Intl.NumberFormat(lng, {
-                            ...opt
-                        });
-                        return val => formatter.format(val);
-                    })),
-                    currency: createCachedFormatter(((lng, opt) => {
-                        const formatter = new Intl.NumberFormat(lng, {
-                            ...opt,
-                            style: "currency"
-                        });
-                        return val => formatter.format(val);
-                    })),
-                    datetime: createCachedFormatter(((lng, opt) => {
-                        const formatter = new Intl.DateTimeFormat(lng, {
-                            ...opt
-                        });
-                        return val => formatter.format(val);
-                    })),
-                    relativetime: createCachedFormatter(((lng, opt) => {
-                        const formatter = new Intl.RelativeTimeFormat(lng, {
-                            ...opt
-                        });
-                        return val => formatter.format(val, opt.range || "day");
-                    })),
-                    list: createCachedFormatter(((lng, opt) => {
-                        const formatter = new Intl.ListFormat(lng, {
-                            ...opt
-                        });
-                        return val => formatter.format(val);
-                    }))
-                };
-                this.init(options);
-            }
-            init(services) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {
-                    interpolation: {}
-                };
-                const iOpts = options.interpolation;
-                this.formatSeparator = iOpts.formatSeparator ? iOpts.formatSeparator : iOpts.formatSeparator || ",";
-            }
-            add(name, fc) {
-                this.formats[name.toLowerCase().trim()] = fc;
-            }
-            addCached(name, fc) {
-                this.formats[name.toLowerCase().trim()] = createCachedFormatter(fc);
-            }
-            format(value, format, lng) {
-                let options = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
-                const formats = format.split(this.formatSeparator);
-                const result = formats.reduce(((mem, f) => {
-                    const {formatName, formatOptions} = parseFormatStr(f);
-                    if (this.formats[formatName]) {
-                        let formatted = mem;
-                        try {
-                            const valOptions = options && options.formatParams && options.formatParams[options.interpolationkey] || {};
-                            const l = valOptions.locale || valOptions.lng || options.locale || options.lng || lng;
-                            formatted = this.formats[formatName](mem, l, {
-                                ...formatOptions,
-                                ...options,
-                                ...valOptions
-                            });
-                        } catch (error) {
-                            this.logger.warn(error);
-                        }
-                        return formatted;
-                    } else this.logger.warn(`there was no format function for ${formatName}`);
-                    return mem;
-                }), value);
-                return result;
-            }
-        }
-        function removePending(q, name) {
-            if (q.pending[name] !== void 0) {
-                delete q.pending[name];
-                q.pendingCount--;
-            }
-        }
-        class Connector extends EventEmitter {
-            constructor(backend, store, services) {
-                let options = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
-                super();
-                this.backend = backend;
-                this.store = store;
-                this.services = services;
-                this.languageUtils = services.languageUtils;
-                this.options = options;
-                this.logger = baseLogger.create("backendConnector");
-                this.waitingReads = [];
-                this.maxParallelReads = options.maxParallelReads || 10;
-                this.readingCalls = 0;
-                this.maxRetries = options.maxRetries >= 0 ? options.maxRetries : 5;
-                this.retryTimeout = options.retryTimeout >= 1 ? options.retryTimeout : 350;
-                this.state = {};
-                this.queue = [];
-                if (this.backend && this.backend.init) this.backend.init(services, options.backend, options);
-            }
-            queueLoad(languages, namespaces, options, callback) {
-                const toLoad = {};
-                const pending = {};
-                const toLoadLanguages = {};
-                const toLoadNamespaces = {};
-                languages.forEach((lng => {
-                    let hasAllNamespaces = true;
-                    namespaces.forEach((ns => {
-                        const name = `${lng}|${ns}`;
-                        if (!options.reload && this.store.hasResourceBundle(lng, ns)) this.state[name] = 2; else if (this.state[name] < 0) ; else if (this.state[name] === 1) {
-                            if (pending[name] === void 0) pending[name] = true;
-                        } else {
-                            this.state[name] = 1;
-                            hasAllNamespaces = false;
-                            if (pending[name] === void 0) pending[name] = true;
-                            if (toLoad[name] === void 0) toLoad[name] = true;
-                            if (toLoadNamespaces[ns] === void 0) toLoadNamespaces[ns] = true;
-                        }
-                    }));
-                    if (!hasAllNamespaces) toLoadLanguages[lng] = true;
-                }));
-                if (Object.keys(toLoad).length || Object.keys(pending).length) this.queue.push({
-                    pending,
-                    pendingCount: Object.keys(pending).length,
-                    loaded: {},
-                    errors: [],
-                    callback
-                });
-                return {
-                    toLoad: Object.keys(toLoad),
-                    pending: Object.keys(pending),
-                    toLoadLanguages: Object.keys(toLoadLanguages),
-                    toLoadNamespaces: Object.keys(toLoadNamespaces)
-                };
-            }
-            loaded(name, err, data) {
-                const s = name.split("|");
-                const lng = s[0];
-                const ns = s[1];
-                if (err) this.emit("failedLoading", lng, ns, err);
-                if (data) this.store.addResourceBundle(lng, ns, data);
-                this.state[name] = err ? -1 : 2;
-                const loaded = {};
-                this.queue.forEach((q => {
-                    pushPath(q.loaded, [ lng ], ns);
-                    removePending(q, name);
-                    if (err) q.errors.push(err);
-                    if (q.pendingCount === 0 && !q.done) {
-                        Object.keys(q.loaded).forEach((l => {
-                            if (!loaded[l]) loaded[l] = {};
-                            const loadedKeys = q.loaded[l];
-                            if (loadedKeys.length) loadedKeys.forEach((n => {
-                                if (loaded[l][n] === void 0) loaded[l][n] = true;
-                            }));
-                        }));
-                        q.done = true;
-                        if (q.errors.length) q.callback(q.errors); else q.callback();
-                    }
-                }));
-                this.emit("loaded", loaded);
-                this.queue = this.queue.filter((q => !q.done));
-            }
-            read(lng, ns, fcName) {
-                let tried = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : 0;
-                let wait = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : this.retryTimeout;
-                let callback = arguments.length > 5 ? arguments[5] : void 0;
-                if (!lng.length) return callback(null, {});
-                if (this.readingCalls >= this.maxParallelReads) {
-                    this.waitingReads.push({
-                        lng,
-                        ns,
-                        fcName,
-                        tried,
-                        wait,
-                        callback
-                    });
-                    return;
-                }
-                this.readingCalls++;
-                const resolver = (err, data) => {
-                    this.readingCalls--;
-                    if (this.waitingReads.length > 0) {
-                        const next = this.waitingReads.shift();
-                        this.read(next.lng, next.ns, next.fcName, next.tried, next.wait, next.callback);
-                    }
-                    if (err && data && tried < this.maxRetries) {
-                        setTimeout((() => {
-                            this.read.call(this, lng, ns, fcName, tried + 1, wait * 2, callback);
-                        }), wait);
-                        return;
-                    }
-                    callback(err, data);
-                };
-                const fc = this.backend[fcName].bind(this.backend);
-                if (fc.length === 2) {
-                    try {
-                        const r = fc(lng, ns);
-                        if (r && typeof r.then === "function") r.then((data => resolver(null, data))).catch(resolver); else resolver(null, r);
-                    } catch (err) {
-                        resolver(err);
-                    }
-                    return;
-                }
-                return fc(lng, ns, resolver);
-            }
-            prepareLoading(languages, namespaces) {
-                let options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-                let callback = arguments.length > 3 ? arguments[3] : void 0;
-                if (!this.backend) {
-                    this.logger.warn("No backend was added via i18next.use. Will not load resources.");
-                    return callback && callback();
-                }
-                if (typeof languages === "string") languages = this.languageUtils.toResolveHierarchy(languages);
-                if (typeof namespaces === "string") namespaces = [ namespaces ];
-                const toLoad = this.queueLoad(languages, namespaces, options, callback);
-                if (!toLoad.toLoad.length) {
-                    if (!toLoad.pending.length) callback();
-                    return null;
-                }
-                toLoad.toLoad.forEach((name => {
-                    this.loadOne(name);
-                }));
-            }
-            load(languages, namespaces, callback) {
-                this.prepareLoading(languages, namespaces, {}, callback);
-            }
-            reload(languages, namespaces, callback) {
-                this.prepareLoading(languages, namespaces, {
-                    reload: true
-                }, callback);
-            }
-            loadOne(name) {
-                let prefix = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : "";
-                const s = name.split("|");
-                const lng = s[0];
-                const ns = s[1];
-                this.read(lng, ns, "read", void 0, void 0, ((err, data) => {
-                    if (err) this.logger.warn(`${prefix}loading namespace ${ns} for language ${lng} failed`, err);
-                    if (!err && data) this.logger.log(`${prefix}loaded namespace ${ns} for language ${lng}`, data);
-                    this.loaded(name, err, data);
-                }));
-            }
-            saveMissing(languages, namespace, key, fallbackValue, isUpdate) {
-                let options = arguments.length > 5 && arguments[5] !== void 0 ? arguments[5] : {};
-                let clb = arguments.length > 6 && arguments[6] !== void 0 ? arguments[6] : () => {};
-                if (this.services.utils && this.services.utils.hasLoadedNamespace && !this.services.utils.hasLoadedNamespace(namespace)) {
-                    this.logger.warn(`did not save key "${key}" as the namespace "${namespace}" was not yet loaded`, "This means something IS WRONG in your setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!");
-                    return;
-                }
-                if (key === void 0 || key === null || key === "") return;
-                if (this.backend && this.backend.create) {
-                    const opts = {
-                        ...options,
-                        isUpdate
-                    };
-                    const fc = this.backend.create.bind(this.backend);
-                    if (fc.length < 6) try {
-                        let r;
-                        if (fc.length === 5) r = fc(languages, namespace, key, fallbackValue, opts); else r = fc(languages, namespace, key, fallbackValue);
-                        if (r && typeof r.then === "function") r.then((data => clb(null, data))).catch(clb); else clb(null, r);
-                    } catch (err) {
-                        clb(err);
-                    } else fc(languages, namespace, key, fallbackValue, clb, opts);
-                }
-                if (!languages || !languages[0]) return;
-                this.store.addResource(languages[0], namespace, key, fallbackValue);
-            }
-        }
-        function get() {
-            return {
-                debug: false,
-                initImmediate: true,
-                ns: [ "translation" ],
-                defaultNS: [ "translation" ],
-                fallbackLng: [ "dev" ],
-                fallbackNS: false,
-                supportedLngs: false,
-                nonExplicitSupportedLngs: false,
-                load: "all",
-                preload: false,
-                simplifyPluralSuffix: true,
-                keySeparator: ".",
-                nsSeparator: ":",
-                pluralSeparator: "_",
-                contextSeparator: "_",
-                partialBundledLanguages: false,
-                saveMissing: false,
-                updateMissing: false,
-                saveMissingTo: "fallback",
-                saveMissingPlurals: true,
-                missingKeyHandler: false,
-                missingInterpolationHandler: false,
-                postProcess: false,
-                postProcessPassResolved: false,
-                returnNull: false,
-                returnEmptyString: true,
-                returnObjects: false,
-                joinArrays: false,
-                returnedObjectHandler: false,
-                parseMissingKeyHandler: false,
-                appendNamespaceToMissingKey: false,
-                appendNamespaceToCIMode: false,
-                overloadTranslationOptionHandler: function handle(args) {
-                    let ret = {};
-                    if (typeof args[1] === "object") ret = args[1];
-                    if (typeof args[1] === "string") ret.defaultValue = args[1];
-                    if (typeof args[2] === "string") ret.tDescription = args[2];
-                    if (typeof args[2] === "object" || typeof args[3] === "object") {
-                        const options = args[3] || args[2];
-                        Object.keys(options).forEach((key => {
-                            ret[key] = options[key];
-                        }));
-                    }
-                    return ret;
-                },
-                interpolation: {
-                    escapeValue: true,
-                    format: (value, format, lng, options) => value,
-                    prefix: "{{",
-                    suffix: "}}",
-                    formatSeparator: ",",
-                    unescapePrefix: "-",
-                    nestingPrefix: "$t(",
-                    nestingSuffix: ")",
-                    nestingOptionsSeparator: ",",
-                    maxReplaces: 1e3,
-                    skipOnVariables: true
-                }
-            };
-        }
-        function transformOptions(options) {
-            if (typeof options.ns === "string") options.ns = [ options.ns ];
-            if (typeof options.fallbackLng === "string") options.fallbackLng = [ options.fallbackLng ];
-            if (typeof options.fallbackNS === "string") options.fallbackNS = [ options.fallbackNS ];
-            if (options.supportedLngs && options.supportedLngs.indexOf("cimode") < 0) options.supportedLngs = options.supportedLngs.concat([ "cimode" ]);
-            return options;
-        }
-        function noop() {}
-        function bindMemberFunctions(inst) {
-            const mems = Object.getOwnPropertyNames(Object.getPrototypeOf(inst));
-            mems.forEach((mem => {
-                if (typeof inst[mem] === "function") inst[mem] = inst[mem].bind(inst);
-            }));
-        }
-        class I18n extends EventEmitter {
-            constructor() {
-                let options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-                let callback = arguments.length > 1 ? arguments[1] : void 0;
-                super();
-                this.options = transformOptions(options);
-                this.services = {};
-                this.logger = baseLogger;
-                this.modules = {
-                    external: []
-                };
-                bindMemberFunctions(this);
-                if (callback && !this.isInitialized && !options.isClone) {
-                    if (!this.options.initImmediate) {
-                        this.init(options, callback);
-                        return this;
-                    }
-                    setTimeout((() => {
-                        this.init(options, callback);
-                    }), 0);
-                }
-            }
-            init() {
-                var _this = this;
-                let options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-                let callback = arguments.length > 1 ? arguments[1] : void 0;
-                if (typeof options === "function") {
-                    callback = options;
-                    options = {};
-                }
-                if (!options.defaultNS && options.defaultNS !== false && options.ns) if (typeof options.ns === "string") options.defaultNS = options.ns; else if (options.ns.indexOf("translation") < 0) options.defaultNS = options.ns[0];
-                const defOpts = get();
-                this.options = {
-                    ...defOpts,
-                    ...this.options,
-                    ...transformOptions(options)
-                };
-                if (this.options.compatibilityAPI !== "v1") this.options.interpolation = {
-                    ...defOpts.interpolation,
-                    ...this.options.interpolation
-                };
-                if (options.keySeparator !== void 0) this.options.userDefinedKeySeparator = options.keySeparator;
-                if (options.nsSeparator !== void 0) this.options.userDefinedNsSeparator = options.nsSeparator;
-                function createClassOnDemand(ClassOrObject) {
-                    if (!ClassOrObject) return null;
-                    if (typeof ClassOrObject === "function") return new ClassOrObject;
-                    return ClassOrObject;
-                }
-                if (!this.options.isClone) {
-                    if (this.modules.logger) baseLogger.init(createClassOnDemand(this.modules.logger), this.options); else baseLogger.init(null, this.options);
-                    let formatter;
-                    if (this.modules.formatter) formatter = this.modules.formatter; else if (typeof Intl !== "undefined") formatter = Formatter;
-                    const lu = new LanguageUtil(this.options);
-                    this.store = new ResourceStore(this.options.resources, this.options);
-                    const s = this.services;
-                    s.logger = baseLogger;
-                    s.resourceStore = this.store;
-                    s.languageUtils = lu;
-                    s.pluralResolver = new PluralResolver(lu, {
-                        prepend: this.options.pluralSeparator,
-                        compatibilityJSON: this.options.compatibilityJSON,
-                        simplifyPluralSuffix: this.options.simplifyPluralSuffix
-                    });
-                    if (formatter && (!this.options.interpolation.format || this.options.interpolation.format === defOpts.interpolation.format)) {
-                        s.formatter = createClassOnDemand(formatter);
-                        s.formatter.init(s, this.options);
-                        this.options.interpolation.format = s.formatter.format.bind(s.formatter);
-                    }
-                    s.interpolator = new Interpolator(this.options);
-                    s.utils = {
-                        hasLoadedNamespace: this.hasLoadedNamespace.bind(this)
-                    };
-                    s.backendConnector = new Connector(createClassOnDemand(this.modules.backend), s.resourceStore, s, this.options);
-                    s.backendConnector.on("*", (function(event) {
-                        for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) args[_key - 1] = arguments[_key];
-                        _this.emit(event, ...args);
-                    }));
-                    if (this.modules.languageDetector) {
-                        s.languageDetector = createClassOnDemand(this.modules.languageDetector);
-                        if (s.languageDetector.init) s.languageDetector.init(s, this.options.detection, this.options);
-                    }
-                    if (this.modules.i18nFormat) {
-                        s.i18nFormat = createClassOnDemand(this.modules.i18nFormat);
-                        if (s.i18nFormat.init) s.i18nFormat.init(this);
-                    }
-                    this.translator = new Translator(this.services, this.options);
-                    this.translator.on("*", (function(event) {
-                        for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) args[_key2 - 1] = arguments[_key2];
-                        _this.emit(event, ...args);
-                    }));
-                    this.modules.external.forEach((m => {
-                        if (m.init) m.init(this);
-                    }));
-                }
-                this.format = this.options.interpolation.format;
-                if (!callback) callback = noop;
-                if (this.options.fallbackLng && !this.services.languageDetector && !this.options.lng) {
-                    const codes = this.services.languageUtils.getFallbackCodes(this.options.fallbackLng);
-                    if (codes.length > 0 && codes[0] !== "dev") this.options.lng = codes[0];
-                }
-                if (!this.services.languageDetector && !this.options.lng) this.logger.warn("init: no languageDetector is used and no lng is defined");
-                const storeApi = [ "getResource", "hasResourceBundle", "getResourceBundle", "getDataByLanguage" ];
-                storeApi.forEach((fcName => {
-                    this[fcName] = function() {
-                        return _this.store[fcName](...arguments);
-                    };
-                }));
-                const storeApiChained = [ "addResource", "addResources", "addResourceBundle", "removeResourceBundle" ];
-                storeApiChained.forEach((fcName => {
-                    this[fcName] = function() {
-                        _this.store[fcName](...arguments);
-                        return _this;
-                    };
-                }));
-                const deferred = defer();
-                const load = () => {
-                    const finish = (err, t) => {
-                        if (this.isInitialized && !this.initializedStoreOnce) this.logger.warn("init: i18next is already initialized. You should call init just once!");
-                        this.isInitialized = true;
-                        if (!this.options.isClone) this.logger.log("initialized", this.options);
-                        this.emit("initialized", this.options);
-                        deferred.resolve(t);
-                        callback(err, t);
-                    };
-                    if (this.languages && this.options.compatibilityAPI !== "v1" && !this.isInitialized) return finish(null, this.t.bind(this));
-                    this.changeLanguage(this.options.lng, finish);
-                };
-                if (this.options.resources || !this.options.initImmediate) load(); else setTimeout(load, 0);
-                return deferred;
-            }
-            loadResources(language) {
-                let callback = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : noop;
-                let usedCallback = callback;
-                const usedLng = typeof language === "string" ? language : this.language;
-                if (typeof language === "function") usedCallback = language;
-                if (!this.options.resources || this.options.partialBundledLanguages) {
-                    if (usedLng && usedLng.toLowerCase() === "cimode" && (!this.options.preload || this.options.preload.length === 0)) return usedCallback();
-                    const toLoad = [];
-                    const append = lng => {
-                        if (!lng) return;
-                        if (lng === "cimode") return;
-                        const lngs = this.services.languageUtils.toResolveHierarchy(lng);
-                        lngs.forEach((l => {
-                            if (l === "cimode") return;
-                            if (toLoad.indexOf(l) < 0) toLoad.push(l);
-                        }));
-                    };
-                    if (!usedLng) {
-                        const fallbacks = this.services.languageUtils.getFallbackCodes(this.options.fallbackLng);
-                        fallbacks.forEach((l => append(l)));
-                    } else append(usedLng);
-                    if (this.options.preload) this.options.preload.forEach((l => append(l)));
-                    this.services.backendConnector.load(toLoad, this.options.ns, (e => {
-                        if (!e && !this.resolvedLanguage && this.language) this.setResolvedLanguage(this.language);
-                        usedCallback(e);
-                    }));
-                } else usedCallback(null);
-            }
-            reloadResources(lngs, ns, callback) {
-                const deferred = defer();
-                if (!lngs) lngs = this.languages;
-                if (!ns) ns = this.options.ns;
-                if (!callback) callback = noop;
-                this.services.backendConnector.reload(lngs, ns, (err => {
-                    deferred.resolve();
-                    callback(err);
-                }));
-                return deferred;
-            }
-            use(module) {
-                if (!module) throw new Error("You are passing an undefined module! Please check the object you are passing to i18next.use()");
-                if (!module.type) throw new Error("You are passing a wrong module! Please check the object you are passing to i18next.use()");
-                if (module.type === "backend") this.modules.backend = module;
-                if (module.type === "logger" || module.log && module.warn && module.error) this.modules.logger = module;
-                if (module.type === "languageDetector") this.modules.languageDetector = module;
-                if (module.type === "i18nFormat") this.modules.i18nFormat = module;
-                if (module.type === "postProcessor") postProcessor.addPostProcessor(module);
-                if (module.type === "formatter") this.modules.formatter = module;
-                if (module.type === "3rdParty") this.modules.external.push(module);
-                return this;
-            }
-            setResolvedLanguage(l) {
-                if (!l || !this.languages) return;
-                if ([ "cimode", "dev" ].indexOf(l) > -1) return;
-                for (let li = 0; li < this.languages.length; li++) {
-                    const lngInLngs = this.languages[li];
-                    if ([ "cimode", "dev" ].indexOf(lngInLngs) > -1) continue;
-                    if (this.store.hasLanguageSomeTranslations(lngInLngs)) {
-                        this.resolvedLanguage = lngInLngs;
-                        break;
-                    }
-                }
-            }
-            changeLanguage(lng, callback) {
-                var _this2 = this;
-                this.isLanguageChangingTo = lng;
-                const deferred = defer();
-                this.emit("languageChanging", lng);
-                const setLngProps = l => {
-                    this.language = l;
-                    this.languages = this.services.languageUtils.toResolveHierarchy(l);
-                    this.resolvedLanguage = void 0;
-                    this.setResolvedLanguage(l);
-                };
-                const done = (err, l) => {
-                    if (l) {
-                        setLngProps(l);
-                        this.translator.changeLanguage(l);
-                        this.isLanguageChangingTo = void 0;
-                        this.emit("languageChanged", l);
-                        this.logger.log("languageChanged", l);
-                    } else this.isLanguageChangingTo = void 0;
-                    deferred.resolve((function() {
-                        return _this2.t(...arguments);
-                    }));
-                    if (callback) callback(err, (function() {
-                        return _this2.t(...arguments);
-                    }));
-                };
-                const setLng = lngs => {
-                    if (!lng && !lngs && this.services.languageDetector) lngs = [];
-                    const l = typeof lngs === "string" ? lngs : this.services.languageUtils.getBestMatchFromCodes(lngs);
-                    if (l) {
-                        if (!this.language) setLngProps(l);
-                        if (!this.translator.language) this.translator.changeLanguage(l);
-                        if (this.services.languageDetector && this.services.languageDetector.cacheUserLanguage) this.services.languageDetector.cacheUserLanguage(l);
-                    }
-                    this.loadResources(l, (err => {
-                        done(err, l);
-                    }));
-                };
-                if (!lng && this.services.languageDetector && !this.services.languageDetector.async) setLng(this.services.languageDetector.detect()); else if (!lng && this.services.languageDetector && this.services.languageDetector.async) if (this.services.languageDetector.detect.length === 0) this.services.languageDetector.detect().then(setLng); else this.services.languageDetector.detect(setLng); else setLng(lng);
-                return deferred;
-            }
-            getFixedT(lng, ns, keyPrefix) {
-                var _this3 = this;
-                const fixedT = function(key, opts) {
-                    let options;
-                    if (typeof opts !== "object") {
-                        for (var _len3 = arguments.length, rest = new Array(_len3 > 2 ? _len3 - 2 : 0), _key3 = 2; _key3 < _len3; _key3++) rest[_key3 - 2] = arguments[_key3];
-                        options = _this3.options.overloadTranslationOptionHandler([ key, opts ].concat(rest));
-                    } else options = {
-                        ...opts
-                    };
-                    options.lng = options.lng || fixedT.lng;
-                    options.lngs = options.lngs || fixedT.lngs;
-                    options.ns = options.ns || fixedT.ns;
-                    options.keyPrefix = options.keyPrefix || keyPrefix || fixedT.keyPrefix;
-                    const keySeparator = _this3.options.keySeparator || ".";
-                    let resultKey;
-                    if (options.keyPrefix && Array.isArray(key)) resultKey = key.map((k => `${options.keyPrefix}${keySeparator}${k}`)); else resultKey = options.keyPrefix ? `${options.keyPrefix}${keySeparator}${key}` : key;
-                    return _this3.t(resultKey, options);
-                };
-                if (typeof lng === "string") fixedT.lng = lng; else fixedT.lngs = lng;
-                fixedT.ns = ns;
-                fixedT.keyPrefix = keyPrefix;
-                return fixedT;
-            }
-            t() {
-                return this.translator && this.translator.translate(...arguments);
-            }
-            exists() {
-                return this.translator && this.translator.exists(...arguments);
-            }
-            setDefaultNamespace(ns) {
-                this.options.defaultNS = ns;
-            }
-            hasLoadedNamespace(ns) {
-                let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                if (!this.isInitialized) {
-                    this.logger.warn("hasLoadedNamespace: i18next was not initialized", this.languages);
-                    return false;
-                }
-                if (!this.languages || !this.languages.length) {
-                    this.logger.warn("hasLoadedNamespace: i18n.languages were undefined or empty", this.languages);
-                    return false;
-                }
-                const lng = options.lng || this.resolvedLanguage || this.languages[0];
-                const fallbackLng = this.options ? this.options.fallbackLng : false;
-                const lastLng = this.languages[this.languages.length - 1];
-                if (lng.toLowerCase() === "cimode") return true;
-                const loadNotPending = (l, n) => {
-                    const loadState = this.services.backendConnector.state[`${l}|${n}`];
-                    return loadState === -1 || loadState === 2;
-                };
-                if (options.precheck) {
-                    const preResult = options.precheck(this, loadNotPending);
-                    if (preResult !== void 0) return preResult;
-                }
-                if (this.hasResourceBundle(lng, ns)) return true;
-                if (!this.services.backendConnector.backend || this.options.resources && !this.options.partialBundledLanguages) return true;
-                if (loadNotPending(lng, ns) && (!fallbackLng || loadNotPending(lastLng, ns))) return true;
-                return false;
-            }
-            loadNamespaces(ns, callback) {
-                const deferred = defer();
-                if (!this.options.ns) {
-                    if (callback) callback();
-                    return Promise.resolve();
-                }
-                if (typeof ns === "string") ns = [ ns ];
-                ns.forEach((n => {
-                    if (this.options.ns.indexOf(n) < 0) this.options.ns.push(n);
-                }));
-                this.loadResources((err => {
-                    deferred.resolve();
-                    if (callback) callback(err);
-                }));
-                return deferred;
-            }
-            loadLanguages(lngs, callback) {
-                const deferred = defer();
-                if (typeof lngs === "string") lngs = [ lngs ];
-                const preloaded = this.options.preload || [];
-                const newLngs = lngs.filter((lng => preloaded.indexOf(lng) < 0));
-                if (!newLngs.length) {
-                    if (callback) callback();
-                    return Promise.resolve();
-                }
-                this.options.preload = preloaded.concat(newLngs);
-                this.loadResources((err => {
-                    deferred.resolve();
-                    if (callback) callback(err);
-                }));
-                return deferred;
-            }
-            dir(lng) {
-                if (!lng) lng = this.resolvedLanguage || (this.languages && this.languages.length > 0 ? this.languages[0] : this.language);
-                if (!lng) return "rtl";
-                const rtlLngs = [ "ar", "shu", "sqr", "ssh", "xaa", "yhd", "yud", "aao", "abh", "abv", "acm", "acq", "acw", "acx", "acy", "adf", "ads", "aeb", "aec", "afb", "ajp", "apc", "apd", "arb", "arq", "ars", "ary", "arz", "auz", "avl", "ayh", "ayl", "ayn", "ayp", "bbz", "pga", "he", "iw", "ps", "pbt", "pbu", "pst", "prp", "prd", "ug", "ur", "ydd", "yds", "yih", "ji", "yi", "hbo", "men", "xmn", "fa", "jpr", "peo", "pes", "prs", "dv", "sam", "ckb" ];
-                const languageUtils = this.services && this.services.languageUtils || new LanguageUtil(get());
-                return rtlLngs.indexOf(languageUtils.getLanguagePartFromCode(lng)) > -1 || lng.toLowerCase().indexOf("-arab") > 1 ? "rtl" : "ltr";
-            }
-            static createInstance() {
-                let options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-                let callback = arguments.length > 1 ? arguments[1] : void 0;
-                return new I18n(options, callback);
-            }
-            cloneInstance() {
-                let options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-                let callback = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : noop;
-                const forkResourceStore = options.forkResourceStore;
-                if (forkResourceStore) delete options.forkResourceStore;
-                const mergedOptions = {
-                    ...this.options,
-                    ...options,
-                    isClone: true
-                };
-                const clone = new I18n(mergedOptions);
-                if (options.debug !== void 0 || options.prefix !== void 0) clone.logger = clone.logger.clone(options);
-                const membersToCopy = [ "store", "services", "language" ];
-                membersToCopy.forEach((m => {
-                    clone[m] = this[m];
-                }));
-                clone.services = {
-                    ...this.services
-                };
-                clone.services.utils = {
-                    hasLoadedNamespace: clone.hasLoadedNamespace.bind(clone)
-                };
-                if (forkResourceStore) {
-                    clone.store = new ResourceStore(this.store.data, mergedOptions);
-                    clone.services.resourceStore = clone.store;
-                }
-                clone.translator = new Translator(clone.services, mergedOptions);
-                clone.translator.on("*", (function(event) {
-                    for (var _len4 = arguments.length, args = new Array(_len4 > 1 ? _len4 - 1 : 0), _key4 = 1; _key4 < _len4; _key4++) args[_key4 - 1] = arguments[_key4];
-                    clone.emit(event, ...args);
-                }));
-                clone.init(mergedOptions, callback);
-                clone.translator.options = mergedOptions;
-                clone.translator.backendConnector.services.utils = {
-                    hasLoadedNamespace: clone.hasLoadedNamespace.bind(clone)
-                };
-                return clone;
-            }
-            toJSON() {
-                return {
-                    options: this.options,
-                    store: this.store,
-                    language: this.language,
-                    languages: this.languages,
-                    resolvedLanguage: this.resolvedLanguage
-                };
-            }
-        }
-        const instance = I18n.createInstance();
-        instance.createInstance = I18n.createInstance;
-        instance.createInstance;
-        instance.dir;
-        instance.init;
-        instance.loadResources;
-        instance.reloadResources;
-        instance.use;
-        instance.changeLanguage;
-        instance.getFixedT;
-        instance.t;
-        instance.exists;
-        instance.setDefaultNamespace;
-        instance.hasLoadedNamespace;
-        instance.loadNamespaces;
-        instance.loadLanguages;
-        function _classCallCheck(instance, Constructor) {
-            if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
-        }
-        function _typeof(o) {
-            "@babel/helpers - typeof";
-            return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
-                return typeof o;
-            } : function(o) {
-                return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
-            }, _typeof(o);
-        }
-        function _toPrimitive(input, hint) {
-            if (_typeof(input) !== "object" || input === null) return input;
-            var prim = input[Symbol.toPrimitive];
-            if (prim !== void 0) {
-                var res = prim.call(input, hint || "default");
-                if (_typeof(res) !== "object") return res;
-                throw new TypeError("@@toPrimitive must return a primitive value.");
-            }
-            return (hint === "string" ? String : Number)(input);
-        }
-        function _toPropertyKey(arg) {
-            var key = _toPrimitive(arg, "string");
-            return _typeof(key) === "symbol" ? key : String(key);
-        }
-        function _defineProperties(target, props) {
-            for (var i = 0; i < props.length; i++) {
-                var descriptor = props[i];
-                descriptor.enumerable = descriptor.enumerable || false;
-                descriptor.configurable = true;
-                if ("value" in descriptor) descriptor.writable = true;
-                Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
-            }
-        }
-        function _createClass(Constructor, protoProps, staticProps) {
-            if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-            if (staticProps) _defineProperties(Constructor, staticProps);
-            Object.defineProperty(Constructor, "prototype", {
-                writable: false
-            });
-            return Constructor;
-        }
-        var arr = [];
-        var each = arr.forEach;
-        var slice = arr.slice;
-        function i18nextBrowserLanguageDetector_defaults(obj) {
-            each.call(slice.call(arguments, 1), (function(source) {
-                if (source) for (var prop in source) if (obj[prop] === void 0) obj[prop] = source[prop];
-            }));
-            return obj;
-        }
-        var fieldContentRegExp = /^[\u0009\u0020-\u007e\u0080-\u00ff]+$/;
-        var serializeCookie = function serializeCookie(name, val, options) {
-            var opt = options || {};
-            opt.path = opt.path || "/";
-            var value = encodeURIComponent(val);
-            var str = "".concat(name, "=").concat(value);
-            if (opt.maxAge > 0) {
-                var maxAge = opt.maxAge - 0;
-                if (Number.isNaN(maxAge)) throw new Error("maxAge should be a Number");
-                str += "; Max-Age=".concat(Math.floor(maxAge));
-            }
-            if (opt.domain) {
-                if (!fieldContentRegExp.test(opt.domain)) throw new TypeError("option domain is invalid");
-                str += "; Domain=".concat(opt.domain);
-            }
-            if (opt.path) {
-                if (!fieldContentRegExp.test(opt.path)) throw new TypeError("option path is invalid");
-                str += "; Path=".concat(opt.path);
-            }
-            if (opt.expires) {
-                if (typeof opt.expires.toUTCString !== "function") throw new TypeError("option expires is invalid");
-                str += "; Expires=".concat(opt.expires.toUTCString());
-            }
-            if (opt.httpOnly) str += "; HttpOnly";
-            if (opt.secure) str += "; Secure";
-            if (opt.sameSite) {
-                var sameSite = typeof opt.sameSite === "string" ? opt.sameSite.toLowerCase() : opt.sameSite;
-                switch (sameSite) {
-                  case true:
-                    str += "; SameSite=Strict";
-                    break;
-
-                  case "lax":
-                    str += "; SameSite=Lax";
-                    break;
-
-                  case "strict":
-                    str += "; SameSite=Strict";
-                    break;
-
-                  case "none":
-                    str += "; SameSite=None";
-                    break;
-
-                  default:
-                    throw new TypeError("option sameSite is invalid");
-                }
-            }
-            return str;
-        };
-        var cookie = {
-            create: function create(name, value, minutes, domain) {
-                var cookieOptions = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : {
-                    path: "/",
-                    sameSite: "strict"
-                };
-                if (minutes) {
-                    cookieOptions.expires = new Date;
-                    cookieOptions.expires.setTime(cookieOptions.expires.getTime() + minutes * 60 * 1e3);
-                }
-                if (domain) cookieOptions.domain = domain;
-                document.cookie = serializeCookie(name, encodeURIComponent(value), cookieOptions);
-            },
-            read: function read(name) {
-                var nameEQ = "".concat(name, "=");
-                var ca = document.cookie.split(";");
-                for (var i = 0; i < ca.length; i++) {
-                    var c = ca[i];
-                    while (c.charAt(0) === " ") c = c.substring(1, c.length);
-                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-                }
-                return null;
-            },
-            remove: function remove(name) {
-                this.create(name, "", -1);
-            }
-        };
-        var cookie$1 = {
-            name: "cookie",
-            lookup: function lookup(options) {
-                var found;
-                if (options.lookupCookie && typeof document !== "undefined") {
-                    var c = cookie.read(options.lookupCookie);
-                    if (c) found = c;
-                }
-                return found;
-            },
-            cacheUserLanguage: function cacheUserLanguage(lng, options) {
-                if (options.lookupCookie && typeof document !== "undefined") cookie.create(options.lookupCookie, lng, options.cookieMinutes, options.cookieDomain, options.cookieOptions);
-            }
-        };
-        var querystring = {
-            name: "querystring",
-            lookup: function lookup(options) {
-                var found;
-                if (typeof window !== "undefined") {
-                    var search = window.location.search;
-                    if (!window.location.search && window.location.hash && window.location.hash.indexOf("?") > -1) search = window.location.hash.substring(window.location.hash.indexOf("?"));
-                    var query = search.substring(1);
-                    var params = query.split("&");
-                    for (var i = 0; i < params.length; i++) {
-                        var pos = params[i].indexOf("=");
-                        if (pos > 0) {
-                            var key = params[i].substring(0, pos);
-                            if (key === options.lookupQuerystring) found = params[i].substring(pos + 1);
-                        }
-                    }
-                }
-                return found;
-            }
-        };
-        var hasLocalStorageSupport = null;
-        var localStorageAvailable = function localStorageAvailable() {
-            if (hasLocalStorageSupport !== null) return hasLocalStorageSupport;
-            try {
-                hasLocalStorageSupport = window !== "undefined" && window.localStorage !== null;
-                var testKey = "i18next.translate.boo";
-                window.localStorage.setItem(testKey, "foo");
-                window.localStorage.removeItem(testKey);
-            } catch (e) {
-                hasLocalStorageSupport = false;
-            }
-            return hasLocalStorageSupport;
-        };
-        var i18nextBrowserLanguageDetector_localStorage = {
-            name: "localStorage",
-            lookup: function lookup(options) {
-                var found;
-                if (options.lookupLocalStorage && localStorageAvailable()) {
-                    var lng = window.localStorage.getItem(options.lookupLocalStorage);
-                    if (lng) found = lng;
-                }
-                return found;
-            },
-            cacheUserLanguage: function cacheUserLanguage(lng, options) {
-                if (options.lookupLocalStorage && localStorageAvailable()) window.localStorage.setItem(options.lookupLocalStorage, lng);
-            }
-        };
-        var hasSessionStorageSupport = null;
-        var sessionStorageAvailable = function sessionStorageAvailable() {
-            if (hasSessionStorageSupport !== null) return hasSessionStorageSupport;
-            try {
-                hasSessionStorageSupport = window !== "undefined" && window.sessionStorage !== null;
-                var testKey = "i18next.translate.boo";
-                window.sessionStorage.setItem(testKey, "foo");
-                window.sessionStorage.removeItem(testKey);
-            } catch (e) {
-                hasSessionStorageSupport = false;
-            }
-            return hasSessionStorageSupport;
-        };
-        var sessionStorage = {
-            name: "sessionStorage",
-            lookup: function lookup(options) {
-                var found;
-                if (options.lookupSessionStorage && sessionStorageAvailable()) {
-                    var lng = window.sessionStorage.getItem(options.lookupSessionStorage);
-                    if (lng) found = lng;
-                }
-                return found;
-            },
-            cacheUserLanguage: function cacheUserLanguage(lng, options) {
-                if (options.lookupSessionStorage && sessionStorageAvailable()) window.sessionStorage.setItem(options.lookupSessionStorage, lng);
-            }
-        };
-        var navigator$1 = {
-            name: "navigator",
-            lookup: function lookup(options) {
-                var found = [];
-                if (typeof navigator !== "undefined") {
-                    if (navigator.languages) for (var i = 0; i < navigator.languages.length; i++) found.push(navigator.languages[i]);
-                    if (navigator.userLanguage) found.push(navigator.userLanguage);
-                    if (navigator.language) found.push(navigator.language);
-                }
-                return found.length > 0 ? found : void 0;
-            }
-        };
-        var htmlTag = {
-            name: "htmlTag",
-            lookup: function lookup(options) {
-                var found;
-                var htmlTag = options.htmlTag || (typeof document !== "undefined" ? document.documentElement : null);
-                if (htmlTag && typeof htmlTag.getAttribute === "function") found = htmlTag.getAttribute("lang");
-                return found;
-            }
-        };
-        var path = {
-            name: "path",
-            lookup: function lookup(options) {
-                var found;
-                if (typeof window !== "undefined") {
-                    var language = window.location.pathname.match(/\/([a-zA-Z-]*)/g);
-                    if (language instanceof Array) if (typeof options.lookupFromPathIndex === "number") {
-                        if (typeof language[options.lookupFromPathIndex] !== "string") return;
-                        found = language[options.lookupFromPathIndex].replace("/", "");
-                    } else found = language[0].replace("/", "");
-                }
-                return found;
-            }
-        };
-        var subdomain = {
-            name: "subdomain",
-            lookup: function lookup(options) {
-                var lookupFromSubdomainIndex = typeof options.lookupFromSubdomainIndex === "number" ? options.lookupFromSubdomainIndex + 1 : 1;
-                var language = typeof window !== "undefined" && window.location && window.location.hostname && window.location.hostname.match(/^(\w{2,5})\.(([a-z0-9-]{1,63}\.[a-z]{2,6})|localhost)/i);
-                if (!language) return;
-                return language[lookupFromSubdomainIndex];
-            }
-        };
-        function getDefaults() {
-            return {
-                order: [ "querystring", "cookie", "localStorage", "sessionStorage", "navigator", "htmlTag" ],
-                lookupQuerystring: "lng",
-                lookupCookie: "i18next",
-                lookupLocalStorage: "i18nextLng",
-                lookupSessionStorage: "i18nextLng",
-                caches: [ "localStorage" ],
-                excludeCacheFor: [ "cimode" ],
-                convertDetectedLanguage: function convertDetectedLanguage(l) {
-                    return l;
-                }
-            };
-        }
-        var Browser = function() {
-            function Browser(services) {
-                var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                _classCallCheck(this, Browser);
-                this.type = "languageDetector";
-                this.detectors = {};
-                this.init(services, options);
-            }
-            _createClass(Browser, [ {
-                key: "init",
-                value: function init(services) {
-                    var options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-                    var i18nOptions = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
-                    this.services = services || {
-                        languageUtils: {}
-                    };
-                    this.options = i18nextBrowserLanguageDetector_defaults(options, this.options || {}, getDefaults());
-                    if (typeof this.options.convertDetectedLanguage === "string" && this.options.convertDetectedLanguage.indexOf("15897") > -1) this.options.convertDetectedLanguage = function(l) {
-                        return l.replace("-", "_");
-                    };
-                    if (this.options.lookupFromUrlIndex) this.options.lookupFromPathIndex = this.options.lookupFromUrlIndex;
-                    this.i18nOptions = i18nOptions;
-                    this.addDetector(cookie$1);
-                    this.addDetector(querystring);
-                    this.addDetector(i18nextBrowserLanguageDetector_localStorage);
-                    this.addDetector(sessionStorage);
-                    this.addDetector(navigator$1);
-                    this.addDetector(htmlTag);
-                    this.addDetector(path);
-                    this.addDetector(subdomain);
-                }
-            }, {
-                key: "addDetector",
-                value: function addDetector(detector) {
-                    this.detectors[detector.name] = detector;
-                }
-            }, {
-                key: "detect",
-                value: function detect(detectionOrder) {
-                    var _this = this;
-                    if (!detectionOrder) detectionOrder = this.options.order;
-                    var detected = [];
-                    detectionOrder.forEach((function(detectorName) {
-                        if (_this.detectors[detectorName]) {
-                            var lookup = _this.detectors[detectorName].lookup(_this.options);
-                            if (lookup && typeof lookup === "string") lookup = [ lookup ];
-                            if (lookup) detected = detected.concat(lookup);
-                        }
-                    }));
-                    detected = detected.map((function(d) {
-                        return _this.options.convertDetectedLanguage(d);
-                    }));
-                    if (this.services.languageUtils.getBestMatchFromCodes) return detected;
-                    return detected.length > 0 ? detected[0] : null;
-                }
-            }, {
-                key: "cacheUserLanguage",
-                value: function cacheUserLanguage(lng, caches) {
-                    var _this2 = this;
-                    if (!caches) caches = this.options.caches;
-                    if (!caches) return;
-                    if (this.options.excludeCacheFor && this.options.excludeCacheFor.indexOf(lng) > -1) return;
-                    caches.forEach((function(cacheName) {
-                        if (_this2.detectors[cacheName]) _this2.detectors[cacheName].cacheUserLanguage(lng, _this2.options);
-                    }));
-                }
-            } ]);
-            return Browser;
-        }();
-        Browser.type = "languageDetector";
-        instance.use(Browser).init({
-            fallbackLng: "ua",
-            debug: true,
-            resources: {
-                ua: {
-                    translation: {
-                        promoTitle: "Спадок пам'яті, що об'єднує нас.",
-                        promoDescr: "RIPlister народився з бажанням не лише для полегшення пошуку місць поховання та підвищення рівня догляду за могилами, але й з метою створення простору для збереження спогадів і формування родинного архіву. Цей проект спрямований на підтримку пам'яті про близьких людей та важливі моменти, створення місця, де можна зберігати найдорожчі історії та спогади.",
-                        promoOrangeText: "Бажаєте бути серед перших, хто долучиться до цієї ініціативи? Підпишіться, щоб мати можливість скористатися нею з моменту запуску.",
-                        promoInputBtn: "Підписатися",
-                        socialsText: "Також додавайся до наших сторінок у соцмережах",
-                        whiteTitleFirst: "Спадок пам'яті,",
-                        whiteTitleSecond: "що об'єднує нас.",
-                        langDisplayLng: "УКР",
-                        thanksPopupText: "Дякуємо вам за підписку!",
-                        thanksPopupBtn: "Продовжити",
-                        promoVideoLabel: "Закрити",
-                        promoPopupTitle: "Спадок пам'яті, що об'єднує нас.",
-                        promoPopup__about1: "Ласкаво просимо до нашого проєкту! Ми - команда ентузіастів, які працюють над створенням унікального вебсайту, який надасть можливість легко знайти місце поховання людини, що вас цікавить, а також допомогти відшукати ваші коріння та родинні зв'язки.",
-                        promoPopup__about2: "Ми знаємо, як важливо мати зручну та надійну платформу, яка допоможе знайти поховання за ім'ям та прізвищем. Наша команда працює над створенням потужної бази даних, що охоплюватиме поховання з різних країн та регіонів, щоб забезпечити найактуальнішу інформацію.",
-                        promoPopup__about3: "Наш сайт також надасть можливість створити сторінку пам'яті для вашої рідної людини. На цій особистій сторінці ви зможете поділитися фотографіями, спогадами та іншими матеріалами, які нагадують вам про вашого близького. Це буде місце, де ви зможете зібрати пам'ять про вашого рідного та запросити інших людей долучитися до вшанування його пам'яті, залишивши слова шани, запалюючи віртуальну свічку чи зробивши підношення у вигляді віртуального букета квітів.",
-                        promoPopup__about4: "У нашому проєкті ми також пропонуємо різноманітні послуги, які допоможуть вам дбати про могилу вашого близького. Ви зможете замовити послугу з прибирання могили, яка дозволить підтримувати її в чистоті та порядку. Крім того, ми пропонуємо нанесення QR-коду на могилу, який дозволить людям перейти на сторінку пам'яті вашого рідного. Це створить можливість для кожного, хто відвідує могилу, дізнатися більше про людину, що похована там, і висловити свою шану та повагу.",
-                        promoPopup__about5: "Ми з великим запалом продовжуємо працювати над розробкою сайту, щоб забезпечити вам якісну та інтуїтивно зрозумілу платформу. Наша мета - зробити процес пошуку місць поховання, вшанування пам'яті та догляду за могилами простими та доступними для всіх.",
-                        promoPopup__about6: "Приєднуйтесь до нас, аби бути в курсі розвитку проєкту та мати можливість робити свій внесок у розширення світової бази поховань. Разом ми зможемо створити особливе місце, де пам'ять про наших рідних буде жити назавжди.",
-                        promoPopup__thanksField: "Дякуємо вам за підписку!"
-                    }
-                },
-                en: {
-                    translation: {
-                        promoTitle: "Legacy of memory that unites us.",
-                        promoDescr: "RIPlister was born not only to facilitate the search for burial places and enhance the care levels for graves but also with the purpose of creating a space for preserving memories and forming a family archive. This project is aimed at supporting the memory of loved ones and significant moments, establishing a place to store the most cherished stories and memories.",
-                        promoOrangeText: "Would you like to be among the first to join this initiative? Subscribe now to ensure early access upon its launch.",
-                        promoInputBtn: "Subscribe",
-                        socialsText: "Also, join our social media pages for updates.",
-                        whiteTitleFirst: "Legacy of memory",
-                        whiteTitleSecond: "that unites us.",
-                        langDisplayLng: "ENG",
-                        thanksPopupText: "Thank you for subscribing!",
-                        thanksPopupBtn: "Continue",
-                        promoVideoLabel: "Close",
-                        promoPopupTitle: "Legacy of memory that unites us.",
-                        promoPopup__about1: "Welcome to our project! We are a team of enthusiasts working on creating a unique website that will allow you to easily find the burial place of a person you're interested in and help you discover your roots and family connections.",
-                        promoPopup__about2: "We understand the importance of having a convenient and reliable platform that can help locate burials by name and surname. Our team is working on building a powerful database that will cover burials from different countries and regions to provide the most up-to-date information.",
-                        promoPopup__about3: "Our website will also provide the opportunity to create a memorial page for your loved ones. On this personal page, you'll be able to share photos, memories, and other materials that remind you of your dear ones. It will be a place where you can gather memories of your loved ones and invite others to join in honoring their memory by leaving words of tribute, lighting a virtual candle, or offering virtual flower arrangements.",
-                        promoPopup__about4: "In our project, we also offer various services to help you care for the grave of your loved one. You'll be able to request a grave maintenance service to keep it clean and tidy. Additionally, we provide the option to add a QR code to the grave, allowing people to visit the memorial page of your loved one. This creates an opportunity for anyone visiting the grave to learn more about the person buried there and express their respect and tribute.",
-                        promoPopup__about5: "We are passionate about continuing our work on developing the website to provide you with a high-quality and user-friendly platform. Our goal is to make the process of searching for burial places, honoring memories, and caring for graves simple and accessible to everyone.",
-                        promoPopup__about6: "Join us to stay updated on the project's development and have the opportunity to contribute to the expansion of the global burial database. Together, we can create a special place where the memory of our loved ones will live forever.",
-                        promoPopup__thanksField: "Thank you for subscribing!"
-                    }
-                }
-            }
-        }, (function(err, t) {
-            updateContent();
-        }));
-        function updateContent() {
-            const currentPage = location.href.split("/")[3].slice(0, -5);
-            switch (currentPage) {
-              case "promo":
-                document.querySelector(".promo__headerTitle").innerHTML = instance.t("promoTitle");
-                document.querySelector(".promo__descr").innerHTML = instance.t("promoDescr");
-                document.querySelector(".promo__orangeText").innerHTML = instance.t("promoOrangeText");
-                document.querySelector(".promo__input-btn").innerHTML = instance.t("promoInputBtn");
-                document.querySelector(".promoPopup__input-btn").innerHTML = instance.t("promoInputBtn");
-                document.querySelector(".promo__socialsText").innerHTML = instance.t("socialsText");
-                document.querySelector(".promoPopup__socialsText h4").innerHTML = instance.t("socialsText");
-                document.querySelector(".promo__whiteTitleFirst").innerHTML = instance.t("whiteTitleFirst");
-                document.querySelector(".promo__whiteTitleSecond").innerHTML = instance.t("whiteTitleSecond");
-                document.querySelector(".headerAlt__langBtn span").innerHTML = instance.t("langDisplayLng");
-                document.querySelector(".popupThanks__msg h4").innerHTML = instance.t("thanksPopupText");
-                document.querySelector(".popupThanks__closeBtn").innerHTML = instance.t("thanksPopupBtn");
-                document.querySelector(".promoPopup__orangeText h4").innerHTML = instance.t("promoOrangeText");
-                document.querySelector(".popupVideo__close label").innerHTML = instance.t("promoVideoLabel");
-                document.querySelector(".promoPopup__title").innerHTML = instance.t("promoPopupTitle");
-                document.querySelector(".promoPopup__about1").innerHTML = instance.t("promoPopup__about1");
-                document.querySelector(".promoPopup__about2").innerHTML = instance.t("promoPopup__about2");
-                document.querySelector(".promoPopup__about3").innerHTML = instance.t("promoPopup__about3");
-                document.querySelector(".promoPopup__about4").innerHTML = instance.t("promoPopup__about4");
-                document.querySelector(".promoPopup__about5").innerHTML = instance.t("promoPopup__about5");
-                document.querySelector(".promoPopup__about6").innerHTML = instance.t("promoPopup__about6");
-                document.querySelector(".promoPopup__input-thanksMsg").innerHTML = instance.t("promoPopup__thanksField");
-                break;
-
-              default:
-                document.querySelector(".langMenuBtn span").innerHTML = instance.t("langDisplayLng");
-                break;
-            }
-        }
-        updateContent();
-        function changeLng(lng) {
-            instance.changeLanguage(lng);
-        }
-        instance.on("languageChanged", (() => {
-            updateContent();
-        }));
         const currentPage = location.href.split("/")[3].slice(0, -5);
         switch (currentPage) {
           case "promo":
@@ -8685,14 +6471,9 @@
             function lngMenuSwitcher() {
                 const langMenuBtn = document.querySelector(".langMenuBtn");
                 const langMenu = document.querySelector(".langMenu");
-                const langUABtn = document.querySelector(".uaBtn");
-                const langENBtn = document.querySelector(".enBtn");
-                const langImg = document.getElementById("langImg");
-                function languageDetection() {
-                    const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
-                    if (userLang === "en") langImg.src = "img/en.svg"; else langImg.src = "img/ua.svg";
-                }
-                languageDetection();
+                document.querySelector(".uaBtn");
+                document.querySelector(".enBtn");
+                document.getElementById("langImg");
                 langMenuBtn.addEventListener("click", (function(e) {
                     e.stopPropagation();
                     langMenu.classList.toggle("block");
@@ -8704,49 +6485,14 @@
                         langMenuBtn.classList.remove("toggleLangBtn");
                     }
                 }));
-                function changeToUA() {
-                    let currentImg = langImg.src;
-                    let uaFlag = "img/ua.svg";
-                    let newImg = currentImg = uaFlag;
-                    langImg.src = newImg;
-                    localStorage.setItem("userImageChoice", newImg);
-                }
-                function changeToEN() {
-                    let currentImg = langImg.src;
-                    let enFlag = "img/en.svg";
-                    let newImg = currentImg = enFlag;
-                    langImg.src = newImg;
-                    localStorage.setItem("userImageChoice", newImg);
-                }
-                langUABtn.addEventListener("click", (function(e) {
-                    e.stopPropagation();
-                    langMenu.classList.remove("block");
-                    langMenuBtn.classList.remove("toggleLangBtn");
-                    changeToUA();
-                    changeLng("ua");
-                }));
-                langENBtn.addEventListener("click", (function(e) {
-                    e.stopPropagation();
-                    langMenu.classList.remove("block");
-                    langMenuBtn.classList.remove("toggleLangBtn");
-                    changeToEN();
-                    changeLng("en");
-                }));
-                document.addEventListener("DOMContentLoaded", (function() {
-                    let storedChoice = localStorage.getItem("userImageChoice");
-                    if (storedChoice) document.getElementById("langImg").src = storedChoice;
-                    if (storedChoice) document.getElementById("langImg").src = storedChoice;
-                }));
             }
             lngMenuSwitcher();
             break;
         }
-        const script_currentPage = location.href.split("/")[3].slice(0, -5);
+        location.href.split("/")[3].slice(0, -5);
         const mainMenuBtn = document.querySelector(".headerMain__menuBtn");
         const altMenuBtn = document.querySelector(".headerAlt__menuBtn");
         const menuCloseBtn = document.querySelector(".menu__closeBtn");
-        const profilePicture = document.getElementById("profilePicture");
-        const profilePictureInput = document.getElementById("profilePictureInput");
         document.querySelector(".searchTypeBtn_human");
         document.querySelector(".searchTypeBtn_cemetery");
         document.querySelector(".searchType_human");
@@ -8772,26 +6518,6 @@
                 menu.classList.remove("_active");
                 menuClose();
             }));
-        }
-        switch (script_currentPage) {
-          case "profile":
-            function profileLogic() {
-                if (!localStorage.getItem("profilePictureInput")) profilePicture.setAttribute("src", "img/upload-image.svg"); else profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"));
-                profilePictureInput.addEventListener("change", (e => {
-                    const image = e.target.files[0];
-                    const reader = new FileReader;
-                    reader.readAsDataURL(image);
-                    reader.addEventListener("load", (() => {
-                        localStorage.setItem("profilePictureInput", reader.result);
-                        if (!localStorage.getItem("profilePictureInput")) profilePicture.setAttribute("src", "img/upload-image.svg"); else profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"));
-                    }));
-                }));
-            }
-            profileLogic();
-            break;
-
-          default:
-            break;
         }
         const personalsEditForm = document.getElementById("personalsEdit__form");
         const editBtn = document.querySelector(".profile__editBox");
