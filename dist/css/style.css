@@ -5804,10 +5804,24 @@ label {
 }
 
 .questionnaires__scrollbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-top: 0.75rem;
-  height: 0.375rem;
+  height: 0.125rem;
   width: 100%;
-  border-radius: 1.875rem;
+  background: #F3ECEC;
+}
+
+.questionnaires__scrollbar-partActive {
+  background: #E55738;
+  height: 0.125rem;
+  width: 25%;
+}
+
+.questionnaires__scrollbar-part {
+  width: 25%;
+  height: 0.125rem;
   background: #F3ECEC;
 }
 
@@ -5856,29 +5870,29 @@ label {
   color: #040404;
 }
 
-.questionnaires__item-text h4 {
-  margin-top: 0.8125rem;
+.questionnaires__item-initials {
   text-align: center;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   text-decoration-line: underline;
+  margin-top: 0.8125rem;
 }
 
-.questionnaires__item-text h4:hover {
+.questionnaires__item-initials:hover {
   cursor: pointer;
   text-decoration-line: none;
 }
 
-.questionnaires__item-text span {
-  margin-top: 0.75rem;
+.questionnaires__item-relative {
   color: #7D7D7D;
   font-size: 0.875rem;
   font-weight: 400;
+  margin-top: 0.75rem;
 }
 
-.questionnaires__item-text p {
+.questionnaires__item-dates {
   margin-top: 0.625rem;
   font-size: 0.75rem;
   font-weight: 400;
@@ -7383,17 +7397,19 @@ label {
     width: 10.0625rem;
   }
 
-  .questionnaires__item-text h4 {
+  .questionnaires__item-initials {
     margin-top: 1.0625rem;
     font-size: 1.25rem;
   }
 
-  .questionnaires__item-text p {
-    font-size: 0.875rem;
+  .questionnaires__item-relative {
+    font-size: 1rem;
+    margin-top: 0.625rem;
   }
 
-  .questionnaires__item-text span {
-    font-size: 1rem;
+  .questionnaires__item-dates {
+    font-size: 0.875rem;
+    margin-top: 0.4375rem;
   }
 }
 
