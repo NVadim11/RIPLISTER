@@ -494,7 +494,7 @@ textarea.input {
 }
 
 .select_blogTags .select__value:after {
-  content: url("img/select-arrow.svg");
+  content: url("../img/select-arrow.svg");
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
@@ -652,7 +652,7 @@ textarea.input {
 }
 
 .select_newsTags .select__value:after {
-  content: url("img/select-arrow.svg");
+  content: url("../img/select-arrow.svg");
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
