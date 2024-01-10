@@ -11,11 +11,16 @@
 	&__title {
 		color: inherit;
 		text-align: left;
-		border: 1px solid #d9d9d9;
-		background-color: #fff;
+		border-radius: 1.25rem;
+		border: 1px solid var(--orange-color);
+		background: #FFF;
 		cursor: pointer;
 		width: 100%;
-		border-radius: 4px;
+		color: var(--text-color-black);
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 600;
+		padding: 1.0625rem 0 1.0625rem 1.25rem;
 	}
 	// .select__value
 	&__value {
@@ -23,13 +28,13 @@
 		min-width: 0;
 		align-items: center;
 		height: toRem(30);
-		padding: 0 toRem(15);
+		padding: 0 1.25rem 0 0;
 		gap: toRem(10);
 		> * {
 			flex: 1 1 auto;
 		}
 		&:after {
-			content: "";
+			content: url("img/select-arrow.svg");
 			align-self: stretch;
 			flex: 0 0 10px;
 			transition: all 0.3s ease 0s;
@@ -68,16 +73,17 @@
 	}
 	// .select__options
 	&__options {
-		color: #000;
+		border-radius: 1.25rem;
+		border: 1px solid var(--orange-color);
+		color: var(--text-color-black);
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 600;
 		position: absolute;
-		top: calc(100% - toRem(1));
-		border-radius: 0 0 4px 4px;
+		top: calc(100% + 1.25rem);
 		min-width: 100%;
 		left: 0;
 		background-color: #fff;
-		border-top: 0;
-		border: 1px solid #d9d9d9;
-		border-top: 0;
 		padding: 10px 0px 5px 0px;
 	}
 	// .select__scroll
@@ -123,11 +129,11 @@
 	&--show-top {
 		.select__options {
 			top: auto;
-			bottom: calc(100% - toRem(1));
-			border: 1px solid #d9d9d9;
+			bottom: calc(100% + 1.25rem);
 			border-bottom: 0;
-			border-radius: 4px 4px 0 0;
-			padding: 5px 0px 10px 0px;
+			border-radius: 1.25rem;
+			border: 1px solid var(--orange-color);
+			color: var(--text-color-black);
 		}
 	}
 
@@ -144,6 +150,10 @@
 	}
 	&._select-checkbox {
 	}
+}
+
+.select_blogTags {
+
 }
 
 // Тег

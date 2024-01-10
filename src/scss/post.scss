@@ -1,0 +1,102 @@
+.detail {
+    &__header {
+        padding: 3.75rem 0 30px 0;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: $mobile) {
+            padding: 5.625rem 0 3.75rem 0;
+        }
+        @media (min-width: $pc) {
+            padding: 7.5rem 0 3.75rem 0;
+        }
+    }
+    &__header-title {
+        color: var(--text-color-black);
+        text-align: center;
+        font-size: 2.25rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%; /* 39.6px */
+        margin: 0 0 0.625rem 0;
+        @media (min-width: $mobile) {
+            margin: 0 0 1.25rem 0;
+            max-width: 31.25rem;
+            display: flex;
+            align-self: center;
+        }
+        @media (min-width: $pc) {
+            margin: 0 0 2.5rem 0;
+            font-size: 3.125rem;
+            text-align: start;
+            align-self: normal;
+        }
+    }
+    &__header-date {
+        color: var(--text-color-black);
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        margin: 0 0 0.625rem 0;
+        @media (min-width: $mobile) {
+            margin: 0 0 0.625rem 0;
+          
+        }
+        @media (min-width: $pc) {
+            margin: 0 0 1.875rem 0;
+            text-align: start;
+        }
+    }
+    &__header-links {
+        display: flex;
+        gap: 1.25rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 0 0.625rem 0;
+        @media (min-width: $mobile) {
+            margin: 0 0 0.625rem 0;
+        }
+        @media (min-width: $pc) {
+            margin: 0 0 1.875rem 0;
+            justify-content: left;
+        }
+    }
+    &__header-link {
+        color: #3C88F9;
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-decoration-line: underline;
+        margin: 0 0 0.625rem 0;
+      
+        @media (min-width: $pc) {
+            font-size: 1.125rem;
+        }
+    }
+    &__header-descr {
+        color: var(--text-color-black);
+        text-align: center;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        @media (min-width: $mobile) {
+            max-width: 31.25rem;
+            display: flex;
+            align-self: center;
+        }
+        @media (min-width: $pc) {
+            text-align: start;
+            font-size: 1.5rem;
+            max-width: 100%;
+        }
+    }
+    &__line {
+        height: 2px;
+        background: #F5BFB4;
+        flex-shrink: 0;
+        width: 100%;
+    }
+}

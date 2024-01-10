@@ -16,37 +16,69 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 10.625rem 0 0 0;
+	margin: 3.125rem 0 0 0;
 	align-self: center;
-	gap: 3.75rem;
+	gap: 1.25rem;
 	// .pagging__arrow
+	@media (min-width: $pc) {
+		gap: 3.75rem;
+		margin: 6.875rem 0 0 0;
+	}
+	@media (min-width: $full) {
+		margin: 12.5rem 0 0 0;
+	}
 	&__arrow {
-		width: 70px;
-		height: 70px;
+		width: 2.125rem;
+		height: 2.125rem;
 		flex-shrink: 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 30px;
-		border: 1px solid rgba(229, 87, 56, 0.50);
-		svg {
-
+		border-radius: 0.875rem;
+		border: 1px solid var(--orange-color);
+		transition: .25s;
+		@media (min-width: $pc) {
+			width: 4.375rem;
+			height: 4.375rem;
+			border-radius: 1.875rem;
 		}
-		@media (min-width: $full) {
-			svg {
-
+		svg {
+			transition: .25s;
+			width: 11.124px;
+			height: 6.8px;
+			flex-shrink: 0;
+			@media (min-width: $pc) {
+				width: 1.4314rem;
+				height: 0.875rem;
 			}
+		}
+	}
+	&__arrow:hover {
+		transition: .25s;
+		background: var(--orange-color);
+		svg {
+			transition: .25s;
+			path {
+                fill: var(--white-color); 
+            }
 		}
 	}
 	// .pagging__list
 	&__list {
 		display: flex;
-		@media (min-width: $full) {
-			gap: 3.75rem;
+		color: var(--text-color-black);
+		text-align: center;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		gap: 1.5rem;
+		@media (min-width: $pc) {
+			gap: 60px;
+			font-size: 1.5rem;
 		}
-		li {
-			@media (min-width: $full) {
-			}
+		@media (min-width: $full) {
+			font-size: 2rem;
 		}
 	}
 	// .pagging__item
@@ -55,11 +87,17 @@
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
+		transition: .25s;
 		@media (min-width: $full) {
 			font-size: 2rem;
 		}
 		&._active {
+			color: var(--orange-color);
 		}
+	}
+	&__item:hover {
+		color: var(--orange-color);
+		transition: .25s;
 	}
 }
 
@@ -92,22 +130,82 @@
     }
   }
   
+//   для конструктора/редактора
 .textBlock {
+	padding: 1.875rem 0 3.125rem 0;
+	@media (min-width: $pc) {
+		padding: 3.4375rem 0 4.375rem 0;
+	}
+	h1, h2, h3, h4 {
+		color: var(--text-color-black);
+		text-align: center;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 110%; /* 39.6px */
+		@media (min-width: $pc) {
+			text-align: start;
+		}
+	}
     h1 {
-
+		font-size: 2.25rem;
+		margin: 0 0 0.625rem 0;
+		@media (min-width: $mobile) {
+		}
+		@media (min-width: $pc) {
+			font-size: 3.125rem;
+		}
     }
     h2 {
-
+		font-size: 2rem;
+		margin: 0 0 0.625rem 0;
+		@media (min-width: $mobile) {
+			margin: 0 0 0.9375rem 0;
+		}
+		@media (min-width: $pc) {
+			font-size: 2.5rem;
+			margin: 0 0 1.875rem 0;
+		}
     }
     h3 {
-
+		font-size: 1.375rem;
+		margin: 0 0 0.8125rem 0;
+		@media (min-width: $mobile) {
+			margin: 0 0 0.8125rem 0;
+		}
+		@media (min-width: $pc) {
+			font-size: 2rem;
+			margin: 0 0 1.875rem 0;
+		}
     }
     h4 {
-
+		margin: 0 0 0.625rem 0;
     }
+	h1:last-child,
+	h2:last-child,
+	h3:last-child,
+	h4:last-child {
+		margin: 0;
+	}
     p {
-
+		font-size: 0.875rem;
+		color: var(--text-color-black);
+		text-align: center;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%; /* 19.6px */
+		margin: 0 0 1.875rem 0;
+		@media (min-width: $mobile) {
+			margin: 0 0 3.125rem 0;
+		}
+		@media (min-width: $pc) {
+			font-size: 1.25rem;
+			margin: 0 0 65px 0;
+			text-align: start;
+		}
     }
+	p:last-child {
+		margin: 0;
+	}
     i {
 
     }
@@ -117,4 +215,48 @@
     table {
         
     }
+	ul {
+		padding: 0 0 0 1.25rem;
+		margin: 0 0 1.875rem 0;
+		@media (min-width: $pc) {
+			margin: 0 0 3.125rem 0;
+		}
+		li {
+			list-style-type:disc;
+
+		}
+		li:last-child {
+			margin: 0;
+		}
+	}
+	ul:last-child {
+		margin: 0;
+	}
+	ol {
+		padding: 0 0 0 1.25rem;
+		margin: 0 0 1.875rem 0;
+		@media (min-width: $pc) {
+			margin: 0 0 3.125rem 0;
+		}
+		li:last-child {
+			margin: 0;
+		}
+	}
+	ol:last-child {
+		margin: 0;
+	}
+	li {
+		margin: 0 0 0.9375rem 0;
+		color: #171717;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%; /* 19.6px */
+		@media (min-width: $pc) {
+			font-size: 1.25rem;
+		}
+	}
+	li::marker {
+		color: var(--orange-color);
+	}
 }
