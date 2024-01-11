@@ -86,9 +86,9 @@ class SelectConstructor {
 			const selectItems = data ? document.querySelectorAll(data) : document.querySelectorAll('select');
 			if (selectItems.length) {
 				this.selectsInit(selectItems);
-				this.setLogging(`Прокинувся, построїв селектов: (${selectItems.length})`);
+				// this.setLogging(`Прокинувся, построїв селектов: (${selectItems.length})`);
 			} else {
-				this.setLogging('Сплю, немає жодного select');
+				// this.setLogging('Сплю, немає жодного select');
 			}
 		}
 	}
