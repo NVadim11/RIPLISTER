@@ -6871,10 +6871,12 @@
                 menuClose();
             }));
         }
-        const profilePictureInput = document.getElementById("profilePictureInput");
-        document.querySelector(".personalsEdit__photoBox");
-        const profilePicture = document.getElementById("profilePicture");
         const personalsEditForm = document.getElementById("personalsEdit__form");
+        document.getElementById("profilePictureInput");
+        const profileEditPictureInput = document.getElementById("profileEditPictureInput");
+        document.querySelector(".personals__uploadBtn");
+        const personalsEditImage = document.querySelector(".personalsEdit__uploadBtn");
+        const persolalsEditPhotoBox = document.querySelector(".personalsEdit__photoBox");
         const editBtn = document.querySelector(".profile__editBox");
         const personalsEditWrapper = document.querySelector(".profile__personals-editWrapper");
         const personalsWrapper = document.querySelector(".profile__personals-wrapper");
@@ -6886,20 +6888,30 @@
         const showPass = document.querySelector(".personalsEdit__showPass");
         const showNewPass = document.querySelector(".personalsEdit__showNewPass");
         const showRepeatPass = document.querySelector(".personalsEdit__showRepeatPass");
-        function profileLogic() {
-            if (!localStorage.getItem("profilePictureInput")) profilePicture.setAttribute("src", "img/upload-image.svg"); else profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"));
-            profilePictureInput.addEventListener("change", (e => {
+        if (personalsEditImage) {
+            personalsEditImage.addEventListener("click", (function(e) {
                 e.preventDefault();
-                const image = e.target.files[0];
-                const reader = new FileReader;
-                reader.readAsDataURL(image);
-                reader.addEventListener("load", (() => {
-                    localStorage.setItem("profilePictureInput", reader.result);
-                    if (!localStorage.getItem("profilePictureInput")) profilePicture.setAttribute("src", "img/upload-image.svg"); else profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"));
-                }));
+                profileEditPictureInput.click();
+            }));
+            profileEditPictureInput.addEventListener("change", (function(e) {
+                e.preventDefault();
+                const image = this.files[0];
+                console.log(image);
+                if (image.size < 1e6) {
+                    const reader = new FileReader;
+                    reader.onload = () => {
+                        const allImg = persolalsEditPhotoBox.querySelectorAll("img");
+                        allImg.forEach((item => item.remove()));
+                        const imgUrl = reader.result;
+                        const img = document.createElement("img");
+                        img.src = imgUrl;
+                        persolalsEditPhotoBox.appendChild(img);
+                        console.log(img);
+                    };
+                    reader.readAsDataURL(image);
+                } else alert("Image size must be less than 1MB");
             }));
         }
-        profileLogic();
         function toggleDisplaySVG(elementID) {
             (function(style) {
                 style.display = style.display === "none" ? "" : "none";

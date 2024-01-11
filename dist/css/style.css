@@ -5856,6 +5856,16 @@ label {
   height: auto;
 }
 
+.personalsEdit__photoBox::before {
+  content: attr(data-img);
+}
+
+.personalsEdit__photoBox::before img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 .personalsEdit__changeBox {
   display: -webkit-box;
   display: -ms-flexbox;
