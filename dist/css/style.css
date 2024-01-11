@@ -5609,7 +5609,11 @@ label {
   margin: 1.5625rem 0 0 0;
 }
 
-.personals__changeBox label {
+.personals__changeBox input {
+  display: none;
+}
+
+.personals__uploadBtn {
   display: block;
   cursor: pointer;
   -webkit-user-select: none;
@@ -5624,12 +5628,8 @@ label {
   text-decoration-line: underline;
 }
 
-.personals__changeBox label:hover {
+.personals__uploadBtn:hover {
   text-decoration: none;
-}
-
-.personals__changeBox input {
-  display: none;
 }
 
 .personals__deleteBtn {
@@ -5867,7 +5867,11 @@ label {
   margin: 1.5625rem 0 0 0;
 }
 
-.personalsEdit__changeBox label {
+.personalsEdit__changeBox input {
+  display: none;
+}
+
+.personalsEdit__uploadBtn {
   display: block;
   cursor: pointer;
   -webkit-user-select: none;
@@ -5882,12 +5886,8 @@ label {
   text-decoration-line: underline;
 }
 
-.personalsEdit__changeBox label:hover {
+.personalsEdit__uploadBtn:hover {
   text-decoration: none;
-}
-
-.personalsEdit__changeBox input {
-  display: none;
 }
 
 .personalsEdit__deleteBtn {
@@ -6228,6 +6228,15 @@ label {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+.questionnaires__navTitle,
+.questionnaires__navTitle-Active:hover {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .questionnaires__scrollbar {
@@ -7366,9 +7375,12 @@ label {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
 
-  .personals__changeBox label {
+  .personals__uploadBtn {
     font-size: 1rem;
   }
 
@@ -7470,9 +7482,12 @@ label {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
 
-  .personalsEdit__changeBox label {
+  .personalsEdit__uploadBtn {
     font-size: 1rem;
   }
 

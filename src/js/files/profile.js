@@ -1,6 +1,10 @@
 // import { menuClose, menuOpen } from "./functions.js"
 
 //Constants
+const profilePictureInput = document.getElementById("profilePictureInput");
+const profilePictureContainer = document.querySelector(".personalsEdit__photoBox");
+const profilePicture = document.getElementById("profilePicture");
+
 const personalsEditForm = document.getElementById("personalsEdit__form");
 
 const editBtn = document.querySelector(".profile__editBox");
@@ -17,6 +21,32 @@ const repreatPassword = document.getElementById("personalsEdit__repeatPass");
 const showPass = document.querySelector(".personalsEdit__showPass");
 const showNewPass = document.querySelector(".personalsEdit__showNewPass");
 const showRepeatPass = document.querySelector(".personalsEdit__showRepeatPass");
+
+// Photo upload
+//  Profile picture upload/save to LocalStorage
+
+function profileLogic() {
+    if (!localStorage.getItem("profilePictureInput")) {
+        profilePicture.setAttribute("src", "img/upload-image.svg")
+    } else {        
+        profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
+    }
+    profilePictureInput.addEventListener("change", (e) => {
+        e.preventDefault();
+        const image = e.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(image);
+        reader.addEventListener("load", () => {
+            localStorage.setItem("profilePictureInput", reader.result)       
+            if (!localStorage.getItem("profilePictureInput")) {
+                profilePicture.setAttribute("src", "img/upload-image.svg")
+            } else {        
+                profilePicture.setAttribute("src", localStorage.getItem("profilePictureInput"))
+            }    
+        });    
+    })
+}
+profileLogic();
 
 // show hide password
 function toggleDisplaySVG(elementID) {
