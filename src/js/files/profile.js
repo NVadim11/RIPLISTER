@@ -3,6 +3,20 @@
 //Constants
 const personalsEditForm = document.getElementById("personalsEdit__form");
 
+const profilePictureInput = document.getElementById("profilePictureInput");
+const profileEditPictureInput = document.getElementById("profileEditPictureInput");
+
+const editBusyNickname = document.querySelector(".personalsEdit__busyNickname");
+const editBusyEmail = document.querySelector(".personalsEdit__busyEmail");
+const editBusyNumber = document.querySelector(".personalsEdit__busyNumber");
+const editCurrPass = document.querySelector(".personalsEdit__currPass");
+const editNewPass = document.querySelector(".personalsEdit__newPass");
+const editRepeatPass = document.querySelector(".personalsEdit__repeatPass");
+
+const personalsImage = document.querySelector(".personals__uploadBtn");
+const personalsEditImage = document.querySelector(".personalsEdit__uploadBtn");
+const persolalsEditPhotoBox = document.querySelector(".personalsEdit__photoBox");
+
 const editBtn = document.querySelector(".profile__editBox");
 const personalsEditWrapper = document.querySelector(".profile__personals-editWrapper");
 const personalsWrapper = document.querySelector(".profile__personals-wrapper");
@@ -17,6 +31,35 @@ const repreatPassword = document.getElementById("personalsEdit__repeatPass");
 const showPass = document.querySelector(".personalsEdit__showPass");
 const showNewPass = document.querySelector(".personalsEdit__showNewPass");
 const showRepeatPass = document.querySelector(".personalsEdit__showRepeatPass");
+
+// Photo upload
+
+if (personalsEditImage) {
+    personalsEditImage.addEventListener("click", function(e) {
+        e.preventDefault();
+        profileEditPictureInput.click();
+    })
+    profileEditPictureInput.addEventListener("change", function(e) {
+        e.preventDefault();
+        const image = this.files[0]
+        console.log(image);
+        if(image.size < 1000000) {
+            const reader = new FileReader();
+        reader.onload = () => {
+            const allImg = persolalsEditPhotoBox.querySelectorAll("img");
+            allImg.forEach(item => item.remove());            
+            const imgUrl = reader.result;
+            const img = document.createElement("img");
+            img.src = imgUrl;
+            persolalsEditPhotoBox.appendChild(img);    
+            console.log(img);  
+        }
+        reader.readAsDataURL(image);
+        } else {
+            alert("Image size must be less than 1MB");
+        }    
+    })
+}
 
 // show hide password
 function toggleDisplaySVG(elementID) {

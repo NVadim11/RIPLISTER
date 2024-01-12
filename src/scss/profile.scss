@@ -291,27 +291,28 @@
 		@media screen and (min-width:$mobile) {
 			margin: 1.875rem 0 0 0;
 			flex-direction: column;
-		}
-		label {
-			display: block;
-			cursor: pointer;
-			user-select: none;
-			color: #E55738;
-			font-size: 0.875rem;
-			font-style: normal;
-			font-weight: 600;
-			line-height: normal;
-			text-decoration-line: underline;
-			@media screen and (min-width:$mobile) {
-			font-size: 1rem;
-			}
-		}
-		label:hover {
-			text-decoration: none;
+			align-items: start;
 		}
 		input {
 			display: none;
 		}
+	}
+	&__uploadBtn {
+		display: block;
+		cursor: pointer;
+		user-select: none;
+		color: #E55738;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		text-decoration-line: underline;
+		@media screen and (min-width:$mobile) {
+		font-size: 1rem;
+		}
+	}
+	&__uploadBtn:hover {
+		text-decoration: none;
 	}
 	&__deleteBtn {
 		color: #3C88F9;
@@ -545,6 +546,14 @@
 			
 		}
 	}
+	&__photoBox::before {
+		content: attr(data-img);
+		img {
+			width: 100%;
+			max-width: 100%;			
+			height: auto;			
+		}
+	}
 	&__uploadTips {
 		@media screen and (min-width:$pc) {
 			width: 15.625rem;
@@ -567,27 +576,28 @@
 		@media screen and (min-width:$mobile) {
 			margin: 1.875rem 0 0 0;
 			flex-direction: column;
-		}
-		label {
-			display: block;
-			cursor: pointer;
-			user-select: none;
-			color: #E55738;
-			font-size: 0.875rem;
-			font-style: normal;
-			font-weight: 600;
-			line-height: normal;
-			text-decoration-line: underline;
-			@media screen and (min-width:$mobile) {
-			font-size: 1rem;
-			}
-		}
-		label:hover {
-			text-decoration: none;
+			align-items: start;
 		}
 		input {
 			display: none;
 		}
+	}
+	&__uploadBtn {
+		display: block;
+		cursor: pointer;
+		user-select: none;
+		color: #E55738;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		text-decoration-line: underline;
+		@media screen and (min-width:$mobile) {
+		font-size: 1rem;
+		}
+	}
+	&__uploadBtn:hover {
+		text-decoration: none;
 	}
 	&__deleteBtn {
 		color: #3C88F9;
@@ -638,6 +648,7 @@
 	}
 	&__input-fields {
 		display: flex;
+		position: relative;
 		gap: 1.25rem;
 		margin: 0 0 2.5rem 0;
 	}
@@ -773,6 +784,97 @@
 	&__tip:last-child {
 		color: #F00;
 	}
+	&__busyNickname {
+		display: flex;
+		position: absolute;
+		top: 60px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__busyEmail {
+		display: flex;
+		position: absolute;
+		top: 60px;
+		right: 180px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	} 
+	&__busyNumber {
+		display: flex;
+		position: absolute;
+		top: 60px;
+		right: 180px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__currPass {
+		display: flex;
+		position: absolute;
+		top: 60px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__newPass {
+		display: flex;
+		position: absolute;
+		top: 60px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__repeatPass {	
+		display: flex;
+		position: absolute;
+		top: 60px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+}
+	.errorSignSvg {
+		display: flex;
+		scale: 80%;	
+		margin-right: 10px;
+	}
 }
 
 ._tab-active {
@@ -865,6 +967,10 @@
 			font-weight: 600;
 			line-height: normal;
 		}
+	}
+	&__navTitle, 	&__navTitle-Active:hover{
+		cursor: pointer;
+		user-select: none;
 	}
 	&__scrollbar {
 		display: flex;

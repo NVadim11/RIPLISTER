@@ -1225,12 +1225,18 @@ label {
 }
 
 .popupAuthForm .errorSignSvg {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   scale: 80%;
   margin-right: 10px;
 }
 
 .popupAuthForm .button {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   margin-top: 1.875rem;
   border-radius: 1.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
@@ -5609,7 +5615,11 @@ label {
   margin: 1.5625rem 0 0 0;
 }
 
-.personals__changeBox label {
+.personals__changeBox input {
+  display: none;
+}
+
+.personals__uploadBtn {
   display: block;
   cursor: pointer;
   -webkit-user-select: none;
@@ -5624,12 +5634,8 @@ label {
   text-decoration-line: underline;
 }
 
-.personals__changeBox label:hover {
+.personals__uploadBtn:hover {
   text-decoration: none;
-}
-
-.personals__changeBox input {
-  display: none;
 }
 
 .personals__deleteBtn {
@@ -5856,6 +5862,16 @@ label {
   height: auto;
 }
 
+.personalsEdit__photoBox::before {
+  content: attr(data-img);
+}
+
+.personalsEdit__photoBox::before img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 .personalsEdit__changeBox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5867,7 +5883,11 @@ label {
   margin: 1.5625rem 0 0 0;
 }
 
-.personalsEdit__changeBox label {
+.personalsEdit__changeBox input {
+  display: none;
+}
+
+.personalsEdit__uploadBtn {
   display: block;
   cursor: pointer;
   -webkit-user-select: none;
@@ -5882,12 +5902,8 @@ label {
   text-decoration-line: underline;
 }
 
-.personalsEdit__changeBox label:hover {
+.personalsEdit__uploadBtn:hover {
   text-decoration: none;
-}
-
-.personalsEdit__changeBox input {
-  display: none;
 }
 
 .personalsEdit__deleteBtn {
@@ -5948,6 +5964,7 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   gap: 1.25rem;
   margin: 0 0 2.5rem 0;
 }
@@ -6139,6 +6156,160 @@ label {
   color: #F00;
 }
 
+.personalsEdit__busyNickname {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 60px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F00;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.personalsEdit__busyEmail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 60px;
+  right: 180px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F00;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.personalsEdit__busyNumber {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 60px;
+  right: 180px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F00;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.personalsEdit__currPass {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 60px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F00;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.personalsEdit__newPass {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 60px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F00;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.personalsEdit__repeatPass {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 60px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F00;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.personalsEdit .errorSignSvg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  scale: 80%;
+  margin-right: 10px;
+}
+
 ._tab-active {
   color: var(--orange-color);
   font-size: 1.75rem;
@@ -6228,6 +6399,15 @@ label {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+.questionnaires__navTitle,
+.questionnaires__navTitle-Active:hover {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .questionnaires__scrollbar {
@@ -7366,9 +7546,12 @@ label {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
 
-  .personals__changeBox label {
+  .personals__uploadBtn {
     font-size: 1rem;
   }
 
@@ -7470,9 +7653,12 @@ label {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
   }
 
-  .personalsEdit__changeBox label {
+  .personalsEdit__uploadBtn {
     font-size: 1rem;
   }
 
