@@ -19,7 +19,7 @@ if (document.querySelector('[data-datepicker]')) {
 			input.value = value
 		},
 		onSelect: function (input, instance, date) {
-
+			
 		}
 	});
 	flsModules.datepicker = picker;

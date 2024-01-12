@@ -8064,6 +8064,9 @@ label {
     text-align: start;
     font-size: 1.5rem;
     max-width: 100%;
+    -ms-flex-item-align: normal;
+        -ms-grid-row-align: normal;
+        align-self: normal;
   }
 
   .recents {
