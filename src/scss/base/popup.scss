@@ -328,11 +328,12 @@ body::after {
 		line-height: normal;
 	}
 	.errorSignSvg {
-		display: block;
+		display: flex;
 		scale: 80%;	
 		margin-right: 10px;
 	}
 	.button {
+		user-select: none;
 		margin-top: 1.875rem;
 		border-radius: 1.25rem;
 		background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);

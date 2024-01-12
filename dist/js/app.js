@@ -6874,6 +6874,12 @@
         const personalsEditForm = document.getElementById("personalsEdit__form");
         document.getElementById("profilePictureInput");
         const profileEditPictureInput = document.getElementById("profileEditPictureInput");
+        document.querySelector(".personalsEdit__busyNickname");
+        document.querySelector(".personalsEdit__busyEmail");
+        document.querySelector(".personalsEdit__busyNumber");
+        document.querySelector(".personalsEdit__currPass");
+        document.querySelector(".personalsEdit__newPass");
+        document.querySelector(".personalsEdit__repeatPass");
         document.querySelector(".personals__uploadBtn");
         const personalsEditImage = document.querySelector(".personalsEdit__uploadBtn");
         const persolalsEditPhotoBox = document.querySelector(".personalsEdit__photoBox");

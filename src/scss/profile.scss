@@ -648,6 +648,7 @@
 	}
 	&__input-fields {
 		display: flex;
+		position: relative;
 		gap: 1.25rem;
 		margin: 0 0 2.5rem 0;
 	}
@@ -782,6 +783,97 @@
 	}
 	&__tip:last-child {
 		color: #F00;
+	}
+	&__busyNickname {
+		display: flex;
+		position: absolute;
+		top: 60px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__busyEmail {
+		display: flex;
+		position: absolute;
+		top: 60px;
+		right: 180px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	} 
+	&__busyNumber {
+		display: flex;
+		position: absolute;
+		top: 60px;
+		right: 180px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__currPass {
+		display: flex;
+		position: absolute;
+		top: 60px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__newPass {
+		display: flex;
+		position: absolute;
+		top: 60px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__repeatPass {	
+		display: flex;
+		position: absolute;
+		top: 60px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+}
+	.errorSignSvg {
+		display: flex;
+		scale: 80%;	
+		margin-right: 10px;
 	}
 }
 

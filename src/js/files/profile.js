@@ -6,6 +6,13 @@ const personalsEditForm = document.getElementById("personalsEdit__form");
 const profilePictureInput = document.getElementById("profilePictureInput");
 const profileEditPictureInput = document.getElementById("profileEditPictureInput");
 
+const editBusyNickname = document.querySelector(".personalsEdit__busyNickname");
+const editBusyEmail = document.querySelector(".personalsEdit__busyEmail");
+const editBusyNumber = document.querySelector(".personalsEdit__busyNumber");
+const editCurrPass = document.querySelector(".personalsEdit__currPass");
+const editNewPass = document.querySelector(".personalsEdit__newPass");
+const editRepeatPass = document.querySelector(".personalsEdit__repeatPass");
+
 const personalsImage = document.querySelector(".personals__uploadBtn");
 const personalsEditImage = document.querySelector(".personalsEdit__uploadBtn");
 const persolalsEditPhotoBox = document.querySelector(".personalsEdit__photoBox");
