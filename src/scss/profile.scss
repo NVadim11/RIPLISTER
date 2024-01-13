@@ -875,6 +875,16 @@
 		scale: 80%;	
 		margin-right: 10px;
 	}
+	&__passTip {
+		color: #7D7D7D;
+		margin-top: -2.1875rem;
+		max-width: 530px;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		background: var(--white-color);
+	}
 }
 
 ._tab-active {

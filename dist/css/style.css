@@ -1132,7 +1132,8 @@ label {
 .popupAuthForm__loginFormDescr,
 .popupAuthForm__registerFormDescr,
 .popupAuthForm__successDescr,
-.popupAuthForm__recoveryDescr {
+.popupAuthForm__recoveryDescr,
+.popupAuthForm__passTip {
   margin-top: 1.0625rem;
   color: var(--text-color-black);
   text-align: center;
@@ -6308,6 +6309,17 @@ label {
   display: flex;
   scale: 80%;
   margin-right: 10px;
+}
+
+.personalsEdit__passTip {
+  color: #7D7D7D;
+  margin-top: -2.1875rem;
+  max-width: 530px;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: var(--white-color);
 }
 
 ._tab-active {
