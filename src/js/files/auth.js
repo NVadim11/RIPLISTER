@@ -12,6 +12,8 @@ const successRegMsg = document.querySelector(".popupAuthForm__successRegMsg");
 const passRecoveryForm = document.querySelector(".popupAuthForm__passRecoveryForm");
 const passRecoveryMsg = document.querySelector(".popupAuthForm__recoveryMsg");
 
+const registerBusyMail = document.querySelector(".popupAuthForm__busyEmail");
+
 const inputItem = document.querySelectorAll(".popupAuthForm__input");
 const inputErrorIcon = document.querySelectorAll(".inputError");
 
@@ -171,8 +173,15 @@ if(passwordRecovery){
         const formObject = Array.from(formElement.elements)
         .filter(element => element.type !=="submit")
         .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
-        successRegToggler();
-        console.log(formObject);
+
+        if (usersDB.users.find(user => user.email === formObject.popupAuthForm__email)){
+            registerBusyMail.style.display = "flex";
+            console.log("Email busy")} 
+            else {
+                registerBusyMail.style.display = "none";
+                successRegToggler();
+                console.log(formObject);
+            }
         // Submitting to API
     };
     

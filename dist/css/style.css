@@ -1208,7 +1208,8 @@ label {
 
 .popupAuthForm__invalidInformation,
 .popupAuthForm__invalidUser,
-.popupAuthForm__invalidEmail {
+.popupAuthForm__invalidEmail,
+.popupAuthForm__busyEmail {
   display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
