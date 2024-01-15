@@ -920,10 +920,7 @@
                 ...accumulator,
                 [element.id]: element.value
             })), {});
-            if (accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email))) {
-                registerBusyMail.style.display = "flex";
-                console.log("Email busy");
-            } else {
+            if (accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email))) registerBusyMail.style.display = "flex"; else {
                 registerBusyMail.style.display = "none";
                 successRegToggler();
                 console.log(formObject);

@@ -175,8 +175,7 @@ if(passwordRecovery){
         .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
 
         if (usersDB.users.find(user => user.email === formObject.popupAuthForm__email)){
-            registerBusyMail.style.display = "flex";
-            console.log("Email busy")} 
+            registerBusyMail.style.display = "flex";} 
             else {
                 registerBusyMail.style.display = "none";
                 successRegToggler();

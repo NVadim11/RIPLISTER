@@ -139,14 +139,11 @@ function validateForm (formSelector, callback) {
 
     const validateSingleFormGroup = (formGroup) => {
         const input = formGroup.querySelector("input")
-        // const errorIcon = formGroup.querySelector(".inputError")
-
         let formGroupError = false;
         for(const option of validationOptions) {
             if (input) {
                 if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
-                    input.style.border = "0.125rem solid #F00";    
-                    // errorIcon.style.display = "block";  
+                    input.style.border = "0.125rem solid #F00";   
                     formGroupError = true;
                 }
                 if (!formGroupError || input.hasAttribute("ignore")) {
