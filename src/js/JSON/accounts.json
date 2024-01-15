@@ -3,15 +3,19 @@
 	[
 		{
 			"id": 1,
+			"nickname": "JohnJohn",
 			"first_name": "John",
 			"last_name": "Doe",
+			"phone_numbr": "1234567890",
 			"email": "johndoe@gmail.com",
 			"password": "Johntest123"
 		},
 		{
 			"id": 2,
+			"nickname": "JuliaJulia",
 			"first_name": "Julia",
 			"last_name": "Chan",
+			"phone_numbr": "0987654321",
 			"email": "juliachan@gmail.com",
 			"password": "Juliatest123"
 		}

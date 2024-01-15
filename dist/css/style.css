@@ -6158,9 +6158,7 @@ label {
 }
 
 .personalsEdit__busyNickname {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 60px;
   -webkit-box-orient: horizontal;
@@ -6182,9 +6180,7 @@ label {
 }
 
 .personalsEdit__busyEmail {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 60px;
   right: 180px;
@@ -6207,9 +6203,7 @@ label {
 }
 
 .personalsEdit__busyNumber {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 60px;
   right: 180px;
@@ -6232,9 +6226,7 @@ label {
 }
 
 .personalsEdit__currPass {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 60px;
   -webkit-box-orient: horizontal;
@@ -6256,9 +6248,7 @@ label {
 }
 
 .personalsEdit__newPass {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 60px;
   -webkit-box-orient: horizontal;
@@ -6280,9 +6270,7 @@ label {
 }
 
 .personalsEdit__repeatPass {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 60px;
   -webkit-box-orient: horizontal;

@@ -779,7 +779,7 @@
                 }
             }
         }
-        const accounts_namespaceObject = JSON.parse('{"r":[{"id":1,"first_name":"John","last_name":"Doe","email":"johndoe@gmail.com","password":"Johntest123"},{"id":2,"first_name":"Julia","last_name":"Chan","email":"juliachan@gmail.com","password":"Juliatest123"}]}');
+        const accounts_namespaceObject = JSON.parse('{"r":[{"id":1,"nickname":"JohnJohn","first_name":"John","last_name":"Doe","phone_numbr":"1234567890","email":"johndoe@gmail.com","password":"Johntest123"},{"id":2,"nickname":"JuliaJulia","first_name":"Julia","last_name":"Chan","phone_numbr":"0987654321","email":"juliachan@gmail.com","password":"Juliatest123"}]}');
         const loginTitle = document.getElementById("loginTitle");
         const registerTitle = document.getElementById("registerTitle");
         const loginFormContent = document.getElementById("loginFormContent");
@@ -6874,9 +6874,9 @@
         const personalsEditForm = document.getElementById("personalsEdit__form");
         document.getElementById("profilePictureInput");
         const profileEditPictureInput = document.getElementById("profileEditPictureInput");
-        document.querySelector(".personalsEdit__busyNickname");
-        document.querySelector(".personalsEdit__busyEmail");
-        document.querySelector(".personalsEdit__busyNumber");
+        const editBusyNickname = document.querySelector(".personalsEdit__busyNickname");
+        const editBusyEmail = document.querySelector(".personalsEdit__busyEmail");
+        const editBusyNumber = document.querySelector(".personalsEdit__busyNumber");
         document.querySelector(".personalsEdit__currPass");
         document.querySelector(".personalsEdit__newPass");
         document.querySelector(".personalsEdit__repeatPass");
@@ -6999,6 +6999,9 @@
                 ...accumulator,
                 [element.id]: element.value
             })), {});
+            if (accounts_namespaceObject.r.find((user => user.nickname === formObject.personalsEdit__nickname))) editBusyNickname.style.display = "flex"; else editBusyNickname.style.display = "none";
+            if (accounts_namespaceObject.r.find((user => user.email === formObject.personalsEdit__email))) editBusyEmail.style.display = "flex"; else editBusyEmail.style.display = "none";
+            if (accounts_namespaceObject.r.find((user => user.phone_numbr === formObject.personalsEdit__phone))) editBusyNumber.style.display = "flex"; else editBusyNumber.style.display = "none";
             console.log(formObject);
         }
         if (personalsEditForm) profile_validateForm("#personalsEdit__form", savePersonalData);

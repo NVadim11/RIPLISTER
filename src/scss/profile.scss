@@ -785,7 +785,7 @@
 		color: #F00;
 	}
 	&__busyNickname {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 60px;
 		flex-direction: row;
@@ -799,7 +799,7 @@
 		line-height: normal;
 	}
 	&__busyEmail {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 60px;
 		right: 180px;
@@ -814,7 +814,7 @@
 		line-height: normal;
 	} 
 	&__busyNumber {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 60px;
 		right: 180px;
@@ -829,7 +829,7 @@
 		line-height: normal;
 	}
 	&__currPass {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 60px;
 		flex-direction: row;
@@ -843,7 +843,7 @@
 		line-height: normal;
 	}
 	&__newPass {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 60px;
 		flex-direction: row;
@@ -857,7 +857,7 @@
 		line-height: normal;
 	}
 	&__repeatPass {	
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 60px;
 		flex-direction: row;

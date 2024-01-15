@@ -1,5 +1,7 @@
 // import { menuClose, menuOpen } from "./functions.js"
 
+import usersDB from "../JSON/accounts.json"
+
 //Constants
 const personalsEditForm = document.getElementById("personalsEdit__form");
 
@@ -183,8 +185,27 @@ function savePersonalData (formElement) {
     const formObject = Array.from(formElement.elements)
     .filter(element => element.type !=="submit" && element.type !=="label")
     .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
+
+    if (usersDB.users.find(user => user.nickname === formObject.personalsEdit__nickname)){
+        editBusyNickname.style.display = "flex";}
+        else {
+            editBusyNickname.style.display = "none";
+        }
+
+    if (usersDB.users.find(user => user.email === formObject.personalsEdit__email)){
+        editBusyEmail.style.display = "flex";}
+        else {
+            editBusyEmail.style.display = "none";
+        }
+
+    if (usersDB.users.find(user => user.phone_numbr === formObject.personalsEdit__phone)){
+        editBusyNumber.style.display = "flex";} 
+        else {
+            editBusyNumber.style.display = "none";
+        }       
+
     console.log(formObject);
-    // Submitting to API
+    // Submitting to API    
 };
 
 if(personalsEditForm) {
