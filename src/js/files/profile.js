@@ -143,10 +143,12 @@ function validateForm (formSelector, callback) {
         for(const option of validationOptions) {
             if (input) {
                 if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
-                    input.style.border = "0.125rem solid #F00";                                  
+                    input.classList.add("validationError"); 
+                    input.style.border = "0.0625rem solid #F00";         
                     formGroupError = true;
                 }
                 if (!formGroupError || input.hasAttribute("ignore")) {
+                    input.classList.remove("validationError");    
                     input.style.border = "0.0625rem solid #AAA";
                     formGroupError = false;
                 }
@@ -184,7 +186,8 @@ function savePersonalData (formElement) {
 
     if (usersDB.users.find(user => user.nickname === formObject.personalsEdit__nickname)){
         editBusyNickname.style.display = "flex";
-        document.getElementById("personalsEdit__email").focus()
+        document.getElementById("personalsEdit__nickname").classList.add("validationError"); 
+        document.getElementById("personalsEdit__nickname").focus()
         return false;
     } else {
             editBusyNickname.style.display = "none";
@@ -192,6 +195,7 @@ function savePersonalData (formElement) {
 
     if (usersDB.users.find(user => user.email === formObject.personalsEdit__email)){
         editBusyEmail.style.display = "flex";
+        document.getElementById("personalsEdit__email").classList.add("validationError"); 
         document.getElementById("personalsEdit__email").focus()
         return false;
     } else {
@@ -200,7 +204,8 @@ function savePersonalData (formElement) {
 
     if (usersDB.users.find(user => user.phone_numbr === formObject.personalsEdit__phone)){
         editBusyNumber.style.display = "flex";
-        document.getElementById("personalsEdit__email").focus()
+        document.getElementById("personalsEdit__phone").classList.add("validationError"); 
+        document.getElementById("personalsEdit__phone").focus()
         return false;
     } else {    
             editBusyNumber.style.display = "none";
@@ -217,13 +222,13 @@ function savePersonalData (formElement) {
     // }        
 
     if (document.getElementById("personalsEdit__newPass").value !== document.getElementById("personalsEdit__repeatPass").value) {
+        document.getElementById("personalsEdit__repeatPass").classList.add("validationError"); 
         document.getElementById("personalsEdit__repeatPass").focus()
         document.querySelector(".personalsEdit__repeatPassErr").style.display = "flex";
         return false;
     } else {
         document.querySelector(".personalsEdit__repeatPassErr").style.display = "none";
     }
-
     console.log(formObject);
     // Submitting to API    
 };
