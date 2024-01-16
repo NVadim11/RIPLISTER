@@ -130,12 +130,14 @@ if(passwordRecovery){
             for(const option of validationOptions) {
                 if (input) {
                     if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
-                        input.style.border = "0.125rem solid #F00";    
+                        input.style.border = "0.125rem solid #F00";  
+                        input.classList.add("validationError");   
                         errorIcon.style.display = "block";  
                         formGroupError = true;
                     }
                     if (!formGroupError) {
                         input.style.border = "0.0625rem solid #EC6041";
+                        input.classList.remove("validationError"); 
                         errorIcon.style.display = "none"; 
                     }
                 }              
