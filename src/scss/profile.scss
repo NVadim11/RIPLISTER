@@ -828,7 +828,7 @@
 		font-weight: 600;
 		line-height: normal;
 	}
-	&__currPass {
+	&__currPassErr {
 		display: none;
 		position: absolute;
 		top: 60px;
@@ -842,7 +842,7 @@
 		font-weight: 600;
 		line-height: normal;
 	}
-	&__newPass {
+	&__newPassErr {
 		display: none;
 		position: absolute;
 		top: 60px;
@@ -856,7 +856,7 @@
 		font-weight: 600;
 		line-height: normal;
 	}
-	&__repeatPass {	
+	&__repeatPassErr {	
 		display: none;
 		position: absolute;
 		top: 60px;

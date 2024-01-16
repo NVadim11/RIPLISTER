@@ -6228,7 +6228,7 @@ label {
   line-height: normal;
 }
 
-.personalsEdit__currPass {
+.personalsEdit__currPassErr {
   display: none;
   position: absolute;
   top: 60px;
@@ -6250,7 +6250,7 @@ label {
   line-height: normal;
 }
 
-.personalsEdit__newPass {
+.personalsEdit__newPassErr {
   display: none;
   position: absolute;
   top: 60px;
@@ -6272,7 +6272,7 @@ label {
   line-height: normal;
 }
 
-.personalsEdit__repeatPass {
+.personalsEdit__repeatPassErr {
   display: none;
   position: absolute;
   top: 60px;

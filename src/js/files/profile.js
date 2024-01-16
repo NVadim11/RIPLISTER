@@ -11,9 +11,9 @@ const profileEditPictureInput = document.getElementById("profileEditPictureInput
 const editBusyNickname = document.querySelector(".personalsEdit__busyNickname");
 const editBusyEmail = document.querySelector(".personalsEdit__busyEmail");
 const editBusyNumber = document.querySelector(".personalsEdit__busyNumber");
-const editCurrPass = document.querySelector(".personalsEdit__currPass");
-const editNewPass = document.querySelector(".personalsEdit__newPass");
-const editRepeatPass = document.querySelector(".personalsEdit__repeatPass");
+const editCurrPass = document.querySelector(".personalsEdit__currPassErr");
+const editNewPass = document.querySelector(".personalsEdit__newPassErr");
+const editRepeatPass = document.querySelector(".personalsEdit__repeatPassErr");
 
 const personalsImage = document.querySelector(".personals__uploadBtn");
 const personalsEditImage = document.querySelector(".personalsEdit__uploadBtn");
@@ -143,13 +143,12 @@ function validateForm (formSelector, callback) {
         for(const option of validationOptions) {
             if (input) {
                 if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
-                    input.style.border = "0.125rem solid #F00";   
+                    input.style.border = "0.125rem solid #F00";                                  
                     formGroupError = true;
                 }
                 if (!formGroupError || input.hasAttribute("ignore")) {
                     input.style.border = "0.0625rem solid #AAA";
                     formGroupError = false;
-                    // errorIcon.style.display = "none"; 
                 }
             }              
         }
@@ -184,22 +183,46 @@ function savePersonalData (formElement) {
     .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
 
     if (usersDB.users.find(user => user.nickname === formObject.personalsEdit__nickname)){
-        editBusyNickname.style.display = "flex";}
-        else {
+        editBusyNickname.style.display = "flex";
+        document.getElementById("personalsEdit__email").focus()
+        return false;
+    } else {
             editBusyNickname.style.display = "none";
-        }
+        };
 
     if (usersDB.users.find(user => user.email === formObject.personalsEdit__email)){
-        editBusyEmail.style.display = "flex";}
-        else {
+        editBusyEmail.style.display = "flex";
+        document.getElementById("personalsEdit__email").focus()
+        return false;
+    } else {
             editBusyEmail.style.display = "none";
-        }
+        };
 
     if (usersDB.users.find(user => user.phone_numbr === formObject.personalsEdit__phone)){
-        editBusyNumber.style.display = "flex";} 
-        else {
+        editBusyNumber.style.display = "flex";
+        document.getElementById("personalsEdit__email").focus()
+        return false;
+    } else {    
             editBusyNumber.style.display = "none";
-        }       
+        };
+        
+    // if (document.getElementById("personalsEdit__currentPass").value > 1) {
+    //     if (usersDB.users.find(user => user.password !== formObject.personalsEdit__currentPass)){
+    //         document.getElementById("personalsEdit__currentPass").focus()
+    //         document.querySelector(".personalsEdit__currPassErr").style.display = "flex";
+    //         return false;
+    //     } else {
+    //         document.querySelector(".personalsEdit__currPassErr").style.display = "none";
+    //     }
+    // }        
+
+    if (document.getElementById("personalsEdit__newPass").value !== document.getElementById("personalsEdit__repeatPass").value) {
+        document.getElementById("personalsEdit__repeatPass").focus()
+        document.querySelector(".personalsEdit__repeatPassErr").style.display = "flex";
+        return false;
+    } else {
+        document.querySelector(".personalsEdit__repeatPassErr").style.display = "none";
+    }
 
     console.log(formObject);
     // Submitting to API    
