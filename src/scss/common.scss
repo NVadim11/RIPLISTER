@@ -261,3 +261,84 @@
 	}
 }
 
+// блок цитата стать волонтером
+.volunteer {
+    // margin-right: 3.75rem 0 0 0;    
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: var(--alt-cream-color);
+        border-radius: 1.25rem; 
+		padding: 3.125rem 0;
+        @media screen and (min-width:$pc) {
+            flex-direction: row;
+            border-radius: 1.875rem; 
+            padding: 5.625rem 5.625rem;
+			justify-content: space-between;
+        }
+    }
+    &__quote {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media screen and (min-width:$pc) {
+            align-items: start;
+        }
+    }
+    p {
+        margin-top: 1.25rem;
+        text-align: center;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        @media screen and (min-width:$pc) { 
+            font-size: 2.25rem;
+            line-height: normal;
+            text-align: start;
+			max-width: 32.5rem;
+        }
+    }
+    span {
+        margin-top: 0.9375rem;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        @media screen and (min-width: $full) {
+            font-size: 1.25rem;
+            line-height: normal;
+        }
+    }
+    &__btn {
+        margin-top: 1.75rem;
+        padding: 1rem 3rem;
+        color: var(--white-color);
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 1.25rem;
+        transition: 0.25s;
+        background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+        @media screen and (min-width: $pc) {
+            // margin-left: 18.75rem;
+            font-size: 24px;
+            line-height: normal;
+            white-space: nowrap;
+            border-radius: 2.5rem;
+            padding: 1.875rem 5rem;
+        }
+    }
+    button:hover {
+        background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+        transition: 0.25s;
+    }
+}
+
+// оранжевая линия
+.lineOrange {
+	background: #F5BFB4;
+	height: 0.125rem;
+}
