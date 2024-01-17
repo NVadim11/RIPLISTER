@@ -4693,27 +4693,7 @@ label {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.blog__tagBtn {
-  padding: 1.25rem 3.4375rem;
-  border-radius: 1.875rem;
-  border: 0.0625rem solid #EC6041;
-  color: #000;
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
-}
-
-.blog__tagBtn:hover {
-  cursor: pointer;
-  color: var(--white-color);
-  background: var(--orange-color);
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
+  margin-top: 1.4375rem;
 }
 
 .blog__content {
@@ -8224,6 +8204,7 @@ label {
   .blog__selector {
     position: absolute;
     right: 0;
+    margin: 0;
   }
 
   .blog__content {

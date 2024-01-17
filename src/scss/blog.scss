@@ -65,36 +65,12 @@
 	&__selector {
 		display: flex;
 		justify-content: center;
+		margin-top: 1.4375rem;
 		@media (min-width: $pc) {
 			position: absolute;
 			right: 0;
+			margin: 0;
 		}
-	}
-	// &__tagsMobile {
-	// 	margin: 1.875rem 1.25rem 0 1.25rem;
-	// 	@media (min-width: $mobile) {
-	// 		margin: 1.25rem 5.625rem 0 5.625rem;
-	// 	}
-	// 	@media (min-width: $pc) {
-	// 		display: none;
-	// 	}
-	// }
-	&__tagBtn {
-		padding: 1.25rem 3.4375rem;
-		border-radius: 1.875rem;
-		border: 0.0625rem solid #EC6041;
-		color: #000;
-		font-size: 1.5rem;
-		font-style: normal;
-		font-weight: 600;
-		line-height: normal;
-		transition: .25s;
-	}
-	&__tagBtn:hover {
-		cursor: pointer;
-		color: var(--white-color);
-	  	background: var(--orange-color);
-		transition: .25s;
 	}
 	&__content {
 		margin: 1.875rem 1.25rem 0 1.25rem;
