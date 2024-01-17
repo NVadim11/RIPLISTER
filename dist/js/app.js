@@ -865,7 +865,6 @@
         }));
         function validateForm(formSelector, callback) {
             const formElement = document.querySelector(formSelector);
-            const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
             const validationOptions = [ {
                 attribute: "minlength",
                 isValid: input => input.value && input.value.length >= parseInt(input.minLength, 10)
@@ -885,15 +884,18 @@
                 let formGroupError = false;
                 for (const option of validationOptions) if (input) {
                     if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
-                        input.style.border = "0.125rem solid #F00";
+                        input.style.border = "2px solid #FF0000";
                         input.classList.add("validationError");
                         errorIcon.style.display = "block";
+                        invalidInformation.style.display = "flex";
                         formGroupError = true;
                     }
                     if (!formGroupError) {
                         input.style.border = "0.0625rem solid #EC6041";
                         input.classList.remove("validationError");
                         errorIcon.style.display = "none";
+                        invalidInformation.style.display = "none";
+                        formGroupError = false;
                     }
                 }
                 return !formGroupError;
@@ -911,14 +913,9 @@
                 event.preventDefault();
                 const formValid = validateAllFormGroups(formElement);
                 if (formValid) {
-                    invalidInformation.style.display = "none";
                     invalidUser.style.display = "none";
                     callback(formElement);
                     event.target.reset();
-                    console.log("asdasdasdasd");
-                } else {
-                    document.querySelector(".popupAuthForm__invalidInformation").style.display = "block";
-                    console.log("12313131231231231231");
                 }
             }));
         }
@@ -927,11 +924,12 @@
                 ...accumulator,
                 [element.id]: element.value
             })), {});
-            if (accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email))) registerBusyMail.style.display = "flex"; else {
-                registerBusyMail.style.display = "none";
-                successRegToggler();
-                console.log(formObject);
-            }
+            if (accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email))) {
+                registerBusyMail.style.display = "flex";
+                return false;
+            } else registerBusyMail.style.display = "none";
+            successRegToggler();
+            console.log(formObject);
         }
         function login(formElement) {
             const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit")).reduce(((accumulator, element) => ({
@@ -939,7 +937,7 @@
                 [element.id]: element.value
             })), {});
             let userFound = accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email && user.password === formObject.popupAuthForm__password));
-            if (!userFound) invalidUser.style.display = "flex"; else if (formObject.popupAuthForm__email === "" || formObject.popupAuthForm__password === "") invalidInformation.style.display = "flex"; else {
+            if (!userFound) invalidUser.style.display = "flex"; else {
                 successToggler();
                 console.log(userFound);
             }
@@ -6982,7 +6980,7 @@
                 for (const option of validationOptions) if (input) {
                     if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
                         input.classList.add("validationError");
-                        input.style.border = "0.0625rem solid #F00";
+                        input.style.border = "2px solid #FF0000";
                         profile_invalidInformation.style.display = "flex";
                         formGroupError = true;
                     }

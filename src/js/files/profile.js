@@ -36,7 +36,6 @@ const showNewPass = document.querySelector(".personalsEdit__showNewPass");
 const showRepeatPass = document.querySelector(".personalsEdit__showRepeatPass");
 
 // Photo upload
-
 if (personalsEditImage) {
     personalsEditImage.addEventListener("click", function(e) {
         e.preventDefault();
@@ -112,7 +111,6 @@ if (closeEditBtn) {
 }
 
 // form validate
-
 function validateForm (formSelector, callback) {
     const formElement = document.querySelector(formSelector);
 
@@ -145,7 +143,7 @@ function validateForm (formSelector, callback) {
             if (input) {
                 if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
                     input.classList.add("validationError"); 
-                    input.style.border = "0.0625rem solid #F00";  
+                    input.style.border = "2px solid #FF0000";  
                     invalidInformation.style.display = "flex";       
                     formGroupError = true;
                 }

@@ -303,6 +303,9 @@ body::after {
 		background: #FFF;
 		width: 16.25rem;
 		padding: 1.0625rem 0rem 1.0625rem 1.875rem;
+		@media screen and (min-width: $pc) {
+			width: 100%;
+		}
 	}
 	&__btnField {
 		display: flex;
@@ -340,7 +343,40 @@ body::after {
 		right: -1.875rem;
 		scale: 80%;	
 	}
-	&__invalidInformation, &__invalidUser, &__invalidEmail, &__busyEmail {
+	&__invalidInformation {
+		display: none;
+		flex-direction: row;
+		margin-top: 1.25rem;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__invalidUser {
+		display: none;
+		flex-direction: row;
+		margin-top: 1.25rem;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__invalidEmail {
+		display: none;
+		flex-direction: row;
+		margin-top: 1.25rem;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__busyEmail {
 		display: none;
 		flex-direction: row;
 		margin-top: 1.25rem;
