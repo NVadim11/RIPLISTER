@@ -865,6 +865,7 @@
         }));
         function validateForm(formSelector, callback) {
             const formElement = document.querySelector(formSelector);
+            const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
             const validationOptions = [ {
                 attribute: "minlength",
                 isValid: input => input.value && input.value.length >= parseInt(input.minLength, 10)
@@ -914,7 +915,11 @@
                     invalidUser.style.display = "none";
                     callback(formElement);
                     event.target.reset();
-                } else invalidInformation.style.display = "flex";
+                    console.log("asdasdasdasd");
+                } else {
+                    document.querySelector(".popupAuthForm__invalidInformation").style.display = "block";
+                    console.log("12313131231231231231");
+                }
             }));
         }
         function register(formElement) {
@@ -6880,6 +6885,7 @@
         const personalsEditForm = document.getElementById("personalsEdit__form");
         document.getElementById("profilePictureInput");
         const profileEditPictureInput = document.getElementById("profileEditPictureInput");
+        const profile_invalidInformation = document.querySelector(".personalsEdit__invalidInformation");
         const editBusyNickname = document.querySelector(".personalsEdit__busyNickname");
         const editBusyEmail = document.querySelector(".personalsEdit__busyEmail");
         const editBusyNumber = document.querySelector(".personalsEdit__busyNumber");
@@ -6977,11 +6983,13 @@
                     if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
                         input.classList.add("validationError");
                         input.style.border = "0.0625rem solid #F00";
+                        profile_invalidInformation.style.display = "flex";
                         formGroupError = true;
                     }
                     if (!formGroupError || input.hasAttribute("ignore")) {
                         input.classList.remove("validationError");
                         input.style.border = "0.0625rem solid #AAA";
+                        profile_invalidInformation.style.display = "none";
                         formGroupError = false;
                     }
                 }

@@ -5710,7 +5710,8 @@ label {
 }
 
 .personals__lineOrange {
-  height: 2px;
+  height: 0.0625rem;
+  margin: 1.25rem 0 0 0;
   background-color: var(--orange-color);
 }
 
@@ -6271,6 +6272,23 @@ label {
   line-height: normal;
 }
 
+.personalsEdit__invalidInformation {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 1.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F00;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
 .personalsEdit .errorSignSvg {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6282,7 +6300,8 @@ label {
 .personalsEdit__passTip {
   color: #7D7D7D;
   margin-top: -2.1875rem;
-  max-width: 530px;
+  margin-bottom: 2.1875rem;
+  max-width: 33.125rem;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
@@ -8384,6 +8403,48 @@ label {
 }
 
 @media screen and (min-width: 89.99875em) {
+  .popupAuthForm__formContent {
+    text-align: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+
+  .popupAuthForm__loginFormContent {
+    text-align: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+
+  .popupAuthForm__registerFormContent {
+    text-align: start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+
+  .popupAuthForm__loginFormDescr,
+  .popupAuthForm__registerFormDescr,
+  .popupAuthForm__successDescr,
+  .popupAuthForm__recoveryDescr,
+  .popupAuthForm__passTip {
+    max-width: 28.125rem;
+    text-align: start;
+  }
+
+  .popupAuthForm__btnField {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  .popupAuthForm__passRecover {
+    text-align: start;
+    margin-right: 11.0625rem;
+  }
+
   .promoPopup__about {
     margin: 4.6875rem 7.5rem 0 7.5rem;
     font-size: 1rem;

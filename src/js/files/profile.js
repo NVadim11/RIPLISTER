@@ -8,6 +8,7 @@ const personalsEditForm = document.getElementById("personalsEdit__form");
 const profilePictureInput = document.getElementById("profilePictureInput");
 const profileEditPictureInput = document.getElementById("profileEditPictureInput");
 
+const invalidInformation = document.querySelector(".personalsEdit__invalidInformation");
 const editBusyNickname = document.querySelector(".personalsEdit__busyNickname");
 const editBusyEmail = document.querySelector(".personalsEdit__busyEmail");
 const editBusyNumber = document.querySelector(".personalsEdit__busyNumber");
@@ -144,12 +145,14 @@ function validateForm (formSelector, callback) {
             if (input) {
                 if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
                     input.classList.add("validationError"); 
-                    input.style.border = "0.0625rem solid #F00";         
+                    input.style.border = "0.0625rem solid #F00";  
+                    invalidInformation.style.display = "flex";       
                     formGroupError = true;
                 }
                 if (!formGroupError || input.hasAttribute("ignore")) {
                     input.classList.remove("validationError");    
                     input.style.border = "0.0625rem solid #AAA";
+                    invalidInformation.style.display = "none";  
                     formGroupError = false;
                 }
             }              

@@ -103,6 +103,7 @@ if(passwordRecovery){
     
     function validateForm (formSelector, callback) {
         const formElement = document.querySelector(formSelector);
+        const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
     
         const validationOptions = [
             {
@@ -124,7 +125,7 @@ if(passwordRecovery){
     
         const validateSingleFormGroup = (formGroup) => {
             const input = formGroup.querySelector("input")
-            const errorIcon = formGroup.querySelector(".inputError")
+            const errorIcon = formGroup.querySelector(".inputError")            
     
             let formGroupError = false;
             for(const option of validationOptions) {
@@ -132,13 +133,13 @@ if(passwordRecovery){
                     if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
                         input.style.border = "0.125rem solid #F00";  
                         input.classList.add("validationError");   
-                        errorIcon.style.display = "block";  
+                        errorIcon.style.display = "block";                        
                         formGroupError = true;
                     }
                     if (!formGroupError) {
                         input.style.border = "0.0625rem solid #EC6041";
                         input.classList.remove("validationError"); 
-                        errorIcon.style.display = "none"; 
+                        errorIcon.style.display = "none";                      
                     }
                 }              
             }
@@ -165,8 +166,10 @@ if(passwordRecovery){
             invalidUser.style.display = "none";    
             callback(formElement);
             event.target.reset();
+            console.log("asdasdasdasd")
             } else {
-                invalidInformation.style.display = "flex";
+                document.querySelector(".popupAuthForm__invalidInformation").style.display = "block";
+                console.log("12313131231231231231")
             }
         })
     };

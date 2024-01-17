@@ -409,7 +409,8 @@
 		}
 	}
 	&__lineOrange {
-		height: 2px;
+		height: 0.0625rem;
+		margin: 1.25rem 0 0 0;
 		background-color: var(--orange-color);
 	}
 	&__passChange {
@@ -872,7 +873,17 @@
 }
 // .validationError {
 // }
-
+	&__invalidInformation {
+		display: none;
+		flex-direction: row;
+		margin-top: 1.25rem;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
 	.errorSignSvg {
 		display: flex;
 		scale: 80%;	
@@ -881,7 +892,8 @@
 	&__passTip {
 		color: #7D7D7D;
 		margin-top: -2.1875rem;
-		max-width: 530px;
+		margin-bottom: 2.1875rem;
+		max-width: 33.125rem;
 		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 400;
