@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head-letter.htm',{
+"title":"Riplister"
+})
+<style>
+    body {
+        width: 100% !important;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #background_table {
+        margin: 0;
+        padding: 0;
+        width: 100%!important;
+        line-height: 100%!important;
+    }
+    table td {
+        border-collapse: collapse;
+        vertical-align: middle;
+        font-size: 14px;
+        color: #000000;
+        text-align:center;
+    }
+    table {
+        border-collapse: collapse;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+    }
+    table[class="body_table"] {
+        width: 600px;
+    }
+</style>
+<body style="        width: 100% !important;
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+margin: 0;
+padding: 0;">
+    <table style="        margin: 0;
+    padding: 0;
+    width: 100%!important;
+    line-height: 100%!important;" width="100%" bgcolor="#ffffff" cellpadding="0" cellspacing="0" border="0" id="background_table">
+        <tbody>
+            <tr>
+                <td style="  border-collapse: collapse;
+                vertical-align: middle;
+                font-size: 14px;
+                color: #000000;
+                text-align:center;">
+                    @@include('html/_header-letter.htm',{})
+                    @@include('html/_reg-letter.htm',{})
+			        @@include('html/_footer-letter.htm',{})
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

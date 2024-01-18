@@ -1900,14 +1900,15 @@ label {
 
 .btn-gotop {
   position: fixed;
-  width: 50px;
-  height: 50px;
-  bottom: 60px;
-  right: 30px;
-  border: solid 1px #dddddd;
-  border-radius: 50%;
-  color: #dddddd;
-  background-color: transparent;
+  width: 4.375rem;
+  height: 4.375rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  border-radius: 30px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
+  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   opacity: 0;
@@ -1921,11 +1922,6 @@ label {
 
 .btn-gotop i {
   font-size: 24px;
-}
-
-.btn-gotop:hover {
-  border: 1.5px solid steelblue;
-  background-color: steelblue;
 }
 
 .textBlock {
