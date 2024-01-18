@@ -1799,6 +1799,10 @@ label {
   background-color: var(--white-color);
 }
 
+.colorWhite {
+  color: #ffffff;
+}
+
 .show_errorMsg {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -6574,6 +6578,22 @@ label {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.detail__cover {
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+  height: 41.875rem;
+}
+
+.detail__cover img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .detail__header-title {

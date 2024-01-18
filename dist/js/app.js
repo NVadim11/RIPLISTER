@@ -6876,6 +6876,10 @@
         const mainMenuBtn = document.querySelector(".headerMain__menuBtn");
         const altMenuBtn = document.querySelector(".headerAlt__menuBtn");
         const menuCloseBtn = document.querySelector(".menu__closeBtn");
+        const detailCover = document.querySelector(".detail__cover img");
+        const detailHeader = document.querySelector(".detail__header-title");
+        const detailDate = document.querySelector(".detail__header-date");
+        const detailDescr = document.querySelector(".detail__header-descr");
         if (mainMenuBtn) {
             const menu = document.querySelector(".menu");
             mainMenuBtn.addEventListener("click", (function(e) {
@@ -6896,6 +6900,11 @@
                 menu.classList.remove("_active");
                 menuClose();
             }));
+        }
+        if (detailCover) {
+            detailHeader.classList.add("colorWhite");
+            detailDate.classList.add("colorWhite");
+            detailDescr.classList.add("colorWhite");
         }
         const personalsEditForm = document.getElementById("personalsEdit__form");
         document.getElementById("profilePictureInput");
