@@ -343,7 +343,18 @@ body::after {
 		right: -1.875rem;
 		scale: 80%;	
 	}
-	&__invalidInformation {
+	&__logErrorMsg {
+		display: none;
+		flex-direction: row;
+		margin-top: 1.25rem;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
+	&__regErrorMsg {
 		display: none;
 		flex-direction: row;
 		margin-top: 1.25rem;

@@ -4,8 +4,11 @@ const loginFormContent = document.getElementById("loginFormContent");
 const registerFormContent = document.getElementById("registerFormContent");
 const passwordRecovery = document.getElementById("passwordRecovery")
 
+const invalidEmail = document.querySelector(".popupAuthForm__invalidEmail");
+const logErrorMsg = document.querySelector(".popupAuthForm__logErrorMsg");
+const regErrorMsg = document.querySelector(".popupAuthForm__regErrorMsg");
+
 const formContent = document.querySelector(".popupAuthForm__formContent");
-const invalidInformation = document.querySelector(".popupAuthForm__invalidInformation");
 const invalidUser = document.querySelector(".popupAuthForm__invalidUser");
 const successMsg = document.querySelector(".popupAuthForm__successMsg");
 const successRegMsg = document.querySelector(".popupAuthForm__successRegMsg");
@@ -21,14 +24,18 @@ import usersDB from "../JSON/accounts.json"
 console.log(usersDB.users);
 
 export function formStylesReset() {
-    invalidInformation.style.display = "none";
+    regErrorMsg.style.display = "none"; 
+    invalidEmail.style.display = "none";
+    logErrorMsg.style.display = "none";
     invalidUser.style.display = "none";  
     inputItem.forEach((input) => input.style.border = "0.0625rem solid #EC6041");   
     inputErrorIcon.forEach((icon) => icon.style.display = "none");
 };
 
 export function formContentReset() {
-    invalidInformation.style.display = "none";
+    regErrorMsg.style.display = "none"; 
+    invalidEmail.style.display = "none";
+    logErrorMsg.style.display = "none";
     invalidUser.style.display = "none";	
     document.getElementById("popupAuthForm__loginForm").reset();		
     document.getElementById("popupAuthForm__registerForm").reset();	
@@ -72,26 +79,34 @@ function loginToggler() {
     formContentReset()
 };
 function successToggler() {
-invalidInformation.style.display = "none";
+    regErrorMsg.style.display = "none"; 
+    invalidEmail.style.display = "none";
+    logErrorMsg.style.display = "none";
 invalidUser.style.display = "none";
 formContent.style.display = "none";
 successMsg.style.display = "flex";
 };
 function successRegToggler() {
-    invalidInformation.style.display = "none";
+    regErrorMsg.style.display = "none"; 
+    invalidEmail.style.display = "none";
+    logErrorMsg.style.display = "none";
     invalidUser.style.display = "none";
     formContent.style.display = "none";
     successRegMsg.style.display = "flex";
 };
 function passRecoverySentToggler() {
-invalidInformation.style.display = "none";
+    regErrorMsg.style.display = "none"; 
+    invalidEmail.style.display = "none";
+    logErrorMsg.style.display = "none";
 passRecoveryForm.style.display = "none";
 passRecoveryMsg.style.display = "flex";
 };
     
 if(passwordRecovery){
     passwordRecovery.addEventListener("click", () => {
-        invalidInformation.style.display = "none";
+        regErrorMsg.style.display = "none"; 
+        invalidEmail.style.display = "none";
+        logErrorMsg.style.display = "none";
         invalidUser.style.display = "none";
         formContent.style.display = "none";
         passRecoveryForm.style.display = "flex";
@@ -133,14 +148,18 @@ if(passwordRecovery){
                         input.style.border = "2px solid #FF0000";                        
                         input.classList.add("validationError");   
                         errorIcon.style.display = "block"; 
-                        invalidInformation.style.display = "flex"; 
+                        regErrorMsg.style.display = "flex"; 
+                        invalidEmail.style.display = "flex";
+                        logErrorMsg.style.display = "flex";
                         formGroupError = true;
                     }
                     if (!formGroupError) {
                         input.style.border = "0.0625rem solid #EC6041";
                         input.classList.remove("validationError"); 
                         errorIcon.style.display = "none"; 
-                        invalidInformation.style.display = "none";
+                        regErrorMsg.style.display = "none"; 
+                        invalidEmail.style.display = "none";
+                        logErrorMsg.style.display = "none";
                         formGroupError = false;
                     }
                 }              
@@ -181,6 +200,7 @@ if(passwordRecovery){
 
         if (usersDB.users.find(user => user.email === formObject.popupAuthForm__email)){
             registerBusyMail.style.display = "flex";
+            regErrorMsg.style.display = "none"; 
             return false;
             } else {
                 registerBusyMail.style.display = "none";   
@@ -209,14 +229,11 @@ if(passwordRecovery){
         const formObject = Array.from(formElement.elements)
         .filter(element => element.type !=="submit")
         .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
-        if (formObject.popupAuthForm__email === "") {
-            invalidInformation.style.display = "flex";
-        } else {
-            passRecoverySentToggler();
-            console.log(formObject);
-            // Submitting to API
-        }
-    };
+        passRecoverySentToggler();
+        console.log(formObject);
+        // Submitting to API
+    }
+
     if(registerFormContent) {
         validateForm("#popupAuthForm__registerForm", register);
     };

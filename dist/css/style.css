@@ -1206,7 +1206,24 @@ label {
   scale: 80%;
 }
 
-.popupAuthForm__invalidInformation {
+.popupAuthForm__logErrorMsg {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 1.25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F00;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.popupAuthForm__regErrorMsg {
   display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;

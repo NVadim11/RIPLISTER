@@ -8,7 +8,7 @@ const personalsEditForm = document.getElementById("personalsEdit__form");
 const profilePictureInput = document.getElementById("profilePictureInput");
 const profileEditPictureInput = document.getElementById("profileEditPictureInput");
 
-const invalidInformation = document.querySelector(".personalsEdit__invalidInformation");
+const editValidationMsg = document.querySelector(".personalsEdit__invalidInformation");
 const editBusyNickname = document.querySelector(".personalsEdit__busyNickname");
 const editBusyEmail = document.querySelector(".personalsEdit__busyEmail");
 const editBusyNumber = document.querySelector(".personalsEdit__busyNumber");
@@ -144,13 +144,13 @@ function validateForm (formSelector, callback) {
                 if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
                     input.classList.add("validationError"); 
                     input.style.border = "2px solid #FF0000";  
-                    invalidInformation.style.display = "flex";       
+                    editValidationMsg.style.display = "flex";  
                     formGroupError = true;
                 }
                 if (!formGroupError || input.hasAttribute("ignore")) {
                     input.classList.remove("validationError");    
                     input.style.border = "0.0625rem solid #AAA";
-                    invalidInformation.style.display = "none";  
+                    editValidationMsg.style.display = "none";  
                     formGroupError = false;
                 }
             }              
@@ -210,17 +210,7 @@ function savePersonalData (formElement) {
         return false;
     } else {    
             editBusyNumber.style.display = "none";
-        };
-        
-    // if (document.getElementById("personalsEdit__currentPass").value > 1) {
-    //     if (usersDB.users.find(user => user.password !== formObject.personalsEdit__currentPass)){
-    //         document.getElementById("personalsEdit__currentPass").focus()
-    //         document.querySelector(".personalsEdit__currPassErr").style.display = "flex";
-    //         return false;
-    //     } else {
-    //         document.querySelector(".personalsEdit__currPassErr").style.display = "none";
-    //     }
-    // }        
+        };  
 
     if (document.getElementById("personalsEdit__newPass").value !== document.getElementById("personalsEdit__repeatPass").value) {
         document.getElementById("personalsEdit__repeatPass").classList.add("validationError"); 
