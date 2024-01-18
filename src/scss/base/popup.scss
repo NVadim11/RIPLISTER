@@ -110,7 +110,7 @@ body::after {
   }
   .popup__input {
 	width: 100%;
-	padding: 35px 0 35px 75px;
+	padding: 2.1875rem 0 2.1875rem 4.6875rem;
 	color: var(--text-color-black);
 	font-size: 1.25rem;
 	font-style: normal;
@@ -125,7 +125,7 @@ body::after {
   .popup__select {
 	color: var(--text-color-black);
 	padding: 2.1875rem 3.75rem;
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-style: normal;
 	font-weight: 600;
 	line-height: normal;
@@ -217,12 +217,16 @@ body::after {
 	
 	&__close {
 		position: absolute;
-		right: 0.9375rem;
-		top: 0.9375rem;
+		right: 2.8125rem;
+		top: 2.1875rem;
 		svg {
 			rect {
 				transition: .25s;
 			}
+		}
+		@media screen and (min-width: $mobile) {
+			right: 0.9375rem;
+			top: 0.9375rem;
 		}
 	}
 	&__title {
@@ -238,6 +242,9 @@ body::after {
 		font-weight: 700;
 		line-height: normal;
 		user-select: none;
+		@media screen and (min-width: $pc) {
+			font-size: 3rem;			
+		}
 	}
 	.notActiveForm {
 		max-width: fit-content;
@@ -251,6 +258,9 @@ body::after {
 		font-weight: 600;
 		line-height: normal;
 		text-decoration-line: underline;
+		@media screen and (min-width: $pc) {
+			font-size: 1.5rem;			
+		}
 	}
 	.notActiveForm:hover {
 		cursor: pointer;
@@ -265,6 +275,7 @@ body::after {
 		@media screen and (min-width: $pc) {
 			text-align: start;
 			align-items: start;
+			width: 100%;
 		}
 	}
 	&__registerFormContent {
@@ -274,13 +285,22 @@ body::after {
 		@media screen and (min-width: $pc) {
 			text-align: start;
 			align-items: start;
+			width: 100%;
 		}
 	}
-	&__loginTitle {	
+	&__loginForm {	
+		display: flex;
+		@media screen and (min-width: $pc) {
+			width: 100%;
+		}
 	}
-	&__registerTitle {
+	&__registerForm {
+		display: flex;
+		@media screen and (min-width: $pc) {
+			width: 100%;
+		}
 	}
-	&__loginFormDescr, &__registerFormDescr, &__successDescr, &__recoveryDescr, &__passTip {
+	&__loginFormDescr, &__registerFormDescr, &__successDescr, &__passRecoveryDescr {
 		margin-top: 1.0625rem;
 		color: var(--text-color-black);
 		text-align: center;
@@ -289,7 +309,21 @@ body::after {
 		font-weight: 400;
 		line-height: 140%; /* 25.2px */
 		@media screen and (min-width: $pc) {
-			max-width: 28.125rem;
+			max-width: 31.25rem;
+			font-size: 1.25rem;
+			text-align: start;
+		}
+	}
+	&__passTip {
+		margin-top: 1.0625rem;
+		text-align: center;
+		color: #7D7D7D;
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		@media screen and (min-width: $pc) {
+			max-width: 34.375rem;
 			text-align: start;
 		}
 	}
@@ -312,7 +346,27 @@ body::after {
 		align-items: center;
 		flex-direction: column;
 		@media screen and (min-width: $pc) {
+			justify-content: space-between;
 			flex-direction: row;
+			width: 100%;
+		}
+	}
+	&__successBtnField {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		@media screen and (min-width: $pc) {
+			justify-content: space-between;
+			width: 100%;
+		}
+	}	
+	&__successRegBtnField {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		@media screen and (min-width: $pc) {
+			justify-content: space-between;
+			width: 100%;
 		}
 	}
 	&__passRecover {
@@ -323,18 +377,25 @@ body::after {
 		line-height: 1.25rem;
 		letter-spacing: 0em;
 		text-align: center;
+		text-decoration-line: underline;
 		@media screen and (min-width: $pc) {
 			text-align: start;
+			font-size: 1.25rem;
 			margin-right: 11.0625rem;
 		}
 	}
 	&__passRecover:hover {
 		cursor: pointer;
+		text-decoration-line: none;
 	}
 	&__input-group {
 		display: flex;
 		position: relative;
 		flex-direction: row;
+		@media screen and (min-width: $pc) {
+			display: flex;
+			width: 100%;
+		}
 	}
 	.inputError {
 		display: none;
@@ -349,10 +410,13 @@ body::after {
 		margin-top: 1.25rem;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width: $pc) {
+			font-size: 1.25rem;			
+		}
 	}
 	&__regErrorMsg {
 		display: none;
@@ -360,10 +424,13 @@ body::after {
 		margin-top: 1.25rem;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width: $pc) {
+			font-size: 1.25rem;			
+		}
 	}
 	&__invalidUser {
 		display: none;
@@ -371,10 +438,13 @@ body::after {
 		margin-top: 1.25rem;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width: $pc) {
+			font-size: 1.25rem;			
+		}
 	}
 	&__invalidEmail {
 		display: none;
@@ -382,10 +452,13 @@ body::after {
 		margin-top: 1.25rem;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width: $pc) {
+			font-size: 1.25rem;			
+		}
 	}
 	&__busyEmail {
 		display: none;
@@ -393,15 +466,18 @@ body::after {
 		margin-top: 1.25rem;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width: $pc) {
+			font-size: 1.25rem;			
+		}
 	}
 	.errorSignSvg {
 		display: flex;
 		scale: 80%;	
-		margin-right: 10px;
+		margin-right: 0.625rem;
 	}
 	.button {
 		user-select: none;
@@ -415,6 +491,9 @@ body::after {
 		line-height: 1.375rem;
 		letter-spacing: 0em;
 		text-align: left;
+		@media screen and (min-width: $pc) {
+			font-size: 1.5rem;			
+		}
 	}
 	.button:hover {
 		border-radius: 1.25rem;
@@ -422,6 +501,14 @@ body::after {
 	}
 	&__authSuccessBtn, &__passRecoveryBtn, &__passRecoveryCloseBtn {
 		margin-bottom: 4.8125rem;
+	}
+	&__authSuccessBtn {	
+	
+	}
+	&__passRecoveryBtn {
+		max-width: 18.75rem;
+		margin-right: auto;
+		margin-left: auto;
 	}
 	&__successMsg, &__passRecoveryForm, &__recoveryMsg, &__successRegMsg {
 		display: none;
@@ -436,10 +523,119 @@ body::after {
 		line-height: 1.5rem;
 		letter-spacing: 0em;
 		text-align: left;
+		@media screen and (min-width: $pc) {
+			font-size: 1.5rem;			
+		}
 	}
 	&__socials {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		user-select: none;
 		margin-top: 2.0625rem;
 		margin-bottom: 4.375rem;
+		gap: 1.25rem;	
+		color: #FFF;
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 137.023%; /* 32.885px */
+		@media screen and (min-width: $pc) {
+			gap: 1.25rem;	
+		}
+	}
+	.fbLogIcon {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		border-radius: 1.875rem;
+		background: #0E8CF1;
+		padding: 1.25rem 1.75rem 1.25rem 1.6875rem;
+		@media screen and (min-width: $pc) {
+			display: none;
+		}
+	}
+	.fbLogIcon:hover {
+		cursor: pointer;
+	}
+	.googleLogIcon {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		border-radius: 1.875rem;
+		background: #F10E0E;
+		padding: 1.1875rem 1.2356rem 1.1975rem 1.1875rem;
+		@media screen and (min-width: $pc) {
+			display: none;
+		}
+	}
+	.googleLogIcon:hover {
+		cursor: pointer;
+	}
+	.linkedinLogIcon {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		padding: 1.1875rem 1.2319rem 1.2363rem 1.1875rem;
+		border-radius: 1.875rem;
+		background: #0084B1;
+		@media screen and (min-width: $pc) {
+			display: none;
+		}
+	}
+	.linkedinLogIcon:hover {
+		cursor: pointer;
+	}
+	.fbLogBtn{
+		display: none;
+		align-items: center;
+		text-align: center;
+		border-radius: 1.25rem;
+		background: #0E8CF1;
+		padding: 0.75rem 1.5625rem 0.6875rem 1.5625rem;
+		svg {
+			margin-right: 1.0625rem;			
+		}
+		@media screen and (min-width: $pc) {
+			display: flex;
+		}
+	}
+	.fbLogBtn:hover {
+		cursor: pointer;
+	}
+	.googleLogBtn {
+		display: none;
+		align-items: center;
+		text-align: center;
+		border-radius: 1.25rem;
+		background: #F10E0E;
+		padding: 0.75rem 1.5625rem 0.6875rem 1.5625rem;
+		svg {
+			margin-right: 1.0625rem;			
+		}
+		@media screen and (min-width: $pc) {
+			display: flex;
+		}
+	}
+	.googleLogBtn:hover {
+		cursor: pointer;
+	}
+	.linkedinLogBtn {
+		display: none;
+		align-items: center;
+		text-align: center;
+		border-radius: 1.25rem;
+		background: #0084B1;
+		padding: 0.75rem 1.5625rem 0.6875rem 1.5625rem;
+		svg {
+			margin-right: 1.0625rem;			
+		}
+		@media screen and (min-width: $pc) {
+			display: flex;
+		}
+	}
+	.linkedinLogBtn:hover {
+		cursor: pointer;
 	}
 }
 // =========================================================== //
@@ -769,7 +965,7 @@ body::after {
 		padding: 2.875rem 2.25rem 2.125rem 2.25rem;
 	}
 	@media screen and (min-width: $tablet) {
-		padding: 96px 4.75rem 4rem 4.75rem;
+		padding: 6rem 4.75rem 4rem 4.75rem;
 	}
 	&__content {
 	position: relative;
@@ -843,7 +1039,7 @@ body::after {
 }
 
 ::-webkit-scrollbar {
-	width: 4px;
+	width: 0.25rem;
 	}
 /* Track */
 ::-webkit-scrollbar-track {

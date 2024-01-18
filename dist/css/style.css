@@ -919,7 +919,7 @@ body::after {
 
 .popup__input {
   width: 100%;
-  padding: 35px 0 35px 75px;
+  padding: 2.1875rem 0 2.1875rem 4.6875rem;
   color: var(--text-color-black);
   font-size: 1.25rem;
   font-style: normal;
@@ -936,7 +936,7 @@ body::after {
 .popup__select {
   color: var(--text-color-black);
   padding: 2.1875rem 3.75rem;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1047,8 +1047,8 @@ label {
 
 .popupAuthForm__close {
   position: absolute;
-  right: 0.9375rem;
-  top: 0.9375rem;
+  right: 2.8125rem;
+  top: 2.1875rem;
 }
 
 .popupAuthForm__close svg rect {
@@ -1129,11 +1129,22 @@ label {
           align-items: center;
 }
 
+.popupAuthForm__loginForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.popupAuthForm__registerForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .popupAuthForm__loginFormDescr,
 .popupAuthForm__registerFormDescr,
 .popupAuthForm__successDescr,
-.popupAuthForm__recoveryDescr,
-.popupAuthForm__passTip {
+.popupAuthForm__passRecoveryDescr {
   margin-top: 1.0625rem;
   color: var(--text-color-black);
   text-align: center;
@@ -1142,6 +1153,16 @@ label {
   font-weight: 400;
   line-height: 140%;
   /* 25.2px */
+}
+
+.popupAuthForm__passTip {
+  margin-top: 1.0625rem;
+  text-align: center;
+  color: #7D7D7D;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .popupAuthForm__passRecoveryDescr {
@@ -1170,6 +1191,32 @@ label {
           flex-direction: column;
 }
 
+.popupAuthForm__successBtnField {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.popupAuthForm__successRegBtnField {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .popupAuthForm__passRecover {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1181,10 +1228,12 @@ label {
   line-height: 1.25rem;
   letter-spacing: 0em;
   text-align: center;
+  text-decoration-line: underline;
 }
 
 .popupAuthForm__passRecover:hover {
   cursor: pointer;
+  text-decoration-line: none;
 }
 
 .popupAuthForm__input-group {
@@ -1217,7 +1266,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1234,7 +1283,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1251,7 +1300,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1268,7 +1317,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1285,7 +1334,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -1296,7 +1345,7 @@ label {
   display: -ms-flexbox;
   display: flex;
   scale: 80%;
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 
 .popupAuthForm .button {
@@ -1329,6 +1378,12 @@ label {
   margin-bottom: 4.8125rem;
 }
 
+.popupAuthForm__passRecoveryBtn {
+  max-width: 18.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .popupAuthForm__successMsg,
 .popupAuthForm__passRecoveryForm,
 .popupAuthForm__recoveryMsg,
@@ -1354,8 +1409,137 @@ label {
 }
 
 .popupAuthForm__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   margin-top: 2.0625rem;
   margin-bottom: 4.375rem;
+  gap: 1.25rem;
+  color: #FFF;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 137.023%;
+  /* 32.885px */
+}
+
+.popupAuthForm .fbLogIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border-radius: 1.875rem;
+  background: #0E8CF1;
+  padding: 1.25rem 1.75rem 1.25rem 1.6875rem;
+}
+
+.popupAuthForm .fbLogIcon:hover {
+  cursor: pointer;
+}
+
+.popupAuthForm .googleLogIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border-radius: 1.875rem;
+  background: #F10E0E;
+  padding: 1.1875rem 1.2356rem 1.1975rem 1.1875rem;
+}
+
+.popupAuthForm .googleLogIcon:hover {
+  cursor: pointer;
+}
+
+.popupAuthForm .linkedinLogIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 1.1875rem 1.2319rem 1.2363rem 1.1875rem;
+  border-radius: 1.875rem;
+  background: #0084B1;
+}
+
+.popupAuthForm .linkedinLogIcon:hover {
+  cursor: pointer;
+}
+
+.popupAuthForm .fbLogBtn {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border-radius: 1.25rem;
+  background: #0E8CF1;
+  padding: 0.75rem 1.5625rem 0.6875rem 1.5625rem;
+}
+
+.popupAuthForm .fbLogBtn svg {
+  margin-right: 1.0625rem;
+}
+
+.popupAuthForm .fbLogBtn:hover {
+  cursor: pointer;
+}
+
+.popupAuthForm .googleLogBtn {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border-radius: 1.25rem;
+  background: #F10E0E;
+  padding: 0.75rem 1.5625rem 0.6875rem 1.5625rem;
+}
+
+.popupAuthForm .googleLogBtn svg {
+  margin-right: 1.0625rem;
+}
+
+.popupAuthForm .googleLogBtn:hover {
+  cursor: pointer;
+}
+
+.popupAuthForm .linkedinLogBtn {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border-radius: 1.25rem;
+  background: #0084B1;
+  padding: 0.75rem 1.5625rem 0.6875rem 1.5625rem;
+}
+
+.popupAuthForm .linkedinLogBtn svg {
+  margin-right: 1.0625rem;
+}
+
+.popupAuthForm .linkedinLogBtn:hover {
+  cursor: pointer;
 }
 
 .promoPopup__content {
@@ -1751,7 +1935,7 @@ label {
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 0.25rem;
 }
 
 /* Track */
@@ -7459,6 +7643,11 @@ label {
 }
 
 @media screen and (min-width: 47.99875em) {
+  .popupAuthForm__close {
+    right: 0.9375rem;
+    top: 0.9375rem;
+  }
+
   .promoPopup__about {
     margin: 2.8125rem 5.3125rem 0 5.3125rem;
     font-size: 0.875rem;
@@ -7871,7 +8060,7 @@ label {
   }
 
   .popupVideo {
-    padding: 96px 4.75rem 4rem 4.75rem;
+    padding: 6rem 4.75rem 4rem 4.75rem;
   }
 
   .popupVideo__close svg {
@@ -8491,11 +8680,20 @@ label {
             align-items: start;
   }
 
+  .popupAuthForm__title {
+    font-size: 3rem;
+  }
+
+  .popupAuthForm .notActiveForm {
+    font-size: 1.5rem;
+  }
+
   .popupAuthForm__loginFormContent {
     text-align: start;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
+    width: 100%;
   }
 
   .popupAuthForm__registerFormContent {
@@ -8503,14 +8701,28 @@ label {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
+    width: 100%;
+  }
+
+  .popupAuthForm__loginForm {
+    width: 100%;
+  }
+
+  .popupAuthForm__registerForm {
+    width: 100%;
   }
 
   .popupAuthForm__loginFormDescr,
   .popupAuthForm__registerFormDescr,
   .popupAuthForm__successDescr,
-  .popupAuthForm__recoveryDescr,
+  .popupAuthForm__passRecoveryDescr {
+    max-width: 31.25rem;
+    font-size: 1.25rem;
+    text-align: start;
+  }
+
   .popupAuthForm__passTip {
-    max-width: 28.125rem;
+    max-width: 34.375rem;
     text-align: start;
   }
 
@@ -8519,15 +8731,103 @@ label {
   }
 
   .popupAuthForm__btnField {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    width: 100%;
+  }
+
+  .popupAuthForm__successBtnField {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+
+  .popupAuthForm__successRegBtnField {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
   }
 
   .popupAuthForm__passRecover {
     text-align: start;
+    font-size: 1.25rem;
     margin-right: 11.0625rem;
+  }
+
+  .popupAuthForm__input-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+
+  .popupAuthForm__logErrorMsg {
+    font-size: 1.25rem;
+  }
+
+  .popupAuthForm__regErrorMsg {
+    font-size: 1.25rem;
+  }
+
+  .popupAuthForm__invalidUser {
+    font-size: 1.25rem;
+  }
+
+  .popupAuthForm__invalidEmail {
+    font-size: 1.25rem;
+  }
+
+  .popupAuthForm__busyEmail {
+    font-size: 1.25rem;
+  }
+
+  .popupAuthForm .button {
+    font-size: 1.5rem;
+  }
+
+  .popupAuthForm__socialsLogin {
+    font-size: 1.5rem;
+  }
+
+  .popupAuthForm__socials {
+    gap: 1.25rem;
+  }
+
+  .popupAuthForm .fbLogIcon {
+    display: none;
+  }
+
+  .popupAuthForm .googleLogIcon {
+    display: none;
+  }
+
+  .popupAuthForm .linkedinLogIcon {
+    display: none;
+  }
+
+  .popupAuthForm .fbLogBtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .popupAuthForm .googleLogBtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .popupAuthForm .linkedinLogBtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 
   .promoPopup__about {
