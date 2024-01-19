@@ -1984,7 +1984,7 @@ label {
 }
 
 .colorWhite {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .show_errorMsg {
@@ -6222,11 +6222,6 @@ label {
   padding: 0 0.5625rem;
 }
 
-.personalsEdit__input-field svg {
-  position: absolute;
-  top: 0;
-}
-
 .personalsEdit__input-field input {
   position: relative;
   width: 23.625rem;
@@ -6388,9 +6383,11 @@ label {
 }
 
 .personalsEdit__busyNickname {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
-  top: 60px;
+  top: 65px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -6410,10 +6407,11 @@ label {
 }
 
 .personalsEdit__busyEmail {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
-  top: 60px;
-  right: 180px;
+  top: 65px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -6433,10 +6431,11 @@ label {
 }
 
 .personalsEdit__busyNumber {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
-  top: 60px;
-  right: 180px;
+  top: 65px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -6456,9 +6455,11 @@ label {
 }
 
 .personalsEdit__currPassErr {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
-  top: 60px;
+  top: 65px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -6478,9 +6479,11 @@ label {
 }
 
 .personalsEdit__newPassErr {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
-  top: 60px;
+  top: 65px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -6500,9 +6503,11 @@ label {
 }
 
 .personalsEdit__repeatPassErr {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
-  top: 60px;
+  top: 65px;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -6751,6 +6756,10 @@ label {
   margin-top: 0.625rem;
   font-size: 0.75rem;
   font-weight: 400;
+}
+
+.detail__container {
+  position: relative;
 }
 
 .detail__header {
@@ -8127,7 +8136,7 @@ label {
   }
 
   .headerMain__searchBtn {
-    padding: 0.875rem 0.9375rem 0.9375rem 0.875rem;
+    padding: 0.9375rem;
     border-radius: 1.25rem;
   }
 
@@ -8906,7 +8915,7 @@ label {
   }
 
   .headerMain__searchBtn {
-    padding: 1.4375rem 2.8125rem 1.4375rem 5.25rem;
+    padding: 0.9375rem 1.5625rem 0.9375rem 3.125rem;
     border-radius: 1.875rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8924,7 +8933,7 @@ label {
 
   .headerMain__searchBtn svg {
     position: absolute;
-    left: 47px;
+    left: 20px;
   }
 
   .mainCover__bg-desktop {

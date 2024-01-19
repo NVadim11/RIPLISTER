@@ -1,5 +1,6 @@
 .detail {
     &__container {
+        position: relative;
         @media (min-width: $pc) {
             max-width: 75rem;
         }

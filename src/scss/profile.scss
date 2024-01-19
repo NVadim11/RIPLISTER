@@ -671,10 +671,6 @@
 			background: var(--white-color);
 			padding: 0 0.5625rem;
 		}
-		svg {
-			position: absolute;
-			top: 0;
-		}
 		input {
 			position: relative;
 			width: 23.625rem;
@@ -786,9 +782,9 @@
 		color: #F00;
 	}
 	&__busyNickname {
-		display: none;
+		display: flex;
 		position: absolute;
-		top: 60px;
+		top: 65px;
 		flex-direction: row;
 		margin-top: 10px;
 		height: fit-content;
@@ -800,10 +796,9 @@
 		line-height: normal;
 	}
 	&__busyEmail {
-		display: none;
+		display: flex;
 		position: absolute;
-		top: 60px;
-		right: 180px;
+		top: 65px;
 		flex-direction: row;
 		margin-top: 10px;
 		height: fit-content;
@@ -815,10 +810,9 @@
 		line-height: normal;
 	} 
 	&__busyNumber {
-		display: none;
+		display: flex;
 		position: absolute;
-		top: 60px;
-		right: 180px;
+		top: 65px;
 		flex-direction: row;
 		margin-top: 10px;
 		height: fit-content;
@@ -830,9 +824,9 @@
 		line-height: normal;
 	}
 	&__currPassErr {
-		display: none;
+		display: flex;
 		position: absolute;
-		top: 60px;
+		top: 65px;
 		flex-direction: row;
 		margin-top: 10px;
 		height: fit-content;
@@ -844,9 +838,9 @@
 		line-height: normal;
 	}
 	&__newPassErr {
-		display: none;
+		display: flex;
 		position: absolute;
-		top: 60px;
+		top: 65px;
 		flex-direction: row;
 		margin-top: 10px;
 		height: fit-content;
@@ -858,9 +852,9 @@
 		line-height: normal;
 	}
 	&__repeatPassErr {	
-		display: none;
+		display: flex;
 		position: absolute;
-		top: 60px;
+		top: 65px;
 		flex-direction: row;
 		margin-top: 10px;
 		height: fit-content;

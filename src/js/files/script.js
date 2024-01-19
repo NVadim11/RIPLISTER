@@ -8,10 +8,11 @@ import { menuClose, menuOpen } from "./functions.js"
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
 const altMenuBtn = document.querySelector('.headerAlt__menuBtn');
 const menuCloseBtn = document.querySelector('.menu__closeBtn');
-const detailCover = document.querySelector('.detail__cover img');
-const detailHeader = document.querySelector('.detail__header-title');
+const detailCoverImg = document.querySelector('.detail__coverImg');
+const detailHeaderTitle = document.querySelector('.detail__header-title');
 const detailDate = document.querySelector('.detail__header-date');
 const detailDescr = document.querySelector('.detail__header-descr');
+const detailHeader = document.querySelector('.detail__header');
 
 // Main header burger menu
 if (mainMenuBtn) {
@@ -37,8 +38,9 @@ if (menuCloseBtn) {
     });
 };
 
-if (detailCover) {
-    detailHeader.classList.add("colorWhite");
+if (detailCoverImg) {
+    detailHeaderTitle.classList.add("colorWhite");
     detailDate.classList.add("colorWhite");
     detailDescr.classList.add("colorWhite");
+    detailHeader.style.padding = '18rem 0 3.75rem';
 }

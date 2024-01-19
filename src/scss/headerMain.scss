@@ -95,11 +95,11 @@
 		line-height: normal;
 		border-radius: 1.875rem;
 		@media screen and (min-width:$tablet) {
-			padding: 0.875rem 0.9375rem 0.9375rem 0.875rem;
+			padding: 0.9375rem;
 			border-radius: 1.25rem;
 		}
 		@media screen and (min-width:$pc) {
-			padding: 1.4375rem 2.8125rem 1.4375rem 5.25rem;
+			padding: 0.9375rem 1.5625rem 0.9375rem 3.125rem;
 			border-radius: 1.875rem;
 			display: flex;
 			align-items: center;
@@ -123,7 +123,7 @@
 			}
 			@media screen and (min-width:$pc) {
 				position: absolute;
-				left: 47px;
+				left: 20px;
 			}
 		}	
 	}
