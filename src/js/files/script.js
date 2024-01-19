@@ -43,4 +43,4 @@ if (detailCoverImg) {
     detailDate.classList.add("colorWhite");
     detailDescr.classList.add("colorWhite");
     detailHeader.style.padding = '18rem 0 3.75rem';
-}
+};

@@ -6340,7 +6340,6 @@ label {
 .personalsEdit__showRepeatPass {
   position: absolute;
   z-index: 1;
-  right: 0;
   right: 3.75rem;
   top: 1.4375rem;
 }
@@ -6350,6 +6349,7 @@ label {
 .personalsEdit__showRepeatPass svg {
   z-index: 1;
   height: 1.4375rem;
+  position: absolute;
 }
 
 .personalsEdit__tips {
@@ -6383,9 +6383,7 @@ label {
 }
 
 .personalsEdit__busyNickname {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 65px;
   -webkit-box-orient: horizontal;
@@ -6407,9 +6405,7 @@ label {
 }
 
 .personalsEdit__busyEmail {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 65px;
   -webkit-box-orient: horizontal;
@@ -6431,9 +6427,7 @@ label {
 }
 
 .personalsEdit__busyNumber {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 65px;
   -webkit-box-orient: horizontal;
@@ -6455,9 +6449,7 @@ label {
 }
 
 .personalsEdit__currPassErr {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 65px;
   -webkit-box-orient: horizontal;
@@ -6479,9 +6471,7 @@ label {
 }
 
 .personalsEdit__newPassErr {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 65px;
   -webkit-box-orient: horizontal;
@@ -6503,9 +6493,7 @@ label {
 }
 
 .personalsEdit__repeatPassErr {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   position: absolute;
   top: 65px;
   -webkit-box-orient: horizontal;
@@ -6780,13 +6768,17 @@ label {
   width: 100%;
   position: absolute;
   height: 41.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .detail__cover img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
   width: 100%;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
 }
 
 .detail__header-title {

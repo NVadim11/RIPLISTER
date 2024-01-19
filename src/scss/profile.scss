@@ -753,12 +753,12 @@
 	&__showPass, &__showNewPass, &__showRepeatPass {
 		position: absolute;
 		z-index: 1;
-		right: 0;
 		right: 3.75rem;
 		top: 1.4375rem;
 		svg {
 			z-index: 1;
 			height: 1.4375rem;
+			position: absolute;
 		}
 	}
 	&__tips {
@@ -782,7 +782,7 @@
 		color: #F00;
 	}
 	&__busyNickname {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 65px;
 		flex-direction: row;
@@ -796,7 +796,7 @@
 		line-height: normal;
 	}
 	&__busyEmail {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 65px;
 		flex-direction: row;
@@ -810,7 +810,7 @@
 		line-height: normal;
 	} 
 	&__busyNumber {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 65px;
 		flex-direction: row;
@@ -824,7 +824,7 @@
 		line-height: normal;
 	}
 	&__currPassErr {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 65px;
 		flex-direction: row;
@@ -838,7 +838,7 @@
 		line-height: normal;
 	}
 	&__newPassErr {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 65px;
 		flex-direction: row;
@@ -852,7 +852,7 @@
 		line-height: normal;
 	}
 	&__repeatPassErr {	
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 65px;
 		flex-direction: row;
