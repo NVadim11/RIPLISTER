@@ -22,8 +22,14 @@
         z-index: 1;
         width: 100%;
         position: absolute;
-        height: 41.875rem;
         display: flex;
+        height: 36.2rem;
+        @media (min-width: $mobile) {
+            height: 34.4rem;
+        }
+        @media (min-width: $pc) {
+            height: 41.875rem;
+        }
         img {
             object-fit: cover;
             filter: brightness(50%);

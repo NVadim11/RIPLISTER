@@ -6767,10 +6767,10 @@ label {
   z-index: 1;
   width: 100%;
   position: absolute;
-  height: 41.875rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 36.2rem;
 }
 
 .detail__cover img {
@@ -7605,6 +7605,10 @@ label {
 
   .detail__header {
     padding: 5.625rem 0 3.75rem 0;
+  }
+
+  .detail__cover {
+    height: 34.4rem;
   }
 
   .detail__header-title {
@@ -8559,6 +8563,10 @@ label {
 
   .detail__header {
     padding: 7.5rem 0 3.75rem 0;
+  }
+
+  .detail__cover {
+    height: 41.875rem;
   }
 
   .detail__header-title {
