@@ -795,6 +795,20 @@
 		font-weight: 600;
 		line-height: normal;
 	}
+	&__invalidNickname {
+		display: none;
+		position: absolute;
+		top: 65px;
+		flex-direction: row;
+		margin-top: 10px;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+	}
 	&__busyEmail {
 		display: none;
 		position: absolute;

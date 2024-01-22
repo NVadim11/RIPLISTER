@@ -6913,6 +6913,7 @@
         const profileEditPictureInput = document.getElementById("profileEditPictureInput");
         const editValidationMsg = document.querySelector(".personalsEdit__invalidInformation");
         const editBusyNickname = document.querySelector(".personalsEdit__busyNickname");
+        const invalidNickname = document.querySelector(".personalsEdit__invalidNickname");
         const editBusyEmail = document.querySelector(".personalsEdit__busyEmail");
         const editBusyNumber = document.querySelector(".personalsEdit__busyNumber");
         document.querySelector(".personalsEdit__currPassErr");
@@ -7036,6 +7037,10 @@
                 if (formValid) callback(formElement);
             }));
         }
+        if (document.getElementById("personalsEdit__nickname")) document.getElementById("personalsEdit__nickname").addEventListener("change", (e => {
+            const input = document.getElementById("personalsEdit__nickname").value;
+            if (input.match(/^[a-zA-Z0-9]*$/i)) invalidNickname.style.display = "none"; else invalidNickname.style.display = "flex";
+        }));
         function savePersonalData(formElement) {
             const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit" && element.type !== "label")).reduce(((accumulator, element) => ({
                 ...accumulator,
