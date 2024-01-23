@@ -2025,7 +2025,7 @@ label {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 0.875rem;
-  border: 1px solid var(--orange-color);
+  border: 0.0625rem solid var(--orange-color);
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
@@ -2033,8 +2033,8 @@ label {
 .pagging__arrow svg {
   -webkit-transition: 0.25s;
   transition: 0.25s;
-  width: 11.124px;
-  height: 6.8px;
+  width: 0.6953rem;
+  height: 0.425rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -2094,11 +2094,11 @@ label {
       flex-shrink: 0;
   bottom: 2.5rem;
   right: 2.5rem;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
   opacity: 0;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
@@ -2109,7 +2109,7 @@ label {
 }
 
 .btn-gotop i {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .textBlock {
@@ -2125,7 +2125,7 @@ label {
   font-style: normal;
   font-weight: 700;
   line-height: 110%;
-  /* 39.6px */
+  /* 2.475rem */
 }
 
 .textBlock h1 {
@@ -2161,7 +2161,7 @@ label {
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
-  /* 19.6px */
+  /* 1.225rem */
   margin: 0 0 1.875rem 0;
 }
 
@@ -2206,7 +2206,7 @@ label {
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
-  /* 19.6px */
+  /* 1.225rem */
 }
 
 .textBlock li::marker {
@@ -2284,6 +2284,73 @@ label {
 .lineOrange {
   background: #F5BFB4;
   height: 0.125rem;
+}
+
+/* The switch - the box around the slider */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  height: 1.25rem;
+}
+
+/* Hide default HTML checkbox */
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #F3ECEC;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.25rem;
+  width: 1.25rem;
+  background-color: #B3B3B3;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #F5BFB4;
+}
+
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 0.0625rem #F3ECEC;
+          box-shadow: 0 0 0.0625rem #F3ECEC;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(0.75rem);
+  -ms-transform: translateX(0.75rem);
+  transform: translateX(0.75rem);
+  background-color: #DB4A2A;
+}
+
+/* Rounded sliders */
+
+.slider.round {
+  border-radius: 1.25rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 .headerAlt {
@@ -5674,7 +5741,7 @@ label {
   font-style: normal;
   font-weight: 600;
   line-height: 110%;
-  /* 35.2px */
+  /* 2.2rem */
 }
 
 .profile__editBox {
@@ -5896,7 +5963,7 @@ label {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 40px 10px;
+  padding: 2.5rem 0.625rem;
 }
 
 .personals__field {
@@ -5996,8 +6063,8 @@ label {
 
 .personals__passChangeBtn svg {
   margin: 0 0.3125rem 0 0;
-  width: 10.515px;
-  height: 14px;
+  width: 0.6572rem;
+  height: 0.875rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -6019,8 +6086,8 @@ label {
 
 .personals__deleteProfileBtn svg {
   margin: 0 0.3125rem 0 0;
-  width: 9.431px;
-  height: 12px;
+  width: 0.5894rem;
+  height: 0.75rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -6083,7 +6150,7 @@ label {
   display: flex;
   width: 15.625rem;
   height: 15.625rem;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   background: #FFF8F6;
 }
 
@@ -6181,7 +6248,7 @@ label {
 
 .personalsEdit__input-title h4 {
   color: #E55738;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -6256,7 +6323,7 @@ label {
 
 .personalsEdit__button-close {
   padding: 1rem;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#64A2FF), to(#2A86DB));
   background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);
   color: var(--white-color);
@@ -6285,7 +6352,7 @@ label {
 
 .personalsEdit__button-save {
   padding: 1rem;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
   color: var(--white-color);
@@ -6385,12 +6452,12 @@ label {
 .personalsEdit__busyNickname {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6398,7 +6465,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6407,12 +6474,12 @@ label {
 .personalsEdit__invalidNickname {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6420,7 +6487,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6429,12 +6496,12 @@ label {
 .personalsEdit__busyEmail {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6442,7 +6509,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6451,12 +6518,12 @@ label {
 .personalsEdit__busyNumber {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6464,7 +6531,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6473,12 +6540,12 @@ label {
 .personalsEdit__currPassErr {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6486,7 +6553,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6495,12 +6562,12 @@ label {
 .personalsEdit__newPassErr {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6508,7 +6575,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6517,12 +6584,12 @@ label {
 .personalsEdit__repeatPassErr {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6530,7 +6597,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6547,7 +6614,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6558,7 +6625,7 @@ label {
   display: -ms-flexbox;
   display: flex;
   scale: 80%;
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 
 .personalsEdit__passTip {
@@ -6620,7 +6687,7 @@ label {
   font-style: normal;
   font-weight: 600;
   line-height: 110%;
-  /* 35.2px */
+  /* 2.2rem */
 }
 
 .memoPages {
@@ -6766,6 +6833,134 @@ label {
   margin-top: 0.625rem;
   font-size: 0.75rem;
   font-weight: 400;
+}
+
+.settings {
+  border-radius: 1.25rem;
+  background: #FFF8F6;
+  margin: 2.75rem 0 0 0;
+  padding: 1.25rem 1.25rem 2.8125rem 1.25rem;
+  margin: 2.75rem 0 1.3125rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.settings__sectionTitle {
+  color: #000;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  /* 1rem */
+}
+
+.settings__sectionDescr {
+  color: #7D7D7D;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.settings__notifications {
+  color: #000;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 1.375rem;
+}
+
+.settings__notificationsSettings {
+  color: #000;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 2.75rem;
+}
+
+.settings__updateSettings {
+  color: #000;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 2.75rem;
+}
+
+.settings__firstSection,
+.settings__secondSection,
+.settings__thirdSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 1.4375rem;
+  width: 100%;
+}
+
+.settings__emailSwitch,
+.settings__phoneSwitch,
+.settings__commentariesSwitch,
+.settings__transactionsSwitch,
+.settings__offeringSwitch,
+.settings__followersSwitch,
+.settings__newsSwitch,
+.settings__blogSwitch,
+.settings__othersSwitch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1.125rem;
+}
+
+.settings__emailSwitch label,
+.settings__phoneSwitch label,
+.settings__commentariesSwitch label,
+.settings__transactionsSwitch label,
+.settings__offeringSwitch label,
+.settings__followersSwitch label,
+.settings__newsSwitch label,
+.settings__blogSwitch label,
+.settings__othersSwitch label {
+  margin: 0;
 }
 
 .detail__container {
@@ -7694,6 +7889,15 @@ label {
     padding: 2.875rem 2.25rem 2.125rem 2.25rem;
   }
 
+  .switch {
+    height: 1.25rem;
+  }
+
+  .slider:before {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
   .headerAlt {
     height: 6rem;
   }
@@ -7885,7 +8089,7 @@ label {
   }
 
   .profile__field span {
-    margin: 0 0 10px 0;
+    margin: 0 0 0.625rem 0;
   }
 
   .personals {
@@ -7943,7 +8147,7 @@ label {
   }
 
   .personals__field span {
-    margin: 0 0 10px 0;
+    margin: 0 0 0.625rem 0;
   }
 
   .personals__personals-field {
@@ -7955,7 +8159,7 @@ label {
   }
 
   .personals__personals-field span {
-    margin: 0 10px 0 0;
+    margin: 0 0.625rem 0 0;
   }
 
   .personals__fieldSocials {
@@ -7982,8 +8186,8 @@ label {
   }
 
   .personals__passChangeBtn svg {
-    width: 12.575px;
-    height: 16px;
+    width: 0.7859rem;
+    height: 1rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
@@ -7994,8 +8198,8 @@ label {
   }
 
   .personals__deleteProfileBtn svg {
-    width: 12.575px;
-    height: 16px;
+    width: 0.7859rem;
+    height: 1rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
@@ -8069,6 +8273,31 @@ label {
 
   .memoPages__item-text {
     width: 8.625rem;
+  }
+
+  .settings {
+    margin: 2.3125rem 0 1.625rem 0;
+  }
+
+  .settings__sectionTitle {
+    font-size: 1.125rem;
+  }
+
+  .settings__sectionDescr {
+    margin-top: 0.3125rem;
+  }
+
+  .settings__notifications {
+    margin-top: 1.6875rem;
+    font-size: 1.25rem;
+  }
+
+  .settings__notificationsSettings {
+    font-size: 1.25rem;
+  }
+
+  .settings__updateSettings {
+    font-size: 1.25rem;
   }
 }
 
@@ -8348,7 +8577,7 @@ label {
         -ms-flex-pack: start;
             justify-content: flex-start;
     gap: 0;
-    border: 1px solid var(--orange-color);
+    border: 0.0625rem solid var(--orange-color);
     border-radius: 1.875rem;
   }
 
@@ -8368,7 +8597,7 @@ label {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    border-bottom: 1px solid var(--orange-color);
+    border-bottom: 0.0625rem solid var(--orange-color);
   }
 
   .profile__navigation-item svg {
@@ -8381,7 +8610,7 @@ label {
   }
 
   .profile__navigation-item:nth-child(7) {
-    border-bottom: 1px solid var(--orange-color);
+    border-bottom: 0.0625rem solid var(--orange-color);
   }
 
   .profile__navigation-text {
@@ -8390,7 +8619,7 @@ label {
     display: flex;
     margin: 0 0 0 0.9375rem;
     color: #171717;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -8448,7 +8677,7 @@ label {
   }
 
   .pagging__list {
-    gap: 60px;
+    gap: 3.75rem;
     font-size: 1.5rem;
   }
 
@@ -8479,7 +8708,7 @@ label {
 
   .textBlock p {
     font-size: 1.25rem;
-    margin: 0 0 65px 0;
+    margin: 0 0 4.0625rem 0;
     text-align: start;
   }
 
@@ -8915,11 +9144,20 @@ label {
   }
 
   .volunteer__btn {
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: normal;
     white-space: nowrap;
     border-radius: 2.5rem;
     padding: 1.875rem 5rem;
+  }
+
+  .switch {
+    height: 1.25rem;
+  }
+
+  .slider:before {
+    height: 1.25rem;
+    width: 1.25rem;
   }
 
   .headerAlt {
@@ -8987,15 +9225,15 @@ label {
   }
 
   .personals__passChangeBtn svg {
-    width: 14.147px;
-    height: 18px;
+    width: 0.8842rem;
+    height: 1.125rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
 
   .personals__deleteProfileBtn svg {
-    width: 14.147px;
-    height: 18px;
+    width: 0.8842rem;
+    height: 1.125rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
@@ -9029,7 +9267,7 @@ label {
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
-    /* 25.2px */
+    /* 1.575rem */
   }
 
   .personalsEdit__form {
@@ -9075,6 +9313,40 @@ label {
   .memoPages__item-dates {
     font-size: 0.875rem;
     margin-top: 0.4375rem;
+  }
+
+  .settings {
+    font-size: 1.25rem;
+    margin: 1.75rem 0 2.625rem 0;
+  }
+
+  .settings__sectionTitle {
+    font-size: 1.25rem;
+  }
+
+  .settings__sectionDescr {
+    margin-top: 0.5rem;
+  }
+
+  .settings__notifications {
+    margin-top: 1.9375rem;
+    font-size: 1.5rem;
+  }
+
+  .settings__notificationsSettings {
+    margin-top: 3.875rem;
+    font-size: 1.5rem;
+  }
+
+  .settings__updateSettings {
+    margin-top: 3.875rem;
+    font-size: 1.5rem;
+  }
+
+  .settings__firstSection,
+  .settings__secondSection,
+  .settings__thirdSection {
+    width: 65%;
   }
 }
 
@@ -9225,6 +9497,22 @@ label {
   .volunteer span {
     font-size: 1.25rem;
     line-height: normal;
+  }
+
+  .switch {
+    height: 2rem;
+    width: 3.125rem;
+  }
+
+  .slider:before {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(1.125rem);
+    -ms-transform: translateX(1.125rem);
+    transform: translateX(1.125rem);
   }
 
   .headerAlt {
@@ -10110,6 +10398,39 @@ label {
     width: 11.5rem;
     height: 14.625rem !important;
     border-radius: 1.875rem;
+  }
+
+  .settings {
+    font-size: 1.5rem;
+    margin: 1.6875rem 0 3.375rem 0;
+  }
+
+  .settings__sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .settings__sectionDescr {
+    margin-top: 0.75rem;
+  }
+
+  .settings__notifications {
+    margin-top: 2.8125rem;
+    font-size: 2rem;
+  }
+
+  .settings__notificationsSettings {
+    font-size: 2rem;
+  }
+
+  .settings__updateSettings {
+    font-size: 2rem;
+  }
+
+  .settings__firstSection,
+  .settings__secondSection,
+  .settings__thirdSection {
+    margin-top: 3.5rem;
+    width: 55%;
   }
 }
 
