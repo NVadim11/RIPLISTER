@@ -6623,7 +6623,7 @@ label {
   /* 35.2px */
 }
 
-.questionnaires {
+.memoPages {
   border-radius: 1.25rem;
   background: #FFF8F6;
   margin: 2.75rem 0 0 0;
@@ -6636,7 +6636,7 @@ label {
           flex-direction: column;
 }
 
-.questionnaires__navContainer {
+.memoPages__navContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6648,7 +6648,7 @@ label {
   gap: 1.8125rem;
 }
 
-.questionnaires__navTitle h4 {
+.memoPages__navTitle h4 {
   color: #7D7D7D;
   font-size: 1.25rem;
   font-style: normal;
@@ -6656,7 +6656,7 @@ label {
   line-height: normal;
 }
 
-.questionnaires__navTitle-Active h4 {
+.memoPages__navTitle-Active h4 {
   color: #171717;
   font-size: 1.25rem;
   font-style: normal;
@@ -6664,8 +6664,8 @@ label {
   line-height: normal;
 }
 
-.questionnaires__navTitle,
-.questionnaires__navTitle-Active:hover {
+.memoPages__navTitle,
+.memoPages__navTitle-Active:hover {
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -6673,7 +6673,7 @@ label {
           user-select: none;
 }
 
-.questionnaires__scrollbar {
+.memoPages__scrollbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6683,19 +6683,19 @@ label {
   background: #F3ECEC;
 }
 
-.questionnaires__scrollbar-partActive {
+.memoPages__scrollbar-partActive {
   background: #E55738;
   height: 0.125rem;
   width: 25%;
 }
 
-.questionnaires__scrollbar-part {
+.memoPages__scrollbar-part {
   width: 25%;
   height: 0.125rem;
   background: #F3ECEC;
 }
 
-.questionnaires__item-container {
+.memoPages__item-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -6705,7 +6705,7 @@ label {
   margin-top: 2.4375rem;
 }
 
-.questionnaires__item {
+.memoPages__item {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
@@ -6723,24 +6723,24 @@ label {
   margin-top: 1.8125rem;
 }
 
-.questionnaires__item-photo {
+.memoPages__item-photo {
   width: 8.625rem;
   height: 11.875rem !important;
   border-radius: 0.875rem;
   overflow: hidden;
 }
 
-.questionnaires__item-photo img {
+.memoPages__item-photo img {
   width: 100%;
   height: 100%;
 }
 
-.questionnaires__item-text {
+.memoPages__item-text {
   width: 8.625rem;
   color: #040404;
 }
 
-.questionnaires__item-initials {
+.memoPages__item-initials {
   text-align: center;
   font-size: 1.125rem;
   font-style: normal;
@@ -6750,19 +6750,19 @@ label {
   margin-top: 0.8125rem;
 }
 
-.questionnaires__item-initials:hover {
+.memoPages__item-initials:hover {
   cursor: pointer;
   text-decoration-line: none;
 }
 
-.questionnaires__item-relative {
+.memoPages__item-relative {
   color: #7D7D7D;
   font-size: 0.875rem;
   font-weight: 400;
   margin-top: 0.75rem;
 }
 
-.questionnaires__item-dates {
+.memoPages__item-dates {
   margin-top: 0.625rem;
   font-size: 0.75rem;
   font-weight: 400;
@@ -8041,20 +8041,20 @@ label {
             justify-content: space-between;
   }
 
-  .questionnaires {
+  .memoPages {
     padding: 1.25rem 1.25rem 2.8125rem 1.25rem;
     margin: 2.75rem 0 1.875rem 0;
   }
 
-  .questionnaires__navContainer {
+  .memoPages__navContainer {
     gap: 2.75rem;
   }
 
-  .questionnaires__scrollbar {
+  .memoPages__scrollbar {
     margin-top: 1.625rem;
   }
 
-  .questionnaires__item-container {
+  .memoPages__item-container {
     margin-top: 2.5rem;
     -ms-grid-rows: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -8062,12 +8062,12 @@ label {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  .questionnaires__item-photo {
+  .memoPages__item-photo {
     width: 8.625rem;
     height: 11.875rem !important;
   }
 
-  .questionnaires__item-text {
+  .memoPages__item-text {
     width: 8.625rem;
   }
 }
@@ -8409,7 +8409,7 @@ label {
     margin: 0;
   }
 
-  .questionnaires__item-photo {
+  .memoPages__item-photo {
     width: 8.625rem;
     height: 11.875rem !important;
   }
@@ -9040,11 +9040,11 @@ label {
     font-size: 2.25rem;
   }
 
-  .questionnaires__navContainer {
+  .memoPages__navContainer {
     gap: 2.875rem;
   }
 
-  .questionnaires__item-container {
+  .memoPages__item-container {
     -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     -ms-grid-rows: 1fr 1fr;
@@ -9052,27 +9052,27 @@ label {
     margin-top: 3.3125rem;
   }
 
-  .questionnaires__item-photo {
+  .memoPages__item-photo {
     width: 8.625rem;
     height: 11.875rem !important;
     border-radius: 1.875rem;
   }
 
-  .questionnaires__item-text {
+  .memoPages__item-text {
     width: 10.0625rem;
   }
 
-  .questionnaires__item-initials {
+  .memoPages__item-initials {
     margin-top: 1.0625rem;
     font-size: 1.25rem;
   }
 
-  .questionnaires__item-relative {
+  .memoPages__item-relative {
     font-size: 1rem;
     margin-top: 0.625rem;
   }
 
-  .questionnaires__item-dates {
+  .memoPages__item-dates {
     font-size: 0.875rem;
     margin-top: 0.4375rem;
   }
@@ -10106,7 +10106,7 @@ label {
     font-size: 1.25rem;
   }
 
-  .questionnaires__item-photo {
+  .memoPages__item-photo {
     width: 11.5rem;
     height: 14.625rem !important;
     border-radius: 1.875rem;
