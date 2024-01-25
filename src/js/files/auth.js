@@ -33,11 +33,21 @@ import usersDB from "../JSON/accounts.json"
 console.log(usersDB.users);
 
 export function formStylesReset() {
-    regErrorMsg.style.display = "none"; 
-    invalidEmail.style.display = "none";
-    logErrorMsg.style.display = "none";
-    invalidUser.style.display = "none";  
-    passMatchErr.style.display = "none"; 
+    if (regErrorMsg) {
+        regErrorMsg.style.display = "none"; 
+    }
+    if (invalidEmail) {
+        invalidEmail.style.display = "none";
+    }
+   if (logErrorMsg) {
+        logErrorMsg.style.display = "none";
+   }
+    if (invalidUser) {
+        invalidUser.style.display = "none";  
+    }
+    if (passMatchErr) {
+        passMatchErr.style.display = "none"; 
+    }
     currentLogPassword.setAttribute("type", "password");
     currentRegPassword.setAttribute("type", "password");
     repeatRegPassword.setAttribute("type", "password");
@@ -49,11 +59,21 @@ export function formStylesReset() {
 };
 
 export function formContentReset() {
-    regErrorMsg.style.display = "none"; 
-    invalidEmail.style.display = "none";
-    logErrorMsg.style.display = "none";
-    invalidUser.style.display = "none";	
-    passMatchErr.style.display = "none"; 
+    if (regErrorMsg) {
+        regErrorMsg.style.display = "none"; 
+    }
+    if (invalidEmail) {
+        invalidEmail.style.display = "none";
+    }
+   if (logErrorMsg) {
+        logErrorMsg.style.display = "none";
+   }
+    if (invalidUser) {
+        invalidUser.style.display = "none";  
+    }
+    if (passMatchErr) {
+        passMatchErr.style.display = "none"; 
+    }
     currentLogPassword.setAttribute("type", "password");
     currentRegPassword.setAttribute("type", "password");
     repeatRegPassword.setAttribute("type", "password");
