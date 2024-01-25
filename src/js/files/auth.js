@@ -15,8 +15,10 @@ const successRegMsg = document.querySelector(".popupAuthForm__successRegMsg");
 const passRecoveryForm = document.querySelector(".popupAuthForm__passRecoveryForm");
 const passRecoveryMsg = document.querySelector(".popupAuthForm__recoveryMsg");
 
+const currentLogPassword = document.getElementById("popupAuthForm__loginPassword");
 const currentRegPassword = document.getElementById("popupAuthForm__regPassword");
 const repeatRegPassword = document.getElementById("popupAuthForm__repeatRegPassword");
+const showLogPass = document.querySelector(".popupAuthForm__showLoginPass");
 const showRegPass = document.querySelector(".popupAuthForm__showPass");
 const showRepeatRegPass = document.querySelector(".popupAuthForm__showRepeatPass");
 const passMatchErr = document.querySelector(".popupAuthForm__repeatPassErr");
@@ -36,6 +38,12 @@ export function formStylesReset() {
     logErrorMsg.style.display = "none";
     invalidUser.style.display = "none";  
     passMatchErr.style.display = "none"; 
+    currentLogPassword.setAttribute("type", "password");
+    currentRegPassword.setAttribute("type", "password");
+    repeatRegPassword.setAttribute("type", "password");
+    document.getElementById("loginPassHiddenSVG").style.display = "block"
+    document.getElementById("passHiddenSVG").style.display = "block"
+    document.getElementById("repeatPassHiddenSVG").style.display = "block"
     inputItem.forEach((input) => input.style.border = "0.0625rem solid #EC6041");   
     inputErrorIcon.forEach((icon) => icon.style.display = "none");
 };
@@ -46,6 +54,12 @@ export function formContentReset() {
     logErrorMsg.style.display = "none";
     invalidUser.style.display = "none";	
     passMatchErr.style.display = "none"; 
+    currentLogPassword.setAttribute("type", "password");
+    currentRegPassword.setAttribute("type", "password");
+    repeatRegPassword.setAttribute("type", "password");
+    document.getElementById("loginPassHiddenSVG").style.display = "block"
+    document.getElementById("passHiddenSVG").style.display = "block"
+    document.getElementById("repeatPassHiddenSVG").style.display = "block"
     document.getElementById("popupAuthForm__loginForm").reset();		
     document.getElementById("popupAuthForm__registerForm").reset();	
 };
@@ -133,6 +147,14 @@ function toggleDisplaySVG(elementID) {
     })
     (document.getElementById(elementID).style);
     };
+
+if (showLogPass) {
+    showLogPass.addEventListener("click", function (e) {   
+        const type = currentLogPassword.getAttribute("type") === "password" ? "text" : "password";
+        currentLogPassword.setAttribute("type", type);
+        toggleDisplaySVG("loginPassHiddenSVG"); 
+    });
+};
 
 if (showRegPass) {
     showRegPass.addEventListener("click", function (e) {   

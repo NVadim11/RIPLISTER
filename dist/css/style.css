@@ -1358,7 +1358,8 @@ label {
 }
 
 .popupAuthForm__showPass,
-.popupAuthForm__showRepeatPass {
+.popupAuthForm__showRepeatPass,
+.popupAuthForm__showLoginPass {
   position: absolute;
   z-index: 1;
   right: 60px;
@@ -1366,7 +1367,8 @@ label {
 }
 
 .popupAuthForm__showPass svg,
-.popupAuthForm__showRepeatPass svg {
+.popupAuthForm__showRepeatPass svg,
+.popupAuthForm__showLoginPass svg {
   z-index: 1;
   height: 1.4375rem;
   position: absolute;

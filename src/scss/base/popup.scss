@@ -488,7 +488,7 @@ body::after {
 			font-size: 1.25rem;			
 		}
 	}
-	&__showPass, &__showRepeatPass {
+	&__showPass, &__showRepeatPass, &__showLoginPass {
 		position: absolute;
 		z-index: 1;
 		right: 60px;
