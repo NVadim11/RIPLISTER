@@ -225,7 +225,6 @@ function savePersonalData (formElement) {
         };  
 
     if (document.getElementById("personalsEdit__newPass").value !== document.getElementById("personalsEdit__repeatPass").value) {
-        document.getElementById("personalsEdit__repeatPass").classList.add("validationError"); 
         document.getElementById("personalsEdit__repeatPass").focus()
         document.querySelector(".personalsEdit__repeatPassErr").style.display = "flex";
         return false;

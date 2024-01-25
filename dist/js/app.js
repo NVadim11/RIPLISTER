@@ -794,7 +794,13 @@
         const successRegMsg = document.querySelector(".popupAuthForm__successRegMsg");
         const passRecoveryForm = document.querySelector(".popupAuthForm__passRecoveryForm");
         const passRecoveryMsg = document.querySelector(".popupAuthForm__recoveryMsg");
+        const currentRegPassword = document.getElementById("popupAuthForm__regPassword");
+        const repeatRegPassword = document.getElementById("popupAuthForm__repeatRegPassword");
+        const showRegPass = document.querySelector(".popupAuthForm__showPass");
+        const showRepeatRegPass = document.querySelector(".popupAuthForm__showRepeatPass");
+        const passMatchErr = document.querySelector(".popupAuthForm__repeatPassErr");
         const registerBusyMail = document.querySelector(".popupAuthForm__busyEmail");
+        const regBtn = document.querySelector(".popupAuthForm__registerBtn");
         const inputItem = document.querySelectorAll(".popupAuthForm__input");
         const inputErrorIcon = document.querySelectorAll(".inputError");
         console.log(accounts_namespaceObject.r);
@@ -803,6 +809,7 @@
             invalidEmail.style.display = "none";
             logErrorMsg.style.display = "none";
             invalidUser.style.display = "none";
+            passMatchErr.style.display = "none";
             inputItem.forEach((input => input.style.border = "0.0625rem solid #EC6041"));
             inputErrorIcon.forEach((icon => icon.style.display = "none"));
         }
@@ -811,6 +818,7 @@
             invalidEmail.style.display = "none";
             logErrorMsg.style.display = "none";
             invalidUser.style.display = "none";
+            passMatchErr.style.display = "none";
             document.getElementById("popupAuthForm__loginForm").reset();
             document.getElementById("popupAuthForm__registerForm").reset();
         }
@@ -846,6 +854,7 @@
             logErrorMsg.style.display = "none";
             invalidUser.style.display = "none";
             formContent.style.display = "none";
+            passMatchErr.style.display = "none";
             successMsg.style.display = "flex";
         }
         function successRegToggler() {
@@ -854,6 +863,7 @@
             logErrorMsg.style.display = "none";
             invalidUser.style.display = "none";
             formContent.style.display = "none";
+            passMatchErr.style.display = "none";
             successRegMsg.style.display = "flex";
         }
         function passRecoverySentToggler() {
@@ -861,6 +871,7 @@
             invalidEmail.style.display = "none";
             logErrorMsg.style.display = "none";
             passRecoveryForm.style.display = "none";
+            passMatchErr.style.display = "none";
             passRecoveryMsg.style.display = "flex";
         }
         if (passwordRecovery) passwordRecovery.addEventListener("click", (() => {
@@ -869,7 +880,23 @@
             logErrorMsg.style.display = "none";
             invalidUser.style.display = "none";
             formContent.style.display = "none";
+            passMatchErr.style.display = "none";
             passRecoveryForm.style.display = "flex";
+        }));
+        function toggleDisplaySVG(elementID) {
+            (function(style) {
+                style.display = style.display === "none" ? "" : "none";
+            })(document.getElementById(elementID).style);
+        }
+        if (showRegPass) showRegPass.addEventListener("click", (function(e) {
+            const type = currentRegPassword.getAttribute("type") === "password" ? "text" : "password";
+            currentRegPassword.setAttribute("type", type);
+            toggleDisplaySVG("passHiddenSVG");
+        }));
+        if (showRepeatRegPass) showRepeatRegPass.addEventListener("click", (function(e) {
+            const type = repeatRegPassword.getAttribute("type") === "password" ? "text" : "password";
+            repeatRegPassword.setAttribute("type", type);
+            toggleDisplaySVG("repeatPassHiddenSVG");
         }));
         loginTitle.addEventListener("click", (function() {
             loginToggler();
@@ -933,8 +960,7 @@
                 if (formValid) {
                     invalidUser.style.display = "none";
                     callback(formElement);
-                    event.target.reset();
-                }
+                } else return false;
             }));
         }
         function register(formElement) {
@@ -942,13 +968,23 @@
                 ...accumulator,
                 [element.id]: element.value
             })), {});
-            if (accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email))) {
-                registerBusyMail.style.display = "flex";
-                regErrorMsg.style.display = "none";
-                return false;
-            } else registerBusyMail.style.display = "none";
-            successRegToggler();
-            console.log(formObject);
+            if (regBtn) regBtn.addEventListener("click", (function(e) {
+                e.preventDefault();
+                if (accounts_namespaceObject.r.find((user => user.email === formObject.popupAuthForm__email))) {
+                    registerBusyMail.style.display = "flex";
+                    regErrorMsg.style.display = "none";
+                    return false;
+                } else registerBusyMail.style.display = "none";
+            }));
+            if (regBtn) regBtn.addEventListener("click", (function(e) {
+                e.preventDefault();
+                if (document.getElementById("popupAuthForm__regPassword").value !== document.getElementById("popupAuthForm__repeatRegPassword").value) {
+                    passMatchErr.style.display = "flex";
+                    return false;
+                } else passMatchErr.style.display = "none";
+                successRegToggler();
+                console.log(formObject);
+            }));
         }
         function login(formElement) {
             const formObject = Array.from(formElement.elements).filter((element => element.type !== "submit")).reduce(((accumulator, element) => ({
@@ -6957,7 +6993,7 @@
                 } else alert("Image size must be less than 1MB");
             }));
         }
-        function toggleDisplaySVG(elementID) {
+        function profile_toggleDisplaySVG(elementID) {
             (function(style) {
                 style.display = style.display === "none" ? "" : "none";
             })(document.getElementById(elementID).style);
@@ -6965,17 +7001,17 @@
         if (showPass) showPass.addEventListener("click", (function(e) {
             const type = currentPassword.getAttribute("type") === "password" ? "text" : "password";
             currentPassword.setAttribute("type", type);
-            toggleDisplaySVG("passHiddenSVG");
+            profile_toggleDisplaySVG("passHiddenSVG");
         }));
         if (showNewPass) showNewPass.addEventListener("click", (function(e) {
             const type = newPassword.getAttribute("type") === "password" ? "text" : "password";
             newPassword.setAttribute("type", type);
-            toggleDisplaySVG("newPassHiddenSVG");
+            profile_toggleDisplaySVG("newPassHiddenSVG");
         }));
         if (showRepeatPass) showRepeatPass.addEventListener("click", (function(e) {
             const type = repreatPassword.getAttribute("type") === "password" ? "text" : "password";
             repreatPassword.setAttribute("type", type);
-            toggleDisplaySVG("repeatPassHiddenSVG");
+            profile_toggleDisplaySVG("repeatPassHiddenSVG");
         }));
         if (editBtn) editBtn.addEventListener("click", (function(e) {
             personalsEditWrapper.classList.add("_active");
@@ -7065,7 +7101,6 @@
                 return false;
             } else editBusyNumber.style.display = "none";
             if (document.getElementById("personalsEdit__newPass").value !== document.getElementById("personalsEdit__repeatPass").value) {
-                document.getElementById("personalsEdit__repeatPass").classList.add("validationError");
                 document.getElementById("personalsEdit__repeatPass").focus();
                 document.querySelector(".personalsEdit__repeatPassErr").style.display = "flex";
                 return false;

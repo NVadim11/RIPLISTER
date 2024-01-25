@@ -474,6 +474,31 @@ body::after {
 			font-size: 1.25rem;			
 		}
 	}
+	&__repeatPassErr {
+		display: none;
+		flex-direction: row;
+		margin-top: 1.25rem;
+		align-items: center;
+		color: #F00;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		@media screen and (min-width: $pc) {
+			font-size: 1.25rem;			
+		}
+	}
+	&__showPass, &__showRepeatPass {
+		position: absolute;
+		z-index: 1;
+		right: 60px;
+		top: 1.75rem;
+		svg {
+			z-index: 1;
+			height: 1.4375rem;
+			position: absolute;
+		}
+	}
 	.errorSignSvg {
 		display: flex;
 		scale: 80%;	
