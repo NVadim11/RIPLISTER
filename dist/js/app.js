@@ -5840,6 +5840,14 @@
                     }
                 }
             });
+            if (document.querySelector(".profileLinks__slider")) new swiper_core_Swiper(".profileLinks__slider", {
+                modules: [ Scrollbar ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: "auto",
+                spaceBetween: 30,
+                speed: 800
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();

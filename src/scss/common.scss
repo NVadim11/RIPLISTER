@@ -111,29 +111,40 @@
 // стиль кнопки пин ту топ
 .btn-gotop {
     position: fixed;
-	width: 4.375rem;
-	height: 4.375rem;
+	width: 3rem;
+	height: 3rem;
 	flex-shrink: 0;
-    bottom: 2.5rem;
-    right: 2.5rem;
-	border-radius: 1.875rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+	border-radius: 30px;
 	background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-    box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     opacity: 0;
     transition: opacity 0.5s;
-    
+	@media (min-width: $pc) {
+		width: 4.375rem;
+		height: 4.375rem;
+		bottom: 2.5rem;
+		right: 2.5rem;
+	}
     &.show {
       opacity: 1;
     }
-  
-    i {
-      font-size: 1.5rem;
-    }
+
+	svg {
+		width: 0.625rem;
+		height: 1.1875rem;
+		@media (min-width: $pc) {
+			width: 0.875rem;
+			height: 1.4375rem;
+		}
+	}
   
     &:hover {
-    //   border: 0.0938rem solid steelblue;
+    //   border: 1.5px solid steelblue;
     }
   }
+  
   
 //   для конструктора/редактора
 .textBlock {

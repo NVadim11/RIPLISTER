@@ -179,6 +179,22 @@ function initSliders() {
 			},
 		});
 	}
+
+		// Main recent slider
+		if (document.querySelector('.profileLinks__slider')) { 
+			new Swiper ('.profileLinks__slider', {
+				modules: [Scrollbar],
+				observer: true,
+				observeParents: true,
+				slidesPerView: 'auto',
+				spaceBetween: 30,
+				speed: 800,
+				// scrollbar: {
+				// 	el: '.profileLinks__scrollbar',
+				// 	draggable: true,
+				// }
+			});
+		}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
