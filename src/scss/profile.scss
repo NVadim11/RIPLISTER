@@ -22,7 +22,7 @@
 			flex-direction: column;
 			justify-content:flex-start;
 			gap: 0;
-			border: 1px solid var(--orange-color);
+			border: 0.0625rem solid var(--orange-color);
 			border-radius: 1.875rem;
 		}
 	}
@@ -53,7 +53,7 @@
 			width: 22.5rem;
 			padding: 2.1875rem 0 2.1875rem 1.5625rem;
 			align-items: center;
-			border-bottom: 1px solid var(--orange-color);
+			border-bottom: 0.0625rem solid var(--orange-color);
 			svg {
 				width: 2rem;
 				height: 2rem;
@@ -74,7 +74,7 @@
 	}
 	&__navigation-item:nth-child(7) {
 		@media screen and (min-width:$tablet) {
-			border-bottom: 1px solid var(--orange-color);		
+			border-bottom: 0.0625rem solid var(--orange-color);		
 		}
 	}
 	&__navigation-text {
@@ -83,7 +83,7 @@
 			display: flex;
 			margin: 0 0 0 0.9375rem;
 			color: #171717;
-			font-size: 20px;
+			font-size: 1.25rem;
 			font-style: normal;
 			font-weight: 600;
 			line-height: normal;
@@ -115,7 +115,7 @@
 			font-size: 2rem;
 			font-style: normal;
 			font-weight: 600;
-			line-height: 110%; /* 35.2px */
+			line-height: 110%; /* 2.2rem */
 			@media screen and (min-width:$pc) {
 				font-size: 2.25rem;
 			}
@@ -134,7 +134,7 @@
 		font-size: 1rem;
 		font-style: normal;
 		font-weight: 400;
-		line-height: 100%; /* 16px */
+		line-height: 100%; /* 1rem */
 	}
 	&__editBox {
 		display: none;
@@ -228,7 +228,7 @@
 			line-height: normal;
 			margin: 0 0.625rem 0 0;
 			@media screen and (min-width:$mobile) {
-				margin: 0 0 10px 0;
+				margin: 0 0 0.625rem 0;
 			}
 		}
 	}
@@ -344,7 +344,7 @@
 	&__fieldsGroup {
 		display: flex;
 		flex-direction: column;
-		padding: 40px 10px;
+		padding: 2.5rem 0.625rem;
 		@media screen and (min-width:$mobile) {
 			margin: 0 0 0 1.25rem;
 			padding: 0;
@@ -373,7 +373,7 @@
 			line-height: normal;
 			margin: 0 0.625rem 0 0;
 			@media screen and (min-width:$mobile) {
-				margin: 0 0 10px 0;
+				margin: 0 0 0.625rem 0;
 			}
 		}
 	}
@@ -402,7 +402,7 @@
 			line-height: normal;
 			margin: 0 0.625rem 0 0;
 			@media screen and (min-width:$mobile) {
-				margin: 0 10px 0 0;
+				margin: 0 0.625rem 0 0;
 			}
 		}
 	}
@@ -446,17 +446,17 @@
 		margin: 0 0 1.5625rem 0;
 		svg {
 			margin: 0 0.3125rem 0 0;
-			width: 10.515px;
-			height: 14px;
+			width: 0.6572rem;
+			height: 0.875rem;
 			flex-shrink: 0;
 			@media screen and (min-width:$mobile) {
-				width: 12.575px;
-				height: 16px;
+				width: 0.7859rem;
+				height: 1rem;
 				flex-shrink: 0;
 			}
 			@media screen and (min-width:$pc) {
-				width: 14.147px;
-				height: 18px;
+				width: 0.8842rem;
+				height: 1.125rem;
 				flex-shrink: 0;
 			}
 		}
@@ -476,17 +476,17 @@
 		text-decoration-line: underline;
 		svg {
 			margin: 0 0.3125rem 0 0;
-			width: 9.431px;
-			height: 12px;
+			width: 0.5894rem;
+			height: 0.75rem;
 			flex-shrink: 0;
 			@media screen and (min-width:$mobile) {
-				width: 12.575px;
-				height: 16px;
+				width: 0.7859rem;
+				height: 1rem;
 				flex-shrink: 0;
 			}
 			@media screen and (min-width:$pc) {
-				width: 14.147px;
-				height: 18px;
+				width: 0.8842rem;
+				height: 1.125rem;
 				flex-shrink: 0;
 			}
 		}
@@ -544,7 +544,7 @@
 		display: flex;
 		width: 15.625rem;
 		height: 15.625rem;
-		border-radius: 30px;
+		border-radius: 1.875rem;
 		background: #FFF8F6;
 		@media screen and (min-width:$mobile) {
 			margin: 0;
@@ -574,7 +574,7 @@
 					font-size: 1.125rem;
 					font-style: normal;
 					font-weight: 400;
-					line-height: 140%; /* 25.2px */
+					line-height: 140%; /* 1.575rem */
 				}
 		}
 	}
@@ -647,7 +647,7 @@
 		}
 		h4 {
 			color: #E55738;
-			font-size: 24px;
+			font-size: 1.5rem;
 			font-style: normal;
 			font-weight: 400;
 			line-height: normal;
@@ -705,7 +705,7 @@
 	}
 	&__button-close {
 		padding: 1rem;
-		border-radius: 30px;
+		border-radius: 1.875rem;
 		background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);
 		color: var(--white-color);
 		padding: 1.25rem 2.8125rem;
@@ -725,7 +725,7 @@
 	}
 	&__button-save {
 		padding: 1rem;
-		border-radius: 30px;
+		border-radius: 1.875rem;
 		background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 		color: var(--white-color);
 		font-size: 1.5rem;
@@ -793,13 +793,13 @@
 	&__busyNickname {
 		display: none;
 		position: absolute;
-		top: 65px;
+		top: 4.0625rem;
 		flex-direction: row;
-		margin-top: 10px;
+		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
@@ -807,13 +807,13 @@
 	&__invalidNickname {
 		display: none;
 		position: absolute;
-		top: 65px;
+		top: 4.0625rem;
 		flex-direction: row;
-		margin-top: 10px;
+		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
@@ -821,13 +821,13 @@
 	&__busyEmail {
 		display: none;
 		position: absolute;
-		top: 65px;
+		top: 4.0625rem;
 		flex-direction: row;
-		margin-top: 10px;
+		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
@@ -835,13 +835,13 @@
 	&__busyNumber {
 		display: none;
 		position: absolute;
-		top: 65px;
+		top: 4.0625rem;
 		flex-direction: row;
-		margin-top: 10px;
+		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
@@ -849,13 +849,13 @@
 	&__currPassErr {
 		display: none;
 		position: absolute;
-		top: 65px;
+		top: 4.0625rem;
 		flex-direction: row;
-		margin-top: 10px;
+		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
@@ -863,13 +863,13 @@
 	&__newPassErr {
 		display: none;
 		position: absolute;
-		top: 65px;
+		top: 4.0625rem;
 		flex-direction: row;
-		margin-top: 10px;
+		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
@@ -877,13 +877,13 @@
 	&__repeatPassErr {	
 		display: none;
 		position: absolute;
-		top: 65px;
+		top: 4.0625rem;
 		flex-direction: row;
-		margin-top: 10px;
+		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
@@ -896,7 +896,7 @@
 		margin-top: 1.25rem;
 		align-items: center;
 		color: #F00;
-		font-size: 14px;
+		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
@@ -904,7 +904,7 @@
 	.errorSignSvg {
 		display: flex;
 		scale: 80%;	
-		margin-right: 10px;
+		margin-right: 0.625rem;
 	}
 	&__passTip {
 		color: #7D7D7D;
@@ -982,7 +982,7 @@
 		}
 	}
 	&__greyLine {
-		height: 2px;
+		height: 0.125rem;
 		width: 100%;
 		background: #F3ECEC;
 		top: -0.125rem;
@@ -1007,7 +1007,7 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-		border-bottom: 2px solid #E55738;
+		border-bottom: 0.125rem solid #E55738;
 		@media screen and (min-width:$mobile) {
 			font-size: 1.25rem;
 		}
@@ -1117,19 +1117,31 @@
 		margin: 1.6875rem 0 3.375rem 0;
 	}
 	&__sectionTitle {
+		align-items: center;
 		color: #000;
 		font-size: 1rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: 100%; /* 1rem */
+		position: absolute;
+		left: 0;
+		top: 0.1875rem;
+		margin-left: -17.6875rem;
 		@media screen and (min-width:$mobile) {
 			font-size: 1.125rem;
+			margin-left: -39.25rem;
+		}
+		@media screen and (min-width:79.875rem) {
+			font-size: 1.25rem;
+			margin-left: -40.5rem;
 		}
 		@media screen and (min-width:$pc) {
 			font-size: 1.25rem;
+			margin-left: -36.5625rem;
 		}
 		@media screen and (min-width:$full) {
 			font-size: 1.5rem;
+			margin-left: -38.8125rem;
 		}
 	}	
 	&__sectionDescr {
@@ -1213,25 +1225,33 @@
 	&__firstSection, &__secondSection, &__thirdSection {
 		display: flex;
 		flex-direction: column;
-		margin-top: 1.4375rem;
 		width: 100%;
 		@media screen and (min-width:$pc) {
 			width: 65%;
 		}
 		@media screen and (min-width:$full) {
-			margin-top: 3.5rem;
 			width: 55%;
 		}
 	}
 	&__emailSwitch, &__phoneSwitch, &__commentariesSwitch, &__transactionsSwitch, &__offeringSwitch, &__followersSwitch,
 	&__newsSwitch, &__blogSwitch, &__othersSwitch {
+		position: relative;
 		display: flex;
 		align-items: center;
 		width: 100%;
 		justify-content: space-between;
-		margin-top: 1.125rem;
+		margin-top: 2rem;
 		label {
 			margin: 0;
+		}
+		@media screen and (min-width:$mobile) {
+			margin-top: 2.5625rem;
+		}
+		@media screen and (min-width:$pc) {
+			margin-top: 2.875rem;
+		}
+		@media screen and (min-width:$full) {
+			margin-top: 3.5rem;
 		}
 	}
 }

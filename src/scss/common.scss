@@ -116,9 +116,9 @@
 	flex-shrink: 0;
     bottom: 1.5rem;
     right: 1.5rem;
-	border-radius: 30px;
+	border-radius: 1.875rem;
 	background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
     opacity: 0;
     transition: opacity 0.5s;
 	@media (min-width: $pc) {
@@ -141,7 +141,7 @@
 	}
   
     &:hover {
-    //   border: 1.5px solid steelblue;
+    //   border: 0.0938rem solid steelblue;
     }
   }
   
@@ -360,10 +360,13 @@
 }
 
 // Чекбокс слайдер
-/* The switchCheckbox - the box around the slider */
+/* The switchCheckbox - the box around the sliderCheckbox */
 .switchCheckbox {
-	position: relative;
+	align-items: center;
+	position: absolute;
 	display: inline-block;
+	top: -1.1875rem;
+	right: 0;
 	width: 2rem;
 	height: 1.25rem;
 	@media screen and (min-width:$mobile) {
@@ -385,8 +388,8 @@
 	height: 0;
 }
 
-/* The slider */
-.slider {
+/* The sliderCheckbox */
+.sliderCheckbox {
 	position: absolute;
 	cursor: pointer;
 	top: 0;
@@ -398,7 +401,7 @@
 	transition: .4s;
 }
 
-.slider:before {
+.sliderCheckbox:before {
 	position: absolute;
 	content: "";
 	height: 1.25rem;
@@ -420,17 +423,17 @@
 	}
 }
 
-input:checked + .slider {
+input:checked + .sliderCheckbox {
 	background-color: #F5BFB4;
 }
 input:checked ~ .profileSettings__sectionTitle {
 	color: #DB4A2A;
 }
-input:focus + .slider {
+input:focus + .sliderCheckbox {
 	box-shadow: 0 0 0.0625rem #F3ECEC;
 }
 
-input:checked + .slider:before {
+input:checked + .sliderCheckbox:before {
 	-webkit-transform: translateX(0.75rem);
 	-ms-transform: translateX(0.75rem);
 	transform: translateX(0.75rem);
@@ -442,11 +445,11 @@ input:checked + .slider:before {
 	}
 }
 
-/* Rounded sliders */
-.slider.round {
+/* Rounded sliderCheckboxs */
+.sliderCheckbox.roundCheckbox {
 	border-radius: 1.25rem;
 }
 
-.slider.round:before {
+.sliderCheckbox.roundCheckbox:before {
 	border-radius: 50%;
 }

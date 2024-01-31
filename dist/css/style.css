@@ -2128,11 +2128,11 @@ label {
       flex-shrink: 0;
   bottom: 1.5rem;
   right: 1.5rem;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
   opacity: 0;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
@@ -2321,11 +2321,16 @@ label {
   height: 0.125rem;
 }
 
-/* The switchCheckbox - the box around the slider */
+/* The switchCheckbox - the box around the sliderCheckbox */
 
 .switchCheckbox {
-  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
   display: inline-block;
+  top: -1.1875rem;
+  right: 0;
   width: 2rem;
   height: 1.25rem;
 }
@@ -2338,9 +2343,9 @@ label {
   height: 0;
 }
 
-/* The slider */
+/* The sliderCheckbox */
 
-.slider {
+.sliderCheckbox {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -2352,7 +2357,7 @@ label {
   transition: 0.4s;
 }
 
-.slider:before {
+.sliderCheckbox:before {
   position: absolute;
   content: "";
   height: 1.25rem;
@@ -2362,7 +2367,7 @@ label {
   transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked + .sliderCheckbox {
   background-color: #F5BFB4;
 }
 
@@ -2370,25 +2375,25 @@ input:checked ~ .profileSettings__sectionTitle {
   color: #DB4A2A;
 }
 
-input:focus + .slider {
+input:focus + .sliderCheckbox {
   -webkit-box-shadow: 0 0 0.0625rem #F3ECEC;
           box-shadow: 0 0 0.0625rem #F3ECEC;
 }
 
-input:checked + .slider:before {
+input:checked + .sliderCheckbox:before {
   -webkit-transform: translateX(0.75rem);
   -ms-transform: translateX(0.75rem);
   transform: translateX(0.75rem);
   background-color: #DB4A2A;
 }
 
-/* Rounded sliders */
+/* Rounded sliderCheckboxs */
 
-.slider.round {
+.sliderCheckbox.roundCheckbox {
   border-radius: 1.25rem;
 }
 
-.slider.round:before {
+.sliderCheckbox.roundCheckbox:before {
   border-radius: 50%;
 }
 
@@ -5781,7 +5786,7 @@ input:checked + .slider:before {
   font-style: normal;
   font-weight: 600;
   line-height: 110%;
-  /* 35.2px */
+  /* 2.2rem */
 }
 
 .profile__tab-titleCount {
@@ -5791,7 +5796,7 @@ input:checked + .slider:before {
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  /* 16px */
+  /* 1rem */
 }
 
 .profile__editBox {
@@ -6013,7 +6018,7 @@ input:checked + .slider:before {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 40px 10px;
+  padding: 2.5rem 0.625rem;
 }
 
 .personals__field {
@@ -6113,8 +6118,8 @@ input:checked + .slider:before {
 
 .personals__passChangeBtn svg {
   margin: 0 0.3125rem 0 0;
-  width: 10.515px;
-  height: 14px;
+  width: 0.6572rem;
+  height: 0.875rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -6136,8 +6141,8 @@ input:checked + .slider:before {
 
 .personals__deleteProfileBtn svg {
   margin: 0 0.3125rem 0 0;
-  width: 9.431px;
-  height: 12px;
+  width: 0.5894rem;
+  height: 0.75rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
@@ -6200,7 +6205,7 @@ input:checked + .slider:before {
   display: flex;
   width: 15.625rem;
   height: 15.625rem;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   background: #FFF8F6;
 }
 
@@ -6298,7 +6303,7 @@ input:checked + .slider:before {
 
 .personalsEdit__input-title h4 {
   color: #E55738;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -6373,7 +6378,7 @@ input:checked + .slider:before {
 
 .personalsEdit__button-close {
   padding: 1rem;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#64A2FF), to(#2A86DB));
   background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);
   color: var(--white-color);
@@ -6402,7 +6407,7 @@ input:checked + .slider:before {
 
 .personalsEdit__button-save {
   padding: 1rem;
-  border-radius: 30px;
+  border-radius: 1.875rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
   color: var(--white-color);
@@ -6502,12 +6507,12 @@ input:checked + .slider:before {
 .personalsEdit__busyNickname {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6515,7 +6520,7 @@ input:checked + .slider:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6524,12 +6529,12 @@ input:checked + .slider:before {
 .personalsEdit__invalidNickname {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6537,7 +6542,7 @@ input:checked + .slider:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6546,12 +6551,12 @@ input:checked + .slider:before {
 .personalsEdit__busyEmail {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6559,7 +6564,7 @@ input:checked + .slider:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6568,12 +6573,12 @@ input:checked + .slider:before {
 .personalsEdit__busyNumber {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6581,7 +6586,7 @@ input:checked + .slider:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6590,12 +6595,12 @@ input:checked + .slider:before {
 .personalsEdit__currPassErr {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6603,7 +6608,7 @@ input:checked + .slider:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6612,12 +6617,12 @@ input:checked + .slider:before {
 .personalsEdit__newPassErr {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6625,7 +6630,7 @@ input:checked + .slider:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6634,12 +6639,12 @@ input:checked + .slider:before {
 .personalsEdit__repeatPassErr {
   display: none;
   position: absolute;
-  top: 65px;
+  top: 4.0625rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -6647,7 +6652,7 @@ input:checked + .slider:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6664,7 +6669,7 @@ input:checked + .slider:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6675,7 +6680,7 @@ input:checked + .slider:before {
   display: -ms-flexbox;
   display: flex;
   scale: 80%;
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 
 .personalsEdit__passTip {
@@ -6759,7 +6764,7 @@ input:checked + .slider:before {
 }
 
 .profileLinks__greyLine {
-  height: 2px;
+  height: 0.125rem;
   width: 100%;
   background: #F3ECEC;
   top: -0.125rem;
@@ -6783,7 +6788,7 @@ input:checked + .slider:before {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  border-bottom: 2px solid #E55738;
+  border-bottom: 0.125rem solid #E55738;
 }
 
 .profileLinks__tab {
@@ -6873,12 +6878,19 @@ input:checked + .slider:before {
 }
 
 .profileSettings__sectionTitle {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #000;
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
   line-height: 100%;
   /* 1rem */
+  position: absolute;
+  left: 0;
+  top: 0.1875rem;
+  margin-left: -17.6875rem;
 }
 
 .profileSettings__sectionDescr {
@@ -6947,7 +6959,6 @@ input:checked + .slider:before {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 1.4375rem;
   width: 100%;
 }
 
@@ -6960,6 +6971,7 @@ input:checked + .slider:before {
 .profileSettings__newsSwitch,
 .profileSettings__blogSwitch,
 .profileSettings__othersSwitch {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6970,7 +6982,7 @@ input:checked + .slider:before {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 1.125rem;
+  margin-top: 2rem;
 }
 
 .profileSettings__emailSwitch label,
@@ -7915,7 +7927,7 @@ input:checked + .slider:before {
     height: 1.25rem;
   }
 
-  .slider:before {
+  .sliderCheckbox:before {
     height: 1.25rem;
     width: 1.25rem;
   }
@@ -8111,7 +8123,7 @@ input:checked + .slider:before {
   }
 
   .profile__field span {
-    margin: 0 0 10px 0;
+    margin: 0 0 0.625rem 0;
   }
 
   .personals {
@@ -8169,7 +8181,7 @@ input:checked + .slider:before {
   }
 
   .personals__field span {
-    margin: 0 0 10px 0;
+    margin: 0 0 0.625rem 0;
   }
 
   .personals__personals-field {
@@ -8181,7 +8193,7 @@ input:checked + .slider:before {
   }
 
   .personals__personals-field span {
-    margin: 0 10px 0 0;
+    margin: 0 0.625rem 0 0;
   }
 
   .personals__fieldSocials {
@@ -8208,8 +8220,8 @@ input:checked + .slider:before {
   }
 
   .personals__passChangeBtn svg {
-    width: 12.575px;
-    height: 16px;
+    width: 0.7859rem;
+    height: 1rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
@@ -8220,8 +8232,8 @@ input:checked + .slider:before {
   }
 
   .personals__deleteProfileBtn svg {
-    width: 12.575px;
-    height: 16px;
+    width: 0.7859rem;
+    height: 1rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
@@ -8291,6 +8303,7 @@ input:checked + .slider:before {
 
   .profileSettings__sectionTitle {
     font-size: 1.125rem;
+    margin-left: -39.25rem;
   }
 
   .profileSettings__sectionDescr {
@@ -8308,6 +8321,18 @@ input:checked + .slider:before {
 
   .profileSettings__updateSettings {
     font-size: 1.25rem;
+  }
+
+  .profileSettings__emailSwitch,
+  .profileSettings__phoneSwitch,
+  .profileSettings__commentariesSwitch,
+  .profileSettings__transactionsSwitch,
+  .profileSettings__offeringSwitch,
+  .profileSettings__followersSwitch,
+  .profileSettings__newsSwitch,
+  .profileSettings__blogSwitch,
+  .profileSettings__othersSwitch {
+    margin-top: 2.5625rem;
   }
 }
 
@@ -8587,7 +8612,7 @@ input:checked + .slider:before {
         -ms-flex-pack: start;
             justify-content: flex-start;
     gap: 0;
-    border: 1px solid var(--orange-color);
+    border: 0.0625rem solid var(--orange-color);
     border-radius: 1.875rem;
   }
 
@@ -8607,7 +8632,7 @@ input:checked + .slider:before {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    border-bottom: 1px solid var(--orange-color);
+    border-bottom: 0.0625rem solid var(--orange-color);
   }
 
   .profile__navigation-item svg {
@@ -8620,7 +8645,7 @@ input:checked + .slider:before {
   }
 
   .profile__navigation-item:nth-child(7) {
-    border-bottom: 1px solid var(--orange-color);
+    border-bottom: 0.0625rem solid var(--orange-color);
   }
 
   .profile__navigation-text {
@@ -8629,7 +8654,7 @@ input:checked + .slider:before {
     display: flex;
     margin: 0 0 0 0.9375rem;
     color: #171717;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -8649,6 +8674,13 @@ input:checked + .slider:before {
   .profile__navigation-item svg {
     width: 2.625rem;
     height: 2.625rem;
+  }
+}
+
+@media screen and (min-width: 79.875rem) {
+  .profileSettings__sectionTitle {
+    font-size: 1.25rem;
+    margin-left: -40.5rem;
   }
 }
 
@@ -9172,7 +9204,7 @@ input:checked + .slider:before {
     height: 1.25rem;
   }
 
-  .slider:before {
+  .sliderCheckbox:before {
     height: 1.25rem;
     width: 1.25rem;
   }
@@ -9242,15 +9274,15 @@ input:checked + .slider:before {
   }
 
   .personals__passChangeBtn svg {
-    width: 14.147px;
-    height: 18px;
+    width: 0.8842rem;
+    height: 1.125rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
 
   .personals__deleteProfileBtn svg {
-    width: 14.147px;
-    height: 18px;
+    width: 0.8842rem;
+    height: 1.125rem;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
@@ -9284,7 +9316,7 @@ input:checked + .slider:before {
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
-    /* 25.2px */
+    /* 1.575rem */
   }
 
   .personalsEdit__form {
@@ -9332,6 +9364,7 @@ input:checked + .slider:before {
 
   .profileSettings__sectionTitle {
     font-size: 1.25rem;
+    margin-left: -36.5625rem;
   }
 
   .profileSettings__sectionDescr {
@@ -9357,6 +9390,18 @@ input:checked + .slider:before {
   .profileSettings__secondSection,
   .profileSettings__thirdSection {
     width: 65%;
+  }
+
+  .profileSettings__emailSwitch,
+  .profileSettings__phoneSwitch,
+  .profileSettings__commentariesSwitch,
+  .profileSettings__transactionsSwitch,
+  .profileSettings__offeringSwitch,
+  .profileSettings__followersSwitch,
+  .profileSettings__newsSwitch,
+  .profileSettings__blogSwitch,
+  .profileSettings__othersSwitch {
+    margin-top: 2.875rem;
   }
 }
 
@@ -9514,12 +9559,12 @@ input:checked + .slider:before {
     width: 3.125rem;
   }
 
-  .slider:before {
+  .sliderCheckbox:before {
     height: 2rem;
     width: 2rem;
   }
 
-  input:checked + .slider:before {
+  input:checked + .sliderCheckbox:before {
     -webkit-transform: translateX(1.125rem);
     -ms-transform: translateX(1.125rem);
     transform: translateX(1.125rem);
@@ -10416,6 +10461,7 @@ input:checked + .slider:before {
 
   .profileSettings__sectionTitle {
     font-size: 1.5rem;
+    margin-left: -38.8125rem;
   }
 
   .profileSettings__sectionDescr {
@@ -10438,8 +10484,19 @@ input:checked + .slider:before {
   .profileSettings__firstSection,
   .profileSettings__secondSection,
   .profileSettings__thirdSection {
-    margin-top: 3.5rem;
     width: 55%;
+  }
+
+  .profileSettings__emailSwitch,
+  .profileSettings__phoneSwitch,
+  .profileSettings__commentariesSwitch,
+  .profileSettings__transactionsSwitch,
+  .profileSettings__offeringSwitch,
+  .profileSettings__followersSwitch,
+  .profileSettings__newsSwitch,
+  .profileSettings__blogSwitch,
+  .profileSettings__othersSwitch {
+    margin-top: 3.5rem;
   }
 }
 
