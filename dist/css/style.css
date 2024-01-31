@@ -6865,7 +6865,6 @@ input:checked + .sliderCheckbox:before {
 .profileSettings {
   border-radius: 1.25rem;
   background: #FFF8F6;
-  margin: 2.75rem 0 0 0;
   padding: 1.25rem 1.25rem 2.8125rem 1.25rem;
   margin: 2.75rem 0 1.3125rem 0;
   display: -webkit-box;
@@ -6995,6 +6994,209 @@ input:checked + .sliderCheckbox:before {
 .profileSettings__blogSwitch label,
 .profileSettings__othersSwitch label {
   margin: 0;
+}
+
+.profileOfferings {
+  border-radius: 1.25rem;
+  background: #FFF8F6;
+  padding: 1.25rem 0 2.8125rem 0.4375rem;
+  margin: 2.75rem 0 1.3125rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profileOfferings__offeringsTable {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profileOfferings__tableHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: #7D7D7D;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  /* 12px */
+}
+
+.profileOfferings__offeringImg {
+  margin-left: 3px;
+  margin-right: 16px;
+}
+
+.profileOfferings__offeringLink {
+  margin-right: 15px;
+}
+
+.profileOfferings__offeringBeginDate {
+  margin-right: 24px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.profileOfferings__offeringCost {
+  margin-right: 28px;
+}
+
+.profileOfferings__offeringEndDate {
+  margin-right: 15px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.profileOfferings__greyLine {
+  margin-top: 16px;
+  width: 100%;
+  height: 2px;
+  background: #F3ECEC;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.profileOfferings__tableItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 14px;
+  gap: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.profileOfferings__itemImg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profileOfferings__itemImg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 28px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.profileOfferings__itemLink {
+  color: #3C88F9;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.profileOfferings__itemLink a {
+  text-decoration-line: underline;
+}
+
+.profileOfferings__itemLink a:hover {
+  text-decoration-line: none;
+}
+
+.profileOfferings__itemBeginDate {
+  color: #212121;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  /* 13px */
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.profileOfferings__itemCost {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #212121;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  /* 12px */
+  max-width: fit-content;
+}
+
+.profileOfferings__itemCost svg {
+  margin-left: 3px;
+  width: 14px;
+  height: 14px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.profileOfferings__itemEndDate {
+  color: #212121;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  /* 13px */
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.profileOfferings__itemExtend {
+  margin-right: -60px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.profileOfferings .offeringExtendBtn {
+  color: #3C88F9;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.profileOfferings .offeringExtendBtn:hover {
+  text-decoration-line: none;
 }
 
 .detail__container {
@@ -8334,6 +8536,71 @@ input:checked + .sliderCheckbox:before {
   .profileSettings__othersSwitch {
     margin-top: 2.5625rem;
   }
+
+  .profileOfferings {
+    margin: 2.3125rem 0 1.625rem 0;
+    padding: 1.25rem 1.0625rem 2.8125rem 1.0625rem;
+  }
+
+  .profileOfferings__tableHead {
+    font-size: 14px;
+  }
+
+  .profileOfferings__offeringImg {
+    margin-right: 61px;
+  }
+
+  .profileOfferings__offeringLink {
+    margin-right: 37px;
+  }
+
+  .profileOfferings__offeringBeginDate {
+    margin-right: 38px;
+    width: 90px;
+  }
+
+  .profileOfferings__offeringCost {
+    margin-right: 28px;
+  }
+
+  .profileOfferings__offeringEndDate {
+    width: 90px;
+  }
+
+  .profileOfferings__itemImg img {
+    width: 54px;
+  }
+
+  .profileOfferings__itemImg {
+    margin-right: 20px;
+  }
+
+  .profileOfferings__itemLink {
+    font-size: 14px;
+    margin-right: 20px;
+    width: 100px;
+  }
+
+  .profileOfferings__itemBeginDate {
+    font-size: 14px;
+    margin-right: 20px;
+    width: 92px;
+  }
+
+  .profileOfferings__itemCost {
+    font-size: 18px;
+    margin-right: 20px;
+  }
+
+  .profileOfferings__itemEndDate {
+    font-size: 14px;
+    margin-right: 20px;
+    width: 90px;
+  }
+
+  .profileOfferings .offeringExtendBtn {
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 79.99875em) {
@@ -9402,6 +9669,67 @@ input:checked + .sliderCheckbox:before {
   .profileSettings__blogSwitch,
   .profileSettings__othersSwitch {
     margin-top: 2.875rem;
+  }
+
+  .profileOfferings {
+    padding: 1.25rem 2.25rem 2.8125rem 1.5rem;
+    margin: 1.75rem 0 2.625rem 0;
+  }
+
+  .profileOfferings__tableHead {
+    font-size: 18px;
+  }
+
+  .profileOfferings__offeringImg {
+    margin-right: 63px;
+  }
+
+  .profileOfferings__offeringLink {
+    margin-right: 93px;
+  }
+
+  .profileOfferings__offeringBeginDate {
+    margin-right: 58px;
+    width: 200px;
+  }
+
+  .profileOfferings__offeringCost {
+    margin-right: 30px;
+  }
+
+  .profileOfferings__offeringEndDate {
+    width: 100%;
+  }
+
+  .profileOfferings__itemImg {
+    margin-right: 30px;
+  }
+
+  .profileOfferings__itemLink {
+    font-size: 16px;
+    margin-right: 30px;
+    width: 100%;
+  }
+
+  .profileOfferings__itemBeginDate {
+    font-size: 16px;
+    margin-right: 30px;
+    width: 100%;
+  }
+
+  .profileOfferings__itemCost {
+    font-size: 20px;
+    margin-right: 30px;
+  }
+
+  .profileOfferings__itemEndDate {
+    font-size: 16px;
+    margin-right: 30px;
+    width: 100%;
+  }
+
+  .profileOfferings .offeringExtendBtn {
+    font-size: 16px;
   }
 }
 
@@ -10497,6 +10825,59 @@ input:checked + .sliderCheckbox:before {
   .profileSettings__blogSwitch,
   .profileSettings__othersSwitch {
     margin-top: 3.5rem;
+  }
+
+  .profileOfferings {
+    padding: 1.25rem 2.375rem 2.8125rem 2.375rem;
+    margin: 1.6875rem 0 3.375rem 0;
+  }
+
+  .profileOfferings__tableHead {
+    font-size: 20px;
+  }
+
+  .profileOfferings__offeringImg {
+    margin-right: 70px;
+  }
+
+  .profileOfferings__offeringLink {
+    margin-right: 132px;
+  }
+
+  .profileOfferings__offeringBeginDate {
+    margin-right: 91px;
+  }
+
+  .profileOfferings__offeringCost {
+    margin-right: 40px;
+  }
+
+  .profileOfferings__itemImg {
+    margin-right: 40px;
+  }
+
+  .profileOfferings__itemLink {
+    font-size: 20px;
+    margin-right: 40px;
+  }
+
+  .profileOfferings__itemBeginDate {
+    font-size: 20px;
+    margin-right: 40px;
+  }
+
+  .profileOfferings__itemCost {
+    font-size: 24px;
+    margin-right: 40px;
+  }
+
+  .profileOfferings__itemEndDate {
+    font-size: 20px;
+    margin-right: 40px;
+  }
+
+  .profileOfferings .offeringExtendBtn {
+    font-size: 20px;
   }
 }
 

@@ -952,7 +952,7 @@
 
 .profileLinks {
 	border-radius: 1.25rem;
-    background: #FFF8F6;
+  background: #FFF8F6;
 	display: flex;
 	flex-direction: column;
 	margin: 2.75rem 0 0 0;
@@ -1100,7 +1100,6 @@
 .profileSettings {
 	border-radius: 1.25rem;
 	background: #FFF8F6;
-	margin: 2.75rem 0 0 0;
 	padding: 1.25rem 1.25rem 2.8125rem 1.25rem;
 	margin: 2.75rem 0 1.3125rem 0;
 	display: flex;
@@ -1253,5 +1252,291 @@
 		@media screen and (min-width:$full) {
 			margin-top: 3.5rem;
 		}
+	}
+}
+.profileOfferings {
+	border-radius: 1.25rem;
+	background: #FFF8F6;
+	padding: 1.25rem 0 2.8125rem 0.4375rem;
+	margin: 2.75rem 0 1.3125rem 0;
+	display: flex;
+	flex-direction: column;
+	@media screen and (min-width:$mobile) {
+		margin: 2.3125rem 0 1.625rem 0;
+		padding: 1.25rem 1.0625rem 2.8125rem 1.0625rem;
+	}
+	@media screen and (min-width:$pc) {		
+		padding: 1.25rem 2.25rem 2.8125rem 1.5rem;
+		margin: 1.75rem 0 2.625rem 0;
+	}
+	@media screen and (min-width:$full) {	
+		padding: 1.25rem 2.375rem 2.8125rem 2.375rem;
+		margin: 1.6875rem 0 3.375rem 0;
+	}
+	&__offeringsTable {
+		display: flex;
+		flex-direction: column;
+	}
+	&__tableHead {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		color: #7D7D7D;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%; /* 12px */
+		@media screen and (min-width:$mobile) {
+			font-size: 14px;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 18px;
+		}
+		@media screen and (min-width:$full) {	
+			font-size: 20px;
+		}
+	}
+	&__offeringImg {
+		margin-left: 3px;
+		margin-right: 16px;
+		@media screen and (min-width:$mobile) {
+			margin-right: 61px;
+		}
+		@media screen and (min-width:$pc) {
+			margin-right: 63px;
+		}
+		@media screen and (min-width:$full) {	
+			margin-right: 70px;
+		}
+	}
+	&__offeringLink{
+		margin-right: 15px;
+		@media screen and (min-width:$mobile) {
+			margin-right: 37px;
+		}
+		@media screen and (min-width:$pc) {
+			margin-right: 93px;
+		}
+		@media screen and (min-width:$full) {	
+			margin-right: 132px;
+		}
+	}
+	&__offeringBeginDate {
+		margin-right: 24px;
+		max-width: fit-content;
+		@media screen and (min-width:$mobile) {
+			margin-right: 38px;
+			width: 90px;
+		}
+		@media screen and (min-width:$pc) {
+			margin-right: 58px;
+			width: 200px;
+		}
+		@media screen and (min-width:$full) {	
+			margin-right: 91px;
+		}
+	}
+	&__offeringCost {
+		margin-right: 28px;
+		@media screen and (min-width:$mobile) {
+			margin-right: 28px;
+		}
+		@media screen and (min-width:$pc) {
+			margin-right: 30px;
+		}
+		@media screen and (min-width:$full) {	
+			margin-right: 40px;
+		}
+	}
+	&__offeringEndDate {
+		margin-right: 15px;
+		max-width: fit-content;
+		@media screen and (min-width:$mobile) {
+			width: 90px;
+		}
+		@media screen and (min-width:$pc) {
+			width: 100%;
+		}
+		@media screen and (min-width:$full) {	
+		}
+	}
+	&__greyLine {
+		margin-top: 16px;
+		width: 100%;
+		height: 2px;
+		background: #F3ECEC;
+		flex-shrink: 0;
+	}
+	&__tableContent {		
+		@media screen and (min-width:$mobile) {
+		}
+		@media screen and (min-width:$pc) {
+		}
+		@media screen and (min-width:$full) {	
+		}
+	}
+	&__tableItem {
+		display: flex;
+		margin-top: 14px;
+		gap: 15px;
+		align-items: center;
+		width: 100%;
+	}
+	&__itemImg {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: fit-content;
+		justify-content: center;
+		img { 
+			object-fit: cover;
+			width: 28px;
+			height: auto;
+			vertical-align: middle;
+			@media screen and (min-width:$mobile) {
+				width: 54px;
+			}
+		}
+		@media screen and (min-width:$mobile) {
+			margin-right: 20px;
+		}
+		@media screen and (min-width:$pc) {
+			margin-right: 30px;
+		}
+		@media screen and (min-width:$full) {	
+			margin-right: 40px;
+		}
+	}
+	&__itemLink {
+		color: #3C88F9;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+		max-width: fit-content;
+		a {
+			text-decoration-line: underline;
+		}
+		@media screen and (min-width:$mobile) {
+			font-size: 14px;
+			margin-right: 20px;
+			width: 100px;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 16px;
+			margin-right: 30px;
+			width: 100%;
+		}
+		@media screen and (min-width:$full) {	
+			font-size: 20px;
+			margin-right: 40px;
+		}
+	}
+	&__itemLink a:hover {
+		text-decoration-line: none;
+	}
+	&__itemBeginDate {		
+		color: #212121;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 130%; /* 13px */
+		max-width: fit-content;
+		@media screen and (min-width:$mobile) {
+			font-size: 14px;		
+			margin-right: 20px;	
+			width: 92px;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 16px;
+			margin-right: 30px;
+			width: 100%;
+		}
+		@media screen and (min-width:$full) {	
+			font-size: 20px;
+			margin-right: 40px;
+		}
+	}
+	&__itemCost {
+		max-width: fit-content;
+		display: flex;
+		color: #212121;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 100%; /* 12px */
+		max-width: fit-content;
+		svg {
+			margin-left: 3px;
+			width: 14px;
+			height: 14px;
+			flex-shrink: 0;
+		}
+		@media screen and (min-width:$mobile) {
+			font-size: 18px;
+			margin-right: 20px;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 20px;
+			margin-right: 30px;
+		}
+		@media screen and (min-width:$full) {	
+			font-size: 24px;
+			margin-right: 40px;
+		}
+	}
+	&__itemEndDate {
+		color: #212121;
+		font-size: 10px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 130%; /* 13px */
+		max-width: fit-content;
+		@media screen and (min-width:$mobile) {
+			font-size: 14px;
+			margin-right: 20px;
+			width: 90px;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 16px;
+			margin-right: 30px;
+			width: 100%;
+		}
+		@media screen and (min-width:$full) {	
+			font-size: 20px;
+			margin-right: 40px;
+		}
+	}
+	&__itemExtend {
+		margin-right: -60px;
+		max-width: fit-content;
+		@media screen and (min-width:$mobile) {
+		}
+		@media screen and (min-width:$pc) {
+		}
+		@media screen and (min-width:$full) {	
+		}
+	}	
+	.offeringExtendBtn {
+		color: #3C88F9;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		text-decoration-line: underline;
+		@media screen and (min-width:$mobile) {
+			font-size: 14px;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 16px;
+		}
+		@media screen and (min-width:$full) {	
+			font-size: 20px;
+		}
+	}
+	.offeringExtendBtn:hover {
+		text-decoration-line: none;
 	}
 }
