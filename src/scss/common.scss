@@ -360,8 +360,8 @@
 }
 
 // Чекбокс слайдер
-/* The switch - the box around the slider */
-.switch {
+/* The switchCheckbox - the box around the slider */
+.switchCheckbox {
 	position: relative;
 	display: inline-block;
 	width: 2rem;
@@ -379,7 +379,7 @@
 }
 
 /* Hide default HTML checkbox */
-.switch input {
+.switchCheckbox input {
 	opacity: 0;
 	width: 0;
 	height: 0;
@@ -422,6 +422,9 @@
 
 input:checked + .slider {
 	background-color: #F5BFB4;
+}
+input:checked ~ .profileSettings__sectionTitle {
+	color: #DB4A2A;
 }
 input:focus + .slider {
 	box-shadow: 0 0 0.0625rem #F3ECEC;

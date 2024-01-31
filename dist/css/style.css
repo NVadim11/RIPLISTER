@@ -2321,9 +2321,9 @@ label {
   height: 0.125rem;
 }
 
-/* The switch - the box around the slider */
+/* The switchCheckbox - the box around the slider */
 
-.switch {
+.switchCheckbox {
   position: relative;
   display: inline-block;
   width: 2rem;
@@ -2332,7 +2332,7 @@ label {
 
 /* Hide default HTML checkbox */
 
-.switch input {
+.switchCheckbox input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -2364,6 +2364,10 @@ label {
 
 input:checked + .slider {
   background-color: #F5BFB4;
+}
+
+input:checked ~ .profileSettings__sectionTitle {
+  color: #DB4A2A;
 }
 
 input:focus + .slider {
@@ -6853,7 +6857,7 @@ input:checked + .slider:before {
   margin-top: 0.625rem;
 }
 
-.settings {
+.profileSettings {
   border-radius: 1.25rem;
   background: #FFF8F6;
   margin: 2.75rem 0 0 0;
@@ -6868,7 +6872,7 @@ input:checked + .slider:before {
           flex-direction: column;
 }
 
-.settings__sectionTitle {
+.profileSettings__sectionTitle {
   color: #000;
   font-size: 1rem;
   font-style: normal;
@@ -6877,7 +6881,7 @@ input:checked + .slider:before {
   /* 1rem */
 }
 
-.settings__sectionDescr {
+.profileSettings__sectionDescr {
   color: #7D7D7D;
   font-size: 0.875rem;
   font-style: normal;
@@ -6885,7 +6889,7 @@ input:checked + .slider:before {
   line-height: normal;
 }
 
-.settings__notifications {
+.profileSettings__notifications {
   color: #000;
   font-size: 1.125rem;
   font-style: normal;
@@ -6901,7 +6905,7 @@ input:checked + .slider:before {
   margin-top: 1.375rem;
 }
 
-.settings__notificationsSettings {
+.profileSettings__notificationsSettings {
   color: #000;
   font-size: 1.125rem;
   font-style: normal;
@@ -6917,7 +6921,7 @@ input:checked + .slider:before {
   margin-top: 2.75rem;
 }
 
-.settings__updateSettings {
+.profileSettings__updateSettings {
   color: #000;
   font-size: 1.125rem;
   font-style: normal;
@@ -6933,9 +6937,9 @@ input:checked + .slider:before {
   margin-top: 2.75rem;
 }
 
-.settings__firstSection,
-.settings__secondSection,
-.settings__thirdSection {
+.profileSettings__firstSection,
+.profileSettings__secondSection,
+.profileSettings__thirdSection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6947,15 +6951,15 @@ input:checked + .slider:before {
   width: 100%;
 }
 
-.settings__emailSwitch,
-.settings__phoneSwitch,
-.settings__commentariesSwitch,
-.settings__transactionsSwitch,
-.settings__offeringSwitch,
-.settings__followersSwitch,
-.settings__newsSwitch,
-.settings__blogSwitch,
-.settings__othersSwitch {
+.profileSettings__emailSwitch,
+.profileSettings__phoneSwitch,
+.profileSettings__commentariesSwitch,
+.profileSettings__transactionsSwitch,
+.profileSettings__offeringSwitch,
+.profileSettings__followersSwitch,
+.profileSettings__newsSwitch,
+.profileSettings__blogSwitch,
+.profileSettings__othersSwitch {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6969,15 +6973,15 @@ input:checked + .slider:before {
   margin-top: 1.125rem;
 }
 
-.settings__emailSwitch label,
-.settings__phoneSwitch label,
-.settings__commentariesSwitch label,
-.settings__transactionsSwitch label,
-.settings__offeringSwitch label,
-.settings__followersSwitch label,
-.settings__newsSwitch label,
-.settings__blogSwitch label,
-.settings__othersSwitch label {
+.profileSettings__emailSwitch label,
+.profileSettings__phoneSwitch label,
+.profileSettings__commentariesSwitch label,
+.profileSettings__transactionsSwitch label,
+.profileSettings__offeringSwitch label,
+.profileSettings__followersSwitch label,
+.profileSettings__newsSwitch label,
+.profileSettings__blogSwitch label,
+.profileSettings__othersSwitch label {
   margin: 0;
 }
 
@@ -7907,7 +7911,7 @@ input:checked + .slider:before {
     padding: 2.875rem 2.25rem 2.125rem 2.25rem;
   }
 
-  .switch {
+  .switchCheckbox {
     height: 1.25rem;
   }
 
@@ -8281,28 +8285,28 @@ input:checked + .slider:before {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  .settings {
+  .profileSettings {
     margin: 2.3125rem 0 1.625rem 0;
   }
 
-  .settings__sectionTitle {
+  .profileSettings__sectionTitle {
     font-size: 1.125rem;
   }
 
-  .settings__sectionDescr {
+  .profileSettings__sectionDescr {
     margin-top: 0.3125rem;
   }
 
-  .settings__notifications {
+  .profileSettings__notifications {
     margin-top: 1.6875rem;
     font-size: 1.25rem;
   }
 
-  .settings__notificationsSettings {
+  .profileSettings__notificationsSettings {
     font-size: 1.25rem;
   }
 
-  .settings__updateSettings {
+  .profileSettings__updateSettings {
     font-size: 1.25rem;
   }
 }
@@ -9164,7 +9168,7 @@ input:checked + .slider:before {
     padding: 1.875rem 5rem;
   }
 
-  .switch {
+  .switchCheckbox {
     height: 1.25rem;
   }
 
@@ -9321,37 +9325,37 @@ input:checked + .slider:before {
     font-size: 0.875rem;
   }
 
-  .settings {
+  .profileSettings {
     font-size: 1.25rem;
     margin: 1.75rem 0 2.625rem 0;
   }
 
-  .settings__sectionTitle {
+  .profileSettings__sectionTitle {
     font-size: 1.25rem;
   }
 
-  .settings__sectionDescr {
+  .profileSettings__sectionDescr {
     margin-top: 0.5rem;
   }
 
-  .settings__notifications {
+  .profileSettings__notifications {
     margin-top: 1.9375rem;
     font-size: 1.5rem;
   }
 
-  .settings__notificationsSettings {
+  .profileSettings__notificationsSettings {
     margin-top: 3.875rem;
     font-size: 1.5rem;
   }
 
-  .settings__updateSettings {
+  .profileSettings__updateSettings {
     margin-top: 3.875rem;
     font-size: 1.5rem;
   }
 
-  .settings__firstSection,
-  .settings__secondSection,
-  .settings__thirdSection {
+  .profileSettings__firstSection,
+  .profileSettings__secondSection,
+  .profileSettings__thirdSection {
     width: 65%;
   }
 }
@@ -9505,7 +9509,7 @@ input:checked + .slider:before {
     line-height: normal;
   }
 
-  .switch {
+  .switchCheckbox {
     height: 2rem;
     width: 3.125rem;
   }
@@ -10405,35 +10409,35 @@ input:checked + .slider:before {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 
-  .settings {
+  .profileSettings {
     font-size: 1.5rem;
     margin: 1.6875rem 0 3.375rem 0;
   }
 
-  .settings__sectionTitle {
+  .profileSettings__sectionTitle {
     font-size: 1.5rem;
   }
 
-  .settings__sectionDescr {
+  .profileSettings__sectionDescr {
     margin-top: 0.75rem;
   }
 
-  .settings__notifications {
+  .profileSettings__notifications {
     margin-top: 2.8125rem;
     font-size: 2rem;
   }
 
-  .settings__notificationsSettings {
+  .profileSettings__notificationsSettings {
     font-size: 2rem;
   }
 
-  .settings__updateSettings {
+  .profileSettings__updateSettings {
     font-size: 2rem;
   }
 
-  .settings__firstSection,
-  .settings__secondSection,
-  .settings__thirdSection {
+  .profileSettings__firstSection,
+  .profileSettings__secondSection,
+  .profileSettings__thirdSection {
     margin-top: 3.5rem;
     width: 55%;
   }
