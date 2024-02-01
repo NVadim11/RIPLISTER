@@ -165,7 +165,7 @@
 	&__tab-content {
 
 	}
-	&__personals-item {
+	&__tab-footer {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -176,7 +176,7 @@
 			padding: 2.1875rem 0 7.5rem 0;
 		}
 	}
-	&__personals-supportBtn {
+	&__tab-supportBtn {
 		display: flex;
 		align-items: center;
 		color: var(--text-color-blue);
@@ -195,7 +195,7 @@
 			}
 		}
 	}
-	&__personals-supportBtn:hover {
+	&__tab-supportBtn:hover {
 		cursor: pointer;
 		text-decoration-line: none;
 		svg { 
@@ -205,6 +205,37 @@
 						fill: var(--white-color); 
 				}
 		}   
+	}
+	&__tab-id {
+		display: flex;
+		align-items: center;
+		color: #000;
+		font-size: 1.125rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		margin: 0 0 1.25rem 0;
+		@media screen and (min-width:$mobile) {
+			font-size: 1.25rem;
+			margin: 0;
+			order: 2;
+		}
+		span {
+			color: #7D7D7D;
+			font-size: 1.125rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			margin: 0 0.625rem 0 0;
+			@media screen and (min-width:$mobile) {
+				margin: 0 0.625rem 0 0;
+			}
+		}
+	}
+	&__lineOrange {
+		height: 0.0625rem;
+		margin: 1.25rem 0 0 0;
+		background-color: var(--orange-color);
 	}
 	&__field {
 		display: flex;
@@ -380,32 +411,6 @@
 	&__field:last-child {
 		margin: 0 0 0 0;
 	}
-	&__personals-field {
-		display: flex;
-		align-items: center;
-		color: #000;
-		font-size: 1.125rem;
-		font-style: normal;
-		font-weight: 600;
-		line-height: normal;
-		margin: 0 0 1.25rem 0;
-		@media screen and (min-width:$mobile) {
-			font-size: 1.25rem;
-			margin: 0;
-			order: 2;
-		}
-		span {
-			color: #7D7D7D;
-			font-size: 1.125rem;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-			margin: 0 0.625rem 0 0;
-			@media screen and (min-width:$mobile) {
-				margin: 0 0.625rem 0 0;
-			}
-		}
-	}
 	&__fieldSocials {
 		display: flex;
 		gap: 0.5rem;
@@ -416,11 +421,6 @@
 				height: 1.875rem;
 			}
 		}
-	}
-	&__lineOrange {
-		height: 0.0625rem;
-		margin: 1.25rem 0 0 0;
-		background-color: var(--orange-color);
 	}
 	&__passChange {
 		padding: 1.875rem 0 2.5rem 0;

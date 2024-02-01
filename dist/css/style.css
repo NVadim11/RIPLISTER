@@ -5803,7 +5803,7 @@ input:checked + .sliderCheckbox:before {
   display: none;
 }
 
-.profile__personals-item {
+.profile__tab-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5817,7 +5817,7 @@ input:checked + .sliderCheckbox:before {
   padding: 1.5625rem 0 7.5rem 0;
 }
 
-.profile__personals-supportBtn {
+.profile__tab-supportBtn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5835,22 +5835,52 @@ input:checked + .sliderCheckbox:before {
           order: 1;
 }
 
-.profile__personals-supportBtn svg {
+.profile__tab-supportBtn svg {
   margin: 0 0.5rem 0 0;
 }
 
-.profile__personals-supportBtn:hover {
+.profile__tab-supportBtn:hover {
   cursor: pointer;
   text-decoration-line: none;
 }
 
-.profile__personals-supportBtn:hover svg {
+.profile__tab-supportBtn:hover svg {
   border-radius: 3.125rem;
   background-color: var(--text-color-blue);
 }
 
-.profile__personals-supportBtn:hover svg path {
+.profile__tab-supportBtn:hover svg path {
   fill: var(--white-color);
+}
+
+.profile__tab-id {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0 0 1.25rem 0;
+}
+
+.profile__tab-id span {
+  color: #7D7D7D;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0 0.625rem 0 0;
+}
+
+.profile__lineOrange {
+  height: 0.0625rem;
+  margin: 1.25rem 0 0 0;
+  background-color: var(--orange-color);
 }
 
 .profile__field {
@@ -6049,41 +6079,11 @@ input:checked + .sliderCheckbox:before {
   margin: 0 0 0 0;
 }
 
-.personals__personals-field {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #000;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  margin: 0 0 1.25rem 0;
-}
-
-.personals__personals-field span {
-  color: #7D7D7D;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0 0.625rem 0 0;
-}
-
 .personals__fieldSocials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 0.5rem;
-}
-
-.personals__lineOrange {
-  height: 0.0625rem;
-  margin: 1.25rem 0 0 0;
-  background-color: var(--orange-color);
 }
 
 .personals__passChange {
@@ -8296,7 +8296,7 @@ input:checked + .sliderCheckbox:before {
     margin: 0 0.625rem 0 0;
   }
 
-  .profile__personals-item {
+  .profile__tab-footer {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -8307,10 +8307,22 @@ input:checked + .sliderCheckbox:before {
     padding: 2.1875rem 0 7.5rem 0;
   }
 
-  .profile__personals-supportBtn svg {
+  .profile__tab-supportBtn svg {
     margin: 0 1.25rem 0 0;
     width: 1.875rem;
     height: 1.875rem;
+  }
+
+  .profile__tab-id {
+    font-size: 1.25rem;
+    margin: 0;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .profile__tab-id span {
+    margin: 0 0.625rem 0 0;
   }
 
   .profile__field {
@@ -8384,18 +8396,6 @@ input:checked + .sliderCheckbox:before {
 
   .personals__field span {
     margin: 0 0 0.625rem 0;
-  }
-
-  .personals__personals-field {
-    font-size: 1.25rem;
-    margin: 0;
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-  }
-
-  .personals__personals-field span {
-    margin: 0 0.625rem 0 0;
   }
 
   .personals__fieldSocials {
