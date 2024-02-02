@@ -55,6 +55,8 @@ flsFunctions.spollers();
 Сніппет (HTML): tabs
 */
 flsFunctions.tabs();
+flsFunctions.profileTabs();
+// flsFunctions.billTabs();
 
 /*
 Модуль "Показати ще"

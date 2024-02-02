@@ -5777,6 +5777,16 @@ input:checked + .sliderCheckbox:before {
 .profile__tab-title {
   margin: 3.4375rem 0 0 0;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .profile__tab-title h4 {
@@ -5787,6 +5797,50 @@ input:checked + .sliderCheckbox:before {
   font-weight: 600;
   line-height: 110%;
   /* 2.2rem */
+}
+
+.profile__tab-title span {
+  color: #171717;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 1.125rem;
+}
+
+.profile__bill-box {
+  margin-top: 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile__bill-box span {
+  margin-top: 0;
+  color: #171717;
+  text-align: right;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  /* 33.6px */
+}
+
+.profile__bill-box svg {
+  margin-left: 0.625rem;
+}
+
+.profile__bill-link {
+  margin-top: 0.75rem;
+  color: #3C88F9;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
 }
 
 .profile__tab-titleCount {
@@ -6782,15 +6836,6 @@ input:checked + .sliderCheckbox:before {
   cursor: pointer;
 }
 
-.profileLinks ._tab-active {
-  color: #171717;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  border-bottom: 0.125rem solid #E55738;
-}
-
 .profileLinks__tab {
   margin-top: 2.4375rem;
 }
@@ -6860,6 +6905,137 @@ input:checked + .sliderCheckbox:before {
   font-weight: 400;
   line-height: normal;
   margin-top: 0.625rem;
+}
+
+.profileLinks ._profile-active {
+  color: #171717;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-bottom: 0.125rem solid #E55738;
+}
+
+.profileBill {
+  margin-top: 1.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.9375rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.profileBill__item {
+  padding: 1.25rem 0.625rem;
+  border-radius: 1.25rem;
+  background: #FFF8F6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.9375rem;
+}
+
+.profileBill__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.9375rem;
+}
+
+.profileBill span {
+  text-align: center;
+  color: #7D7D7D;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  /* 14px */
+}
+
+.profileBill__balance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profileBill__balance span {
+  color: #2F2F2F;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  /* 16px */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profileBill__balance svg {
+  margin-left: 0.625rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.profileBill__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profileBill__card span {
+  color: #212121;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  /* 16px */
+}
+
+.profileBill__card svg {
+  margin-left: 0.625rem;
+}
+
+.profileBill__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.profileBill__btn button {
+  padding: 0.8125rem 1.75rem;
+  border-radius: 1.25rem;
+  background: var(--orange-color);
+  color: #FFF;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .profileSettings {
@@ -8220,6 +8396,10 @@ input:checked + .sliderCheckbox:before {
     gap: 1.25rem;
   }
 
+  .profile__tab-title span {
+    margin-top: 0;
+  }
+
   .profile__tab-title {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8227,6 +8407,22 @@ input:checked + .sliderCheckbox:before {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .profile__bill-box {
+    margin-top: 0;
+  }
+
+  .profile__bill-link {
+    font-size: 1rem;
+    margin-top: 0;
   }
 
   .profile__editBox {
@@ -8451,13 +8647,63 @@ input:checked + .sliderCheckbox:before {
     padding: 0 0 1.5rem 0;
   }
 
-  .profileLinks ._tab-active {
-    font-size: 1.25rem;
-  }
-
   .profileLinks__tab-itemWrapper {
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .profileLinks ._profile-active {
+    font-size: 1.25rem;
+  }
+
+  .profileBill__item {
+    gap: 1.875rem;
+    padding: 1.5625rem 0.9375rem;
+  }
+
+  .profileBill__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .profileBill span {
+    font-size: 1rem;
+    text-align: start;
+  }
+
+  .profileBill__balance svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .profileBill__balance {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    gap: 1.875rem;
+  }
+
+  .profileBill__card {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .profileBill__btn {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
   }
 
   .profileSettings {
@@ -9496,6 +9742,10 @@ input:checked + .sliderCheckbox:before {
     font-size: 2.25rem;
   }
 
+  .profile__tab-title span {
+    font-size: 1.25rem;
+  }
+
   .profile__editBox {
     font-size: 1rem;
   }
@@ -9554,10 +9804,6 @@ input:checked + .sliderCheckbox:before {
     padding: 0 2.1875rem 0 2.1875rem;
   }
 
-  .profileLinks ._tab-active {
-    font-size: 1.5rem;
-  }
-
   .profileLinks__tab {
     margin-top: 1.875rem;
   }
@@ -9582,6 +9828,38 @@ input:checked + .sliderCheckbox:before {
 
   .profileLinks__tab-dates {
     font-size: 0.875rem;
+  }
+
+  .profileLinks ._profile-active {
+    font-size: 1.5rem;
+  }
+
+  .profileBill__item {
+    padding: 2.1875rem;
+    border-radius: 1.875rem;
+  }
+
+  .profileBill span {
+    font-size: 1.125rem;
+  }
+
+  .profileBill__balance span {
+    font-size: 1.25rem;
+  }
+
+  .profileBill__card span {
+    font-size: 1.25rem;
+  }
+
+  .profileBill__card svg {
+    width: 3.125rem;
+    height: 1rem;
+  }
+
+  .profileBill__btn button {
+    font-size: 1.25rem;
+    padding: 1.4375rem 2.875rem;
+    border-radius: 1.875rem;
   }
 
   .profileSettings {
@@ -10711,6 +10989,23 @@ input:checked + .sliderCheckbox:before {
     font-size: 1.25rem;
   }
 
+  .profile__tab-title span {
+    font-size: 1.5rem;
+  }
+
+  .profile__bill-box span {
+    font-size: 1.875rem;
+  }
+
+  .profile__bill-box svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .profile__bill-link {
+    font-size: 1.25rem;
+  }
+
   .profile__editBox {
     font-size: 1.25rem;
   }
@@ -10718,6 +11013,18 @@ input:checked + .sliderCheckbox:before {
   .profileLinks__tab-itemWrapper {
     -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .profileBill span {
+    font-size: 1.5rem;
+  }
+
+  .profileBill__balance span {
+    font-size: 1.5rem;
+  }
+
+  .profileBill__card span {
+    font-size: 1.5rem;
   }
 
   .profileSettings {

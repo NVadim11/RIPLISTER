@@ -109,6 +109,9 @@
 	&__tab-title {
 		margin: 3.4375rem 0 0 0;
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		h4 {
 			color: #171717;
 			text-align: center;
@@ -120,12 +123,74 @@
 				font-size: 2.25rem;
 			}
 		}
+		span {
+			color: #171717;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			margin-top: 1.125rem;
+			@media screen and (min-width:$mobile) {
+				margin-top: 0;
+			}
+			@media screen and (min-width:$pc) {
+				font-size: 1.25rem;
+			}
+			@media screen and (min-width:$full) {
+				font-size: 1.5rem;
+			}
+		}
 		@media screen and (min-width:$mobile) {
 			display: flex;
 			justify-content: space-between;
+			flex-direction: row;
+			align-items: center;
 		}
 		@media screen and (min-width:$tablet) {
 			margin: 0;
+		}
+	}
+	&__bill-box {
+		margin-top: 0.75rem;
+		display: flex;
+		align-items: center;
+		span {
+			margin-top: 0;
+			color: #171717;
+			text-align: right;
+			font-size: 1.5rem;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 140%; /* 33.6px */
+			@media screen and (min-width:$full) {
+				font-size: 1.875rem;
+			}
+		}
+		svg {
+			margin-left: 0.625rem;
+			@media screen and (min-width:$full) {
+				width: 2.5rem;
+				height: 2.5rem;
+			}
+		}
+		@media screen and (min-width:$mobile) {
+			margin-top: 0;
+		}
+	}
+	&__bill-link {
+		margin-top: 0.75rem;
+		color: #3C88F9;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		text-decoration-line: underline;
+		@media screen and (min-width:$mobile) {
+			font-size: 1rem;
+			margin-top: 0;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.25rem;
 		}
 	}
 	&__tab-titleCount {
@@ -1001,20 +1066,6 @@
 			padding: 0 0 1.5rem 0;
 		}
 	}
-	._tab-active {
-		color: #171717;
-		font-size: 1.125rem;
-		font-style: normal;
-		font-weight: 600;
-		line-height: normal;
-		border-bottom: 0.125rem solid #E55738;
-		@media screen and (min-width:$mobile) {
-			font-size: 1.25rem;
-		}
-		@media screen and (min-width:$pc) {
-			font-size: 1.5rem;
-		}
-	}
 	&__tab {
 		margin-top: 2.4375rem;
 		@media screen and (min-width:$pc) {
@@ -1094,6 +1145,169 @@
 			font-size: 0.875rem;
 		}
 	}
+	._profile-active {
+		color: #171717;
+		font-size: 1.125rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		border-bottom: 0.125rem solid #E55738;
+		@media screen and (min-width:$mobile) {
+			font-size: 1.25rem;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+// bill
+.profileBill {
+	margin-top: 1.875rem;
+	display: flex;
+	gap: 0.9375rem;
+	flex-direction: column;
+	&__item	{
+		padding: 1.25rem 0.625rem;
+		border-radius: 1.25rem;
+		background: #FFF8F6;
+		display: flex;
+		flex-direction: column;
+		gap: 0.9375rem;
+		@media screen and (min-width:$mobile) {
+			gap: 1.875rem;
+			padding: 1.5625rem 0.9375rem;
+		}
+		@media screen and (min-width:$pc) {
+			padding: 2.1875rem;
+			border-radius: 1.875rem;
+		}
+	}
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 0.9375rem;
+		@media screen and (min-width:$mobile) {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+	span {
+		text-align: center;
+		color: #7D7D7D;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%; /* 14px */
+		@media screen and (min-width:$mobile) {
+			font-size: 1rem;
+			text-align: start;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 1.125rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.5rem;
+		}
+	}
+	&__balance {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		span {
+			color: #2F2F2F;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 100%; /* 16px */
+			display: flex;
+			align-items: center;
+			@media screen and (min-width:$pc) {
+				font-size: 1.25rem;
+			}
+			@media screen and (min-width:$full) {
+				font-size: 1.5rem;
+			}
+		}
+		svg {
+			margin-left: 0.625rem;
+			width: 1.5rem;
+			height: 1.5rem;
+			@media screen and (min-width:$mobile) {
+				width: 2rem;
+				height: 2rem;
+			}
+		}
+		@media screen and (min-width:$mobile) {
+			justify-content: flex-start;
+			order: 1;
+			gap: 1.875rem;
+		}
+	}
+	&__card {
+		display: flex;
+		align-items: center;
+		span {
+			color: #212121;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 100%; /* 16px */
+			@media screen and (min-width:$pc) {
+				font-size: 1.25rem;
+			}
+			@media screen and (min-width:$full) {
+				font-size: 1.5rem;
+			}
+		}
+		svg {
+			margin-left: 0.625rem;
+			@media screen and (min-width:$pc) {
+				width: 3.125rem;
+				height: 1rem;
+			}
+		}
+		@media screen and (min-width:$mobile) {
+			order: 2;
+		}
+	}
+	&__btn {
+		display: flex;
+		justify-content: center;
+		button {
+			padding: 0.8125rem 1.75rem;
+			border-radius: 1.25rem;
+			background: var(--orange-color);
+			color: #FFF;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 600;
+			line-height: normal;
+			@media screen and (min-width:$pc) {
+				font-size: 1.25rem;
+				padding: 1.4375rem 2.875rem;
+				border-radius: 1.875rem;;
+			}
+		}
+		@media screen and (min-width:$mobile) {
+			order: 3;
+		}
+	}
+	// ._bill-active {
+	// 	color: #171717;
+	// 	font-size: 1.125rem;
+	// 	font-style: normal;
+	// 	font-weight: 600;
+	// 	line-height: normal;
+	// 	border-bottom: 0.125rem solid #E55738;
+	// 	@media screen and (min-width:$mobile) {
+	// 		font-size: 1.25rem;
+	// 	}
+	// 	@media screen and (min-width:$pc) {
+	// 		font-size: 1.5rem;
+	// 	}
+	// }
 }
 
 // Settings
