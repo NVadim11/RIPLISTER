@@ -7394,6 +7394,12 @@ input:checked + .sliderCheckbox:before {
   text-decoration-line: underline;
 }
 
+.policyLineOrange {
+  background: #F5BFB4;
+  height: 0.125rem;
+  margin-bottom: 3.0625rem;
+}
+
 .menu {
   z-index: 100;
   position: fixed;
@@ -9178,6 +9184,21 @@ input:checked + .sliderCheckbox:before {
     margin: 0;
     top: 0;
     right: 0;
+  }
+
+  .policy__container {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    margin-bottom: 12.5rem;
+  }
+
+  .policy__content {
+    max-width: 65%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    margin-bottom: 12.5rem;
   }
 }
 
