@@ -189,9 +189,9 @@ body::after {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 0 5.3125rem;
 		border-radius: 1.875rem;
-		@media screen and (min-width: $pc) {
+		@media screen and (min-width: $mobile) {
+			padding: 0 85px;
 		}
 		form {
 			margin-top: 1.0625rem;
@@ -217,16 +217,16 @@ body::after {
 	
 	&__close {
 		position: absolute;
-		right: 2.8125rem;
-		top: 2.1875rem;
+		right: 15px;
+		top: 15px;
 		svg {
 			rect {
 				transition: .25s;
 			}
 		}
 		@media screen and (min-width: $mobile) {
-			right: 0.9375rem;
-			top: 0.9375rem;
+			right: 15px;
+			top: 15px;
 		}
 	}
 	&__title {
@@ -272,31 +272,35 @@ body::after {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		@media screen and (min-width: $mobile) {
+			width: 100%;
+		}
 		@media screen and (min-width: $pc) {
 			text-align: start;
 			align-items: start;
-			width: 100%;
 		}
 	}
 	&__registerFormContent {
 		display: none;
 		flex-direction: column;
 		align-items: center;
+		@media screen and (min-width: $mobile) {
+			width: 100%;
+		}
 		@media screen and (min-width: $pc) {
 			text-align: start;
 			align-items: start;
-			width: 100%;
 		}
 	}
 	&__loginForm {	
 		display: flex;
-		@media screen and (min-width: $pc) {
+		@media screen and (min-width: $mobile) {
 			width: 100%;
 		}
 	}
 	&__registerForm {
 		display: flex;
-		@media screen and (min-width: $pc) {
+		@media screen and (min-width: $mobile) {
 			width: 100%;
 		}
 	}
@@ -308,8 +312,9 @@ body::after {
 		font-style: normal;
 		font-weight: 400;
 		line-height: 140%; /* 25.2px */
+		width: 22.1875rem;
 		@media screen and (min-width: $pc) {
-			max-width: 31.25rem;
+			width: 31.25rem;
 			font-size: 1.25rem;
 			text-align: start;
 		}
@@ -322,8 +327,9 @@ body::after {
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
+		width: 22.1875rem;
 		@media screen and (min-width: $pc) {
-			max-width: 34.375rem;
+			width: 31.25rem;
 			text-align: start;
 		}
 	}
@@ -335,9 +341,9 @@ body::after {
 		border-radius: 1.25rem;
 		border: 0.0625rem solid #EC6041;
 		background: #FFF;
-		width: 16.25rem;
+		width: 260px;
 		padding: 1.0625rem 0rem 1.0625rem 1.875rem;
-		@media screen and (min-width: $pc) {
+		@media screen and (min-width: $mobile) {
 			width: 100%;
 		}
 	}
@@ -491,7 +497,7 @@ body::after {
 	&__showPass, &__showRepeatPass, &__showLoginPass {
 		position: absolute;
 		z-index: 1;
-		right: 60px;
+		right: 3.75rem;
 		top: 1.75rem;
 		svg {
 			z-index: 1;

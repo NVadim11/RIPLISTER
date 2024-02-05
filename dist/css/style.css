@@ -1010,7 +1010,6 @@ label {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 5.3125rem;
   border-radius: 1.875rem;
 }
 
@@ -1047,8 +1046,8 @@ label {
 
 .popupAuthForm__close {
   position: absolute;
-  right: 2.8125rem;
-  top: 2.1875rem;
+  right: 15px;
+  top: 15px;
 }
 
 .popupAuthForm__close svg rect {
@@ -1153,6 +1152,7 @@ label {
   font-weight: 400;
   line-height: 140%;
   /* 25.2px */
+  width: 22.1875rem;
 }
 
 .popupAuthForm__passTip {
@@ -1163,6 +1163,7 @@ label {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  width: 22.1875rem;
 }
 
 .popupAuthForm__passRecoveryDescr {
@@ -1174,7 +1175,7 @@ label {
   border-radius: 1.25rem;
   border: 0.0625rem solid #EC6041;
   background: #FFF;
-  width: 16.25rem;
+  width: 260px;
   padding: 1.0625rem 0rem 1.0625rem 1.875rem;
 }
 
@@ -1362,7 +1363,7 @@ label {
 .popupAuthForm__showLoginPass {
   position: absolute;
   z-index: 1;
-  right: 60px;
+  right: 3.75rem;
   top: 1.75rem;
 }
 
@@ -8236,9 +8237,33 @@ input:checked + .sliderCheckbox:before {
 }
 
 @media screen and (min-width: 47.99875em) {
+  .popupAuthForm__content {
+    padding: 0 85px;
+  }
+
   .popupAuthForm__close {
-    right: 0.9375rem;
-    top: 0.9375rem;
+    right: 15px;
+    top: 15px;
+  }
+
+  .popupAuthForm__loginFormContent {
+    width: 100%;
+  }
+
+  .popupAuthForm__registerFormContent {
+    width: 100%;
+  }
+
+  .popupAuthForm__loginForm {
+    width: 100%;
+  }
+
+  .popupAuthForm__registerForm {
+    width: 100%;
+  }
+
+  .popupAuthForm__input {
+    width: 100%;
   }
 
   .promoPopup__about {
@@ -9469,7 +9494,6 @@ input:checked + .sliderCheckbox:before {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
-    width: 100%;
   }
 
   .popupAuthForm__registerFormContent {
@@ -9477,33 +9501,20 @@ input:checked + .sliderCheckbox:before {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
-    width: 100%;
-  }
-
-  .popupAuthForm__loginForm {
-    width: 100%;
-  }
-
-  .popupAuthForm__registerForm {
-    width: 100%;
   }
 
   .popupAuthForm__loginFormDescr,
   .popupAuthForm__registerFormDescr,
   .popupAuthForm__successDescr,
   .popupAuthForm__passRecoveryDescr {
-    max-width: 31.25rem;
+    width: 31.25rem;
     font-size: 1.25rem;
     text-align: start;
   }
 
   .popupAuthForm__passTip {
-    max-width: 34.375rem;
+    width: 31.25rem;
     text-align: start;
-  }
-
-  .popupAuthForm__input {
-    width: 100%;
   }
 
   .popupAuthForm__btnField {
