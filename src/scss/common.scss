@@ -359,6 +359,89 @@
 	height: 0.125rem;
 }
 
+// Форма контакта
+.contactForm {
+	display: flex;
+	flex-direction: column;
+	background: #fff3ed;
+	&__form-title {
+		margin-top: 47px;
+		font-family: var(--font-family);
+		font-weight: 600;
+		font-size: 32px;
+		text-align: center;
+		color: #171717;
+	}
+	&__form-descr {
+		margin-top: 17px;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 140%;
+		text-align: center;
+		color: #171717;
+	}
+	&__form-inputs {
+
+	}
+	.contactsForm {
+		margin-top: 22px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+	&__form-input {
+		margin-top: 14px;
+		border: 1px solid #ec6041;
+		border-radius: 20px;
+		width: 314px;
+		height: 54px;
+		background: #fff;
+	}
+	&__form-select {
+		margin-top: 1.6875rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		label {
+			font-weight: 700;
+			font-size: 18px;
+			color: #000;
+			margin-right: 130px;
+		}
+	}
+	&__formSelect {
+	}
+	&__form-textarea {
+		display: flex;
+	}
+	&__formTextarea {
+		margin-top: 15px;
+		border: 1px solid #ec6041;
+		border-radius: 20px;
+		width: 314px;
+		height: 152px;
+		background: #fff;
+		font-weight: 400;
+		font-size: 16px;
+		color: #000;
+	}
+	&__form-button {
+		display: flex;
+		align-items: center;
+	}
+	&__formSubmit {
+		margin-top: 25px;
+		margin-bottom: 55px;
+		padding: 16px 75px;		
+		font-weight: 700;
+		font-size: 18px;
+		color: #fff;
+		border-radius: 20px;
+		background: linear-gradient(180deg, #e55738 0%, #db4a2a 100%);
+	}
+}
+
+
 // Чекбокс слайдер
 /* The switchCheckbox - the box around the sliderCheckbox */
 .switchCheckbox {
@@ -453,3 +536,4 @@ input:checked + .sliderCheckbox:before {
 .sliderCheckbox.roundCheckbox:before {
 	border-radius: 50%;
 }
+

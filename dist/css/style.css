@@ -2322,6 +2322,118 @@ label {
   height: 0.125rem;
 }
 
+.contactForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #fff3ed;
+}
+
+.contactForm__form-title {
+  margin-top: 47px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 32px;
+  text-align: center;
+  color: #171717;
+}
+
+.contactForm__form-descr {
+  margin-top: 17px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+  color: #171717;
+}
+
+.contactForm .contactsForm {
+  margin-top: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contactForm__form-input {
+  margin-top: 14px;
+  border: 1px solid #ec6041;
+  border-radius: 20px;
+  width: 314px;
+  height: 54px;
+  background: #fff;
+}
+
+.contactForm__form-select {
+  margin-top: 1.6875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contactForm__form-select label {
+  font-weight: 700;
+  font-size: 18px;
+  color: #000;
+  margin-right: 130px;
+}
+
+.contactForm__form-textarea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contactForm__formTextarea {
+  margin-top: 15px;
+  border: 1px solid #ec6041;
+  border-radius: 20px;
+  width: 314px;
+  height: 152px;
+  background: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+
+.contactForm__form-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contactForm__formSubmit {
+  margin-top: 25px;
+  margin-bottom: 55px;
+  padding: 16px 75px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e55738), to(#db4a2a));
+  background: linear-gradient(180deg, #e55738 0%, #db4a2a 100%);
+}
+
 /* The switchCheckbox - the box around the sliderCheckbox */
 
 .switchCheckbox {
@@ -4841,40 +4953,51 @@ input:checked + .sliderCheckbox:before {
 }
 
 .contacts__contact {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
-  display: block;
-  margin-left: 95px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .contacts__contact-title {
-  margin-top: 15.625rem;
-  font-size: 4rem;
+  margin-top: 4.5625rem;
   font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 110%;
+  text-align: center;
+  color: #171717;
 }
 
 .contacts__contact-descr {
-  max-width: 64rem;
-  margin-top: 2.8125rem;
-  font-size: 1.875rem;
+  margin-top: 1.375rem;
   font-weight: 400;
-  line-height: normal;
+  font-size: 1rem;
+  text-align: center;
+  color: #171717;
 }
 
 .contacts__contact-number {
-  margin-top: 4.6875rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 1.5rem;
+  margin-top: 1.6875rem;
+  text-align: center;
+  color: #171717;
+}
+
+.contacts__contact-number p {
   font-weight: 400;
-  line-height: normal;
+  font-size: 0.875rem;
+  line-height: 184%;
+  color: #171717;
 }
 
 .contacts__contact-number span {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: normal;
 }
@@ -4888,7 +5011,7 @@ input:checked + .sliderCheckbox:before {
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 1.5625rem;
-  margin-top: 1.25rem;
+  margin-top: 1.75rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -4904,8 +5027,8 @@ input:checked + .sliderCheckbox:before {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 4.375rem;
-  width: 4.375rem;
+  height: 3.375rem;
+  width: 3.375rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   border-radius: 1.875rem;
@@ -4933,71 +5056,22 @@ input:checked + .sliderCheckbox:before {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 2.8125rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  margin-top: 1.75rem;
+  margin-bottom: 5.25rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   gap: 0.9375rem;
-  font-size: 1.5rem;
   font-weight: 700;
-  line-height: normal;
-  text-decoration-line: underline;
+  font-size: 1rem;
+  line-height: 130%;
+  text-decoration: underline;
 }
 
 .contacts__contact-mail:hover {
   cursor: pointer;
   text-decoration-line: none;
-}
-
-.contacts__form {
-  background-color: var(--modal-background-color);
-  margin-top: 8.75rem;
-  padding-left: 13.75rem;
-}
-
-.contacts__form-title {
-  padding-top: 5.3125rem;
-  font-size: 3.25rem;
-  font-weight: 700;
-  line-height: 3.9375rem;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.contacts__form-descr {
-  padding-top: 2.5rem;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 2.125rem;
-  letter-spacing: 0em;
-  text-align: left;
-}
-
-.contacts .contactsForm {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  gap: 2.5rem;
-  margin-top: 4.0625rem;
-}
-
-.contacts__form-input {
-  padding: 2.5rem 28.125rem 3.125rem 4.375rem;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.5rem;
-  letter-spacing: 0em;
-  text-align: left;
-  border-radius: 2.5rem;
-  border: 1px solid var(--orange-color);
 }
 
 .blog__container {
@@ -8166,6 +8240,19 @@ input:checked + .sliderCheckbox:before {
     margin: 0 0 3.125rem 0;
   }
 
+  .contacts__contact-title {
+    margin-top: 7.1875rem;
+  }
+
+  .contacts__contact-descr {
+    max-width: 80%;
+    margin-top: 1.8125rem;
+  }
+
+  .contacts__contact-number {
+    margin-top: 2.3125rem;
+  }
+
   .blog__header {
     max-width: 31.25rem;
     -ms-flex-item-align: center;
@@ -8823,6 +8910,42 @@ input:checked + .sliderCheckbox:before {
   [class*=__container] {
     max-width: 70rem;
   }
+
+  .contacts__contact {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+
+  .contacts__contact-title {
+    margin-top: 8.4375rem;
+    font-weight: 600;
+    font-size: 3.125rem;
+    text-align: start;
+  }
+
+  .contacts__contact-descr {
+    margin-top: 1.6875rem;
+    font-size: 1.5rem;
+    text-align: start;
+  }
+
+  .contacts__contact-number {
+    margin-top: 0.6875rem;
+    text-align: start;
+  }
+
+  .contacts__contact-number p {
+    font-size: 1.25rem;
+  }
+
+  .contacts__contact-number span {
+    font-size: 1.5rem;
+  }
+
+  .contacts__contact-mail {
+    margin-bottom: 6.6875rem;
+  }
 }
 
 @media screen and (min-width: 79.99875em) {
@@ -9250,6 +9373,28 @@ input:checked + .sliderCheckbox:before {
 
   .textBlock li {
     font-size: 1.25rem;
+  }
+
+  .contacts__contact-descr {
+    max-width: 70%;
+  }
+
+  .contacts__contact-number {
+    margin-top: 3.0625rem;
+  }
+
+  .contacts__contact-number span {
+    font-size: 1.5rem;
+  }
+
+  .contacts__contact-icons .svg-container {
+    height: 4.375rem;
+    width: 4.375rem;
+  }
+
+  .contacts__contact-mail {
+    font-size: 1.25rem;
+    margin-top: 2.75rem;
   }
 
   .blog__container {
@@ -9975,6 +10120,35 @@ input:checked + .sliderCheckbox:before {
 
   .pagging__item {
     font-size: 2rem;
+  }
+
+  .contacts__contact-title {
+    margin-top: 12.625rem;
+    font-weight: 600;
+    font-size: 4rem;
+  }
+
+  .contacts__contact-descr {
+    max-width: 60%;
+    margin-top: 2.9375rem;
+    font-size: 1.875rem;
+  }
+
+  .contacts__contact-number {
+    margin-top: 4.8125rem;
+  }
+
+  .contacts__contact-number p {
+    font-size: 1.5rem;
+  }
+
+  .contacts__contact-number span {
+    font-size: 2rem;
+  }
+
+  .contacts__contact-mail {
+    font-size: 1.5rem;
+    margin-bottom: 8.8125rem;
   }
 
   .blog__container {

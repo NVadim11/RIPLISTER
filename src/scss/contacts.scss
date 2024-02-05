@@ -7,49 +7,136 @@
 	flex-direction: column;
 }
 &__contact {
+	align-items: center;
 	width: 100%;
-	display: block;
-	margin-left: 95px;
+	display: flex;
+	flex-direction: column;
+	@media (min-width: $tablet) {
+		align-items: start;
+	}
 }
 &__contact-title {
-	margin-top: 15.625rem;
+	margin-top: 4.5625rem;
+	font-weight: 600;
+	font-size: 2.25rem;
+	line-height: 110%;
+	text-align: center;
+	color: #171717;
+@media (min-width: $mobile) {
+	margin-top: 7.1875rem;
+}
+@media (min-width: $tablet) {
+	margin-top: 8.4375rem;
+	font-weight: 600;
+	font-size: 3.125rem;
+	text-align: start;
+}
+@media (min-width: $pc) {
+}
+@media (min-width: $full) {
+	margin-top: 12.625rem;
+	font-weight: 600;
 	font-size: 4rem;
-	font-weight: 600;	
+}
 }
 &__contact-descr {
-	max-width: 64rem;
-	margin-top: 2.8125rem;
-	font-size: 1.875rem;
+	margin-top: 1.375rem;
 	font-weight: 400;
-	line-height: normal;
+	font-size: 1rem;
+	text-align: center;
+	color: #171717;
+	@media (min-width: $mobile) {
+		max-width: 80%;
+		margin-top: 1.8125rem;
+	}
+	@media (min-width: $tablet) {
+		margin-top: 1.6875rem;
+		font-size: 1.5rem;
+		text-align: start;
+	}
+	@media (min-width: $pc) {
+		max-width: 70%;
+	}
+	@media (min-width: $full) {
+		max-width: 60%;
+		margin-top: 2.9375rem;
+		font-size: 1.875rem;
+	}
 }
 &__contact-number {
-	margin-top: 4.6875rem;
-	width: fit-content;
-	font-size: 1.5rem;
+	margin-top: 1.6875rem;
+	text-align: center;
+	color: #171717;
+	@media (min-width: $mobile) {
+		margin-top: 2.3125rem;
+	}
+	@media (min-width: $tablet) {
+		margin-top: 0.6875rem;
+		text-align: start;
+	}
+	@media (min-width: $pc) {
+		margin-top: 3.0625rem;
+	}
+	@media (min-width: $full) {
+	margin-top: 4.8125rem;
+	}
+p {	
 	font-weight: 400;
-	line-height: normal;
-span {
-	width: fit-content;
-	font-size: 2rem;
+	font-size: 0.875rem;
+	line-height: 184%;	
+	color: #171717;
+	@media (min-width: $mobile) {
+	}
+	@media (min-width: $tablet) {
+		font-size: 1.25rem;
+	}
+	@media (min-width: $pc) {
+	}
+	@media (min-width: $full) {
+		font-size: 1.5rem;
+	}
+}
+span {	
+	font-size: 1.25rem;
 	font-weight: 600;
 	line-height: normal;
+	@media (min-width: $mobile) {
+	}
+	@media (min-width: $tablet) {
+		font-size: 1.5rem;
+	}
+	@media (min-width: $pc) {
+		font-size: 1.5rem;
+	}
+	@media (min-width: $full) {
+		font-size: 2rem;
+	}
 }
 }
 &__contact-icons {
 	display: flex;
 	flex-direction: row;
 	gap: 1.5625rem;
-	margin-top: 1.25rem;
+	margin-top: 1.75rem;
 	width: fit-content;
 	.svg-container { 
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 4.375rem;
-		width: 4.375rem;
+		height: 3.375rem;
+		width: 3.375rem;
 		flex-shrink: 0;
 		border-radius: 1.875rem;
+		@media (min-width: $mobile) {
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+			height: 4.375rem;
+			width: 4.375rem;
+		}
+		@media (min-width: $full) {
+		}
 	}
 	.whatsApp {		
 		background: #28A706;
@@ -65,69 +152,30 @@ span {
 	display: flex;
   align-items: center; 
   justify-content: center;
-	margin-top: 2.8125rem;
-	width: fit-content;	
+	margin-top: 1.75rem;
+	margin-bottom: 5.25rem;
 	flex-direction: row;
 	gap: 0.9375rem;
-	font-size: 1.5rem;
 	font-weight: 700;
-	line-height: normal;
-	text-decoration-line: underline;	
+	font-size: 1rem;
+	line-height: 130%;
+	text-decoration: underline;
+	@media (min-width: $mobile) {
+	}
+	@media (min-width: $tablet) {
+		margin-bottom: 6.6875rem;
+	}
+	@media (min-width: $pc) {
+		font-size: 1.25rem;
+		margin-top: 2.75rem;
+	}
+	@media (min-width: $full) {
+		font-size: 1.5rem;
+		margin-bottom: 8.8125rem;
+	}
 }
 &__contact-mail:hover {
 	cursor: pointer;
 	text-decoration-line: none;
-}
-&__form {
-	background-color: var(--modal-background-color);
-	margin-top: 8.75rem;	
-	padding-left: 13.75rem;
-}
-&__form-title {
-	padding-top: 5.3125rem;
-	font-size: 3.25rem;
-	font-weight: 700;
-	line-height: 3.9375rem;
-	letter-spacing: 0em;
-	text-align: left;
-
-}
-&__form-descr {
-	padding-top: 2.5rem;
-	font-size: 1.5rem;
-	font-weight: 400;
-	line-height: 2.125rem;
-	letter-spacing: 0em;
-	text-align: left;
-}
-&__form-inputs {
-}
-.contactsForm {
-	display: flex;
-	flex-direction: row;	
-	gap: 2.5rem;
-	margin-top: 4.0625rem;
-}
-&__form-input {
-	padding: 2.5rem 28.125rem 3.125rem 4.375rem;
-	font-size: 1.25rem;
-	font-weight: 400;
-	line-height: 1.5rem;
-	letter-spacing: 0em;
-	text-align: left;
-	border-radius: 2.5rem;
-	border: 1px solid var(--orange-color);
-}
-&__form-select {
-}
-&__formSelect {
-}
-&__form-textarea {
-}
-&__formTextarea {
-}
-&__form-button {
-}
-&__formSubmit {
 }
 }

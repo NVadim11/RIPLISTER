@@ -149,33 +149,32 @@
 						</div>
 					</div>
 				</div>
-				<div class="contacts__form">
-					<div class="contacts__form-title">
+				<div class="contactForm">
+					<div class="contactForm__form-title">
 						<h1>Напишить нам</h1>
 					</div>
-					<div class="contacts__form-descr">
+					<div class="contactForm__form-descr">
 						<p>Співробітник нашої служби підтримки відповість якомога швидше.</p>
 					</div>
-					<div class="contacts__form-inputs">
+					<div class="contactForm__form-inputs">
 						<form action="URL" id="contactsForm" class="contactsForm">
-							<input class="contacts__form-input" type="text" name="usrname" placeholder="Ваше Ім'я" />
-							<input class="contacts__form-input" type="text" name="email" placeholder="Ваш email" />
+							<input class="contactForm__form-input" type="text" name="usrname" placeholder="Ваше Ім'я" />
+							<input class="contactForm__form-input" type="text" name="email" placeholder="Ваш email" />
 						</form>
 					</div>
-					<div class="contacts__form-select">
+					<div class="contactForm__form-select">
 						<label>Тема звернення:</label>
-						<select name="contacts__formSelect" class="contacts__formSelect">
-							<option value="value1" selected>
-								<span>Питання з партнерства</span>
-							</option>
+						<select name="contactForm__formSelect" class="contactForm__formSelect">
+
 						</select>
+						<div class="contactForm__form-textarea">
+							<textarea class="contactForm__formTextarea" rows="10" cols="50" name="comment" form="usrform">Текст повідомлення</textarea>
+						</div>
+						<div class="contactForm__form-button">
+							<button type="submit" class="contactForm__formSubmit">Відправити</button>
+						</div>
 					</div>
-					<div class="contacts__form-textarea">
-						<textarea class="contacts__formTextarea" rows="10" cols="50" name="comment" form="usrform">Текст повідомлення</textarea>
-					</div>
-					<div class="contacts__form-button">
-						<button type="button" class="contacts__formSubmit"></button>
-					</div>
+
 				</div>
 			</section>
 			<button type="button" class="btn-gotop" data-action="gotop">
