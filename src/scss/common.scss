@@ -364,13 +364,34 @@
 	display: flex;
 	flex-direction: column;
 	background: #fff3ed;
+	padding: 47px 20px;
+	@media (min-width: $mobile) {
+		padding: 51px 57px;
+	}
+	@media (min-width: $tablet) {
+		align-items: start;
+		padding: 63px 122px;
+	}
+	@media (min-width: $pc) {
+	}
+	@media (min-width: $full) {
+	}
 	&__form-title {
-		margin-top: 47px;
 		font-family: var(--font-family);
 		font-weight: 600;
 		font-size: 32px;
 		text-align: center;
 		color: #171717;
+		@media (min-width: $mobile) {
+			
+		}
+		@media (min-width: $tablet) {
+			font-size: 46px;
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
 	}
 	&__form-descr {
 		margin-top: 17px;
@@ -379,55 +400,171 @@
 		line-height: 140%;
 		text-align: center;
 		color: #171717;
-	}
-	&__form-inputs {
-
+		@media (min-width: $mobile) {
+		}
+		@media (min-width: $tablet) {
+			margin-top: 21px;
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
 	}
 	.contactsForm {
 		margin-top: 22px;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		@media (min-width: $mobile) {
+			margin-top: 33px;
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
+	}
+	&__form-inputs {
+		gap: 14px;
+		width: 100%;
+		@media (min-width: $mobile) {		
+			display: flex;
+			flex-direction: row;
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
 	}
 	&__form-input {
 		margin-top: 14px;
 		border: 1px solid #ec6041;
-		border-radius: 20px;
-		width: 314px;
+		border-radius: 20px;	
+		width: 100%;
 		height: 54px;
 		background: #fff;
+		@media (min-width: $mobile) {
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
 	}
 	&__form-select {
 		margin-top: 1.6875rem;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		label {
+		width: 100%;
+		@media (min-width: $mobile) {
+			align-items: center;
+			text-align: center;
+			flex-direction: row;
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}		
+	}
+	&__selectLabel {
+		@media (min-width: $mobile) {
+			margin-right: 21px;
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
+		p {
 			font-weight: 700;
 			font-size: 18px;
 			color: #000;
-			margin-right: 130px;
+			margin-left: 30px;
+			@media (min-width: $mobile) {
+			}
+			@media (min-width: $tablet) {
+			}
+			@media (min-width: $pc) {
+			}
+			@media (min-width: $full) {
+			}
+		}
+	}
+	&__selector {
+		margin-top: 15px;
+		@media (min-width: $mobile) {
+			margin-top: 0;
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
 		}
 	}
 	&__formSelect {
+		@media (min-width: $mobile) {
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
 	}
 	&__form-textarea {
 		display: flex;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+		@media (min-width: $mobile) {
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
 	}
 	&__formTextarea {
 		margin-top: 15px;
 		border: 1px solid #ec6041;
 		border-radius: 20px;
-		width: 314px;
+		width: 100%;
 		height: 152px;
 		background: #fff;
 		font-weight: 400;
 		font-size: 16px;
 		color: #000;
+		@media (min-width: $mobile) {		
+			margin-top: 20px;	
+			width: 100%;
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
 	}
 	&__form-button {
 		display: flex;
 		align-items: center;
+		@media (min-width: $mobile) {
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
 	}
 	&__formSubmit {
 		margin-top: 25px;
@@ -438,6 +575,15 @@
 		color: #fff;
 		border-radius: 20px;
 		background: linear-gradient(180deg, #e55738 0%, #db4a2a 100%);
+		@media (min-width: $mobile) {
+			margin-top: 31px;
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
 	}
 }
 

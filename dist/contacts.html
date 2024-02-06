@@ -156,25 +156,31 @@
 					<div class="contactForm__form-descr">
 						<p>Співробітник нашої служби підтримки відповість якомога швидше.</p>
 					</div>
-					<div class="contactForm__form-inputs">
-						<form action="URL" id="contactsForm" class="contactsForm">
+					<form action="URL" id="contactsForm" class="contactsForm">
+						<div class="contactForm__form-inputs">
 							<input class="contactForm__form-input" type="text" name="usrname" placeholder="Ваше Ім'я" />
 							<input class="contactForm__form-input" type="text" name="email" placeholder="Ваш email" />
-						</form>
-					</div>
-					<div class="contactForm__form-select">
-						<label>Тема звернення:</label>
-						<select name="contactForm__formSelect" class="contactForm__formSelect">
-
-						</select>
+						</div>
+						<div class="contactForm__form-select">
+							<div class="contactForm__selectLabel">
+								<p>Тема звернення:</p>
+							</div>
+							<div class="contactForm__selector">
+								<select name="contactTags[]" data-class-modif="contactTags">
+									<option value="1" selected>Публікації</option>
+									<option value="2">Про життя</option>
+									<option value="3">Розвиток</option>
+									<option value="4">Ментальне</option>
+								</select>
+							</div>
+						</div>
 						<div class="contactForm__form-textarea">
 							<textarea class="contactForm__formTextarea" rows="10" cols="50" name="comment" form="usrform">Текст повідомлення</textarea>
 						</div>
 						<div class="contactForm__form-button">
 							<button type="submit" class="contactForm__formSubmit">Відправити</button>
 						</div>
-					</div>
-
+					</form>
 				</div>
 			</section>
 			<button type="button" class="btn-gotop" data-action="gotop">
