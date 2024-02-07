@@ -70,7 +70,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="contactForm">
+	<div class="contactForm" id="contactFormComponent">
 		<div class="contactForm__form-title">
 			<h1>Напишить нам</h1>
 		</div>
@@ -79,8 +79,10 @@
 		</div>
 		<form action="URL" id="contactsForm" class="contactsForm">
 			<div class="contactForm__form-inputs">
-				<input class="contactForm__form-input" type="text" name="usrname" placeholder="Ваше Ім'я" />
-				<input class="contactForm__form-input" type="text" name="email" placeholder="Ваш email" />
+				<input required minlength="2" class="contactForm__form-input" type="text" name="usrname"
+					placeholder="Ваше Ім'я" />
+				<input required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+					class="contactForm__form-input" type="text" name="email" placeholder="Ваш email" />
 			</div>
 			<div class="contactForm__form-select">
 				<div class="contactForm__selectLabel">
@@ -100,7 +102,7 @@
 					form="usrform">Текст повідомлення</textarea>
 			</div>
 			<div class="contactForm__form-button">
-				<button type="submit" class="contactForm__formSubmit">Відправити</button>
+				<button type="submit" class="contactForm__formSubmit" id="contactFormSubmit">Відправити</button>
 			</div>
 		</form>
 	</div>

@@ -305,7 +305,7 @@ function validateForm (formSelector, callback) {
         }
     };
     
-function login(formElement) {
+    function login(formElement) {
     const formObject = Array.from(formElement.elements)
     .filter(element => element.type !=="submit")
     .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
@@ -320,7 +320,7 @@ function login(formElement) {
     };
 };
 
-function passRecovery(formElement) {
+    function passRecovery(formElement) {
     const formObject = Array.from(formElement.elements)
     .filter(element => element.type !=="submit")
     .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});

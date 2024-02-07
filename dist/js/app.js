@@ -7021,6 +7021,8 @@
             lngMenuSwitcher();
             break;
         }
+        document.getElementById("contactFormComponent");
+        document.getElementById("contactFormSubmit");
         const mainMenuBtn = document.querySelector(".headerMain__menuBtn");
         const altMenuBtn = document.querySelector(".headerAlt__menuBtn");
         const menuCloseBtn = document.querySelector(".menu__closeBtn");
