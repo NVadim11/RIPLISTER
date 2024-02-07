@@ -364,29 +364,30 @@
 	display: flex;
 	flex-direction: column;
 	background: #fff3ed;
-	padding: 47px 20px;
+	padding: 2.9375rem 1.25rem;
 	@media (min-width: $mobile) {
-		padding: 51px 57px;
+		padding: 3.1875rem 3.5625rem;
 	}
 	@media (min-width: $tablet) {
 		align-items: start;
-		padding: 63px 122px;
+		padding: 3.9375rem 7.625rem;
 	}
 	@media (min-width: $pc) {
+		padding: 5.0625rem 7.75rem;
 	}
 	@media (min-width: $full) {
 	}
 	&__form-title {
 		font-family: var(--font-family);
 		font-weight: 600;
-		font-size: 32px;
+		font-size: 2rem;
 		text-align: center;
 		color: #171717;
 		@media (min-width: $mobile) {
 			
 		}
 		@media (min-width: $tablet) {
-			font-size: 46px;
+			font-size: 2.875rem;
 		}
 		@media (min-width: $pc) {
 		}
@@ -394,40 +395,63 @@
 		}
 	}
 	&__form-descr {
-		margin-top: 17px;
+		margin-top: 1.0625rem;
 		font-weight: 400;
-		font-size: 18px;
+		font-size: 1.125rem;
 		line-height: 140%;
 		text-align: center;
 		color: #171717;
 		@media (min-width: $mobile) {
 		}
 		@media (min-width: $tablet) {
-			margin-top: 21px;
+			margin-top: 1.3125rem;
 		}
 		@media (min-width: $pc) {
+			margin-top: 1.625rem;
+			font-size: 1.25rem;
 		}
 		@media (min-width: $full) {
 		}
 	}
 	.contactsForm {
-		margin-top: 22px;
+		margin-top: 1.375rem;
+		width: 100%;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		@media (min-width: $mobile) {
-			margin-top: 33px;
+			margin-top: 2.0625rem;
 		}
 		@media (min-width: $tablet) {
+			margin-top: 3.625rem;
 		}
 		@media (min-width: $pc) {
+			margin-top: 2.1875rem;
 		}
 		@media (min-width: $full) {
 		}
 	}
 	&__form-inputs {
-		gap: 14px;
+		gap: 0.875rem;
 		width: 100%;
+		input {
+			line-height: normal;
+			padding: 1.0625rem 1.875rem 0.9375rem 1.875rem;
+			font-weight: 400;
+			font-size: 1.125rem;
+			@media (min-width: $mobile) {
+			}
+			@media (min-width: $tablet) {
+			}
+			@media (min-width: $pc) {
+				padding: 1.4375rem 2.5625rem 1.5625rem 2.5625rem;
+				font-weight: 400;
+				font-size: 1.125rem;
+			}
+			@media (min-width: $full) {
+				font-size: 1.25rem;
+			}
+		}
 		@media (min-width: $mobile) {		
 			display: flex;
 			flex-direction: row;
@@ -435,24 +459,28 @@
 		@media (min-width: $tablet) {
 		}
 		@media (min-width: $pc) {
+			gap: 2rem;
 		}
 		@media (min-width: $full) {
 		}
 	}
 	&__form-input {
-		margin-top: 14px;
-		border: 1px solid #ec6041;
-		border-radius: 20px;	
+		margin-top: 0.875rem;		
+		border: 0.0625rem solid #ec6041;
+		border-radius: 1.25rem;	
 		width: 100%;
-		height: 54px;
-		background: #fff;
+		height: 100%;
+		background: #fff;	
 		@media (min-width: $mobile) {
+			margin-top: 0;
 		}
 		@media (min-width: $tablet) {
 		}
 		@media (min-width: $pc) {
+			border-radius: 1.875rem;
 		}
 		@media (min-width: $full) {
+			border-radius: 2.5rem;
 		}
 	}
 	&__form-select {
@@ -474,33 +502,32 @@
 	}
 	&__selectLabel {
 		@media (min-width: $mobile) {
-			margin-right: 21px;
-		}
-		@media (min-width: $tablet) {
-		}
-		@media (min-width: $pc) {
-		}
-		@media (min-width: $full) {
+			margin-right: 1.3125rem;
 		}
 		p {
 			font-weight: 700;
-			font-size: 18px;
+			font-size: 1.125rem;
 			color: #000;
-			margin-left: 30px;
+			margin-left: 1.875rem;
 			@media (min-width: $mobile) {
+				width: 9.0625rem;
 			}
 			@media (min-width: $tablet) {
+				font-size: 1.25rem;
+				width: 10.3125rem;
 			}
 			@media (min-width: $pc) {
-			}
-			@media (min-width: $full) {
+				font-size: 1.5rem;
+				width: 11.875rem;
 			}
 		}
 	}
 	&__selector {
-		margin-top: 15px;
+		margin-top: 0.9375rem;
+		width: 100%;
 		@media (min-width: $mobile) {
 			margin-top: 0;
+			margin-right: 9.375rem;
 		}
 		@media (min-width: $tablet) {
 		}
@@ -534,24 +561,30 @@
 		}
 	}
 	&__formTextarea {
-		margin-top: 15px;
-		border: 1px solid #ec6041;
-		border-radius: 20px;
+		padding: 1.0625rem 1.5rem;
+		margin-top: 0.9375rem;
+		border: 0.0625rem solid #ec6041;
+		border-radius: 1.25rem;
 		width: 100%;
-		height: 152px;
+		height: 9.5rem;
 		background: #fff;
 		font-weight: 400;
-		font-size: 16px;
+		font-size: 1rem;
 		color: #000;
 		@media (min-width: $mobile) {		
-			margin-top: 20px;	
+			margin-top: 1.25rem;	
 			width: 100%;
 		}
 		@media (min-width: $tablet) {
 		}
 		@media (min-width: $pc) {
+			border-radius: 2.5rem;
+			padding: 2.375rem 2.5625rem;
+			font-size: 1.125rem;
 		}
 		@media (min-width: $full) {
+			padding: 2.375rem 4.6875rem;
+			font-size: 1.25rem;
 		}
 	}
 	&__form-button {
@@ -559,30 +592,43 @@
 		align-items: center;
 		@media (min-width: $mobile) {
 		}
-		@media (min-width: $tablet) {
+		@media (min-width: $tablet) {		
+			width: 100%;
+			height: 3.75rem;
+			margin-top: 0.9375rem;
+			position: relative;
 		}
 		@media (min-width: $pc) {
+			height: 6.25rem;
+			margin-top: 1.875rem;
 		}
 		@media (min-width: $full) {
+			margin-top: 3.125rem;
 		}
 	}
 	&__formSubmit {
-		margin-top: 25px;
-		margin-bottom: 55px;
-		padding: 16px 75px;		
+		margin-top: 1.5625rem;
+		padding: 1rem 4.6875rem;		
 		font-weight: 700;
-		font-size: 18px;
+		font-size: 1.125rem;
 		color: #fff;
-		border-radius: 20px;
+		border-radius: 1.25rem;
 		background: linear-gradient(180deg, #e55738 0%, #db4a2a 100%);
 		@media (min-width: $mobile) {
-			margin-top: 31px;
+			margin-top: 1.9375rem;
 		}
 		@media (min-width: $tablet) {
+			margin-top: 0rem;
+			position: absolute;
+			right: 0;
 		}
 		@media (min-width: $pc) {
+			padding: 1.875rem 5.8125rem;		
+			font-size: 1.5rem;
+			border-radius: 2.5rem;
 		}
 		@media (min-width: $full) {
+			font-size: 2rem;
 		}
 	}
 }
