@@ -626,7 +626,7 @@ export function billTabs() {
 		const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
 
 		// if (tabsActiveHashBlock) {
-		// 	const tabsActiveTitle = tabsBlock.querySelector('[profile-tabs-titles]>._bill-active');
+		// 	const tabsActiveTitle = tabsBlock.querySelector('[bill-tabs-titles]>._bill-active');
 		// 	tabsActiveTitle ? tabsActiveTitle.classList.remove('_bill-active') : null;
 		// }
 		if (tabsContent.length) {
@@ -683,7 +683,7 @@ export function billTabs() {
 			const tabTitle = el.closest('[bill-tabs-title]');
 			const tabsBlock = tabTitle.closest('[bill-tabs]');
 			if (!tabTitle.classList.contains('_bill-active') && !tabsBlock.querySelector('._slide')) {
-				let tabActiveTitle = tabsBlock.querySelectorAll('[profile-tabs-title]._bill-active');
+				let tabActiveTitle = tabsBlock.querySelectorAll('[bill-tabs-title]._bill-active');
 				tabActiveTitle.length ? tabActiveTitle = Array.from(tabActiveTitle).filter(item => item.closest('[bill-tabs]') === tabsBlock) : null;
 				tabActiveTitle.length ? tabActiveTitle[0].classList.remove('_bill-active') : null;
 				tabTitle.classList.add('_bill-active');

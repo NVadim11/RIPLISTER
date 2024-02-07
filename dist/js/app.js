@@ -805,6 +805,95 @@
                 }
             }
         }
+        function billTabs() {
+            const tabs = document.querySelectorAll("[bill-tabs]");
+            let tabsActiveHash = [];
+            if (tabs.length > 0) {
+                const hash = getHash();
+                if (hash && hash.startsWith("tab-")) tabsActiveHash = hash.replace("tab-", "").split("-");
+                tabs.forEach(((tabsBlock, index) => {
+                    tabsBlock.classList.add("_tab-init");
+                    tabsBlock.setAttribute("bill-tabs-index", index);
+                    tabsBlock.addEventListener("click", setTabsAction);
+                    initTabs(tabsBlock);
+                }));
+                let mdQueriesArray = dataMediaQueries(tabs, "tabs");
+                if (mdQueriesArray && mdQueriesArray.length) mdQueriesArray.forEach((mdQueriesItem => {
+                    mdQueriesItem.matchMedia.addEventListener("change", (function() {
+                        setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                    }));
+                    setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+                }));
+            }
+            function setTitlePosition(tabsMediaArray, matchMedia) {
+                tabsMediaArray.forEach((tabsMediaItem => {
+                    tabsMediaItem = tabsMediaItem.item;
+                    let tabsTitles = tabsMediaItem.querySelector("[bill-tabs-titles]");
+                    let tabsTitleItems = tabsMediaItem.querySelectorAll("[bill-tabs-title]");
+                    let tabsContent = tabsMediaItem.querySelector("[bill-tabs-body]");
+                    let tabsContentItems = tabsMediaItem.querySelectorAll("[bill-tabs-item]");
+                    tabsTitleItems = Array.from(tabsTitleItems).filter((item => item.closest("[bill-tabs]") === tabsMediaItem));
+                    tabsContentItems = Array.from(tabsContentItems).filter((item => item.closest("[bill-tabs]") === tabsMediaItem));
+                    tabsContentItems.forEach(((tabsContentItem, index) => {
+                        if (matchMedia.matches) {
+                            tabsContent.append(tabsTitleItems[index]);
+                            tabsContent.append(tabsContentItem);
+                            tabsMediaItem.classList.add("_tab-spoller");
+                        } else {
+                            tabsTitles.append(tabsTitleItems[index]);
+                            tabsMediaItem.classList.remove("_tab-spoller");
+                        }
+                    }));
+                }));
+            }
+            function initTabs(tabsBlock) {
+                let tabsTitles = tabsBlock.querySelectorAll("[bill-tabs-titles]>*");
+                let tabsContent = tabsBlock.querySelectorAll("[bill-tabs-body]>*");
+                const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+                const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
+                if (tabsContent.length) tabsContent.forEach(((tabsContentItem, index) => {
+                    tabsTitles[index].setAttribute("bill-tabs-title", "");
+                    tabsContentItem.setAttribute("bill-tabs-item", "");
+                    if (tabsActiveHashBlock && index == tabsActiveHash[1]) tabsTitles[index].classList.add("_bill-active");
+                    tabsContentItem.hidden = !tabsTitles[index].classList.contains("_bill-active");
+                }));
+            }
+            function setTabsStatus(tabsBlock) {
+                let tabsTitles = tabsBlock.querySelectorAll("[bill-tabs-title]");
+                let tabsContent = tabsBlock.querySelectorAll("[bill-tabs-item]");
+                const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+                function isTabsAnamate(tabsBlock) {
+                    if (tabsBlock.hasAttribute("bill-tabs-animate")) return tabsBlock.dataset.tabsAnimate > 0 ? Number(tabsBlock.dataset.tabsAnimate) : 500;
+                }
+                const tabsBlockAnimate = isTabsAnamate(tabsBlock);
+                if (tabsContent.length > 0) {
+                    const isHash = tabsBlock.hasAttribute("bill-tabs-hash");
+                    tabsContent = Array.from(tabsContent).filter((item => item.closest("[bill-tabs]") === tabsBlock));
+                    tabsTitles = Array.from(tabsTitles).filter((item => item.closest("[bill-tabs]") === tabsBlock));
+                    tabsContent.forEach(((tabsContentItem, index) => {
+                        if (tabsTitles[index].classList.contains("_bill-active")) {
+                            if (tabsBlockAnimate) _slideDown(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = false;
+                            if (isHash && !tabsContentItem.closest(".popup")) setHash(`tab-${tabsBlockIndex}-${index}`);
+                        } else if (tabsBlockAnimate) functions_slideUp(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = true;
+                    }));
+                }
+            }
+            function setTabsAction(e) {
+                const el = e.target;
+                if (el.closest("[bill-tabs-title]")) {
+                    const tabTitle = el.closest("[bill-tabs-title]");
+                    const tabsBlock = tabTitle.closest("[bill-tabs]");
+                    if (!tabTitle.classList.contains("_bill-active") && !tabsBlock.querySelector("._slide")) {
+                        let tabActiveTitle = tabsBlock.querySelectorAll("[bill-tabs-title]._bill-active");
+                        tabActiveTitle.length ? tabActiveTitle = Array.from(tabActiveTitle).filter((item => item.closest("[bill-tabs]") === tabsBlock)) : null;
+                        tabActiveTitle.length ? tabActiveTitle[0].classList.remove("_bill-active") : null;
+                        tabTitle.classList.add("_bill-active");
+                        setTabsStatus(tabsBlock);
+                    }
+                    e.preventDefault();
+                }
+            }
+        }
         function menuInit() {
             if (document.querySelector(".scroll-lock")) document.addEventListener("click", (function(e) {
                 if (bodyLockStatus && e.target.closest(".scroll-lock")) bodyLockToggle();
@@ -7257,6 +7346,7 @@
         spollers();
         tabs();
         profileTabs();
+        billTabs();
         formFieldsInit({
             viewPass: false,
             autoHeight: false

@@ -56,7 +56,7 @@ flsFunctions.spollers();
 */
 flsFunctions.tabs();
 flsFunctions.profileTabs();
-// flsFunctions.billTabs();
+flsFunctions.billTabs();
 
 /*
 Модуль "Показати ще"

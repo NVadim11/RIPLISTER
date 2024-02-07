@@ -1173,9 +1173,7 @@
 		background: #FFF8F6;
 		display: flex;
 		flex-direction: column;
-		gap: 0.9375rem;
 		@media screen and (min-width:$mobile) {
-			gap: 1.875rem;
 			padding: 1.5625rem 0.9375rem;
 		}
 		@media screen and (min-width:$pc) {
@@ -1187,8 +1185,10 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.9375rem;
+		margin-top: 0.9375rem;
 		@media screen and (min-width:$mobile) {
 			flex-direction: row;
+			margin-top: 1.875rem;
 			align-items: center;
 			justify-content: space-between;
 		}
@@ -1294,20 +1294,378 @@
 			order: 3;
 		}
 	}
-	// ._bill-active {
-	// 	color: #171717;
-	// 	font-size: 1.125rem;
-	// 	font-style: normal;
-	// 	font-weight: 600;
-	// 	line-height: normal;
-	// 	border-bottom: 0.125rem solid #E55738;
-	// 	@media screen and (min-width:$mobile) {
-	// 		font-size: 1.25rem;
-	// 	}
-	// 	@media screen and (min-width:$pc) {
-	// 		font-size: 1.5rem;
-	// 	}
-	// }
+	&__navigation-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+		@media screen and (min-width:$mobile) {
+			gap: 2.8125rem;
+		}
+		@media screen and (min-width:$pc) {
+			gap: 3.3125rem;
+		}
+		@media screen and (min-width:$full) {
+			gap: 3.625rem;
+		}
+	}
+	&__navigation-item {
+		padding: 0 0 0.75rem 0;
+    	cursor: pointer;
+		@media screen and (min-width:$mobile) {
+			padding: 0 0 1.5rem 0;
+		}
+		span {
+			font-size: 0.875rem;
+			@media screen and (min-width:$mobile) {
+				font-size: 1rem;
+			}
+			@media screen and (min-width:$pc) {
+				font-size: 1.125rem;
+			}
+			@media screen and (min-width:$full) {
+				font-size: 1.25rem;
+			}
+		}
+	}
+	&__tabList-header {
+		display: grid;
+		grid-template-columns: 4.3125rem 4.1875rem 4.75rem 4.3125rem 3.4375rem;
+		border-bottom: 2px solid #f3ecec;
+		@media screen and (min-width:$mobile) {
+			grid-template-columns: 8.125rem 13rem 7.5625rem 6.8125rem 6.375rem;
+			padding: 1.625rem 0;
+		}
+		@media screen and (min-width:$tablet) {
+			grid-template-columns: 8.125rem 14.0625rem 7.5625rem 6.8125rem 6.375rem;
+		}
+		@media screen and (min-width:$pc) {
+			grid-template-columns: 9.375rem 17.9375rem 12.125rem 11.4375rem 6.375rem;
+			padding: 1.3125rem 0;
+		}
+		@media screen and (min-width:$full) {
+			grid-template-columns: 10.125rem 22rem 16.1875rem 18.125rem 7.5625rem;
+			padding: 2.5rem 0;
+		}
+	}
+	&__tabList-headerItem {
+		font-weight: 400;
+		font-size: 0.75rem;
+		line-height: 100%;
+		color: #7d7d7d;
+		padding: 0.625rem 0;
+		@media screen and (min-width:$mobile) {
+			font-size: 1rem;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 1.125rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.25rem;
+		}
+	}
+	&__tabList-item {
+		border-bottom: 2px solid #f3ecec;
+		padding: 1rem 0;
+	}
+	&__tabList-item:last-child {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+	._bill-active {
+		color: #171717;
+		border-bottom: 0.125rem solid #E55738;
+		z-index: 2;
+		span {
+			color: #171717;
+			font-size: 1rem;
+			font-style: normal;
+			font-weight: 600;
+			@media screen and (min-width:$mobile) {
+				font-size: 1.25rem;
+			}
+			@media screen and (min-width:$pc) {
+				font-size: 1.5rem;
+			}
+		}
+	}
+}
+
+.billDetail	{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@media screen and (min-width:$mobile) {
+		padding: 1.625rem 0;
+	}
+	@media screen and (min-width:$pc) {
+		padding: 1.3125rem 0;
+	}
+	@media screen and (min-width:$full) {
+		padding: 2.5rem 0;
+	}
+	&__card {
+		font-weight: 700;
+		font-size: 0.75rem;
+		line-height: 100%;
+		color: #212121;
+		@media screen and (min-width:$mobile) {
+			font-size: 1rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.25rem;
+		}
+	}
+	&__text {
+		display: none;
+		@media screen and (min-width:$mobile) {
+			display: block;
+			font-weight: 400;
+			font-size: 0.875rem;
+			line-height: 100%;
+			color: #212121;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.25rem;
+		}
+	}
+	&__coin {
+		display: flex;
+		align-items: center;
+		font-weight: 700;
+		font-size: 0.875rem;
+		line-height: 100%;
+		color: #212121;
+		@media screen and (min-width:$mobile) {
+			font-size: 1.125rem;
+		}
+		@media screen and (min-width:$mobile) {
+			font-size: 1.5rem;
+		}
+		svg {
+			margin-left: 0.1875rem;
+			@media screen and (min-width:$mobile) {
+				margin-left: 0.5rem;
+				height: 1.875rem;
+				width: 1.875rem;
+			}
+			@media screen and (min-width:$mobile) {
+				height: 2rem;
+				width: 2rem;
+			}
+		}
+	}
+	&__date {
+		font-weight: 400;
+		font-size: 0.625rem;
+		line-height: 130%;
+		display: flex;
+		flex-direction: column;
+		span {
+			color: #212121;
+			text-align: left;
+			line-height: 1.2;
+		}
+		@media screen and (min-width:$mobile) {
+			font-size: 0.875rem;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 1rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.25rem;
+			flex-direction: row;
+			gap: 0.5rem;
+		}
+	}
+	&__repeat {
+		font-weight: 600;
+		font-size: 0.625rem;
+		text-decoration: underline;
+		color: #3c88f9;
+		@media screen and (min-width:$mobile) {
+			font-size: 1rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.25rem;
+		}
+	}
+}
+
+.billHistory {
+	display: grid;
+	grid-template-columns: 4.3125rem 4.1875rem 4.75rem 4.3125rem 3.4375rem;
+	align-items: center;
+	@media screen and (min-width:$mobile) {
+		grid-template-columns: 8.125rem 13rem 7.5625rem 6.8125rem 6.375rem;
+		padding: 1.625rem 0;
+	}
+	@media screen and (min-width:$tablet) {
+		grid-template-columns: 8.125rem 14.0625rem 7.5625rem 6.8125rem 6.375rem;
+	}
+	@media screen and (min-width:$pc) {
+		grid-template-columns: 9.375rem 17.9375rem 12.125rem 11.4375rem 6.375rem;
+		padding: 1.3125rem 0;
+	}
+	@media screen and (min-width:$full) {
+		grid-template-columns: 10.125rem 22rem 16.1875rem 18.125rem 7.5625rem;
+		padding: 2.5rem 0;
+	}
+	&__id {
+		font-weight: 400;
+		font-size: 0.625rem;
+		line-height: 130%;
+		color: #212121;
+		@media screen and (min-width:$mobile) {
+			font-size: 1rem;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 1.125rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.25rem;
+		}
+	}
+	&__cardMobile {
+		display: flex;
+		align-items: center;
+		font-weight: 600;
+		font-size: 0.625rem;
+		line-height: 100%;
+		color: #212121;
+		svg {
+			margin-right: 0.1875rem;
+			width: 0.9375rem;
+			height: 0.9375rem;
+		}
+		@media screen and (min-width:$mobile) {
+			display: none;
+		}
+	}
+	&__card {
+		display: none;
+		align-items: center;
+		font-weight: 600;
+		font-size: 0.625rem;
+		line-height: 100%;
+		color: #212121;
+		svg {
+			margin-right: 0.1875rem;
+			width: 0.9375rem;
+			height: 0.9375rem;
+		}
+		@media screen and (min-width:$mobile) {
+			display: flex;
+			font-size: 1rem;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 1.125rem;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 1.25rem;
+		}
+	}
+	&__sum {
+		font-weight: 600;
+		font-size: 0.625rem;
+		line-height: 100%;
+		color: #212121;
+		@media screen and (min-width:$mobile) {
+			font-size: 1rem;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 1.125rem;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 1.25rem;
+		}
+		span {
+			font-weight: 600;
+			font-size: 0.625rem;
+			line-height: 100%;
+			color: #212121;
+			@media screen and (min-width:$mobile) {
+				font-size: 1rem;
+			}
+			@media screen and (min-width:$pc) {
+				font-size: 1.125rem;
+			}
+			@media screen and (min-width:$pc) {
+				font-size: 1.25rem;
+			}
+		}
+	}
+	&__date {
+		font-weight: 400;
+		font-size: 0.625rem;
+		line-height: 130%;
+		display: flex;
+		flex-direction: column;
+		span {
+			color: #212121;
+		}
+		@media screen and (min-width:$mobile) {
+			font-size: 0.875rem;
+		}
+		@media screen and (min-width:$pc) {
+			font-size: 1rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.25rem;
+			flex-direction: row;
+			gap: 0.5rem;
+		}
+	}
+	&__success {
+		display: flex;
+		font-weight: 400;
+		font-size: 0.625rem;
+		line-height: 100%;
+		color: #171717;
+		align-items: center;
+		@media screen and (min-width:$mobile) {
+			font-size: 1rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.25rem;
+		}
+		svg {
+			margin-left: 0.25rem;
+			@media screen and (min-width:$mobile) {
+				width: 1.625rem;
+				height: 1.625rem;
+				margin-left: 0.625rem;
+			}
+			@media screen and (min-width:$full) {
+				margin-left: 0.8125rem;
+			}
+		}
+	}
+	&__negative {
+		display: flex;
+		align-items: center;
+		font-weight: 400;
+		font-size: 0.625rem;
+		line-height: 100%;
+		color: #7d7d7d;
+		justify-content: flex-end;
+		@media screen and (min-width:$mobile) {
+			font-size: 1rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.25rem;
+		}
+		svg {
+			margin-left: 0.25rem;
+			@media screen and (min-width:$mobile) {
+				width: 1.625rem;
+				height: 1.625rem;
+				margin-left: 0.625rem;
+			}
+			@media screen and (min-width:$full) {
+				margin-left: 0.8125rem;
+			}
+		}
+	}
 }
 
 // Settings
