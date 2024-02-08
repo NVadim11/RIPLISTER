@@ -7262,9 +7262,6 @@ input:checked + .sliderCheckbox:before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.profileBill__card span {
   color: #212121;
   font-size: 1rem;
   font-style: normal;
@@ -7503,6 +7500,10 @@ input:checked + .sliderCheckbox:before {
 
 .billHistory__date span {
   color: #212121;
+  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 130%;
+  text-align: left;
 }
 
 .billHistory__success {
@@ -9400,7 +9401,7 @@ input:checked + .sliderCheckbox:before {
     font-size: 1rem;
   }
 
-  .billHistory__date {
+  .billHistory__date span {
     font-size: 0.875rem;
   }
 
@@ -10724,7 +10725,7 @@ input:checked + .sliderCheckbox:before {
     font-size: 1.25rem;
   }
 
-  .profileBill__card span {
+  .profileBill__card {
     font-size: 1.25rem;
   }
 
@@ -10803,7 +10804,7 @@ input:checked + .sliderCheckbox:before {
     font-size: 1.25rem;
   }
 
-  .billHistory__date {
+  .billHistory__date span {
     font-size: 1rem;
   }
 
@@ -12038,7 +12039,7 @@ input:checked + .sliderCheckbox:before {
     font-size: 1.5rem;
   }
 
-  .profileBill__card span {
+  .profileBill__card {
     font-size: 1.5rem;
   }
 
@@ -12092,6 +12093,10 @@ input:checked + .sliderCheckbox:before {
   }
 
   .billHistory__id {
+    font-size: 1.25rem;
+  }
+
+  .billHistory__date span {
     font-size: 1.25rem;
   }
 

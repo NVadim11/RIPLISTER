@@ -1248,18 +1248,16 @@
 	&__card {
 		display: flex;
 		align-items: center;
-		span {
-			color: #212121;
-			font-size: 1rem;
-			font-style: normal;
-			font-weight: 700;
-			line-height: 100%; /* 16px */
-			@media screen and (min-width:$pc) {
-				font-size: 1.25rem;
-			}
-			@media screen and (min-width:$full) {
-				font-size: 1.5rem;
-			}
+		color: #212121;
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100%; /* 16px */
+		@media screen and (min-width:$pc) {
+			font-size: 1.25rem;
+		}
+		@media screen and (min-width:$full) {
+			font-size: 1.5rem;
 		}
 		svg {
 			margin-left: 0.625rem;
@@ -1602,12 +1600,19 @@
 		flex-direction: column;
 		span {
 			color: #212121;
-		}
-		@media screen and (min-width:$mobile) {
-			font-size: 0.875rem;
-		}
-		@media screen and (min-width:$pc) {
-			font-size: 1rem;
+			font-weight: 400;
+			font-size: 0.625rem;
+			line-height: 130%;
+			text-align: left;
+			@media screen and (min-width:$mobile) {
+				font-size: 0.875rem;
+			}
+			@media screen and (min-width:$pc) {
+				font-size: 1rem;
+			}
+			@media screen and (min-width:$full) {
+				font-size: 1.25rem;
+			}
 		}
 		@media screen and (min-width:$full) {
 			font-size: 1.25rem;
