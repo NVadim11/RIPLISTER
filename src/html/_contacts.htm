@@ -72,24 +72,27 @@
 	</div>
 	<div class="contactForm" id="contactFormComponent">
 		<div class="contactForm__form-title">
-			<h1>Напишить нам</h1>
+			<h1>Напишіть нам</h1>
 		</div>
 		<div class="contactForm__form-descr">
 			<p>Співробітник нашої служби підтримки відповість якомога швидше.</p>
 		</div>
-		<form action="URL" id="contactsForm" class="contactsForm">
+		<form novalidate id="contactsForm" class="contactsForm">
 			<div class="contactForm__form-inputs">
-				<input required minlength="2" class="contactForm__form-input" type="text" name="usrname"
-					placeholder="Ваше Ім'я" />
-				<input required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-					class="contactForm__form-input" type="text" name="email" placeholder="Ваш email" />
+				<div class="contactForm__form-input">
+					<input required minlength="2" type="text" name="usrname" placeholder="Ваше Ім'я" id="contactForm__username" />
+				</div>
+				<div class="contactForm__form-input">
+					<input required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="text"
+						name="email" placeholder="Ваш email" id="contactForm__email" />
+				</div>
 			</div>
 			<div class="contactForm__form-select">
 				<div class="contactForm__selectLabel">
 					<p>Тема звернення:</p>
 				</div>
 				<div class="contactForm__selector">
-					<select name="contactTags[]" data-class-modif="contactTags">
+					<select required name="contactTags[]" data-class-modif="contactTags" id="contactForm__selectOption">
 						<option value="1" selected>Публікації</option>
 						<option value="2">Про життя</option>
 						<option value="3">Розвиток</option>
@@ -98,8 +101,8 @@
 				</div>
 			</div>
 			<div class="contactForm__form-textarea">
-				<textarea class="contactForm__formTextarea" rows="10" cols="50" name="comment"
-					form="usrform">Текст повідомлення</textarea>
+				<textarea required minlength="2" class="contactForm__formTextarea" rows="10" cols="50" name="comment"
+					form="contactsForm" id="contactForm__textArea" placeholder="Текст повідомлення"></textarea>
 			</div>
 			<div class="contactForm__form-button">
 				<button type="submit" class="contactForm__formSubmit" id="contactFormSubmit">Відправити</button>

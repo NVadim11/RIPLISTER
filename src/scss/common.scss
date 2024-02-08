@@ -465,22 +465,25 @@
 		}
 	}
 	&__form-input {
-		margin-top: 0.875rem;		
-		border: 0.0625rem solid #ec6041;
-		border-radius: 1.25rem;	
 		width: 100%;
-		height: 100%;
-		background: #fff;	
-		@media (min-width: $mobile) {
-			margin-top: 0;
-		}
-		@media (min-width: $tablet) {
-		}
-		@media (min-width: $pc) {
-			border-radius: 1.875rem;
-		}
-		@media (min-width: $full) {
-			border-radius: 2.5rem;
+		input {
+			margin-top: 0.875rem;		
+			border: 0.0625rem solid #ec6041;
+			border-radius: 1.25rem;	
+			width: 100%;
+			height: 100%;
+			background: #fff;	
+			@media (min-width: $mobile) {
+				margin-top: 0;
+			}
+			@media (min-width: $tablet) {
+			}
+			@media (min-width: $pc) {
+				border-radius: 1.875rem;
+			}
+			@media (min-width: $full) {
+				border-radius: 2.5rem;
+			}
 		}
 	}
 	&__form-select {
@@ -608,7 +611,7 @@
 	}
 	&__formSubmit {
 		margin-top: 1.5625rem;
-		padding: 1rem 4.6875rem;		
+		padding: 1rem 3.125rem;		
 		font-weight: 700;
 		font-size: 1.125rem;
 		color: #fff;
@@ -616,6 +619,7 @@
 		background: linear-gradient(180deg, #e55738 0%, #db4a2a 100%);
 		@media (min-width: $mobile) {
 			margin-top: 1.9375rem;
+			padding: 1.25rem 4.6875rem;	
 		}
 		@media (min-width: $tablet) {
 			margin-top: 0rem;

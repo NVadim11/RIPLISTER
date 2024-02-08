@@ -2539,6 +2539,10 @@ label {
 }
 
 .contactForm__form-input {
+  width: 100%;
+}
+
+.contactForm__form-input input {
   margin-top: 0.875rem;
   border: 0.0625rem solid #ec6041;
   border-radius: 1.25rem;
@@ -2609,7 +2613,7 @@ label {
 
 .contactForm__formSubmit {
   margin-top: 1.5625rem;
-  padding: 1rem 4.6875rem;
+  padding: 1rem 3.125rem;
   font-weight: 700;
   font-size: 1.125rem;
   color: #fff;
@@ -8688,7 +8692,7 @@ input:checked + .sliderCheckbox:before {
             flex-direction: row;
   }
 
-  .contactForm__form-input {
+  .contactForm__form-input input {
     margin-top: 0;
   }
 
@@ -8723,6 +8727,7 @@ input:checked + .sliderCheckbox:before {
 
   .contactForm__formSubmit {
     margin-top: 1.9375rem;
+    padding: 1.25rem 4.6875rem;
   }
 
   .contacts__contact-title {
@@ -10071,7 +10076,7 @@ input:checked + .sliderCheckbox:before {
     gap: 2rem;
   }
 
-  .contactForm__form-input {
+  .contactForm__form-input input {
     border-radius: 1.875rem;
   }
 
@@ -10936,7 +10941,7 @@ input:checked + .sliderCheckbox:before {
     font-size: 1.25rem;
   }
 
-  .contactForm__form-input {
+  .contactForm__form-input input {
     border-radius: 2.5rem;
   }
 

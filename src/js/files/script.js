@@ -49,83 +49,101 @@ if (detailCoverImg) {
 };
 
 // Contact form
-// if (contactFormComponent) {
-// function validateForm (formSelector, callback) {
-//     const formElement = document.querySelector(formSelector);
+if (contactFormComponent) {
+function validateForm (formSelector, callback) {
+    const formElement = document.querySelector(formSelector);
 
-//     const validationOptions = [
-//         {
-//             attribute: "minlength",
-//             isValid: input => input.value && input.value.length >= parseInt(input.minLength, 10)        
-//             },
-//         {
-//             attribute: "required",
-//             isValid: input => input.value.trim() !== "",
-//             },
-//         {
-//             attribute: "ignore",
-//             isValid: input => input.value.trim() == "",
-//             },
-//         {
-//             attribute: "pattern",
-//             isValid: input => {
-//                 const patternRegex = new RegExp(input.pattern);
-//                 return patternRegex.test(input.value);
-//             },
-//         }
-//     ];
+    const validationOptions = [
+        {
+            attribute: "minlength",
+            inputIsValid: input => input.value && input.value.length >= parseInt(input.minLength, 10),
+            textareaIsValid: textarea => textarea.value && textarea.value.length >= parseInt(textarea.minLength, 10)
+            },
+        {
+            attribute: "required",
+            inputIsValid: input => input.value.trim() !== "",
+            textareaIsValid: textarea => textarea.value.trim() !== ""
+            },
+        {
+            attribute: "ignore",
+            inputIsValid: input => input.value.trim() == "",
+            },
+        {
+            attribute: "pattern",
+            inputIsValid: input => {
+                const patternRegex = new RegExp(input.pattern);
+                return patternRegex.test(input.value);
+            },
+        }
+    ];
 
-//     const validateSingleFormGroup = (formGroup) => {
-//         const input = formGroup.querySelector("input")
-//         let formGroupError = false;
-//         for(const option of validationOptions) {
-//             if (input) {
-//                 if (input.hasAttribute(option.attribute) && !option.isValid(input)) {
-//                     input.classList.add("validationError"); 
-//                     input.style.border = "2px solid #FF0000";  
-//                     // editValidationMsg.style.display = "flex";  
-//                     formGroupError = true;
-//                 }
-//                 if (!formGroupError || input.hasAttribute("ignore")) {
-//                     input.classList.remove("validationError");    
-//                     input.style.border = "0.0625rem solid #ec6041";
-//                     // editValidationMsg.style.display = "none";  
-//                     formGroupError = false;
-//                 }
-//             }              
-//         }
-//         return !formGroupError;
-//     };
+    const validateSingleFormGroup = (formGroup) => {
+        const input = formGroup.querySelector("input")
+        const textarea = formGroup.querySelector("textarea")
+        let formGroupError = false;
+        for(const option of validationOptions) {
+            if (input) {
+                if (input.hasAttribute(option.attribute) && !option.inputIsValid(input)) {
+                    input.classList.add("validationError"); 
+                    input.style.border = "2px solid #FF0000";  
+                    // editValidationMsg.style.display = "flex";  
+                    formGroupError = true;
+                }
+                if (!formGroupError || input.hasAttribute("ignore")) {
+                    input.classList.remove("validationError");    
+                    input.style.border = "0.0625rem solid #ec6041";
+                    // editValidationMsg.style.display = "none";  
+                    formGroupError = false;
+                }
+            }
+            if (textarea) {
+                if (textarea.hasAttribute(option.attribute) && !option.textareaIsValid(textarea)) {
+                    textarea.classList.add("validationError"); 
+                    textarea.style.border = "2px solid #FF0000";  
+                    // editValidationMsg.style.display = "flex";  
+                    formGroupError = true;
+                }
+                if (!formGroupError || textarea.hasAttribute("ignore")) {
+                    textarea.classList.remove("validationError");    
+                    textarea.style.border = "0.0625rem solid #ec6041";
+                    // editValidationMsg.style.display = "none";  
+                    formGroupError = false;
+                }
+            }         
+        }
+        return !formGroupError;
+    };
 
-//     // Array.from(formElement.elements).forEach(element => {
-//     //     element.addEventListener("blur", event => {
-//     //         validateSingleFormGroup(event.srcElement.parentElement);
-//     //     })
-//     // })
+    Array.from(formElement.elements).forEach(element => {
+        element.addEventListener("blur", event => {
+            validateSingleFormGroup(event.srcElement.parentElement);
+        })
+    })
 
-//     const validateAllFormGroups = formToValidate => {
-//     const formGroups = Array.from(formToValidate.querySelectorAll(".contactForm__form-inputs"))
+    const validateAllFormGroups = formToValidate => {
+    const formGroups = Array.from(formToValidate.querySelectorAll(".contactForm__form-input") && formToValidate.querySelectorAll(".contactForm__form-textarea"))
 
-//     return formGroups.every(formGroup => validateSingleFormGroup(formGroup));
-//     };    
+    return formGroups.every(formGroup => validateSingleFormGroup(formGroup));
+    };    
 
-//     if (submitContactBtn)
-//     submitContactBtn.addEventListener("click", event => {
-//         event.preventDefault();  
-//         const formValid = validateAllFormGroups(formElement)
-//         if (formValid) {  
-//             callback(formElement);
-//             }
-//         })
-//     };
-//     function submitContactFormData (formElement) {
-//     const formObject = Array.from(formElement.elements)
-//     .filter(element => element.type !=="submit" && element.type !=="label")
-//     .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
-//     console.log(formObject);
-//     // Submitting to API    
-//     };
-//     if(contactFormComponent) {
-//         validateForm("#contactFormComponent", submitContactFormData);
-//     };
-// };
+    if (submitContactBtn)
+    submitContactBtn.addEventListener("click", event => {
+        event.preventDefault();  
+        const formValid = validateAllFormGroups(formElement)
+        if (formValid) {  
+            callback(formElement);
+            }
+        })
+    };
+    function submitContactFormData (formElement) {
+        const formObject = Array.from(formElement.elements)
+        .filter(element => element.type !=="submit")
+        .reduce((accumulator, element) => ({...accumulator, [element.id]: element.value}), {});
+        // Submitting to API    
+        console.log(formObject);
+        formElement.reset();
+    };
+    if(contactFormComponent) {
+        validateForm("#contactsForm", submitContactFormData);
+    };
+};
