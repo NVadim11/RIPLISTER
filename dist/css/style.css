@@ -2517,6 +2517,7 @@ label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2612,7 +2613,7 @@ label {
 }
 
 .contactForm__formSubmit {
-  margin-top: 1.5625rem;
+  margin-top: 45px;
   padding: 1rem 3.125rem;
   font-weight: 700;
   font-size: 1.125rem;
@@ -2620,6 +2621,36 @@ label {
   border-radius: 1.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#e55738), to(#db4a2a));
   background: linear-gradient(180deg, #e55738 0%, #db4a2a 100%);
+}
+
+.contactForm__errorMsg {
+  display: none;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  bottom: 65px;
+  left: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-items: center;
+  color: #F00;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.contactForm__errorMsg svg {
+  padding-top: 3px;
+  scale: 100%;
+  margin-right: 8px;
 }
 
 /* The switchCheckbox - the box around the sliderCheckbox */
@@ -8730,6 +8761,11 @@ input:checked + .sliderCheckbox:before {
     padding: 1.25rem 4.6875rem;
   }
 
+  .contactForm__errorMsg {
+    bottom: 60px;
+    font-size: 16px;
+  }
+
   .contacts__contact-title {
     margin-top: 7.1875rem;
   }
@@ -9560,6 +9596,11 @@ input:checked + .sliderCheckbox:before {
     right: 0;
   }
 
+  .contactForm__errorMsg {
+    bottom: 40px;
+    font-size: 18px;
+  }
+
   .contacts__contact {
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -10100,6 +10141,16 @@ input:checked + .sliderCheckbox:before {
     padding: 1.875rem 5.8125rem;
     font-size: 1.5rem;
     border-radius: 2.5rem;
+  }
+
+  .contactForm__errorMsg {
+    bottom: 80px;
+    font-size: 20px;
+  }
+
+  .contactForm__errorMsg svg {
+    scale: 110%;
+    margin-right: 10px;
   }
 
   .contacts__contact-descr {
@@ -10956,6 +11007,15 @@ input:checked + .sliderCheckbox:before {
 
   .contactForm__formSubmit {
     font-size: 2rem;
+  }
+
+  .contactForm__errorMsg {
+    bottom: 100px;
+    font-size: 22px;
+  }
+
+  .contactForm__errorMsg svg {
+    scale: 120%;
   }
 
   .contacts__contact-title {

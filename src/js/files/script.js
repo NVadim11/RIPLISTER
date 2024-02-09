@@ -7,6 +7,7 @@ import { menuClose, menuOpen } from "./functions.js"
 
 const contactFormComponent = document.getElementById("contactFormComponent");
 const submitContactBtn = document.getElementById("contactFormSubmit")
+const contactErrMsg = document.querySelector(".contactForm__errorMsg");
 
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
 const altMenuBtn = document.querySelector('.headerAlt__menuBtn');
@@ -78,21 +79,21 @@ function validateForm (formSelector, callback) {
     ];
 
     const validateSingleFormGroup = (formGroup) => {
-        const input = formGroup.querySelector("input")
-        const textarea = formGroup.querySelector("textarea")
+        const input = formGroup.querySelector("input");
+        const textarea = formGroup.querySelector("textarea");
         let formGroupError = false;
         for(const option of validationOptions) {
             if (input) {
                 if (input.hasAttribute(option.attribute) && !option.inputIsValid(input)) {
                     input.classList.add("validationError"); 
                     input.style.border = "2px solid #FF0000";  
-                    // editValidationMsg.style.display = "flex";  
+                    contactErrMsg.style.display = "flex";  
                     formGroupError = true;
                 }
                 if (!formGroupError || input.hasAttribute("ignore")) {
                     input.classList.remove("validationError");    
                     input.style.border = "0.0625rem solid #ec6041";
-                    // editValidationMsg.style.display = "none";  
+                    contactErrMsg.style.display = "none";  
                     formGroupError = false;
                 }
             }
@@ -100,13 +101,13 @@ function validateForm (formSelector, callback) {
                 if (textarea.hasAttribute(option.attribute) && !option.textareaIsValid(textarea)) {
                     textarea.classList.add("validationError"); 
                     textarea.style.border = "2px solid #FF0000";  
-                    // editValidationMsg.style.display = "flex";  
+                    contactErrMsg.style.display = "flex";  
                     formGroupError = true;
                 }
                 if (!formGroupError || textarea.hasAttribute("ignore")) {
                     textarea.classList.remove("validationError");    
                     textarea.style.border = "0.0625rem solid #ec6041";
-                    // editValidationMsg.style.display = "none";  
+                    contactErrMsg.style.display = "none";  
                     formGroupError = false;
                 }
             }         

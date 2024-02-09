@@ -159,7 +159,7 @@
 					<form novalidate id="contactsForm" class="contactsForm">
 						<div class="contactForm__form-inputs">
 							<div class="contactForm__form-input">
-								<input required minlength="2" type="text" name="usrname" placeholder="Ваше Ім'я" id="contactForm__username" />
+								<input required minlength="2" maxlength="16" type="text" name="username" placeholder="Ваше Ім'я" id="contactForm__username" />
 							</div>
 							<div class="contactForm__form-input">
 								<input required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="text" name="email" placeholder="Ваш email" id="contactForm__email" />
@@ -171,19 +171,23 @@
 							</div>
 							<div class="contactForm__selector">
 								<select required name="contactTags[]" data-class-modif="contactTags" id="contactForm__selectOption">
-									<option value="1" selected>Публікації</option>
-									<option value="2">Про життя</option>
-									<option value="3">Розвиток</option>
-									<option value="4">Ментальне</option>
+									<option value="1" selected>Партнерство</option>
+									<option value="2">Скарги та пропозиції</option>
+									<option value="3">Інше</option>
 								</select>
 							</div>
 						</div>
 						<div class="contactForm__form-textarea">
-							<textarea required minlength="2" class="contactForm__formTextarea" rows="10" cols="50" name="comment" form="contactsForm" id="contactForm__textArea" placeholder="Текст повідомлення"></textarea>
+							<textarea minlength="2" maxlength="600" class="contactForm__formTextarea" rows="10" cols="50" name="comment" form="contactsForm" id="contactForm__textArea" placeholder="Текст повідомлення"></textarea>
 						</div>
 						<div class="contactForm__form-button">
 							<button type="submit" class="contactForm__formSubmit" id="contactFormSubmit">Відправити</button>
 						</div>
+						<span class="contactForm__errorMsg"><span class="errorSignSvg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<rect width="24" height="24" rx="12" fill="#FF0000" />
+									<path d="M12.1867 14.5971H11.1467C10.8267 12.3197 10.6667 10.4308 10.6667 8.93048V6H12.6667V8.93048C12.6667 10.4308 12.5067 12.3197 12.1867 14.5971ZM10.7067 17.3333V15.7305H12.6467V17.3333H10.7067Z" fill="white" />
+								</svg></span>Заповніть поля коректно
+						</span>
 					</form>
 				</div>
 			</section>
