@@ -122,7 +122,7 @@ function validateForm (formSelector, callback) {
     })
 
     const validateAllFormGroups = formToValidate => {
-    const formGroups = Array.from(formToValidate.querySelectorAll(".contactForm__form-input") && formToValidate.querySelectorAll(".contactForm__form-textarea"))
+    const formGroups = Array.from(formToValidate.querySelectorAll(".contactForm__form-input"));
 
     return formGroups.every(formGroup => validateSingleFormGroup(formGroup));
     };    
