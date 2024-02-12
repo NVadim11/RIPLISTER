@@ -948,7 +948,8 @@ body::after {
 .popupAuthForm-show body::after,
 .promoPopup-show body::after,
 .popupThanks-show body::after,
-.popupVideo-show body::after {
+.popupVideo-show body::after,
+.contactThanks-show body::after {
   opacity: 1;
 }
 
@@ -956,7 +957,8 @@ body::after {
 .popupAuthForm,
 .promoPopup,
 .popupThanks,
-.popupVideo {
+.popupVideo,
+.contactThanks {
   position: fixed;
   top: 0;
   left: 0;
@@ -973,7 +975,8 @@ body::after {
 .popupAuthForm_show,
 .promoPopup_show,
 .popupThanks_show,
-.popupVideo_show {
+.popupVideo_show,
+.contactThanks_show {
   z-index: 150;
   visibility: visible;
   overflow: auto;
@@ -984,7 +987,8 @@ body::after {
 .popupAuthForm_show .popupAuthForm__content,
 .promoPopup_show .promoPopup__content,
 .popupThanks_show .popupThanks__content,
-.popupVideo_show .popupVideo__content {
+.popupVideo_show .popupVideo__content,
+.contactThanks_show .contactThanks__content {
   visibility: visible;
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
@@ -995,7 +999,8 @@ body::after {
 .popupAuthForm__wrapper,
 .promoPopup__wrapper,
 .popupThanks__wrapper,
-.popupVideo__wrapper {
+.popupVideo__wrapper,
+.contactThanks__wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1020,7 +1025,8 @@ body::after {
 .popupAuthForm__content,
 .promoPopup__content,
 .popupThanks__content,
-.popupVideo__content {
+.popupVideo__content,
+.contactThanks__content {
   visibility: hidden;
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
@@ -1038,7 +1044,8 @@ body::after {
 .lock .popupAuthForm__content,
 .lock .promoPopup__content,
 .lock .popupThanks__content,
-.lock .popupVideo__content {
+.lock .popupVideo__content,
+.lock .contactThanks__content {
   visibility: visible;
 }
 
@@ -2048,6 +2055,78 @@ label {
 }
 
 .popupThanks__msg {
+  color: var(--text-color-black);
+  text-align: center;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 6rem 0 0 0;
+}
+
+.contactThanks__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 21.875rem;
+  height: 16.75rem;
+  border-radius: 1.875rem;
+  position: relative;
+}
+
+.contactThanks__close {
+  position: absolute;
+  right: 0.9375rem;
+  top: 0.9375rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.contactThanks__close svg rect {
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.contactThanks__close:hover svg rect {
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  fill: #EB8069;
+}
+
+.contactThanks__closeBtn {
+  border-radius: 1.25rem;
+  border: 0.0625rem solid var(--orange-color);
+  background: #E55738;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: var(--white-color);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 1.0625rem 2.3125rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  margin: 2rem 0 0 0;
+}
+
+.contactThanks__closeBtn:hover {
+  background: #EB8069;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  border-color: #EB8069;
+}
+
+.contactThanks__msg {
   color: var(--text-color-black);
   text-align: center;
   font-size: 1.125rem;
@@ -11170,6 +11249,11 @@ input:checked + .sliderCheckbox:before {
   }
 
   .popupThanks__content {
+    width: 28.125rem;
+    height: 18.75rem;
+  }
+
+  .contactThanks__content {
     width: 28.125rem;
     height: 18.75rem;
   }
