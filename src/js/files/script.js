@@ -1,4 +1,5 @@
 // Підключення функціоналу "Чертоги Фрілансера"
+import { flsModules } from "./modules.js";
 import { menuClose, menuOpen } from "./functions.js"
 // Підключення списку активних модулів
 // Constants
@@ -17,6 +18,8 @@ const detailHeaderTitle = document.querySelector('.detail__header-title');
 const detailDate = document.querySelector('.detail__header-date');
 const detailDescr = document.querySelector('.detail__header-descr');
 const detailHeader = document.querySelector('.detail__header');
+
+
 
 // Main header burger menu
 if (mainMenuBtn) {
@@ -143,6 +146,14 @@ function validateForm (formSelector, callback) {
         // Submitting to API    
         console.log(formObject);
         formElement.reset();
+
+        // логика вызова попапа по дата атрибуту - пригодиться в любой форме
+        setTimeout(() => {
+			if (flsModules.popupContact) {
+				const popup = document.getElementById('contactsForm').dataset.popupMessage;
+				popup ? flsModules.popupContact.open(popup) : null;
+			}
+		}, 0);
     };
     if(contactFormComponent) {
         validateForm("#contactsForm", submitContactFormData);

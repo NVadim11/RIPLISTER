@@ -2157,7 +2157,7 @@ class contactThanks {
 // Запускаємо та додаємо в об'єкт модулів
 flsModules.popup = new Popup({});
 flsModules.popupLogin = new PopupLogin({});
-flsModules.popupLogin = new contactThanks({});
+flsModules.popupContact = new contactThanks({});
 // flsModules.popupPromo = new PopupPromo({});
 // flsModules.popupVideo = new PopupVideo({});
 // flsModules.popupThanks = new PopupThanks({});

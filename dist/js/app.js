@@ -1888,7 +1888,7 @@
         }
         flsModules.popup = new Popup({});
         flsModules.popupLogin = new PopupLogin({});
-        flsModules.popupLogin = new contactThanks({});
+        flsModules.popupContact = new contactThanks({});
         let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
             const targetBlockElement = document.querySelector(targetBlock);
             if (targetBlockElement) {
@@ -2077,8 +2077,6 @@
                         if (response.ok) {
                             let responseResult = await response.json();
                             form.classList.remove("_sending");
-                            const showSubscribe = document.querySelector(".promoPopup__input-thanksMsg");
-                            showSubscribe.classList.add("_active");
                             formSent(form, responseResult);
                             console.log(responseResult);
                         } else {
@@ -2087,8 +2085,6 @@
                         }
                     } else if (form.hasAttribute("data-dev")) {
                         e.preventDefault();
-                        const showSubscribe = document.querySelector(".promoPopup__input-thanksMsg");
-                        showSubscribe.classList.add("_active");
                         formSent(form);
                     }
                 } else {
@@ -2109,10 +2105,6 @@
                     if (flsModules.popup) {
                         const popup = form.dataset.popupMessage;
                         popup ? flsModules.popup.open(popup) : null;
-                    }
-                    if (flsModules.popupThanks) {
-                        const popup = form.dataset.popupMessage;
-                        popup ? flsModules.popupThanks.open(popup) : null;
                     }
                 }), 0);
                 forms_formValidate.formClean(form);
@@ -7453,6 +7445,12 @@
                 })), {});
                 console.log(formObject);
                 formElement.reset();
+                setTimeout((() => {
+                    if (flsModules.popupContact) {
+                        const popup = document.getElementById("contactsForm").dataset.popupMessage;
+                        popup ? flsModules.popupContact.open(popup) : null;
+                    }
+                }), 0);
             }
             if (contactFormComponent) validateForm("#contactsForm", submitContactFormData);
         }
