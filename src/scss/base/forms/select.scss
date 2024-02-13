@@ -468,16 +468,18 @@
 	@media (min-width: $full) {
 	}
 	.select__body {
+		display: flex;
 		position: relative;
 	}
 	.select__title {
 		color: inherit;
 		text-align: left;
-		border-radius: 1.25rem;
+		border-radius: 1.875rem;
 		border: 0.0625rem solid var(--orange-color);
 		background: #FFF;
 		cursor: pointer;
 		width: 100%;
+		max-width: 31.25rem;
 		color: var(--text-color-black);
 		font-size: 1.125rem;
 		font-style: normal;
@@ -493,7 +495,7 @@
 		}
 		@media (min-width: $full) {
 			border: 0.0625rem solid #ec6041;
-			padding: 2.1875rem 0 2.1875rem 3.75rem;
+			padding: 1.5625rem 0 1.5625rem 60px;
 		}
 	}
 	.select__value {
@@ -555,14 +557,15 @@
 		height: 100%;
 	}
 	.select__options {
-		border-radius: 1.25rem;
+		border-radius: 1.875rem;
 		border: 0.0625rem solid var(--orange-color);
 		color: var(--text-color-black);			
 		font-style: normal;
 		font-weight: 600;
 		position: absolute;
-		top: calc(100% + 0.9375rem);
-		min-width: 100%;
+		top: calc(100% + 0.9375rem);	
+		width: 100%;
+		max-width: 31.25rem;
 		left: 0;
 		background-color: #fff;
 		padding: 1rem 0rem 1rem 1.5rem;
