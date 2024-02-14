@@ -1,4 +1,4 @@
-.policy {
+.privacy-policy {
 	&__container {
 		@media (min-width: $pc) {
 			align-items: start;
@@ -12,9 +12,9 @@
 			margin-bottom: 12.5rem;
 		}
 	}
-}
-.policyLineOrange {
-	background: #F5BFB4;
-	height: 0.125rem;
-	margin-bottom: 3.0625rem;
+	&__lineOrange {
+		background: #F5BFB4;
+		height: 0.125rem;
+		margin-bottom: 3.0625rem;
+	}
 }

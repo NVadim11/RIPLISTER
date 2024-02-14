@@ -7812,8 +7812,8 @@ input:checked + .sliderCheckbox:before {
   display: -ms-grid;
   display: grid;
   gap: 0.625rem;
-  -ms-grid-columns: 1fr 2fr 2fr 2fr 2fr;
-  grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+  -ms-grid-columns: 1.875rem 2fr 2fr 2fr 2fr;
+  grid-template-columns: 1.875rem 2fr 2fr 2fr 2fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -7837,11 +7837,13 @@ input:checked + .sliderCheckbox:before {
 .profileOfferings__tableItem {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr 2fr 2fr 2fr;
-  grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+  position: relative;
+  -ms-grid-columns: 1.875rem 2fr 2fr 2fr 2fr;
+  grid-template-columns: 1.875rem 2fr 2fr 2fr 2fr;
   grid-auto-rows: auto;
   gap: 0.625rem;
-  margin-top: 0.875rem;
+  padding-top: 0.875rem;
+  padding-bottom: 0.625rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -7895,9 +7897,6 @@ input:checked + .sliderCheckbox:before {
 }
 
 .profileOfferings__itemCost {
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -7927,6 +7926,13 @@ input:checked + .sliderCheckbox:before {
   font-weight: 400;
   line-height: 130%;
   /* 0.8125rem */
+}
+
+.profileOfferings__itemExtend {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 5px 9px 0 0;
 }
 
 .profileOfferings .offeringExtendBtn {
@@ -8182,7 +8188,19 @@ input:checked + .sliderCheckbox:before {
   text-decoration-line: underline;
 }
 
-.policyLineOrange {
+.public-offer__lineOrange {
+  background: #F5BFB4;
+  height: 0.125rem;
+  margin-bottom: 3.0625rem;
+}
+
+.privacy-policy__lineOrange {
+  background: #F5BFB4;
+  height: 0.125rem;
+  margin-bottom: 3.0625rem;
+}
+
+.guidelines__lineOrange {
   background: #F5BFB4;
   height: 0.125rem;
   margin-bottom: 3.0625rem;
@@ -9589,6 +9607,7 @@ input:checked + .sliderCheckbox:before {
   }
 
   .profileOfferings__tableItem {
+    padding-bottom: 0rem;
     gap: 1.5625rem;
     -ms-grid-columns: 3.4375rem 2fr 2fr 2fr 2fr 2fr;
     grid-template-columns: 3.4375rem 2fr 2fr 2fr 2fr 2fr;
@@ -9619,6 +9638,10 @@ input:checked + .sliderCheckbox:before {
 
   .profileOfferings__itemEndDate {
     font-size: 0.875rem;
+  }
+
+  .profileOfferings__itemExtend {
+    position: relative;
   }
 
   .profileOfferings .offeringExtendBtn {
@@ -10454,14 +10477,44 @@ input:checked + .sliderCheckbox:before {
     right: 0;
   }
 
-  .policy__container {
+  .public-offer__container {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
     margin-bottom: 12.5rem;
   }
 
-  .policy__content {
+  .public-offer__content {
+    max-width: 65%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    margin-bottom: 12.5rem;
+  }
+
+  .privacy-policy__container {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    margin-bottom: 12.5rem;
+  }
+
+  .privacy-policy__content {
+    max-width: 65%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    margin-bottom: 12.5rem;
+  }
+
+  .guidelines__container {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    margin-bottom: 12.5rem;
+  }
+
+  .guidelines__content {
     max-width: 65%;
     -webkit-box-align: start;
         -ms-flex-align: start;
