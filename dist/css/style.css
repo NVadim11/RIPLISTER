@@ -2493,6 +2493,26 @@ label {
   color: var(--orange-color);
 }
 
+.orange-Title h1,
+.orange-Title h2,
+.orange-Title h3,
+.orange-Title h4 {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 120%;
+  margin: 0 29px 29px 29px;
+  text-align: center;
+  color: #e55738;
+}
+
+.orange-Title p {
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: #171717;
+  margin: 0 10px 45px 10px;
+}
+
 .volunteer__container {
   display: -webkit-box;
   display: -ms-flexbox;

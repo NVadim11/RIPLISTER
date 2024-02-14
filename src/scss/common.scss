@@ -277,6 +277,49 @@
 	}
 }
 
+@media screen and (min-width:$mobile) {
+}
+@media screen and (min-width:$tablet) {
+}
+@media screen and (min-width:$pc) {
+}
+@media screen and (min-width:$full) {
+}
+
+.orange-Title {
+	h1, h2, h3, h4 {
+		font-weight: 600;
+		font-size: 2rem;
+		line-height: 120%;
+		margin: 0 29px 29px 29px;
+		text-align: center;
+		color: #e55738;
+		@media screen and (min-width:$mobile) {
+		}
+		@media screen and (min-width:$tablet) {
+		}
+		@media screen and (min-width:$pc) {
+		}
+		@media screen and (min-width:$full) {
+		}
+	}
+	p {
+		font-weight: 400;
+		font-size: 14px;
+		text-align: center;
+		color: #171717;
+		margin: 0 10px 45px 10px;
+		@media screen and (min-width:$mobile) {
+		}
+		@media screen and (min-width:$tablet) {
+		}
+		@media screen and (min-width:$pc) {
+		}
+		@media screen and (min-width:$full) {
+		}
+	}
+}
+
 // блок цитата стать волонтером
 .volunteer {
     // margin-right: 3.75rem 0 0 0;    
