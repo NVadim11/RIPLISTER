@@ -8208,21 +8208,15 @@ input:checked + .sliderCheckbox:before {
   text-decoration-line: underline;
 }
 
-.public-offer__lineOrange {
-  background: #F5BFB4;
-  height: 0.125rem;
+.public-offer .lineOrange {
   margin-bottom: 3.0625rem;
 }
 
-.privacy-policy__lineOrange {
-  background: #F5BFB4;
-  height: 0.125rem;
+.privacy-policy .lineOrange {
   margin-bottom: 3.0625rem;
 }
 
-.guidelines__lineOrange {
-  background: #F5BFB4;
-  height: 0.125rem;
+.guidelines .lineOrange {
   margin-bottom: 3.0625rem;
 }
 
