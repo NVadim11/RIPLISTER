@@ -2409,12 +2409,16 @@ label {
 }
 
 .textBlock h1 {
+  font-weight: 600;
   font-size: 2.25rem;
-  margin: 0 0 0.625rem 0;
+  line-height: 117%;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.9375rem 0;
+  text-align: center;
 }
 
 .textBlock h2 {
-  font-size: 2rem;
+  font-size: 32px;
   margin: 0 0 0.625rem 0;
 }
 
@@ -2434,6 +2438,22 @@ label {
   margin: 0;
 }
 
+.textBlock h1:first-child {
+  margin: 0 0 0.9375rem 0;
+}
+
+.textBlock h2:first-child {
+  margin: 0 0 0.625rem 0;
+}
+
+.textBlock h3:first-child h3 {
+  margin: 0 0 0.8125rem 0;
+}
+
+.textBlock h3:first-child h4:first-child h4 {
+  margin: 0 0 0.625rem 0;
+}
+
 .textBlock p {
   font-size: 0.875rem;
   color: var(--text-color-black);
@@ -2449,6 +2469,10 @@ label {
   margin: 0;
 }
 
+.textBlock p:first-child {
+  margin: 0 0 1.875rem 0;
+}
+
 .textBlock ul {
   padding: 0 0 0 1.25rem;
   margin: 0 0 1.875rem 0;
@@ -2462,8 +2486,16 @@ label {
   margin: 0;
 }
 
+.textBlock ul li:first-child {
+  margin: 0 0 0.9375rem 0;
+}
+
 .textBlock ul:last-child {
   margin: 0;
+}
+
+.textBlock ul:first-child {
+  margin: 0 0 1.875rem 0;
 }
 
 .textBlock ol {
@@ -2475,8 +2507,16 @@ label {
   margin: 0;
 }
 
+.textBlock ol li:first-child {
+  margin: 0 0 0.9375rem 0;
+}
+
 .textBlock ol:last-child {
   margin: 0;
+}
+
+.textBlock ol:first-child {
+  margin: 0 0 1.875rem 0;
 }
 
 .textBlock li {
@@ -2493,24 +2533,42 @@ label {
   color: var(--orange-color);
 }
 
+.orange-Title {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .orange-Title h1,
 .orange-Title h2,
 .orange-Title h3,
 .orange-Title h4 {
-  font-weight: 600;
-  font-size: 2rem;
-  line-height: 120%;
-  margin: 0 29px 29px 29px;
+  margin: 0 0 1.8125rem 0;
   text-align: center;
   color: #e55738;
 }
 
-.orange-Title p {
-  font-weight: 400;
-  font-size: 14px;
-  text-align: center;
-  color: #171717;
-  margin: 0 10px 45px 10px;
+.orange-Title h1:last-child,
+.orange-Title h2:last-child,
+.orange-Title h3:last-child,
+.orange-Title h4:last-child {
+  margin-bottom: 0;
+}
+
+.orange-Title h1:first-child {
+  margin: 0 0 1.4375rem 0;
+}
+
+.orange-Title h2:first-child {
+  margin: 0 0 3.25rem 0;
+}
+
+.orange-Title h3:first-child {
+  margin: 0 0 3.875rem 0;
+}
+
+.orange-Title h4:first-child {
+  margin: 0 0 5.9375rem 0;
 }
 
 .volunteer__container {
@@ -2717,7 +2775,7 @@ label {
 }
 
 .contactForm__formSubmit {
-  margin-top: 45px;
+  margin-top: 2.8125rem;
   padding: 1rem 3.125rem;
   font-weight: 700;
   font-size: 1.125rem;
@@ -2734,7 +2792,7 @@ label {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  bottom: 65px;
+  bottom: 4.0625rem;
   left: 0;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -2745,16 +2803,16 @@ label {
   height: fit-content;
   align-items: center;
   color: #F00;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
 
 .contactForm__errorMsg svg {
-  padding-top: 3px;
+  padding-top: 0.1875rem;
   scale: 100%;
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 
 /* The switchCheckbox - the box around the sliderCheckbox */
@@ -8805,7 +8863,19 @@ input:checked + .sliderCheckbox:before {
     margin: 0 0 0.8125rem 0;
   }
 
+  .textBlock h2:first-child {
+    margin: 0 0 0.9375rem 0;
+  }
+
+  .textBlock h3:first-child h3 {
+    margin: 0 0 0.8125rem 0;
+  }
+
   .textBlock p {
+    margin: 0 0 3.125rem 0;
+  }
+
+  .textBlock p:first-child {
     margin: 0 0 3.125rem 0;
   }
 
@@ -8866,8 +8936,8 @@ input:checked + .sliderCheckbox:before {
   }
 
   .contactForm__errorMsg {
-    bottom: 60px;
-    font-size: 16px;
+    bottom: 3.75rem;
+    font-size: 1rem;
   }
 
   .contacts__title {
@@ -9002,6 +9072,21 @@ input:checked + .sliderCheckbox:before {
 
   .popupVideo {
     padding: 2.875rem 2.25rem 2.125rem 2.25rem;
+  }
+
+  .textBlock h1 {
+    margin: 0 0 1.6875rem 0;
+  }
+
+  .textBlock h1:first-child {
+    margin: 0 0 1.6875rem 0;
+  }
+
+  .orange-Title h1,
+  .orange-Title h2,
+  .orange-Title h3,
+  .orange-Title h4 {
+    margin: 0 0 1.4375rem 0;
   }
 
   .switchCheckbox {
@@ -9706,8 +9791,8 @@ input:checked + .sliderCheckbox:before {
   }
 
   .contactForm__errorMsg {
-    bottom: 40px;
-    font-size: 18px;
+    bottom: 2.5rem;
+    font-size: 1.125rem;
   }
 
   .contacts__info {
@@ -9765,6 +9850,22 @@ input:checked + .sliderCheckbox:before {
   .popupVideo__close label {
     font-size: 1.5rem;
     margin-right: 0.9375rem;
+  }
+
+  .textBlock h1 {
+    margin: 0 0 1.875rem 0;
+  }
+
+  .textBlock h1:first-child {
+    margin: 0 0 1.875rem 0;
+  }
+
+  .orange-Title h1,
+  .orange-Title h2,
+  .orange-Title h3,
+  .orange-Title h4 {
+    margin: 0 0 3.25rem 0;
+    text-align: start;
   }
 
   .headerAlt {
@@ -10172,17 +10273,21 @@ input:checked + .sliderCheckbox:before {
     text-align: start;
   }
 
-  .textBlock h1 {
-    font-size: 3.125rem;
-  }
-
   .textBlock h2 {
-    font-size: 2.5rem;
+    font-size: 40px;
     margin: 0 0 1.875rem 0;
   }
 
   .textBlock h3 {
     font-size: 2rem;
+    margin: 0 0 1.875rem 0;
+  }
+
+  .textBlock h2:first-child {
+    margin: 0 0 1.875rem 0;
+  }
+
+  .textBlock h3:first-child h3 {
     margin: 0 0 1.875rem 0;
   }
 
@@ -10192,11 +10297,23 @@ input:checked + .sliderCheckbox:before {
     text-align: start;
   }
 
+  .textBlock p:first-child {
+    margin: 0 0 4.0625rem 0;
+  }
+
   .textBlock ul {
     margin: 0 0 3.125rem 0;
   }
 
+  .textBlock ul:first-child {
+    margin: 0 0 3.125rem 0;
+  }
+
   .textBlock ol {
+    margin: 0 0 3.125rem 0;
+  }
+
+  .textBlock ol:first-child {
     margin: 0 0 3.125rem 0;
   }
 
@@ -10255,13 +10372,13 @@ input:checked + .sliderCheckbox:before {
   }
 
   .contactForm__errorMsg {
-    bottom: 80px;
-    font-size: 20px;
+    bottom: 5rem;
+    font-size: 1.25rem;
   }
 
   .contactForm__errorMsg svg {
     scale: 110%;
-    margin-right: 10px;
+    margin-right: 0.625rem;
   }
 
   .contacts__descr {
@@ -10715,6 +10832,17 @@ input:checked + .sliderCheckbox:before {
     font-weight: 600;
   }
 
+  .textBlock h1 {
+    font-size: 3.125rem;
+  }
+
+  .orange-Title h1,
+  .orange-Title h2,
+  .orange-Title h3,
+  .orange-Title h4 {
+    margin: 0 0 3.875rem 0;
+  }
+
   .volunteer__container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -11147,8 +11275,8 @@ input:checked + .sliderCheckbox:before {
   }
 
   .contactForm__errorMsg {
-    bottom: 100px;
-    font-size: 22px;
+    bottom: 6.25rem;
+    font-size: 1.375rem;
   }
 
   .contactForm__errorMsg svg {
@@ -11314,6 +11442,22 @@ input:checked + .sliderCheckbox:before {
   .contactThanks__content {
     width: 28.125rem;
     height: 18.75rem;
+  }
+
+  .textBlock h1 {
+    font-size: 4rem;
+    margin: 0 0 50px 0;
+  }
+
+  .textBlock h1:first-child {
+    margin: 0 0 3.125rem 0;
+  }
+
+  .orange-Title h1,
+  .orange-Title h2,
+  .orange-Title h3,
+  .orange-Title h4 {
+    margin: 0 0 5.9375rem 0;
   }
 
   .volunteer span {
