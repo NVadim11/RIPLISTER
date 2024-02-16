@@ -152,6 +152,11 @@
 // 	}
 // }
 
+.select__scroll {
+	display: flex;
+	flex-direction: column;
+}
+
 // blog selector
 .select_blogTags {
 	min-width: 0;
