@@ -406,7 +406,7 @@
             hash = hash ? `#${hash}` : window.location.href.split("#")[0];
             history.pushState("", "", hash);
         }
-        let functions_slideUp = (target, duration = 500, showmore = 0) => {
+        let _slideUp = (target, duration = 500, showmore = 0) => {
             if (!target.classList.contains("_slide")) {
                 target.classList.add("_slide");
                 target.style.transitionProperty = "height, margin, padding";
@@ -472,8 +472,8 @@
                 }), duration);
             }
         };
-        let functions_slideToggle = (target, duration = 500) => {
-            if (target.hidden) return _slideDown(target, duration); else return functions_slideUp(target, duration);
+        let _slideToggle = (target, duration = 500) => {
+            if (target.hidden) return _slideDown(target, duration); else return _slideUp(target, duration);
         };
         let bodyLockStatus = true;
         let bodyLockToggle = (delay = 500) => {
@@ -578,7 +578,7 @@
                                     spollerBlock.open = false;
                                 }), spollerSpeed);
                                 spollerTitle.classList.toggle("_spoller-active");
-                                functions_slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
+                                _slideToggle(spollerTitle.nextElementSibling, spollerSpeed);
                                 if (scrollSpoller && spollerTitle.classList.contains("_spoller-active")) {
                                     const scrollSpollerValue = spollerBlock.dataset.spollerScroll;
                                     const scrollSpollerOffset = +scrollSpollerValue ? +scrollSpollerValue : 0;
@@ -605,7 +605,7 @@
                             if (spollersBlock.classList.contains("_spoller-init")) {
                                 const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
                                 spollerClose.classList.remove("_spoller-active");
-                                functions_slideUp(spollerClose.nextElementSibling, spollerSpeed);
+                                _slideUp(spollerClose.nextElementSibling, spollerSpeed);
                                 setTimeout((() => {
                                     spollerCloseBlock.open = false;
                                 }), spollerSpeed);
@@ -619,7 +619,7 @@
                         const spollerActiveTitle = spollerActiveBlock.querySelector("summary");
                         const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
                         spollerActiveTitle.classList.remove("_spoller-active");
-                        functions_slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
+                        _slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
                         setTimeout((() => {
                             spollerActiveBlock.open = false;
                         }), spollerSpeed);
@@ -696,7 +696,7 @@
                         if (tabsTitles[index].classList.contains("_tab-active")) {
                             if (tabsBlockAnimate) _slideDown(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = false;
                             if (isHash && !tabsContentItem.closest(".popup")) setHash(`tab-${tabsBlockIndex}-${index}`);
-                        } else if (tabsBlockAnimate) functions_slideUp(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = true;
+                        } else if (tabsBlockAnimate) _slideUp(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = true;
                     }));
                 }
             }
@@ -785,7 +785,7 @@
                         if (tabsTitles[index].classList.contains("_profile-active")) {
                             if (tabsBlockAnimate) _slideDown(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = false;
                             if (isHash && !tabsContentItem.closest(".popup")) setHash(`tab-${tabsBlockIndex}-${index}`);
-                        } else if (tabsBlockAnimate) functions_slideUp(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = true;
+                        } else if (tabsBlockAnimate) _slideUp(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = true;
                     }));
                 }
             }
@@ -874,7 +874,7 @@
                         if (tabsTitles[index].classList.contains("_bill-active")) {
                             if (tabsBlockAnimate) _slideDown(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = false;
                             if (isHash && !tabsContentItem.closest(".popup")) setHash(`tab-${tabsBlockIndex}-${index}`);
-                        } else if (tabsBlockAnimate) functions_slideUp(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = true;
+                        } else if (tabsBlockAnimate) _slideUp(tabsContentItem, tabsBlockAnimate); else tabsContentItem.hidden = true;
                     }));
                 }
             }
@@ -905,7 +905,7 @@
         function menuClose() {
             bodyUnlock();
         }
-        function functions_FLS(message) {
+        function FLS(message) {
             setTimeout((() => {
                 if (window.FLS) console.log(message);
             }), 0);
@@ -1435,7 +1435,7 @@
             }
             _focusTrap() {}
             popupLogging(message) {
-                this.options.logging ? functions_FLS(`[Попапос]: ${message}`) : null;
+                this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
             }
         }
         class PopupLogin {
@@ -1658,7 +1658,7 @@
             }
             _focusTrap() {}
             popupLogging(message) {
-                this.options.logging ? functions_FLS(`[Popup]: ${message}`) : null;
+                this.options.logging ? FLS(`[Popup]: ${message}`) : null;
             }
         }
         class contactThanks {
@@ -1883,7 +1883,7 @@
                 if (!this.isOpen && this.lastFocusEl) this.lastFocusEl.focus(); else focusable[0].focus();
             }
             popupLogging(message) {
-                this.options.logging ? functions_FLS(`[Попапос]: ${message}`) : null;
+                this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
             }
         }
         flsModules.popup = new Popup({});
@@ -1924,8 +1924,8 @@
                         behavior: "smooth"
                     });
                 }
-                functions_FLS(`[gotoBlock]: Юхуу...їдемо до ${targetBlock}`);
-            } else functions_FLS(`[gotoBlock]: Йой... Такого блоку немає на сторінці: ${targetBlock}`);
+                FLS(`[gotoBlock]: Юхуу...їдемо до ${targetBlock}`);
+            } else FLS(`[gotoBlock]: Йой... Такого блоку немає на сторінці: ${targetBlock}`);
         };
         function formFieldsInit(options = {
             viewPass: false,
@@ -1938,8 +1938,8 @@
                         targetElement.classList.add("_form-focus");
                         targetElement.parentElement.classList.add("_form-focus");
                     }
-                    forms_formValidate.removeError(targetElement);
-                    targetElement.hasAttribute("data-validate") ? forms_formValidate.removeError(targetElement) : null;
+                    formValidate.removeError(targetElement);
+                    targetElement.hasAttribute("data-validate") ? formValidate.removeError(targetElement) : null;
                 }
             }));
             document.body.addEventListener("focusout", (function(e) {
@@ -1949,7 +1949,7 @@
                         targetElement.classList.remove("_form-focus");
                         targetElement.parentElement.classList.remove("_form-focus");
                     }
-                    targetElement.hasAttribute("data-validate") ? forms_formValidate.validateInput(targetElement) : null;
+                    targetElement.hasAttribute("data-validate") ? formValidate.validateInput(targetElement) : null;
                 }
             }));
             if (options.viewPass) document.addEventListener("click", (function(e) {
@@ -1980,7 +1980,7 @@
                 }
             }
         }
-        let forms_formValidate = {
+        let formValidate = {
             getErrors(form) {
                 let error = 0;
                 let formRequiredItems = form.querySelectorAll("*[data-required]");
@@ -2026,7 +2026,7 @@
                         const el = inputs[index];
                         el.parentElement.classList.remove("_form-focus");
                         el.classList.remove("_form-focus");
-                        forms_formValidate.removeError(el);
+                        formValidate.removeError(el);
                     }
                     let checkboxes = form.querySelectorAll(".checkbox__input");
                     if (checkboxes.length > 0) for (let index = 0; index < checkboxes.length; index++) {
@@ -2055,11 +2055,11 @@
                 }));
                 form.addEventListener("reset", (function(e) {
                     const form = e.target;
-                    forms_formValidate.formClean(form);
+                    formValidate.formClean(form);
                 }));
             }
             async function formSubmitAction(form, e) {
-                const error = !form.hasAttribute("data-no-validate") ? forms_formValidate.getErrors(form) : 0;
+                const error = !form.hasAttribute("data-no-validate") ? formValidate.getErrors(form) : 0;
                 if (error === 0) {
                     const ajax = form.hasAttribute("data-ajax");
                     if (ajax) {
@@ -2107,11 +2107,11 @@
                         popup ? flsModules.popup.open(popup) : null;
                     }
                 }), 0);
-                forms_formValidate.formClean(form);
+                formValidate.formClean(form);
                 formLogging(`Форму відправлено!`);
             }
             function formLogging(message) {
-                functions_FLS(`[Форми]: ${message}`);
+                FLS(`[Форми]: ${message}`);
             }
         }
         class SelectConstructor {
@@ -2246,7 +2246,7 @@
                 const selectOptions = this.getSelectElement(selectItem, this.selectClasses.classSelectOptions).selectElement;
                 if (!selectOptions.classList.contains("_slide")) {
                     selectItem.classList.remove(this.selectClasses.classSelectOpen);
-                    functions_slideUp(selectOptions, originalSelect.dataset.speed);
+                    _slideUp(selectOptions, originalSelect.dataset.speed);
                     setTimeout((() => {
                         selectItem.style.zIndex = "";
                     }), originalSelect.dataset.speed);
@@ -2264,7 +2264,7 @@
                 setTimeout((() => {
                     if (!selectOptions.classList.contains("_slide")) {
                         selectItem.classList.toggle(this.selectClasses.classSelectOpen);
-                        functions_slideToggle(selectOptions, originalSelect.dataset.speed);
+                        _slideToggle(selectOptions, originalSelect.dataset.speed);
                         if (selectItem.classList.contains(this.selectClasses.classSelectOpen)) selectItem.style.zIndex = selectOpenzIndex; else setTimeout((() => {
                             selectItem.style.zIndex = "";
                         }), originalSelect.dataset.speed);
@@ -2427,7 +2427,7 @@
                 this.setSelectChange(originalSelect);
             }
             setSelectChange(originalSelect) {
-                if (originalSelect.hasAttribute("data-validate")) forms_formValidate.validateInput(originalSelect);
+                if (originalSelect.hasAttribute("data-validate")) formValidate.validateInput(originalSelect);
                 if (originalSelect.hasAttribute("data-submit") && originalSelect.value) {
                     let tempButton = document.createElement("button");
                     tempButton.type = "submit";
@@ -2468,7 +2468,7 @@
                 }));
             }
             setLogging(message) {
-                this.config.logging ? functions_FLS(`[select]: ${message} `) : null;
+                this.config.logging ? FLS(`[select]: ${message} `) : null;
             }
         }
         flsModules.select = new SelectConstructor({});

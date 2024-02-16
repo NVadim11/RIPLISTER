@@ -10,13 +10,13 @@
     transform: translate(-100%, 0rem);
     &__header {
        height: 4.75rem;
-       padding: 0 0.5rem;
+       padding: 0 0.9375rem;
        display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-    &__left {
-
+        @media screen and (min-width:$mobile) {
+            padding: 0 2.1875rem;
+        }
     }
     &__langBtn {
         border-radius: 1.125rem;
