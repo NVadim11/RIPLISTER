@@ -964,7 +964,8 @@ body::after {
 .promoPopup-show body::after,
 .popupThanks-show body::after,
 .popupVideo-show body::after,
-.contactThanks-show body::after {
+.contactThanks-show body::after,
+.contactUsModal-show body::after {
   opacity: 1;
 }
 
@@ -973,7 +974,8 @@ body::after {
 .promoPopup,
 .popupThanks,
 .popupVideo,
-.contactThanks {
+.contactThanks,
+.contactUsModal {
   position: fixed;
   top: 0;
   left: 0;
@@ -991,7 +993,8 @@ body::after {
 .promoPopup_show,
 .popupThanks_show,
 .popupVideo_show,
-.contactThanks_show {
+.contactThanks_show,
+.contactUsModal_show {
   z-index: 150;
   visibility: visible;
   overflow: auto;
@@ -1003,7 +1006,8 @@ body::after {
 .promoPopup_show .promoPopup__content,
 .popupThanks_show .popupThanks__content,
 .popupVideo_show .popupVideo__content,
-.contactThanks_show .contactThanks__content {
+.contactThanks_show .contactThanks__content,
+.contactUsModal_show .contactUsModal__content {
   visibility: visible;
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
@@ -1015,7 +1019,8 @@ body::after {
 .promoPopup__wrapper,
 .popupThanks__wrapper,
 .popupVideo__wrapper,
-.contactThanks__wrapper {
+.contactThanks__wrapper,
+.contactUsModal__wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1041,7 +1046,8 @@ body::after {
 .promoPopup__content,
 .popupThanks__content,
 .popupVideo__content,
-.contactThanks__content {
+.contactThanks__content,
+.contactUsModal__content {
   visibility: hidden;
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
@@ -1060,7 +1066,8 @@ body::after {
 .lock .promoPopup__content,
 .lock .popupThanks__content,
 .lock .popupVideo__content,
-.lock .contactThanks__content {
+.lock .contactThanks__content,
+.lock .contactUsModal__content {
   visibility: visible;
 }
 
@@ -1175,6 +1182,126 @@ label {
   height: 2.1875rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+
+.contactUsModal {
+  border-radius: 1.875rem;
+}
+
+.contactUsModal__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1.875rem;
+}
+
+.contactUsModal__content form {
+  margin-top: 1.0625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contactUsModal .contactForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 1.25rem;
+}
+
+.contactUsModal .contactForm__form-title {
+  font-weight: 700;
+  font-size: 1.875rem;
+}
+
+.contactUsModal .contactForm__form-descr {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 140%;
+  text-align: center;
+  color: #171717;
+}
+
+.contactUsModal .contactForm__form-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0;
+}
+
+.contactUsModal .contactForm__form-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contactUsModal .contactForm input {
+  border: 1px solid #ec6041;
+  border-radius: 20px;
+  height: 54px;
+}
+
+.contactUsModal .contactForm__selectLabel {
+  margin-bottom: 15px;
+}
+
+.contactUsModal .contactForm__selector {
+  margin: 0;
+}
+
+.contactUsModal .contactForm__selector button {
+  height: 54px;
+}
+
+.contactUsModal .contactForm__selector span {
+  margin-top: -4px;
+}
+
+.contactUsModal .contactForm__selector .select__value:after {
+  margin-top: 0;
+}
+
+.contactUsModal .contactForm__form-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+}
+
+.contactUsModal .contactForm__formSubmit {
+  font-size: 1.25rem;
+  padding: 0.9375rem 3.75rem 0.9375rem 3.75rem;
+  margin-top: 1.875rem;
 }
 
 .popupAuthForm {
@@ -1353,12 +1480,39 @@ label {
 }
 
 .popupAuthForm__input {
+  font-weight: 400;
+  font-size: 1rem;
   margin-top: 0.8125rem;
   border-radius: 1.25rem;
   border: 0.0625rem solid #EC6041;
   background: #FFF;
   width: 260px;
   padding: 1.0625rem 0rem 1.0625rem 1.875rem;
+}
+
+.popupAuthForm__input::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.popupAuthForm__input::-moz-placeholder {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.popupAuthForm__input:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.popupAuthForm__input::-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.popupAuthForm__input::placeholder {
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .popupAuthForm__btnField {
@@ -8842,6 +8996,84 @@ input:checked + .sliderCheckbox:before {
 }
 
 @media screen and (min-width: 47.99875em) {
+  .contactUsModal__content {
+    padding: 0 85px;
+  }
+
+  .contactUsModal .contactForm {
+    border-radius: 1.875rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 31.25rem;
+    padding: 6.5625rem 0 4.6875rem 0;
+  }
+
+  .contactUsModal .contactForm__form-inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.9375rem;
+  }
+
+  .contactUsModal .contactForm__form-select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .contactUsModal .contactForm input {
+    border: 1px solid #ec6041;
+    border-radius: 20px;
+    height: 54px;
+  }
+
+  .contactUsModal .contactForm__selectLabel {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .contactUsModal .contactForm__selector {
+    margin: 0;
+  }
+
+  .contactUsModal .contactForm__selector button {
+    height: 54px;
+  }
+
+  .contactUsModal .contactForm__selector span {
+    font-size: 18px;
+    margin-top: -4px;
+  }
+
+  .contactUsModal .contactForm__selector .select__value:after {
+    margin-top: -4px;
+  }
+
+  .contactUsModal .contactForm__form-button {
+    margin: 0;
+  }
+
+  .contactUsModal .contactForm__formSubmit {
+    margin-top: 1.875rem;
+    font-size: 1.25rem;
+    padding: 0.9375rem 3.75rem 0.9375rem 3.75rem;
+  }
+
   .popupAuthForm__content {
     padding: 0 85px;
   }
@@ -9669,6 +9901,92 @@ input:checked + .sliderCheckbox:before {
 }
 
 @media screen and (min-width: 79.99875em) {
+  .contactUsModal .contactForm {
+    border-radius: 1.875rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 31.25rem;
+    padding: 6.5625rem 0 4.6875rem 0;
+  }
+
+  .contactUsModal .contactForm__form-title {
+    font-size: 2.25rem;
+  }
+
+  .contactUsModal .contactForm__form-descr {
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 140%;
+    text-align: center;
+  }
+
+  .contactUsModal .contactForm__form-inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.9375rem;
+  }
+
+  .contactUsModal .contactForm__form-select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .contactUsModal .contactForm input {
+    border: 1px solid #ec6041;
+    border-radius: 20px;
+    height: 54px;
+  }
+
+  .contactUsModal .contactForm__selectLabel {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .contactUsModal .contactForm__selector {
+    margin: 0;
+  }
+
+  .contactUsModal .contactForm__selector button {
+    height: 54px;
+  }
+
+  .contactUsModal .contactForm__selector span {
+    font-size: 18px;
+    margin-top: -4px;
+  }
+
+  .contactUsModal .contactForm__selector .select__value:after {
+    margin-top: -9px;
+  }
+
+  .contactUsModal .contactForm__form-button {
+    margin: 0;
+  }
+
+  .contactUsModal .contactForm__formSubmit {
+    margin-top: 1.875rem;
+    position: relative;
+    font-size: 1.25rem;
+    padding: 0.9375rem 3.75rem 0.9375rem 3.75rem;
+  }
+
   .promoPopup__about {
     margin: 4.6875rem 7.5rem 0 7.5rem;
     font-size: 1rem;
@@ -10534,6 +10852,80 @@ input:checked + .sliderCheckbox:before {
 }
 
 @media screen and (min-width: 89.99875em) {
+  .contactUsModal .contactForm {
+    border-radius: 1.875rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 31.25rem;
+    padding: 6.5625rem 0 4.6875rem 0;
+  }
+
+  .contactUsModal .contactForm__form-inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.9375rem;
+  }
+
+  .contactUsModal .contactForm__form-select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .contactUsModal .contactForm input {
+    border: 1px solid #ec6041;
+    border-radius: 20px;
+    height: 54px;
+  }
+
+  .contactUsModal .contactForm__selectLabel {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .contactUsModal .contactForm__selector {
+    margin: 0;
+  }
+
+  .contactUsModal .contactForm__selector button {
+    height: 54px;
+  }
+
+  .contactUsModal .contactForm__selector span {
+    font-size: 18px;
+    margin-top: -8px;
+  }
+
+  .contactUsModal .contactForm__selector .select__value:after {
+    margin-top: -9px;
+  }
+
+  .contactUsModal .contactForm__form-button {
+    margin: 0;
+  }
+
+  .contactUsModal .contactForm__formSubmit {
+    margin-top: 1.875rem;
+    font-size: 1.25rem;
+    padding: 0.9375rem 3.75rem 0.9375rem 3.75rem;
+  }
+
   .popupAuthForm__formContent {
     text-align: start;
     -webkit-box-align: start;
@@ -11268,6 +11660,81 @@ input:checked + .sliderCheckbox:before {
 }
 
 @media screen and (min-width: 119.99875em) {
+  .contactUsModal .contactForm {
+    border-radius: 1.875rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 31.25rem;
+    padding: 6.5625rem 0 4.6875rem 0;
+  }
+
+  .contactUsModal .contactForm__form-inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.9375rem;
+  }
+
+  .contactUsModal .contactForm__form-select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .contactUsModal .contactForm input {
+    border: 1px solid #ec6041;
+    border-radius: 20px;
+    height: 54px;
+  }
+
+  .contactUsModal .contactForm__selectLabel {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .contactUsModal .contactForm__selector {
+    margin: 0;
+  }
+
+  .contactUsModal .contactForm__selector button {
+    height: 54px;
+  }
+
+  .contactUsModal .contactForm__selector span {
+    font-size: 18px;
+    margin-top: -9px;
+    margin-left: -14px;
+  }
+
+  .contactUsModal .contactForm__selector .select__value:after {
+    margin-top: -9px;
+  }
+
+  .contactUsModal .contactForm__form-button {
+    margin: 0;
+  }
+
+  .contactUsModal .contactForm__formSubmit {
+    margin-top: 1.875rem;
+    font-size: 1.25rem;
+    padding: 0.9375rem 3.75rem 0.9375rem 3.75rem;
+  }
+
   .promoPopup__icon {
     max-width: 19.5rem;
   }

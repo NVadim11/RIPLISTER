@@ -544,7 +544,7 @@
 					</ul>
 				</div>
 				<div class="footer__contact">
-					<button data-popup="#popup">
+					<button data-contactUsModal-open="#contactUsModal">
 						<svg xmlns="http://www.w3.org/2000/svg" width="36" height="27" viewBox="0 0 36 27" fill="none">
 							<rect width="35.8904" height="26.2" rx="6" fill="#E55738" />
 							<path d="M5.62599 5.86294C9.6288 9.7635 13.6316 13.6637 17.6344 17.5643C18.3806 18.2912 19.5258 17.1486 18.7785 16.4202C14.7757 12.52 10.7729 8.61942 6.77007 4.71923C6.0239 3.99195 4.8787 5.13492 5.62599 5.86294Z" fill="white" />
@@ -662,43 +662,62 @@
 			</a>
 		</div>
 	</div>
-	<div id="popup" aria-hidden="true" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content">
-				<div class="popup__container">
-					<div class="contactForm" id="contactFormComponent">
-						<div class="contactForm__form-title">
-							<h1>Напишіть нам</h1>
-						</div>
-						<div class="contactForm__form-descr">
-							<p>Співробітник нашої служби підтримки відповість якомога швидше.</p>
-						</div>
-						<form action="URL" id="contactsForm" class="contactsForm">
-							<div class="contactForm__form-inputs">
-								<input class="contactForm__form-input" type="text" name="usrname" placeholder="Ваше Ім'я" />
-								<input class="contactForm__form-input" type="text" name="email" placeholder="Ваш email" />
-							</div>
-							<div class="contactForm__form-select">
-								<div class="contactForm__selectLabel">
-									<p>Тема звернення:</p>
-								</div>
-								<div class="contactForm__selector">
-									<select name="contactTags[]" data-class-modif="contactTags">
-										<option value="1" selected>Публікації</option>
-										<option value="2">Про життя</option>
-										<option value="3">Розвиток</option>
-										<option value="4">Ментальне</option>
-									</select>
-								</div>
-							</div>
-							<div class="contactForm__form-textarea">
-								<textarea class="contactForm__formTextarea" rows="10" cols="50" name="comment" form="usrform">Текст повідомлення</textarea>
-							</div>
-							<div class="contactForm__form-button">
-								<button type="submit" class="contactForm__formSubmit">Відправити</button>
-							</div>
-						</form>
+	<div id="contactUsModal" aria-hidden="true" class="contactUsModal">
+		<div class="contactUsModal__wrapper">
+			<div class="contactUsModal__content">
+				<button data-contactUsModal-close type="button" class="contactThanks__close">
+					<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+						<rect width="44" height="44" rx="18" fill="url(#paint0_linear_2574_3511)" />
+						<path d="M28.5512 16.0769L16.0742 28.5539" stroke="white" stroke-width="2" />
+						<path d="M16.0738 16.0768L28.5508 28.5538" stroke="white" stroke-width="2" />
+						<defs>
+							<linearGradient id="paint0_linear_2574_3511" x1="22" y1="0" x2="22" y2="44" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#EF6446" />
+								<stop offset="1" stop-color="#DB4A2A" />
+							</linearGradient>
+						</defs>
+					</svg>
+				</button>
+				<div class="contactForm" id="contactFormComponent">
+					<div class="contactForm__form-title">
+						<h1>Напишіть нам</h1>
 					</div>
+					<div class="contactForm__form-descr">
+						<p>Співробітник нашої служби підтримки відповість якомога швидше.</p>
+					</div>
+					<form novalidate id="contactsForm" class="contactsForm" data-popup-message="#contactThanks" data-dev action="#">
+						<div class="contactForm__form-inputs">
+							<div class="contactForm__form-input">
+								<input required minlength="2" maxlength="16" type="text" name="username" placeholder="Ваше Ім'я" id="contactForm__username" />
+							</div>
+							<div class="contactForm__form-input">
+								<input required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="text" name="email" placeholder="Ваш email" id="contactForm__email" />
+							</div>
+						</div>
+						<div class="contactForm__form-select">
+							<div class="contactForm__selectLabel">
+								<p>Тема звернення:</p>
+							</div>
+							<div class="contactForm__selector">
+								<select required name="contactTags[]" data-class-modif="contactTags" id="contactForm__selectOption">
+									<option value="1" selected>Партнерство</option>
+									<option value="2">Скарги та пропозиції</option>
+									<option value="3">Інше</option>
+								</select>
+							</div>
+						</div>
+						<div class="contactForm__form-textarea">
+							<textarea minlength="2" maxlength="600" class="contactForm__formTextarea" rows="10" cols="50" name="comment" form="contactsForm" id="contactForm__textArea" placeholder="Текст повідомлення"></textarea>
+						</div>
+						<div class="contactForm__form-button">
+							<button type="submit" class="contactForm__formSubmit" id="contactFormSubmit">Відправити</button>
+						</div>
+						<span class="contactForm__errorMsg"><span class="errorSignSvg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<rect width="24" height="24" rx="12" fill="#FF0000" />
+									<path d="M12.1867 14.5971H11.1467C10.8267 12.3197 10.6667 10.4308 10.6667 8.93048V6H12.6667V8.93048C12.6667 10.4308 12.5067 12.3197 12.1867 14.5971ZM10.7067 17.3333V15.7305H12.6467V17.3333H10.7067Z" fill="white" />
+								</svg></span>Заповніть поля коректно
+						</span>
+					</form>
 				</div>
 			</div>
 		</div>
