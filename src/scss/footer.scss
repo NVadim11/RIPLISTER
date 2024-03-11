@@ -4,80 +4,99 @@
     display: flex;
     flex: 1 1 auto;
     justify-content: center;
+    padding: 3.4375rem 0 1.9375rem 0;
+    @media screen and (min-width:$mobile) {
+        padding: 3.4375rem 0 2.3125rem 0;
+    }
+    @media screen and (min-width:$tablet) {
+        padding: 4.4375rem 0 1.4375rem 0;
+    }
+    @media screen and (min-width:$pc) {
+        padding: 4.9375rem 0 2.125rem 0;
+    }
+    @media screen and (min-width:$full) {
+        padding: 4.9375rem 0 3.3125rem 0;
+    }
     &__container {
         display: flex;
         flex-direction: column;
-        align-items: center;        
-        @media screen and (min-width:$full) {
+        align-items: center;     
+        @media screen and (min-width:$tablet) {
             width: 100%;
-            display: block;
-            margin-left: 6.25rem;
+            max-width: 100%;
+            align-items: flex-start;
+            padding: 0 2.1875rem;
+        }
+        @media screen and (min-width:$full) {
         }
     }
     &__logo {
-        margin-top: 3.4375rem;
-        @media screen and (min-width:$full) {
-        position: relative;
+        img {
+            width: 6.625rem;
+            height: 1.3125rem;
+            @media screen and (min-width:$tablet) {
+                width: 10.0625rem;
+                height: 1.9375rem;
+            }
+            @media screen and (min-width:$pc) {
+                width: 11.6875rem;
+                height: 2.25rem;
+            }
         }
     }
-    &__about {
-        margin-top: 1.35rem;
-        padding: 0 0.3125rem;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media screen and (min-width:$tablet) {
+            display: flex;
+            flex-direction: row;
+            gap: 3.5625rem;
+            align-items: flex-start;
+            width: 100%;
+            .textBlock {
+                max-width: 28.125rem;
+                width: 100%;
+                p {
+                    text-align: start;
+                }
+            }
+        }  
         @media screen and (min-width:$full) {
-            position: relative;
-            padding: 0;
-            max-width: 33.4375rem;
-        }
-        p {
-            color: var(--text-color-black);
-            text-align: center;
-            font-size: 0.75rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            @media screen and (min-width:$full) {  
-                font-size: 1rem;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-                text-align: start;
+            gap: 7.0625rem;
+            .textBlock {
+                max-width: 33.4375rem;
+                width: 100%;
             }
         }
     }
     &__menu {
         display: none;
-        @media screen and (min-width:$full) {
-            display: flex;
-            position: relative;   
+        @media screen and (min-width:$tablet) {
+            display: block;
+            width: 100%;
         }             
     }
     &__list {
-        @media screen and (min-width:$full) {
-            margin: -11.6875rem 6.25rem 0 39.375rem;
-            align-items: center;
-            max-width: fit-content;
-            display: grid;
-            grid-auto-flow: column;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            row-gap: 0.625rem;
-            column-gap: 7.5rem;   
-        }        
+        display: grid;
+        // flex-wrap: wrap;
+        gap: 2.5rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 1.875rem 0 0 0;
+        @media screen and (min-width:$tablet) {
+            padding: 3.4375rem 0 0 0;
+        }    
     }
     &__list-item {
-        @media screen and (min-width:$full) {
-            font-size: 1.125rem;
-            font-style: normal;
-            font-weight: 600;
-            line-height: normal;
-            letter-spacing: 0.1125rem;
-            text-transform: uppercase;
-        }
-        
         a {
             display: flex;            
-            padding: 0.625rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
             text-decoration: underline;
+            text-decoration-skip-ink: none;
+            color: #000;
         }
         a:hover {
             cursor: pointer;
@@ -85,13 +104,20 @@
         }
     }
     &__contact {
-        margin-top: 2.8125rem;
-        
+        @media screen and (min-width:$tablet) {
+            width: 28.125rem;
+        }
         @media screen and (min-width:$full) {
-            margin-top: 5rem;  
+            width: 33.4375rem;
         }
         svg {
             margin-right: 0.5625rem;
+            width: 1.75rem;
+            height: 1.3125rem;
+            @media screen and (min-width:$tablet) {
+                width: 2.25rem;
+                height: 1.6875rem;
+            }
         }
         button {
             padding: 1.0625rem 0.9375rem;
@@ -107,11 +133,10 @@
             transition: .25s;
             @media screen and (min-width:$mobile) {
                 border-radius: 1.875rem;
+                padding: 1.375rem;
             }
-            @media screen and (min-width:$full) {
+            @media screen and (min-width:$tablet) {
                 font-size: 1.5rem;
-                padding: 1.25rem 1.875rem;
-                border-radius: 2.5rem;
             }
         }
         button:hover {   
@@ -141,17 +166,17 @@
         display: flex;
         justify-content: center;
         margin: 1.1875rem 0 0 0;
-        @media screen and (min-width:$full) {
-            max-width: max-content;
-            font-size: 1.5rem;
-            letter-spacing: 0.15rem;
-            position: relative;
-            margin-left: 610px;
-            margin-top: -4.8125rem;
-            margin-right: 2.0625rem;
+        @media screen and (min-width:$tablet) {
+            font-size: 24px;
+            margin-top: 0;
+            display: flex;
+            align-self: center;
         }
         a {
             padding: 1.625rem;
+            @media screen and (min-width:$tablet) {
+                padding: 0;
+            }
         }
     }
     &__ref:hover {
@@ -160,11 +185,17 @@
     }
     &__links {
         align-items: center;
-        @media screen and (min-width:$full) {
-            display: flex;           
+        display: flex;
+        flex-direction: column;
+        @media screen and (min-width:$tablet) {
             flex-direction: row;
-            justify-content: space-between;
-            margin: 4.375rem 0rem 3.125rem 0rem;
+            width: 100%;
+            margin-top: 3.375rem;
+            gap: 3.5625rem;
+        }
+        @media screen and (min-width:$full) {
+            gap: 113px;
+            margin-top: 4.625rem;
         }
     }
     &__policy {
@@ -172,11 +203,14 @@
         flex-direction: column;
         align-items: center;
         margin: 0.75rem 0 0 0;
-        @media screen and (min-width:$full) {            
-            flex-direction: row;            
+        @media screen and (min-width:$tablet) {
+            flex-direction: row;
             order: 3;
-            padding: 0;
-            margin: 0;
+            margin-top: 0;
+            margin-left: 4.9375rem;
+        }
+        @media screen and (min-width:$full) {
+            margin-left: 20.8125rem;
         }
         a {
             color: var(--text-color-black);
@@ -186,7 +220,7 @@
             line-height: normal;
             padding: 0.5625rem;
             text-decoration: underline;
-            @media screen and (min-width:$full) {
+            @media screen and (min-width:$pc) {
                 font-size: 1rem;
             }
         }
@@ -203,10 +237,9 @@
         display: flex;
         align-items: center;
         margin-top: 2.5rem;
-        @media screen and (min-width:$full) {
+        @media screen and (min-width:$tablet) {
             order: 2;
-            padding: 0;
-            margin: 0;
+            margin-top: 0;
         }
     }
     &__copyright {
@@ -218,12 +251,293 @@
         letter-spacing: 0.075rem;
         text-align: center;
         margin-top: 2.3125rem;
-        padding-bottom: 2.5625rem;
-        @media screen and (min-width:$full) {  
-            font-size: 1rem;          
+        @media screen and (min-width:$tablet) {
             order: 1;
-            padding: 0;
-            margin: 0;
+            margin-top: 0;
+            text-align: start;
+            font-size: 1rem;
+            width: 28.125rem;
+        }
+        @media screen and (min-width:$full) {
+            width: 33.4375rem;
+        }
+        span {
+            font-size: 0.75rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: 0.075rem;
+            color: var(--text-color-black);
+            @media screen and (min-width:$full) {
+                font-size: 1rem;
+                letter-spacing: 0.1rem;
+            }
+        }
+    }
+}
+
+.footerBg {
+    background: #fcfafa;
+    color: var(--text-color-black);
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 3.4375rem 0 1.9375rem 0;
+    @media screen and (min-width:$mobile) {
+        padding: 3.4375rem 0 2.3125rem 0;
+    }
+    @media screen and (min-width:$tablet) {
+        padding: 4.4375rem 0 1.4375rem 0;
+    }
+    @media screen and (min-width:$pc) {
+        padding: 4.9375rem 0 2.125rem 0;
+    }
+    @media screen and (min-width:$full) {
+        padding: 4.9375rem 0 3.3125rem 0;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;     
+        @media screen and (min-width:$tablet) {
+            width: 100%;
+            max-width: 100%;
+            align-items: flex-start;
+            padding: 0 2.1875rem;
+        }
+        @media screen and (min-width:$full) {
+        }
+    }
+    &__logo {
+        img {
+            width: 6.625rem;
+            height: 1.3125rem;
+            @media screen and (min-width:$tablet) {
+                width: 10.0625rem;
+                height: 1.9375rem;
+            }
+            @media screen and (min-width:$pc) {
+                width: 11.6875rem;
+                height: 2.25rem;
+            }
+        }
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media screen and (min-width:$tablet) {
+            display: flex;
+            flex-direction: row;
+            gap: 3.5625rem;
+            align-items: flex-start;
+            width: 100%;
+            .textBlock {
+                max-width: 28.125rem;
+                width: 100%;
+                p {
+                    text-align: start;
+                }
+            }
+        }  
+        @media screen and (min-width:$full) {
+            gap: 7.0625rem;
+            .textBlock {
+                max-width: 33.4375rem;
+                width: 100%;
+            }
+        }
+    }
+    &__menu {
+        display: none;
+        @media screen and (min-width:$tablet) {
+            display: block;
+            width: 100%;
+        }             
+    }
+    &__list {
+        display: grid;
+        // flex-wrap: wrap;
+        gap: 2.5rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 1.875rem 0 0 0;
+        @media screen and (min-width:$tablet) {
+            padding: 3.4375rem 0 0 0;
+        }    
+    }
+    &__list-item {
+        a {
+            display: flex;            
+            font-weight: 600;
+            font-size: 1.125rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            color: #000;
+        }
+        a:hover {
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+    &__contact {
+        @media screen and (min-width:$tablet) {
+            width: 28.125rem;
+        }
+        @media screen and (min-width:$full) {
+            width: 33.4375rem;
+        }
+        svg {
+            margin-right: 0.5625rem;
+            width: 1.75rem;
+            height: 1.3125rem;
+            @media screen and (min-width:$tablet) {
+                width: 2.25rem;
+                height: 1.6875rem;
+            }
+        }
+        button {
+            padding: 1.0625rem 0.9375rem;
+            border: 0.0625rem solid var(--orange-border-transparent);
+            color: var(--text-color-black);
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;    
+            display: flex;
+            align-items: center;
+            border-radius: 1.25rem;
+            transition: .25s;
+            @media screen and (min-width:$mobile) {
+                border-radius: 1.875rem;
+                padding: 1.375rem;
+            }
+            @media screen and (min-width:$tablet) {
+                font-size: 1.5rem;
+            }
+        }
+        button:hover {   
+            cursor: pointer;
+            svg {
+                background-color: var(--orange-color)
+            }
+            rect {
+                fill: var(--white-color);
+            }
+            path {
+                fill:var(--orange-color)
+            }         
+            color: var(--white-color);
+            background: var(--orange-color);
+            transition: 0.25s;
+        }
+    }
+    &__ref {
+        color: var(--orange-color);
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 0.125rem;    
+        text-transform: uppercase;        
+        display: flex;
+        justify-content: center;
+        margin: 1.1875rem 0 0 0;
+        @media screen and (min-width:$tablet) {
+            font-size: 24px;
+            margin-top: 0;
+            display: flex;
+            align-self: center;
+        }
+        a {
+            padding: 1.625rem;
+            @media screen and (min-width:$tablet) {
+                padding: 0;
+            }
+        }
+    }
+    &__ref:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    &__links {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        @media screen and (min-width:$tablet) {
+            flex-direction: row;
+            width: 100%;
+            margin-top: 3.375rem;
+            gap: 3.5625rem;
+        }
+        @media screen and (min-width:$full) {
+            gap: 113px;
+            margin-top: 4.625rem;
+        }
+    }
+    &__policy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0.75rem 0 0 0;
+        @media screen and (min-width:$tablet) {
+            flex-direction: row;
+            order: 3;
+            margin-top: 0;
+            margin-left: 4.9375rem;
+        }
+        @media screen and (min-width:$full) {
+            margin-left: 20.8125rem;
+        }
+        a {
+            color: var(--text-color-black);
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            padding: 0.5625rem;
+            text-decoration: underline;
+            @media screen and (min-width:$pc) {
+                font-size: 1rem;
+            }
+        }
+        a:hover {
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+    &__socials {
+        display: flex;
+        gap: 2.1875rem;
+        justify-content: center;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        margin-top: 2.5rem;
+        @media screen and (min-width:$tablet) {
+            order: 2;
+            margin-top: 0;
+        }
+    }
+    &__copyright {
+        color: var(--text-color-black);
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.075rem;
+        text-align: center;
+        margin-top: 2.3125rem;
+        @media screen and (min-width:$tablet) {
+            order: 1;
+            margin-top: 0;
+            text-align: start;
+            font-size: 1rem;
+            width: 28.125rem;
+        }
+        @media screen and (min-width:$full) {
+            width: 33.4375rem;
         }
         span {
             font-size: 0.75rem;
