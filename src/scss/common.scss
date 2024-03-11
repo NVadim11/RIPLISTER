@@ -111,16 +111,26 @@
 // стиль кнопки пин ту топ
 .btn-gotop {
     position: fixed;
-	width: 3rem;
-	height: 3rem;
+	width: 2.125rem;
+	height: 2.125rem;
 	flex-shrink: 0;
     bottom: 1.5rem;
     right: 1.5rem;
-	border-radius: 1.875rem;
-	background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+	border-radius: 0.875rem;
+	background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
     box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
     opacity: 0;
     transition: opacity 0.5s;
+	@media (min-width: $mobile) {
+		width: 3.125rem;
+		height: 3.125rem;
+		border-radius: 1.25rem;
+	}
+	@media (min-width: $tablet) {
+		width: 4.375rem;
+		height: 4.375rem;
+		border-radius: 1.875rem;
+	}
 	@media (min-width: $pc) {
 		width: 4.375rem;
 		height: 4.375rem;
@@ -132,8 +142,18 @@
     }
 
 	svg {
-		width: 0.625rem;
-		height: 1.1875rem;
+		width: 0.5rem;
+		height: 0.75rem;
+		position: relative;
+		z-index: 2;
+		@media (min-width: $mobile) {
+			width: 0.625rem;
+			height: 1.0625rem;
+		}
+		@media (min-width: $tablet) {
+			width: 0.875rem;
+			height: 1.4375rem;
+		}
 		@media (min-width: $pc) {
 			width: 0.875rem;
 			height: 1.4375rem;
@@ -145,6 +165,39 @@
     }
   }
   
+.btn-gotop::before {
+	content: "";
+	position: absolute;
+	width: 2.125rem;
+	height: 2.125rem;
+    opacity: 0;
+	background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
+	transition: opacity .25s ease-in-out;
+	position: fixed;
+	bottom: 1.5rem;
+    right: 1.5rem;
+	border-radius: 0.875rem;
+	@media (min-width: $mobile) {
+		width: 3.125rem;
+		height: 3.125rem;
+		border-radius: 1.25rem;
+	}
+	@media (min-width: $tablet) {
+		width: 4.375rem;
+		height: 4.375rem;
+		border-radius: 1.875rem;
+	}
+	@media (min-width: $pc) {
+		width: 4.375rem;
+		height: 4.375rem;
+		bottom: 2.5rem;
+		right: 2.5rem;
+	}
+}
+
+.btn-gotop:hover:before {
+    opacity: 1;
+}
   
 //   для конструктора/редактора
 .textBlock {

@@ -2531,15 +2531,15 @@ label {
 
 .btn-gotop {
   position: fixed;
-  width: 3rem;
-  height: 3rem;
+  width: 2.125rem;
+  height: 2.125rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   bottom: 1.5rem;
   right: 1.5rem;
-  border-radius: 1.875rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
-  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+  border-radius: 0.875rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ef6446), to(#db4a2a));
+  background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
   -webkit-box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
   opacity: 0;
@@ -2552,8 +2552,30 @@ label {
 }
 
 .btn-gotop svg {
-  width: 0.625rem;
-  height: 1.1875rem;
+  width: 0.5rem;
+  height: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-gotop::before {
+  content: "";
+  position: absolute;
+  width: 2.125rem;
+  height: 2.125rem;
+  opacity: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#E55738));
+  background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
+  -webkit-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  border-radius: 0.875rem;
+}
+
+.btn-gotop:hover:before {
+  opacity: 1;
 }
 
 .textBlock {
@@ -3764,17 +3786,17 @@ input:checked + .sliderCheckbox:before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 2.5rem;
+  border-radius: 1.25rem;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .footer__contact button:hover {
   cursor: pointer;
   color: var(--white-color);
-  border-radius: 2.5rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
-  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
-  -webkit-transition: 0.15s;
-  transition: 0.15s;
+  background: var(--orange-color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 .footer__contact button:hover svg {
@@ -8827,6 +8849,23 @@ input:checked + .sliderCheckbox:before {
     max-width: 43.75rem;
   }
 
+  .btn-gotop {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 1.25rem;
+  }
+
+  .btn-gotop svg {
+    width: 0.625rem;
+    height: 1.0625rem;
+  }
+
+  .btn-gotop::before {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 1.25rem;
+  }
+
   .textBlock h2 {
     margin: 0 0 0.9375rem 0;
   }
@@ -9167,6 +9206,10 @@ input:checked + .sliderCheckbox:before {
 
   .headerMain__logo img {
     max-width: 10.3999rem;
+  }
+
+  .footer__contact button {
+    border-radius: 1.875rem;
   }
 
   .mainCover__container h2 {
@@ -9820,6 +9863,23 @@ input:checked + .sliderCheckbox:before {
     max-width: 70rem;
   }
 
+  .btn-gotop {
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 1.875rem;
+  }
+
+  .btn-gotop svg {
+    width: 0.875rem;
+    height: 1.4375rem;
+  }
+
+  .btn-gotop::before {
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 1.875rem;
+  }
+
   .contactForm {
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -10457,6 +10517,13 @@ input:checked + .sliderCheckbox:before {
   .btn-gotop svg {
     width: 0.875rem;
     height: 1.4375rem;
+  }
+
+  .btn-gotop::before {
+    width: 4.375rem;
+    height: 4.375rem;
+    bottom: 2.5rem;
+    right: 2.5rem;
   }
 
   .textBlock {
@@ -11923,6 +11990,7 @@ input:checked + .sliderCheckbox:before {
   .footer__contact button {
     font-size: 1.5rem;
     padding: 1.25rem 1.875rem;
+    border-radius: 2.5rem;
   }
 
   .footer__ref {
