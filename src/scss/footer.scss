@@ -129,7 +129,7 @@
             line-height: normal;    
             display: flex;
             align-items: center;
-            border-radius: 1.25rem;
+            border-radius: 20px;
             transition: .25s;
             @media screen and (min-width:$mobile) {
                 border-radius: 1.875rem;
@@ -140,19 +140,21 @@
             }
         }
         button:hover {   
-            cursor: pointer;
-            svg {
-                background-color: var(--orange-color)
+            @media screen and (min-width:$tablet) {
+                cursor: pointer;
+                svg {
+                    background-color: var(--orange-color)
+                }
+                rect {
+                    fill: var(--white-color);
+                }
+                path {
+                    fill:var(--orange-color)
+                }         
+                color: var(--white-color);
+                background: var(--orange-color);
+                transition: 0.25s;
             }
-            rect {
-                fill: var(--white-color);
-            }
-            path {
-                fill:var(--orange-color)
-            }         
-            color: var(--white-color);
-            background: var(--orange-color);
-            transition: 0.25s;
         }
     }
     &__ref {
@@ -418,19 +420,21 @@
             }
         }
         button:hover {   
-            cursor: pointer;
-            svg {
-                background-color: var(--orange-color)
+            @media screen and (min-width:$tablet) {
+                cursor: pointer;
+                svg {
+                    background-color: var(--orange-color)
+                }
+                rect {
+                    fill: var(--white-color);
+                }
+                path {
+                    fill:var(--orange-color)
+                }         
+                color: var(--white-color);
+                background: var(--orange-color);
+                transition: 0.25s;
             }
-            rect {
-                fill: var(--white-color);
-            }
-            path {
-                fill:var(--orange-color)
-            }         
-            color: var(--white-color);
-            background: var(--orange-color);
-            transition: 0.25s;
         }
     }
     &__ref {

@@ -120,11 +120,11 @@
 	background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
     box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.25s;
 	@media (min-width: $mobile) {
 		width: 3.125rem;
 		height: 3.125rem;
-		border-radius: 1.25rem;
+		border-radius: 20px;
 	}
 	@media (min-width: $tablet) {
 		width: 4.375rem;
@@ -136,6 +136,7 @@
 		height: 4.375rem;
 		bottom: 2.5rem;
 		right: 2.5rem;
+		border-radius: 2.5rem;
 	}
     &.show {
       opacity: 1;
@@ -159,10 +160,6 @@
 			height: 1.4375rem;
 		}
 	}
-  
-    &:hover {
-    //   border: 0.0938rem solid steelblue;
-    }
   }
   
 .btn-gotop::before {
@@ -192,6 +189,7 @@
 		height: 4.375rem;
 		bottom: 2.5rem;
 		right: 2.5rem;
+		border-radius: 2.5rem;
 	}
 }
 
@@ -980,3 +978,99 @@ input:checked + .sliderCheckbox:before {
 	border-radius: 50%;
 }
 
+
+// webkit
+::-webkit-scrollbar {
+	width: 4px;
+}
+::-webkit-scrollbar-track {
+	border-radius: 1.875rem;
+	background: #FDE6DF;
+} 
+::-webkit-scrollbar-thumb {
+	border-radius: 1.875rem;
+	background: #EB8069;
+}
+
+// Display block toggle
+.block {
+	display: block;	
+}
+
+// Arrow state
+.toggleLangBtn {
+	background: #FFF;
+	color: var(--text-color-black);
+	transition: .25s;
+	.dropdownArrow { 		
+		transform: rotate(180deg);	
+		path {
+			fill: var(--orange-color)!important;
+			transition: .25s;
+		}
+	}
+}
+
+// lang menu
+.langMenu {
+	display: none;
+	width: 100%;
+	user-select: none;
+	cursor: pointer;
+	position: absolute;
+	margin-top: 10.3125rem;
+	right: 0;
+	align-items: center;
+	text-align: center;		
+	border-radius: 1.25rem;
+	background: var(--modal-background-color);
+	.uaBtn {
+		img {
+			width: 1.75rem;
+			height: 1.125rem;
+		}
+	}
+	.enBtn {
+		img {
+			width: 1.75rem;
+			height: 1.125rem;
+		}
+	}
+	@media screen and (min-width:$full) {
+		margin-top: 14.375rem;
+		border-radius: 1.875rem;
+	}
+}
+.langBtn {	
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	background: var(--modal-background-color);
+	padding: 0.875rem 0.8125rem 0.875rem 1rem;
+	transition: .25s;
+	@media screen and (min-width:$full) {
+		padding: 1.4375rem 1.1875rem 1.4375rem 1.125rem;
+	}
+}
+.langBtn:first-child {
+	border-top-right-radius: 1.25rem;
+	border-top-left-radius: 1.25rem;
+	@media screen and (min-width:$full) {
+		border-top-right-radius: 1.875rem;
+		border-top-left-radius: 1.875rem;
+	}
+}
+.langBtn:last-child {
+	border-bottom-right-radius: 1.25rem;
+	border-bottom-left-radius: 1.25rem;
+	@media screen and (min-width:$full) {
+		border-bottom-right-radius: 1.875rem;
+		border-bottom-left-radius: 1.875rem;
+	}
+}
+.langBtn:hover {
+	background-color: var(--orange-color);
+	color: var(--white-color);
+	transition: .25s;
+}

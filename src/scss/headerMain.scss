@@ -1,5 +1,4 @@
 .headerMain {
-	padding: 0 0.5rem;
 	background-color: transparent;
 	height: 4.75rem;
 	z-index: 9;
@@ -23,13 +22,13 @@
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
+		max-width: 100%;
+		padding: 0 0.9375rem;
 		@media screen and (min-width:$mobile) {
+			padding: 0 2.1875rem;
+			max-width: 100%;
 		}
 		@media screen and (min-width:$tablet) {
-			max-width: 76.25rem;
-		}
-		@media screen and (min-width:$pc) {
-			max-width: 86.875rem;
 		}
 		@media screen and (min-width:$full) {
 			max-width: 112.5rem;
@@ -38,16 +37,23 @@
 	&__logo {
 		display: flex;
 		img {
-			flex-shrink: 0;
-			max-width: 6.5rem;
+			width: 6.5rem;
+			height: 1.25rem;
 			@media screen and (min-width:$mobile) {
-				max-width: 10.3999rem;
+				width: 10.375rem;
+				height: 2rem;
 			}
 			@media screen and (min-width:$tablet) {
-				max-width: 12.6748rem;
+				width: 12.6875rem;
+				height: 2.4375rem;
 			}
-			@media screen and (min-width:$full) {
-				max-width: 17.5rem;
+			@media screen and (min-width:$pc) {
+				width: 16rem;
+				height: 3.125rem;
+			}
+			@media screen and (min-width:$pc) {
+				width: 17.5rem;
+				height: 3.375rem;
 			}
 		}
 	}
@@ -58,9 +64,8 @@
 		}
 		ul {
 			display: flex;
-			gap: 25px;
 			@media screen and (min-width:$tablet) {
-				gap: 0.625rem;
+				gap: 10px;
 			}
 		}
 		li {
@@ -74,82 +79,131 @@
 			line-height: normal;
 			letter-spacing: 1.4px;
 			text-transform: uppercase;
+			@media screen and (min-width:$full) {
+				font-size: 1rem;
+			}
 		}
 	}
 	&__btnBox {
-		display: none;
-		position: relative;
+		position: absolute;
+		right: 0;
+		margin-right: 9.5625rem;
+		margin-top: 0.5rem;
 		@media screen and (min-width:$tablet) {
 			display: flex;
+			position: relative;
+			align-items: center;
+			margin: 0;
+			gap: 0.625rem;
+		}
+		@media screen and (min-width:$full) {
+			align-items:normal;
+			margin: 0;
 			gap: 0.625rem;
 		}
 	}
 	&__searchBtn {
-		position: relative;
-		padding: 1.4375rem 2.8125rem 1.4375rem 5.25rem;
-		background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+		background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
+		transition: opacity 0.25s;
 		color: var(--white-color);
-		font-size: 1.25rem;
+		font-size: 1rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-		border-radius: 1.875rem;
+		border-radius: 1.25rem;
+		padding: 0.75rem 1.5rem;
+		display: none;
+		cursor: pointer;
+		align-items: center;
+		position: relative;
+		@media screen and (min-width:$mobile) {
+			display: flex;
+		}
 		@media screen and (min-width:$tablet) {
-			padding: 0.9375rem;
 			border-radius: 1.25rem;
+			padding: 0.875rem;
 		}
 		@media screen and (min-width:$pc) {
-			padding: 0.9375rem 1.5625rem 0.9375rem 3.125rem;
+			border-radius: 1.25rem;
+			padding: 0.875rem 1.4375rem 0.9375rem 1.125rem;
+		}
+		@media screen and (min-width:$full) {
 			border-radius: 1.875rem;
-			display: flex;
-			align-items: center;
+			font-size: 1.25rem;
 		}
 		span {
+			z-index: 3;
 			@media screen and (min-width:$tablet) {
 				display: none;
 			}
-			@media screen and (min-width:$pc) {
+			@media screen and (min-width:$tablet) {
 				display: flex;
 			}
 		}
 		svg {
-			position: absolute;
-			left: 47px; 
+			width: 1.0625rem;
+			height: 1.0625rem;
+			margin-right: 0.5rem;
+			z-index: 3;
 			@media screen and (min-width:$tablet) {
-				position: relative;
-				left: 0;
-				width: 1.0625rem;
-				height: 1.0625rem;
+				margin: 0;
 			}
 			@media screen and (min-width:$pc) {
-				position: absolute;
-				left: 20px;
+				margin-right: 0.875rem;
+			}
+			@media screen and (min-width:$pc) {
+				width: 1.4375rem;
+				height: 1.4375rem;
 			}
 		}	
 	}
-	&__searchBtn:hover {
-		cursor: pointer;
-		background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
-		transition: 0.25s;
-}
+	&__searchBtn::before {
+		@media screen and (min-width:$pc) {
+			content: "";
+			position: absolute;
+			height: 100%;
+			opacity: 0;
+			background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
+			transition: opacity .25s ease-in-out;
+			border-radius: 1.25rem;
+			padding: 0.875rem 1.4375rem 0.9375rem 1.125rem;
+			width: 7.5625rem;
+			left: 0;
+		}
+		@media screen and (min-width:$pc) {
+			border-radius: 1.875rem;
+		}
+	}
+	&__searchBtn:hover:before  {
+		@media screen and (min-width:$pc) {
+			opacity: 1;
+		}
+	}
 	&__entryBtn {
-		border-radius: 1.125rem;
+		display: none;
+		border-radius: 1.25rem;
 		border: 0.0625rem solid var(--white-color);
 		background: var(--white-color);
 		color: var(--text-color-black);
 		padding: 0.8125rem 1.125rem;
-		font-size: 1.25rem;
+		font-size: 1rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-		display: flex;
 		align-items: center;
-		  svg {
-          margin-right: 1.0625rem;
-      }
+		transition: 0.25s;
+		svg {
+        	margin-right: 1.0625rem;
+      	}
+		  @media screen and (min-width:$tablet) {
+			display: flex;
+		}
+		@media screen and (min-width:$full) {
+			border-radius: 1.875rem;
+			font-size: 1.25rem;
+		}
 	}
 	&__entryBtn:hover {
-		cursor: pointer;
 		border: 0.0625rem solid var(--text-color-black);
 		transition: 0.25s;
 }
@@ -169,22 +223,65 @@
 		}
 		svg {
 			margin-right: 0.4375rem;
-	}
-	}
-	&__entryBtn:hover {
-		cursor: pointer;	
+		}
+		@media screen and (min-width:$full) {
+			border-radius: 1.875rem;
+		}
 	}
 	&__langBtn {
-		border-radius: 1.125rem;
+		display: none;
+		border-radius: 1.25rem;
         border: 0.0625rem solid #AAA;
-        padding: 0.8125rem;
-        display: flex;
         align-items: center;
 		font-size: 1rem;
 		color: var(--text-color-black);
+		padding: 0.875rem 0.8125rem 0.875rem 1rem;
+		position: relative;
+		cursor: pointer;
+		user-select: none;
+		transition: .25s;
         span {
-            padding: 0 0.3125rem;
+            margin: 0 0.6875rem;
         }
+		svg {
+			width:  0.5rem;
+			height: 0.875rem;
+			@media screen and (min-width:$full) {
+				width: 0.6875rem;
+				height: 1.0625rem;
+			}
+		}
+		img {
+			width: 1.75rem;
+			height: 1.125rem;
+		}
+		.dropdownArrow { 			
+			path {
+				fill: var(--text-color-black);
+				transition: .25s;
+			}
+		}
+		@media screen and (min-width:$tablet) {
+			display: flex;
+		}
+		@media screen and (min-width:$full) {
+			border-radius: 1.875rem;
+			font-size: 1.25rem;
+			padding: 1.4375rem 1.1875rem 1.4375rem 1.125rem;
+		}
+	}
+	&__langBtn:hover {
+		@media screen and (min-width:$tablet) {
+			background: #FFF;
+			color: var(--orange-color);
+			transition: .25s;
+			.dropdownArrow { 			
+				path {
+					fill: var(--orange-color); 
+					transition: .25s;			
+				}
+			}
+		}
 	}
 	&__menuBtn {
 		button {
@@ -204,107 +301,6 @@
 		}
 	}
 }
-::-webkit-scrollbar {
-	width: 4px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-	border-radius: 1.875rem;
-	background: #FDE6DF;
-} 
-/* Handle */
-::-webkit-scrollbar-thumb {
-	border-radius: 1.875rem;
-	background: #EB8069;
-}
-.headerMain__langBtn {
-	color: var(--text-color-black);
-	cursor: pointer;
-	user-select: none;
-	border-radius: 1.875rem;
-	max-width: 8.1875rem;
-	transition: .25s;
-	img {
-		width: 1.75rem;
-		height: 1.125rem;
-	}
-	.dropdownArrow { 			
-		path {
-			fill: var(--text-color-black);
-			transition: .25s;
-		}
-	}
-}
-.headerMain__langBtn:hover {
-	user-select: none;
-	cursor: pointer;
-	background: #FFF;
-	color: var(--orange-color);
-	transition: .25s;
-	.dropdownArrow { 			
-		path {
-			fill: var(--orange-color); 
-			transition: .25s;			
-		}
-	}
-}
-.langMenu {
-	display: none;
-	user-select: none;
-	cursor: pointer;
-	position: absolute;
-	margin-top: 4.6875rem;
-	right: 0;
-	align-items: center;
-	text-align: center;		
-	border-radius: 18px;
-	background: var(--modal-background-color);
-	.uaBtn {
-		border-radius: 1.875rem 1.875rem 0 0;
-		img {
-			margin-right: 0.625rem;
-			width: 1.75rem;
-			height: 1.125rem;
-		}
-	}
-	.enBtn {
-		border-radius: 0 0 1.875rem 1.875rem;	
-		img {
-			margin-right: 0.625rem;
-			width: 1.75rem;
-			height: 1.125rem;
-		}
-	}
-}
-.langBtn {	
-	display: flex;
-	align-items: center;
-	text-align: center;
-	justify-content: center;
-	background: var(--modal-background-color);
-	padding: 0.875rem 1.5938rem 0.875rem 0.9375rem;
-	transition: .25s;
-}
-.langBtn:hover {
-	background-color: var(--orange-color);
-	color: var(--white-color);
-	transition: .25s;
-}
-// Display block toggle
-.block {
-	display: block;	
-	}
-
-// Arrow state
-.toggleLangBtn {
-	background: #FFF;
-	color: var(--text-color-black);
-	transition: .25s;
-	.dropdownArrow { 		
-		transform: rotate(180deg);	
-		path {
-			fill: var(--orange-color)!important;
-			transition: .25s;
-		}
-	}
+.headerMain__searchBtn:hover:before {
+	opacity: 1;
 }
