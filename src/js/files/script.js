@@ -159,3 +159,4 @@ function validateForm (formSelector, callback) {
         validateForm("#contactsForm", submitContactFormData);
     };
 };
+console.log("123");

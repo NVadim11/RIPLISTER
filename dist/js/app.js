@@ -7674,6 +7674,7 @@
             }
             if (contactFormComponent) validateForm("#contactsForm", submitContactFormData);
         }
+        console.log("123");
         const personalsEditForm = document.getElementById("personalsEdit__form");
         document.getElementById("profilePictureInput");
         const profileEditPictureInput = document.getElementById("profileEditPictureInput");
