@@ -29,6 +29,10 @@
 			max-width: 100%;
 		}
 		@media screen and (min-width:$tablet) {
+			max-width: 100%;
+		}
+		@media screen and (min-width:$pc) {
+			max-width: 100%;
 		}
 		@media screen and (min-width:$full) {
 			max-width: 112.5rem;
@@ -65,7 +69,10 @@
 		ul {
 			display: flex;
 			@media screen and (min-width:$tablet) {
-				gap: 10px;
+				gap: 0.625rem;
+			}
+			@media screen and (min-width:$full) {
+				gap: 1.25rem;
 			}
 		}
 		li {
@@ -136,7 +143,7 @@
 			@media screen and (min-width:$tablet) {
 				display: none;
 			}
-			@media screen and (min-width:$tablet) {
+			@media screen and (min-width:$pc) {
 				display: flex;
 			}
 		}
@@ -158,24 +165,25 @@
 		}	
 	}
 	&__searchBtn::before {
-		@media screen and (min-width:$pc) {
+		@media screen and (min-width:$tablet) {
 			content: "";
 			position: absolute;
 			height: 100%;
+			width: 2.8125rem;
 			opacity: 0;
 			background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
 			transition: opacity .25s ease-in-out;
 			border-radius: 1.25rem;
 			padding: 0.875rem 1.4375rem 0.9375rem 1.125rem;
-			width: 7.5625rem;
 			left: 0;
+			width: 100%;
 		}
 		@media screen and (min-width:$pc) {
 			border-radius: 1.875rem;
 		}
 	}
 	&__searchBtn:hover:before  {
-		@media screen and (min-width:$pc) {
+		@media screen and (min-width:$tablet) {
 			opacity: 1;
 		}
 	}

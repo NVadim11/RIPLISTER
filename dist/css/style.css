@@ -9991,6 +9991,10 @@ input:checked + .sliderCheckbox:before {
     height: 7.875rem;
   }
 
+  .headerAlt__container {
+    max-width: 100%;
+  }
+
   .headerAlt__logo img {
     width: 12.6875rem;
     height: 2.4375rem;
@@ -10054,6 +10058,10 @@ input:checked + .sliderCheckbox:before {
     height: 7.875rem;
   }
 
+  .headerMain__container {
+    max-width: 100%;
+  }
+
   .headerMain__logo img {
     width: 12.6875rem;
     height: 2.4375rem;
@@ -10066,7 +10074,7 @@ input:checked + .sliderCheckbox:before {
   }
 
   .headerMain__menu ul {
-    gap: 10px;
+    gap: 0.625rem;
   }
 
   .headerMain__btnBox {
@@ -10090,14 +10098,28 @@ input:checked + .sliderCheckbox:before {
     display: none;
   }
 
-  .headerMain__searchBtn span {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-
   .headerMain__searchBtn svg {
     margin: 0;
+  }
+
+  .headerMain__searchBtn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2.8125rem;
+    opacity: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#E55738));
+    background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
+    -webkit-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out;
+    border-radius: 1.25rem;
+    padding: 0.875rem 1.4375rem 0.9375rem 1.125rem;
+    left: 0;
+    width: 100%;
+  }
+
+  .headerMain__searchBtn:hover:before {
+    opacity: 1;
   }
 
   .headerMain__entryBtn {
@@ -11509,6 +11531,10 @@ input:checked + .sliderCheckbox:before {
     height: 6.625rem;
   }
 
+  .headerMain__container {
+    max-width: 100%;
+  }
+
   .headerMain__logo img {
     width: 16rem;
     height: 3.125rem;
@@ -11524,6 +11550,12 @@ input:checked + .sliderCheckbox:before {
     padding: 0.875rem 1.4375rem 0.9375rem 1.125rem;
   }
 
+  .headerMain__searchBtn span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
   .headerMain__searchBtn svg {
     margin-right: 0.875rem;
   }
@@ -11534,26 +11566,7 @@ input:checked + .sliderCheckbox:before {
   }
 
   .headerMain__searchBtn::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    opacity: 0;
-    background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#E55738));
-    background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
-    -webkit-transition: opacity 0.25s ease-in-out;
-    transition: opacity 0.25s ease-in-out;
-    border-radius: 1.25rem;
-    padding: 0.875rem 1.4375rem 0.9375rem 1.125rem;
-    width: 7.5625rem;
-    left: 0;
-  }
-
-  .headerMain__searchBtn::before {
     border-radius: 1.875rem;
-  }
-
-  .headerMain__searchBtn:hover:before {
-    opacity: 1;
   }
 
   .footer {
@@ -12279,6 +12292,10 @@ input:checked + .sliderCheckbox:before {
 
   .headerMain__container {
     max-width: 112.5rem;
+  }
+
+  .headerMain__menu ul {
+    gap: 1.25rem;
   }
 
   .headerMain__menu a {
