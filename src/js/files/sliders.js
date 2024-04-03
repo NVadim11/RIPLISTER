@@ -33,13 +33,13 @@ function initSliders() {
 		new Swiper('.swiper', { // Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
-			modules: [Navigation, Pagination, Scrollbar],
-			observer: true,
-			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
+			// modules: [Navigation, Pagination, Scrollbar],
+			// observer: true,
+			// observeParents: true,
+			// slidesPerView: 1,
+			// spaceBetween: 0,
 			//autoHeight: true,
-			speed: 800,
+			// speed: 800,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -110,8 +110,8 @@ function initSliders() {
 	if (document.querySelector('.mainBenefits__slider')) { 
 		new Swiper ('.mainBenefits__slider', {
 			modules: [Pagination],
-			observer: true,
-			observeParents: true,
+			// observer: true,
+			// observeParents: true,
 			slidesPerView: 1.2,
 			spaceBetween: 12,
 			//autoHeight: true,
@@ -180,21 +180,50 @@ function initSliders() {
 		});
 	}
 
-		// Main recent slider
-		if (document.querySelector('.profileLinks__slider')) { 
-			new Swiper ('.profileLinks__slider', {
-				modules: [Scrollbar],
-				observer: true,
-				observeParents: true,
-				slidesPerView: 'auto',
-				spaceBetween: 30,
-				speed: 800,
-				// scrollbar: {
-				// 	el: '.profileLinks__scrollbar',
-				// 	draggable: true,
-				// }
-			});
-		}
+	// Profile links slider
+	if (document.querySelector('.profileLinks__slider')) { 
+		new Swiper ('.profileLinks__slider', {
+			modules: [Scrollbar],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 'auto',
+			spaceBetween: 30,
+			speed: 800,
+			pagination: {
+				// el: '.swiper-pagination',
+				clickable: true,
+			  }
+			// scrollbar: {
+			// 	el: '.profileLinks__scrollbar',
+			// 	draggable: true,
+			// }
+		});
+	}
+
+	// Memo images
+	if (document.querySelector('.memoInfoSlider')) { 
+		new Swiper('.memoInfoSlider', {
+			modules: [Pagination],
+			grabCursor: true,
+			effect: 'slide', // Применяем эффект slide
+			speed: 800, // Скорость анимации
+			grabCursor: true, // Изменяем курсор при перемещении слайдера
+			mousewheel: true, // Переключение слайдов с помощью колеса мыши
+			pagination: {
+				el: '.memoInfoSlider__pagination',
+				clickable: true,
+			},
+			breakpoints: {
+				767.98: {
+					spaceBetween: 30,
+				},
+			},
+			// observer: true,
+			// observeParents: true,
+			// slidesPerView: 1,
+			// speed: 800,
+		});
+	}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {

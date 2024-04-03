@@ -1,0 +1,441 @@
+.memoInfo {
+    margin-top: 3.5625rem;
+    @media (min-width: $mobile) {
+        margin-top: 9.3125rem;
+    }
+    @media (min-width: $tablet) {
+        margin-top: 3.75rem;
+    }
+    &__container {
+        position: relative;
+        @media (min-width: $mobile) {
+            display: flex;
+            gap: 2.1875rem;
+        }
+        @media (min-width: $tablet) {
+            max-width: 100%;
+            padding: 0 2.1875rem;
+        }
+    }
+    &__title {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        h4 {
+            font-weight: 600;
+            font-size: 2.25rem;
+            line-height: 1.2;
+            color: #171717;
+            display: flex;
+            max-width: 14.1875rem;
+            text-align: center;
+            @media (min-width: $mobile) {
+                // max-width: 20rem;
+                max-width: 100%;
+            }
+            @media (min-width: $tablet) {
+               text-align: start;
+               font-size: 3.25rem;
+            //    max-width: 29.125rem;
+            }
+        }
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            align-self: flex-end;
+            margin: 0 0 0.375rem 0.4375rem;
+            @media (min-width: $tablet) {
+                width: 2.0625rem;
+                height: 2.0625rem;
+                margin: 0 0 0.625rem 0.4375rem;
+             }
+        }
+        @media (min-width: $mobile) {
+            left: 0;
+            top: -7.3125rem;
+        }
+        @media (min-width: $tablet) {
+            position: relative;
+            top: 0;
+            justify-content: flex-start;
+            order: 2;
+            margin-top: 2.1875rem;
+        }
+    }
+    &__left {
+        @media (min-width: $mobile) {
+            height: 100%;
+            width: 20.5rem;
+        }
+        @media (min-width: $tablet) {
+            width: 32.875rem;
+        }
+    }
+    &__right {
+        display: flex;
+        flex-direction: column;
+        @media (min-width: $mobile) {
+            width: 100%;
+        }
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin-top: 9.875rem;
+        @media (min-width: $mobile) {
+            position: relative;
+            margin-top: 0;
+        }
+    }
+    &__btnFollow-box {
+
+    }
+    &__btnFollow {
+        padding: 0.6875rem 1.1875rem 0.75rem 1.0625rem;
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: #000;
+        border-radius: 1.25rem;
+        background: #f9edea;
+        display: flex;
+        align-items: center;
+        @media (min-width: $mobile) {
+            border-radius: 1.875rem;
+        }
+        @media (min-width: $tablet) {
+            padding: 1.0625rem 1.6875rem;
+            font-size: 1rem;
+        }
+        @media (min-width: $pc) {
+            border-radius: 2.5rem;
+        }
+        svg {
+            margin-right: 5px;
+            @media (min-width: $tablet) {
+                width: 1.25rem;
+                height: 0.9375rem;
+                margin-right: 0.625rem;
+            }
+        }
+    }
+    &__btnUnfollow-box {
+        display: none;
+    }
+    &__btnUnfollow {
+        padding: 0.6875rem 1.1875rem 0.75rem 1.0625rem;
+        font-weight: 600;
+        font-size: 0.875rem;
+        color: #000;
+        border-radius: 1rem;
+        background: #f9edea;
+        display: none;
+        @media (min-width: $mobile) {
+            border-radius: 1.875rem;
+        }
+        @media (min-width: $tablet) {
+            padding: 1.0625rem 1.6875rem;
+            font-size: 1rem;
+        }
+        @media (min-width: $pc) {
+            border-radius: 2.5rem;
+        }
+    }
+    &__personals {
+        width: 340px;
+        margin: 2.5rem auto 0;
+        @media (min-width: $mobile) {
+            margin: 1.625rem 0 0 0;
+            width: 100%;
+        }
+        @media (min-width: $tablet) {
+            order: 3;
+            margin-top: 2.5rem;
+        }
+    }
+    &__personals-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        @media (min-width: $mobile) {
+            gap: 1.125rem;
+        }
+        @media (min-width: $tablet) {
+            gap: 2.5rem;
+        }
+    }
+    &__personals-icon {
+        svg {
+            width: 0.9375rem;
+            @media (min-width: $tablet) {
+                scale: 1.3;
+                margin-top: 3px;
+            }
+        }
+    }
+    &__personals-item {
+        display: flex;
+        gap: 0.75rem;
+    }
+    &__personals-text {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    &__personals-label {
+        font-weight: 400;
+        font-size: 1rem;
+        color: #000;
+        @media (min-width: $tablet) {
+            font-size: 1.25rem;
+        }
+    }
+    &__personals-value {
+        font-weight: 600;
+        font-size: 1rem;
+        color: #171717;
+        @media (min-width: $tablet) {
+            font-size: 1.25rem;
+        }
+    }
+    &__personals-links {
+        margin-top: 0.625rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+        margin-left: 1.6875rem;
+        @media (min-width: $tablet) {
+            margin-top: 1.5625rem;
+            flex-direction: row;
+            gap: 1.25rem;
+        }
+    }
+    &__personals-link {
+        a {
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+            color: #3c88f9;
+        }
+    }
+    &__personals-btns {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.25rem;
+        @media (min-width: $tablet) {
+            flex-direction: row;
+            margin-top: 2.5rem;
+            gap: 0.9375rem;
+        }
+    }
+    &__personals-tributeBtn {
+        display: flex;
+        justify-content: center;
+        @media (min-width: $mobile) {
+            justify-content: flex-start;
+        }
+        button {
+            padding: 1.25rem 4.375rem;
+            width: 19.75rem;
+            border-radius: 1.25rem;
+            background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
+            color: #ffffff;
+            position: relative;
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #fff;
+            @media (min-width: $mobile) {
+                padding: 0.9375rem 3.75rem;
+                border-radius: 1.875rem;
+                width: 15.875rem;
+                font-size: 1rem;
+            }
+            @media (min-width: $tablet) {
+                padding: 1.25rem 3.125rem;
+                font-size: 1.25rem;
+                width: 17.5rem;
+                height: 4.375rem;
+            }
+            span {
+                z-index: 10;
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: 0.9375rem;
+                @media (min-width: $mobile) {
+                    gap: 0;
+                }
+            }
+            svg {
+                @media (min-width: $mobile) {
+                    width: 0.625rem;
+                    height: 1.4375rem;
+                    margin-right: 0.3125rem;
+                }
+                @media (min-width: $tablet) {
+                    width: 0.8125rem;
+                    height: 2rem;
+                    margin-right: 0.625rem;
+                }
+            }
+        }
+        button:before {
+            right: 0;
+            height: 100%;
+            top: 0;
+            content: "";
+            position: absolute;
+            padding: 1.25rem 4.375rem;
+            width: 19.75rem;
+            border-radius: 1.25rem;
+            opacity: 0;
+            transition: opacity .25s ease-in-out;
+	        background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
+            @media (min-width: $mobile) {
+                border-radius: 1.875rem;
+                width: 15.875rem;
+            }
+            @media (min-width: $tablet) {
+                padding: 1.25rem 3.125rem;
+                width: 17.5rem;
+            }
+        }
+        button:hover:before {
+            opacity: 1;
+        }
+    }
+    &__personals-shareBtn {
+        justify-content: center;
+        margin-top: 1.25rem;
+        display: none;
+        @media (min-width: $mobile) {
+            display: flex;
+            justify-content: flex-start;
+        }
+        @media (min-width: $tablet) {
+            margin-top: 0;
+        }
+        button {
+            padding: 1.25rem 4.375rem;
+            width: 19.75rem;
+            border-radius: 1.25rem;
+            background: #fff3ed;
+            color: #000000;
+            position: relative;
+            font-weight: 600;
+            font-size: 1.25rem;
+            @media (min-width: $mobile) {
+                padding: 1.0625rem 1.6875rem;
+                border-radius: 1.875rem;
+                width: 15.875rem;
+                font-size: 1rem;
+            }
+            @media (min-width: $tablet) {
+                font-size: 1.25rem;
+                height: 4.375rem;
+                width: 325px;
+                padding: 1.4375rem 2.375rem;
+            }
+            span {
+                z-index: 10;
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: 0.9375rem;
+                @media (min-width: $mobile) {
+                    gap: 0;
+                }
+            }
+            svg {
+                @media (min-width: $mobile) {
+                    width: 1.0625rem;
+                    height: 18px;
+                    margin-right: 0.3125rem;
+                }
+                @media (min-width: $tablet) {
+                    width: 1.0625rem;
+                    height: 1.125rem;
+                    margin-right: 0.625rem;
+                }
+            }
+        }
+    }
+}
+
+.memoEpitaph {
+    margin-top: 1.875rem;
+    @media (min-width: $mobile) {
+        margin-top: 2.5rem;
+    }
+    @media (min-width: $tablet) {
+        margin-top: 5rem;
+    }
+    @media (min-width: $full) {
+        margin-top: 7.5rem;
+    }
+    &__content {
+        padding: 2.5rem 0 1.875rem 0;
+        background: #fcfafa;
+        border-radius: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        @media (min-width: $mobile) {
+          padding: 1.875rem 0 1.5625rem 0;
+        }
+        @media (min-width: $tablet) {
+            padding: 2.5rem;
+        }
+        @media (min-width: $pc) {
+            padding: 3.75rem;
+        }
+        @media (min-width: $full) {
+            padding: 4.6875rem;
+        }
+    }
+    &__quote {
+        text-align: center;
+        @media (min-width: $tablet) {
+            text-align: start;
+        }
+        p {
+            font-weight: 400;
+            font-size: 1rem;
+            color: #171717;
+            line-height: 1.4;
+            @media (min-width: $tablet) {
+                font-size: 1.5rem;
+              }
+              @media (min-width: $pc) {
+                font-size: 2rem;
+            }
+            @media (min-width: $full) {
+                font-size: 2.25rem;
+            }
+        }
+    }
+    &__item {
+        text-align: center;
+        margin-top: 1.25rem;
+        @media (min-width: $tablet) {
+            text-align: start;
+        }
+        span {
+            font-weight: 300;
+            font-size: 0.875rem;
+            color: #171717;
+            text-align: center;
+            @media (min-width: $tablet) {
+                font-size: 1.25rem;
+              }
+        }
+    }
+}

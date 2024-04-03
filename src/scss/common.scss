@@ -1074,3 +1074,41 @@ input:checked + .sliderCheckbox:before {
 	color: var(--white-color);
 	transition: .25s;
 }
+
+// id 
+.person-id {
+	display: flex;
+	align-items: center;
+	color: #000;
+	font-size: 0.75rem;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	span {
+		color: #7D7D7D;
+		font-size: 0.75rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		margin: 0 0.625rem 0 0;
+		@media (min-width: $tablet) {
+			font-size: 0.875rem;
+		}
+		@media (min-width: $full) {
+			font-size: 1.25rem;
+		}
+	}
+	@media (min-width: $tablet) {
+		font-size: 0.875rem;
+	}
+	@media (min-width: $full) {
+		font-size: 1.25rem;
+	}
+}
+
+.mobile-none {
+	display: none;
+	@media screen and (min-width:$mobile) {
+		display: block;
+	}
+}

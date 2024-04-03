@@ -1,0 +1,113 @@
+.memoInfoSlider {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 13.125rem;
+    position: relative;
+    @media (min-width: $mobile) {
+        padding-top: 0;
+    }
+    &__wrapper {
+    }
+    &__slide {
+        display: flex;
+        justify-content: center;
+    }
+    &__slide-photo {
+        width: 20.5rem;
+        height: 25.3125rem;
+        display: flex;
+        border-radius: 1.875rem;
+        position: relative;
+        @media (min-width: $tablet) {
+            width: 32.875rem;
+            height: 37.5rem;
+        }
+        img {
+            border-radius: 1.875rem;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    &__memoBox {
+        width: 5.125rem;
+        height: 7.875rem;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+        @media (min-width: $tablet) {
+            width: 9.8125rem;
+            height: 15rem;
+        }
+        img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            position: absolute;
+            right: 0.9375rem;
+            @media (min-width: $tablet) {
+                width: 9.8125rem;
+                height: 15rem;
+                right: 1.5625rem;
+            }
+        }
+        svg {
+            position: absolute;
+            right: 0;
+            bottom: 25px;
+            @media (min-width: $tablet) {
+                width: 3.75rem;
+                height: 3.75rem;
+                bottom: 3.125rem;
+            }
+        }
+    }
+    &__pagination {
+        display: flex;
+        gap: 1.875rem;
+        width: 20.5rem;
+        margin: 1.5625rem auto 0 auto;
+        @media (min-width: $tablet) {
+            gap: 3.125rem;
+            margin: 3.75rem 0 0 0;
+        }
+        .swiper-pagination-bullet {
+            width: 0.625rem;
+            height: 0.625rem;
+            background-color: var(--heading-color);
+            line-height: normal;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: .25s;
+            @media (min-width: $mobile) {
+                width: 0.9375rem;
+                height: 0.9375rem;;
+            }
+        }
+        .swiper-pagination-bullet:hover {
+            @media screen and (min-width:$tablet) {
+                transition: .25s;
+                background-color: var(--orange-color);
+            }
+        }
+        .swiper-pagination-bullet-active {
+            width: 0.625rem;
+            height: 0.625rem;
+            background-color: var(--orange-color);
+            line-height: normal;
+            border-radius: 50%;
+            transition: .25s;
+            @media (min-width: $mobile) {
+                width: 0.9375rem;
+                height: 0.9375rem;;
+            }
+        }
+        .swiper-pagination-bullet-active:hover {
+            @media screen and (min-width:$tablet) {
+                transition: .25s;
+            }
+        }
+    }
+}

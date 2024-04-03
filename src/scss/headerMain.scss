@@ -86,8 +86,14 @@
 			line-height: normal;
 			letter-spacing: 1.4px;
 			text-transform: uppercase;
+			transition: .25s;
 			@media screen and (min-width:$full) {
 				font-size: 1rem;
+			}
+		}
+		a:hover {
+			@media screen and (min-width:$tablet) {
+				opacity: 0.8;
 			}
 		}
 	}
