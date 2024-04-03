@@ -29,6 +29,14 @@
             max-width: 100%;
             height: auto;
         }
+        picture {
+            width: 20.5rem;
+            height: 25.3125rem;
+            @media (min-width: $tablet) {
+                width: 32.875rem;
+                height: 37.5rem;
+            }
+        }
     }
     &__memoBox {
         width: 5.125rem;

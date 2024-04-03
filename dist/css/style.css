@@ -8522,6 +8522,11 @@ input:checked + .sliderCheckbox:before {
   height: auto;
 }
 
+.memoInfoSlider__slide-photo picture {
+  width: 20.5rem;
+  height: 25.3125rem;
+}
+
 .memoInfoSlider__memoBox {
   width: 5.125rem;
   height: 7.875rem;
@@ -10592,6 +10597,11 @@ input:checked + .sliderCheckbox:before {
   }
 
   .memoInfoSlider__slide-photo {
+    width: 32.875rem;
+    height: 37.5rem;
+  }
+
+  .memoInfoSlider__slide-photo picture {
     width: 32.875rem;
     height: 37.5rem;
   }
