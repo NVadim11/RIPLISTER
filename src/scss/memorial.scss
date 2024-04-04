@@ -17,7 +17,8 @@
             padding: 0 2.1875rem;
         }
         @media (min-width: $pc) {
-            padding: 0 7.5rem;
+            max-width: toRem(1390);
+            padding: 0;
         }
         @media (min-width: $full) {
             max-width: 100rem;
@@ -80,7 +81,7 @@
         @media (min-width: $tablet) {
             width: 32.875rem;
         }
-        @media (min-width: $tablet) {
+        @media (min-width: $full) {
             width: 37.5rem;
         }
     }

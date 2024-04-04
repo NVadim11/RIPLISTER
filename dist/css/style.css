@@ -10483,10 +10483,6 @@ input:checked + .sliderCheckbox:before {
     width: 32.875rem;
   }
 
-  .memoInfo__left {
-    width: 37.5rem;
-  }
-
   .memoInfo__btnFollow {
     padding: 1.0625rem 1.6875rem;
     font-size: 1rem;
@@ -12008,7 +12004,8 @@ input:checked + .sliderCheckbox:before {
   }
 
   .memoInfo__container {
-    padding: 0 7.5rem;
+    max-width: 86.875rem;
+    padding: 0;
   }
 
   .memoInfo__btnFollow {
@@ -12926,6 +12923,10 @@ input:checked + .sliderCheckbox:before {
   .memoInfo__container {
     max-width: 100rem;
     padding: 0;
+  }
+
+  .memoInfo__left {
+    width: 37.5rem;
   }
 
   .memoInfo__btnFollow {
