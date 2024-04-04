@@ -12008,26 +12008,6 @@ input:checked + .sliderCheckbox:before {
     padding: 0;
   }
 
-  .memoInfo__btnFollow {
-    border-radius: 2.5rem;
-  }
-
-  .memoInfo__btnUnfollow {
-    border-radius: 2.5rem;
-  }
-
-  .memoInfo__personals-tributeBtn button {
-    border-radius: 2.5rem;
-  }
-
-  .memoInfo__personals-tributeBtn button:before {
-    border-radius: 2.5rem;
-  }
-
-  .memoInfo__personals-shareBtn button {
-    border-radius: 2.5rem;
-  }
-
   .memoEpitaph__content {
     padding: 3.75rem;
   }
@@ -12932,6 +12912,7 @@ input:checked + .sliderCheckbox:before {
   .memoInfo__btnFollow {
     font-size: 1.5rem;
     padding: 1.25rem 2.1875rem;
+    border-radius: 2.5rem;
   }
 
   .memoInfo__btnFollow svg {
@@ -12942,6 +12923,7 @@ input:checked + .sliderCheckbox:before {
   .memoInfo__btnUnfollow {
     font-size: 1.5rem;
     padding: 1.25rem 2.1875rem;
+    border-radius: 2.5rem;
   }
 
   .memoInfo__btnUnfollow svg {
@@ -12975,6 +12957,7 @@ input:checked + .sliderCheckbox:before {
     width: 26.625rem;
     padding: 1.5625rem 4.6875rem;
     height: 5.875rem;
+    border-radius: 2.5rem;
   }
 
   .memoInfo__personals-tributeBtn button svg {
@@ -12988,6 +12971,7 @@ input:checked + .sliderCheckbox:before {
     width: 26.625rem;
     padding: 1.5625rem 4.6875rem;
     height: 5.875rem;
+    border-radius: 2.5rem;
   }
 
   .memoInfo__personals-shareBtn button {
@@ -12995,6 +12979,7 @@ input:checked + .sliderCheckbox:before {
     width: 26.625rem;
     height: 5.875rem;
     padding: 2rem 3.75rem;
+    border-radius: 2.5rem;
   }
 
   .memoInfo__personals-shareBtn button svg {

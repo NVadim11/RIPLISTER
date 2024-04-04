@@ -126,12 +126,10 @@
             padding: 1.0625rem 1.6875rem;
             font-size: 1rem;
         }
-        @media (min-width: $pc) {
-            border-radius: 2.5rem;
-        }
         @media (min-width: $full) {
             font-size: 1.5rem;
             padding: 1.25rem 2.1875rem;
+            border-radius: 2.5rem;
         }
         svg {
             margin-right: 5px;
@@ -163,12 +161,10 @@
             padding: 1.0625rem 1.6875rem;
             font-size: 1rem;
         }
-        @media (min-width: $pc) {
-            border-radius: 2.5rem;
-        }
         @media (min-width: $full) {
             font-size: 1.5rem;
             padding: 1.25rem 2.1875rem;
+            border-radius: 2.5rem;
         }
         svg {
             margin-right: 5px;
@@ -314,14 +310,12 @@
                 width: 17.5rem;
                 height: 4.375rem;
             }
-            @media (min-width: $pc) {
-               border-radius: 2.5rem;
-            }
             @media (min-width: $full) {
                 font-size: 2rem;
                 width: 26.625rem;
                 padding: 1.5625rem 4.6875rem;
                 height: 5.875rem;
+                border-radius: 2.5rem;
             }
             span {
                 z-index: 10;
@@ -371,14 +365,12 @@
                 padding: 1.25rem 3.125rem;
                 width: 17.5rem;
             }
-            @media (min-width: $pc) {
-                border-radius: 2.5rem;
-             }
              @media (min-width: $full) {
                  font-size: 2rem;
                  width: 26.625rem;
                  padding: 1.5625rem 4.6875rem;
                  height: 5.875rem;
+                 border-radius: 2.5rem;
              }
         }
         button:hover:before {
@@ -417,14 +409,12 @@
                 width: 325px;
                 padding: 1.4375rem 2.375rem;
             }
-            @media (min-width: $pc) {
-                border-radius: 2.5rem;
-            }
             @media (min-width: $full) {
                 font-size: 1.5rem;
                 width: 26.625rem;
                 height: 5.875rem;
                 padding: 2rem 3.75rem;
+                border-radius: 2.5rem;
             }
             span {
                 z-index: 10;
