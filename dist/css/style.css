@@ -10613,19 +10613,9 @@ input:checked + .sliderCheckbox:before {
     height: 37.5rem;
   }
 
-  .memoInfoSlider__slide-photo {
-    width: 37.5rem;
-    height: 42.75rem;
-  }
-
   .memoInfoSlider__slide-photo picture {
     width: 32.875rem;
     height: 37.5rem;
-  }
-
-  .memoInfoSlider__slide-photo picture {
-    width: 37.5rem;
-    height: 42.75rem;
   }
 
   .memoInfoSlider__memoBox {
@@ -13022,6 +13012,16 @@ input:checked + .sliderCheckbox:before {
 
   .memoEpitaph__quote p {
     font-size: 2.25rem;
+  }
+
+  .memoInfoSlider__slide-photo {
+    width: 37.5rem;
+    height: 42.75rem;
+  }
+
+  .memoInfoSlider__slide-photo picture {
+    width: 37.5rem;
+    height: 42.75rem;
   }
 }
 
