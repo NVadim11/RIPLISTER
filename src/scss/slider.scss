@@ -23,11 +23,15 @@
             width: 32.875rem;
             height: 37.5rem;
         }
+        @media (min-width: $tablet) {
+            width: 37.5rem;
+            height: 42.75rem;
+        }
         img {
             border-radius: 1.875rem;
             width: 100%;
             max-width: 100%;
-            height: auto;
+            height: 100%;
         }
         picture {
             width: 20.5rem;
@@ -35,6 +39,10 @@
             @media (min-width: $tablet) {
                 width: 32.875rem;
                 height: 37.5rem;
+            }
+            @media (min-width: $tablet) {
+                width: 37.5rem;
+                height: 42.75rem;
             }
         }
     }

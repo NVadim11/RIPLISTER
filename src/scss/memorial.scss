@@ -16,6 +16,13 @@
             max-width: 100%;
             padding: 0 2.1875rem;
         }
+        @media (min-width: $pc) {
+            padding: 0 7.5rem;
+        }
+        @media (min-width: $full) {
+            max-width: 100rem;
+            padding: 0;
+        }
     }
     &__title {
         display: flex;
@@ -73,6 +80,9 @@
         @media (min-width: $tablet) {
             width: 32.875rem;
         }
+        @media (min-width: $tablet) {
+            width: 37.5rem;
+        }
     }
     &__right {
         display: flex;
@@ -118,12 +128,19 @@
         @media (min-width: $pc) {
             border-radius: 2.5rem;
         }
+        @media (min-width: $full) {
+            font-size: 1.5rem;
+            padding: 1.25rem 2.1875rem;
+        }
         svg {
             margin-right: 5px;
             @media (min-width: $tablet) {
-                width: 1.25rem;
-                height: 0.9375rem;
+                scale: 1.4;
                 margin-right: 0.625rem;
+            }
+            @media (min-width: $full) {
+                scale: 1.6;
+                margin-right: 1.25rem;;
             }
         }
     }
@@ -147,6 +164,21 @@
         }
         @media (min-width: $pc) {
             border-radius: 2.5rem;
+        }
+        @media (min-width: $full) {
+            font-size: 1.5rem;
+            padding: 1.25rem 2.1875rem;
+        }
+        svg {
+            margin-right: 5px;
+            @media (min-width: $tablet) {
+                scale: 1.4;
+                margin-right: 0.625rem;
+            }
+            @media (min-width: $full) {
+                scale: 1.6;
+                margin-right: 1.25rem;;
+            }
         }
     }
     &__personals {
@@ -177,7 +209,11 @@
             width: 0.9375rem;
             @media (min-width: $tablet) {
                 scale: 1.3;
-                margin-top: 3px;
+                margin-top: 0.1875rem;
+            }
+            @media (min-width: $full) {
+                scale: 1.6;
+                margin-top: 0.3125rem;
             }
         }
     }
@@ -197,6 +233,9 @@
         @media (min-width: $tablet) {
             font-size: 1.25rem;
         }
+        @media (min-width: $full) {
+            font-size: 1.5rem;
+        }
     }
     &__personals-value {
         font-weight: 600;
@@ -204,6 +243,9 @@
         color: #171717;
         @media (min-width: $tablet) {
             font-size: 1.25rem;
+        }
+        @media (min-width: $full) {
+            font-size: 1.5rem;
         }
     }
     &__personals-links {
@@ -217,6 +259,9 @@
             flex-direction: row;
             gap: 1.25rem;
         }
+        @media (min-width: $full) {
+            gap: 1.5625rem;
+        }
     }
     &__personals-link {
         a {
@@ -225,6 +270,9 @@
             text-decoration: underline;
             text-decoration-skip-ink: none;
             color: #3c88f9;
+            @media (min-width: $full) {
+                font-size: 1.5rem;
+            }
         }
     }
     &__personals-btns {
@@ -265,6 +313,15 @@
                 width: 17.5rem;
                 height: 4.375rem;
             }
+            @media (min-width: $pc) {
+               border-radius: 2.5rem;
+            }
+            @media (min-width: $full) {
+                font-size: 2rem;
+                width: 26.625rem;
+                padding: 1.5625rem 4.6875rem;
+                height: 5.875rem;
+            }
             span {
                 z-index: 10;
                 position: relative;
@@ -285,6 +342,11 @@
                     width: 0.8125rem;
                     height: 2rem;
                     margin-right: 0.625rem;
+                }
+                @media (min-width: $full) {
+                    width: 1.0625rem;
+                    height: 2.5625rem;
+                    margin-right: 20px;
                 }
             }
         }
@@ -308,6 +370,15 @@
                 padding: 1.25rem 3.125rem;
                 width: 17.5rem;
             }
+            @media (min-width: $pc) {
+                border-radius: 2.5rem;
+             }
+             @media (min-width: $full) {
+                 font-size: 2rem;
+                 width: 26.625rem;
+                 padding: 1.5625rem 4.6875rem;
+                 height: 5.875rem;
+             }
         }
         button:hover:before {
             opacity: 1;
@@ -345,6 +416,15 @@
                 width: 325px;
                 padding: 1.4375rem 2.375rem;
             }
+            @media (min-width: $pc) {
+                border-radius: 2.5rem;
+            }
+            @media (min-width: $full) {
+                font-size: 1.5rem;
+                width: 26.625rem;
+                height: 5.875rem;
+                padding: 2rem 3.75rem;
+            }
             span {
                 z-index: 10;
                 position: relative;
@@ -365,6 +445,11 @@
                     width: 1.0625rem;
                     height: 1.125rem;
                     margin-right: 0.625rem;
+                }
+                @media (min-width: $full) {
+                    width: 1.3125rem;
+                    height: 1.4375rem;
+                    margin-right: 0.9375rem;
                 }
             }
         }
@@ -398,7 +483,7 @@
             padding: 3.75rem;
         }
         @media (min-width: $full) {
-            padding: 4.6875rem;
+            max-width: 100rem;
         }
     }
     &__quote {
