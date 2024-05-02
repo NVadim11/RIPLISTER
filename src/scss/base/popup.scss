@@ -317,22 +317,22 @@ body::after {
 			height: 54px;
 			@media screen and (min-width: $mobile) {
 				border: 1px solid #ec6041;
-				border-radius: 20px;
+				border-radius: 30px;
 				height: 54px;
 			}
 			@media screen and (min-width: $tablet) {
 				border: 1px solid #ec6041;
-				border-radius: 20px;
+				border-radius: 30px;
 				height: 54px;
 			}
 			@media screen and (min-width: $pc) {
 				border: 1px solid #ec6041;
-				border-radius: 20px;
+				border-radius: 40px;
 				height: 54px;
 			}
 			@media screen and (min-width: $full) {
 				border: 1px solid #ec6041;
-				border-radius: 20px;
+				border-radius: 40px;
 				height: 54px;
 			}
 		}

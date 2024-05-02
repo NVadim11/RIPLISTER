@@ -1,18 +1,18 @@
 // Заголовки, загальні БЕМ блоки та інше...
-.wrapper {    
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--white-color)
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--white-color);
 }
 
 .colorWhite {
-	color: #ffffff!important;
+	color: #ffffff !important;
 }
 
 // for the errors
 .show_errorMsg {
-    display:flex!important;
+	display: flex !important;
 }
 
 .validationError {
@@ -43,14 +43,14 @@
 		justify-content: center;
 		border-radius: 0.875rem;
 		border: 0.0625rem solid var(--orange-color);
-		transition: .25s;
+		transition: 0.25s;
 		@media (min-width: $pc) {
 			width: 4.375rem;
 			height: 4.375rem;
 			border-radius: 1.875rem;
 		}
 		svg {
-			transition: .25s;
+			transition: 0.25s;
 			width: 0.6953rem;
 			height: 0.425rem;
 			flex-shrink: 0;
@@ -61,13 +61,13 @@
 		}
 	}
 	&__arrow:hover {
-		transition: .25s;
+		transition: 0.25s;
 		background: var(--orange-color);
 		svg {
-			transition: .25s;
+			transition: 0.25s;
 			path {
-                fill: var(--white-color); 
-            }
+				fill: var(--white-color);
+			}
 		}
 	}
 	// .pagging__list
@@ -94,7 +94,7 @@
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
-		transition: .25s;
+		transition: 0.25s;
 		@media (min-width: $full) {
 			font-size: 2rem;
 		}
@@ -104,23 +104,23 @@
 	}
 	&__item:hover {
 		color: var(--orange-color);
-		transition: .25s;
+		transition: 0.25s;
 	}
 }
 
 // стиль кнопки пин ту топ
 .btn-gotop {
-    position: fixed;
+	position: fixed;
 	width: 2.125rem;
 	height: 2.125rem;
 	flex-shrink: 0;
-    bottom: 1.5rem;
-    right: 1.5rem;
+	bottom: 1.5rem;
+	right: 1.5rem;
 	border-radius: 0.875rem;
 	background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
-    box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    transition: opacity 0.25s;
+	box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
+	opacity: 0;
+	transition: opacity 0.25s;
 	@media (min-width: $mobile) {
 		width: 3.125rem;
 		height: 3.125rem;
@@ -138,9 +138,9 @@
 		right: 2.5rem;
 		border-radius: 2.5rem;
 	}
-    &.show {
-      opacity: 1;
-    }
+	&.show {
+		opacity: 1;
+	}
 
 	svg {
 		width: 0.5rem;
@@ -160,19 +160,19 @@
 			height: 1.4375rem;
 		}
 	}
-  }
-  
+}
+
 .btn-gotop::before {
-	content: "";
+	content: '';
 	position: absolute;
 	width: 2.125rem;
 	height: 2.125rem;
-    opacity: 0;
-	background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
-	transition: opacity .25s ease-in-out;
+	opacity: 0;
+	background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
+	transition: opacity 0.25s ease-in-out;
 	position: fixed;
 	bottom: 1.5rem;
-    right: 1.5rem;
+	right: 1.5rem;
 	border-radius: 0.875rem;
 	@media (min-width: $mobile) {
 		width: 3.125rem;
@@ -194,16 +194,19 @@
 }
 
 .btn-gotop:hover:before {
-    opacity: 1;
+	opacity: 1;
 }
-  
+
 //   для конструктора/редактора
 .textBlock {
 	padding: 1.875rem 0 3.125rem 0;
 	@media (min-width: $pc) {
 		padding: 3.4375rem 0 4.375rem 0;
 	}
-	h1, h2, h3, h4 {
+	h1,
+	h2,
+	h3,
+	h4 {
 		color: var(--text-color-black);
 		text-align: center;
 		font-style: normal;
@@ -213,28 +216,28 @@
 			text-align: start;
 		}
 	}
-    h1 {
+	h1 {
 		font-weight: 600;
 		font-size: 2.25rem;
 		line-height: 117%;
 		letter-spacing: 0.03em;
 		margin: 0 0 0.9375rem 0;
 		text-align: center;
-		@media screen and (min-width:$mobile) {
+		@media screen and (min-width: $mobile) {
 			margin: 0 0 1.6875rem 0;
 		}
-		@media screen and (min-width:$tablet) {
+		@media screen and (min-width: $tablet) {
 			margin: 0 0 1.875rem 0;
 		}
-		@media screen and (min-width:$pc) {
-			font-size: 3.125rem;			
+		@media screen and (min-width: $pc) {
+			font-size: 3.125rem;
 		}
-		@media screen and (min-width:$full) {
+		@media screen and (min-width: $full) {
 			font-size: 4rem;
 			margin: 0 0 50px 0;
 		}
-    }
-    h2 {
+	}
+	h2 {
 		font-size: 32px;
 		margin: 0 0 0.625rem 0;
 		@media (min-width: $mobile) {
@@ -244,8 +247,8 @@
 			font-size: 40px;
 			margin: 0 0 1.875rem 0;
 		}
-    }
-    h3 {
+	}
+	h3 {
 		font-size: 1.375rem;
 		margin: 0 0 0.8125rem 0;
 		@media (min-width: $mobile) {
@@ -255,10 +258,10 @@
 			font-size: 2rem;
 			margin: 0 0 1.875rem 0;
 		}
-    }
-    h4 {
-			margin: 0 0 0.625rem 0;
-    }
+	}
+	h4 {
+		margin: 0 0 0.625rem 0;
+	}
 	h1:last-child,
 	h2:last-child,
 	h3:last-child,
@@ -267,13 +270,13 @@
 	}
 	h1:first-child {
 		margin: 0 0 0.9375rem 0;
-		@media screen and (min-width:$mobile) {
+		@media screen and (min-width: $mobile) {
 			margin: 0 0 1.6875rem 0;
 		}
-		@media screen and (min-width:$tablet) {
+		@media screen and (min-width: $tablet) {
 			margin: 0 0 1.875rem 0;
 		}
-		@media screen and (min-width:$full) {
+		@media screen and (min-width: $full) {
 			margin: 0 0 3.125rem 0;
 		}
 	}
@@ -295,14 +298,14 @@
 			@media (min-width: $pc) {
 				margin: 0 0 1.875rem 0;
 			}
-	}
-	h4:first-child {
-		h4 {
-			margin: 0 0 0.625rem 0;
+		}
+		h4:first-child {
+			h4 {
+				margin: 0 0 0.625rem 0;
 			}
-		}			
+		}
 	}
-    p {
+	p {
 		font-size: 0.875rem;
 		color: var(--text-color-black);
 		text-align: center;
@@ -321,7 +324,7 @@
 			margin: 0 0 4.0625rem 0;
 			text-align: start;
 		}
-    }	
+	}
 	p:last-child {
 		margin: 0;
 	}
@@ -332,16 +335,15 @@
 		}
 		@media (min-width: $pc) {
 			margin: 0 0 4.0625rem 0;
-		
 		}
 	}
 
-  i {
-  }
-  strong {
-  }
-  table {        
-  }
+	i {
+	}
+	strong {
+	}
+	table {
+	}
 	ul {
 		padding: 0 0 0 1.25rem;
 		margin: 0 0 1.875rem 0;
@@ -349,7 +351,7 @@
 			margin: 0 0 3.125rem 0;
 		}
 		li {
-			list-style-type:disc;
+			list-style-type: disc;
 		}
 		li:last-child {
 			margin: 0;
@@ -361,7 +363,7 @@
 	ul:last-child {
 		margin: 0;
 	}
-	ul:first-child {	
+	ul:first-child {
 		margin: 0 0 1.875rem 0;
 		@media (min-width: $pc) {
 			margin: 0 0 3.125rem 0;
@@ -416,25 +418,31 @@
 
 .orange-Title {
 	align-items: center;
-	h1, h2, h3, h4 {
+	h1,
+	h2,
+	h3,
+	h4 {
 		margin: 0 0 1.8125rem 0;
 		text-align: center;
 		color: #e55738;
-		@media screen and (min-width:$mobile) {
+		@media screen and (min-width: $mobile) {
 			margin: 0 0 1.4375rem 0;
 		}
-		@media screen and (min-width:$tablet) {	
+		@media screen and (min-width: $tablet) {
 			margin: 0 0 3.25rem 0;
 			text-align: start;
 		}
-		@media screen and (min-width:$pc) {
+		@media screen and (min-width: $pc) {
 			margin: 0 0 3.875rem 0;
 		}
-		@media screen and (min-width:$full) {
+		@media screen and (min-width: $full) {
 			margin: 0 0 5.9375rem 0;
 		}
 	}
-	h1:last-child, h2:last-child, h3:last-child, h4:last-child {
+	h1:last-child,
+	h2:last-child,
+	h3:last-child,
+	h4:last-child {
 		margin-bottom: 0;
 	}
 	h1:first-child {
@@ -475,83 +483,83 @@
 
 // блок цитата стать волонтером
 .volunteer {
-    // margin-right: 3.75rem 0 0 0;    
-    &__container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: var(--alt-cream-color);
-        border-radius: 1.25rem; 
+	// margin-right: 3.75rem 0 0 0;
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: var(--alt-cream-color);
+		border-radius: 1.25rem;
 		padding: 3.125rem 0;
-        @media screen and (min-width:$pc) {
-            flex-direction: row;
-            border-radius: 1.875rem; 
-            padding: 5.625rem 5.625rem;
+		@media screen and (min-width: $pc) {
+			flex-direction: row;
+			border-radius: 1.875rem;
+			padding: 5.625rem 5.625rem;
 			justify-content: space-between;
-        }
-    }
-    &__quote {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        @media screen and (min-width:$pc) {
-            align-items: start;
-        }
-    }
-    p {
-        margin-top: 1.25rem;
-        text-align: center;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        @media screen and (min-width:$pc) { 
-            font-size: 2.25rem;
-            line-height: normal;
-            text-align: start;
+		}
+	}
+	&__quote {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@media screen and (min-width: $pc) {
+			align-items: start;
+		}
+	}
+	p {
+		margin-top: 1.25rem;
+		text-align: center;
+		font-size: 1.5rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		@media screen and (min-width: $pc) {
+			font-size: 2.25rem;
+			line-height: normal;
+			text-align: start;
 			max-width: 32.5rem;
-        }
-    }
-    span {
-        margin-top: 0.9375rem;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
-        @media screen and (min-width: $full) {
-            font-size: 1.25rem;
-            line-height: normal;
-        }
-    }
-    &__btn {
-        margin-top: 1.75rem;
-        padding: 1rem 3rem;
-        color: var(--white-color);
-        font-size: 1.125rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        border-radius: 1.25rem;
-        transition: 0.25s;
-        background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
-        @media screen and (min-width: $pc) {
-            // margin-left: 18.75rem;
-            font-size: 1.5rem;
-            line-height: normal;
-            white-space: nowrap;
-            border-radius: 2.5rem;
-            padding: 1.875rem 5rem;
-        }
-    }
-    button:hover {
-        background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
-        transition: 0.25s;
-    }
+		}
+	}
+	span {
+		margin-top: 0.9375rem;
+		font-size: 1rem;
+		font-style: normal;
+		font-weight: 300;
+		line-height: normal;
+		@media screen and (min-width: $full) {
+			font-size: 1.25rem;
+			line-height: normal;
+		}
+	}
+	&__btn {
+		margin-top: 1.75rem;
+		padding: 1rem 3rem;
+		color: var(--white-color);
+		font-size: 1.125rem;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		border-radius: 1.25rem;
+		transition: 0.25s;
+		background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
+		@media screen and (min-width: $pc) {
+			// margin-left: 18.75rem;
+			font-size: 1.5rem;
+			line-height: normal;
+			white-space: nowrap;
+			border-radius: 2.5rem;
+			padding: 1.875rem 5rem;
+		}
+	}
+	button:hover {
+		background: linear-gradient(180deg, #eb8069 0%, #db4a2a 100%);
+		transition: 0.25s;
+	}
 }
 
 // оранжевая линия
 .lineOrange {
-	background: #F5BFB4;
+	background: #f5bfb4;
 	height: 0.125rem;
 }
 
@@ -580,7 +588,6 @@
 		text-align: center;
 		color: #171717;
 		@media (min-width: $mobile) {
-			
 		}
 		@media (min-width: $tablet) {
 			font-size: 2.875rem;
@@ -649,7 +656,7 @@
 				font-size: 1.25rem;
 			}
 		}
-		@media (min-width: $mobile) {		
+		@media (min-width: $mobile) {
 			display: flex;
 			flex-direction: row;
 		}
@@ -664,12 +671,12 @@
 	&__form-input {
 		width: 100%;
 		input {
-			margin-top: 0.875rem;		
+			margin-top: 0.875rem;
 			border: 0.0625rem solid #ec6041;
-			border-radius: 1.875rem;	
+			border-radius: 1.875rem;
 			width: 100%;
 			height: 4rem;
-			background: #fff;	
+			background: #fff;
 			@media (min-width: $mobile) {
 				margin-top: 0;
 			}
@@ -698,7 +705,7 @@
 		@media (min-width: $pc) {
 		}
 		@media (min-width: $full) {
-		}		
+		}
 	}
 	&__selectLabel {
 		@media (min-width: $mobile) {
@@ -771,8 +778,8 @@
 		font-weight: 400;
 		font-size: 1rem;
 		color: #000;
-		@media (min-width: $mobile) {		
-			margin-top: 1.25rem;	
+		@media (min-width: $mobile) {
+			margin-top: 1.25rem;
 			width: 100%;
 		}
 		@media (min-width: $tablet) {
@@ -792,7 +799,7 @@
 		align-items: center;
 		@media (min-width: $mobile) {
 		}
-		@media (min-width: $tablet) {		
+		@media (min-width: $tablet) {
 			width: 100%;
 			height: 3.75rem;
 			margin-top: 0.9375rem;
@@ -808,7 +815,7 @@
 	}
 	&__formSubmit {
 		margin-top: 2.8125rem;
-		padding: 1rem 3.125rem;		
+		padding: 1rem 3.125rem;
 		font-weight: 700;
 		font-size: 1.125rem;
 		color: #fff;
@@ -816,7 +823,7 @@
 		background: linear-gradient(180deg, #e55738 0%, #db4a2a 100%);
 		@media (min-width: $mobile) {
 			margin-top: 1.9375rem;
-			padding: 1.25rem 4.6875rem;	
+			padding: 1.25rem 4.6875rem;
 		}
 		@media (min-width: $tablet) {
 			margin-top: 0rem;
@@ -824,7 +831,7 @@
 			right: 0;
 		}
 		@media (min-width: $pc) {
-			padding: 1.875rem 5.8125rem;		
+			padding: 1.875rem 5.8125rem;
 			font-size: 1.5rem;
 			border-radius: 2.5rem;
 		}
@@ -842,7 +849,7 @@
 		flex-direction: row;
 		height: fit-content;
 		align-items: center;
-		color: #F00;
+		color: #f00;
 		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 600;
@@ -882,7 +889,6 @@
 	}
 }
 
-
 // Чекбокс слайдер
 /* The switchCheckbox - the box around the sliderCheckbox */
 .switchCheckbox {
@@ -893,13 +899,13 @@
 	right: 0;
 	width: 2rem;
 	height: 1.25rem;
-	@media screen and (min-width:$mobile) {
+	@media screen and (min-width: $mobile) {
 		height: 1.25rem;
 	}
-	@media screen and (min-width:$pc) {
+	@media screen and (min-width: $pc) {
 		height: 1.25rem;
 	}
-	@media screen and (min-width:$full) {
+	@media screen and (min-width: $full) {
 		height: 2rem;
 		width: 3.125rem;
 	}
@@ -920,49 +926,49 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #F3ECEC;
-	-webkit-transition: .4s;
-	transition: .4s;
+	background-color: #f3ecec;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
 }
 
 .sliderCheckbox:before {
 	position: absolute;
-	content: "";
+	content: '';
 	height: 1.25rem;
 	width: 1.25rem;
-	background-color: #B3B3B3;
-	-webkit-transition: .4s;
-	transition: .4s;
-	@media screen and (min-width:$mobile) {
+	background-color: #b3b3b3;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	@media screen and (min-width: $mobile) {
 		height: 1.25rem;
 		width: 1.25rem;
 	}
-	@media screen and (min-width:$pc) {
+	@media screen and (min-width: $pc) {
 		height: 1.25rem;
 		width: 1.25rem;
 	}
-	@media screen and (min-width:$full) {
+	@media screen and (min-width: $full) {
 		height: 2rem;
 		width: 2rem;
 	}
 }
 
 input:checked + .sliderCheckbox {
-	background-color: #F5BFB4;
+	background-color: #f5bfb4;
 }
 input:checked ~ .profileSettings__sectionTitle {
-	color: #DB4A2A;
+	color: #db4a2a;
 }
 input:focus + .sliderCheckbox {
-	box-shadow: 0 0 0.0625rem #F3ECEC;
+	box-shadow: 0 0 0.0625rem #f3ecec;
 }
 
 input:checked + .sliderCheckbox:before {
 	-webkit-transform: translateX(0.75rem);
 	-ms-transform: translateX(0.75rem);
 	transform: translateX(0.75rem);
-	background-color:#DB4A2A;
-	@media screen and (min-width:$full) {
+	background-color: #db4a2a;
+	@media screen and (min-width: $full) {
 		-webkit-transform: translateX(1.125rem);
 		-ms-transform: translateX(1.125rem);
 		transform: translateX(1.125rem);
@@ -978,35 +984,34 @@ input:checked + .sliderCheckbox:before {
 	border-radius: 50%;
 }
 
-
 // webkit
 ::-webkit-scrollbar {
 	width: 4px;
 }
 ::-webkit-scrollbar-track {
 	border-radius: 1.875rem;
-	background: #FDE6DF;
-} 
+	background: #fde6df;
+}
 ::-webkit-scrollbar-thumb {
 	border-radius: 1.875rem;
-	background: #EB8069;
+	background: #eb8069;
 }
 
 // Display block toggle
 .block {
-	display: block;	
+	display: block;
 }
 
 // Arrow state
 .toggleLangBtn {
-	background: #FFF;
+	background: #fff;
 	color: var(--text-color-black);
-	transition: .25s;
-	.dropdownArrow { 		
-		transform: rotate(180deg);	
+	transition: 0.25s;
+	.dropdownArrow {
+		transform: rotate(180deg);
 		path {
-			fill: var(--orange-color)!important;
-			transition: .25s;
+			fill: var(--orange-color) !important;
+			transition: 0.25s;
 		}
 	}
 }
@@ -1021,7 +1026,7 @@ input:checked + .sliderCheckbox:before {
 	margin-top: 10.3125rem;
 	right: 0;
 	align-items: center;
-	text-align: center;		
+	text-align: center;
 	border-radius: 1.25rem;
 	background: var(--modal-background-color);
 	.uaBtn {
@@ -1036,27 +1041,27 @@ input:checked + .sliderCheckbox:before {
 			height: 1.125rem;
 		}
 	}
-	@media screen and (min-width:$full) {
+	@media screen and (min-width: $full) {
 		margin-top: 14.375rem;
 		border-radius: 1.875rem;
 	}
 }
-.langBtn {	
+.langBtn {
 	display: flex;
 	align-items: center;
 	text-align: center;
 	justify-content: center;
 	background: var(--modal-background-color);
 	padding: 0.875rem 0.8125rem 0.875rem 1rem;
-	transition: .25s;
-	@media screen and (min-width:$full) {
+	transition: 0.25s;
+	@media screen and (min-width: $full) {
 		padding: 1.4375rem 1.1875rem 1.4375rem 1.125rem;
 	}
 }
 .langBtn:first-child {
 	border-top-right-radius: 1.25rem;
 	border-top-left-radius: 1.25rem;
-	@media screen and (min-width:$full) {
+	@media screen and (min-width: $full) {
 		border-top-right-radius: 1.875rem;
 		border-top-left-radius: 1.875rem;
 	}
@@ -1064,7 +1069,7 @@ input:checked + .sliderCheckbox:before {
 .langBtn:last-child {
 	border-bottom-right-radius: 1.25rem;
 	border-bottom-left-radius: 1.25rem;
-	@media screen and (min-width:$full) {
+	@media screen and (min-width: $full) {
 		border-bottom-right-radius: 1.875rem;
 		border-bottom-left-radius: 1.875rem;
 	}
@@ -1072,10 +1077,10 @@ input:checked + .sliderCheckbox:before {
 .langBtn:hover {
 	background-color: var(--orange-color);
 	color: var(--white-color);
-	transition: .25s;
+	transition: 0.25s;
 }
 
-// id 
+// id
 .person-id {
 	display: flex;
 	align-items: center;
@@ -1085,7 +1090,7 @@ input:checked + .sliderCheckbox:before {
 	font-weight: 600;
 	line-height: normal;
 	span {
-		color: #7D7D7D;
+		color: #7d7d7d;
 		font-size: 0.75rem;
 		font-style: normal;
 		font-weight: 400;
@@ -1108,7 +1113,7 @@ input:checked + .sliderCheckbox:before {
 
 .mobile-none {
 	display: none;
-	@media screen and (min-width:$mobile) {
+	@media screen and (min-width: $mobile) {
 		display: block;
 	}
 }

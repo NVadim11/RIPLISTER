@@ -1,86 +1,16 @@
-@use "sass:math";
-:root {
-	// Basic Typography:
-		//normal
-			--normal: 400;
-		//bold
-			--bold: 700;
-		// h1
-			--h1-mobile: 36px;
-			--h1-tablet: 44px;
-			--h1-desktop: 50px;
-			--h1-full: 64px;
-		// h2
-			--h2-mobile: 32px;
-			--h2-tablet: 40px;
-			--h2-desktop: 46px;
-			--h2-full: 52px;
-		// h3
-			--h3-mobile: 24px;
-			--h3-tablet: 36px;
-			--h3-desktop: 36px;
-			--h3-full: 36px;
-		// h4
-			--h4-mobile: 22px;
-			--h4-tablet: 24px;
-			--h4-desktop: 32px;
-			--h4-full: 32px;
-		// h5 
-			--h5: 20px;
-		// p 
-			--p-mobile: 14px;
-			--p-tablet: 18px;
-			--p-desktop: 20px;
-			--p-full: 24px;
-		
-	// Buttons
-		// common
-			--btn-background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
-			--btn-hover-backround: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
-
-	// Links
-		--color-green: green;
-		a {
-			font-weight: 600;
-			text-decoration: underline;
-		}
-		
-		
-
-  --text-color-black: #171717;
-	--text-color-blue: #3C88F9;
-  --text-color-underline: rgba(0, 0, 0, 0.3);
-
-  --white-color: #ffffff;
-  --heading-color: #4b5563;
-  --blue-color: #73b6da;
-  --modal-background-color: #FFF3ED;
-	--cream-color: #FFF8F6;
-	--alt-cream-color: #FCFAFA;
-
-  --orange-color: #E55738;
-  --orange-color-underline: rgba(229, 87, 56, 0.3);
-
-  --orange-border-transparent: rgba(235, 128, 105, 0.5);
-
-  // Font-weight
-
-  --fw-400: 400;
-}
+@use 'sass:math';
 
 // Masonry header colors
-
 $masonry-lightGreen: #ddeeed;
 
-
 // Підключення міксинів ===========================================================================================================================================================================================================================================================================
-@import "base/mixins";
+@import 'base/mixins';
 
 // Підключення шрифтів ===========================================================================================================================================================================================================================================================================
 //&display=swap - додати при підключенні через плагін
 
 // Підключити, якщо є локальні файли шрифтів
-@import "fonts/fonts";
+@import 'fonts/fonts';
 
 // Підключення іконкових шрифтів ==============================================================================================================================================================================================================================================================================
 // Підключити, якщо є файл іконкового шрифту
@@ -91,7 +21,7 @@ $masonry-lightGreen: #ddeeed;
 // ============================================================================================================================================================================================================================================================================================================================================================================================
 
 // За замовчуванням шрифт ==============================================================================================================================================================================================================================================================================
-$fontFamily: "cretype";
+$fontFamily: 'cretype';
 $fontSize: toRem(14); // де 14(px) - розмір шрифту за замовчуванням з макету
 
 // Основні кольори
@@ -122,7 +52,6 @@ $tablet: em(1279.98); // Планшети, деякі телефони в гор
 $mobile: em(767.98); // Телефони L
 $mini: em($containerWidth); // small phones
 
-
 // Тип адаптива:
 // 1 = чуйність (у контейнера немає брейкпоінтів),
 // 2 = по брейк-поїнт (контейнер змінює свою ширину по брейк-поїнт)
@@ -132,7 +61,7 @@ $responsiveType: 2;
 // ============================================================================================================================================================================================================================================================================================================================================================================================
 
 // Обнулення ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
-@import "base/null";
+@import 'base/null';
 
 // Стилі тега BODY ============================================================================================================================================================================================================================================================================================================================================================================================
 body {
@@ -174,7 +103,7 @@ body {
 */
 @if ($responsiveType==1) {
 	// Чуйна
-	[class*="__container"] {
+	[class*='__container'] {
 		@if ($minWidthContainer>0) {
 			max-width: toRem($containerWidth);
 			margin: 0 auto;
@@ -183,14 +112,14 @@ body {
 			@if ($minWidthContainer>0) {
 				padding: 0 toRem(math.div($containerPadding, 2));
 			} @else {
-				@include adaptiveValue("padding-left", math.div($containerPadding, 2), 15);
-				@include adaptiveValue("padding-right", math.div($containerPadding, 2), 15);
+				@include adaptiveValue('padding-left', math.div($containerPadding, 2), 15);
+				@include adaptiveValue('padding-right', math.div($containerPadding, 2), 15);
 			}
 		}
 	}
 } @else {
 	// Брейк-поїнтами
-	[class*="__container"] {
+	[class*='__container'] {
 		margin: 0 auto;
 		@if ($minWidthContainer>0) {
 			max-width: toRem($containerWidth);
@@ -217,33 +146,145 @@ body {
 	}
 }
 
+:root {
+	// Basic Typography:
+	//normal
+	--normal: 400;
+	//bold
+	--bold: 700;
+
+	h1 {
+		@media (min-width: $mobile) {
+			font-size: 36px;
+		}
+		@media (min-width: $tablet) {
+			font-size: 44px;
+		}
+		@media (min-width: $pc) {
+			font-size: 50px;
+		}
+		@media (min-width: $full) {
+			font-size: 64px;
+		}
+	}
+	h2 {
+		@media (min-width: $mobile) {
+			font-size: 32px;
+		}
+		@media (min-width: $tablet) {
+			font-size: 40px;
+		}
+		@media (min-width: $pc) {
+			font-size: 46px;
+		}
+		@media (min-width: $full) {
+			font-size: 52px;
+		}
+	}
+	h3 {
+		@media (min-width: $mobile) {
+			font-size: 24px;
+		}
+		@media (min-width: $tablet) {
+			font-size: 36px;
+		}
+		@media (min-width: $pc) {
+			font-size: 36px;
+		}
+		@media (min-width: $full) {
+			font-size: 36px;
+		}
+	}
+	h4 {
+		@media (min-width: $mobile) {
+			font-size: 22px;
+		}
+		@media (min-width: $tablet) {
+			font-size: 24px;
+		}
+		@media (min-width: $pc) {
+			font-size: 32px;
+		}
+		@media (min-width: $full) {
+			font-size: 32px;
+		}
+	}
+	h5 {
+		font-size: 20px;
+	}
+	p {
+		@media (min-width: $mobile) {
+			font-size: 14px;
+		}
+		@media (min-width: $tablet) {
+			font-size: 18px;
+		}
+		@media (min-width: $pc) {
+			font-size: 20px;
+		}
+		@media (min-width: $full) {
+			font-size: 24px;
+		}
+	}
+	// Buttons
+	// common
+	--btn-background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
+	--btn-hover-backround: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
+
+	// Links
+	--color-green: green;
+	a {
+		font-weight: 600;
+		text-decoration: underline;
+	}
+
+	--text-color-black: #171717;
+	--text-color-blue: #3c88f9;
+	--text-color-underline: rgba(0, 0, 0, 0.3);
+
+	--white-color: #ffffff;
+	--heading-color: #4b5563;
+	--blue-color: #73b6da;
+	--modal-background-color: #fff3ed;
+	--cream-color: #fff8f6;
+	--alt-cream-color: #fcfafa;
+
+	--orange-color: #e55738;
+	--orange-color-underline: rgba(229, 87, 56, 0.3);
+
+	--orange-border-transparent: rgba(235, 128, 105, 0.5);
+
+	// Font-weight
+
+	--fw-400: 400;
+}
+
 // Підключення базових стилів, шаблонів (заготівель) та допоміжних класів
 // Для підключення/вимкнення конкретних стилів дивись base.scss
-@import "base";
+@import 'base';
 
 // Підключення стилів загальних елементів проекту
-@import "common";
+@import 'common';
 
 // Підключення стилів окремих блоків
-@import "headerAlt";
-@import "headerMain";
-@import "footer";
-@import "main";
-
+@import 'headerAlt';
+@import 'headerMain';
+@import 'footer';
+@import 'main';
 
 // Підключення стилів окремих сторінок
-@import "instructions";
-@import "error404";
-@import "contacts";
-@import "blog";
-@import "news";
-@import "promo";
-@import "profile";
-@import "post";
-@import "public-offer";
-@import "privacy-policy";
-@import "guidelines";
-@import "about";
-@import "memorial";
+@import 'instructions';
+@import 'error404';
+@import 'contacts';
+@import 'blog';
+@import 'news';
+@import 'promo';
+@import 'profile';
+@import 'post';
+@import 'public-offer';
+@import 'privacy-policy';
+@import 'guidelines';
+@import 'about';
+@import 'memorial';
 // Підключення стилів окремих попапів
-@import "burgerMenu";
+@import 'burgerMenu';
