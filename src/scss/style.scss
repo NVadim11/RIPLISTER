@@ -1,4 +1,4 @@
-@use 'sass:math';
+@use "sass:math";
 
 // Masonry header colors
 $masonry-lightGreen: #ddeeed;
@@ -232,10 +232,48 @@ body {
 	--btn-hover-backround: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
 
 	// Links
-	--color-green: green;
+	--link-color: #3c88f9;
+	--link-underline-none: transparent;
 	a {
-		font-weight: 600;
-		text-decoration: underline;
+		display: flex;
+		align-items: center;
+		span {
+			font-weight: 600;
+			color: var(--link-color);
+			text-decoration: none;
+			position: relative;
+		}
+		span:after {
+			content: "";
+			position: absolute;
+			bottom: 3px;
+			height: 0.1px;
+			left: 0;
+			width: 100%;
+			background-color: var(--link-color); 
+			transition: background-color 0.25s ease;
+		}
+		svg {
+			transition: .25s;
+			path {
+				transition: .25s;
+			}
+		}
+	}
+	a:hover {
+		svg {
+			background-color: var(--link-color);
+			transition: .25s;
+
+			path {
+				fill: var(--white-color);
+			transition: .25s;
+
+			}
+		}
+		span:after {
+			background-color: transparent;
+		}
 	}
 
 	--text-color-black: #171717;

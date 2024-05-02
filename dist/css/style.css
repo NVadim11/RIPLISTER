@@ -270,7 +270,8 @@ a {
   --bold: 700;
   --btn-background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
   --btn-hover-backround: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
-  --color-green: green;
+  --link-color: #3c88f9;
+  --link-underline-none: transparent;
   --text-color-black: #171717;
   --text-color-blue: #3c88f9;
   --text-color-underline: rgba(0, 0, 0, 0.3);
@@ -291,8 +292,57 @@ a {
 }
 
 :root a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+:root a span {
   font-weight: 600;
-  text-decoration: underline;
+  color: var(--link-color);
+  text-decoration: none;
+  position: relative;
+}
+
+:root a span:after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  height: 0.1px;
+  left: 0;
+  width: 100%;
+  background-color: var(--link-color);
+  -webkit-transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease;
+}
+
+:root a svg {
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+:root a svg path {
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+:root a:hover svg {
+  background-color: var(--link-color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+:root a:hover svg path {
+  fill: var(--white-color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+:root a:hover span:after {
+  background-color: transparent;
 }
 
 .form__error {
@@ -4213,13 +4263,13 @@ input:checked + .sliderCheckbox:before {
   font-weight: 700;
   line-height: normal;
   border-radius: 2.5rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
-  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ef6446), to(#db4a2a));
+  background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
 }
 
 .mainCover__btn button:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
-  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#eb8069), to(#db4a2a));
+  background: linear-gradient(180deg, #eb8069 0%, #db4a2a 100%);
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
@@ -4278,7 +4328,7 @@ input:checked + .sliderCheckbox:before {
       -ms-flex-direction: column;
           flex-direction: column;
   border-radius: 1.25rem;
-  background: #FFF3ED;
+  background: #fff3ed;
 }
 
 .mainForm__searchType {
@@ -4384,8 +4434,8 @@ input:checked + .sliderCheckbox:before {
 
 .mainForm__btn button {
   border-radius: 1.25rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
-  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ef6446), to(#db4a2a));
+  background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
   margin: 0.9375rem 1.25rem 1.875rem;
   min-width: 19.625rem;
   padding: 0 6.25rem 0;
@@ -4403,8 +4453,8 @@ input:checked + .sliderCheckbox:before {
 }
 
 .mainForm__btn button:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
-  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#eb8069), to(#db4a2a));
+  background: linear-gradient(180deg, #eb8069 0%, #db4a2a 100%);
   -webkit-transition: 0.25s;
   transition: 0.25s;
   border-radius: 1.875rem;
@@ -4578,6 +4628,7 @@ input:checked + .sliderCheckbox:before {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  cursor: pointer;
 }
 
 .mainInfo__linkHowTo svg {
@@ -4588,24 +4639,10 @@ input:checked + .sliderCheckbox:before {
 }
 
 .mainInfo__linkHowTo a {
-  color: var(--text-color-blue);
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  padding: 0.3125rem;
-}
-
-.mainInfo__linkHowTo:hover {
-  cursor: pointer;
-}
-
-.mainInfo__linkHowTo:hover svg {
-  background-color: var(--text-color-blue);
-}
-
-.mainInfo__linkHowTo:hover svg path {
-  fill: var(--white-color);
 }
 
 .mainInfo__row {
@@ -4738,13 +4775,13 @@ input:checked + .sliderCheckbox:before {
   line-height: normal;
   white-space: nowrap;
   border-radius: 1.25rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
-  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ef6446), to(#db4a2a));
+  background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
 }
 
 .mainInfo__create button:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
-  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#eb8069), to(#db4a2a));
+  background: linear-gradient(180deg, #eb8069 0%, #db4a2a 100%);
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
@@ -4882,7 +4919,7 @@ input:checked + .sliderCheckbox:before {
   height: 0.375rem;
   width: 100%;
   border-radius: 1.875rem;
-  background: #F3ECEC;
+  background: #f3ecec;
   margin: 3.125rem 0 0 0;
 }
 
@@ -4938,13 +4975,13 @@ input:checked + .sliderCheckbox:before {
   font-weight: 700;
   line-height: normal;
   border-radius: 1.25rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
-  background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ef6446), to(#db4a2a));
+  background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
 }
 
 .mainRecent__register button:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(#EB8069), to(#DB4A2A));
-  background: linear-gradient(180deg, #EB8069 0%, #DB4A2A 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#eb8069), to(#db4a2a));
+  background: linear-gradient(180deg, #eb8069 0%, #db4a2a 100%);
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
@@ -5186,13 +5223,13 @@ input:checked + .sliderCheckbox:before {
   font-weight: 700;
   line-height: normal;
   border-radius: 1.25rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#64A2FF), to(#2A86DB));
-  background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#64a2ff), to(#2a86db));
+  background: linear-gradient(180deg, #64a2ff 0%, #2a86db 100%);
 }
 
 .mainPartners__partner button:hover {
-  background: -webkit-gradient(linear, left bottom, left top, from(#64A2FF), to(#2A86DB));
-  background: linear-gradient(0deg, #64A2FF 0%, #2A86DB 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#64a2ff), to(#2a86db));
+  background: linear-gradient(0deg, #64a2ff 0%, #2a86db 100%);
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
