@@ -2,8 +2,11 @@
 // Для підключення/відключення стилів конкретного елемента форми дивись base/forms/forms.scss
 @import "base/forms/forms";
 
-// Стилі попапів
+// Popup Styles
 @import "base/popup";
+
+// Slider Styles
+@import "base/slider";
 
 // Стилі спойлерів
 // @import "base/spollers";
