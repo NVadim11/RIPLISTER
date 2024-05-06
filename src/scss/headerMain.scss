@@ -79,7 +79,12 @@
 
 		}
 		a {
-			color: var(--text-color-black);
+			span {
+				color: var(--text-color-black);
+			}
+			span::after {
+				height: 0px;
+			}
 			font-size: 0.875rem;
 			font-style: normal;
 			font-weight: 600;

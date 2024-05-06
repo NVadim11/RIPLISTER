@@ -73,8 +73,13 @@
 		li {
 
 		}
-		a {
-			color: var(--white-color);
+		a {		
+			span {
+				color: var(--white-color);
+			}
+			span::after {
+				height: 0px;
+			}
 			font-size: 0.875rem;
 			font-style: normal;
 			font-weight: 600;

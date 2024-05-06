@@ -63,24 +63,24 @@
 		}
 	}
 	&__redirect {
+		display: flex;
+		justify-content: center;
 		color: var(--text-color-blue);
 		text-align: center;
 		font-size: 1rem;
 		font-style: normal;
-		font-weight: 600;
 		line-height: normal;
-		text-decoration-line: underline;
 		margin-top: 1.875rem;
 		@media screen and (min-width:$full) {
+			display: flex;
+			justify-content: start;
 			text-align: start;
 			margin-top: 3.125rem;
 			font-size: 2rem;
-			font-weight: 700;			
 			margin-bottom: 16.875rem;
 		}		
 	}
 	&__redirect:hover {
-		text-decoration-line: none;
 		cursor: pointer;
 	}
 }
