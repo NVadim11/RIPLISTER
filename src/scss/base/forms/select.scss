@@ -161,7 +161,7 @@
 .select_blogTags {
 	min-width: 0;
 	position: relative;
-	width: 100%;
+	width: 20rem;
 	.select__body {
 		position: relative;
 	}
@@ -177,7 +177,13 @@
 		font-size: 1rem;
 		font-style: normal;
 		font-weight: 600;
-		padding: 1.0625rem 0 1.0625rem 1.25rem;
+		padding: 0 0 0 1.25rem;
+		height: 3.375rem;
+		@media screen and (min-width: $pc) {
+			height: 4.375rem;
+			border-radius: 1.875rem;
+			padding: 0 0 0 2.8125rem;
+		}
 	}
 	.select__value {
 		display: flex;
@@ -210,9 +216,13 @@
 	}
 	.select__content {
 		flex: 1 1 auto;
-		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+		font-size: 1rem;
+		font-weight: 600;
+		@media screen and (min-width: $pc) {
+			font-size: 24px;
+		}
 	}
 	.select__text {
 		flex: 1 1 auto;
@@ -226,18 +236,21 @@
 		height: 100%;
 	}
 	.select__options {
-		border-radius: 1.25rem;
-		border: 0.0625rem solid var(--orange-color);
+		border-radius: 0.625rem;
 		color: var(--text-color-black);
-		font-size: 1rem;
+		font-size: 1.125rem;
 		font-style: normal;
-		font-weight: 600;
+		font-weight: 400;
 		position: absolute;
-		top: calc(100% + 1.25rem);
+		top: calc(100% + 25px);
 		min-width: 100%;
 		left: 0;
-		background-color: #fff;
+		box-shadow: 0 20px 46px 0 rgba(229, 87, 56, 0.4);
+		background: #fff3ed;
 		padding: 0.625rem 0rem 0.3125rem 0rem;
+		@media screen and (min-width: $pc) {
+			font-size: 1.5rem;
+		}
 	}
 	.select__scroll {
 		overflow-y: auto;
@@ -255,14 +268,16 @@
 		width: 100%;
 		text-align: left;
 		cursor: pointer;
-		padding: 0.3125rem 0.9375rem;
+		padding: 0 1.25rem;
+		height: 2.75rem;
 		color: inherit;
 		&._select-selected {
 			background-color: #eee;
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				background: #d9d9d9;
+				background: #e55738;
+				color: var(--white-color);
 			}
 		}
 	}
@@ -301,7 +316,6 @@
 		bottom: calc(100% + 1.25rem);
 		border-bottom: 0;
 		border-radius: 1.25rem;
-		border: 0.0625rem solid var(--orange-color);
 		color: var(--text-color-black);
 	}
 }
