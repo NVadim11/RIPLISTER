@@ -901,15 +901,26 @@
 		}
 	}
 	&__text {
-		@media screen and (min-width: $full) {
-			max-width: 37.5rem;
-			padding-left: 6.5625rem;
-		}
-	}
-	@media screen and (min-width: $full) {
-		margin-top: 6.25rem;
-	}
+    a {
+      span {
+        color: var(--link-color);
+      }
+      span::after {
+        height: 0.1px;
+        background-color: var(--link-color);
+      }
+      padding: 0.5625rem;
+    }
+    @media screen and (min-width: $full) {
+      max-width: 37.5rem;
+      padding-left: 6.5625rem;
+    }
+  }
+  @media screen and (min-width: $full) {
+    margin-top: 6.25rem;
+  }
 }
+
 .mainFunerals {
 	&__container {
 		display: flex;

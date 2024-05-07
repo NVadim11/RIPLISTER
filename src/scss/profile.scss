@@ -129,7 +129,6 @@
 			font-style: normal;
 			font-weight: 400;
 			line-height: normal;
-			margin-top: 1.125rem;
 			@media screen and (min-width:$mobile) {
 				margin-top: 0;
 			}
@@ -161,7 +160,7 @@
 			font-size: 1.5rem;
 			font-style: normal;
 			font-weight: 600;
-			line-height: 140%; /* 33.6px */
+			line-height: 140%; /* 2.1rem */
 			@media screen and (min-width:$full) {
 				font-size: 1.875rem;
 			}
@@ -184,7 +183,13 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-		text-decoration-line: underline;
+		span {
+			color: var(--link-color);
+		}
+		span::after {
+			height: 0.0063rem;
+			background-color: var(--link-color);
+		}
 		@media screen and (min-width:$mobile) {
 			font-size: 1rem;
 			margin-top: 0;
@@ -202,33 +207,48 @@
 		line-height: 100%; /* 1rem */
 	}
 	&__editBox {
-		display: none;
-		@media screen and (min-width:$mobile) {
-			display: flex;
-			align-items: center;
-			color: #3C88F9;
-			font-size: 0.875rem;
-			font-style: normal;
-			font-weight: 600;
-			line-height: normal;
-			text-decoration-line: underline;
-			a {
-				display: flex;
-				align-items: center;
+		display: flex;
+		position: absolute;
+		flex-direction: row;
+		align-items: center;
+		color: #3C88F9;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		top: 6.875rem;
+		@media screen and (min-width:$pc) {
+			position: relative;
+			top: 0;
+		}
+		a {
+			span {
+				color: var(--link-color);
 			}
-			svg {
-				margin: 0 0.625rem 0 0;
+			span::after {
+				height: 0.0063rem;
+				background-color: var(--link-color);
 			}
 		}
+		a:hover {
+			cursor: pointer;	
+			text-decoration: none;
+			svg {
+				background-color: transparent;
+				path {
+					fill: var(--link-color);						
+				}
+			}
+		}		
+			svg {
+				margin: 0 0.625rem 0 0;
+			}		
 		@media screen and (min-width:$pc) {
 			font-size: 1rem;
 		}
 		@media screen and (min-width:$full) {
 			font-size: 1.25rem;
 		}
-	}
-	&__tab-content {
-
 	}
 	&__tab-footer {
 		display: flex;
@@ -344,43 +364,20 @@
 	}
 	&__imageData {
 	}
-	&__editBox {
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		margin: 1.875rem 0 0 0;
-		@media screen and (min-width:$mobile) {
-			display: none;
-		}
-	}
-	&__editBtn {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: #3C88F9;
-		font-size: 0.875rem;
-		font-style: normal;
-		font-weight: 600;
-		line-height: normal;
-		text-decoration-line: underline;
-		svg {
-			margin: 0 0.625rem 0 0;
-		}
-	}
 	&__uploadBox {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 	&__photoBox {
-		margin: 1.5625rem 0 0 0;
+		margin: 4.6875rem 0 0 0;
 		border-radius: 1.875rem;
 		overflow: hidden;
 		display: flex;
 		width: 15.625rem;
 		height: 15.625rem;
-		@media screen and (min-width:$mobile) {
-			margin: 0;
+		@media screen and (min-width:$pc) {
+			margin: 1.5625rem 0 0 0;
 		}
 		img {
 			width: 100%;
@@ -563,6 +560,9 @@
 
 //personal edit data
 .personalsEdit {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 	@media screen and (min-width:$pc) {
 		display: flex;
 		margin: 4.0625rem 0 0 0;
@@ -574,36 +574,13 @@
 			flex-direction: column;
 		}
 	}
-	&__editBox {
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		margin: 1.875rem 0 0 0;
-		@media screen and (min-width:$mobile) {
-			display: none;
-		}
-	}
-	&__editBtn {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: #3C88F9;
-		font-size: 0.875rem;
-		font-style: normal;
-		font-weight: 600;
-		line-height: normal;
-		text-decoration-line: underline;
-		svg {
-			margin: 0 0.625rem 0 0;
-		}
-	}
 	&__uploadBox {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 	&__photoBox {
-		margin: 1.5625rem 0 0 0;
+		margin: 4.375rem 0 0 0;
 		border-radius: 1.875rem;
 		overflow: hidden;
 		display: flex;
@@ -630,12 +607,18 @@
 		}
 	}
 	&__uploadTips {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		color: #7d7d7d;
+		width: 15.625rem;
+		margin: 1.375rem 0 0 0;
 		@media screen and (min-width:$pc) {
 			width: 15.625rem;
 			margin: 2.1875rem 0 0 0;
 			p 
 				{
-					color: #7D7D7D;
 					font-size: 1.125rem;
 					font-style: normal;
 					font-weight: 400;
@@ -692,21 +675,42 @@
 
 	&__form {
 		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
 		@media screen and (min-width:$pc) {
-			width: 100%;
 		}
 	}
-	&__right {
+	.personalEdit__right {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@media screen and (min-width:$pc) {
+		}
 	}
 	&__input-group {
-		margin-bottom: 4.0625rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;	
+		margin-top: 2.0625rem;
+		gap: 2.3125rem;
+		width: 100%;
+		@media screen and (min-width:$pc) {
+			margin-bottom: 4.0625rem;
+		}
 	}
 	&__input-group:first-child {
-		margin-top: 1.25rem;
+		@media screen and (min-width:$pc) {
+			margin-top: 1.25rem;
+		}
+
 	}
 	&__input-title {
-		margin: 0 0 2.8125rem 0;
+		width: 100%;
+		@media screen and (min-width:$pc) {
+			margin: 0 0 2.8125rem 0;
+		}	
 		svg {
 			margin: 0 1.25rem 0 0;
 		}
@@ -717,15 +721,18 @@
 			font-weight: 400;
 			line-height: normal;
 		}
-		.personals__lineOrange {
-			margin: 1.25rem 0 0 0;
-		}
 	}
 	&__input-fields {
 		display: flex;
 		position: relative;
-		gap: 1.25rem;
-		margin: 0 0 2.5rem 0;
+		flex-direction: column;
+		align-items: center;
+		gap: 2.3125rem;
+		@media screen and (min-width:$pc) {
+			position: relative;
+			margin-top: 0;
+			margin: 0 0 2.5rem 0;
+		}
 	}
 	&__input-fields:last-child {
 		margin-bottom: 0;
@@ -735,7 +742,7 @@
 		label {
 			position: absolute;
 			color: #7D7D7D;
-			font-size: 1rem;
+			font-size: 0.875rem;
 			font-style: normal;
 			font-weight: 400;
 			line-height: normal;
@@ -744,45 +751,70 @@
 			margin-left: 1.5625rem;
 			background: var(--white-color);
 			padding: 0 0.5625rem;
+			@media screen and (min-width:$pc) {
+				font-size: 1rem;
+			}
 		}
 		input {
 			position: relative;
-			width: 23.625rem;
+			width: 16.25rem;
+			height: 3.375rem;			
 			flex-shrink: 0;
 			border-radius: 1.875rem;
 			border: 0.0625rem solid #AAA;
 			z-index:1;
 			color: #000;
-			font-size: 1.5rem;
+			font-size: 1.125rem;
 			font-style: normal;
 			font-weight: 600;
 			line-height: normal;
 			padding: 1.25rem 1.5625rem;
+			@media screen and (min-width:$pc) {
+				font-size: 1.5rem;
+			}
 		}
 	}
 	&__buttons {
 		display: flex;
-		justify-content: space-between;
-		margin: 3.4375rem 0 0 0;
+		flex-direction: column;
+		width: 100%;
+		@media screen and (min-width:$pc) {
+			flex-direction: row;
+			justify-content: space-between;
+			margin: 3.4375rem 0 0 0;
+		}
 	}
 	&__button-group {
 		display: flex;
+		align-items: center;
+		text-align: center;
+		flex-direction: column;
+		gap: 0.75rem;
+		width: 100%;
+		@media screen and (min-width:$pc) {
+
+		}
 	}
 	&__button-close {
 		padding: 1rem;
-		border-radius: 1.875rem;
+		width: 16.5625rem;
+		border-radius: 1.25rem;
 		background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);
 		color: var(--white-color);
-		padding: 1.25rem 2.8125rem;
-		display: flex;
+		font-size: 1.125rem;
 		align-items: center;
-		font-size: 1.5rem;
+		text-align: center;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-		margin-right: 0.9375rem;
 		svg {
 			margin-right: 0.625rem;
+		}
+		@media screen and (min-width:$pc) {
+			border-radius: 1.875rem;
+			font-size: 1.5rem;
+			padding: 1.25rem 2.8125rem;
+			margin-right: 0.9375rem;
 		}
 	}
 	&__button-close:hover {
@@ -790,24 +822,31 @@
 	}
 	&__button-save {
 		padding: 1rem;
-		border-radius: 1.875rem;
+		width: 16.5625rem;
+		border-radius: 1.25rem;
 		background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
 		color: var(--white-color);
-		font-size: 1.5rem;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-		display: flex;
+		font-size: 1.125rem;
 		align-items: center;
-		padding: 1.25rem 2.8125rem;
+		text-align: center;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
 		svg {
 			margin-right: 0.625rem;
+		}
+		@media screen and (min-width:$pc) {
+			border-radius: 1.875rem;
+			font-size: 1.5rem;
+			padding: 1.25rem 2.8125rem;
+			margin-right: 0.9375rem;
 		}
 	}
 	&__button-save:hover {
 		background: linear-gradient(180deg, #DB4A2A 0%, #EF6446 100%);
 	}
 	&__button-delete {
+		margin-top: 1.875rem;
 		padding: 1rem;
 		color: #3C88F9;
 		display: flex;
@@ -827,8 +866,12 @@
 	&__showPass, &__showNewPass, &__showRepeatPass {
 		position: absolute;
 		z-index: 1;
-		right: 3.75rem;
-		top: 1.4375rem;
+		right: 2.9375rem;
+		top: 0.9375rem;
+		@media screen and (min-width:$pc) {
+			right: 3.75rem;
+			top: 1.4375rem;
+		}
 		svg {
 			z-index: 1;
 			height: 1.4375rem;
@@ -858,105 +901,140 @@
 	&__busyNickname {
 		display: none;
 		position: absolute;
-		top: 4.0625rem;
+		top: 3.4375rem;
 		flex-direction: row;
-		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width:$pc) {
+			position: absolute;
+			top: 4.0625rem;
+			margin-top: 0.625rem;
+			font-size: 0.875rem;
+		}
 	}
 	&__invalidNickname {
 		display: none;
 		position: absolute;
-		top: 4.0625rem;
+		top: 3.4375rem;
 		flex-direction: row;
-		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width:$pc) {
+			position: absolute;
+			top: 4.0625rem;
+			margin-top: 0.625rem;
+			font-size: 0.875rem;
+		}
 	}
 	&__busyEmail {
 		display: none;
 		position: absolute;
-		top: 4.0625rem;
+		top: 3.4375rem;
 		flex-direction: row;
-		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width:$pc) {
+			position: absolute;
+			top: 4.0625rem;
+			margin-top: 0.625rem;
+			font-size: 0.875rem;
+		}
 	} 
 	&__busyNumber {
 		display: none;
 		position: absolute;
-		top: 4.0625rem;
+		top: 3.4375rem;
 		flex-direction: row;
-		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width:$pc) {
+			position: absolute;
+			top: 4.0625rem;
+			margin-top: 0.625rem;
+			font-size: 0.875rem;
+		}
 	}
 	&__currPassErr {
 		display: none;
 		position: absolute;
-		top: 4.0625rem;
+		top: 3.4375rem;
 		flex-direction: row;
-		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width:$pc) {
+			position: absolute;
+			top: 4.0625rem;
+			margin-top: 0.625rem;
+			font-size: 0.875rem;
+		}
 	}
 	&__newPassErr {
 		display: none;
 		position: absolute;
-		top: 4.0625rem;
+		top: 2.8125rem;
 		flex-direction: row;
 		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width:$pc) {
+			position: absolute;
+			top: 4.0625rem;
+			margin-top: 0.625rem;
+			font-size: 0.875rem;
+		}
 	}
 	&__repeatPassErr {	
 		display: none;
-		position: absolute;
-		top: 4.0625rem;
+
+		top: 2.8125rem;
 		flex-direction: row;
 		margin-top: 0.625rem;
 		height: fit-content;
 		align-items: center;
 		color: #F00;
-		font-size: 0.875rem;
+		font-size: 0.75rem;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width:$pc) {
+			top: 4.0625rem;
+			margin-top: 0.625rem;
+			font-size: 0.875rem;
+		}
 }
-// .validationError {
-// }
 	&__invalidInformation {
 		display: none;
+		top: 3.4375rem;
 		flex-direction: row;
 		margin-top: 1.25rem;
 		align-items: center;
@@ -965,22 +1043,34 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media screen and (min-width:$pc) {
+			position: absolute;
+			margin-top: 1.25rem;
+			font-size: 0.875rem;
+		}
 	}
 	.errorSignSvg {
 		display: flex;
-		scale: 80%;	
-		margin-right: 0.625rem;
+		scale: 60%;	
+		margin-right: 0.3125rem;
+		@media screen and (min-width:$pc) {
+			scale: 80%;	
+			margin-right: 0.625rem;
+		}
 	}
 	&__passTip {
+		margin-top: 0.9375rem;
 		color: #7D7D7D;
-		margin-top: -2.1875rem;
-		margin-bottom: 2.1875rem;
-		max-width: 33.125rem;
-		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
 		background: var(--white-color);
+		@media screen and (min-width:$pc) {
+			margin-top: -2.1875rem;
+			margin-bottom: 2.1875rem;
+			max-width: 33.125rem;
+			font-size: 0.875rem;
+		}
 	}
 }
 
@@ -1086,7 +1176,12 @@
 	&__tab-item {
 		align-items: center;
 		display: flex;
-		flex-direction: column;
+		flex-direction: column;	
+	}
+	&__tab-item:hover {
+		.profileLinks__tab-initials {
+			text-decoration: none;
+		}
 	}
 	&__tab-photo {
 		border-radius: 0.875rem;
@@ -1124,13 +1219,18 @@
 			font-size: 1.25rem;
 		}
 	}
-	&__tab-relative {
-		color: #7D7D7D;
+	&__tab-relative {		
 		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
 		margin-top: 0.75rem;
+		span {
+			color: #7D7D7D!important;			
+		}
+		span:after{
+			height: 0rem!important;
+		}
 		@media screen and (min-width:$pc) {
 			font-size: 1rem;
 		}
@@ -1200,7 +1300,7 @@
 		font-size: 0.875rem;
 		font-style: normal;
 		font-weight: 400;
-		line-height: 100%; /* 14px */
+		line-height: 100%; /* 0.875rem */
 		@media screen and (min-width:$mobile) {
 			font-size: 1rem;
 			text-align: start;
@@ -1221,7 +1321,7 @@
 			font-size: 1rem;
 			font-style: normal;
 			font-weight: 600;
-			line-height: 100%; /* 16px */
+			line-height: 100%; /* 1rem */
 			display: flex;
 			align-items: center;
 			@media screen and (min-width:$pc) {
@@ -1253,7 +1353,7 @@
 		font-size: 1rem;
 		font-style: normal;
 		font-weight: 700;
-		line-height: 100%; /* 16px */
+		line-height: 100%; /* 1rem */
 		@media screen and (min-width:$pc) {
 			font-size: 1.25rem;
 		}
@@ -1329,7 +1429,7 @@
 	&__tabList-header {
 		display: grid;
 		grid-template-columns: 4.3125rem 4.1875rem 4.75rem 4.3125rem 3.4375rem;
-		border-bottom: 2px solid #f3ecec;
+		border-bottom: 0.125rem solid #f3ecec;
 		@media screen and (min-width:$mobile) {
 			grid-template-columns: 8.125rem 13rem 7.5625rem 6.8125rem 6.375rem;
 			padding: 1.625rem 0;
@@ -1363,7 +1463,7 @@
 		}
 	}
 	&__tabList-item {
-		border-bottom: 2px solid #f3ecec;
+		border-bottom: 0.125rem solid #f3ecec;
 		padding: 1rem 0;
 	}
 	&__tabList-item:last-child {
@@ -1479,8 +1579,13 @@
 	&__repeat {
 		font-weight: 600;
 		font-size: 0.625rem;
-		text-decoration: underline;
-		color: #3c88f9;
+		span {
+			color: var(--link-color);
+		}
+		span::after {
+			height: 0.0063rem;
+			background-color: var(--link-color);
+		}
 		@media screen and (min-width:$mobile) {
 			font-size: 1rem;
 		}
@@ -1924,7 +2029,6 @@
 		}
 	}
 	&__itemLink {
-		color: #3C88F9;
 		font-size: 0.625rem;
 		font-style: normal;
 		font-weight: 600;
@@ -1933,7 +2037,13 @@
     word-wrap: break-word; 
     word-break: break-word;
 		a {
-			text-decoration-line: underline;
+			span {
+        color: var(--link-color);
+      }
+      span::after {
+        height: 0.0063rem;
+        background-color: var(--link-color);
+      }
 		}
 		@media screen and (min-width:$mobile) {
 			font-size: 0.875rem;
@@ -2023,7 +2133,7 @@
 		position: absolute;
 		right: 0;
 		bottom: 0;
-		margin: 5px 9px 0 0;
+		margin: 0.3125rem 0.5625rem 0 0;
 		@media screen and (min-width:$mobile) {
 			position: relative;
 		}
@@ -2038,7 +2148,6 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-		text-decoration-line: underline;
 		@media screen and (min-width:$mobile) {
 			font-size: 0.75rem;
 		}

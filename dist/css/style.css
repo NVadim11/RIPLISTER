@@ -4076,15 +4076,21 @@ input:checked + .sliderCheckbox:before {
   font-size: 1.125rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  text-decoration: underline;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
-  color: #000;
+}
+
+.footerBg__list-item a span {
+  color: var(--text-color-black);
+}
+
+.footerBg__list-item a span::after {
+  height: 0.1px;
+  background-color: var(--text-color-black);
 }
 
 .footerBg__list-item a:hover {
   cursor: pointer;
-  text-decoration: none;
 }
 
 .footerBg__contact svg {
@@ -4133,9 +4139,17 @@ input:checked + .sliderCheckbox:before {
   padding: 1.625rem;
 }
 
+.footerBg__ref a span {
+  color: var(--orange-color);
+}
+
+.footerBg__ref a span::after {
+  height: 0.1px;
+  background-color: var(--orange-color-underline);
+}
+
 .footerBg__ref:hover {
   cursor: pointer;
-  text-decoration: underline;
 }
 
 .footerBg__links {
@@ -4166,18 +4180,24 @@ input:checked + .sliderCheckbox:before {
 }
 
 .footerBg__policy a {
-  color: var(--text-color-black);
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   padding: 0.5625rem;
-  text-decoration: underline;
+}
+
+.footerBg__policy a span {
+  color: var(--text-color-black);
+}
+
+.footerBg__policy a span::after {
+  height: 0.1px;
+  background-color: var(--text-color-black);
 }
 
 .footerBg__policy a:hover {
   cursor: pointer;
-  text-decoration: none;
 }
 
 .footerBg__socials {
@@ -5022,6 +5042,19 @@ input:checked + .sliderCheckbox:before {
   background: linear-gradient(180deg, #eb8069 0%, #db4a2a 100%);
   -webkit-transition: 0.25s;
   transition: 0.25s;
+}
+
+.mainRecent__text a {
+  padding: 0.5625rem;
+}
+
+.mainRecent__text a span {
+  color: var(--link-color);
+}
+
+.mainRecent__text a span::after {
+  height: 0.1px;
+  background-color: var(--link-color);
 }
 
 .mainFunerals__container {
@@ -6330,7 +6363,6 @@ input:checked + .sliderCheckbox:before {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 1.125rem;
 }
 
 .profile__bill-box {
@@ -6351,7 +6383,7 @@ input:checked + .sliderCheckbox:before {
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
-  /* 33.6px */
+  /* 2.1rem */
 }
 
 .profile__bill-box svg {
@@ -6365,7 +6397,15 @@ input:checked + .sliderCheckbox:before {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  text-decoration-line: underline;
+}
+
+.profile__bill-link span {
+  color: var(--link-color);
+}
+
+.profile__bill-link span::after {
+  height: 0.0063rem;
+  background-color: var(--link-color);
 }
 
 .profile__tab-titleCount {
@@ -6379,7 +6419,49 @@ input:checked + .sliderCheckbox:before {
 }
 
 .profile__editBox {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #3C88F9;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  top: 6.875rem;
+}
+
+.profile__editBox a span {
+  color: var(--link-color);
+}
+
+.profile__editBox a span::after {
+  height: 0.0063rem;
+  background-color: var(--link-color);
+}
+
+.profile__editBox a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.profile__editBox a:hover svg {
+  background-color: transparent;
+}
+
+.profile__editBox a:hover svg path {
+  fill: var(--link-color);
+}
+
+.profile__editBox svg {
+  margin: 0 0.625rem 0 0;
 }
 
 .profile__tab-footer {
@@ -6499,42 +6581,6 @@ input:checked + .sliderCheckbox:before {
           flex-direction: column;
 }
 
-.personals__editBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 1.875rem 0 0 0;
-}
-
-.personals__editBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #3C88F9;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  text-decoration-line: underline;
-}
-
-.personals__editBtn svg {
-  margin: 0 0.625rem 0 0;
-}
-
 .personals__uploadBox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6549,7 +6595,7 @@ input:checked + .sliderCheckbox:before {
 }
 
 .personals__photoBox {
-  margin: 1.5625rem 0 0 0;
+  margin: 4.6875rem 0 0 0;
   border-radius: 1.875rem;
   overflow: hidden;
   display: -webkit-box;
@@ -6726,40 +6772,17 @@ input:checked + .sliderCheckbox:before {
       flex-shrink: 0;
 }
 
-.personalsEdit__editBox {
+.personalsEdit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 1.875rem 0 0 0;
-}
-
-.personalsEdit__editBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #3C88F9;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  text-decoration-line: underline;
-}
-
-.personalsEdit__editBtn svg {
-  margin: 0 0.625rem 0 0;
 }
 
 .personalsEdit__uploadBox {
@@ -6776,7 +6799,7 @@ input:checked + .sliderCheckbox:before {
 }
 
 .personalsEdit__photoBox {
-  margin: 1.5625rem 0 0 0;
+  margin: 4.375rem 0 0 0;
   border-radius: 1.875rem;
   overflow: hidden;
   display: -webkit-box;
@@ -6802,6 +6825,23 @@ input:checked + .sliderCheckbox:before {
   width: 100%;
   max-width: 100%;
   height: auto;
+}
+
+.personalsEdit__uploadTips {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: #7d7d7d;
+  width: 15.625rem;
+  margin: 1.375rem 0 0 0;
 }
 
 .personalsEdit__changeBox {
@@ -6858,22 +6898,48 @@ input:checked + .sliderCheckbox:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.personalsEdit__right {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
 }
 
-.personalsEdit__input-group {
-  margin-bottom: 4.0625rem;
+.personalsEdit .personalEdit__right {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.personalsEdit__input-group:first-child {
-  margin-top: 1.25rem;
+.personalsEdit__input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2.0625rem;
+  gap: 2.3125rem;
+  width: 100%;
 }
 
 .personalsEdit__input-title {
-  margin: 0 0 2.8125rem 0;
+  width: 100%;
 }
 
 .personalsEdit__input-title svg {
@@ -6888,17 +6954,19 @@ input:checked + .sliderCheckbox:before {
   line-height: normal;
 }
 
-.personalsEdit__input-title .personals__lineOrange {
-  margin: 1.25rem 0 0 0;
-}
-
 .personalsEdit__input-fields {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  gap: 1.25rem;
-  margin: 0 0 2.5rem 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2.3125rem;
 }
 
 .personalsEdit__input-fields:last-child {
@@ -6912,7 +6980,7 @@ input:checked + .sliderCheckbox:before {
 .personalsEdit__input-field label {
   position: absolute;
   color: #7D7D7D;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -6925,14 +6993,15 @@ input:checked + .sliderCheckbox:before {
 
 .personalsEdit__input-field input {
   position: relative;
-  width: 23.625rem;
+  width: 16.25rem;
+  height: 3.375rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   border-radius: 1.875rem;
   border: 0.0625rem solid #AAA;
   z-index: 1;
   color: #000;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -6943,36 +7012,44 @@ input:checked + .sliderCheckbox:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 3.4375rem 0 0 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
 }
 
 .personalsEdit__button-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
 }
 
 .personalsEdit__button-close {
   padding: 1rem;
-  border-radius: 1.875rem;
+  width: 16.5625rem;
+  border-radius: 1.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#64A2FF), to(#2A86DB));
   background: linear-gradient(180deg, #64A2FF 0%, #2A86DB 100%);
   color: var(--white-color);
-  padding: 1.25rem 2.8125rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  font-size: 1.125rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.5rem;
+  text-align: center;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  margin-right: 0.9375rem;
 }
 
 .personalsEdit__button-close svg {
@@ -6986,21 +7063,19 @@ input:checked + .sliderCheckbox:before {
 
 .personalsEdit__button-save {
   padding: 1rem;
-  border-radius: 1.875rem;
+  width: 16.5625rem;
+  border-radius: 1.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(#EF6446), to(#DB4A2A));
   background: linear-gradient(180deg, #EF6446 0%, #DB4A2A 100%);
   color: var(--white-color);
-  font-size: 1.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  font-size: 1.125rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.25rem 2.8125rem;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .personalsEdit__button-save svg {
@@ -7013,6 +7088,7 @@ input:checked + .sliderCheckbox:before {
 }
 
 .personalsEdit__button-delete {
+  margin-top: 1.875rem;
   padding: 1rem;
   color: #3C88F9;
   display: -webkit-box;
@@ -7041,8 +7117,8 @@ input:checked + .sliderCheckbox:before {
 .personalsEdit__showRepeatPass {
   position: absolute;
   z-index: 1;
-  right: 3.75rem;
-  top: 1.4375rem;
+  right: 2.9375rem;
+  top: 0.9375rem;
 }
 
 .personalsEdit__showPass svg,
@@ -7086,12 +7162,11 @@ input:checked + .sliderCheckbox:before {
 .personalsEdit__busyNickname {
   display: none;
   position: absolute;
-  top: 4.0625rem;
+  top: 3.4375rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -7099,7 +7174,7 @@ input:checked + .sliderCheckbox:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -7108,12 +7183,11 @@ input:checked + .sliderCheckbox:before {
 .personalsEdit__invalidNickname {
   display: none;
   position: absolute;
-  top: 4.0625rem;
+  top: 3.4375rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -7121,7 +7195,7 @@ input:checked + .sliderCheckbox:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -7130,12 +7204,11 @@ input:checked + .sliderCheckbox:before {
 .personalsEdit__busyEmail {
   display: none;
   position: absolute;
-  top: 4.0625rem;
+  top: 3.4375rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -7143,7 +7216,7 @@ input:checked + .sliderCheckbox:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -7152,12 +7225,11 @@ input:checked + .sliderCheckbox:before {
 .personalsEdit__busyNumber {
   display: none;
   position: absolute;
-  top: 4.0625rem;
+  top: 3.4375rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -7165,7 +7237,7 @@ input:checked + .sliderCheckbox:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -7174,12 +7246,11 @@ input:checked + .sliderCheckbox:before {
 .personalsEdit__currPassErr {
   display: none;
   position: absolute;
-  top: 4.0625rem;
+  top: 3.4375rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 0.625rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -7187,7 +7258,7 @@ input:checked + .sliderCheckbox:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -7196,7 +7267,7 @@ input:checked + .sliderCheckbox:before {
 .personalsEdit__newPassErr {
   display: none;
   position: absolute;
-  top: 4.0625rem;
+  top: 2.8125rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -7209,7 +7280,7 @@ input:checked + .sliderCheckbox:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -7217,8 +7288,7 @@ input:checked + .sliderCheckbox:before {
 
 .personalsEdit__repeatPassErr {
   display: none;
-  position: absolute;
-  top: 4.0625rem;
+  top: 2.8125rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -7231,7 +7301,7 @@ input:checked + .sliderCheckbox:before {
       -ms-flex-align: center;
           align-items: center;
   color: #F00;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -7239,6 +7309,7 @@ input:checked + .sliderCheckbox:before {
 
 .personalsEdit__invalidInformation {
   display: none;
+  top: 3.4375rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -7258,16 +7329,13 @@ input:checked + .sliderCheckbox:before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  scale: 80%;
-  margin-right: 0.625rem;
+  scale: 60%;
+  margin-right: 0.3125rem;
 }
 
 .personalsEdit__passTip {
+  margin-top: 0.9375rem;
   color: #7D7D7D;
-  margin-top: -2.1875rem;
-  margin-bottom: 2.1875rem;
-  max-width: 33.125rem;
-  font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -7386,6 +7454,10 @@ input:checked + .sliderCheckbox:before {
           flex-direction: column;
 }
 
+.profileLinks__tab-item:hover .profileLinks__tab-initials {
+  text-decoration: none;
+}
+
 .profileLinks__tab-photo {
   border-radius: 0.875rem;
   overflow: hidden;
@@ -7417,12 +7489,19 @@ input:checked + .sliderCheckbox:before {
 }
 
 .profileLinks__tab-relative {
-  color: #7D7D7D;
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin-top: 0.75rem;
+}
+
+.profileLinks__tab-relative span {
+  color: #7D7D7D !important;
+}
+
+.profileLinks__tab-relative span:after {
+  height: 0rem !important;
 }
 
 .profileLinks__tab-dates {
@@ -7487,7 +7566,7 @@ input:checked + .sliderCheckbox:before {
   font-style: normal;
   font-weight: 400;
   line-height: 100%;
-  /* 14px */
+  /* 0.875rem */
 }
 
 .profileBill__balance {
@@ -7508,7 +7587,7 @@ input:checked + .sliderCheckbox:before {
   font-style: normal;
   font-weight: 600;
   line-height: 100%;
-  /* 16px */
+  /* 1rem */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7535,7 +7614,7 @@ input:checked + .sliderCheckbox:before {
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
-  /* 16px */
+  /* 1rem */
 }
 
 .profileBill__card svg {
@@ -7586,7 +7665,7 @@ input:checked + .sliderCheckbox:before {
   display: grid;
   -ms-grid-columns: 4.3125rem 4.1875rem 4.75rem 4.3125rem 3.4375rem;
   grid-template-columns: 4.3125rem 4.1875rem 4.75rem 4.3125rem 3.4375rem;
-  border-bottom: 2px solid #f3ecec;
+  border-bottom: 0.125rem solid #f3ecec;
 }
 
 .profileBill__tabList-headerItem {
@@ -7598,7 +7677,7 @@ input:checked + .sliderCheckbox:before {
 }
 
 .profileBill__tabList-item {
-  border-bottom: 2px solid #f3ecec;
+  border-bottom: 0.125rem solid #f3ecec;
   padding: 1rem 0;
 }
 
@@ -7682,8 +7761,15 @@ input:checked + .sliderCheckbox:before {
 .billDetail__repeat {
   font-weight: 600;
   font-size: 0.625rem;
-  text-decoration: underline;
-  color: #3c88f9;
+}
+
+.billDetail__repeat span {
+  color: var(--link-color);
+}
+
+.billDetail__repeat span::after {
+  height: 0.0063rem;
+  background-color: var(--link-color);
 }
 
 .billHistory {
@@ -8030,7 +8116,6 @@ input:checked + .sliderCheckbox:before {
 }
 
 .profileOfferings__itemLink {
-  color: #3C88F9;
   font-size: 0.625rem;
   font-style: normal;
   font-weight: 600;
@@ -8040,8 +8125,13 @@ input:checked + .sliderCheckbox:before {
   word-break: break-word;
 }
 
-.profileOfferings__itemLink a {
-  text-decoration-line: underline;
+.profileOfferings__itemLink a span {
+  color: var(--link-color);
+}
+
+.profileOfferings__itemLink a span::after {
+  height: 0.0063rem;
+  background-color: var(--link-color);
 }
 
 .profileOfferings__itemLink a:hover {
@@ -8093,7 +8183,7 @@ input:checked + .sliderCheckbox:before {
   position: absolute;
   right: 0;
   bottom: 0;
-  margin: 5px 9px 0 0;
+  margin: 0.3125rem 0.5625rem 0 0;
 }
 
 .profileOfferings .offeringExtendBtn {
@@ -8102,7 +8192,6 @@ input:checked + .sliderCheckbox:before {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  text-decoration-line: underline;
 }
 
 .profileOfferings .offeringExtendBtn:hover {
@@ -9968,34 +10057,6 @@ input:checked + .sliderCheckbox:before {
     margin-top: 0;
   }
 
-  .profile__editBox {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    color: #3C88F9;
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-decoration-line: underline;
-  }
-
-  .profile__editBox a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-
-  .profile__editBox svg {
-    margin: 0 0.625rem 0 0;
-  }
-
   .profile__tab-footer {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -10047,14 +10108,6 @@ input:checked + .sliderCheckbox:before {
             flex-direction: row;
     padding: 1.25rem 1.25rem 2.8125rem 1.25rem;
     margin: 2.75rem 0 1.875rem 0;
-  }
-
-  .personals__editBox {
-    display: none;
-  }
-
-  .personals__photoBox {
-    margin: 0;
   }
 
   .personals__changeBox {
@@ -10142,10 +10195,6 @@ input:checked + .sliderCheckbox:before {
 
   .personals__deleteProfileBtn {
     font-size: 1rem;
-  }
-
-  .personalsEdit__editBox {
-    display: none;
   }
 
   .personalsEdit__photoBox {
@@ -12643,7 +12692,16 @@ input:checked + .sliderCheckbox:before {
   }
 
   .profile__editBox {
+    position: relative;
+    top: 0;
+  }
+
+  .profile__editBox {
     font-size: 1rem;
+  }
+
+  .personals__photoBox {
+    margin: 1.5625rem 0 0 0;
   }
 
   .personals__passChangeBtn svg {
@@ -12684,7 +12742,6 @@ input:checked + .sliderCheckbox:before {
   }
 
   .personalsEdit__uploadTips p {
-    color: #7D7D7D;
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
@@ -12692,8 +12749,128 @@ input:checked + .sliderCheckbox:before {
     /* 1.575rem */
   }
 
-  .personalsEdit__form {
-    width: 100%;
+  .personalsEdit__input-group {
+    margin-bottom: 4.0625rem;
+  }
+
+  .personalsEdit__input-group:first-child {
+    margin-top: 1.25rem;
+  }
+
+  .personalsEdit__input-title {
+    margin: 0 0 2.8125rem 0;
+  }
+
+  .personalsEdit__input-fields {
+    position: relative;
+    margin-top: 0;
+    margin: 0 0 2.5rem 0;
+  }
+
+  .personalsEdit__input-field label {
+    font-size: 1rem;
+  }
+
+  .personalsEdit__input-field input {
+    font-size: 1.5rem;
+  }
+
+  .personalsEdit__buttons {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 3.4375rem 0 0 0;
+  }
+
+  .personalsEdit__button-close {
+    border-radius: 1.875rem;
+    font-size: 1.5rem;
+    padding: 1.25rem 2.8125rem;
+    margin-right: 0.9375rem;
+  }
+
+  .personalsEdit__button-save {
+    border-radius: 1.875rem;
+    font-size: 1.5rem;
+    padding: 1.25rem 2.8125rem;
+    margin-right: 0.9375rem;
+  }
+
+  .personalsEdit__showPass,
+  .personalsEdit__showNewPass,
+  .personalsEdit__showRepeatPass {
+    right: 3.75rem;
+    top: 1.4375rem;
+  }
+
+  .personalsEdit__busyNickname {
+    position: absolute;
+    top: 4.0625rem;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+  }
+
+  .personalsEdit__invalidNickname {
+    position: absolute;
+    top: 4.0625rem;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+  }
+
+  .personalsEdit__busyEmail {
+    position: absolute;
+    top: 4.0625rem;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+  }
+
+  .personalsEdit__busyNumber {
+    position: absolute;
+    top: 4.0625rem;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+  }
+
+  .personalsEdit__currPassErr {
+    position: absolute;
+    top: 4.0625rem;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+  }
+
+  .personalsEdit__newPassErr {
+    position: absolute;
+    top: 4.0625rem;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+  }
+
+  .personalsEdit__repeatPassErr {
+    top: 4.0625rem;
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+  }
+
+  .personalsEdit__invalidInformation {
+    position: absolute;
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .personalsEdit .errorSignSvg {
+    scale: 80%;
+    margin-right: 0.625rem;
+  }
+
+  .personalsEdit__passTip {
+    margin-top: -2.1875rem;
+    margin-bottom: 2.1875rem;
+    max-width: 33.125rem;
+    font-size: 0.875rem;
   }
 
   .profileLinks__slider {
