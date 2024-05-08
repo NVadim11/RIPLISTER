@@ -57,13 +57,14 @@ flsFunctions.spollers();
 flsFunctions.tabs();
 flsFunctions.profileTabs();
 flsFunctions.billTabs();
+flsFunctions.bioTabs();
 
 /*
 Модуль "Показати ще"
 Документація: https://template.fls.guru/template-docs/modul-pokazat-eshhjo.html
 Сніппет (HTML): showmore
 */
-// flsFunctions.showMore();
+flsFunctions.showMore();
 
 /*
 Модуль "До/Після"

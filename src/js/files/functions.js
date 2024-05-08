@@ -694,6 +694,134 @@ export function billTabs() {
 	}
 }
 
+// for memoBio =======================================================================================================================
+export function bioTabs() {
+	const tabs = document.querySelectorAll('[bio-tabs]');
+	let tabsActiveHash = [];
+
+	if (tabs.length > 0) {
+		const hash = getHash();
+		if (hash && hash.startsWith('tab-')) {
+			tabsActiveHash = hash.replace('tab-', '').split('-');
+		}
+		tabs.forEach((tabsBlock, index) => {
+			tabsBlock.classList.add('_tab-init');
+			tabsBlock.setAttribute('bio-tabs-index', index);
+			tabsBlock.addEventListener("click", setTabsAction);
+			initTabs(tabsBlock);
+		});
+
+		// Отримання слойлерів з медіа-запитами
+		let mdQueriesArray = dataMediaQueries(tabs, "tabs");
+		if (mdQueriesArray && mdQueriesArray.length) {
+			mdQueriesArray.forEach(mdQueriesItem => {
+				// Подія
+				mdQueriesItem.matchMedia.addEventListener("change", function () {
+					setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+				});
+				setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+			});
+		}
+	}
+	// Встановлення позицій заголовків
+	function setTitlePosition(tabsMediaArray, matchMedia) {
+		tabsMediaArray.forEach(tabsMediaItem => {
+			tabsMediaItem = tabsMediaItem.item;
+			let tabsTitles = tabsMediaItem.querySelector('[bito-tabs-titles]');
+			let tabsTitleItems = tabsMediaItem.querySelectorAll('[bio-tabs-title]');
+			let tabsContent = tabsMediaItem.querySelector('[bio-tabs-body]');
+			let tabsContentItems = tabsMediaItem.querySelectorAll('[bio-tabs-item]');
+			tabsTitleItems = Array.from(tabsTitleItems).filter(item => item.closest('[bio-tabs]') === tabsMediaItem);
+			tabsContentItems = Array.from(tabsContentItems).filter(item => item.closest('[bio-tabs]') === tabsMediaItem);
+			tabsContentItems.forEach((tabsContentItem, index) => {
+				if (matchMedia.matches) {
+					tabsContent.append(tabsTitleItems[index]);
+					tabsContent.append(tabsContentItem);
+					tabsMediaItem.classList.add('_tab-spoller');
+				} else {
+					tabsTitles.append(tabsTitleItems[index]);
+					tabsMediaItem.classList.remove('_tab-spoller');
+				}
+			});
+		});
+	}
+	// Робота з контентом
+	function initTabs(tabsBlock) {
+		let tabsTitles = tabsBlock.querySelectorAll('[bio-tabs-titles]>*');
+		let tabsContent = tabsBlock.querySelectorAll('[bio-tabs-body]>*');
+		const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+		const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
+
+		// if (tabsActiveHashBlock) {
+		// 	const tabsActiveTitle = tabsBlock.querySelector('[data-tabs-titles]>._bio-active');
+		// 	tabsActiveTitle ? tabsActiveTitle.classList.remove('_bio-active') : null;
+		// }
+		if (tabsContent.length) {
+			//tabsContent = Array.from(tabsContent).filter(item => item.closest('[data-tabs]') === tabsBlock);
+			//tabsTitles = Array.from(tabsTitles).filter(item => item.closest('[data-tabs]') === tabsBlock);
+			tabsContent.forEach((tabsContentItem, index) => {
+				tabsTitles[index].setAttribute('bio-tabs-title', '');
+				tabsContentItem.setAttribute('bio-tabs-item', '');
+
+				if (tabsActiveHashBlock && index == tabsActiveHash[1]) {
+					tabsTitles[index].classList.add('_bio-active');
+				}
+				tabsContentItem.hidden = !tabsTitles[index].classList.contains('_bio-active');
+			});
+		}
+	}
+	function setTabsStatus(tabsBlock) {
+		let tabsTitles = tabsBlock.querySelectorAll('[bio-tabs-title]');
+		let tabsContent = tabsBlock.querySelectorAll('[bio-tabs-item]');
+		const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+		function isTabsAnamate(tabsBlock) {
+			if (tabsBlock.hasAttribute('bio-tabs-animate')) {
+				return tabsBlock.dataset.tabsAnimate > 0 ? Number(tabsBlock.dataset.tabsAnimate) : 500;
+			}
+		}
+		const tabsBlockAnimate = isTabsAnamate(tabsBlock);
+		if (tabsContent.length > 0) {
+			const isHash = tabsBlock.hasAttribute('bio-tabs-hash');
+			tabsContent = Array.from(tabsContent).filter(item => item.closest('[bio-tabs]') === tabsBlock);
+			tabsTitles = Array.from(tabsTitles).filter(item => item.closest('[bio-tabs]') === tabsBlock);
+			tabsContent.forEach((tabsContentItem, index) => {
+				if (tabsTitles[index].classList.contains('_bio-active')) {
+					if (tabsBlockAnimate) {
+						_slideDown(tabsContentItem, tabsBlockAnimate);
+					} else {
+						tabsContentItem.hidden = false;
+					}
+					if (isHash && !tabsContentItem.closest('.popup')) {
+						setHash(`tab-${tabsBlockIndex}-${index}`);
+					}
+				} else {
+					if (tabsBlockAnimate) {
+						_slideUp(tabsContentItem, tabsBlockAnimate);
+					} else {
+						tabsContentItem.hidden = true;
+					}
+				}
+			});
+		}
+	}
+	function setTabsAction(e) {
+		const el = e.target;
+		if (el.closest('[bio-tabs-title]')) {
+			const tabTitle = el.closest('[bio-tabs-title]');
+			const tabsBlock = tabTitle.closest('[bio-tabs]');
+			if (!tabTitle.classList.contains('_bio-active') && !tabsBlock.querySelector('._slide')) {
+				let tabActiveTitle = tabsBlock.querySelectorAll('[bio-tabs-title]._bio-active');
+				tabActiveTitle.length ? tabActiveTitle = Array.from(tabActiveTitle).filter(item => item.closest('[bio-tabs]') === tabsBlock) : null;
+				tabActiveTitle.length ? tabActiveTitle[0].classList.remove('_bio-active') : null;
+				tabTitle.classList.add('_bio-active');
+				setTabsStatus(tabsBlock);
+			}
+			e.preventDefault();
+		}
+	}
+}
+
+
 // Модуль роботи з меню (бургер) =======================================================================================================================================================================================================================
 export function menuInit() {
 	if (document.querySelector(".scroll-lock")) {

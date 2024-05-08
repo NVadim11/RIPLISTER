@@ -2555,6 +2555,24 @@ label {
   transition: 0.25s;
 }
 
+[data-showmore] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+[data-showmore-button] span:last-child {
+  display: none;
+}
+
+._showmore-active [data-showmore-button] span {
+  display: none;
+}
+
+._showmore-active [data-showmore-button] span:last-child {
+  display: block;
+}
+
 [class*=-ibg] {
   position: relative;
 }
@@ -2651,6 +2669,7 @@ label {
 .pagging__arrow:hover svg {
   -webkit-transition: 0.25s;
   transition: 0.25s;
+  background-color: transparent !important;
 }
 
 .pagging__arrow:hover svg path {
@@ -5621,6 +5640,10 @@ input:checked + .sliderCheckbox:before {
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
   gap: 2.5rem;
+}
+
+.blog__content a {
+  display: block;
 }
 
 .blog__itemImg {
@@ -8762,6 +8785,105 @@ input:checked + .sliderCheckbox:before {
   font-size: 0.875rem;
   color: #171717;
   text-align: center;
+}
+
+.memoBiography__content {
+  position: relative;
+}
+
+.memoBiography__show {
+  position: absolute;
+  padding: 0 0 0 20px;
+}
+
+.memoBiography__show a {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+}
+
+.memoBiography__show a span:after {
+  bottom: 1px;
+}
+
+.bioTabs {
+  border-radius: 1.25rem;
+  background: #fff8f6;
+  margin-top: 1.25rem;
+  padding: 2.1875rem 1.25rem 0 1.25rem;
+}
+
+.bioTabs__nav-item {
+  padding-bottom: 0.9375rem;
+  margin-right: 1.25rem;
+  color: #7D7D7D;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.bioTabs__greyLine {
+  height: 0.125rem;
+  width: 100%;
+  background: #F3ECEC;
+  padding: 0 0.4375rem 0 0.4375rem;
+  margin-top: -0.125rem;
+}
+
+.bioTabs__tab {
+  overflow: hidden;
+  position: relative;
+}
+
+.bioTabs__tab-content {
+  margin-top: 1.25rem;
+}
+
+.bioTabs__tab-title {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 140%;
+  color: #171717;
+}
+
+.bioTabs__tab-img {
+  overflow: hidden;
+  width: 176px;
+  height: 136px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 1.25rem;
+  position: relative;
+  margin-top: 0.625rem;
+}
+
+.bioTabs__tab-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bioTabs__tab-descr p {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 140%;
+  color: #171717;
+  margin-top: 0.9375rem;
+}
+
+.bioTabs ._bio-active {
+  border-bottom: 0.125rem solid #E55738;
+  color: #171717;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .menu {
