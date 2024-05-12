@@ -917,7 +917,22 @@ export function showMore() {
 				}
 				rowGap ? hiddenHeight += (showMoreTypeValue - 1) * rowGap : null;
 			} else {
-				const showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 150;
+				const viewportWidth = window.innerWidth;
+
+				let showMoreTypeValue;
+
+				if (viewportWidth >= 1919.98) {
+					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 200;
+				} else if (viewportWidth >= 1439.98) {
+					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 365;
+				} else if (viewportWidth >= 1279.98) {
+					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 365;
+				} else if (viewportWidth >= 767.98) {
+					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 200;
+				} else {
+					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 335; 
+				}
+
 				hiddenHeight = showMoreTypeValue;
 			}
 			return hiddenHeight;

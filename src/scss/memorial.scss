@@ -530,6 +530,27 @@
     background: #fff8f6;
     margin-top: 1.25rem;
     padding: 2.1875rem 1.25rem 0 1.25rem;
+    @media screen and (min-width:$tablet) {
+        margin-top: 2.5rem;
+        padding: 4.375rem 2.5rem 0 2.5rem;
+    }
+    @media screen and (min-width:$pc) {
+        padding: 4.375rem 3.75rem 0 3.75rem;
+    }
+    @media screen and (min-width:$full) {
+        padding: 4.375rem 5rem 0 5rem;
+    }
+    &__nav {
+        display: flex;
+        width: 267px;
+        overflow: hidden;
+        @media screen and (min-width:$tablet) {
+            width: 38.6875rem;
+          }
+          @media screen and (min-width:$full) {
+            width: 39.3125rem;
+          }
+    }
     &__nav-item {
         padding-bottom: 0.9375rem;
         margin-right: 1.25rem;
@@ -539,10 +560,20 @@
         font-weight: 400;
         line-height: normal;
         cursor: pointer;
+        @media screen and (min-width:$tablet) {
+            margin-right: 2.1875rem;
+            font-size: 2rem;
+        }
+        @media screen and (min-width:$full) {
+            margin-right: 2.8125rem;
+        }
+    }
+    &__nav-item:last-child {
+        margin-right: 0;
     }
     &__greyLine {
         height: 0.125rem;
-        width: 100%;
+        width: 16.6875rem;
         background: #F3ECEC;
         padding: 0 0.4375rem 0 0.4375rem;
         margin-top: -0.125rem;
@@ -555,7 +586,7 @@
         position: relative;
     }
     &__tab-content {
-        margin-top: 1.25rem;
+        margin-top: 20px;
     }
     &__tab-title {
         font-weight: 600;
@@ -584,6 +615,14 @@
             line-height: 140%;
             color: #171717;
             margin-top: 0.9375rem;
+            @media screen and (min-width:$tablet) {
+                font-size: 1.25rem;
+                margin-top: 1.875rem;
+              }
+              @media screen and (min-width:$full) {
+                font-size: 1.5rem;
+                margin-top: 2.5rem;
+              }
         }
     }
     ._bio-active {
@@ -593,5 +632,23 @@
         font-style: normal;
         font-weight: 600;
         line-height: normal;
+        @media screen and (min-width:$tablet) {
+          font-size: 2.875rem;
+        }
+    }
+    &__showBtn {
+        margin: 2.1875rem 0;
+        font-weight: 600;
+        font-size: 1rem;
+        span::after {
+            bottom: 1px!important;
+        }
+        @media screen and (min-width:$full) {
+            margin: 2.8125rem 0;
+        }
+        @media screen and (min-width:$full) {
+            font-size: 1.5rem;
+            margin: 4.375rem 0 5.9375rem 0;
+        }
     }
 }
