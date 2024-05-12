@@ -563,9 +563,15 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	@media (min-width: $mobile) {
+	}
+	@media (min-width: $tablet) {
+	}
 	@media screen and (min-width:$pc) {
 		display: flex;
 		margin: 4.0625rem 0 0 0;
+	}
+	@media (min-width: $full) {
 	}
 	&__imageData {
 		@media screen and (min-width:$pc) {
@@ -614,6 +620,11 @@
 		color: #7d7d7d;
 		width: 15.625rem;
 		margin: 1.375rem 0 0 0;
+		@media (min-width: $mobile) {
+			text-align: start;
+		}
+		@media (min-width: $tablet) {
+		}
 		@media screen and (min-width:$pc) {
 			width: 15.625rem;
 			margin: 2.1875rem 0 0 0;
@@ -624,6 +635,8 @@
 					font-weight: 400;
 					line-height: 140%; /* 1.575rem */
 				}
+		}
+		@media (min-width: $full) {
 		}
 	}
 	&__changeBox {
@@ -678,7 +691,16 @@
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
+		@media (min-width: $mobile) {
+			flex-direction: row;
+			align-items: start;
+			margin-top: 54px;
+		}
+		@media (min-width: $tablet) {
+		}
 		@media screen and (min-width:$pc) {
+		}
+		@media (min-width: $full) {
 		}
 	}
 	.personalEdit__right {
@@ -686,7 +708,14 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		@media (min-width: $mobile) {
+			margin-left: 21px;
+		}
+		@media (min-width: $tablet) {
+		}
 		@media screen and (min-width:$pc) {
+		}
+		@media (min-width: $full) {
 		}
 	}
 	&__input-group {
@@ -728,17 +757,30 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 2.3125rem;
+		@media (min-width: $mobile) {
+			width: 100%;
+			align-items: start;
+		}
+		@media (min-width: $tablet) {
+		}
 		@media screen and (min-width:$pc) {
+			flex-direction: row;
 			position: relative;
 			margin-top: 0;
 			margin: 0 0 2.5rem 0;
 		}
+		@media (min-width: $full) {
+		}
+
 	}
 	&__input-fields:last-child {
 		margin-bottom: 0;
 	}
 	&__input-field {
 		position: relative;
+		@media (min-width: $mobile) {
+			width: 380px;
+		}
 		label {
 			position: absolute;
 			color: #7D7D7D;
@@ -769,20 +811,36 @@
 			font-weight: 600;
 			line-height: normal;
 			padding: 1.25rem 1.5625rem;
+			@media (min-width: $mobile) {		
+				width: 100%;
+			}
+			@media (min-width: $tablet) {
+			}
 			@media screen and (min-width:$pc) {
 				font-size: 1.5rem;
+			}
+			@media (min-width: $full) {
 			}
 		}
 	}
 	&__buttons {
 		display: flex;
 		flex-direction: column;
-		width: 100%;
-		@media screen and (min-width:$pc) {
+		text-align: center;
+		@media (min-width: $mobile) {
+			align-items: end;
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width:$pc) {
 			flex-direction: row;
+			align-items: center;
 			justify-content: space-between;
 			margin: 3.4375rem 0 0 0;
 		}
+		@media (min-width: $full) {
+		}
+
 	}
 	&__button-group {
 		display: flex;
@@ -790,9 +848,14 @@
 		text-align: center;
 		flex-direction: column;
 		gap: 0.75rem;
-		width: 100%;
-		@media screen and (min-width:$pc) {
-
+		@media (min-width: $mobile) {
+			flex-direction: row;
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width:$pc) {
+		}
+		@media (min-width: $full) {
 		}
 	}
 	&__button-close {
@@ -808,14 +871,22 @@
 		font-weight: 600;
 		line-height: normal;
 		svg {
-			margin-right: 0.625rem;
+			margin-right: 8px;
+		}
+		@media (min-width: $mobile) {
+			width: fit-content;
+			padding: 16px 1.5625rem;
+		}
+		@media (min-width: $tablet) {
 		}
 		@media screen and (min-width:$pc) {
 			border-radius: 1.875rem;
 			font-size: 1.5rem;
 			padding: 1.25rem 2.8125rem;
-			margin-right: 0.9375rem;
 		}
+		@media (min-width: $full) {
+		}
+
 	}
 	&__button-close:hover {
 		background: linear-gradient(180deg, #2A86DB 0%, #64A2FF 100%);
@@ -833,13 +904,22 @@
 		font-weight: 600;
 		line-height: normal;
 		svg {
-			margin-right: 0.625rem;
+			margin-right: 8px;
+		}
+		@media (min-width: $mobile) {
+			width: fit-content;
+			padding: 16px;
+			margin-right: 20px;
+		}
+		@media (min-width: $tablet) {
 		}
 		@media screen and (min-width:$pc) {
 			border-radius: 1.875rem;
 			font-size: 1.5rem;
 			padding: 1.25rem 2.8125rem;
 			margin-right: 0.9375rem;
+		}
+		@media (min-width: $full) {
 		}
 	}
 	&__button-save:hover {
@@ -857,7 +937,18 @@
 		line-height: normal;
 		text-decoration-line: underline;
 		svg {
-			margin-right: 0.625rem;
+			margin-right: 8px;
+		}
+		@media (min-width: $mobile) {
+			margin-top: 30px;
+			padding: 0;
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width:$pc) {
+			margin-top: 0px;
+		}
+		@media (min-width: $full) {
 		}
 	}
 	&__button-delete:hover {
@@ -899,7 +990,7 @@
 		color: #F00;
 	}
 	&__busyNickname {
-		display: none;
+		display: flex;
 		position: absolute;
 		top: 3.4375rem;
 		flex-direction: row;
@@ -918,7 +1009,7 @@
 		}
 	}
 	&__invalidNickname {
-		display: none;
+		display: flex;;
 		position: absolute;
 		top: 3.4375rem;
 		flex-direction: row;
@@ -937,7 +1028,7 @@
 		}
 	}
 	&__busyEmail {
-		display: none;
+		display: flex;;
 		position: absolute;
 		top: 3.4375rem;
 		flex-direction: row;
@@ -956,7 +1047,7 @@
 		}
 	} 
 	&__busyNumber {
-		display: none;
+		display: flex;;
 		position: absolute;
 		top: 3.4375rem;
 		flex-direction: row;
@@ -975,7 +1066,7 @@
 		}
 	}
 	&__currPassErr {
-		display: none;
+		display: flex;;
 		position: absolute;
 		top: 3.4375rem;
 		flex-direction: row;
@@ -994,7 +1085,7 @@
 		}
 	}
 	&__newPassErr {
-		display: none;
+		display: flex;;
 		position: absolute;
 		top: 2.8125rem;
 		flex-direction: row;
@@ -1014,7 +1105,7 @@
 		}
 	}
 	&__repeatPassErr {	
-		display: none;
+		display: flex;;
 
 		top: 2.8125rem;
 		flex-direction: row;
@@ -1033,7 +1124,7 @@
 		}
 }
 	&__invalidInformation {
-		display: none;
+		display: flex;;
 		top: 3.4375rem;
 		flex-direction: row;
 		margin-top: 1.25rem;
@@ -1061,6 +1152,7 @@
 	&__passTip {
 		margin-top: 0.9375rem;
 		color: #7D7D7D;
+		font-size: 10px;
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
@@ -1069,7 +1161,7 @@
 			margin-top: -2.1875rem;
 			margin-bottom: 2.1875rem;
 			max-width: 33.125rem;
-			font-size: 0.875rem;
+			font-size: 12px;
 		}
 	}
 }
