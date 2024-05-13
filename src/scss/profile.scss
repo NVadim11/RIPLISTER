@@ -217,9 +217,12 @@
 		font-weight: 600;
 		line-height: normal;
 		top: 6.875rem;
+		@media screen and (min-width:$mobile) {
+			right: 0;
+			top: 0.625rem;
+		}
 		@media screen and (min-width:$pc) {
-			position: relative;
-			top: 0;
+
 		}
 		a {
 			span {
@@ -319,6 +322,7 @@
 	}
 	&__lineOrange {
 		height: 0.0625rem;
+		width: 100%;
 		margin: 1.25rem 0 0 0;
 		background-color: var(--orange-color);
 	}
@@ -694,7 +698,7 @@
 		@media (min-width: $mobile) {
 			flex-direction: row;
 			align-items: start;
-			margin-top: 54px;
+			margin-top: 3.375rem;
 		}
 		@media (min-width: $tablet) {
 		}
@@ -707,9 +711,9 @@
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: start;
 		@media (min-width: $mobile) {
-			margin-left: 21px;
+			margin-left: 1.3125rem;
 		}
 		@media (min-width: $tablet) {
 		}
@@ -779,7 +783,10 @@
 	&__input-field {
 		position: relative;
 		@media (min-width: $mobile) {
-			width: 380px;
+			width: 100%;
+		}
+		@media screen and (min-width:$full) {
+			width: 23.625rem;
 		}
 		label {
 			position: absolute;
@@ -813,6 +820,7 @@
 			padding: 1.25rem 1.5625rem;
 			@media (min-width: $mobile) {		
 				width: 100%;
+				height: 100%;
 			}
 			@media (min-width: $tablet) {
 			}
@@ -833,12 +841,13 @@
 		@media (min-width: $tablet) {
 		}
 		@media (min-width:$pc) {
-			flex-direction: row;
-			align-items: center;
 			justify-content: space-between;
+			width: 100%;
 			margin: 3.4375rem 0 0 0;
 		}
 		@media (min-width: $full) {
+			flex-direction: row;
+			align-items: center;
 		}
 
 	}
@@ -871,11 +880,11 @@
 		font-weight: 600;
 		line-height: normal;
 		svg {
-			margin-right: 8px;
+			margin-right: 0.5rem;
 		}
 		@media (min-width: $mobile) {
 			width: fit-content;
-			padding: 16px 1.5625rem;
+			padding: 1rem 1.5625rem;
 		}
 		@media (min-width: $tablet) {
 		}
@@ -904,12 +913,12 @@
 		font-weight: 600;
 		line-height: normal;
 		svg {
-			margin-right: 8px;
+			margin-right: 0.5rem;
 		}
 		@media (min-width: $mobile) {
 			width: fit-content;
-			padding: 16px;
-			margin-right: 20px;
+			padding: 1rem;
+			margin-right: 1.25rem;
 		}
 		@media (min-width: $tablet) {
 		}
@@ -937,18 +946,20 @@
 		line-height: normal;
 		text-decoration-line: underline;
 		svg {
-			margin-right: 8px;
+			margin-right: 0.5rem;
 		}
 		@media (min-width: $mobile) {
-			margin-top: 30px;
+			margin-top: 1.25rem;
 			padding: 0;
 		}
 		@media (min-width: $tablet) {
 		}
 		@media (min-width:$pc) {
-			margin-top: 0px;
 		}
 		@media (min-width: $full) {
+			display: flex;
+			align-items: center;
+			margin-top: 0rem;
 		}
 	}
 	&__button-delete:hover {
@@ -959,6 +970,10 @@
 		z-index: 1;
 		right: 2.9375rem;
 		top: 0.9375rem;
+		@media (min-width: $mobile) {
+			right: 2.9375rem;
+			top: 1.25rem;
+		}
 		@media screen and (min-width:$pc) {
 			right: 3.75rem;
 			top: 1.4375rem;
@@ -990,25 +1005,6 @@
 		color: #F00;
 	}
 	&__busyNickname {
-		display: flex;
-		position: absolute;
-		top: 3.4375rem;
-		flex-direction: row;
-		height: fit-content;
-		align-items: center;
-		color: #F00;
-		font-size: 0.75rem;
-		font-style: normal;
-		font-weight: 600;
-		line-height: normal;
-		@media screen and (min-width:$pc) {
-			position: absolute;
-			top: 4.0625rem;
-			margin-top: 0.625rem;
-			font-size: 0.875rem;
-		}
-	}
-	&__invalidNickname {
 		display: flex;;
 		position: absolute;
 		top: 3.4375rem;
@@ -1020,6 +1016,31 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media (min-width: $mobile) {
+			margin-top: 0.75rem;
+		}
+		@media screen and (min-width:$pc) {
+			position: absolute;
+			top: 4.0625rem;
+			margin-top: 0.625rem;
+			font-size: 0.875rem;
+		}
+	}
+	&__invalidNickname {
+		display: flex;
+		position: absolute;
+		top: 3.4375rem;
+		flex-direction: row;
+		height: fit-content;
+		align-items: center;
+		color: #F00;
+		font-size: 0.75rem;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+		@media (min-width: $mobile) {
+			margin-top: 0.75rem;
+		}
 		@media screen and (min-width:$pc) {
 			position: absolute;
 			top: 4.0625rem;
@@ -1039,6 +1060,9 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media (min-width: $mobile) {
+			margin-top: 0.75rem;
+		}
 		@media screen and (min-width:$pc) {
 			position: absolute;
 			top: 4.0625rem;
@@ -1058,6 +1082,9 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media (min-width: $mobile) {
+			margin-top: 0.75rem;
+		}
 		@media screen and (min-width:$pc) {
 			position: absolute;
 			top: 4.0625rem;
@@ -1077,6 +1104,9 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media (min-width: $mobile) {
+			margin-top: 0.75rem;
+		}
 		@media screen and (min-width:$pc) {
 			position: absolute;
 			top: 4.0625rem;
@@ -1085,7 +1115,7 @@
 		}
 	}
 	&__newPassErr {
-		display: flex;;
+		display: flex;
 		position: absolute;
 		top: 2.8125rem;
 		flex-direction: row;
@@ -1097,6 +1127,9 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media (min-width: $mobile) {
+			margin-top: 1.25rem;
+		}
 		@media screen and (min-width:$pc) {
 			position: absolute;
 			top: 4.0625rem;
@@ -1105,8 +1138,8 @@
 		}
 	}
 	&__repeatPassErr {	
-		display: flex;;
-
+		display: flex;
+		position: absolute;
 		top: 2.8125rem;
 		flex-direction: row;
 		margin-top: 0.625rem;
@@ -1117,6 +1150,9 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
+		@media (min-width: $mobile) {
+			margin-top: 1.25rem;
+		}
 		@media screen and (min-width:$pc) {
 			top: 4.0625rem;
 			margin-top: 0.625rem;
@@ -1124,7 +1160,7 @@
 		}
 }
 	&__invalidInformation {
-		display: flex;;
+		display: flex;
 		top: 3.4375rem;
 		flex-direction: row;
 		margin-top: 1.25rem;
@@ -1134,9 +1170,10 @@
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
-		@media screen and (min-width:$pc) {
-			position: absolute;
+		@media (min-width: $mobile) {
 			margin-top: 1.25rem;
+		}
+		@media screen and (min-width:$pc) {
 			font-size: 0.875rem;
 		}
 	}
@@ -1150,18 +1187,17 @@
 		}
 	}
 	&__passTip {
-		margin-top: 0.9375rem;
+		margin-top: 1.5625rem;
 		color: #7D7D7D;
-		font-size: 10px;
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
 		background: var(--white-color);
 		@media screen and (min-width:$pc) {
-			margin-top: -2.1875rem;
+			text-align: start;
+			margin-top: -1.875rem;
 			margin-bottom: 2.1875rem;
-			max-width: 33.125rem;
-			font-size: 12px;
+			max-width: 45.625rem;
 		}
 	}
 }

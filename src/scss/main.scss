@@ -79,7 +79,7 @@
 				padding: 2rem 4.375rem;
 			}
 			@media screen and (min-width: $full) {
-				border-radius: 40px;
+				border-radius: 2.5rem;
 			}
 		}
 		button:hover {
@@ -220,8 +220,8 @@
 			@media screen and (min-width: $full) {
 				// padding: 0;
 				// z-index: 2;
-				// left: 22px;
-				// top: 25px;
+				// left: 1.375rem;
+				// top: 1.5625rem;
 			}
 		}
 		input {
@@ -401,7 +401,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		font-size: 50px;
+		font-size: 3.125rem;
 		color: white;
 		background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
 		z-index: 52; /* Specify a stack order in case you're using a different order for other elements */
@@ -518,7 +518,7 @@
 			display: flex;
 			align-items: center;
 			max-width: fit-content;
-			border-radius: 20px;
+			border-radius: 1.25rem;
 			border: 0.0625rem solid var(--orange-border-transparent);
 			@media screen and (min-width: $full) {
 				border-radius: 2.5rem;
@@ -667,7 +667,7 @@
 		margin: 1.5625rem auto 0;
 		@media screen and (min-width: $full) {
 			position: relative;
-			left: -626px;
+			left: -39.125rem;
 			top: 2.8125rem;
 			margin: 0;
 			padding: 0;
@@ -906,7 +906,7 @@
         color: var(--link-color);
       }
       span::after {
-        height: 0.1px;
+        height: 0.0063rem;
         background-color: var(--link-color);
       }
       padding: 0.5625rem;
@@ -1080,8 +1080,8 @@
 			font-weight: 400;
 			line-height: normal;
 			@media screen and (min-width: $full) {
-				top: 14px;
-				right: 14px;
+				top: 0.875rem;
+				right: 0.875rem;
 				border-radius: 2.5rem;
 				color: var(--white-color);
 				padding: 0.3125rem 0.75rem;
