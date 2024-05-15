@@ -922,11 +922,11 @@ export function showMore() {
 				let showMoreTypeValue;
 
 				if (viewportWidth >= 1919.98) {
-					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 200;
+					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 450;
 				} else if (viewportWidth >= 1439.98) {
-					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 365;
+					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 335;
 				} else if (viewportWidth >= 1279.98) {
-					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 365;
+					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 335;
 				} else if (viewportWidth >= 767.98) {
 					showMoreTypeValue = showMoreContent.dataset.showmoreContent ? showMoreContent.dataset.showmoreContent : 200;
 				} else {

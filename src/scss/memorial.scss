@@ -577,6 +577,9 @@
         background: #F3ECEC;
         padding: 0 0.4375rem 0 0.4375rem;
         margin-top: -0.125rem;
+        @media screen and (min-width:$tablet) {
+            width: 38.6875rem;
+        }
     }
     &__content {
 
@@ -586,7 +589,13 @@
         position: relative;
     }
     &__tab-content {
-        margin-top: 20px;
+        margin-top: 1.25rem;
+        @media screen and (min-width:$tablet) {
+           margin-top: 2.5rem;
+        }
+        @media screen and (min-width:$full) {
+            margin-top: 3.75rem;
+         }
     }
     &__tab-title {
         font-weight: 600;
@@ -637,18 +646,18 @@
         }
     }
     &__showBtn {
-        margin: 2.1875rem 0;
+        margin: 35px 0;
         font-weight: 600;
         font-size: 1rem;
         span::after {
             bottom: 1px!important;
         }
-        @media screen and (min-width:$full) {
-            margin: 2.8125rem 0;
+        @media screen and (min-width:$tablet) {
+            margin: 45px 0;
         }
         @media screen and (min-width:$full) {
             font-size: 1.5rem;
-            margin: 4.375rem 0 5.9375rem 0;
+            margin: 70px 0 5.9375rem 0;
         }
     }
 }
