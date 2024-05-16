@@ -224,6 +224,31 @@ function initSliders() {
 			// speed: 800,
 		});
 	}
+
+	// Memo images
+	if (document.querySelector('.memoRelativeSlider')) { 
+		new Swiper('.memoRelativeSlider', {
+			modules: [Pagination],
+			grabCursor: true,
+			effect: 'slide', // Применяем эффект slide
+			speed: 800, // Скорость анимации
+			grabCursor: true, // Изменяем курсор при перемещении слайдера
+			mousewheel: true, // Переключение слайдов с помощью колеса мыши
+			// pagination: {
+			// 	el: '.memoRelativeSlider__pagination',
+			// 	clickable: true,
+			// },
+			breakpoints: {
+				767.98: {
+					spaceBetween: 30,
+				},
+			},
+			// observer: true,
+			// observeParents: true,
+			slidesPerView: 2.1,
+			// speed: 800,
+		});
+	}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {

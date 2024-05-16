@@ -525,6 +525,22 @@
     }
 }
 
+.memoRelatives {
+    margin-top: 2.1875rem;
+    &__container {
+
+    }
+    &__content {
+
+    }
+    &__title {
+        font-weight: 700;
+        line-height: 110%;
+        text-align: center;
+        color: #171717;
+    }
+}
+
 .bioTabs {
     border-radius: 1.25rem;
     background: #fff8f6;
@@ -649,6 +665,7 @@
         margin: 35px 0;
         font-weight: 600;
         font-size: 1rem;
+        cursor: pointer;
         span::after {
             bottom: 1px!important;
         }
@@ -661,3 +678,4 @@
         }
     }
 }
+
