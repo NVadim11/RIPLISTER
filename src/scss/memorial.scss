@@ -541,6 +541,74 @@
     }
 }
 
+.memoBtns {
+    margin-top: 57px;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        margin-top: 31px;
+    }
+    &__ownBtn {
+        display: flex;
+        justify-content: center;          
+        button {
+        border: 1px solid #ec6041;
+        border-radius: 20px;
+        padding: 15px 38px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #000;
+        }
+    }
+    &__qrBtn {  
+        display: flex;
+        justify-content: center;       
+        button {
+            background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
+            border-radius: 20px;
+            padding: 15px 36px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #fff;
+            position: relative;
+        }
+        button:before {
+            right: 0;
+            height: 100%;
+            top: 0;
+            content: "";    
+            position: absolute;
+            opacity: 0;
+            transition: opacity .25s ease-in-out;
+	        background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
+        }
+        button:hover:before {
+            opacity: 1;
+        }
+    }
+    &__shareBtn {
+        display: flex;
+        justify-content: center;
+        button {
+            display: flex;
+            justify-content: center;
+            border: 1px solid #ec6041;
+            border-radius: 20px;
+            padding: 15px 25px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #000;
+        }
+        svg {
+            margin-right: 9px;
+        }
+    }
+}
+
 .bioTabs {
     border-radius: 1.25rem;
     background: #fff8f6;
