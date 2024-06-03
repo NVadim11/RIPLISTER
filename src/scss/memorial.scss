@@ -566,25 +566,25 @@
     }
     &__qrBtn {  
         display: flex;
-        justify-content: center;       
+        justify-content: center;   
         button {
             background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
+            color: #ffffff;
+            position: relative;    
             border-radius: 20px;
             padding: 15px 36px;
             font-weight: 600;
             font-size: 20px;
-            color: #fff;
-            position: relative;
         }
         button:before {
             right: 0;
             height: 100%;
             top: 0;
-            content: "";    
-            position: absolute;
+            content: "";
             opacity: 0;
             transition: opacity .25s ease-in-out;
-	        background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
+            background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
+            position: absolute;
         }
         button:hover:before {
             opacity: 1;
@@ -608,7 +608,26 @@
         }
     }
 }
-
+.comments {
+    &__commentBox {
+    }
+    &__title {
+    }
+    &__descr {
+    }
+    &__comment {
+    }
+    &__avatar {
+        width: 84px;
+        img {
+            width: 100%;
+        }
+    }
+    &__nameTime {
+    }
+    &__commentText {
+    }
+}
 .bioTabs {
     border-radius: 1.25rem;
     background: #fff8f6;
