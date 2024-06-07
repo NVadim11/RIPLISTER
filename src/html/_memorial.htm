@@ -475,56 +475,77 @@
 	</div>
 </section>
 <section class="memoComments">
-	<div class="memoComments__commentBox">
-		<div class="memoComments__title">
-			<h3>Комментарии</h3>
-		</div>
-		<div class="lineOrange"></div>
-		<div class="memoComments__descr">
-			<p>Допоможіть іншим дізнатися більше про дорогу вам людину. Розкажіть якою вона була, чим вам запам’яталася та
-				висловіть свої почуття. Це шанс сказати важливі слова, навіть якщо раніше не було такої можливості.</p>
-		</div>
-		<div class="memoComments__comment">
-			<div class="memoComments__authorInfo">
-				<div class="memoComments__avatar">
-					<img src="../img/profile-placeholder.png" alt="">
-				</div>
-				<div class="memoComments__nameTime">
-					<h4>Валентина</h4>
-					<span>21.03.2023</span>
-				</div>
+	<div class="memoComments__container">
+		<div class="memoComments__commentBox">
+			<div class="memoComments__title">
+				<h3>Комментарии</h3>
 			</div>
-			<div class="memoComments__commentText">
-				<p>Прекрасный, светлый, добрый мир Он
-					окружающим дарил.</p>
+			<div class="lineOrange"></div>
+			<div class="memoComments__descr">
+				<p>Допоможіть іншим дізнатися більше про дорогу вам людину. Розкажіть якою вона була, чим вам запам’яталася та
+					висловіть свої почуття. Це шанс сказати важливі слова, навіть якщо раніше не було такої можливості.</p>
 			</div>
-			<div class="memoComments__reportBtn">
-				<p>Пожаловаться</p>
-				<img src="../img/alert_icon.webp" alt="Alet icon">
-			</div>
-		</div>
-		<div class="memoComments__comment"
-			style="background: linear-gradient(180deg, #064186 0%, #1c2022 100%); color: #fff;">
-			<div class="memoComments__authorInfo">
-				<div class="memoComments__avatar">
-					<img src="../img/profile-placeholder.png" alt="">
+			<!-- Existing comments -->
+			<div class="memoComments__comment">
+				<div class="memoComments__authorInfo">
+					<div class="memoComments__avatar">
+						<img src="../img/profile-placeholder.png" alt="">
+					</div>
+					<div class="memoComments__nameTime">
+						<h4>Валентина</h4>
+						<span>21.03.2023</span>
+					</div>
 				</div>
-				<div class="memoComments__nameTime">
-					<h4>Валентина</h4>
-					<span>21.03.2023</span>
+				<div class="memoComments__commentText">
+					<p>Прекрасный, светлый, добрый мир Он
+						окружающим дарил.</p>
+				</div>
+				<div class="memoComments__reportBtn">
+					<p>Пожаловаться</p>
+					<img src="../img/alert_icon.webp" alt="Alert icon">
 				</div>
 			</div>
-			<div class="memoComments__commentImg">
-				<img src="../img/comment_photo.webp" alt="Flower Image">
+			<div class="memoComments__comment"
+				style="background: linear-gradient(180deg, #064186 0%, #1c2022 100%); color: #fff;">
+				<div class="memoComments__authorInfo">
+					<div class="memoComments__avatar">
+						<img src="../img/profile-placeholder.png" alt="">
+					</div>
+					<div class="memoComments__nameTime">
+						<h4>Валентина</h4>
+						<span>21.03.2023</span>
+					</div>
+				</div>
+				<div class="memoComments__commentImg">
+					<img src="../img/comment_photo.webp" alt="Flower Image">
+				</div>
+				<div class="memoComments__commentText">
+					<p>Прекрасный, светлый, добрый мир Он окружающим дарил.</p>
+				</div>
+				<div class="memoComments__reportBtn">
+					<p>Пожаловаться</p>
+					<img src="../img/alert_icon.webp" alt="Alert icon">
+				</div>
 			</div>
-			<div class="memoComments__commentText">
-				<p>Прекрасный, светлый, добрый мир Он
-					окружающим дарил.</p>
-			</div>
-			<div class="memoComments__reportBtn">
-				<p>Пожаловаться</p>
-				<img src="../img/alert_icon.webp" alt="Alet icon">
-			</div>
+			<form class="memoComments__form">
+				<div class="memoComments__formTitle">
+					<h4>Залишити коментар</h4>
+				</div>
+				<div class="memoComments__formGroup">
+					<input placeholder="Ваше имя" type="text" id="authorName" name="authorName" required>
+				</div>
+				<div class="memoComments__formGroup">
+					<textarea placeholder="Ваш комментарий" id="commentText" name="commentText" rows="10" required></textarea>
+				</div>
+				<div class="memoComments__btnGroup">
+					<button type="button" id="addColorBackground"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path d="M4.09639 10V5.78947H0V4.21053H4.09639V0H5.90361V4.21053H10V5.78947H5.90361V10H4.09639Z"
+								fill="#DB4A2A" />
+						</svg> добавить цветной фон</button>
+					<button type="submit">Отправить</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </section>

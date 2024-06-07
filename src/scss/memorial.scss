@@ -693,6 +693,84 @@
             margin-left: 5px;
         }
     }
+    &__form {
+        margin: 40px 10px 0;
+        width: 100%;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        background-color: #FFF3ED;
+        border-radius: 30px;
+        padding: 30px 20px;
+    }
+    &__formTitle {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 110%;
+        color: #171717;
+        margin-bottom: 20   px;
+    }
+    &__formGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 20px;
+        border: 1px solid #ec6041;
+        overflow: hidden;
+        margin-top: 15px;
+        input {            
+            padding: 17px 0 17px 24px;
+            width: 100%;
+        }
+        textarea {            
+            width: 100%;
+            padding: 17px 24px;
+        }
+    }
+    &__btnGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 22px;
+        button {
+            background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
+            color: #ffffff;
+            position: relative;    
+            border-radius: 20px;
+            padding: 15px 36px;
+            font-weight: 600;
+            font-size: 20px;
+            span {
+                z-index: 10;
+                position: relative;
+            }
+        }
+        button:before {
+            right: 0;
+            height: 100%;
+            top: 0;
+            width: 100%;
+            border-radius: 20px;
+            content: "";
+            opacity: 0;
+            transition: opacity .25s ease-in-out;
+            background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
+            position: absolute;
+        }
+        button:hover:before {
+            opacity: 1;
+        }
+        #addColorBackground {
+            border: 1px solid #ec6041;
+            border-radius: 20px;
+            padding: 17px 23px;
+            font-weight: 600;
+            font-size: 16px;
+            background-color: #FDE6DF !important;
+            color: #171717;
+            margin-bottom: 75px;
+        }        
+    }
 }
 .bioTabs {
     border-radius: 1.25rem;
