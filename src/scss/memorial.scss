@@ -636,16 +636,22 @@
         margin: 25px 30px 0px;
     }
     &__comment {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
         position: relative;
         margin-top: 25px;
         padding: 20px;
-        align-self: center;
         border: 1px solid #f5bfb4;
         border-radius: 20px;
         width: 355px;
     }
     &__authorInfo {
         display: flex;
+        width: 100%;
+        justify-content: start;
         flex-direction: row;
         align-items: center;
     }
@@ -656,8 +662,22 @@
         }
     }
     &__nameTime {
+        margin-left: 10px;
+        p {
+            margin-top: 6px;
+            color: #7d7d7d;
+        }
+    }
+    &__commentImg {
+        width: 135px;
+        transform: rotate(-25deg);
+        margin: 15px;
+        img {
+            width: 100%;
+        }
     }
     &__commentText {
+        margin: 15px 0 30px 0;
     }
     &__reportBtn {
         position: absolute;
