@@ -575,15 +575,21 @@
             padding: 15px 36px;
             font-weight: 600;
             font-size: 20px;
+            span {
+                z-index: 10;
+                position: relative;
+            }
         }
         button:before {
             right: 0;
             height: 100%;
             top: 0;
+            width: 100%;
+            border-radius: 20px;
             content: "";
             opacity: 0;
             transition: opacity .25s ease-in-out;
-            background: linear-gradient(180deg, #EB8069 0%, #E55738 100%);
+            background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
             position: absolute;
         }
         button:hover:before {
@@ -608,7 +614,7 @@
         }
     }
 }
-.comments {
+.memoComments {
     &__commentBox {
     }
     &__title {

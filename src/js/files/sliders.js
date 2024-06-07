@@ -238,6 +238,10 @@ function initSliders() {
 			// 	el: '.memoRelativeSlider__pagination',
 			// 	clickable: true,
 			// },
+			pagination: {
+				el: ".memoRelativeSlider__pagination",
+				type: "progressbar",
+			  },
 			breakpoints: {
 				767.98: {
 					spaceBetween: 30,
