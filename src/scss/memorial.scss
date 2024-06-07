@@ -615,13 +615,39 @@
     }
 }
 .memoComments {
+    display: flex;
+    margin-top: 65px;
     &__commentBox {
+        display: flex;
+        flex-direction: column;
     }
     &__title {
+        display: flex;
+        margin: 0 30px;
+    }
+    .lineOrange {
+        margin-top: 10px;
+        width: 156px;
+        height: 6px;
+        border-radius: 30px;
+        margin-left: 30px;
     }
     &__descr {
+        margin: 25px 30px 0px;
     }
     &__comment {
+        position: relative;
+        margin-top: 25px;
+        padding: 20px;
+        align-self: center;
+        border: 1px solid #f5bfb4;
+        border-radius: 20px;
+        width: 355px;
+    }
+    &__authorInfo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
     &__avatar {
         width: 84px;
@@ -632,6 +658,20 @@
     &__nameTime {
     }
     &__commentText {
+    }
+    &__reportBtn {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        font-weight: 400;
+        font-size: 12px;
+        color: #7d7d7d;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        img {
+            margin-left: 5px;
+        }
     }
 }
 .bioTabs {

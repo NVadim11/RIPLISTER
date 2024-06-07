@@ -1,6 +1,6 @@
 // Підключення функціоналу "Чертоги Фрілансера"
-import { flsModules } from "./modules.js";
 import { menuClose, menuOpen } from "./functions.js"
+import { flsModules } from "./modules.js"
 // Підключення списку активних модулів
 // Constants
 
@@ -159,4 +159,3 @@ function validateForm (formSelector, callback) {
         validateForm("#contactsForm", submitContactFormData);
     };
 };
-console.log("123");
