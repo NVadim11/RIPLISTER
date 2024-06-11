@@ -228,7 +228,7 @@ function initSliders() {
 	// Memo images
 	if (document.querySelector('.memoRelativeSlider')) { 
 		new Swiper('.memoRelativeSlider', {
-			modules: [Pagination],
+			modules: [Pagination, Navigation],
 			grabCursor: true,
 			effect: 'slide',
 			speed: 800,
@@ -238,12 +238,28 @@ function initSliders() {
 			  type: "progressbar",
 			//   progressbarFillClass: 'swiper-pagination-progressbar-fill'
 			},
+			spaceBetween: 26,
+			slidesPerView: 2.3,
+			navigation: false,
 			breakpoints: {
 			  767.98: {
-				spaceBetween: 26,
+				spaceBetween: 36,
+				slidesPerView: 4.3,
+				navigation: true,
 			  },
+			  1279.98: {
+				spaceBetween: 56,
+				slidesPerView: 4.3,
+			  },
+			  1439.98: {
+				slidesPerView: 4,
+				spaceBetween: 0,
+			  },
+			  1919.98: {
+				slidesPerView: 5,
+				spaceBetween: 0,
+			  }
 			},
-			slidesPerView: 2.1,
 		});
 	}
 }
