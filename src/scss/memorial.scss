@@ -762,8 +762,15 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 22px;        
+        align-self: center;
+        margin-top: 22px;  
+        svg {
+            margin-right: 10px;
+        }  
         button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             border: 1px solid #ec6041;
             border-radius: 20px;
             padding: 17px 23px;
@@ -771,13 +778,37 @@
             font-size: 16px;
             background-color: #FDE6DF !important;
             color: #171717;
-            margin-bottom: 75px;
         }        
+    }
+    &__bgPreview {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-self: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+    }
+    &__addBg {
+        margin-left: 22px;
+    }
+    &__cost {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;  
+        justify-content: center; 
+        svg {
+            width: 20px;
+            height: 20px;
+        }
     }
     &__submitBtn {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 30px;
         button {
             background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
             color: #ffffff;
@@ -1015,6 +1046,7 @@
         margin: 35px 0;
         font-weight: 600;
         font-size: 1rem;
+        max-width: fit-content;
         cursor: pointer;
         span::after {
             bottom: 1px!important;
