@@ -1118,3 +1118,17 @@ input:checked + .sliderCheckbox:before {
 		display: block;
 	}
 }
+
+// img item tribute
+
+.imgItem-tribute {
+	position: absolute;
+	width: 3.625rem !important;
+	right: -1.75rem;
+	bottom: 0;
+	height: auto!important;
+	@media screen and (min-width: $full) {
+		width: 5.6875rem !important;
+		right: -2.5rem;
+	}
+}

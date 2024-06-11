@@ -230,31 +230,25 @@ function initSliders() {
 		new Swiper('.memoRelativeSlider', {
 			modules: [Pagination],
 			grabCursor: true,
-			effect: 'slide', // Применяем эффект slide
-			speed: 800, // Скорость анимации
-			grabCursor: true, // Изменяем курсор при перемещении слайдера
-			mousewheel: true, // Переключение слайдов с помощью колеса мыши
-			// pagination: {
-			// 	el: '.memoRelativeSlider__pagination',
-			// 	clickable: true,
-			// },
+			effect: 'slide',
+			speed: 800,
+			mousewheel: true,
 			pagination: {
-				el: ".memoRelativeSlider__pagination",
-				type: "progressbar",
-			  },
-			breakpoints: {
-				767.98: {
-					spaceBetween: 30,
-				},
+			  el: ".swiper-pagination",
+			  type: "progressbar",
+			//   progressbarFillClass: 'swiper-pagination-progressbar-fill'
 			},
-			// observer: true,
-			// observeParents: true,
+			breakpoints: {
+			  767.98: {
+				spaceBetween: 26,
+			  },
+			},
 			slidesPerView: 2.1,
-			// speed: 800,
 		});
 	}
 }
-// Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
+
+  // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
 	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
 	if (sliderScrollItems.length > 0) {
