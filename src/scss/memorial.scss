@@ -761,18 +761,22 @@
         }
     }
     &__backgroundBtn {
+        margin-top: 20px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         align-self: center;
-        margin-top: 22px;  
+        max-width: fit-content;
         svg {
             margin-right: 10px;
+            margin-bottom: 1px;
         }  
         button {
             display: flex;
             flex-direction: row;
             align-items: center;
+            justify-content: center;
             border: 1px solid #ec6041;
             border-radius: 20px;
             padding: 17px 23px;
@@ -795,15 +799,95 @@
     &__addBg {
         margin-left: 22px;
     }
+    &__block {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 22px;
+    }
     &__cost {
-        margin-top: 25px;
         display: flex;
         flex-direction: row;
         align-items: center;  
         justify-content: center; 
+        p {
+            margin-right: 10px;
+        }
         svg {
             width: 20px;
             height: 20px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    &__bgSelectBox {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+        margin-top: 16px;
+        div {            
+            border-radius: 24px;
+            width: 110px;
+            height: 74px;
+        }
+    }
+    &__bgDefault {
+        border: 1px solid #aaa;
+        background: transparent;
+    }
+    &__bgBlue {
+        background: linear-gradient(180deg, #064186 0%, #1c2022 100%);
+    }
+    &__bgGreen {
+        background: #cff5d2;
+    }
+    &__bgPink {
+        background: #f6d4da;
+    }
+    &__bgConfirm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__bgDescr {
+        display: flex;
+        font-size: 16px;
+        margin-top: 10px;
+        align-items: center;
+    }
+    &__bgConfirmBtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+        button {
+            background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
+            color: #ffffff;
+            position: relative;    
+            border-radius: 20px;
+            padding: 15px 36px;
+            font-weight: 600;
+            font-size: 20px;
+            span {
+                z-index: 10;
+                position: relative;
+            }
+        }
+        button:before {
+            right: 0;
+            height: 100%;
+            top: 0;
+            width: 100%;
+            border-radius: 20px;
+            content: "";
+            opacity: 0;
+            transition: opacity .25s ease-in-out;
+            background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
+            position: absolute;
+        }
+        button:hover:before {
+            opacity: 1;
         }
     }
     &__submitBtn {

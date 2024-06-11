@@ -389,7 +389,7 @@
 							</div>
 						</div>
 					</a>
-					<a href="#"  class="memoRelativeSlider__slide swiper-slide">
+					<a href="#" class="memoRelativeSlider__slide swiper-slide">
 						<div class="memoRelativeSlider__slide-photo">
 							<img src="img/recent-photo2.png" alt="" />
 							<img src="img/svechka.png" class="imgItem-tribute" alt="" />
@@ -401,7 +401,7 @@
 							</div>
 						</div>
 					</a>
-					<a href="#"  class="memoRelativeSlider__slide swiper-slide">
+					<a href="#" class="memoRelativeSlider__slide swiper-slide">
 						<div class="memoRelativeSlider__slide-photo">
 							<img src="img/recent-photo1.png" alt="" />
 							<div class="memoRelativeSlider__slide-title">
@@ -424,7 +424,7 @@
 							</div>
 						</div>
 					</a>
-					<a href="#"  class="memoRelativeSlider__slide swiper-slide">
+					<a href="#" class="memoRelativeSlider__slide swiper-slide">
 						<div class="memoRelativeSlider__slide-photo">
 							<img src="img/recent-photo1.png" alt="" />
 							<div class="memoRelativeSlider__slide-title">
@@ -435,7 +435,7 @@
 							</div>
 						</div>
 					</a>
-					<a href="#"  class="memoRelativeSlider__slide swiper-slide">
+					<a href="#" class="memoRelativeSlider__slide swiper-slide">
 						<div class="memoRelativeSlider__slide-photo">
 							<img src="img/recent-photo2.png" alt="" />
 							<img src="img/svechka.png" class="imgItem-tribute" alt="" />
@@ -570,13 +570,14 @@
 					<h4>Залишити коментар</h4>
 				</div>
 				<div class="memoComments__formGroup">
-					<input placeholder="Ваше имя" type="text" id="authorName" name="authorName" required>
+					<input placeholder="Ваше имя" type="text" id="authorName" name="authorName">
 				</div>
 				<div class="memoComments__formGroup">
-					<textarea placeholder="Ваш комментарий" id="commentText" name="commentText" rows="10" required></textarea>
+					<textarea placeholder="Ваш комментарий" id="commentText" name="commentText" rows="10"></textarea>
 				</div>
-				<div data-showmore class="block">
-					<div data-showmore-content class="memoComments__showContent">
+				<div data-bgColor class="block memoComments__block">
+					<div data-bgColor-content class="memoComments__showContent">
+						<div class="memoComments__content">
 							<div class="memoComments__cost">
 								<p>Стоимость цветного фона:</p>
 								<span>5</span>
@@ -630,13 +631,28 @@
 									</defs>
 								</svg>
 							</div>
+							<div class="memoComments__bgSelectBox">
+								<div class="memoComments__bgDefault"></div>
+								<div class="memoComments__bgBlue"></div>
+								<div class="memoComments__bgGreen"></div>
+								<div class="memoComments__bgPink"></div>
+							</div>
+							<div class="memoComments__bgConfirm">
+								<div class="memoComments__bgDescr">
+									<p>Описание фона</p>
+								</div>
+								<div class="memoComments__bgConfirmBtn">
+									<button><span>Оплатить 5 RIP</span></button>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div data-showmore-button class="memoComments__backgroundBtn">
+					<div data-bgColor-button class="memoComments__backgroundBtn">
 						<button type="button" id="addColorBackground"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
 								<path d="M4.09639 10V5.78947H0V4.21053H4.09639V0H5.90361V4.21053H10V5.78947H5.90361V10H4.09639Z"
 									fill="#DB4A2A" />
-							</svg><span>добавить цветной фон</span><span>добавить цветной фон</span></button>
+							</svg><span>добавить цветной фон</span></button>
 					</div>
 				</div>
 				<div class="memoComments__bgPreview">

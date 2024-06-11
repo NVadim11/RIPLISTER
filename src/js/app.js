@@ -65,6 +65,7 @@ flsFunctions.bioTabs();
 Сніппет (HTML): showmore
 */
 flsFunctions.showMore();
+flsFunctions.addBackground();
 
 /*
 Модуль "До/Після"
@@ -252,8 +253,8 @@ import './files/scroll/lazyload.js'
 /* Підключаємо файли зі своїм кодом */
 import "./files/auth.js"
 import "./files/languages.js"
-import "./files/script.js"
 import "./files/profile.js"
+import "./files/script.js"
 import "./files/translations.js"
 import "./files/up-to-top.js"
 //============================================================================================================================================================================================================================================
