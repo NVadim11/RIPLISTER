@@ -1,0 +1,91 @@
+.volunteerPage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	&__headerTitle {
+		padding: 55px 35px 0 35px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		background: #fff8f6;		
+		@media (min-width: $mobile) {		
+		}
+		@media (min-width: $tablet) {
+			padding: 55px 122px 0 122px;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
+	}
+	&__headerText {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		h1 {
+			font-size: 36px;
+			line-height: 110%;
+		}
+		p {
+			margin-top: 22px;
+			font-size: 16px;
+		}	
+		@media (min-width: $mobile) {
+		}
+		@media (min-width: $tablet) {
+			width: 580px;
+			align-items: start;
+			text-align: start;
+		}
+		@media (min-width: $pc) {
+		width: 780px;
+			h1 {
+				font-size: 50px;
+			}
+			p {
+				font-size: 24px;
+			}
+		}
+		@media (min-width: $full) {
+		width: 880px;
+			h1 {
+				font-size: 64px
+			}
+			p {
+				font-size: 30px;
+			}
+		}	
+	}
+	&__imgBox {
+		margin: 72px 35px 0 35px;
+		display: flex;
+		overflow: hidden;
+		align-self: center;
+		width: 306px;
+		height: 256px;
+		img {
+			width: 100%;
+		}
+		@media (min-width: $mobile) {			
+			width: 454px;
+			height: 379px;
+		}
+		@media (min-width: $tablet) {
+			margin: 0;
+		}
+		@media (min-width: $pc) {
+			width: 528px;
+			height: 441px;
+		}
+		@media (min-width: $full) {
+			width: 650px;
+			height: 543px;
+		}
+	}
+	&__headerDescr {
+	p {
+	}
+	}
+}	

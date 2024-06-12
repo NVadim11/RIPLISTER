@@ -10,6 +10,7 @@ const contactFormComponent = document.getElementById("contactFormComponent");
 const submitContactBtn = document.getElementById("contactFormSubmit")
 const contactErrMsg = document.querySelector(".contactForm__errorMsg");
 
+const headerMain = document.querySelector('.headerMain');
 const mainMenuBtn = document.querySelector('.headerMain__menuBtn');
 const altMenuBtn = document.querySelector('.headerAlt__menuBtn');
 const menuCloseBtn = document.querySelector('.menu__closeBtn');
@@ -18,6 +19,8 @@ const detailHeaderTitle = document.querySelector('.detail__header-title');
 const detailDate = document.querySelector('.detail__header-date');
 const detailDescr = document.querySelector('.detail__header-descr');
 const detailHeader = document.querySelector('.detail__header');
+
+const volunteerPage = document.querySelector('.volunteerPage');
 
 
 
@@ -51,6 +54,10 @@ if (detailCoverImg) {
     detailDescr.classList.add("colorWhite");
     detailHeader.style.padding = '18rem 0 3.75rem';
 };
+
+if (volunteerPage) {
+    headerMain.style.background = '#fff8f6';
+}
 
 // Contact form
 if (contactFormComponent) {
