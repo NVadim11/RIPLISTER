@@ -85,7 +85,34 @@
 		}
 	}
 	&__headerDescr {
+		padding: 35px 35px 0 35px;
+		width: 100%;
+		display: flex;
+		@media (min-width: $tablet) {
+			padding: 70px 122px 0 122px;
+		}
 	p {
+		width: 100%;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 140%;
+		text-align: center;
+		@media (min-width: $mobile) {		
+		}
+		@media (min-width: $tablet) {
+			width: 940px;
+			font-size: 20px;
+			align-self: start;
+			text-align: start;
+		}
+		@media (min-width: $pc) {
+			font-size: 24px;
+			width: 1040px;
+		}
+		@media (min-width: $full) {
+			width: 1240px;
+			font-size: 30px;
+		}
 	}
 	}
 }	
