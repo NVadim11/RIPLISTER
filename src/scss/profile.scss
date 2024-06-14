@@ -1005,7 +1005,7 @@
 		color: #F00;
 	}
 	&__busyNickname {
-		display: flex;;
+		display: none;
 		position: absolute;
 		top: 3.4375rem;
 		flex-direction: row;
@@ -1027,7 +1027,7 @@
 		}
 	}
 	&__invalidNickname {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 3.4375rem;
 		flex-direction: row;
@@ -1049,7 +1049,7 @@
 		}
 	}
 	&__busyEmail {
-		display: flex;;
+		display: none;
 		position: absolute;
 		top: 3.4375rem;
 		flex-direction: row;
@@ -1071,7 +1071,7 @@
 		}
 	} 
 	&__busyNumber {
-		display: flex;;
+		display: none;
 		position: absolute;
 		top: 3.4375rem;
 		flex-direction: row;
@@ -1093,7 +1093,7 @@
 		}
 	}
 	&__currPassErr {
-		display: flex;;
+		display: none;
 		position: absolute;
 		top: 3.4375rem;
 		flex-direction: row;
@@ -1115,7 +1115,7 @@
 		}
 	}
 	&__newPassErr {
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 2.8125rem;
 		flex-direction: row;
@@ -1138,7 +1138,7 @@
 		}
 	}
 	&__repeatPassErr {	
-		display: flex;
+		display: none;
 		position: absolute;
 		top: 2.8125rem;
 		flex-direction: row;
@@ -1160,7 +1160,7 @@
 		}
 }
 	&__invalidInformation {
-		display: flex;
+		display: none;
 		top: 3.4375rem;
 		flex-direction: row;
 		margin-top: 1.25rem;
