@@ -152,6 +152,10 @@
 			margin: 76px 70px 0;
 			padding: 82px 53px 77px;
 		}
+		@media (min-width: $full) {
+			margin: 76px 115px 0;
+			padding: 82px 60px 77px;
+		}
 	}
 	&__counterTextBox {
 		display: flex;
@@ -251,6 +255,10 @@
 				transition: opacity .25s ease-in-out;
 				background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
 				position: absolute;
+				@media (min-width: $pc) {
+					border-radius: 30px;
+					font-size: 20px;
+				}
 		}
 		button:hover:before {
 				opacity: 1;
@@ -264,31 +272,49 @@
 		flex-direction: column;
 		@media (min-width: $mobile) {
 			margin-top: 72px;
+			padding: 0 100px;
 		}
 		@media (min-width: $tablet) {
 			margin-top: 95px;
 			flex-direction: row;
+			justify-content: space-between;
+			padding: 0 123px;
 		}
 		@media (min-width: $pc) {
 			margin-top: 105px;
+			padding: 0 123px;
 		}
 		@media (min-width: $full) {
 			margin-top: 122px;
+			padding: 0 175px;
 		}
 	}
 	&__rewardTextBox {
-		display: flex;
 		width: 100%;
-		flex-direction: column;
+		@media (min-width: $tablet) {
+		}
 	}
 	&__rewardTitle {
 		width: 100%;
 		align-self: center;
 		text-align: center;
+		@media (min-width: $tablet) {
+			max-width: 440px;
+		}
+		@media (min-width: $full) {
+			max-width: 500px;
+		}
 		h4 {
 			font-weight: 600;
 			font-size: 32px;
 			text-align: center;
+			@media (min-width: $tablet) {
+				text-align: start;
+				font-size: 46px;
+			}
+			@media (min-width: $full) {
+				font-size: 52px;
+			}
 		}
 	}
 	&__rewardDescr {
@@ -300,15 +326,18 @@
 		}
 		@media (min-width: $tablet) {
 			margin-top: 53px;
+			max-width: 620px;
 		}
 		@media (min-width: $full) {
 			margin-top: 39px;
+			max-width: 750px;
 		}
 		p {
 			font-weight: 400;
 			font-size: 14px;
 			text-align: center;
-			@media (min-width: $pc) {
+			@media (min-width: $tablet) {
+				text-align: start;
 				font-size: 20px;
 			}
 			@media (min-width: $full) {
@@ -320,6 +349,9 @@
 		display: flex;
 		justify-content: center;   
 		margin-top: 46px;
+		@media (min-width: $tablet) {
+			justify-content: start;  
+		}
 		@media (min-width: $full) {
 			margin-top: 61px;
 		}
@@ -359,6 +391,10 @@
 				transition: opacity .25s ease-in-out;
 				background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
 				position: absolute;
+				@media (min-width: $pc) {
+					border-radius: 30px;
+					font-size: 20px;
+				}
 		}
 		button:hover:before {
 				opacity: 1;
@@ -367,16 +403,31 @@
 	&__rewardImgBox {
 		width: 100%;
 		display: flex;
-		align-items: center;
 		justify-content: center;
+		margin-top: 15px;
+		@media (min-width: $mobile) {
+			margin-top: 25px;
+		}
+		@media (min-width: $tablet) {
+			margin: 0;
+			justify-content: end;
+		}
 	}
-	&__rewardImg {
+	&__rewardImg {			
+		display: flex;
 		img {
 			display: flex;
 			align-self: center;
 			width: 100%;
 			height: 100%;
 			max-width: 327px;
+			@media (min-width: $tablet) {
+				max-width: 445px;
+				padding-top: 60px;
+			}
+			@media (min-width: $pc) {
+				max-width: 545px;
+			}
 		}
 	}
 }
