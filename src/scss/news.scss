@@ -2,13 +2,15 @@
 	&__container {
 		display: flex;
 		flex-direction: column;
-		align-items: start;
+		align-items: center;
 		margin-bottom: 4.375rem;
 		@media (min-width: $pc) {
 			margin-bottom: 8.75rem;
+			max-width: 78.125rem;
 		}
 		@media (min-width: $full) {
 			margin-bottom: 13.75rem;
+			max-width: 92.5rem;
 		}
 	}
 	&__header {		
@@ -73,7 +75,7 @@
 		}
 	}
 	&__content {
-		margin: 1.875rem 1.25rem 0 1.25rem;
+		margin: 1.875rem 0;
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: 2.5rem;
@@ -84,50 +86,72 @@
 		@media (min-width: $pc) {
 			margin: 4.375rem 0 0 0;
 			grid-template-columns: 1fr 1fr 1fr;
-			gap: 2.5rem 3.75rems;
+			gap: 2.5rem 3.75rem;
 		}
 		@media (min-width: $full) {
 			gap: 5rem 8.75rem;
 		}
 	}
+	&__contentItem {
+		display: flex;
+		flex-direction: column;
+	}
 	&__itemImg {
-		border-radius: 1.875rem;
 		overflow: hidden;
 		flex-shrink: 0;
+		border-radius: 1.25rem;
+		width: 19.25rem;
+		height: 12.5rem;
+		@media (min-width: $pc) {
+			border-radius: 1.875rem;
+			width: 23.625rem;
+			height: 16.375rem;
+		}
+		@media (min-width: $full) {
+			width: 25.125rem;
+			height: 17.375rem;
+		}
 		img {
 			width: 100%;
-			max-width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
 	&__itemDate {
 		margin: 1.25rem 0 0 0;
 		text-align: center;
-		font-size: 0.875rem;
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
-		color: var(--text-color-black);
-		@media (min-width: $pc) {
-			font-size: 1.125rem;
-		}
-		@media (min-width: $full) {
-			font-size: 1.25rem;
+		span {
+			font-size: 0.875rem;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			color: var(--text-color-black);
+			@media (min-width: $pc) {
+				font-size: 1.125rem;
+			}
+			@media (min-width: $full) {
+				font-size: 1.25rem;
+			}
 		}
 	}
 	&__itemTitle {
 		margin: 10px 0 0 0;
 		color: var(--text-color-black);
 		text-align: center;
-		font-size: 1.375rem;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-		text-decoration-line: underline;
-		@media (min-width: $pc) {
-			font-size: 1.5rem;
-		}
-		@media (min-width: $full) {
-			font-size: 2rem;
+		h1 {
+			font-family: var(--font-family);
+			font-weight: 700;
+			font-size: 22px;
+			text-decoration: underline;
+			text-decoration-skip-ink: none;
+			text-align: center;
+			color: #171717;
+			@media (min-width: $pc) {
+				font-size: 24px;
+			}
+			@media (min-width: $full) {
+				font-size: 32px;
+			}
 		}
 	}	
 }

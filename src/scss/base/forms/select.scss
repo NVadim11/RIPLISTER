@@ -162,6 +162,10 @@
 	min-width: 0;
 	position: relative;
 	width: 20rem;
+	margin: 1.25rem 0 0 0;
+	@media screen and (min-width: $pc) {
+		margin: 0;
+	}
 	.select__body {
 		position: relative;
 	}
@@ -328,6 +332,7 @@
 	margin: 1.25rem 0 0 0;
 	@media (min-width: $pc) {
 		margin: 0;
+		max-width: 12.625rem;
 	}
 	.select__body {
 		position: relative;
@@ -344,7 +349,14 @@
 		font-size: 1rem;
 		font-style: normal;
 		font-weight: 600;
-		padding: 1.0625rem 0 1.0625rem 1.25rem;
+		padding: 0 0 0 1.25rem;
+		height: 3.375rem;
+		@media screen and (min-width: $pc) {
+			height: 4.375rem;
+			border-radius: 1.875rem;
+			padding: 0 0 0 2.8125rem;
+			width: 200px;
+		}
 	}
 	.select__value {
 		display: flex;
