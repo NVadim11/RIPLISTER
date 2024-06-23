@@ -1,0 +1,155 @@
+.search {
+	padding: 55px 10px;
+}
+
+.searchHeader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@media (min-width: $tablet) {
+		align-items: start;
+	}
+	&__headerTitle {
+		h4 {
+			font-weight: 600;
+			font-size: 36px;
+			@media (min-width: $tablet) {
+				font-size: 44px;
+			}
+			@media (min-width: $pc) {
+				font-size: 50px;
+			}
+			@media (min-width: $full) {
+				font-size: 64px;
+			}
+		}
+	}
+	&__headerDescr {
+		margin-top: 15px;
+		p {
+			font-weight: 400;	
+			font-size: 16px;
+			line-height: 140%;
+			@media (min-width: $tablet) {
+				font-size: 24px;
+			}
+			@media (min-width: $full) {
+				font-size: 30px;
+			}
+		}
+	}
+}
+
+.searchForm {
+	margin-top: 44px;
+	@media screen and (min-width: $full) {
+	}
+	&__container {
+		padding: 20px;
+		display: flex;
+		flex: 1 1 auto;
+		width: 100%;
+		align-items: center;
+		text-align: center;
+		flex-direction: column;
+		border-radius: 1.25rem;
+		background: #fff3ed;
+		@media screen and (min-width: $full) {
+			flex-direction: row;
+			padding: 2.875rem 3.0625rem;
+			gap: 0.625rem;
+		}
+	}
+	&__form {
+		width: 100%;
+	}
+	&__inputGroup {
+		display: flex;
+		flex-direction: column;
+		@media screen and (min-width: $full) {
+			flex-direction: row;
+			gap: 0.625rem;
+		}
+		label {
+			text-align: start;
+			font-size: 16px;
+			margin: 0;
+			margin-left: 15px;
+		}
+	}
+	&__input {
+		position: relative;
+		align-items: center;
+		img {
+			position: absolute;
+			padding: 1.5625rem 1rem 1.0625rem 1.0625rem;
+			@media screen and (min-width: $full) {
+				// padding: 0;
+				// z-index: 2;
+				// left: 1.375rem;
+				// top: 1.5625rem;
+			}
+		}
+		input {
+			min-width: 19.625rem;
+			margin-top: 0.625rem;
+			padding: 1.0625rem 0 1.0625rem 3.375rem;
+			border-radius: 1.25rem;
+			border: 0.0625rem solid var(--orange-color);
+			background: var(--white-color);
+			@media screen and (min-width: $full) {
+				min-width: 15rem;
+				// margin: 0;
+				// display: flex;
+				// position: relative;
+			}
+		}
+		input[class='datePicker']::-webkit-calendar-picker-indicator {
+			position: absolute;
+			background-image: url('img/input-icon2.svg');
+			background-size: 150%;
+			background-position-x: center;
+			background-position-y: center;
+			opacity: 0.1;
+			left: 1.1563rem;
+			top: 1.6563rem;
+		}
+	}
+	&__btn {
+		@media screen and (min-width: $full) {
+			display: flex;
+			padding-top: 0.5rem;
+			align-self: flex-end;
+		}
+		button {
+			border-radius: 20px;
+			background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
+			margin: 15px 0 0 0;
+			min-width: 19.625rem;
+			padding: 0 6.25rem 0;
+			display: flex;
+			align-items: center;
+			font-size: 1.125rem;
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			color: var(--white-color);
+			@media screen and (min-width: $full) {
+				border-radius: 1.875rem;
+				min-width: 15.5625rem;
+				margin: 0;
+				padding: 0;
+				justify-content: center;
+				align-self: flex-end;
+			}
+		}
+		button:hover {
+			background: linear-gradient(180deg, #eb8069 0%, #db4a2a 100%);
+			transition: 0.25s;
+			border-radius: 20px;
+		}
+		img {
+			padding: 1rem 0.625rem 1rem;
+		}
+	}
+}
