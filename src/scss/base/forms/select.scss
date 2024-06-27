@@ -187,6 +187,7 @@
 			height: 4.375rem;
 			border-radius: 1.875rem;
 			padding: 0 0 0 2.8125rem;
+			font-size: 1.5rem;
 		}
 	}
 	.select__value {
@@ -251,7 +252,6 @@
 		left: 0;
 		box-shadow: 0 20px 46px 0 rgba(229, 87, 56, 0.4);
 		background: #fff3ed;
-		padding: 0.625rem 0rem 0.3125rem 0rem;
 		@media screen and (min-width: $pc) {
 			font-size: 1.5rem;
 		}
@@ -282,6 +282,14 @@
 			&:hover {
 				background: #e55738;
 				color: var(--white-color);
+			}
+			&:hover:first-child {
+				border-top-right-radius: 0.625rem;
+				border-top-left-radius: 0.625rem;
+			}
+			&:hover:last-child {
+				border-bottom-right-radius: 0.625rem;
+				border-bottom-left-radius: 0.625rem;
 			}
 		}
 	}
@@ -356,6 +364,7 @@
 			border-radius: 1.875rem;
 			padding: 0 0 0 2.8125rem;
 			width: 200px;
+			font-size: 1.5rem;
 		}
 	}
 	.select__value {
@@ -406,18 +415,20 @@
 		height: 100%;
 	}
 	.select__options {
-		border-radius: 1.25rem;
-		border: 0.0625rem solid var(--orange-color);
+		border-radius: 0.625rem;
 		color: var(--text-color-black);
-		font-size: 1rem;
+		font-size: 1.125rem;
 		font-style: normal;
-		font-weight: 600;
+		font-weight: 400;
 		position: absolute;
-		top: calc(100% + 1.25rem);
+		top: calc(100% + 25px);
 		min-width: 100%;
 		left: 0;
-		background-color: #fff;
-		padding: 0.625rem 0rem 0.3125rem 0rem;
+		box-shadow: 0 20px 46px 0 rgba(229, 87, 56, 0.4);
+		background: #fff3ed;
+		@media screen and (min-width: $pc) {
+			font-size: 1.5rem;
+		}
 	}
 	.select__scroll {
 		overflow-y: auto;
@@ -435,14 +446,24 @@
 		width: 100%;
 		text-align: left;
 		cursor: pointer;
-		padding: 0.3125rem 0.9375rem;
+		padding: 0 1.25rem;
+		height: 2.75rem;
 		color: inherit;
 		&._select-selected {
 			background-color: #eee;
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				background: #d9d9d9;
+				background: #e55738;
+				color: var(--white-color);
+			}
+			&:hover:first-child {
+				border-top-right-radius: 0.625rem;
+				border-top-left-radius: 0.625rem;
+			}
+			&:hover:last-child {
+				border-bottom-right-radius: 0.625rem;
+				border-bottom-left-radius: 0.625rem;
 			}
 		}
 	}
@@ -481,7 +502,6 @@
 		bottom: calc(100% + 1.25rem);
 		border-bottom: 0;
 		border-radius: 1.25rem;
-		border: 0.0625rem solid var(--orange-color);
 		color: var(--text-color-black);
 	}
 }
@@ -506,7 +526,7 @@
 	.select__title {
 		color: inherit;
 		text-align: left;
-		border-radius: 1.875rem;
+		border-radius: 1.25rem;
 		border: 0.0625rem solid var(--orange-color);
 		background: #FFF;
 		cursor: pointer;
@@ -522,6 +542,7 @@
 		@media (min-width: $tablet) {
 		}
 		@media (min-width: $pc) {
+			font-size: 1.5rem;
 			border-radius: 2.5rem;
 			padding: 1.4375rem 0 1.4375rem 2rem;
 		}
@@ -589,30 +610,19 @@
 		height: 100%;
 	}
 	.select__options {
-		border-radius: 1.875rem;
-		border: 0.0625rem solid var(--orange-color);
-		color: var(--text-color-black);			
+		border-radius: 0.625rem;
+		color: var(--text-color-black);
+		font-size: 1.125rem;
 		font-style: normal;
-		font-weight: 600;
+		font-weight: 400;
 		position: absolute;
-		top: calc(100% + 0.9375rem);	
-		width: 100%;
-		max-width: 31.25rem;
+		top: calc(100% + 25px);
+		min-width: 100%;
 		left: 0;
-		background-color: #fff;
-		padding: 1rem 0rem 1rem 1.5rem;
-		@media (min-width: $mobile) {
-		}
-		@media (min-width: $tablet) {
-		}
-		@media (min-width: $pc) {
-			padding: 1.4375rem 0rem 1.4375rem 2rem;
-			font-size: 1.25rem;
-			border-radius: 2.5rem;
-		}
-		@media (min-width: $full) {
-			border: 0.0625rem solid #ec6041;
-			padding: 2.1875rem 0 2.1875rem 3.75rem;
+		box-shadow: 0 20px 46px 0 rgba(229, 87, 56, 0.4);
+		background: #fff3ed;
+		@media screen and (min-width: $pc) {
+			font-size: 1.5rem;
 		}
 	}
 	.select__scroll {
@@ -631,28 +641,24 @@
 		width: 100%;
 		text-align: left;
 		cursor: pointer;
-		padding: 0.3125rem 0rem;
+		padding: 0 1.25rem;
+		height: 2.75rem;
 		color: inherit;
-		font-weight: 600;
-		font-size: 1.125rem;
-		@media (min-width: $mobile) {
-		}
-		@media (min-width: $tablet) {
-		}
-		@media (min-width: $pc) {
-			font-size: 1.25rem;
-		}
-		@media (min-width: $full) {
-			padding: 0.625rem 0rem;
-			font-weight: 600;
-			font-size: 1.5rem;
-		}
 		&._select-selected {
 			background-color: #eee;
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				background: #d9d9d9;
+				background: #e55738;
+				color: var(--white-color);
+			}
+			&:hover:first-child {
+				border-top-right-radius: 0.625rem;
+				border-top-left-radius: 0.625rem;
+			}
+			&:hover:last-child {
+				border-bottom-right-radius: 0.625rem;
+				border-bottom-left-radius: 0.625rem;
 			}
 		}
 	}
@@ -691,7 +697,6 @@
 		bottom: calc(100% + 1.25rem);
 		border-bottom: 0;
 		border-radius: 1.25rem;
-		border: 0.0625rem solid var(--orange-color);
 		color: var(--text-color-black);
 	}
 }

@@ -296,6 +296,17 @@ export function spollers() {
 					setTimeout(() => { spollerBlock.open = false }, spollerSpeed);
 				}
 			}
+			if (el.closest('.volunterSpollers__close')) {
+				const spollerBlock = el.closest('details');
+				const spollersBlock = el.closest('[data-spollers]');
+				if (spollerBlock && spollersBlock.classList.contains('_spoller-init')) {
+					const spollerTitle = spollerBlock.querySelector('summary');
+					const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+					spollerTitle.classList.remove('_spoller-active');
+					_slideUp(spollerTitle.nextElementSibling, spollerSpeed);
+					setTimeout(() => { spollerBlock.open = false }, spollerSpeed);
+				}
+			}
 			// Закриття при кліку поза спойлером
 			if (!el.closest('[data-spollers]')) {
 				const spollersClose = document.querySelectorAll('[data-spoller-close]');

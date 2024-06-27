@@ -986,19 +986,6 @@ input:checked + .sliderCheckbox:before {
 	border-radius: 50%;
 }
 
-// webkit
-::-webkit-scrollbar {
-	width: 4px;
-}
-::-webkit-scrollbar-track {
-	border-radius: 1.875rem;
-	background: #fde6df;
-}
-::-webkit-scrollbar-thumb {
-	border-radius: 1.875rem;
-	background: #eb8069;
-}
-
 // Display block toggle
 .block {
 	display: block;
@@ -1139,4 +1126,17 @@ input:checked + .sliderCheckbox:before {
 		right: -2.5rem;
 		bottom: -0.9375rem;
 	}
+}
+
+// webkit
+::-webkit-scrollbar {
+	width: 4px;
+}
+::-webkit-scrollbar-track {
+	border-radius: 1.875rem;
+	background: #fde6df;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 1.875rem;
+	background: #eb8069;
 }

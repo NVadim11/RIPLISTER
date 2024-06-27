@@ -42,6 +42,8 @@
 			transform: translate(0, -50%) rotate(-40deg);
 		}
 		&._spoller-active {
+			background-color: var(--orange-color);
+			color: #fff;
 			&::before {
 				transform: translateX(-75%) rotate(-40deg);
 			}
