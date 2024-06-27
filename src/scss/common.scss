@@ -224,18 +224,21 @@
 		line-height: 117%;
 		letter-spacing: 0.03em;
 		margin: 0 0 0.9375rem 0;
+		font-size: 36px;
 		text-align: center;
 		@media screen and (min-width: $mobile) {
 			margin: 0 0 1.6875rem 0;
 		}
 		@media screen and (min-width: $tablet) {
+			font-size: 44px;
 			margin: 0 0 1.875rem 0;
 		}
 		@media screen and (min-width: $pc) {
+			font-size: 50px;
 			font-size: 3.125rem;
 		}
 		@media screen and (min-width: $full) {
-			font-size: 4rem;
+			font-size: 64px;
 			margin: 0 0 50px 0;
 		}
 	}
@@ -245,24 +248,45 @@
 		@media (min-width: $mobile) {
 			margin: 0 0 0.9375rem 0;
 		}
-		@media (min-width: $pc) {
+		@media (min-width: $tablet) {
 			font-size: 40px;
+		}
+		@media (min-width: $pc) {
+			font-size: 46px;
 			margin: 0 0 1.875rem 0;
+		}
+		@media (min-width: $full) {
+			font-size: 52px;
 		}
 	}
 	h3 {
-		font-size: 1.375rem;
+		font-size: 24px;
 		margin: 0 0 0.8125rem 0;
 		@media (min-width: $mobile) {
 			margin: 0 0 0.8125rem 0;
 		}
+		@media (min-width: $tablet) {
+			font-size: 36px;
+		}
 		@media (min-width: $pc) {
-			font-size: 2rem;
 			margin: 0 0 1.875rem 0;
 		}
 	}
 	h4 {
 		margin: 0 0 0.625rem 0;
+		font-size: 22px;
+	@media (min-width: $tablet) {
+		font-size: 24px;
+	}
+	@media (min-width: $pc) {
+		font-size: 32px;
+	}
+	@media (min-width: $full) {
+		font-size: 32px;
+	}
+	}
+	h5 {
+		font-size: 20px;
 	}
 	h1:last-child,
 	h2:last-child,
@@ -307,7 +331,7 @@
 			}
 		}
 	}
-	p {
+	p {	
 		font-size: 0.875rem;
 		color: var(--text-color-black);
 		text-align: center;
@@ -316,15 +340,19 @@
 		line-height: 140%; /* 1.225rem */
 		margin: 0 0 1.875rem 0;
 		@media (min-width: $mobile) {
+			font-size: 16px;
 			margin: 0 0 3.125rem 0;
 		}
-		@media (min-width: $mobile) {
-			font-size: 1rem;
+		@media (min-width: $tablet) {
+			font-size: 18px;
 		}
 		@media (min-width: $pc) {
 			font-size: 1.25rem;
 			margin: 0 0 4.0625rem 0;
 			text-align: start;
+		}
+		@media (min-width: $full) {
+			font-size: 24px;
 		}
 	}
 	p:last-child {
