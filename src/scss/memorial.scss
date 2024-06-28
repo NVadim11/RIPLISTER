@@ -724,6 +724,18 @@
     &__avatar {
         width: 84px;
         height: fit-content;
+        border-radius: 20px;    
+        border: 2px solid #fff;
+        overflow: hidden;
+        @media (min-width: $mobile) {
+        }
+        @media (min-width: $tablet) {
+        width: 178px;
+        }
+        @media (min-width: $pc) {
+        }
+        @media (min-width: $full) {
+        }
         img {
             width: 100%;
         }
@@ -733,12 +745,12 @@
         width: fit-content;
         height: fit-content;
         h4 {
-            margin-top: 6px;
+            margin-bottom: 6px;
             color: #fff;
             font-weight: 600;
             font-size: 16px;
         }
-        span {
+        span {            
             font-weight: 400;
             font-size: 12px;
             color: #7d7d7d;
@@ -767,12 +779,11 @@
         max-width: 340px;
     }    
     &__commentImg {
-        width: 155px;
+        width: 195px;
         transform: rotate(-25deg);
         margin: 15px;
         order: 2;
-        @media (min-width: $mobile) {
-            width: 195px;
+        @media (min-width: $mobile) {   
             transform: rotate(0deg);
             position: absolute;
             right: 0px;
