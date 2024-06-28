@@ -716,11 +716,10 @@
         @media (min-width: $full) {
         }
     }
-    &__authorComment {
+    &__author {
         display: flex;
-        flex-direction: column;
-        margin-left: 10px;
-        max-width: 340px;
+        align-self: flex-start;
+        flex-direction: row;
     }
     &__avatar {
         width: 84px;
@@ -730,11 +729,12 @@
         }
     }
     &__authorName {
+        margin-left: 10px;
         width: fit-content;
         height: fit-content;
         h4 {
             margin-top: 6px;
-            color: #7d7d7d;
+            color: #fff;
             font-weight: 600;
             font-size: 16px;
         }
@@ -760,10 +760,17 @@
             }
         }        
     }
+    &__authorComment {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        max-width: 340px;
+    }    
     &__commentImg {
         width: 155px;
         transform: rotate(-25deg);
         margin: 15px;
+        order: 2;
         @media (min-width: $mobile) {
             width: 195px;
             transform: rotate(0deg);
@@ -785,6 +792,7 @@
         align-self: flex-start;
         font-weight: 400;
         font-size: 16px;
+        order: 3;
         @media (min-width: $mobile) {
         }
         @media (min-width: $tablet) {
