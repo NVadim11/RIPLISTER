@@ -676,8 +676,12 @@
         padding: 20px;
         border: 1px solid #f5bfb4;
         border-radius: 20px;
-        width: 355px;
+        width: 100%;
         @media (min-width: $mobile) {
+            flex-direction: row;
+            align-items: start;
+            justify-content: start;
+            min-height: 230px;
         }
         @media (min-width: $tablet) {
         }
@@ -686,36 +690,86 @@
         @media (min-width: $full) {
         }
     }
-    &__authorInfo {
+    &__authorComment {
         display: flex;
-        width: 100%;
-        justify-content: start;
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
+        margin-left: 10px;
+        max-width: 340px;
     }
     &__avatar {
         width: 84px;
+        height: fit-content;
         img {
             width: 100%;
         }
     }
-    &__nameTime {
-        margin-left: 10px;
-        p {
+    &__authorName {
+        width: fit-content;
+        height: fit-content;
+        h4 {
             margin-top: 6px;
             color: #7d7d7d;
+            font-weight: 600;
+            font-size: 16px;
         }
+        span {
+            font-weight: 400;
+            font-size: 12px;
+            color: #7d7d7d;
+        }
+        @media (min-width: $tablet) {
+            h4 {
+                font-size: 20px;
+            }
+            span {
+                font-size: 16px;
+            }
+        }
+        @media (min-width: $full) {
+            h4 {
+                font-size: 24px;
+            }
+            span {
+                font-size: 18px;  
+            }
+        }        
     }
     &__commentImg {
         width: 155px;
         transform: rotate(-25deg);
         margin: 15px;
+        @media (min-width: $mobile) {
+            width: 195px;
+            transform: rotate(0deg);
+            position: absolute;
+            right: 0px;
+        }
+        @media (min-width: $tablet) {
+        }
+        @media (min-width: $pc) {
+        }
+        @media (min-width: $full) {
+        }
         img {
             width: 100%;
         }
     }
     &__commentText {
         margin: 15px 0 30px 0;
+        align-self: flex-start;
+        font-weight: 400;
+        font-size: 16px;
+        @media (min-width: $mobile) {
+        }
+        @media (min-width: $tablet) {
+            font-size: 20px;
+        }
+        @media (min-width: $pc) {
+            font-size: 24px;
+        }
+        @media (min-width: $full) {
+            font-size: 30px;
+        }
     }
     &__reportBtn {
         position: absolute;
