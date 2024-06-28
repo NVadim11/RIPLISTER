@@ -127,6 +127,7 @@
 	&__itemDate {
 		margin: 1.25rem 0 0 0;
 		text-align: center;
+		color: #171717;
 		span {
 			font-size: 0.875rem;
 			font-style: normal;
@@ -138,6 +139,9 @@
 			@media (min-width: $full) {
 				font-size: 1.25rem;
 			}
+		}
+		span::after {
+			background-color: transparent;
 		}
 	}
 	&__itemTitle {
