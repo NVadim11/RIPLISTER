@@ -581,6 +581,10 @@
         gap: 15px;
         width: 100%;
         margin-top: 31px;
+        @media (min-width: $mobile) { 
+            flex-direction: row;
+            gap: 30px;
+        }
     }
     &__ownBtn {
         display: flex;
@@ -629,6 +633,12 @@
     &__shareBtn {
         display: flex;
         justify-content: center;
+        @media (min-width: $mobile) { 
+            display: none;
+        }
+        @media (min-width: $tablet) {
+            display: flex;
+        }
         button {
             display: flex;
             justify-content: center;
@@ -647,20 +657,36 @@
 .memoComments {
     display: flex;
     margin-top: 65px;
+    color: #000;
     &__commentBox {
         display: flex;
         flex-direction: column;
     }
     &__title {
         display: flex;
+        flex-direction: column;
         margin: 0 30px;
+        width: fit-content;
+        position: relative;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 110%;
+        color: #171717;
+    }
+    &__amount {
+        position: absolute;
+        font-size: 14px;
+        font-weight: 400;
+        color: #7d7d7d;
+        top: -10px;
+        right: -10px;
     }
     .lineOrange {
         margin-top: 10px;
-        width: 156px;
+        width: 100%;
         height: 6px;
         border-radius: 30px;
-        margin-left: 30px;
+        background: #e55738;
     }
     &__descr {
         margin: 25px 30px 0px;
