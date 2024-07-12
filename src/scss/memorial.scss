@@ -802,12 +802,15 @@
         margin: 15px 0 30px 0;
         align-self: flex-start;
         font-weight: 400;
+        width: 60%;
         font-size: 16px;
         order: 3;
         @media (min-width: $mobile) {
+            margin: 45px 0px 30px -82px;
         }
         @media (min-width: $tablet) {
             font-size: 20px;
+            margin: 55px 0px 30px -100px;;
         }
         @media (min-width: $pc) {
             font-size: 24px;
@@ -849,11 +852,14 @@
     }
     &__formGroup {
         display: flex;
+        position: relative;
         flex-direction: column;
         align-items: center;
         border-radius: 20px;
         overflow: hidden;
         margin-top: 15px;
+        font-size: 16px;
+        color: #000;
         input {    
             border: 1px solid #ec6041;
             border-radius: 20px;        
@@ -865,46 +871,15 @@
             border-radius: 20px;    
             width: 100%;
             padding: 17px 24px;
+            position: relative;
         }
-    }
-    &__backgroundBtn {
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-self: center;
-        max-width: fit-content;
-        svg {
-            margin-right: 10px;
-            margin-bottom: 1px;
-        }  
-        button {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #ec6041;
-            border-radius: 20px;
-            padding: 17px 23px;
-            font-weight: 600;
-            font-size: 16px;
-            background-color: #FDE6DF !important;
-            color: #171717;
-        }        
-    }
-    &__bgPreview {
-        margin-top: 25px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        align-self: center;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 140%;
-    }
-    &__addBg {
-        margin-left: 22px;
+        .commentValidation {
+            position: absolute;
+            color: #7d7d7d;
+            font-size: 14px;
+            right: 11px;
+            bottom: 11px;
+        }
     }
     &__block {
         display: flex;
@@ -912,39 +887,44 @@
         flex-direction: column;
         margin-top: 22px;
     }
-    &__cost {
+    &__bgSelectBox {
         display: flex;
         flex-direction: row;
-        align-items: center;  
-        justify-content: center; 
-        p {
-            margin-right: 10px;
-        }
-        svg {
-            width: 20px;
-            height: 20px;
-            margin-left: 5px;
-            margin-bottom: 5px;
-        }
-    }
-    &__bgSelectBox {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 10px;
+        gap: 15px;
         margin-top: 16px;
-        div {            
+        div {          
+            display: flex; 
+            align-items: center;
+            overflow: hidden; 
             border-radius: 24px;
-            width: 110px;
-            height: 74px;
+            width: 70px;
+            height: 70px;
+            img {
+                align-self: center;
+                width: 100%;
+            }
         }
     }
     &__bgDefault {
         border: 1px solid #aaa;
-        background: transparent;
+        background: #fff;
+        .memoComments__closeBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            img {
+                width: 12px;
+                align-self: center;
+            }
+        }
     }
     &__bgBlue {
         background: linear-gradient(180deg, #064186 0%, #1c2022 100%);
+    }
+    &__bgCream {
+        background: #fbebd8;
     }
     &__bgGreen {
         background: #cff5d2;
@@ -960,48 +940,14 @@
     &__bgDescr {
         display: flex;
         font-size: 16px;
-        margin-top: 10px;
+        margin-top: 25px;
         align-items: center;
     }
     &__bgConfirmBtn {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 10px;
-        button {
-            background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
-            color: #ffffff;
-            position: relative;    
-            border-radius: 20px;
-            padding: 15px 36px;
-            font-weight: 600;
-            font-size: 20px;
-            span {
-                z-index: 10;
-                position: relative;
-            }
-        }
-        button:before {
-            right: 0;
-            height: 100%;
-            top: 0;
-            width: 100%;
-            border-radius: 20px;
-            content: "";
-            opacity: 0;
-            transition: opacity .25s ease-in-out;
-            background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
-            position: absolute;
-        }
-        button:hover:before {
-            opacity: 1;
-        }
-    }
-    &__submitBtn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 30px;
+        margin-top: 25px;
         button {
             background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
             color: #ffffff;
