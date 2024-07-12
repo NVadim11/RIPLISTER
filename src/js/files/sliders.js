@@ -107,8 +107,8 @@ function initSliders() {
 	}
 
 	// Main benefits slider
-	if (document.querySelector('.mainBenefits__slider')) { 
-		new Swiper ('.mainBenefits__slider', {
+	if (document.querySelector('.mainBenefitsSlider')) { 
+		new Swiper ('.mainBenefitsSlider', {
 			modules: [Pagination],
 			// observer: true,
 			// observeParents: true,
@@ -120,9 +120,10 @@ function initSliders() {
 			grabCursor: true,
 
 			pagination: {
-				el: '.mainBenefits__pagination',
-				clickable: true,
-			},
+				el: ".swiper-pagination",
+				type: "progressbar",
+			  //   progressbarFillClass: 'swiper-pagination-progressbar-fill'
+			  },
 			breakpoints: {
 				767.98: {
 					slidesPerView: 2.2,

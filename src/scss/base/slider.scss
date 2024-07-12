@@ -1,3 +1,58 @@
+.mainBenefitsSlider {
+    margin-top: 4.0625rem;
+    @media (min-width: $mobile) {
+        margin-top: 2.8125rem;
+    }
+    @media (min-width: $tablet) {
+        margin-top: 3.75rem;
+    }
+    @media (min-width: $pc) {
+        margin-top: 4.375rem;
+    }
+    @media (min-width: $full) {
+        margin-top: 6.25rem;
+    }
+    &__slide {
+		height: 12.5rem;
+		width: 19.25rem !important;
+		position: relative;
+		@media screen and (min-width: $mobile) {
+			height: 13.125rem;
+			width: 23.4375rem !important;
+		}
+		@media screen and (min-width: $tablet) {
+			height: 17.875rem;
+			width: 33.875rem !important;
+		}
+		@media screen and (min-width: $pc) {
+			height: 24.25rem;
+			width: 46rem !important;
+		}
+		@media screen and (min-width: $full) {
+			height: 24.25rem;
+			width: 48.75rem !important;
+		}
+		img {
+			
+			filter: brightness(50%);
+			box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
+			flex-shrink: 0;
+			border-radius: 1.25rem;
+			@media (min-width: $tablet) {
+				border-radius: 1.875rem;
+			}
+		}
+		iframe {
+		
+			border-radius: 1.25rem;
+			box-shadow: 0rem 1.1875rem 1.8125rem 0.25rem rgba(78, 54, 48, 0.3);
+			@media (min-width: $tablet) {
+				border-radius: 1.875rem;
+			}
+		}
+	}
+}
+
 .memoInfoSlider {
     height: 100%;
     width: 100%;
