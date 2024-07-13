@@ -122,7 +122,6 @@ function initSliders() {
 			pagination: {
 				el: ".swiper-pagination",
 				type: "progressbar",
-			  //   progressbarFillClass: 'swiper-pagination-progressbar-fill'
 			  },
 			breakpoints: {
 				767.98: {
@@ -156,10 +155,10 @@ function initSliders() {
 			autoHeight: true,
 			speed: 800,
 
-			scrollbar: {
-				el: '.mainRecent__scrollbar',
-				draggable: true,
-			},
+			pagination: {
+				el: ".swiper-pagination",
+				type: "progressbar",
+			  },
 			breakpoints: {
 				767.98: {
 					slidesPerView: 4.2,
@@ -237,7 +236,6 @@ function initSliders() {
 			pagination: {
 			  el: ".swiper-pagination",
 			  type: "progressbar",
-			//   progressbarFillClass: 'swiper-pagination-progressbar-fill'
 			},
 			spaceBetween: 26,
 			slidesPerView: 2.3,
