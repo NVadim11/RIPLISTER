@@ -672,6 +672,19 @@
         font-size: 24px;
         line-height: 110%;
         color: #171717;
+        @media (min-width: $mobile) {
+            font-size: 24px;
+            line-height: 110%;
+        }
+        @media (min-width: $tablet) {
+            font-size: 46px;
+        }
+        @media (min-width: $pc) {
+            font-size: 46px;
+        }
+        @media (min-width: $full) {
+            font-size: 48px;
+        }
     }
     &__amount {
         position: absolute;
@@ -680,6 +693,16 @@
         color: #7d7d7d;
         top: -10px;
         right: -10px;
+        @media (min-width: $mobile) {
+        }
+        @media (min-width: $tablet) {
+            font-size: 24px;
+        }
+        @media (min-width: $pc) {
+        }
+        @media (min-width: $full) {
+            font-size: 32px;
+        }
     }
     .lineOrange {
         margin-top: 10px;
@@ -690,6 +713,22 @@
     }
     &__descr {
         margin: 25px 30px 0px;
+        @media (min-width: $mobile) {
+            font-size: 16px;
+            line-height: 140%;
+        }
+        @media (min-width: $tablet) {
+            font-size: 20px;
+            line-height: 140%;
+        }
+        @media (min-width: $pc) {
+            font-size: 20px;
+            line-height: 140%;    
+        }
+        @media (min-width: $full) {
+            font-size: 24px;
+            line-height: 140%;
+        }
     }
     &__comment {
         display: flex;
@@ -786,13 +825,18 @@
         @media (min-width: $mobile) {   
             transform: rotate(0deg);
             position: absolute;
-            right: 0px;
+            right: 0;
         }
         @media (min-width: $tablet) {
+            margin: 15px 0 0 0;
+            right: 30px;
         }
         @media (min-width: $pc) {
+            width: 245px;
+            right: 40px;
         }
         @media (min-width: $full) {
+            width: 285px;
         }
         img {
             width: 100%;
@@ -802,21 +846,23 @@
         margin: 15px 0 30px 0;
         align-self: flex-start;
         font-weight: 400;
-        width: 60%;
+        width: 100%;
         font-size: 16px;
         order: 3;
         @media (min-width: $mobile) {
             margin: 45px 0px 30px -82px;
+            width: 60%;
         }
         @media (min-width: $tablet) {
             font-size: 20px;
-            margin: 55px 0px 30px -100px;;
+            margin: 55px 0px 30px -100px;
         }
         @media (min-width: $pc) {
             font-size: 24px;
         }
         @media (min-width: $full) {
             font-size: 30px;
+            margin: 70px 0px 30px -123px;
         }
     }
     &__reportBtn {

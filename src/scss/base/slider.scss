@@ -310,3 +310,44 @@
         }
     }
 }
+.memoCommentsSlider {
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        margin-top: 16px;
+    }
+    &__slide {
+        display: flex; 
+        align-items: center;
+        overflow: hidden; 
+        border-radius: 24px;
+        width: 70px!important;
+        height: 70px!important;
+        .slideImgItem {
+            align-self: center;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+        .slideImgBG {
+            position: absolute;
+            z-index: 5;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__slide:first-child {
+        background: #fff;
+        .memoComments__closeBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;           
+        }
+        .slideImgItem,.slideImgBG {
+            display: none;
+        }
+    }
+}
