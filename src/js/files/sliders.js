@@ -110,13 +110,10 @@ function initSliders() {
 	if (document.querySelector('.mainBenefitsSlider')) {
 		new Swiper('.mainBenefitsSlider', {
 			modules: [Pagination],
-			// observer: true,
-			// observeParents: true,
 			slidesPerView: 1.2,
 			spaceBetween: 12,
-			//autoHeight: true,
 			speed: 800,
-			// loop: true,
+			loop: true,
 			grabCursor: true,
 
 			pagination: {

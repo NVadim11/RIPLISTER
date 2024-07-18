@@ -6,6 +6,8 @@
 		display: flex;
 		flex-direction: column;
 	}
+}
+.mainPage {
 	.volunteer {
 		margin-top: 3.75rem;
 		@media (min-width: $mobile) {
@@ -76,29 +78,60 @@
 			margin-top: 4.375rem;
 		}
 		button {
-			padding: 1rem 2.125rem;
+			border-radius: 20px;
+			height: 54px;
+			padding: 0 2.125rem;
 			color: var(--white-color);
 			font-size: 1.125rem;
 			font-style: normal;
 			font-weight: 700;
 			line-height: normal;
-			border-radius: 2.5rem;
 			background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
+			position: relative;
+			span {
+				z-index: 10;
+				position: relative;
+			}
 			@media screen and (min-width: $mobile) {
 				font-size: 1.5rem;
-				padding: 1.5625rem 4.375rem;
+				height: 80px;
+				padding: 0 70px;
+				border-radius: 30px;
 			}
 			@media screen and (min-width: $tablet) {
-				padding: 2rem 4.375rem;
+				border-radius: 40px;
+				height: 94px;
 			}
 			@media screen and (min-width: $full) {
 				border-radius: 2.5rem;
 			}
 		}
-		button:hover {
-			background: linear-gradient(180deg, #eb8069 0%, #db4a2a 100%);
-			transition: 0.25s;
-			// border-radius: 2.5rem;
+		button::before {
+			content: '';
+			opacity: 0;
+			background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
+			transition: opacity 0.25s ease-in-out;
+			border-radius: 2.5rem;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			@media (min-width: $mobile) {
+				
+			}
+			@media (min-width: $tablet) {
+			
+			}
+			@media (min-width: $pc) {
+			
+			}
+		}
+		
+		button:hover:before {
+			@media screen and (min-width: $tablet) {
+				opacity: 1;
+			}
 		}
 	}
 	&__bg {
@@ -106,6 +139,7 @@
 		top: -4.75rem;
 		z-index: 1;
 		width: 100%;
+		height: 51.125rem;
 		@media screen and (min-width: $mobile) {
 			top: -6rem;
 		}
@@ -115,16 +149,17 @@
 		img {
 			object-fit: cover;
 			filter: brightness(50%);
-			width: 80rem;
+			width: 100%;
+			height: 51.125rem;
 		}
 	}
+	
 	&__bg-desktop {
 		display: none;
 		position: absolute;
 		top: -4.75rem;
 		z-index: 1;
 		width: 100%;
-		height: 59rem;
 		@media screen and (min-width: $mobile) {
 			top: -6rem;
 		}
@@ -139,10 +174,15 @@
 			top: -11.125rem;
 		}
 		img {
+			height: 43.375rem;
+			object-fit: cover;
 			width: 100%;
-			height: auto;
-			max-width: 100%;
-			max-height: 100%;
+			@media screen and (min-width: $pc) {
+				height: 48.625rem;
+			}
+			@media screen and (min-width: $full) {
+				height: 61.375rem;
+			}
 		}
 	}
 }
