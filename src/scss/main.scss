@@ -456,42 +456,36 @@
 	&__container {
 	}
 	&__header {
-		@media screen and (min-width: $full) {
+		@media screen and (min-width: $tablet) {
 			display: flex;
 			flex-direction: row;
-			padding: 6.875rem 8.75rem 4.6875rem 6.25rem;
+			justify-content: space-between;
 		}
 	}
 	&__descr {
-		@media screen and (min-width: $full) {
+		@media screen and (min-width: $tablet) { 
+			max-width: 60%;
+			flex: 0 0 60%
 		}
 		h1 {
-			padding: 0 2.9375rem;
 			text-align: center;
 			font-size: 2rem;
 			font-style: normal;
 			font-weight: 700;
 			line-height: normal;
-			@media screen and (min-width: $full) {
-				padding: 0;
+			@media screen and (min-width: $tablet) {
 				text-align: start;
-				font-size: 3.25rem;
-				line-height: normal;
 			}
 		}
 		p {
-			padding: 0 0.625rem;
 			text-align: center;
 			font-size: 1rem;
 			font-style: normal;
 			font-weight: 400;
 			line-height: normal;
 			margin-top: 1.5625rem;
-			@media screen and (min-width: $full) {
+			@media screen and (min-width: $tablet) {
 				text-align: start;
-				font-size: 1.5rem;
-				line-height: normal;
-				margin-top: 2.8125rem;
 			}
 		}
 	}
@@ -502,32 +496,20 @@
 		margin: 1.5625rem auto 0;
 		width: fit-content;
         cursor: pointer;
-		@media screen and (min-width: $full) {
-			position: relative;
-			margin: 0 0 0 18.75rem;
-			padding-bottom: 7.8125rem;
+		@media screen and (min-width: $tablet) {
+			margin: 0;
 		}
 		svg {
 			width: 2.125rem;
 			height: 2.125rem;
 			border-radius: 3.125rem;
 			margin-right: 0.5rem;
-			@media screen and (min-width: $full) {
-				width: 3.125rem;
-				height: 3.125rem;
-				margin-right: 1.25rem;
-			}
 		}
 		a {
 			font-size: 1.25rem;
 			font-style: normal;
 			font-weight: 700;
 			line-height: normal;
-			@media screen and (min-width: $full) {
-				white-space: nowrap;
-				font-size: 2rem;
-				line-height: normal;
-			}
 		}
 	}
 	&__row {
