@@ -123,6 +123,9 @@
 	box-shadow: 0 0 0.625rem 0 rgba(0, 0, 0, 0.3);
 	opacity: 0;
 	transition: opacity 0.25s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	@media (min-width: $mobile) {
 		width: 3.125rem;
 		height: 3.125rem;
@@ -563,27 +566,66 @@
 	}
 	&__btn {
 		margin-top: 1.75rem;
-		padding: 1rem 3rem;
-		color: var(--white-color);
-		font-size: 1.125rem;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
 		border-radius: 1.25rem;
-		transition: 0.25s;
 		background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
-		@media screen and (min-width: $pc) {
-			// margin-left: 18.75rem;
-			font-size: 1.5rem;
+		position: relative;
+		border-radius: 20px;
+		height: 54px;
+		padding: 0 50px;
+		span {
+			color: var(--white-color);
+			font-size: 1.125rem;
+			font-style: normal;
+			font-weight: 700;
 			line-height: normal;
-			white-space: nowrap;
-			border-radius: 2.5rem;
-			padding: 1.875rem 5rem;
+			position: relative;
+			z-index: 10;
+			@media screen and (min-width: $tablet) { 
+				font-size: 20px;
+			}
+			@media screen and (min-width: $pc) {
+				font-size: 24px;
+			}
+			@media screen and (min-width: $full) { 
+				font-size: 32px;
+			}
+		}
+		@media screen and (min-width: $tablet) {
+			height: 70px;
+			border-radius: 30px;
+		}
+		@media screen and (min-width: $pc) {
+			height: 94px;
+			border-radius: 40px;
+			padding: 0 75px;
+		}
+		@media screen and (min-width: $full) {
+			height: 100px;
+			padding: 0 110px;
 		}
 	}
-	button:hover {
-		background: linear-gradient(180deg, #eb8069 0%, #db4a2a 100%);
-		transition: 0.25s;
+	button::before {
+		content: '';
+		opacity: 0;
+		background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
+		transition: opacity 0.25s ease-in-out;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		border-radius: 20px;
+		@media screen and (min-width: $tablet) {
+			border-radius: 30px;
+		}
+		@media screen and (min-width: $pc) {
+			border-radius: 40px;
+		}
+	}
+	button:hover:before {
+		@media screen and (min-width: $tablet) {
+			opacity: 1;
+		}
 	}
 }
 
