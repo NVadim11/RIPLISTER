@@ -317,6 +317,14 @@
         flex-direction: row;
         position: relative;
         margin-top: 16px;
+        @media (min-width: $mobile) {
+        }
+        @media (min-width: $tablet) {
+        }
+        @media (min-width: $pc) {
+        }
+        @media (min-width: $full) {
+        }
     }
     &__slide {
         display: flex; 
