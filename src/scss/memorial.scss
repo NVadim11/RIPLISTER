@@ -740,7 +740,7 @@
         align-self: center;
         position: relative;
         margin-top: 25px;
-        padding: 20px;
+        padding: 13px 20px;
         border: 1px solid #f5bfb4;
         border-radius: 20px;
         width: 100%;
@@ -749,12 +749,14 @@
             align-items: start;
             justify-content: start;
             min-height: 230px;
+            padding: 24px;
         }
         @media (min-width: $tablet) {
-        }
-        @media (min-width: $pc) {
+            border-radius: 30px;
+            padding: 55px;
         }
         @media (min-width: $full) {
+            padding: 55px 74px;
         }
     }
     &__author {
@@ -818,24 +820,26 @@
         transform: rotate(-25deg);
         margin: 15px;
         order: 2;
+        img {
+            width: 100%;
+            height: 100%;
+        }
         @media (min-width: $mobile) {   
-            transform: rotate(0deg);
-            position: absolute;
-            right: 0;
+            transform: rotate(0deg);  
+            order: 4;          
         }
         @media (min-width: $tablet) {
             margin: 15px 0 0 0;
             right: 30px;
         }
         @media (min-width: $pc) {
-            width: 245px;
+            height: 212px;
+            width: 312px;
             right: 40px;
         }
         @media (min-width: $full) {
-            width: 285px;
-        }
-        img {
-            width: 100%;
+            width: 406px;
+            height: 277px;
         }
     }
     &__commentText {
@@ -923,15 +927,17 @@
             border-radius: 20px;        
             padding: 17px 0 17px 24px;
             width: 100%;
+            font-size: 16px;
             color: #000;
             @media (min-width: $mobile) {
                 width: 50%;
                 align-self: flex-start;
             }
             @media (min-width: $tablet) {
-
-            }
-            @media (min-width: $pc) {
+                margin-top: 40px;
+                padding: 24px 0 24px 40px;
+                border-radius: 30px;
+                font-size: 18px;
             }
             @media (min-width: $full) {
                 margin-top: 58px;
@@ -945,14 +951,14 @@
             border-radius: 20px;    
             width: 100%;
             padding: 17px 24px;
+            font-size: 16px;
             color: #000;
             position: relative;
-            @media (min-width: $mobile) {
-            }
+            margin-top: 21px;
             @media (min-width: $tablet) {
-
-            }
-            @media (min-width: $pc) {
+                font-size: 18px;
+                padding: 38px 0 38px 40px;
+                border-radius: 30px 
             }
             @media (min-width: $full) {
                 font-size: 20px;
@@ -1048,18 +1054,22 @@
         flex-direction: row;
         justify-content: space-between;
         }
-        @media (min-width: $tablet) {
-        }
-        @media (min-width: $pc) {
-        }
-        @media (min-width: $full) {
-        }
     }
     &__bgDescr {
         display: flex;
-        font-size: 16px;
-        margin-top: 25px;
+        font-size: 14px;
+        margin-top: 20px;
         align-items: center;
+        @media (min-width: $mobile) {
+            font-size: 14px;
+            line-height: 140%;
+        }
+        @media (min-width: $tablet) {
+            font-size: 20px;
+        }
+        @media (min-width: $full) {
+            font-size: 24px
+        }
     }
     &__bgConfirmBtn {
         display: flex;
@@ -1071,9 +1081,14 @@
             color: #ffffff;
             position: relative;    
             border-radius: 20px;
-            padding: 15px 36px;
+            padding: 16px 50px;
             font-weight: 600;
-            font-size: 20px;
+            font-size: 18px;
+        @media (min-width: $tablet) {
+            font-size: 24px;
+            padding: 20px 86px;
+            border-radius: 30px;
+        }
             span {
                 z-index: 10;
                 position: relative;
