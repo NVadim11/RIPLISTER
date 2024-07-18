@@ -263,6 +263,34 @@ function initSliders() {
 	}
 }
 
+	// Memo comment bg's
+	if (document.querySelector('.memoCommentsSlider')) { 
+		new Swiper('.memoCommentsSlider', {
+			modules: [],
+			grabCursor: true,
+			effect: 'slide',
+			speed: 800,
+			mousewheel: true,
+			pagination: {
+			  el: ".swiper-pagination",
+			  type: "progressbar",
+			},
+			spaceBetween: 5,	
+			slidesPerView: 4.2,
+			breakpoints: {
+				767.98: {
+					enabled: false
+					},
+			}
+
+			// navigation: false,
+			// observer: true,
+			// observeParents: true,
+			// slidesPerView: 1,
+			// speed: 800,
+		});
+	}
+
   // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
 	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');

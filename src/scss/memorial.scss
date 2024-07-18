@@ -810,13 +810,7 @@
                 font-size: 18px;  
             }
         }        
-    }
-    &__authorComment {
-        display: flex;
-        flex-direction: column;
-        margin-left: 10px;
-        max-width: 340px;
-    }    
+    }   
     &__commentImg {
         width: 195px;
         transform: rotate(-25deg);
@@ -927,11 +921,13 @@
             bottom: 11px;
         }
     }
-    &__block {
+    &__bgSlider {
         display: flex;
         align-items: center;
         flex-direction: column;
         margin-top: 22px;
+        width: 100%;
+        overflow: hidden;
     }
     &__bgSelectBox {
         display: flex;
