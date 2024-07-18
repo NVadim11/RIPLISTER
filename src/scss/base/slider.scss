@@ -337,6 +337,18 @@
             width: 100%;
             height: 100%;
         }
+        .slideSelector {
+            display: none;
+            @media (min-width: $mobile) {
+            }
+            @media (min-width: $tablet) {
+                display: flex;
+            }
+            @media (min-width: $pc) {
+            }
+            @media (min-width: $full) {
+            }
+        }
     }
     &__slide:first-child {
         background: #fff;

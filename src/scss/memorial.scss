@@ -586,19 +586,19 @@
             gap: 30px;
         }
     }
-    &__ownBtn {
-        display: flex;
-        justify-content: center;          
-        button {
-        border: 1px solid #ec6041;
-        border-radius: 20px;
-        padding: 15px 38px;
-        font-weight: 600;
-        font-size: 20px;
-        color: #000;
-        }
-    }
-    &__qrBtn {  
+    // &__ownBtn {
+    //     display: flex;
+    //     justify-content: center;          
+    //     button {
+    //     border: 1px solid #ec6041;
+    //     border-radius: 20px;
+    //     padding: 15px 38px;
+    //     font-weight: 600;
+    //     font-size: 20px;
+    //     color: #000;
+    //     }
+    // }
+    &__suggestBtn {  
         display: flex;
         justify-content: center;   
         button {
@@ -630,29 +630,29 @@
             opacity: 1;
         }
     }
-    &__shareBtn {
-        display: flex;
-        justify-content: center;
-        @media (min-width: $mobile) { 
-            display: none;
-        }
-        @media (min-width: $tablet) {
-            display: flex;
-        }
-        button {
-            display: flex;
-            justify-content: center;
-            border: 1px solid #ec6041;
-            border-radius: 20px;
-            padding: 15px 25px;
-            font-weight: 600;
-            font-size: 20px;
-            color: #000;
-        }
-        svg {
-            margin-right: 9px;
-        }
-    }
+    // &__shareBtn {
+    //     display: flex;
+    //     justify-content: center;
+    //     @media (min-width: $mobile) { 
+    //         display: none;
+    //     }
+    //     @media (min-width: $tablet) {
+    //         display: flex;
+    //     }
+    //     button {
+    //         display: flex;
+    //         justify-content: center;
+    //         border: 1px solid #ec6041;
+    //         border-radius: 20px;
+    //         padding: 15px 25px;
+    //         font-weight: 600;
+    //         font-size: 20px;
+    //         color: #000;
+    //     }
+    //     svg {
+    //         margin-right: 9px;
+    //     }
+    // }
 }
 .memoComments {
     display: flex;
@@ -697,6 +697,8 @@
         }
         @media (min-width: $tablet) {
             font-size: 24px;
+            top: -20px;
+            right: -20px;
         }
         @media (min-width: $pc) {
         }
@@ -837,6 +839,7 @@
         }
     }
     &__commentText {
+        white-space: inherit;
         margin: 15px 0 30px 0;
         align-self: flex-start;
         font-weight: 400;
@@ -882,13 +885,30 @@
         background-color: #FFF3ED;
         border-radius: 30px;
         padding: 30px 20px;
+        @media (min-width: $mobile) {
+        }
+        @media (min-width: $tablet) {
+            padding: 38px;
+        }
+        @media (min-width: $pc) {
+            padding: 45px;
+        }
+        @media (min-width: $full) {
+            padding: 84px 74px;
+        }
     }
     &__formTitle {
         font-weight: 600;
         font-size: 20px;
         line-height: 110%;
         color: #171717;
-        margin-bottom: 20   px;
+        margin-bottom: 20px;
+        @media (min-width: $tablet) {
+            font-size: 46px;
+        }
+        @media (min-width: $full) {
+            font-size: 48px;
+        }
     }
     &__formGroup {
         display: flex;
@@ -897,21 +917,49 @@
         align-items: center;
         border-radius: 20px;
         overflow: hidden;
-        margin-top: 15px;
-        font-size: 16px;
         color: #000;
         input {    
             border: 1px solid #ec6041;
             border-radius: 20px;        
             padding: 17px 0 17px 24px;
             width: 100%;
+            color: #000;
+            @media (min-width: $mobile) {
+                width: 50%;
+                align-self: flex-start;
+            }
+            @media (min-width: $tablet) {
+
+            }
+            @media (min-width: $pc) {
+            }
+            @media (min-width: $full) {
+                margin-top: 58px;
+                border-radius: 40px;
+                font-size: 20px;
+                padding: 38px 0 38px 75px;
+            }
         }
         textarea {     
             border: 1px solid #ec6041;   
             border-radius: 20px;    
             width: 100%;
             padding: 17px 24px;
+            color: #000;
             position: relative;
+            @media (min-width: $mobile) {
+            }
+            @media (min-width: $tablet) {
+
+            }
+            @media (min-width: $pc) {
+            }
+            @media (min-width: $full) {
+                font-size: 20px;
+                border-radius: 40px;
+                padding: 38px 0 38px 75px;
+                margin-top: 27px;
+            }
         }
         .commentValidation {
             position: absolute;
@@ -919,6 +967,23 @@
             font-size: 14px;
             right: 11px;
             bottom: 11px;
+            @media (min-width: $mobile) {
+                right: 25px;
+                bottom: 20px;
+                font-size: 14px;
+            }
+            @media (min-width: $tablet) {
+                right: 40px;
+                bottom: 26px;
+                font-size: 18px;
+            }
+            @media (min-width: $pc) {
+
+            }
+            @media (min-width: $full) {
+                right: 32px;
+                bottom: 18px;
+            }
         }
     }
     &__bgSlider {
@@ -978,6 +1043,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media (min-width: $mobile) {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        }
+        @media (min-width: $tablet) {
+        }
+        @media (min-width: $pc) {
+        }
+        @media (min-width: $full) {
+        }
     }
     &__bgDescr {
         display: flex;
