@@ -785,13 +785,16 @@
 		@media (min-width: $mobile) {
 			width: 100%;
 		}
+		@media (min-width: $pc) {
+			width: 290px;
+		}
 		@media screen and (min-width:$full) {
-			width: 23.625rem;
+			width: 378px;
 		}
 		label {
 			position: absolute;
 			color: #7D7D7D;
-			font-size: 0.875rem;
+			font-size: 14px;
 			font-style: normal;
 			font-weight: 400;
 			line-height: normal;
@@ -801,7 +804,7 @@
 			background: var(--white-color);
 			padding: 0 0.5625rem;
 			@media screen and (min-width:$pc) {
-				font-size: 1rem;
+				font-size: 16px;
 			}
 		}
 		input {
@@ -809,25 +812,23 @@
 			width: 16.25rem;
 			height: 3.375rem;			
 			flex-shrink: 0;
-			border-radius: 1.875rem;
+			border-radius: 20px;
 			border: 0.0625rem solid #AAA;
 			z-index:1;
 			color: #000;
 			font-size: 1.125rem;
 			font-style: normal;
 			font-weight: 600;
-			line-height: normal;
+			line-height: normal;	
 			padding: 1.25rem 1.5625rem;
 			@media (min-width: $mobile) {		
 				width: 100%;
 				height: 100%;
-			}
-			@media (min-width: $tablet) {
-			}
-			@media screen and (min-width:$pc) {
-				font-size: 1.5rem;
+				border-radius: 30px;
 			}
 			@media (min-width: $full) {
+				font-size: 24px;
+				border-radius: 40px;
 			}
 		}
 	}
@@ -968,19 +969,19 @@
 	&__showPass, &__showNewPass, &__showRepeatPass {
 		position: absolute;
 		z-index: 1;
-		right: 2.9375rem;
-		top: 0.9375rem;
+		right: 47px;
+		top: 15px;
 		@media (min-width: $mobile) {
-			right: 2.9375rem;
-			top: 1.25rem;
+			right: 47px;
+			top: 20px;
 		}
 		@media screen and (min-width:$pc) {
-			right: 3.75rem;
-			top: 1.4375rem;
+			right: 60px;
+			top: 20px;
 		}
 		svg {
 			z-index: 1;
-			height: 1.4375rem;
+			height: 23px;
 			position: absolute;
 		}
 	}
