@@ -827,19 +827,16 @@
         @media (min-width: $mobile) {   
             transform: rotate(0deg);  
             order: 4;          
-        }
-        @media (min-width: $tablet) {
-            margin: 15px 0 0 0;
-            right: 30px;
+            margin: 30px 0px 0 0px;
         }
         @media (min-width: $pc) {
             height: 212px;
             width: 312px;
-            right: 40px;
+            margin: 0;
         }
         @media (min-width: $full) {
             width: 406px;
-            height: 277px;
+            height: 277px;            
         }
     }
     &__commentText {
@@ -848,22 +845,24 @@
         align-self: flex-start;
         font-weight: 400;
         width: 100%;
-        font-size: 16px;
-        order: 3;
+        font-size: 16px!important;
+        line-height: 140%;
+        order: 3; 
         @media (min-width: $mobile) {
-            margin: 45px 0px 30px -82px;
-            width: 60%;
+            margin: 45px 0 30px 0;
+            max-width: 325px;  
         }
         @media (min-width: $tablet) {
-            font-size: 20px;
-            margin: 55px 0px 30px -100px;
+            font-size: 20px!important;
+            max-width: 525px;  
         }
         @media (min-width: $pc) {
-            font-size: 24px;
+            font-size: 24px!important;
+            max-width: 700px;  
         }
         @media (min-width: $full) {
-            font-size: 30px;
-            margin: 70px 0px 30px -123px;
+            font-size: 30px!important;
+            max-width: 800px;  
         }
     }
     &__reportBtn {
