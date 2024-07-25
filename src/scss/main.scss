@@ -542,7 +542,7 @@
 			margin-right: 0.3125rem;
 			@media (min-width: $tablet) {
 				width: 3.125rem;
-				width: 3.125rem;
+				height: 3.125rem;
 				margin-right: 0.625rem;
 			}
 		}
@@ -748,7 +748,7 @@
 			height: 2.1875rem;
 			margin-right: 0.3125rem;
 			@media (min-width: $tablet) {
-				width: 3.125rem;
+				height: 3.125rem;
 				width: 3.125rem;
 				margin-right: 0.625rem;
 			}
@@ -841,14 +841,6 @@
 			}
 		}
 	}
-}
-@media (min-width: $mobile) {
-}
-@media (min-width: $tablet) {
-}
-@media (min-width: $pc) {
-}
-@media (min-width: $full) {
 }
 .mainRecent {
 	margin-top: 2.5rem;
@@ -1379,4 +1371,12 @@
 	@media screen and (min-width: $full) {
 		margin-top: 7.1875rem;
 	}
+}
+@media (min-width: $mobile) {
+}
+@media (min-width: $tablet) {
+}
+@media (min-width: $pc) {
+}
+@media (min-width: $full) {
 }

@@ -166,6 +166,7 @@ a {
 	}
 	svg {
 		transition: .25s;
+		border-radius: 50%;
 		path {
 			transition: .25s;
 		}
@@ -176,6 +177,7 @@ a:hover {
 		svg {
 			background-color: var(--link-color);
 			transition: .25s;
+			border-radius: 50%;
 	
 			path {
 			fill: var(--white-color);
