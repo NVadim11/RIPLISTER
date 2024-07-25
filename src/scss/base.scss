@@ -172,16 +172,18 @@ a {
 	}
 }
 a:hover {
-	svg {
-		background-color: var(--link-color);
-		transition: .25s;
-
-		path {
-		fill: var(--white-color);
-		transition: .25s;
+	@media screen and (min-width: $tablet) {
+		svg {
+			background-color: var(--link-color);
+			transition: .25s;
+	
+			path {
+			fill: var(--white-color);
+			transition: .25s;
+			}
 		}
-	}
-	span:after {
-		background-color: transparent;
+		span:after {
+			background-color: transparent;
+		}
 	}
 }
