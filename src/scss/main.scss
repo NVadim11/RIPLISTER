@@ -1372,6 +1372,136 @@
 		margin-top: 7.1875rem;
 	}
 }
+
+.mainTG {
+	margin-top: 1.25rem;
+	@media (min-width: $mobile) {
+		margin-top: 1.5625rem;
+	}
+	@media (min-width: $tablet) {
+		margin-top: 1.875rem;
+	}
+	@media (min-width: $pc) {
+		margin-top: 2.1875rem;
+	}
+	@media (min-width: $full) {
+		margin-top: 2.5rem;
+	}
+	&__container {
+		max-width: 22.1875rem;
+		@media (min-width: $mobile) {
+			max-width: 43.75rem;
+		}
+		@media (min-width: $tablet) {
+			max-width: 64.625rem;
+		}
+		@media (min-width: $pc) {
+			max-width: 75.25rem;
+		}
+		@media (min-width: $full) {
+			max-width: 93.125rem;
+		}
+	}
+	&__content {
+		background: linear-gradient(90deg, #298bfa 1.22%, #2f8ffb 34.72%, rgba(196, 224, 255, 1) 100%);
+		border-radius: 30px;
+		padding: 1.5625rem 1.875rem;
+		@media (min-width: $mobile) {
+		}
+		@media (min-width: $tablet) {
+		}
+		@media (min-width: $pc) {
+		}
+		@media (min-width: $full) {
+		}
+	}
+	&__text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		h2 {
+			font-weight: 600;
+			font-size: 1.5rem;
+			line-height: 120%;
+			text-align: center;
+			color: var(--white-color);
+			margin-top: 0.9375rem;
+		}
+		p {
+			font-weight: 400;
+			font-size: 1rem;
+			text-align: center;
+			color: var(--white-color);
+			margin-top: 0.625rem;
+		}
+	}
+	&__btn {
+		margin-top: 1.5625rem;
+		display: flex;
+		justify-content: center;
+		button {
+			border-radius: 1.25rem;
+			height: 3.375rem;
+			font-weight: 700;
+			font-size: 1.125rem;
+			color: var(--white-color);
+			padding: 0 1.5625rem;
+			background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
+			position: relative;
+			border-radius: 1.25rem;
+			display: flex;
+			align-items: center;
+			@media (min-width: $mobile) {
+			}
+			@media (min-width: $tablet) {
+			}
+			@media (min-width: $pc) {
+				height: 4.375rem;
+				border-radius: 2.5rem;
+			}
+			@media (min-width: $full) {
+			}
+			span {
+				position: relative;
+				font-size: 1.125rem;
+				z-index: 10;
+				@media (min-width: $pc) {
+					font-size: 1.5rem;
+				}
+			}
+			svg {
+				position: relative;
+				z-index: 10;
+				margin-right: 0.3125rem;
+			}
+		}
+		button::before {
+			content: '';
+			opacity: 0;
+			background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
+			transition: opacity 0.25s ease-in-out;
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			@media (min-width: $tablet) {
+				border-radius: 1.875rem;
+			}
+			@media (min-width: $pc) {
+				border-radius: 2.5rem;
+			}
+			@media (min-width: $full) {
+			}
+		}
+		button:hover:before {
+			@media screen and (min-width: $tablet) {
+				opacity: 1;
+			}
+		}
+	}
+}
 @media (min-width: $mobile) {
 }
 @media (min-width: $tablet) {
