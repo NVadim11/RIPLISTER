@@ -50,6 +50,7 @@ $full: em(1919.98); // large size screens
 $pc: em(1439.98); // pc
 $tablet: em(1279.98); // Планшети, деякі телефони в горизонтальному положенні, netbooks
 $mobile: em(767.98); // Телефони L
+$mobile-sm: em(549.98); // Телефони S
 $mini: em($containerWidth); // small phones
 
 // Тип адаптива:
@@ -186,6 +187,10 @@ body {
 // Для підключення/вимкнення конкретних стилів дивись base.scss
 @import 'base';
 @import 'libs/swiper';
+
+// Components
+@import 'components/form-tabs.scss';
+@import 'components/mainForm.scss';
 
 // Підключення стилів загальних елементів проекту
 @import 'common';

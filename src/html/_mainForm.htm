@@ -1,0 +1,90 @@
+<div class="mainFormWrapper">
+  <div data-tabs class="tabs mainForm-tabs">
+    <nav data-tabs-titles class="tabs__navigation">
+      <button type="button" class="tabs__title _tab-active">Пошук людини</button>
+      <button type="button" class="tabs__title">Пошук по id</button>
+      <button type="button" class="tabs__title tabs__title-map disabled">Пошук на мапі <span>Вже скоро</span></button>
+    </nav>
+    <div data-tabs-body class="tabs__content">
+      <div class="tabs__body">
+        <form class="mainForm" id="mainSearchForm">
+          <div class="mainForm__wrapper">
+            <div class="base-input--group">
+              <img src="img/input-icon1.svg" alt="" />
+              <input class="base-input" type="text" name="secondName" id="secondName" placeholder="Прізвище" minlength="1" data-text-input />
+              <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+            </div>
+            <div class="base-input--group">
+              <img src="img/input-icon1.svg" alt="" />
+              <input class="base-input" type="text" name="firstName" id="firstName" placeholder="Ім'я" minlength="1" data-text-input />
+              <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+            </div>
+            <div class="base-input--group">
+              <img src="img/input-icon1.svg" alt="" />
+              <input class="base-input" type="text" name="middleName" id="middleName" placeholder="Отчество" minlength="1" data-text-input />
+              <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+            </div>
+
+            <div class="input--group-multi">
+              <label for="dayBirth">Дата рождения:</label>
+              <div class="base-input--group">
+                <img src="img/input-icon2.svg" alt="" />
+                <input class="base-input" type="text" name="dayBirth" id="dayBirth" placeholder="День" minlength="1" maxlength="2" data-number-input />
+                <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+              </div>
+              <div class="base-input--group">
+                <img src="img/input-icon2.svg" alt="" />
+                <input class="base-input" type="text" name="monthBirth" id="monthBirth" placeholder="Месяц" minlength="1" data-text-input />
+                <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+              </div>
+              <div class="base-input--group">
+                <img src="img/input-icon2.svg" alt="" />
+                <input class="base-input" type="text" name="yearBirth" id="yearBirth" placeholder="Год" minlength="1" maxlength="4" data-number-input />
+                <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+              </div>
+            </div>
+
+            <div class="input--group-multi">
+              <label for="dayDeath">Дата смерти:</label>
+              <div class="base-input--group">
+                <img src="img/input-icon2.svg" alt="" />
+                <input class="base-input" type="text" name="dayDeath" id="dayDeath" placeholder="День" minlength="1" maxlength="2" data-number-input />
+                <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+              </div>
+              <div class="base-input--group">
+                <img src="img/input-icon2.svg" alt="" />
+                <input class="base-input" type="text" name="monthDeath" id="monthDeath" placeholder="Месяц" minlength="1" data-text-input />
+                <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+              </div>
+              <div class="base-input--group">
+                <img src="img/input-icon2.svg" alt="" />
+                <input class="base-input" type="text" name="yearDeath" id="yearDeath" placeholder="Год" minlength="1" maxlength="4" data-number-input />
+                <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+              </div>
+            </div>
+
+            <div class="base-input--group">
+              <img src="img/input-icon3.svg" alt="" />
+              <input class="base-input" type="text" name="placeBirth" id="placeBirth" placeholder="Место захоронения" minlength="1" data-text-input />
+              <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+            </div>
+
+            <div class="base-input--group">
+              <img src="img/input-icon3.svg" alt="" />
+              <input class="base-input" type="text" name="placeDeath" id="placeDeath" placeholder="Место / Регион захоронения" minlength="1" data-text-input />
+              <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+            </div>
+
+            <div class="mainForm__btn">
+              <button type="submit" id="searchButton" disabled><img src="img/search-item.svg" alt="" /><span>Пошук</span></button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+      <div class="tabs__body">
+        <div class="mainForm__wrapper">Вміст другого таба</div>
+      </div>
+    </div>
+  </div>
+</div>

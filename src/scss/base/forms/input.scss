@@ -59,3 +59,94 @@ textarea.input {
 	resize: none;
 	padding: 0px 0px;
 }
+
+
+// New Styles
+
+.base-input--group {
+	position: relative;
+	margin-top: 0.625rem;
+	width: 100%;
+	> img {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 1.0625rem;
+	}
+
+	> label {
+		font-size: 1.05rem;
+	}
+
+	> .errMsg {
+		position: absolute;
+		color: rgb(255, 0, 0);
+		top: calc(100% + 3px);
+		left: 0;
+		min-width: fit-content;
+		font-size: .75rem;
+
+	}
+
+	@media (min-width: 1280px) {
+		margin-top: 0;
+	}
+}
+
+.input--group-multi {
+	display: grid;
+	grid-template-columns: .9fr 1.1fr 1.0fr;
+	// margin-top: 1rem;
+	gap: 0 .55rem;
+
+	> .base-input--group {
+		img {
+			display: none;
+
+			@media (min-width: 768px) {
+				display: block;
+			}
+		}
+	}
+
+	.base-input {
+		padding-left: var(--_input-padding);
+
+		@media (min-width: 768px) {
+			padding-left: var(--_input-padding-left);
+		}
+	}
+
+	> label {
+		grid-column: 1 / 4;
+
+		font-size: 0.75rem;
+
+		margin-top: 1rem;
+
+		@media (min-width: 768px) {
+			font-size: 1.05rem;
+			margin-top: 0;
+		}
+
+	}
+}
+
+.base-input {
+	--_input-padding: 1.0625rem;
+	--_input-padding-left: 3.375rem;
+	--_input-border-radius: 1.25rem;
+	min-width: auto;
+	width: 100%;
+	padding: var(--_input-padding) var(--_input-padding) var(--_input-padding) var(--_input-padding-left);
+	// padding: 1.0625rem 1.0625rem 1.0625rem 3.375rem;
+	border-radius: var(--_input-border-radius);
+	border: 0.0625rem solid var(--orange-color);
+	background: var(--white-color);
+
+	@media (min-width: 1280px) {
+		--_input-padding: 1.5625rem;
+		--_input-border-radius: 1.875rem;
+	}
+
+}

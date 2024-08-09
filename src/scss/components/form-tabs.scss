@@ -1,0 +1,58 @@
+.mainForm-tabs {
+  --_tabs-bg-color: #FFF8F6;
+  --_tabs-bg-color-active: var(--orange-color);
+  z-index: 5;
+
+  .tabs__navigation {
+    max-width: calc(100% - 1.75rem);
+    display: flex;
+    margin-bottom: -1px;
+  }
+
+  .tabs__body {
+    min-height: 200px;
+  }
+
+  .tabs__title {
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    padding: .9rem 1.5rem;
+    min-height: 4rem;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: var(--_tabs-bg-color);
+    transition: background-color 0.25s;
+
+    &:hover {
+      background-color: #FFF3ED;
+    }
+
+    &._tab-active {
+      background-color: var(--_tabs-bg-color-active);
+      color: var(--white-color);
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+    &.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &.tabs__title-map {
+      display: none;
+      color: #7D7D7D;
+
+      span {
+        color: var(--orange-color);
+        font-size: 0.75rem;
+        display: inline-block;
+        transform: translateY(-0.625rem);
+        margin-left: 0.3125rem;
+      }
+
+      @media screen and (min-width: $mobile) {
+        display: block;
+      }
+    }
+  }
+}
