@@ -218,7 +218,7 @@
 	transform: translate(-25%, -50%);
 }
 .qs-datepicker .qs-month-year {
-	font-weight: 700;
+	font-weight: var(--fw-700);
 	-webkit-transition: border 0.2s;
 	transition: border 0.2s;
 	border-bottom: 1px solid rgba(0, 0, 0, 0);
@@ -274,7 +274,7 @@
 	border-radius: 0.26392em;
 }
 .qs-datepicker .qs-square.qs-current {
-	font-weight: 700;
+	font-weight: var(--fw-700);
 }
 .qs-datepicker .qs-square.qs-current span {
 	text-decoration: underline;
@@ -313,7 +313,7 @@
 }
 .qs-datepicker .qs-square.qs-day {
 	cursor: default;
-	font-weight: 700;
+	font-weight: var(--fw-700);
 	color: grey;
 }
 .qs-datepicker .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {

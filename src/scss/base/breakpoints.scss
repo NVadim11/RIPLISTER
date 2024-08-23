@@ -1,0 +1,19 @@
+$minWidth: 375;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера (0 = немає обмеження)
+$minWidthContainer: 355;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
+$containerPadding: 0;
+
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $minWidthContainer + $containerPadding;
+
+// Брейк-поїнти
+$full: em(1919.98); // large size screens
+$pc: em(1439.98); // pc
+$tablet: em(1279.98); // Планшети, деякі телефони в горизонтальному положенні, netbooks
+$mobile: em(767.98); // Телефони L
+$mobile-sm: em(549.98); // Телефони S
+$mini: em($containerWidth); // small phones

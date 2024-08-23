@@ -31,7 +31,7 @@
       background-color: var(--_tabs-bg-color-active);
       color: var(--white-color);
       font-size: 1.125rem;
-      font-weight: 600;
+      font-weight: var(--fw-700);
     }
     &.disabled {
       cursor: not-allowed;

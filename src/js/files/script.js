@@ -10,9 +10,8 @@ const contactFormComponent = document.getElementById("contactFormComponent");
 const submitContactBtn = document.getElementById("contactFormSubmit");
 const contactErrMsg = document.querySelector(".contactForm__errorMsg");
 
-const headerMain = document.querySelector(".headerMain");
-const mainMenuBtn = document.querySelector(".headerMain__menuBtn");
-const altMenuBtn = document.querySelector(".headerAlt__menuBtn");
+const headerMain = document.querySelector(".header");
+const mainMenuBtn = headerMain.querySelector(".menu-toggle");
 const menuCloseBtn = document.querySelector(".menu__closeBtn");
 const detailCoverImg = document.querySelector(".detail__coverImg");
 const detailHeaderTitle = document.querySelector(".detail__header-title");
@@ -26,14 +25,6 @@ const volunteerPage = document.querySelector(".volunteerPage");
 if (mainMenuBtn) {
 	const menu = document.querySelector(".menu");
 	mainMenuBtn.addEventListener("click", function (e) {
-		menu.classList.add("_active");
-		menuOpen();
-	});
-}
-// Alt header burger menu
-if (altMenuBtn) {
-	const menu = document.querySelector(".menu");
-	altMenuBtn.addEventListener("click", function (e) {
 		menu.classList.add("_active");
 		menuOpen();
 	});

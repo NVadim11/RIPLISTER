@@ -32,7 +32,7 @@
         top: 0;
         width: 100%;
         h4 {
-            font-weight: 600;
+            font-weight: var(--fw-700);
             font-size: 2.25rem;
             line-height: 1.2;
             color: #171717;
@@ -112,7 +112,7 @@
     }
     &__btnFollow {
         padding: 0.6875rem 1.1875rem 0.75rem 1.0625rem;
-        font-weight: 600;
+        font-weight: var(--fw-700);
         font-size: 0.875rem;
         color: #000;
         border-radius: 1.25rem;
@@ -148,7 +148,7 @@
     }
     &__btnUnfollow {
         padding: 0.6875rem 1.1875rem 0.75rem 1.0625rem;
-        font-weight: 600;
+        font-weight: var(--fw-700);
         font-size: 0.875rem;
         color: #000;
         border-radius: 1rem;
@@ -235,7 +235,7 @@
         }
     }
     &__personals-value {
-        font-weight: 600;
+        font-weight: var(--fw-700);
         font-size: 1rem;
         color: #171717;
         @media (min-width: $tablet) {
@@ -262,7 +262,7 @@
     }
     &__personals-link {
         a {
-            font-weight: 600;
+            font-weight: var(--fw-700);
             font-size: 1rem;
             text-decoration: underline;
             text-decoration-skip-ink: none;
@@ -295,7 +295,7 @@
             background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
             color: #ffffff;
             position: relative;
-            font-weight: 600;
+            font-weight: var(--fw-700);
             font-size: 1.25rem;
             color: #fff;
             @media (min-width: $mobile) {
@@ -397,7 +397,7 @@
             background: #fff3ed;
             color: #000000;
             position: relative;
-            font-weight: 600;
+            font-weight: var(--fw-700);
             font-size: 1.25rem;
             @media (min-width: $mobile) {
                 padding: 1.0625rem 1.6875rem;
@@ -558,7 +558,7 @@
         }
     }
     &__title {
-        font-weight: 700;
+        font-weight: var(--fw-700);
         line-height: 110%;
         text-align: center;
         color: #171717;
@@ -593,7 +593,7 @@
     //     border: 1px solid #ec6041;
     //     border-radius: 20px;
     //     padding: 15px 38px;
-    //     font-weight: 600;
+    //     font-weight: var(--fw-700);
     //     font-size: 20px;
     //     color: #000;
     //     }
@@ -607,7 +607,7 @@
             position: relative;    
             border-radius: 20px;
             padding: 15px 36px;
-            font-weight: 600;
+            font-weight: var(--fw-700);
             font-size: 20px;
             span {
                 z-index: 10;
@@ -645,7 +645,7 @@
     //         border: 1px solid #ec6041;
     //         border-radius: 20px;
     //         padding: 15px 25px;
-    //         font-weight: 600;
+    //         font-weight: var(--fw-700);
     //         font-size: 20px;
     //         color: #000;
     //     }
@@ -668,7 +668,7 @@
         margin: 0 30px;
         width: fit-content;
         position: relative;
-        font-weight: 600;
+        font-weight: var(--fw-700);
         font-size: 24px;
         line-height: 110%;
         color: #171717;
@@ -790,7 +790,7 @@
         h4 {
             margin-bottom: 6px;
             color: #fff;
-            font-weight: 600;
+            font-weight: var(--fw-700);
             font-size: 16px;
         }
         span {            
@@ -858,7 +858,7 @@
         }
         @media (min-width: $pc) {
             font-size: 24px!important;
-            max-width: 700px;  
+            max-width: var(--fw-700)px;  
         }
         @media (min-width: $full) {
             font-size: 30px!important;
@@ -901,7 +901,7 @@
         }
     }
     &__formTitle {
-        font-weight: 600;
+        font-weight: var(--fw-700);
         font-size: 20px;
         line-height: 110%;
         color: #171717;
@@ -1081,7 +1081,7 @@
             position: relative;    
             border-radius: 20px;
             padding: 16px 50px;
-            font-weight: 600;
+            font-weight: var(--fw-700);
             font-size: 18px;
          @media (min-width: $mobile) {
             border-radius: 20px;
@@ -1155,7 +1155,7 @@
         }
         h4 {
             margin-left: 10px;
-            font-weight: 600;
+            font-weight: var(--fw-700);
             color: #171717;
         }
     }
@@ -1192,7 +1192,7 @@
             width: 100%;
             font-size: 14px!important;
             font-style: normal;
-            font-weight: 700;
+            font-weight: var(--fw-700);
             line-height: normal;
             font-size: 1rem;
             font-size: 14px;
@@ -1222,7 +1222,7 @@
             position: relative;    
             border-radius: 20px;
             padding: 15px 33px;
-            font-weight: 600;
+            font-weight: var(--fw-700);
             font-size: 18px;
             span {
                 z-index: 10;
@@ -1340,7 +1340,7 @@
          }
     }
     &__tab-title {
-        font-weight: 600;
+        font-weight: var(--fw-700);
         font-size: 1rem;
         line-height: 140%;
         color: #171717;
@@ -1381,7 +1381,7 @@
         color: #171717;
         font-size: 1.125rem;
         font-style: normal;
-        font-weight: 600;
+        font-weight: var(--fw-700);
         line-height: normal;
         @media screen and (min-width:$tablet) {
           font-size: 2.875rem;
@@ -1389,7 +1389,7 @@
     }
     &__showBtn {
         margin: 35px 0;
-        font-weight: 600;
+        font-weight: var(--fw-700);
         font-size: 1rem;
         max-width: fit-content;
         cursor: pointer;

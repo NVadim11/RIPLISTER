@@ -97,7 +97,7 @@
 				background-color: var(--text-color-black);
 			}
 			display: flex;
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			font-size: 1.125rem;
 			letter-spacing: 0.1em;
 			text-transform: uppercase;
@@ -129,7 +129,7 @@
 			color: var(--text-color-black);
 			font-size: 1rem;
 			font-style: normal;
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			display: flex;
 			align-items: center;
@@ -165,7 +165,7 @@
 		color: var(--orange-color);
 		font-size: 1.25rem;
 		font-style: normal;
-		font-weight: 600;
+		font-weight: var(--fw-700);
 		line-height: normal;
 		letter-spacing: 0.125rem;
 		text-transform: uppercase;
@@ -281,7 +281,7 @@
 		span {
 			font-size: 0.75rem;
 			font-style: normal;
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			letter-spacing: 0.075rem;
 			color: var(--text-color-black);
@@ -392,7 +392,7 @@
 				background-color: var(--text-color-black);
 			}
 			display: flex;
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			font-size: 1.125rem;
 			letter-spacing: 0.1em;
 			text-transform: uppercase;
@@ -424,7 +424,7 @@
 			color: var(--text-color-black);
 			font-size: 1rem;
 			font-style: normal;
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			display: flex;
 			align-items: center;
@@ -460,7 +460,7 @@
 		color: var(--orange-color);
 		font-size: 1.25rem;
 		font-style: normal;
-		font-weight: 600;
+		font-weight: var(--fw-700);
 		line-height: normal;
 		letter-spacing: 0.125rem;
 		text-transform: uppercase;
@@ -576,7 +576,7 @@
 		span {
 			font-size: 0.75rem;
 			font-style: normal;
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			letter-spacing: 0.075rem;
 			color: var(--text-color-black);

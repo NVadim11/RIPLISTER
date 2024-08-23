@@ -1,0 +1,27 @@
+.text-accent {
+  color: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightness));
+
+  .text-accent--lighter {
+    color: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightness--lighter));
+  }
+}
+
+.link-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--text-color-underline);
+  letter-spacing: 0.15em;
+  transition: 0.25s;
+
+  &.text-accent {
+    text-decoration-color: hsl(var(--accent-hue), var(--accent-saturation), 56%);
+  }
+
+  @media (any-hover: hover) {
+		&:hover {
+      color: var(--accent-color);
+      text-decoration-color: var(--accent-color);
+		}
+	}
+
+}

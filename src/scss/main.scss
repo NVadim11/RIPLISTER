@@ -37,7 +37,7 @@
 // 			text-align: center;
 // 			font-size: 2.25rem;
 // 			font-style: normal;
-// 			font-weight: 600;
+// 			font-weight: var(--fw-700);
 // 			line-height: normal;
 // 			padding: 7.5rem 0 0 0;
 // 			z-index: 5;
@@ -86,7 +86,7 @@
 // 			color: var(--white-color);
 // 			font-size: 1.125rem;
 // 			font-style: normal;
-// 			font-weight: 700;
+// 			font-weight: var(--fw-700);
 // 			line-height: normal;
 // 			background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
 // 			position: relative;
@@ -195,7 +195,7 @@
 			text-align: center;
 			font-size: 2rem;
 			font-style: normal;
-			font-weight: 700;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			@media (min-width: $mobile) {
 			}
@@ -339,7 +339,7 @@
 			text-align: center;
 			font-size: 2rem;
 			font-style: normal;
-			font-weight: 700;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			@media (min-width: $mobile) {
 			}
@@ -398,7 +398,7 @@
 		a {
 			font-size: 1.25rem;
 			font-style: normal;
-			font-weight: 700;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			@media (min-width: $tablet) {
 				font-size: 1.5rem;
@@ -455,7 +455,7 @@
 			color: var(--text-color-black);
 			font-size: 1.375rem;
 			font-style: normal;
-			font-weight: 700;
+			font-weight: var(--fw-700);
 			line-height: normal;
 		}
 		p {
@@ -494,7 +494,7 @@
 			height: 6.25rem;
 		}
 		span {
-			font-weight: 700;
+			font-weight: var(--fw-700);
 			font-size: 1.25rem;
 			color: var(--orange-color);
 			transition: 0.25s;
@@ -605,7 +605,7 @@
 		a {
 			font-size: 1.25rem;
 			font-style: normal;
-			font-weight: 700;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			@media (min-width: $tablet) {
 				font-size: 1.5rem;
@@ -622,73 +622,6 @@
 		@media (min-width: $tablet) {
 			margin-top: 0;
 		}
-		button {
-			font-weight: 700;
-			font-size: 1.125rem;
-			color: var(--white-color);
-			padding: 0 2.125rem;
-			height: 3.375rem;
-			background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
-			position: relative;
-			border-radius: 1.25rem;
-			span {
-				position: relative;
-				z-index: 10;
-				font-size: 1.125rem;
-				@media (min-width: $mobile) {
-				}
-				@media (min-width: $tablet) {
-					font-size: 1.25rem;
-				}
-				@media (min-width: $pc) {
-					font-size: 1.5rem;
-				}
-				@media (min-width: $full) {
-					font-size: 2rem;
-				}
-			}
-			@media (min-width: $tablet) {
-				height: 4.375rem;
-				padding: 0 3.125rem;
-				border-radius: 1.875rem;
-			}
-			@media (min-width: $pc) {
-				padding: 0 4.0625rem;
-				font-size: 1.5rem;
-				border-radius: 2.5rem;
-				height: 5.875rem;
-			}
-			@media (min-width: $full) {
-				height: 6.25rem;
-				padding: 0 3.4375rem;
-				font-size: 2rem;
-			}
-		}
-		button::before {
-			content: '';
-			opacity: 0;
-			background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
-			transition: opacity 0.25s ease-in-out;
-			position: absolute;
-			z-index: 1;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			@media (min-width: $tablet) {
-				border-radius: 1.875rem;
-			}
-			@media (min-width: $pc) {
-				border-radius: 2.5rem;
-			}
-			@media (min-width: $full) {
-			}
-		}
-		button:hover:before {
-			@media screen and (min-width: $tablet) {
-				opacity: 1;
-			}
-		}
 	}
 }
 .mainRecent {
@@ -700,7 +633,7 @@
 			text-align: center;
 			font-size: 2rem;
 			font-style: normal;
-			font-weight: 700;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			@media screen and (min-width: $full) {
 				text-align: left;
@@ -790,7 +723,7 @@
 				text-align: center;
 				font-size: 1.125rem;
 				font-style: normal;
-				font-weight: 600;
+				font-weight: var(--fw-700);
 				line-height: normal;
 				@media screen and (min-width: $full) {
 					font-size: 2rem;
@@ -855,7 +788,7 @@
 			color: var(--text-color-blue);
 			font-size: 1.5rem;
 			font-style: normal;
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			text-decoration: underline;
 			@media screen and (min-width: $full) {
@@ -866,34 +799,8 @@
 			cursor: pointer;
 			text-decoration: none;
 		}
-		button {
+		.btn {
 			margin: 2.5rem 0 2.8125rem;
-			padding: 1rem 2.125rem;
-			color: var(--white-color);
-			font-size: 1.125rem;
-			font-style: normal;
-			font-weight: 700;
-			line-height: normal;
-			border-radius: 1.25rem;
-			background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
-			@media screen and (min-width: $full) {
-				font-size: 2rem;
-				padding: 1.875rem 3.4375rem;
-				border-radius: 2.5rem;
-				margin: 0;
-				position: relative;
-				top: -1.8125rem;
-			}
-		}
-		button:hover {
-			background: linear-gradient(180deg, #eb8069 0%, #db4a2a 100%);
-			transition: 0.25s;
-			@media screen and (min-width: $full) {
-				font-size: 2rem;
-				padding: 1.875rem 3.4375rem;
-				border-radius: 2.5rem;
-				margin: 0;
-			}
 		}
 	}
 	&__text {
@@ -936,7 +843,7 @@
 			text-align: center;
 			font-size: 2rem;
 			font-style: normal;
-			font-weight: 700;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			@media screen and (min-width: $full) {
 				font-size: 3.25rem;
@@ -997,7 +904,7 @@
 		input[type='text'] {
 			font-size: 1rem;
 			font-style: normal;
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			padding-left: 3.125rem;
 			@media screen and (min-width: $full) {
@@ -1092,7 +999,7 @@
 			text-align: center;
 			font-size: 1.125rem;
 			font-style: normal;
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			@media screen and (min-width: $full) {
 				font-size: 2rem;
@@ -1128,7 +1035,7 @@
 			text-align: center;
 			font-size: 2rem;
 			font-style: normal;
-			font-weight: 700;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			@media screen and (min-width: $full) {
 				font-size: 3.25rem;
@@ -1197,7 +1104,7 @@
 			color: var(--white-color);
 			font-size: 1.125rem;
 			font-style: normal;
-			font-weight: 700;
+			font-weight: var(--fw-700);
 			line-height: normal;
 			border-radius: 1.25rem;
 			background: linear-gradient(180deg, #64a2ff 0%, #2a86db 100%);
@@ -1208,7 +1115,7 @@
 				border-radius: 2.5rem;
 				font-size: 2rem;
 				font-style: normal;
-				font-weight: 700;
+				font-weight: var(--fw-700);
 				line-height: normal;
 			}
 		}
@@ -1269,7 +1176,7 @@
 		flex-direction: column;
 		align-items: center;
 		h2 {
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			font-size: 1.5rem;
 			line-height: 120%;
 			text-align: center;
@@ -1288,67 +1195,6 @@
 		margin-top: 1.5625rem;
 		display: flex;
 		justify-content: center;
-		button {
-			border-radius: 1.25rem;
-			height: 3.375rem;
-			font-weight: 700;
-			font-size: 1.125rem;
-			color: var(--white-color);
-			padding: 0 1.5625rem;
-			background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
-			position: relative;
-			border-radius: 1.25rem;
-			display: flex;
-			align-items: center;
-			@media (min-width: $mobile) {
-			}
-			@media (min-width: $tablet) {
-			}
-			@media (min-width: $pc) {
-				height: 4.375rem;
-				border-radius: 2.5rem;
-			}
-			@media (min-width: $full) {
-			}
-			span {
-				position: relative;
-				font-size: 1.125rem;
-				z-index: 10;
-				@media (min-width: $pc) {
-					font-size: 1.5rem;
-				}
-			}
-			svg {
-				position: relative;
-				z-index: 10;
-				margin-right: 0.3125rem;
-			}
-		}
-		button::before {
-			content: '';
-			opacity: 0;
-			background: linear-gradient(180deg, #eb8069 0%, #e55738 100%);
-			transition: opacity 0.25s ease-in-out;
-			position: absolute;
-			z-index: 1;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			@media (min-width: $tablet) {
-				border-radius: 1.875rem;
-			}
-			@media (min-width: $pc) {
-				border-radius: 2.5rem;
-			}
-			@media (min-width: $full) {
-			}
-		}
-		button:hover:before {
-			@media screen and (min-width: $tablet) {
-				opacity: 1;
-			}
-		}
 	}
 }
 @media (min-width: $mobile) {

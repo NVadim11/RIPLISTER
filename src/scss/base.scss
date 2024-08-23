@@ -149,7 +149,7 @@ a {
 	display: flex;
 	align-items: center;
 	span {
-		font-weight: 600;
+		font-weight: var(--fw-700);
 		color: var(--link-color);
 		text-decoration: none;
 		position: relative;

@@ -1,0 +1,60 @@
+@import "breakpoints";
+
+.dropdown {
+  --_dropdown-radius: 0.625rem;
+  width: 100%;
+	background: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightness--lighter));
+  border-radius: var(--_dropdown-radius);
+  overflow: hidden;
+  &[data-dropdown] {
+    position: absolute;
+    top: 100%;
+    transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1.25rem);
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0.875rem);
+      z-index: 1001;
+    }
+  }
+
+  .dropdown--link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: var(--black-color);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.25s, color 0.25s;
+
+    &.active {
+      background: var(--accent-color);
+      color: var(--white-color);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: var(--accent-color);
+        color: var(--white-color);
+      }
+    }
+
+    img {
+      margin-right: 0.75rem;
+    }
+
+  }
+
+  @media (min-width: $tablet) {
+    --_dropdown-radius: 1.25rem;
+  }
+
+  @media (min-width: $tablet) {
+    --_dropdown-radius: 1.875rem;
+  }
+}

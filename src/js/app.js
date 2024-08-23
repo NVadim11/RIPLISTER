@@ -42,6 +42,8 @@ flsFunctions.menuInit();
 /* Форматування чисел */
 // import './libs/wNumb.min.js';
 
+flsFunctions.dropdownInit();
+
 /*
 Модуль "Спойлери"
 Документація: https://template.fls.guru/template-docs/modul-spojlery.html
@@ -251,7 +253,7 @@ import "./files/scroll/lazyload.js";
 // ========================================================================================================================================================================================================================================================
 /* Підключаємо файли зі своїм кодом */
 import "./files/auth.js";
-import "./files/languages.js";
+// import "./files/languages.js";
 import "./files/profile.js";
 import "./files/script.js";
 import "./files/translations.js";

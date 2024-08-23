@@ -18,7 +18,7 @@
 }
 &__title {
 	margin-top: 4.5625rem;
-	font-weight: 600;
+	font-weight: var(--fw-700);
 	font-size: 2.25rem;
 	line-height: 110%;
 	text-align: center;
@@ -28,7 +28,7 @@
 }
 @media (min-width: $tablet) {
 	margin-top: 8.4375rem;
-	font-weight: 600;
+	font-weight: var(--fw-700);
 	font-size: 3.125rem;
 	text-align: start;
 }
@@ -36,7 +36,7 @@
 }
 @media (min-width: $full) {
 	margin-top: 12.625rem;
-	font-weight: 600;
+	font-weight: var(--fw-700);
 	font-size: 4rem;
 }
 }
@@ -99,7 +99,7 @@ p {
 }
 span {	
 	font-size: 1.25rem;
-	font-weight: 600;
+	font-weight: var(--fw-700);
 	line-height: normal;
 	@media (min-width: $mobile) {
 	}
@@ -148,7 +148,7 @@ span {
 	margin-bottom: 5.25rem;
 	flex-direction: row;
 	gap: 0.9375rem;
-	font-weight: 700;
+	font-weight: var(--fw-700);
 	font-size: 1rem;
 	line-height: 130%;
 	text-decoration: underline;

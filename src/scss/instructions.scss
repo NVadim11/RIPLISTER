@@ -16,7 +16,7 @@
 			margin: 9.375rem 0 0 0;
 		}
 		h1 {
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			font-size: 2.25rem;
 			line-height: 110%;
 			text-align: center;
@@ -67,7 +67,7 @@
 		margin: 30px 0 0 0;
 	}
 	&__title {
-		font-weight: 600;
+		font-weight: var(--fw-700);
 		font-size: 1.125rem;
 		color: #171717;
 		cursor: pointer;
@@ -174,7 +174,7 @@
 		margin-bottom: 1.25rem;
 		position: relative;
 		h3 {
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			font-size: 1.5rem;
 			color: #171717;
 			@media screen and (min-width:$pc) {
@@ -182,7 +182,7 @@
 			}
 			@media screen and (min-width:$full) {
 				font-size: 3rem;
-				font-weight: 700;
+				font-weight: var(--fw-700);
 			}
 		}
 		@media screen and (min-width:$mobile) {
@@ -331,7 +331,7 @@
 			margin-bottom: 65px;
 		}
 		h3 {
-			font-weight: 600;
+			font-weight: var(--fw-700);
 			font-size: 24px;
 			color: #171717;
 			@media screen and (min-width:$tablet) {
@@ -405,7 +405,7 @@
 			margin-right: 25px;
 		}
 		span {
-			font-weight: 700;
+			font-weight: var(--fw-700);
 			font-size: 20px;
 			color: #fff;
 			@media (min-width: $tablet) {

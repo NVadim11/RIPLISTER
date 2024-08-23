@@ -107,47 +107,6 @@
 		margin-top: 1.25rem;
 	}
 
-	button {
-		--_btn-border-radius: 1.25rem;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: var(--_btn-border-radius);
-		background: linear-gradient(180deg, #ef6446 0%, #db4a2a 100%);
-		padding: 1rem 6.25rem 1rem;
-		font-size: 1.125rem;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-		color: var(--white-color);
-		width: 100%;
-		transition: 0.25s;
-
-		&[disabled] {
-			opacity: 0.5;
-			pointer-events: none;
-		}
-
-		> img {
-			margin-right: 0.625rem;
-		}
-
-		&:hover {
-			background: linear-gradient(180deg, #eb8069 0%, #db4a2a 100%);
-			border-radius: 1.875rem;
-		}
-
-		@media (min-width: 768px) {
-			max-width: 19.625rem;
-		}
-
-		@media (min-width: 1280px) {
-			max-width: 100%;
-			padding: .85rem 6.25rem;
-			--_btn-border-radius: 1.875rem;
-		}
-	}
-
 	@media (min-width: 768px) {
 		.mainForm__btn {
 			margin-top: 0;
@@ -191,7 +150,7 @@
 // 		p {
 // 			font-size: 1rem;
 // 			font-style: normal;
-// 			font-weight: 600;
+// 			font-weight: var(--fw-700);
 // 			line-height: normal;
 // 			margin-right: 0.5rem;
 // 		}
@@ -301,7 +260,7 @@
 // 			align-items: center;
 // 			font-size: 1.125rem;
 // 			font-style: normal;
-// 			font-weight: 700;
+// 			font-weight: var(--fw-700);
 // 			line-height: normal;
 // 			color: var(--white-color);
 // 			@media screen and (min-width: $full) {
