@@ -143,13 +143,6 @@
 		margin-top: 3rem;
 		a {
 			padding: 1.625rem;
-
-			@media (any-hover: hover) {
-				&:hover {
-					color: hsl(var(--accent-hue), var(--accent-saturation), 66%);
-					text-decoration-color: hsl(var(--accent-hue), 66%);
-				}
-			}
 		}
 	}
 	.menu__contact {

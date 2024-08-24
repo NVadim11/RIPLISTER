@@ -1,0 +1,21 @@
+// Container mixins
+
+@mixin make-container($gutter: $container-padding-x) {
+  --#{$prefix}gutter-x: #{$gutter};
+  --#{$prefix}gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--#{$prefix}gutter-x) * 2); // stylelint-disable-line function-disallowed-list
+  padding-left: calc(var(--#{$prefix}gutter-x) * 2); // stylelint-disable-line function-disallowed-list
+  margin-right: auto;
+  margin-left: auto;
+
+  @include media-breakpoint-down(xxl) {
+    padding-right: calc(var(--#{$prefix}gutter-x)); // stylelint-disable-line function-disallowed-list
+    padding-left: calc(var(--#{$prefix}gutter-x)); // stylelint-disable-line function-disallowed-list
+  }
+
+  @include media-breakpoint-down(md) {
+    padding-right: calc(var(--#{$prefix}gutter-x) / 2); // stylelint-disable-line function-disallowed-list
+    padding-left: calc(var(--#{$prefix}gutter-x) / 2); // stylelint-disable-line function-disallowed-list
+  }
+}

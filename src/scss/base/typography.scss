@@ -6,7 +6,7 @@
   }
 }
 
-.link-underline {
+.link--underline {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-decoration-color: var(--text-color-underline);
@@ -21,7 +21,16 @@
 		&:hover {
       color: var(--accent-color);
       text-decoration-color: var(--accent-color);
+
+      &.text-accent {
+        color: hsl(var(--accent-hue), var(--accent-saturation), 66%);
+        text-decoration-color: hsl(var(--accent-hue), 66%);
+      }
 		}
 	}
 
+}
+
+.icon-accent {
+  color: var(--accent-color);
 }
