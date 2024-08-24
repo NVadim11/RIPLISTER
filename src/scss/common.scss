@@ -514,51 +514,6 @@
 	// }
 }
 
-// блок цитата стать волонтером
-.volunteer {
-	// margin-right: 3.75rem 0 0 0;
-	&__container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		background: var(--alt-cream-color);
-		border-radius: 1.25rem;
-		padding: 3.125rem 0;
-		@media screen and (min-width: $pc) {
-			flex-direction: row;
-			border-radius: 1.875rem;
-			padding: 5.625rem 5.625rem;
-			justify-content: space-between;
-		}
-	}
-	&__quote {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		@media screen and (min-width: $pc) {
-			align-items: start;
-		}
-	}
-	p {
-		margin-top: 1.25rem;
-		text-align: center;
-		font-size: 1.5rem;
-		font-style: normal;
-		font-weight: 400;
-		line-height: normal;
-		@media screen and (min-width: $pc) {
-			font-size: 2.25rem;
-			line-height: normal;
-			text-align: start;
-			max-width: 32.5rem;
-		}
-	}
-
-	.btn {
-		margin-top: 1.75rem;
-	}
-}
-
 // оранжевая линия
 .lineOrange {
 	background: #f5bfb4;
