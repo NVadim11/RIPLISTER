@@ -1,37 +1,23 @@
 .mainBenefitsSlider {
-    margin-top: 4.0625rem;
-    @media (min-width: $mobile) {
-        margin-top: 2.8125rem;
-    }
-    @media (min-width: $tablet) {
-        margin-top: 3.75rem;
-    }
-    @media (min-width: $pc) {
-        margin-top: 4.375rem;
-    }
-    @media (min-width: $full) {
-        margin-top: 6.25rem;
-    }
+    // margin-top: 4.0625rem;
+    // @media (min-width: $mobile) {
+    //     margin-top: 2.8125rem;
+    // }
+    // @media (min-width: $tablet) {
+    //     margin-top: 3.75rem;
+    // }
+    // @media (min-width: $pc) {
+    //     margin-top: 4.375rem;
+    // }
+    // @media (min-width: $full) {
+    //     margin-top: 6.25rem;
+    // }
     &__slide {
-		height: 12.5rem !important;
-		width: 19.25rem !important;
+        aspect-ratio: 16 / 10;
 		position: relative;
 		@media screen and (min-width: $mobile) {
-			height: 13.125rem !important;
-			width: 23.4375rem !important;
-		}
-		@media screen and (min-width: $tablet) {
-			height: 17.875rem !important;
-			width: 33.875rem !important;
-		}
-		@media screen and (min-width: $pc) {
-			height: 24.25rem !important;
-			width: 46rem !important;
-		}
-		@media screen and (min-width: $full) {
-			height: 24.25rem !important;
-			width: 48.75rem !important;
-		}
+            aspect-ratio: 16 / 9;
+        }
 		img {
 			
 			filter: brightness(50%);

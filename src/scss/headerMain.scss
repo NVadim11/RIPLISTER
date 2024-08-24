@@ -15,14 +15,13 @@
 		background: var(--white-color);
 	}
 
-	.header__container {
+	.container-xxl {
 		display: grid;
 		grid-template-columns: var(--_header-logo-width) auto;
 		justify-content: space-between;
 		align-items: center;
-		max-width: 100%;
-		margin: 0 auto;
-		padding: 1rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
 
 	.header__logo {
@@ -146,7 +145,7 @@
 		--_header-logo-width: 12.625rem;
 		--_header-logo-height: 2.5rem;
 
-		.header__container {
+		.container-xxl {
 			grid-template-columns: var(--_header-logo-width) auto auto;
 		}
 

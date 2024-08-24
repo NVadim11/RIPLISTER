@@ -1,3 +1,53 @@
+// Main Typography Styles
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: var(--fw-700);
+  color: var(--black-color);
+  margin-bottom: 0.7em;
+  line-height: 1.2;
+
+}
+
+h1 {
+  // 64px - 36px
+  font-size: clamp(2.25rem, 0.25rem + 4.1667vw, 4rem);
+}
+
+h2 {
+  // 52px - 32px
+  font-size: clamp(2rem, 0.5714rem + 2.9762vw, 3.25rem);
+}
+
+h3 {
+  // 36px - 24px
+  font-size: clamp(1.5rem, 0.6429rem + 1.7857vw, 2.25rem);
+}
+
+h4 {
+  // 32px - 22px
+  font-size: clamp(1.375rem, 0.6607rem + 1.4881vw, 2rem);
+}
+
+h5 {
+  // 24px - 20px
+  font-size: clamp(1.25rem, 0.9643rem + 0.5952vw, 1.5rem);
+}
+
+h6 {
+  font-size: 18px;
+}
+
+p {
+  // 20px - 18px
+  font-size: clamp(1.125rem, 0.9821rem + 0.2976vw, 1.25rem);
+  line-height: 1.2;
+}
+
+
 .text-accent {
   color: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightness));
 

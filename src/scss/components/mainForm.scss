@@ -1,5 +1,5 @@
 .mainFormWrapper {
-	--_main-form-wrapper-width: 70rem;
+	// --_main-form-wrapper-width: 70rem;
   --_form-bg-color: #fff3ed;
   --_form-padding-inline-xl: 2.35rem;
   --_form-padding-inline-md: 1.76rem;
@@ -10,14 +10,14 @@
 
   z-index: 5;
 	width: 100%;
-	max-width: var(--_main-form-wrapper-width);
+	// max-width: var(--_main-form-wrapper-width);
 	margin-top: var(--_form-negative-margin);
 
 	margin: var(--_form-negative-margin) auto 0;
 	padding-inline: 0.625rem;
 
 	@media (min-width: 1440px) {
-		--_main-form-wrapper-width: 86.75rem;
+		// --_main-form-wrapper-width: 86.75rem;
 	}
 
 	@media (max-width: $mobile-sm) {
