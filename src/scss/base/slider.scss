@@ -1,3 +1,5 @@
+@import '../components/recent-slider';
+
 .mainBenefitsSlider {
     // margin-top: 4.0625rem;
     // @media (min-width: $mobile) {
@@ -40,21 +42,22 @@
 			}
 		}
 	}
-    .swiper-pagination {
-        position: relative;
-        margin-top: 2.8125rem;
-        @media (min-width: $pc) {
-            margin-top: 3.75rem;
-        }
-        @media (min-width: $full) {
-            margin-top: 6.25rem;
-        }
-        &.swiper-pagination-progressbar {
-            background: #f3ecec;
-            height: 6px;
-            .swiper-pagination-progressbar-fill {
-                background-color: #E55738;
-            }
+}
+
+.swiper-pagination.progress-pagination {
+    position: relative;
+    margin-top: 2.8125rem;
+    @media (min-width: $pc) {
+        margin-top: 3.75rem;
+    }
+    @media (min-width: $full) {
+        margin-top: 6.25rem;
+    }
+    &.swiper-pagination-progressbar {
+        background: #f3ecec;
+        height: 6px !important;
+        .swiper-pagination-progressbar-fill {
+            background-color: #E55738;
         }
     }
 }

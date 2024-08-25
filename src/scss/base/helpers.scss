@@ -5,3 +5,7 @@
 .mr-auto {
   margin-right: auto;
 }
+
+.section-accent-bg {
+  background-color: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightness--super-light));
+}

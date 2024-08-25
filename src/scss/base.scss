@@ -146,7 +146,7 @@ button, svg, img, iframe {
 	user-select: none;
 }
 a {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	span {
 		font-weight: var(--fw-700);

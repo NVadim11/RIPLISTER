@@ -1,17 +1,12 @@
 .volunteer {
-  
+  margin-top: var(--_section-margin);
   .volunteer__quote {
-    --_volunteer-quote-padding-block: clamp(3.125rem, 0.2679rem + 5.9524vw, 5.625rem);
     --_volunteer-padding-inline: clamp(1.875rem, -3.125rem + 10.4167vw, 6.25rem);
 
-    padding: var(--_volunteer-quote-padding-block) 0;
+    padding: var(--_section-padding-block) 0;
     background-color: var(--grey-lighter-color);
     text-align: center;
     border-radius: 1.25rem;
-
-    > .row {
-      padding: 0 var(--_volunteer-padding-inline);
-    }
 
     [class*='icon-'] {
       display: block;
@@ -25,7 +20,7 @@
       margin-bottom: .6em;
     }
 
-    @media (min-width: $mobile) {
+    @media (min-width: $tablet-md) {
       text-align: left;
       border-radius: 1.875rem;
 

@@ -2,6 +2,10 @@
 @import './components/main-benefits.scss';
 
 .main {
+	--_section-padding-block: clamp(3.125rem, 0.2679rem + 5.9524vw, 5.625rem);
+	--_section-margin: clamp(3.75rem, 0.8929rem + 5.9524vw, 6.25rem);
+	--_main-info-padding-inline: clamp(3.125rem, 0.2679rem + 5.9524vw, 5.625rem);
+  --_main-info-padding-block: clamp(3.125rem, 0.2679rem + 5.9524vw, 5.625rem);
 	display: flex;
 	flex: 1 1 auto;
 	flex-direction: column;
@@ -10,144 +14,10 @@
 		flex-direction: column;
 	}
 }
-.mainPage {
-	.volunteer {
-		margin-top: 3.75rem;
-		@media (min-width: $mobile) {
-		}
-		@media (min-width: $tablet) {
-			margin-top: 5rem;
-		}
-		@media (min-width: $pc) {
-		}
-		@media (min-width: $full) {
-			margin-top: 6.875rem;
-		}
-	}
-}
+
 .mainRecent {
-	margin-top: 2.5rem;
-	background-color: var(--cream-color);
-	&__title {
-		h2 {
-			padding: 3.75rem 0 0 0;
-			text-align: center;
-			font-size: 2rem;
-			font-style: normal;
-			font-weight: var(--fw-700);
-			line-height: normal;
-			@media screen and (min-width: $full) {
-				text-align: left;
-				font-size: 3.25rem;
-			}
-		}
-		p {
-			padding: 1.5625rem 0 0;
-			text-align: center;
-			font-size: 1rem;
-			font-style: normal;
-			font-weight: 400;
-			line-height: normal;
-			@media screen and (min-width: $full) {
-				text-align: left;
-				font-size: 1.5rem;
-				max-width: 48.75rem;
-			}
-		}
-		@media screen and (min-width: $full) {
-			padding-left: 6.5625rem;
-		}
-	}
-	&__slider {
-		margin-top: 3.75rem;
-		overflow: hidden;
-		@media screen and (min-width: $full) {
-			padding-left: 6.5625rem;
-		}
-		.swiper-pagination {
-			position: relative;
-			@media (min-width: $tablet) {
-			}
-			&.swiper-pagination-progressbar {
-				background: #f3ecec;
-				height: 6px;
-				.swiper-pagination-progressbar-fill {
-					background-color: #e55738;
-				}
-			}
-		}
-	}
-	&__slide {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		@media screen and (min-width: $full) {
-			border-radius: 1.875rem;
-		}
-		&_photo {
-			height: 11.875rem;
-			width: 8.625rem;
-			position: relative;
-			@media screen and (min-width: $tablet) {
-				height: 17.5rem;
-				width: 13.75rem !important;
-			}
-			@media screen and (min-width: $pc) {
-				height: 19.375rem;
-				width: 15.25rem !important;
-			}
-			img {
-				border-radius: 0.875rem;
-				width: 100%;
-			}
-			img:hover {
-				box-shadow: 0 0.625rem 0.625rem -0.3125rem rgb(0 0 0 / 0.4);
-			}
-		}
-		&_imgItem {
-			position: absolute;
-			width: 3.625rem !important;
-			bottom: -0.625rem;
-			right: -1.75rem;
-			@media screen and (min-width: $full) {
-				width: 5.6875rem !important;
-				right: -2.5rem;
-			}
-		}
-		&_text {
-			margin-top: 1.25rem;
-			@media screen and (min-width: $full) {
-				margin-top: 2.5rem;
-			}
-			h4 {
-				text-align: center;
-				font-size: 1.125rem;
-				font-style: normal;
-				font-weight: var(--fw-700);
-				line-height: normal;
-				@media screen and (min-width: $full) {
-					font-size: 2rem;
-					max-width: 15.3125rem;
-				}
-			}
-			p {
-				margin-top: 0.625rem;
-				font-style: normal;
-				font-weight: 400;
-				line-height: normal;
-				font-size: 0.75rem;
-				@media screen and (min-width: $full) {
-					font-size: 1.125rem;
-					margin-top: 1.125rem;
-					max-width: 15.3125rem;
-				}
-			}
-		}
-	}
-	&__slide:hover {
-		cursor: pointer;
-	}
+	margin-top: var(--_section-margin);
+	padding: var(--_section-padding-block) 0;
 	&__scrollbar {
 		height: 0.375rem;
 		width: 100%;
@@ -530,79 +400,3 @@
 	}
 }
 
-.mainTG {
-	margin-top: 1.25rem;
-	@media (min-width: $mobile) {
-		margin-top: 1.5625rem;
-	}
-	@media (min-width: $tablet) {
-		margin-top: 1.875rem;
-	}
-	@media (min-width: $pc) {
-		margin-top: 2.1875rem;
-	}
-	@media (min-width: $full) {
-		margin-top: 2.5rem;
-	}
-	&__container {
-		max-width: 22.1875rem;
-		@media (min-width: $mobile) {
-			max-width: 43.75rem;
-		}
-		@media (min-width: $tablet) {
-			max-width: 64.625rem;
-		}
-		@media (min-width: $pc) {
-			max-width: 75.25rem;
-		}
-		@media (min-width: $full) {
-			max-width: 93.125rem;
-		}
-	}
-	&__content {
-		background: linear-gradient(90deg, #298bfa 1.22%, #2f8ffb 34.72%, rgba(196, 224, 255, 1) 100%);
-		border-radius: 30px;
-		padding: 1.5625rem 1.875rem;
-		@media (min-width: $mobile) {
-		}
-		@media (min-width: $tablet) {
-		}
-		@media (min-width: $pc) {
-		}
-		@media (min-width: $full) {
-		}
-	}
-	&__text {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		h2 {
-			font-weight: var(--fw-700);
-			font-size: 1.5rem;
-			line-height: 120%;
-			text-align: center;
-			color: var(--white-color);
-			margin-top: 0.9375rem;
-		}
-		p {
-			font-weight: 400;
-			font-size: 1rem;
-			text-align: center;
-			color: var(--white-color);
-			margin-top: 0.625rem;
-		}
-	}
-	&__btn {
-		margin-top: 1.5625rem;
-		display: flex;
-		justify-content: center;
-	}
-}
-@media (min-width: $mobile) {
-}
-@media (min-width: $tablet) {
-}
-@media (min-width: $pc) {
-}
-@media (min-width: $full) {
-}

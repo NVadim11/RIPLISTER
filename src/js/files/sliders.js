@@ -122,7 +122,7 @@ function initSliders() {
 			},
 
 			pagination: {
-				el: ".swiper-pagination",
+				el: ".progress-pagination",
 				type: "progressbar",
 			},
 			breakpoints: {
@@ -149,34 +149,29 @@ function initSliders() {
 	// Main recent slider
 	if (document.querySelector(".mainRecent__slider")) {
 		new Swiper(".mainRecent__slider", {
-			modules: [Scrollbar],
-			observer: true,
-			observeParents: true,
-			slidesPerView: 2.2,
-			spaceBetween: 26,
+			modules: [Scrollbar, Pagination],
+			slidesPerView: "auto",
+			spaceBetween: 16,
 			autoHeight: true,
 			speed: 800,
+			grabCursor: true,
 
 			pagination: {
-				el: ".swiper-pagination",
+				el: ".swiper-pagination.recent-swiper-pagination",
 				type: "progressbar",
 			},
 			breakpoints: {
 				767.98: {
-					slidesPerView: 4.2,
-					spaceBetween: 36,
+					spaceBetween: 32,
 				},
 				1279.98: {
-					slidesPerView: 4.22,
-					spaceBetween: 56,
+					spaceBetween: 32,
 				},
 				1439.98: {
-					slidesPerView: 4.2,
-					spaceBetween: 63,
+					spaceBetween: 64,
 				},
 				1919.98: {
-					slidesPerView: 5.2,
-					spaceBetween: 63,
+					spaceBetween: 64,
 				},
 			},
 		});

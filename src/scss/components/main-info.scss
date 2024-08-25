@@ -1,19 +1,10 @@
 .mainInfo {
-  --_main-info-padding-inline: clamp(3.125rem, 0.2679rem + 5.9524vw, 5.625rem);
-  --_main-info-padding-block: clamp(3.125rem, 0.2679rem + 5.9524vw, 5.625rem);
-
-  .row {
-    align-items: center;
-    @media (min-width: $mobile) {
-      padding: 0 var(--_main-info-padding-inline);
-    }
-  }
 
   .mainInfo__header {
     padding: var(--_main-info-padding-block) 0;
     text-align: center;
     
-    @media (min-width: $mobile) {
+    @media (min-width: $tablet-md) {
       text-align: left;
       .row {
         align-items: flex-start;
@@ -30,7 +21,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1rem;
-  
+
   @media (min-width: $mobile) {
     padding-inline: 6.33333333%;
     gap: 1.5rem;
@@ -43,7 +34,7 @@
 
 .mainInfo__cards-item {
   --_card-padding: clamp(1.5rem, -0.3571rem + 3.869vw, 3.125rem);
-  background-color: var(--grey-lighter-color);
+  background-color: hsla(var(--accent-hue), var(--accent-saturation), var(--accent-lightness--super-light), 1);
   border-radius: 1.25rem;
   padding: var(--_card-padding);
   padding-bottom: 70px;
@@ -80,11 +71,10 @@
 }
 
 .mainInfo__create {
-  --_volunteer-quote-padding-block: clamp(3.125rem, 0.2679rem + 5.9524vw, 5.625rem);
   --_volunteer-padding-inline: clamp(1.875rem, -3.125rem + 10.4167vw, 6.25rem);
 
-  padding: var(--_volunteer-quote-padding-block) 0;
-  margin-top: 4.375rem;
+  padding: 3rem 0;
+  margin-top: var(--_section-margin);
   background-color: var(--grey-lighter-color);
   text-align: center;
   border-radius: 1.25rem;
@@ -108,7 +98,6 @@
 
   > .row {
     position: relative;
-    padding: 0 var(--_volunteer-padding-inline);
   }
 
   p {
@@ -116,7 +105,7 @@
     margin-bottom: .6em;
   }
 
-  @media (min-width: $mobile) {
+  @media (min-width: $tablet-md) {
     text-align: left;
     border-radius: 1.875rem;
 
