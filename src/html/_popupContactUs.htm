@@ -23,12 +23,12 @@
         </div>
         <form novalidate id="contactsForm" class="contactsForm" data-popup-message="#contactThanks" data-dev action="#">
           <div class="contactForm__form-inputs">
-            <div class="contactForm__form-input">
-              <input required minlength="2" maxlength="16" type="text" name="username" placeholder="Ваше Ім'я"
+            <div class="base-input--group">
+              <input class="base-input base-input--sm" required minlength="2" maxlength="16" type="text" name="username" placeholder="Ваше Ім'я"
                 id="contactForm__username" />
             </div>
-            <div class="contactForm__form-input">
-              <input required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="text"
+            <div class="base-input--group">
+              <input class="base-input base-input--sm" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="text"
                 name="email" placeholder="Ваш email" id="contactForm__email" />
             </div>
           </div>
@@ -37,19 +37,19 @@
               <p>Тема звернення:</p>
             </div>
             <div class="contactForm__selector">
-              <select required name="contactTags[]" data-class-modif="contactTags" id="contactForm__selectOption">
-                <option data-href="#" value="1" selected>Партнерство</option>
-                <option data-href="#" value="2">Скарги та пропозиції</option>
-                <option data-href="#" value="3">Інше</option>
+              <select id="contactForm__selectOption" class="js-choice" data-icon-right="icon-arrow-down" data-no-results-text="По вашому запиту нічого не знайдено" data-default-amount="3" data-search-enabled="false">
+                <option value="1" selected>Партнерство</option>
+                <option value="2">Скарги та пропозиції</option>
+                <option value="3">Інше</option>
               </select>
             </div>
           </div>
           <div class="contactForm__form-textarea">
-            <textarea minlength="2" maxlength="600" class="contactForm__formTextarea" rows="10" cols="50" name="comment"
+            <textarea minlength="2" maxlength="600" class="base-input" rows="10" cols="50" name="comment"
               form="contactsForm" id="contactForm__textArea" placeholder="Текст повідомлення"></textarea>
           </div>
           <div class="contactForm__form-button">
-            <button type="submit" class="contactForm__formSubmit" id="contactFormSubmit">Відправити</button>
+            <button type="submit" class="btn btn--accent btn--sm btn--fw" id="contactFormSubmit">Відправити</button>
           </div>
           <span class="contactForm__errorMsg"><span class="errorSignSvg"><svg xmlns="http://www.w3.org/2000/svg"
                 width="24" height="24" viewBox="0 0 24 24" fill="none">

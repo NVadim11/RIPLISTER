@@ -1,3 +1,117 @@
+// Select base styles
+
+.select-dropdown {
+  position: relative;
+  max-width: 440px;
+  width: 100%;
+	text-align: left;
+
+	&.is-flipped.is-open .choices__inner {
+		border-radius: var(--_dropdown-radius);
+	}
+  
+  &.is-open {
+    .choices__inner {
+      border-color: var(--accent-color);
+      background-color: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightness--super-light));
+      > [class*=icon-] {
+        &:last-child {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    
+    .choices__list--dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(1.5rem);
+    }
+
+		&.is-flipped {
+			.choices__list--dropdown {
+				--_dropdown-shadow-y: -30px;
+				transform: translateY(-1.5rem);
+				border-radius: var(--_dropdown-radius);
+			}
+		}
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      .choices__inner {
+        border-color: var(--accent-color);
+        background-color: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightness--super-light));
+      }
+    }
+  }
+
+  &::after {
+    display: none;
+  }
+
+  .choices__inner {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--_input-padding-block) var(--_input-padding-inline);
+    padding-bottom: var(--_input-padding-block) !important;
+    height: var(--input-height);
+    border-radius: var(--_dropdown-radius);
+    border-color: hsla(0, 0%, 69%, 1);
+    background-color: var(--white-color);
+    transition: border-color 0.25s, background-color 0.25s;
+
+
+    > [class*=icon-] {
+      color: var(--accent-color);
+      font-size: 1.5rem;
+
+      &:last-child {
+        transition: transform 0.25s;
+      }
+
+			@media (max-width: $mobile) {
+				font-size: 1.25rem;
+			}
+    }
+    > .choices__list {
+      > .choices__item:not(.choices__placeholder) {
+        color: var(--black-color);
+        font-size: var(--_input-font-size);
+        font-weight: var(--fw-700);
+
+				@media (max-width: $mobile) {
+					font-size: 1rem;
+				}
+      }
+    }
+
+    &.has-icons {
+      > .choices__item:not(.choices__placeholder),
+      .choices__item--selectable {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+
+  .choices__placeholder {
+    color: var(--_input-placeholder-color);
+		font-size: var(--_input-placeholder-font-size);
+		font-weight: var(--fw-400);
+		opacity: 1;
+  }
+
+  .choices__list--dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(2.5rem);
+    transition: opacity 0.25s, visibility 0.25s, transform 0.25s;
+		box-shadow: var(--_dropdown-shadow);
+		min-width: 15rem;
+  }
+
+}
+
 // <SELECT>
 // Сніппет (HTML): sel
 // .select {
@@ -151,6 +265,101 @@
 // 	&._select-checkbox {
 // 	}
 // }
+
+.select {
+	
+	.select__title {
+		position: relative;
+
+		&.has--icon {
+
+			// .select__content,
+			// .select__input {
+			// 	padding-left: var(--_input-icon-padding-left);
+			// 	padding-right: var(--_input-icon-padding-left);
+			// }
+
+			.select__value {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+		}
+
+		.select__icon {
+			// position: absolute;
+			// top: 50%;
+			// transform: translateY(-50%);
+			[class*=icon-] {
+				transform: rotate(0deg);
+				transform-origin: center center;
+				color: var(--accent-color);
+				font-size: 1.5rem;
+				transition: transform 0.25s;
+				display: block;
+			}
+
+			&:first-of-type {
+				left: var(--_input-icon-position);
+			}
+
+			&:last-of-type {
+				right: var(--_input-icon-position);
+			}
+
+		}
+
+	}
+
+	&._select-open {
+		.select__value {
+			.select__icon {
+				&:last-of-type {
+					[class*=icon-] {
+						transform: rotate(180deg);
+					}
+				}
+			}
+		}
+	
+	}
+
+
+	&._select-focus,
+		
+
+	.select__body {
+		position: relative;
+	}
+
+	.select__options {
+		background: hsl(var(--accent-hue), var(--accent-saturation), var(--accent-lightness--super-light));
+
+		border-radius: 30px;
+		transform: translateY(2rem);
+
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		.simplebar-content {
+			display: flex;
+			flex-direction: column;
+		}
+		
+		// .select__scroll {
+		// 	height: auto;
+		// 	max-height: auto;
+		// }
+
+		.select__option {
+			padding-inline: 2rem;
+			padding-block: 1rem;
+			font-size: 1.5rem;
+		}
+	}
+
+}
 
 .select__scroll {
 	display: flex;

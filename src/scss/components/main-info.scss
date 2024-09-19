@@ -1,20 +1,24 @@
-.mainInfo {
-
-  .mainInfo__header {
-    padding: var(--_main-info-padding-block) 0;
-    text-align: center;
-    
-    @media (min-width: $tablet-md) {
-      text-align: left;
-      .row {
-        align-items: flex-start;
-      }
-      .btn {
-        margin-left: auto;
-      }
+.mainInfo__header {
+  padding: var(--_main-info-padding-block) 0;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  
+  @media (min-width: $tablet-md) {
+    text-align: left;
+    .row {
+      align-items: flex-start;
+    }
+    .btn {
+      margin-left: auto;
     }
   }
 
+  .mainInfo__header-title {
+    @media (max-width: 991.98px) {
+      text-align: center;
+    }
+  }
 }
 
 .mainInfo__cards {
@@ -23,12 +27,11 @@
   gap: 1rem;
 
   @media (min-width: $mobile) {
-    padding-inline: 6.33333333%;
     gap: 1.5rem;
   }
 
   @media (min-width: $tablet) {
-    gap: 3rem;
+    gap: 2rem;
   }
 }
 
@@ -39,6 +42,17 @@
   padding: var(--_card-padding);
   padding-bottom: 70px;
   height: 100%;
+  transition: background-color 0.3s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--grey-lighter-color);
+      .mainInfo__number {
+        background-color: var(--accent-color);
+        color: var(--white-color);
+      }
+    }
+  }
 
   @media (min-width: $mobile) {
     border-radius: 1.875rem;
@@ -59,6 +73,7 @@
   font-size: 1.5rem;
   font-weight: var(--fw-700);
   margin-bottom: 1.5rem;
+  transition: background-color 0.3s, color 0.3s;
   
   @media(min-width: $mobile) {
     --_number-icon-size: 70px;
@@ -71,9 +86,9 @@
 }
 
 .mainInfo__create {
-  --_volunteer-padding-inline: clamp(1.875rem, -3.125rem + 10.4167vw, 6.25rem);
+  --_volunteer-padding-inline: clamp(1.875rem, -3.125rem + 10.4167vw, 4rem);
 
-  padding: 3rem 0;
+  padding: 4rem var(--_volunteer-padding-inline);
   margin-top: var(--_section-margin);
   background-color: var(--grey-lighter-color);
   text-align: center;

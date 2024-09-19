@@ -6,6 +6,24 @@
 	background-color: var(--white-color);
 }
 
+.section {
+	padding: var(--_main-info-padding-block) 0;
+
+	&.section-light-grey {
+		background-color: var(--grey-lighter-color);
+	}
+
+	&:has(.mainInfo__header) {
+		padding-top: 0;
+	}
+}
+
+hr {
+	border: none;
+	border-top: 2px solid var(--accent-color);
+	padding-bottom: var(--_section-padding-block);
+}
+
 .colorWhite {
 	color: #ffffff !important;
 }
@@ -524,7 +542,7 @@
 .contactForm {
 	display: flex;
 	flex-direction: column;
-	background: #fff3ed;
+	// background: #fff3ed;
 	padding: 2.9375rem 1.25rem;
 	@media (min-width: $mobile) {
 		padding: 3.1875rem 3.5625rem;

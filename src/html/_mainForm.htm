@@ -1,5 +1,5 @@
-<div class="mainFormWrapper">
-  <div class="container-xxl container-xl">
+<div class="mainFormWrapper reveal">
+  <div class="container container-xl">
     <div data-tabs class="tabs mainForm-tabs">
       <nav data-tabs-titles class="tabs__navigation">
         <button type="button" class="tabs__title _tab-active">Пошук людини</button>
@@ -10,81 +10,148 @@
         <div class="tabs__body">
           <form class="mainForm" id="mainSearchForm">
             <div class="mainForm__wrapper">
-              <div class="base-input--group">
-                <img src="img/input-icon1.svg" alt="" />
-                <input class="base-input" type="text" name="secondName" id="secondName" placeholder="Прізвище" minlength="1" data-text-input />
-                <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <div class="base-input--group">
+                    <i class="icon-person"></i>
+                    <input autocomplete="off" class="base-input has-icon" type="text" name="secondName" id="secondName" placeholder="Прізвище" minlength="1" data-text-input />
+                    <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="base-input--group">
+                    <i class="icon-person"></i>
+                    <input autocomplete="off" class="base-input has-icon" type="text" name="firstName" id="firstName" placeholder="Ім'я" minlength="1" data-text-input />
+                    <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="base-input--group">
+                    <i class="icon-person"></i>
+                    <input autocomplete="off" class="base-input has-icon" type="text" name="middleName" id="middleName" placeholder="По батькові" minlength="1" data-text-input />
+                    <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+                  </div>
+                </div>
               </div>
-              <div class="base-input--group">
-                <img src="img/input-icon1.svg" alt="" />
-                <input class="base-input" type="text" name="firstName" id="firstName" placeholder="Ім'я" minlength="1" data-text-input />
-                <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+              <div class="input--group-multi mainForm-group-multi">
+                <div class="row align-items-center">
+                  
+                  <div class="col-lg-6 d-lg-flex d-grid align-items-center gap-3 flex-wrap">
+                    <div class="base-input--group">
+                      <label for="dayBirth">Дата рождения:</label>
+                    </div>
+  
+                    <div class="base-input--group base-input--group-sm g-col-3">
+                      <input autocomplete="off" class="base-input base-input--sm-centered" type="text" name="dayBirth" id="dayBirth" placeholder="День" minlength="1" maxlength="2" data-number-input />
+                      <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+                    </div>
+  
+                    <div class="base-input--group base-input--group-lg g-col-6">
+                      <select id="monthBirth" class="js-choice" data-icon-right="icon-arrow-down" data-search-enabled="false">
+                        <option value="" selected>Місяць</option>
+                        <option value="1">Січень</option>
+                        <option value="2">Лютий</option>
+                        <option value="3">Березень</option>
+                        <option value="4">Квітень</option>
+                        <option value="5">Травень</option>
+                        <option value="6">Червень</option>
+                        <option value="7">Липень</option>
+                        <option value="8">Серпень</option>
+                        <option value="9">Вересень</option>
+                        <option value="10">Жовтень</option>
+                        <option value="11">Листопад</option>
+                        <option value="12">Грудень</option>
+                      </select>
+                    </div>
+  
+                    <div class="base-input--group base-input--group-md g-col-3">
+                      <input autocomplete="off" class="base-input base-input--sm-centered" type="text" name="yearBirth" id="yearBirth" placeholder="Рік" minlength="1" maxlength="4" data-number-input />
+                      <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 d-lg-flex d-grid align-items-center gap-3 flex-wrap">
+                    <div class="base-input--group">
+                      <label for="dayDeath">Дата смерті:</label>
+                    </div>
+  
+                    <div class="base-input--group base-input--group-sm">
+                      <input autocomplete="off" class="base-input base-input--sm-centered" type="text" name="dayDeath" id="dayDeath" placeholder="День" minlength="1" maxlength="2" data-number-input />
+                      <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+                    </div>
+  
+                    <div class="base-input--group base-input--group-lg">
+                      <select id="monthDeath" class="js-choice" data-icon-right="icon-arrow-down" data-search-enabled="false">
+                        <option value="" selected>Місяць</option>
+                        <option value="1">Січень</option>
+                        <option value="2">Лютий</option>
+                        <option value="3">Березень</option>
+                        <option value="4">Квітень</option>
+                        <option value="5">Травень</option>
+                        <option value="6">Червень</option>
+                        <option value="7">Липень</option>
+                        <option value="8">Серпень</option>
+                        <option value="9">Вересень</option>
+                        <option value="10">Жовтень</option>
+                        <option value="11">Листопад</option>
+                        <option value="12">Грудень</option>
+                      </select>
+                      <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+                    </div>
+  
+                    <div class="base-input--group base-input--group-md">
+                      <input autocomplete="off" class="base-input base-input--sm-centered" type="text" name="yearDeath" id="yearDeath" placeholder="Рік" minlength="1" maxlength="4" data-number-input />
+                      <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+                    </div>
+                  </div>
+
+
+                </div>
               </div>
-              <div class="base-input--group">
-                <img src="img/input-icon1.svg" alt="" />
-                <input class="base-input" type="text" name="middleName" id="middleName" placeholder="Отчество" minlength="1" data-text-input />
-                <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+
+  
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <div class="base-input--group">
+                    <i class="icon-location"></i>
+                    <input autocomplete="off" class="base-input has-icon" type="text" name="placeBirth" id="placeBirth" placeholder="Місце народження" minlength="1" data-text-input />
+                    <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="base-input--group">
+                    <i class="icon-location"></i>
+                    <input autocomplete="off" class="base-input has-icon" type="text" name="placeDeath" id="placeDeath" placeholder="Місце поховання" minlength="1" data-text-input />
+                    <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="mainForm__btn">
+                    <button class="btn btn--accent btn--md btn--fw" type="submit" id="searchButton" disabled><img src="img/search-item.svg" alt="" /><span>Пошук</span></button>
+                  </div>
+                </div>  
               </div>
   
-              <div class="input--group-multi">
-                <label for="dayBirth">Дата рождения:</label>
-                <div class="base-input--group">
-                  <img src="img/input-icon2.svg" alt="" />
-                  <input class="base-input" type="text" name="dayBirth" id="dayBirth" placeholder="День" minlength="1" maxlength="2" data-number-input />
-                  <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
-                </div>
-                <div class="base-input--group">
-                  <img src="img/input-icon2.svg" alt="" />
-                  <input class="base-input" type="text" name="monthBirth" id="monthBirth" placeholder="Месяц" minlength="1" data-text-input />
-                  <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
-                </div>
-                <div class="base-input--group">
-                  <img src="img/input-icon2.svg" alt="" />
-                  <input class="base-input" type="text" name="yearBirth" id="yearBirth" placeholder="Год" minlength="1" maxlength="4" data-number-input />
-                  <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
-                </div>
-              </div>
-  
-              <div class="input--group-multi">
-                <label for="dayDeath">Дата смерти:</label>
-                <div class="base-input--group">
-                  <img src="img/input-icon2.svg" alt="" />
-                  <input class="base-input" type="text" name="dayDeath" id="dayDeath" placeholder="День" minlength="1" maxlength="2" data-number-input />
-                  <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
-                </div>
-                <div class="base-input--group">
-                  <img src="img/input-icon2.svg" alt="" />
-                  <input class="base-input" type="text" name="monthDeath" id="monthDeath" placeholder="Месяц" minlength="1" data-text-input />
-                  <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
-                </div>
-                <div class="base-input--group">
-                  <img src="img/input-icon2.svg" alt="" />
-                  <input class="base-input" type="text" name="yearDeath" id="yearDeath" placeholder="Год" minlength="1" maxlength="4" data-number-input />
-                  <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
-                </div>
-              </div>
-  
-              <div class="base-input--group">
-                <img src="img/input-icon3.svg" alt="" />
-                <input class="base-input" type="text" name="placeBirth" id="placeBirth" placeholder="Место захоронения" minlength="1" data-text-input />
-                <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
-              </div>
-  
-              <div class="base-input--group">
-                <img src="img/input-icon3.svg" alt="" />
-                <input class="base-input" type="text" name="placeDeath" id="placeDeath" placeholder="Место / Регион захоронения" minlength="1" data-text-input />
-                <span class="errMsg" data-error-msg="Only letters allowed" style="display: none;"></span>
-              </div>
-  
-              <div class="mainForm__btn">
-                <button class="btn btn--accent btn--md btn--fw" type="submit" id="searchButton" disabled><img src="img/search-item.svg" alt="" /><span>Пошук</span></button>
-              </div>
   
             </div>
           </form>
         </div>
         <div class="tabs__body">
-          <div class="mainForm__wrapper">Вміст другого таба</div>
+          <div class="mainForm__wrapper">
+            <form action="#">
+              <div class="row">
+                <div class="col-6">
+                  <div class="base-input--group">
+                    <input autocomplete="off" class="base-input" type="text" name="id" id="id" placeholder="Напишите ID страницы" minlength="1" />
+                  </div>  
+                </div>
+                <div class="col-2">
+                  <button type="submit" class="btn btn--accent btn--md btn--fw">
+                    <i class="icon-search"></i>
+                    <span>Пошук</span>
+                  </button>
+                </div>
+              </form>
+          </div>
         </div>
       </div>
     </div>

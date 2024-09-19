@@ -110,7 +110,7 @@ function initSliders() {
 	if (document.querySelector(".mainBenefitsSlider")) {
 		new Swiper(".mainBenefitsSlider", {
 			modules: [Autoplay, Pagination],
-			slidesPerView: 1.3,
+			slidesPerView: 1.55,
 			spaceBetween: 16,
 			speed: 800,
 			loop: true,
@@ -118,6 +118,7 @@ function initSliders() {
 			touchEventsTarget: "wrapper",
 
 			autoplay: {
+				enabled: false,
 				delay: 3000,
 			},
 
@@ -127,19 +128,18 @@ function initSliders() {
 			},
 			breakpoints: {
 				767.98: {
-					slidesPerView: 2.2,
+					// slidesPerView: 1.4,
 					spaceBetween: 32,
 				},
 				1279.98: {
-					slidesPerView: 2.2,
 					spaceBetween: 32,
 				},
 				1439.98: {
-					slidesPerView: 2.2,
+					slidesPerView: 1.45,
 					spaceBetween: 64,
 				},
 				1919.98: {
-					slidesPerView: 2.2,
+					slidesPerView: 1.45,
 					spaceBetween: 64,
 				},
 			},
@@ -287,6 +287,8 @@ if (document.querySelector(".memoCommentsSlider")) {
 		// slidesPerView: 1,
 		// speed: 800,
 	});
+
+	document.dispatchEvent(new Event("swiperLoaded"));
 }
 
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)

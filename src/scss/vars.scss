@@ -18,14 +18,67 @@
   --white-color: #ffffff;
 	--black-color: #000000;
   --blue-color: hsla(215, 95%, 60%, 1);
+  --blue-color-lighter: hsla(215, 95%, 70%, 1);
   --red-color: hsla(0, 100%, 55%, 1);
 	--grey-color: hsla(0, 0%, 69%, 1);
 	--grey-lighter-color: hsla(0, 25%, 98%, 1);
 
+	--facebook-color: hsla(207, 89%, 50%, 1);
+	--facebook-color-hover: hsla(207, 89%, 60%, 1);
+	--google-color: hsla(0, 89%, 50%, 1);
+	--google-color-hover: hsla(0, 89%, 60%, 1);
+	--linkedin-color: hsla(195, 100%, 35%, 1);
+	--linkedin-color-hover: hsla(195, 100%, 45%, 1);
+
 	--text-color-underline: rgba(0, 0, 0, 0.3);
+
+	--modal-background-color: hsla(var(--accent-hue), var(--accent-saturation), 96%, 1);
 
 	// Transitions
 	--transition: cubic-bezier(0, 0, 0.23, 1);
+
+	// Inputs
+
+	--_input-padding-block: 1.2815rem;
+	--_input-padding-inline: 2rem;
+	--_input-icon-padding-left: 4rem;
+	--_input-border-radius: 1.875rem;
+	--_input-font-size: 1.5rem;
+	--_input-placeholder-color: hsla(0, 0%, 49%, 1);
+	--_input-placeholder-font-size: 1.25rem;
+	--_input-color: var(--black-color);
+	--_input-border-color: hsla(0, 0%, 69%, 1);
+	--_input-icon-position: 1.5rem;
+
+	// Dropdowns
+
+	--_dropdown-radius: 1.875rem;
+  --_dropdwon-height: 21rem;
+	--_dropdown-shadow-color: hsla(var(--accent-hue), var(--accent-saturation), 56%, 0.4);
+	--_dropdown-shadow-y: 20px;
+	--_dropdown-shadow-blur: 45px;
+	--_dropdown-shadow-spread: 0;
+	--_dropdown-shadow-x: 0;
+	--_dropdown-shadow: var(--_dropdown-shadow-x) var(--_dropdown-shadow-y) var(--_dropdown-shadow-blur) var(--_dropdown-shadow-spread) var(--_dropdown-shadow-color);
+
+	// Transitions
+  --anim-translate-duration: 0.5s;
+  --anim-opacity-duration: 0.4s;
+  --cubic-bezier-transition: cubic-bezier(0.5, 1, 0.89, 1);
+	--scale-start: 0.7;
+
+	// Font sizes
+
+	// 24px - 20px
+	--font-size-sm: clamp(1.25rem, 0.9643rem + 0.5952vw, 1.5rem);
+	// 32px - 22px
+	--font-size-md: clamp(1.375rem, 0.6607rem + 1.4881vw, 2rem);
+	// 36px - 24px
+	--font-size-lg: clamp(1.5rem, 0.6429rem + 1.7857vw, 2.25rem);
+	// 46px - 32px
+	--font-size-xl: clamp(2rem, 1rem + 2.0833vw, 2.875rem);
+	// 64px - 36px
+	--font-size-xxl: clamp(2.25rem, 0.25rem + 4.1667vw, 4rem);
 
 
 	// // Basic Typography:

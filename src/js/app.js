@@ -129,7 +129,7 @@ flsForms.formSubmit();
 // flsForms.formRating();
 
 /* Модуль роботи з select. */
-import "./libs/select.js";
+// import "./libs/select.js";
 
 /* Модуль роботи з календарем */
 // import './files/forms/datepicker.js'
@@ -250,6 +250,7 @@ import "./files/scroll/lazyload.js";
 
 // ========================================================================================================================================================================================================================================================
 // Інше ========================================================================================================================================================================================================================================================
+
 // ========================================================================================================================================================================================================================================================
 /* Підключаємо файли зі своїм кодом */
 import "./files/auth.js";
@@ -258,4 +259,25 @@ import "./files/profile.js";
 import "./files/script.js";
 import "./files/translations.js";
 import "./files/up-to-top.js";
+import { createRevealAnimation, createBannerScaleAnimation } from "./files/animations.js";
 //============================================================================================================================================================================================================================================
+
+// Content Animations
+// Function to initialize animations
+function initAnimations() {
+	const revealElements = document.querySelectorAll(".reveal");
+	const banners = document.querySelectorAll(".scale-animation");
+	banners.forEach((banner) => {
+		createBannerScaleAnimation(banner);
+	});
+	createRevealAnimation(revealElements);
+}
+initAnimations();
+
+// Check if Swiper is loaded and then initialize animations
+if (typeof Swiper !== "undefined") {
+} else {
+	// Wait for Swiper to be loaded
+	document.addEventListener("swiperLoaded", initAnimations);
+}
+//

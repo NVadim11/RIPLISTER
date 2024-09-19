@@ -31,6 +31,21 @@ h5,
   }
 }
 
+p {
+  a {
+    display: inline;
+    text-decoration: underline;
+    color: var(--blue-color);
+    transition: color 0.25s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+}
+
 h1,
 .h1 {
   // 64px - 36px

@@ -353,13 +353,13 @@
 		letter-spacing: 0em;
 		text-align: center;
 		cursor: pointer;
+		transition: .25s;
+		user-select: none;
+		max-width: fit-content;
 		a {
 			text-decoration: underline;
 			transition: .25s;
 		}
-		transition: .25s;
-		user-select: none;
-		max-width: fit-content;
 		@media screen and (min-width:$tablet) {
 			font-size: 1rem;
 		}

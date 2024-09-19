@@ -189,3 +189,7 @@ a:hover {
 		}
 	}
 }
+
+.scale-animation {
+	transform: matrix(var(--scale-start), 0, 0, var(--scale-start), 0, 0);
+}

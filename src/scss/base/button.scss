@@ -247,21 +247,36 @@
 		}
 
 		&.btn--link-rounded {
+			padding-inline: 0;
+			
+			@media (min-width: 992px) {
+				padding-block: 0;
+			}
 			[class*='icon-'] {
 				--_icon-size: 3.125rem;
 				position: relative;
+				margin-right: 1.5rem;
+				padding-right: 1rem;
 
 				&::after {
 					content: '';
 					display: block;
 					position: absolute;
 					top: 50%;
-					left: 50%;
+					left: calc(50% + 1rem);
 					transform: translate(-50%, -50%);
 					width: var(--_icon-size);
 					height: var(--_icon-size);
 					border: 1px solid var(--blue-color);
 					border-radius: 50%;
+				}
+
+				&::before {
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 0.8rem;
+					transform: translateY(-50%);
 				}
 			}
 
@@ -286,6 +301,47 @@
 				span {
 					color: var(--accent-color);
 				}
+			}
+		}
+	}
+	
+	&.btn--social {
+		background-color: var(--blue-color);
+		font-size: var(--_btn-fs--sm);
+		span {
+			line-height: 1;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--blue-color-lighter);
+			}
+		}
+	}
+
+	&.btn--facebook {
+		background-color: var(--facebook-color);
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--facebook-color-hover);
+			}
+		}
+	}
+
+	&.btn--google {
+		background-color: var(--google-color);
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--google-color-hover);
+			}
+		}
+	}
+
+	&.btn--linkedin {
+		background-color: var(--linkedin-color);
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--linkedin-color-hover);
 			}
 		}
 	}

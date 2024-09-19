@@ -1,10 +1,10 @@
 .volunteer {
   margin-top: var(--_section-margin);
   .volunteer__quote {
-    --_volunteer-padding-inline: clamp(1.875rem, -3.125rem + 10.4167vw, 6.25rem);
+    --_volunteer-padding-inline: clamp(1.875rem, -3.125rem + 10.4167vw, 4rem);
 
-    padding: var(--_section-padding-block) 0;
-    background-color: var(--grey-lighter-color);
+    padding: var(--_section-padding-block) var(--_volunteer-padding-inline);
+    background-color: hsla(var(--accent-hue), var(--accent-saturation), var(--accent-lightness--super-light), 1);
     text-align: center;
     border-radius: 1.25rem;
 
@@ -16,8 +16,9 @@
     }
 
     p {
-      font-size: clamp(1.5rem, -0.2143rem + 3.5714vw, 3rem);
+      font-size: clamp(1.25rem, -0.2143rem + 3.5714vw, 2rem);
       margin-bottom: .6em;
+      font-weight: var(--font-weight-semibold);
     }
 
     @media (min-width: $tablet-md) {

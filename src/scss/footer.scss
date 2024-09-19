@@ -58,7 +58,7 @@
   .footer__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem 1rem;
+    gap: 2.5rem 3rem;
 
     a {
       text-transform: uppercase;
@@ -133,7 +133,7 @@
     .footer__menu {
       order: 3;
       display: block;
-      grid-column: 6 / 12;
+      grid-column: 7 / 13;
     }
 
     .footer__btn {
